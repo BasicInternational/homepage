@@ -1,0 +1,322 @@
+// 1depth hub page
+#fullpage {
+  &.tech {
+    .section {
+      &.sec1 {
+        background: url("/BI/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec2 {
+        background: url("/BI/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec3 {
+        background: url("/BI/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+  &.business {
+    .section {
+      &.sec1 {
+        background: url("/BI/assets/images/pages/business/bg-01.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec2 {
+        background: url("/BI/assets/images/pages/business/bg-02.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec3 {
+        background: url("/BI/assets/images/pages/business/bg-03.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec4 {
+        background: url("/BI/assets/images/pages/business/bg-04.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec5 {
+        background: url("/BI/assets/images/pages/business/bg-05.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec6 {
+        background: url("/BI/assets/images/pages/business/bg-06.jpg") center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+  &.agency {
+  }
+  .section {
+    .title_box {
+      // width: max-content;
+      text-align: center;
+      color: $white-color;
+      h2 {
+        font-size: 80px;
+        color: $white-color;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 1.4em;
+        strong {
+          font-size: inherit;
+          font-weight: 700;
+          color: $root-color;
+        }
+      }
+      h3 {
+        padding-top: 10px;
+        font-size: 30px;
+      }
+      .btn__more {
+        display: inline-block;
+        position: relative;
+        margin-top: calc(30px + 10px);
+        font-size: 20px;
+        z-index: 1;
+        &::before {
+          display: inline-block;
+          content: "";
+          position: absolute;
+          left: -20%;
+          bottom: -7px;
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background-color: $sign-color;
+          z-index: -1;
+        }
+        &::after {
+          display: inline-block;
+          content: "";
+          position: absolute;
+          right: -2rem;
+          bottom: 0;
+          width: 25px;
+          height: 14px;
+          background: url("/BI/assets/images/pages/arrow.png") center center no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+  h1 {
+    color: $white-color;
+  }
+}
+
+#conversion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: none;
+  z-index: 20;
+  .layer1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    background: $sign-color;
+    z-index: 2;
+  }
+  .layer2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    background: $black-color;
+    z-index: 1;
+  }
+  &.up {
+    .layer1 {
+      animation: slide-up 1s forwards;
+    }
+    .layer2 {
+      animation: slide-up 1s 0.1s forwards;
+    }
+  }
+  &.down {
+    .layer1 {
+      animation: slide-down 1s forwards;
+    }
+    .layer2 {
+      animation: slide-down 1s 0.1s forwards;
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    bottom: -100%;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+@keyframes slide-down {
+  0% {
+    bottom: 100%;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -100%;
+  }
+}
+
+#scroll__plz {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  flex-direction: column;
+  @include flex-align(center, center);
+  > img {
+    display: inline-block;
+  }
+  > span {
+    padding-top: 10px;
+    font-size: 10px;
+    color: $white-color;
+    text-transform: uppercase;
+  }
+}
+
+#pagenation {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 40px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: auto;
+  z-index: 10;
+  li {
+    margin: 10px 0;
+  }
+  a {
+    display: inline-block;
+    position: relative;
+  }
+  a i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #d5d5d5;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 17px;
+      height: 17px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+  }
+  li.active a {
+    i {
+      background: $sign-color;
+    }
+    i::before {
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      opacity: 1;
+    }
+  }
+}
+
+// 데스크탑 소형 ~1440
+@include desktopSmall {
+  #fullpage {
+    .section {
+      .title_box {
+        h2 {
+          font-size: 5.556vw;
+        }
+        h3 {
+          font-size: 2.083vw;
+        }
+        .btn__more {
+          font-size: 1.389vw;
+        }
+      }
+    }
+  }
+}
+
+// 태블릿 768 ~ 1439
+@include tablet {
+  #fullpage {
+    .section {
+      .title_box {
+        h2 {
+          font-size: 8.989vw;
+        }
+        h3 {
+          font-size: 3.659vw;
+        }
+        .btn__more {
+          font-size: 2.439vw;
+        }
+      }
+    }
+  }
+}
+
+// 모바일 320 ~ 767
+@include mobile {
+  #fullpage {
+    .section {
+      .title_box {
+        h2 {
+          font-size: 10.256vw;
+        }
+        h3 {
+          font-size: 5.128vw;
+        }
+        .btn__more {
+          font-size: 4.103vw;
+        }
+      }
+    }
+  }
+  #pagenation {
+    left: 20px;
+    li {
+      margin: 5px 0;
+    }
+    a i {
+      width: 6px;
+      height: 6px;
+      &::before {
+        width: 6px;
+        height: 6px;
+      }
+    }
+    li.active a {
+      i::before {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+// 모바일 소형 ~320
+@include mobileFold {
+}

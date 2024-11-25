@@ -1,0 +1,14 @@
+$root-color: #ffffff;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #cccccc;
+$gray2-color: #dddddd;
+$text-color: #333333;
+$sign-color: #0e998e;
+$pretendard-font: "Pretendard", "Noto Sans KR", Dotum, "돋움", sans-serif;
+
+@import "./reset.css";
+@import "./mixin";
+@import "./common.scss";
+@import "./pages/hub.scss";
+@import "./pages/details.scss";
