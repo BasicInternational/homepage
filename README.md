@@ -1,1 +1,1 @@
-main 브랜치 초기 클론
+basic international 홈페이지 프로젝트 시작
