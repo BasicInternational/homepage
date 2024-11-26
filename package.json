@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "node-sass": "^9.0.0",
     "swiper": "^11.1.12"
   },
   "name": "bi",
   "version": "1.0.0",
   "description": "basic international home",
   "main": "index.js",
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
