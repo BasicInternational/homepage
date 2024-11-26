@@ -340,15 +340,15 @@ main section .intro__wrap .bi__intro {
   cursor: pointer;
 }
 main section .intro__wrap .bi__intro.intro-01 {
-  background: url("/BI/assets/images/common/bi-intro-01.jpg") center top no-repeat;
+  background: url("/assets/images/common/bi-intro-01.jpg") center top no-repeat;
   background-size: auto 100%;
 }
 main section .intro__wrap .bi__intro.intro-02 {
-  background: url("/BI/assets/images/common/bi-intro-02.jpg") center top no-repeat;
+  background: url("/assets/images/common/bi-intro-02.jpg") center top no-repeat;
   background-size: auto 100%;
 }
 main section .intro__wrap .bi__intro.intro-03 {
-  background: url("/BI/assets/images/common/bi-intro-03.jpg") center top no-repeat;
+  background: url("/assets/images/common/bi-intro-03.jpg") center top no-repeat;
   background-size: auto 100%;
 }
 main section .intro__wrap .bi__intro .bi__intro__title {
@@ -926,39 +926,39 @@ footer .footer__inner .footer__copyright {
   }
 }
 #fullpage.tech .section.sec1 {
-  background: url("/BI/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
+  background: url("/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.tech .section.sec2 {
-  background: url("/BI/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
+  background: url("/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.tech .section.sec3 {
-  background: url("/BI/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
+  background: url("/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.business .section.sec1 {
-  background: url("/BI/assets/images/pages/business/bg-01.jpg") center center no-repeat;
+  background: url("/assets/images/pages/business/bg-01.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.business .section.sec2 {
-  background: url("/BI/assets/images/pages/business/bg-02.jpg") center center no-repeat;
+  background: url("/assets/images/pages/business/bg-02.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.business .section.sec3 {
-  background: url("/BI/assets/images/pages/business/bg-03.jpg") center center no-repeat;
+  background: url("/assets/images/pages/business/bg-03.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.business .section.sec4 {
-  background: url("/BI/assets/images/pages/business/bg-04.jpg") center center no-repeat;
+  background: url("/assets/images/pages/business/bg-04.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.business .section.sec5 {
-  background: url("/BI/assets/images/pages/business/bg-05.jpg") center center no-repeat;
+  background: url("/assets/images/pages/business/bg-05.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage.business .section.sec6 {
-  background: url("/BI/assets/images/pages/business/bg-06.jpg") center center no-repeat;
+  background: url("/assets/images/pages/business/bg-06.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage .section .title_box {
@@ -1008,7 +1008,7 @@ footer .footer__inner .footer__copyright {
   bottom: 0;
   width: 25px;
   height: 14px;
-  background: url("/BI/assets/images/pages/arrow.png") center center no-repeat;
+  background: url("/assets/images/pages/arrow.png") center center no-repeat;
   background-size: 100%;
 }
 #fullpage h1 {
@@ -1283,7 +1283,7 @@ section.content__banner .banner__text {
   left: 40px;
   transform: translateY(-50%);
   color: #ffffff;
-  background: url("/BI/assets/images/pages/bg-bannertext.png") left top no-repeat;
+  background: url("/assets/images/pages/bg-bannertext.png") left top no-repeat;
   background-size: 100% 100%;
 }
 section.content__banner .banner__text h2 {
@@ -1310,115 +1310,115 @@ section.content__service .service__desc {
   line-height: 1.4em;
 }
 section.content__service.sync-boot .service__wrap > div > div.service-01 {
-  background: url("/BI/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.sync-boot .service__wrap > div > div.service-02 {
-  background: url("/BI/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.sync-boot .service__wrap > div > div.service-03 {
-  background: url("/BI/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.sync-boot .service__wrap > div > div.service-04 {
-  background: url("/BI/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.sync-cms .service__wrap > div > div.service-01 {
-  background: url("/BI/assets/images/pages/sync_cms/service-01.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_cms/service-01.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.sync-cms .service__wrap > div > div.service-02 {
-  background: url("/BI/assets/images/pages/sync_cms/service-02.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_cms/service-02.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.sync-cms .service__wrap > div > div.service-03 {
-  background: url("/BI/assets/images/pages/sync_cms/service-03.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_cms/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.sync-cms .service__wrap > div > div.service-04 {
-  background: url("/BI/assets/images/pages/sync_cms/service-04.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_cms/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-certification .service__wrap > div > div.service-01 {
-  background: url("/BI/assets/images/pages/business_certification/service-01.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_certification/service-01.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-certification .service__wrap > div > div.service-02 {
-  background: url("/BI/assets/images/pages/business_certification/service-02.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_certification/service-02.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-certification .service__wrap > div > div.service-03 {
-  background: url("/BI/assets/images/pages/business_certification/service-03.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_certification/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-certification .service__wrap > div > div.service-04 {
-  background: url("/BI/assets/images/pages/business_certification/service-04.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_certification/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-commerce .service__wrap > div > div.service-01 {
-  background: url("/BI/assets/images/pages/business_commerce/service-01.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_commerce/service-01.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-commerce .service__wrap > div > div.service-02 {
-  background: url("/BI/assets/images/pages/business_commerce/service-02.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_commerce/service-02.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-commerce .service__wrap > div > div.service-03 {
-  background: url("/BI/assets/images/pages/business_commerce/service-03.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_commerce/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-commerce .service__wrap > div > div.service-04 {
-  background: url("/BI/assets/images/pages/business_commerce/service-04.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_commerce/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-commerce .service__wrap > div > div.service-05 {
-  background: url("/BI/assets/images/pages/business_commerce/service-05.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_commerce/service-05.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-commerce .service__wrap > div > div.service-06 {
-  background: url("/BI/assets/images/pages/business_commerce/service-06.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_commerce/service-06.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-cloud .service__wrap > div > div.service-01 {
-  background: url("/BI/assets/images/pages/business_cloud/service-01.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_cloud/service-01.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-cloud .service__wrap > div > div.service-02 {
-  background: url("/BI/assets/images/pages/business_cloud/service-02.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_cloud/service-02.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-cloud .service__wrap > div > div.service-03 {
-  background: url("/BI/assets/images/pages/business_cloud/service-03.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_cloud/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-cloud .service__wrap > div > div.service-04 {
-  background: url("/BI/assets/images/pages/business_cloud/service-04.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_cloud/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-ai .service__wrap > div > div.service-01 {
-  background: url("/BI/assets/images/pages/business_ai/service-01.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_ai/service-01.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-ai .service__wrap > div > div.service-02 {
-  background: url("/BI/assets/images/pages/business_ai/service-02.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_ai/service-02.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-ai .service__wrap > div > div.service-03 {
-  background: url("/BI/assets/images/pages/business_ai/service-03.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_ai/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-ai .service__wrap > div > div.service-04 {
-  background: url("/BI/assets/images/pages/business_ai/service-04.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_ai/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-ai .service__wrap > div > div.service-05 {
-  background: url("/BI/assets/images/pages/business_ai/service-05.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_ai/service-05.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service.business-ai .service__wrap > div > div.service-06 {
-  background: url("/BI/assets/images/pages/business_ai/service-06.png") 0 0 no-repeat;
+  background: url("/assets/images/pages/business_ai/service-06.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service .service__wrap {
@@ -1461,13 +1461,13 @@ section.content__service .service__wrap > div > div p {
 }
 section.content__feature {
   overflow: hidden;
-  background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+  background: url("/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
   background-size: cover;
 }
 section.content__feature .keywords {
   margin-top: 60px;
   padding-bottom: 90px;
-  background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 12px no-repeat;
+  background: url("/assets/images/pages/sync_cms/keywords-bg.png") center 12px no-repeat;
 }
 section.content__feature .keywords p {
   text-align: center;
@@ -1661,15 +1661,15 @@ section.content__function .dial__wrap button .btn__inner span {
   line-height: 1.2em;
 }
 section.content__function.sync-boot .dial__wrap {
-  background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+  background: url("/assets/images/pages/sync_boot/dial.png") center center no-repeat;
   background-size: 83% auto;
 }
 section.content__function.sync-cms .dial__wrap {
-  background: url("/BI/assets/images/pages/sync_cms/dial.png") center center no-repeat;
+  background: url("/assets/images/pages/sync_cms/dial.png") center center no-repeat;
   background-size: 83% auto;
 }
 section.content__function.sync-any .dial__wrap {
-  background: url("/BI/assets/images/pages/sync_any/dial.png") center center no-repeat;
+  background: url("/assets/images/pages/sync_any/dial.png") center center no-repeat;
   background-size: 83% auto;
 }
 section.content__function .dial__desc {
@@ -2049,13 +2049,13 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
     font-size: 1.389vw;
   }
   section.content__feature {
-    background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+    background: url("/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
     background-size: auto 100%;
   }
   section.content__feature .keywords {
     margin-top: 4.167vw;
     padding-bottom: 6.25vw;
-    background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
+    background: url("/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
     background-size: auto 100%;
   }
   section.content__feature .keywords p {
@@ -2250,7 +2250,7 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
     font-size: 1.563vw;
   }
   section.content__feature {
-    background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+    background: url("/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
     background-size: auto 100%;
   }
   section.content__feature ul.feature_wrap {
@@ -2410,7 +2410,7 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: url("/BI/assets/images/pages/bg-bannertext-m.png") left top no-repeat;
+    background: url("/assets/images/pages/bg-bannertext-m.png") left top no-repeat;
     background-size: 100% 100%;
   }
   section.content__banner .banner__text h2 {
@@ -2455,7 +2455,7 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
   section.content__feature .keywords {
     margin-top: 10.256vw;
     padding-bottom: 6.25vw;
-    background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
+    background: url("/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
     background-size: auto 100%;
   }
   section.content__feature .keywords p {
