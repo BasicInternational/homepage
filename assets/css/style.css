@@ -907,7 +907,7 @@ footer .footer__inner .footer__copyright {
     width: 100%;
   }
   main section .inner {
-    padding: 12.821vw 5.128vw;
+    padding: 16vw 5.128vw;
   }
   main section.fullHeight {
     overflow: hidden;
@@ -2435,7 +2435,7 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
     font-size: 4.615vw;
   }
   section.content__service .service__wrap {
-    margin-top: 12.821vw;
+    margin-top: 16vw;
     flex-direction: column;
   }
   section.content__service .service__wrap > div:first-child {
