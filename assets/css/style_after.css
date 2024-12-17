@@ -13,6 +13,9 @@
 .width_1260 {
     max-width: 1260px !important;
 }
+.width_1440 {
+    max-width: 1440px !important;
+}
 
 .background_gray {
     background-color: #f4f4f4;
@@ -1125,10 +1128,10 @@ main.aboutus_workforce section .inner {
     padding-bottom: 150px;
 }
 
-.oranization_img_wrap {
+.aboutus_workforce .oranization_img_wrap {
     margin-top: 60px;
 }
-.oranization_img_wrap > img {
+.aboutus_workforce .oranization_img_wrap > img {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -1204,7 +1207,7 @@ main.aboutus_workforce section .inner {
         padding-bottom: 60px;
     }
 
-    .oranization_img_wrap {
+    .aboutus_workforce .oranization_img_wrap {
         margin-top: 40px;
     }
     
@@ -1237,5 +1240,96 @@ main.aboutus_workforce section .inner {
     }
 }
 
+/* .aboutus_management.html */
+.aboutus_management .management_img_wrap {
+    margin-top: 120px;
+    text-align: center;
+}
+.aboutus_management .management_img_wrap > img {
+    width: 100%;
+    max-width: 1035px;
+    height: auto;
+    object-fit: contain;
+}
+.aboutus_management .management_img_wrap > .m_ui {
+    padding: 0 10.1333vw ;
+}
+
+.aboutus_benefit_wrap {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.aboutus_benefit_wrap .content_wrap {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 4 - 120px / 4);
+}
+.aboutus_benefit_wrap .content_wrap .img_wrap {
+    width: 100%;
+    position: relative;
+}
+.aboutus_benefit_wrap .content_wrap .img_wrap > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-right-radius: 50px;
+}
+.aboutus_benefit_wrap .content_wrap .img_wrap > span {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.aboutus_benefit_wrap .content_wrap .text_wrap {
+    padding: 30px 0;
+    background: #fff;
+    text-align: center;
+    height: 100%;
+}
+.aboutus_benefit_wrap .content_wrap .text_wrap span {
+    display: block;
+    font-size: 16px;
+    line-height: 1.36;
+    color: #222;
+}
+
+@media (max-width: 767px) {
+    .aboutus_management section.content__service .service__desc {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+    .aboutus_management .management_img_wrap {
+        margin-top: 60px;
+    }
+
+    .aboutus_benefit_wrap {
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+    .aboutus_benefit_wrap .content_wrap {
+        width: 100%;
+    }
+    .aboutus_benefit_wrap .content_wrap + .content_wrap {
+        margin-top: 20px;
+    }
+
+    .aboutus_benefit_wrap .content_wrap .img_wrap > img {
+        border-top-right-radius: 30px;
+    }
+    .aboutus_benefit_wrap .content_wrap .img_wrap > span {
+        font-size: 16px;
+    }
+    .aboutus_benefit_wrap .content_wrap .text_wrap {
+        padding: 20px 0;
+    }
+    .aboutus_benefit_wrap .content_wrap .text_wrap span {
+        font-size: 14px;
+    }
+}
 
 
