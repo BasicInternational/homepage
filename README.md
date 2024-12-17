@@ -1,6 +1,6 @@
-basic international 홈페이지 프로젝트 시작
+퍼블 작업환경: vscode > live server
 
-live server 파일 위치기준은 hompage로 잡았습니다.
+live server 폴더 위치기준은 hompage로 잡았습니다.
 설정을 만질 수 없어 git page 설정불가.
 기존 css 파일 대신 style_after.css 를 새로 만들어 사용 중입니다.
 
