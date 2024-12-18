@@ -419,7 +419,9 @@ section {
             border-color: transparent;
             opacity: 1;
 
-
+            &:before {
+              display: none;
+            }
           }
         }
 
@@ -438,10 +440,24 @@ section {
           line-height: 1.4em;
           transition: .4s height, border-color;
           overflow: hidden;
-          width: 30px;
-          border-top: 3px solid #0C9F84;
+          // width: 30px;
+          // border-top: 3px solid #0C9F84;
           border-radius: 3px;
-          height: 0;
+          height: 3px;
+          position: relative;
+
+          &:before {
+            display: block;
+            position: absolute;
+            top: 0;
+            border-top: 3px solid #0c9f84;
+            left: 0;
+            content: '';
+            width: 30px;
+            height: 3px;
+            left: 50%;
+            margin-left: -15px;
+          }
         }
 
         >ul {
