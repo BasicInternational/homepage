@@ -31,86 +31,8 @@
     </div>
     <!-- e : 스킵 -->
 
-    <header class="bi__header">
-      <div class="header__wrap">
-        <a href="/index.html" class="bi__logo"
-          ><img src="/assets/images/common/bi-logo.png" alt="베이직 인터내셔널 로고"
-        /></a>
-        <div class="bi__tabs">
-          <ul>
-            <li><a href="/pages/hub-tech.html">기술</a></li>
-            <li><a href="/pages/hub-business.html">사업분야</a></li>
-            <li><a href="/pages/agency/agency.html">신사업&에이전시</a></li>
-<!--            <li><a href="#">Contact</a></li>-->
-          </ul>
-        </div>
-        <button type="button" class="bi__menu">
-          <div class="menu__icon">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-      </div>
-
-      <nav class="bi__nav">
-        <div class="nav__head">
-          <a href="/index.html" class="bi__logo"
-            ><img src="/assets/images/common/bi-logo.png" alt="베이직 인터내셔널 로고"
-          /></a>
-          <div class="nav__support">
-            <a href="/assets/file/베이직인터내셔널_회사소개서_V2.0.pdf" download="베이직인터내셔널_회사소개서.pdf">회사소개 다운로드</a>
-            <a href="mailto:sisocore@gmail.com">프로젝트 문의하기</a>
-          </div>
-          <button type="button" class="nav__close">
-            <div class="close__icon">
-              <span></span>
-              <span></span>
-            </div>
-          </button>
-        </div>
-        <div class="nav__body">
-          <ul class="nav__menu">
-            <li class="menu__item">
-              <button type="button" class="item__button">기술/사업</button>
-              <div class="item__list">
-                <a href="/pages/hub-tech.html">기술</a>
-                <a href="/pages/hub-business.html">사업분야</a>
-                <a href="/pages/agency/agency.html">신사업&에이전시</a>
-              </div>
-            </li>
-            <li class="menu__item">
-              <button type="button" class="item__button">경험</button>
-              <div class="item__list">
-                <a href="/pages/experience/experience_example.html">구축사례</a>
-                <a href="/pages/experience/experience_customers.html">주요고객사</a>
-              </div>
-            </li>
-<!--            <li class="menu__item">-->
-<!--              <button type="button" class="item__button">문화/행사</button>-->
-<!--              <div class="item__list">-->
-<!--                <a>보도자료</a>-->
-<!--                <a>회사생활</a>-->
-<!--              </div>-->
-<!--            </li>-->
-            <li class="menu__item">
-              <button type="button" class="item__button">회사소개</button>
-              <div class="item__list">
-                <a href="/pages/aboutus/aboutus_history.html">연혁</a>
-                <a href="/pages/aboutus/aboutus_workforce.html">조직/인력현황</a>
-                <a href="/pages/aboutus/aboutus_management.html">경영이념</a>
-<!--                <a>핵심인력소개</a>-->
-              </div>
-            </li>
-          </ul>
-          <div class="nav__support">
-            <a href="/assets/file/베이직인터내셔널_회사소개서_V2.0.pdf" download="베이직인터내셔널_회사소개서.pdf">회사소개 다운로드</a>
-            <a href="mailto:sisocore@gmail.com">프로젝트 문의하기</a>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
 
     <main id="container" tabindex="0">
       <section class="content__banner">
@@ -387,57 +309,21 @@
       </section>
     </main>
 
-    <footer class="bi__footer">
-      <div class="footer__inner">
-        <a href="javascript:void(0)"
-          ><img src="/assets/images/common/bi-logo.png" alt="베이직 인터내셔널 로고"
-        /></a>
-        <div class="footer__info">
-          <ul>
-            <li>
-              <p class="name">TEL</p>
-              <p class="desc">02-3489-1115</p>
-            </li>
-            <li>
-              <p class="name">E-Mail</p>
-              <p class="desc">sisocore@gmail.com</p>
-            </li>
-            <li>
-              <p class="name">ADDRESS</p>
-              <p class="desc">
-                (08511) 서울특별시 금천구 벚꽃로<span class="mbr"></span> 36길 30 7층 701~708호
-              </p>
-            </li>
-          </ul>
-          <p class="footer__copyright">
-            Copyright @ 2024 Basic International. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
 
-    <div class="floating__menu">
-      <button type="button" id="downloadButton">
-        <img src="/assets/images/common/floating-download.svg" alt="다운로드 버튼" />
-        <span>다운로드</span>
-      </button>
-      <button type="button" onclick="window.location.href='mailto:sisocore@gmail.com'">
-        <img src="/assets/images/common/floating-qa.svg" alt="문의하기 버튼" />
-        <span>문의하기</span>
-      </button>
-      <button type="button" onclick="goToTop()">
-        <img src="/assets/images/common/floating-up.svg" alt="맨 위로 버튼" />
-        <span>TOP</span>
-      </button>
-    </div>
-    <script>
-      document.getElementById('downloadButton').addEventListener('click', function () {
-        // 파일 다운로드 링크 생성
-        const link = document.createElement('a');
-        link.href = '/assets/file/베이직인터내셔널_회사소개서_V2.0.pdf'; // 파일 경로
-        link.download = '베이직인터내셔널_회사소개서.pdf';         // 다운로드 시 저장될 파일 이름
-        link.click();                       // 클릭 이벤트 트리거
-      });
-    </script>
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
   </body>
+
+  <script>
+    <!--  공통 프레임 불러오기  -->
+    $(document).ready(function() {
+      $("#header-include").load("/pages/include/header.html", () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $("#footer-include").load("/pages/include/footer.html")
+      $("#floating-menu-include").load("/pages/include/floating-menu.html")
+    })
+  </script>
 </html>

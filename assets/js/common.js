@@ -29,6 +29,8 @@ const gnb = {
     gnb.menuItemBtn = document.querySelectorAll(".item__button");
     gnb.menuItemList = document.querySelectorAll(".item__list");
 
+    console.log(gnb.menu);
+
     if (gnb.pageType === "main") {
       this.tabsOff();
     }
@@ -41,9 +43,11 @@ const gnb = {
 
     gnb.btnClose.addEventListener("click", e => {
       gnb.close();
-      gnb.menuItem.style.visibility = "hidden";
-      gnb.menuItem.style.transform = "translateY(3.125vw)";
-      gnb.menuItem.style.opacity = 0;
+      // gnb.menuItem.forEach(item => {
+      //   item.style.visibility = "hidden";
+      //   item.style.transform = "translateY(3.125vw)";
+      //   item.style.opacity = 0;
+      // });
     });
 
     gnb.menuItemBtn.forEach(button => {
@@ -286,13 +290,22 @@ function makeElemFadeUp(items, addDelay) {
 
 ////////////////////////////
 
-window.addEventListener("DOMContentLoaded", function () {
+// window.addEventListener("DOMContentLoaded", function () {
+//   device.init();
+//   gnb.init();
+//   if (gnb.pageType === "detail" && dialObj.dial === null) dialObj.init();
+//   tabsFunc();
+//   aniText();
+// });
+
+// header와 같이 다른 파일(html)을 불러올 때 이벤트리스너로 하면 DOM이 구성되기 전에 init이 실행되어 함수로 관리
+function initCommon(){
   device.init();
   gnb.init();
   if (gnb.pageType === "detail" && dialObj.dial === null) dialObj.init();
   tabsFunc();
   aniText();
-});
+}
 
 window.addEventListener("resize", function () {
   device.init();
