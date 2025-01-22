@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+
+<head>
   <meta charset="UTF-8">
   <title>베이직인터내셔널</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,52 +17,79 @@
   <meta property="og:url" content="https://basicit.co.kr">
   <link href="/assets/images/favicon.png" rel="icon" type="image/png">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
-    <script src="/assets/js/common.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  </head>
-  <body data-type="main">
-    <!-- s : 스킵 -->
-    <div id="skip__content">
-      <a href="#container">본문 바로가기</a>
-    </div>
-    <!-- e : 스킵 -->
+  <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <script src="/assets/js/common.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
 
-    <!--  Header 영역  -->
-    <div id="header-include"></div>
+<body data-type="main">
+  <!-- s : 스킵 -->
+  <div id="skip__content">
+    <a href="#container">본문 바로가기</a>
+  </div>
+  <!-- e : 스킵 -->
 
-    <main id="container" tabindex="0">
-      <section class="fullHeight mobile-swiper">
-        <div class="intro__wrap">
-          <a href="/pages/hub-business.html" class="bi__intro intro-01">
-            <div class="bi__intro__title">
-              <h2>business</h2>
-              <p>사업분야</p>
-            </div>
-          </a>
-          <a href="/pages/hub-tech.html" class="bi__intro intro-02">
-            <div class="bi__intro__title">
-              <h2>technology</h2>
-              <p>기술</p>
-            </div>
-          </a>
-          <a href="/pages/agency/agency.html" class="bi__intro intro-03">
-            <div class="bi__intro__title">
-              <h2>agency</h2>
-              <p>신사업&에이전시</p>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-controls">
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
+  <!--  Header 영역  -->
+  <div id="header-include"></div>
 
-      <script>
+  <main id="container" tabindex="0">
+    <section class="fullHeight mobile-swiper">
+      <div class="intro__wrap">
+        <a href="/pages/hub-business.html" class="bi__intro intro-01">
+          <div class="bi__intro__title">
+            <h2>business</h2>
+            <p>사업분야</p>
+          </div>
+        </a>
+        <a href="/pages/hub-tech.html" class="bi__intro intro-02">
+          <div class="bi__intro__title">
+            <h2>technology</h2>
+            <p>기술</p>
+          </div>
+        </a>
+        <a href="/pages/agency/agency.html" class="bi__intro intro-03">
+          <div class="bi__intro__title">
+            <h2>agency</h2>
+            <p>신사업&에이전시</p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-controls">
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        swiperOption = {
+          slidesPerView: 1,
+          loop: false,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            type: "progressbar",
+          },
+          navigation: false,
+        };
+        function handleResize() {
+          // console.log(device.type);
+          if (window.innerWidth <= 1280) {
+            if (swiperInstance === null) {
+              initSwiper(".mobile-swiper", swiperOption);
+            }
+          } else {
+            destroySwiper(".mobile-swiper");
+          }
+        }
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+      });
+    </script>
+    <!-- <script>
         window.addEventListener("DOMContentLoaded", function () {
           swiperOption = {
             slidesPerView: 1,
@@ -87,24 +115,25 @@
 
           window.addEventListener("resize", handleResize);
         });
-      </script>
-    </main>
+      </script> -->
+  </main>
 
-    <!--  Footer 영역  -->
-    <div id="footer-include"></div>
+  <!--  Footer 영역  -->
+  <div id="footer-include"></div>
 
-    <!--  Floating Menu 영역  -->
-    <div id="floating-menu-include"></div>
-  </body>
+  <!--  Floating Menu 영역  -->
+  <div id="floating-menu-include"></div>
+</body>
 
-  <script>
-    <!--  공통 프레임 불러오기  -->
-    $(document).ready(function() {
-      $("#header-include").load("/pages/include/header.html", () => {
-        initCommon(); // 헤더가 로드된 후 초기화
-      });
-      $("#footer-include").load("/pages/include/footer.html")
-      $("#floating-menu-include").load("/pages/include/floating-menu.html")
-    })
-  </script>
+<script>
+  <!--  공통 프레임 불러오기  -->
+  $(document).ready(function () {
+    $("#header-include").load("/pages/include/header.html", () => {
+      initCommon(); // 헤더가 로드된 후 초기화
+    });
+    $("#footer-include").load("/pages/include/footer.html")
+    $("#floating-menu-include").load("/pages/include/floating-menu.html")
+  })
+</script>
+
 </html>
