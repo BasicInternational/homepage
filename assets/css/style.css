@@ -227,7 +227,7 @@ footer .footer__inner .footer__copyright { text-align: center; font-size: .8rem;
 
  header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__button { color: rgba(0,0,0,0); -webkit-text-stroke: 1px #fff}
 
- header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__list { max-height: 150px; visibility: visible}
+ header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__list { max-height: 230px; visibility: visible}
 
  header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__list a { visibility: visible; transform: translateX(0); opacity: 1}
 
