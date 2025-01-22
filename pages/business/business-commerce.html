@@ -221,20 +221,22 @@
         </div>
       </div>
       <script>
-        setTimeout(() => {
+        window.addEventListener("DOMContentLoaded", function () {
+          setTimeout(() => {
 
-          function handleResize() {
-            if (swiperInstance === null) {
-              initSwiper(".all-swiper");
+            function handleResize() {
+              if (swiperInstance === null) {
+                initSwiper(".all-swiper");
+              }
             }
-          }
-          handleResize();
+            handleResize();
 
-          window.addEventListener("resize", handleResize);
-          window.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("resize", handleResize);
+            window.addEventListener("DOMContentLoaded", function () {
 
-          });
-        }, 300);
+            });
+          }, 300);
+        });
       </script>
     </section>
     <section class="content__composition">
