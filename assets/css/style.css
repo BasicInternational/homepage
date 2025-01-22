@@ -628,9 +628,9 @@ section.content__feature ul.feature_wrap>li:hover p { height: 151px; word-break:
 
 section.content__feature ul.feature_wrap>li:hover p:before { display: none}
 
-section.content__feature ul.feature_wrap>li h4 { padding: 20px 0; min-height: 96px; font-size: 20px; line-height: 1.4em}
+section.content__feature ul.feature_wrap>li h4 { padding: 20px 0; min-height: 96px; font-size: 18px; line-height: 1.4em}
 section.content__feature ul.feature_wrap>li ul {
-    height: 70px;
+    height: 150px;
     overflow: auto;
 
 }
@@ -955,11 +955,11 @@ section.content__feature ul.feature_wrap>li p:before{
 
  section.content__feature ul.feature_wrap { margin: 0 auto 5.972vw; display: flex; flex-wrap: wrap}
 
- section.content__feature ul.feature_wrap>li { flex: 1; padding: 3.472vw 2.083vw; height: 270px}
+ section.content__feature ul.feature_wrap>li { flex: 1; padding: 3.472vw 2.083vw; }
 
  section.content__feature ul.feature_wrap>li:hover { border-top-right-radius: 2.083vw}
 
- section.content__feature ul.feature_wrap>li h4 { padding: 1.389vw 0; min-height: 6.667vw; font-size: 1.389vw}
+ section.content__feature ul.feature_wrap>li h4 { padding: 20px 0; min-height: 6.667vw;}
 
  section.content__feature ul.feature_wrap>li p { font-size: .972vw}
 
