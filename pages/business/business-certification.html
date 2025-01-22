@@ -160,7 +160,7 @@
         </div>
         <script>
           function handleResize() {
-              if (device.type == "mobile") {
+                if (window.innerWidth <= 1280)  {
                 if (swiperInstance === null) {
                   initSwiper(".mobile-swiper");
                 }
