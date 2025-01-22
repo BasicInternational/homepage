@@ -159,8 +159,7 @@
           </div>
         </div>
         <script>
-          window.addEventListener("DOMContentLoaded", function () {
-            function handleResize() {
+          function handleResize() {
               if (device.type == "mobile") {
                 if (swiperInstance === null) {
                   initSwiper(".mobile-swiper");
@@ -172,7 +171,6 @@
             handleResize();
 
             window.addEventListener("resize", handleResize);
-          });
         </script>
       </section>
       <section class="content__composition">
