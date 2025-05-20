@@ -140,21 +140,19 @@
           </div>
         </div>
         <script>
-          window.addEventListener("DOMContentLoaded", function () {
-            function handleResize() {
-              if (device.type == "mobile") {
-                if (swiperInstance === null) {
-                  initSwiper(".mobile-swiper");
-                }
-              } else {
-                destroySwiper(".mobile-swiper");
-              }
+        function handleResize() {
+          if (window.innerWidth <= 1280) {
+            if (swiperInstance === null) {
+              initSwiper(".mobile-swiper");
             }
-            handleResize();
+          } else {
+            destroySwiper(".mobile-swiper");
+          }
+        }
+        handleResize();
 
-            window.addEventListener("resize", handleResize);
-          });
-        </script>
+        window.addEventListener("resize", handleResize);
+      </script>
       </section>
       <section class="content__composition">
         <div class="inner">

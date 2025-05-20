@@ -170,8 +170,13 @@ const dialObj = {
 
 // go to top
 function goToTop() {
-  $("html, body").animate({ scrollTop: 0 }, 800);
-  return false;
+  if($("#fullpage").length) {
+    console.log('fullpage : ', $('#fullpage'.length))
+    $.fn.fullpage.moveTo('sec1');
+  } else {
+    $('html, body').animate({ scrollTop: 0 }, 800);
+    return false;
+  }
 }
 
 //window.addEventListener("scroll", function () {
