@@ -31,13 +31,13 @@
 				<key>bundle-identifier</key>
 				<string>com.young05.iris.new</string>
 				<key>bundle-version</key>
-				<string>1.4.1</string>
+				<string>1.4.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>platform-identifier</key>
 				<string>com.apple.platform.iphoneos</string>
 				<key>title</key>
-				<string>IRIS</string>
+				<string>irisYoung05New</string>
 			</dict>
 		</dict>
 	</array>
