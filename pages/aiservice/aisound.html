@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title>베이직인터내셔널</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="베이직인터내셔널">
+  <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
+  <meta name="keywords" content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바">
+  <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="베이직인터내셔널 홈페이지">
+  <meta property="og:description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
+  <meta property="og:image" content="/assets/images/favicon.png">
+
+  <meta property="og:url" content="https://basicit.co.kr">
+  <link href="/assets/images/favicon.png" rel="icon" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+    :root {
+      --indigo:     #5B5BD6;
+      --indigo-mid: #7B7FE8;
+      --indigo-pale:#EEEEFF;
+      --navy:       #0D0D2B;
+      --navy-card:  #141432;
+      --white:      #FFFFFF;
+      --off-white:  #F4F4FF;
+      --text-muted: #9999BB;
+      --text-body:  #CCCCEE;
+      --accent:     #F5C842;
+      --border:     rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.65;
+    }
+
+    main section {
+      display: block;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    /* ══════════════════════════════
+       INTRO BANNER
+    ══════════════════════════════ */
+    .intro-banner {
+      background: linear-gradient(135deg, #EEEEFF 0%, #F0F0FF 60%, #E8E8FF 100%);
+      padding: 60px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-banner::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,91,214,0.12) 0%, transparent 70%);
+    }
+
+    .intro-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,91,214,0.08) 0%, transparent 70%);
+    }
+
+    .intro-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--indigo);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .intro-heading {
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .intro-desc {
+      font-size: 13px;
+      color: #666688;
+      line-height: 1.8;
+      max-width: 340px;
+      margin-bottom: 28px;
+    }
+
+    .intro-btn-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      background: var(--indigo);
+      color: #fff;
+      border: none;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--indigo);
+      border: 1.5px solid var(--indigo);
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ══════════════════════════════
+       SPEED CARD (dark)
+    ══════════════════════════════ */
+    .speed-card {
+      background: var(--navy);
+      padding: 36px 28px 32px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .speed-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(91,91,214,0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .speed-icon {
+      width: 36px; height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .speed-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .speed-desc {
+      font-size: 12px;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 280px;
+    }
+
+    .speed-stat {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .speed-stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-top: 6px;
+    }
+
+     /* ══════════════════════════════
+       FEATURE LIST
+    ══════════════════════════════ */
+    .feature-list {
+      background: var(--white);
+      padding: 0 0 8px;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 26px 28px 20px;
+      border-bottom: 1px solid #EBEBF8;
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-item-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .feature-item-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--indigo-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .feature-item-body {}
+
+    .feature-item-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .feature-item-desc {
+      font-size: 14px;
+      color: #888899;
+      line-height: 1.75;
+    }
+
+    .feature-progress-wrap {
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    .feature-progress-track {
+      width: 100%;
+      height: 4px;
+      background: #EBEBF8;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .feature-progress-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(to right, var(--indigo), var(--indigo-mid));
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+    /* ══════════════════════════════
+       PROCESS SECTION
+    ══════════════════════════════ */
+    .process-section {
+      background: var(--off-white);
+      padding: 52px 28px;
+    }
+
+    .process-heading {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 36px;
+    }
+
+    .process-steps {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 24px; right: 24px;
+      height: 1px;
+      background: linear-gradient(to right, var(--indigo), var(--indigo-mid), var(--indigo));
+      opacity: 0.2;
+    }
+
+    .process-step {
+      flex: 1;
+      text-align: center;
+      padding: 0 8px;
+      position: relative;
+    }
+
+    .process-step-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--indigo);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .process-step-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .process-step-desc {
+      font-size: 16px;
+      color: #9999AA;
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════
+       CTA SECTION (dark)
+    ══════════════════════════════ */
+    .cta-section {
+      background: var(--navy-card);
+      padding: 44px 28px 40px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,91,214,0.3) 0%, transparent 70%);
+    }
+
+    .cta-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--indigo-mid);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .cta-heading {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .cta-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .btn-cta {
+      background: var(--indigo);
+      color: #fff;
+      border: none;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-block;
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .site-footer {
+      background: var(--navy);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-footer-copy {
+      font-size: 10px;
+      color: #44446A;
+    }
+
+    .site-footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .site-footer-links a {
+      font-size: 10px;
+      color: #44446A;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  </style>
+
+
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body data-type="detail">
+    <!-- s : 스킵 -->
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- e : 스킵 -->
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+
+    <main id="container" tabindex="0">
+       <!-- ── INTRO BANNER ── -->
+      <section class="intro-banner">
+        <p class="intro-label">NEXT GENERATION AUDIO AI</p>
+        <h1 class="intro-heading">세상에 없던 사운드,<br />AI로 디자인하다.</h1>
+        <p class="intro-desc">벨소리부터 비즈니스 연결음, 증폭성 있는 암기송 까지 단 10초 만에 완벽한 음원을 생성합니다.</p>
+        <div class="intro-btn-group">
+          <button class="btn-primary">체험하기</button>
+          <button class="btn-outline">살펴보기</button>
+        </div>
+      </section>
+    
+      <!-- ── SPEED CARD ── -->
+      <section class="speed-card">
+        <div class="speed-icon">⚡</div>
+        <h2 class="speed-title">초고속 생성</h2>
+        <p class="speed-desc">기다림 없이 실시간으로 추출하는 고품질 오디오 솔루션</p>
+        <div class="speed-stat">99.9%</div>
+        <p class="speed-stat-label">SATISFACTION LEVEL</p>
+      </section>
+    
+      <!-- ── FEATURE LIST ── -->
+      <section class="feature-list">
+
+        <div class="feature-item">
+          <div class="feature-item-top">
+            <div class="feature-item-icon">🎵</div>
+            <div class="feature-item-body">
+              <h3 class="feature-item-title">AI 벨소리</h3>
+              <p class="feature-item-desc">나만의 취향을 반영한 유니크한 선율. 장르, 무드 설정 가능.</p>
+            </div>
+          </div>
+          <div class="feature-progress-wrap">
+            <div class="feature-progress-track">
+              <div class="feature-progress-fill" data-width="78"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-item-top">
+            <div class="feature-item-icon">📞</div>
+            <div class="feature-item-body">
+              <h3 class="feature-item-title">비즈니스 연결음</h3>
+              <p class="feature-item-desc">전문 성우 보이스와 배경음이 결합된 고퀄리티 브랜드 비즈링.</p>
+            </div>
+          </div>
+          <div class="feature-progress-wrap">
+            <div class="feature-progress-track">
+              <div class="feature-progress-fill" data-width="65"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-item-top">
+            <div class="feature-item-icon">🎙️</div>
+            <div class="feature-item-body">
+              <h3 class="feature-item-title">AI 암기송</h3>
+              <p class="feature-item-desc">학습 텍스트를 중독성 있는 램과 멜로디로 변환해 효율 극대화.</p>
+            </div>
+          </div>
+          <div class="feature-progress-wrap">
+            <div class="feature-progress-track">
+              <div class="feature-progress-fill" data-width="88"></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    
+      <!-- ── PROCESS SECTION ── -->
+      <section class="process-section">
+        <h2 class="process-heading">제작 프로세스</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <span class="process-step-num">01</span>
+            <p class="process-step-title">테마 입력</p>
+            <p class="process-step-desc">키워드 및 장르 선택</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-num">02</span>
+            <p class="process-step-title">AI 생성</p>
+            <p class="process-step-desc">멜로디벨런싱 작업</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-num">03</span>
+            <p class="process-step-title">완성</p>
+            <p class="process-step-desc">다운로드 및 실행</p>
+          </div>
+        </div>
+      </section>
+    
+      <!-- ── CTA SECTION ── -->
+      <section class="cta-section">
+        <p class="cta-label">커스텀 음원 문의</p>
+        <h2 class="cta-heading">기업 전용 대량 제작 및 API 제휴문의</h2>
+        <p class="cta-desc">음원 제작 의뢰하기</p>
+        <button class="btn-cta">문의 메일 보내기</button>
+      </section>
+        
+    </main>
+
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+  </body>
+
+  <script>
+    <!--  공통 프레임 불러오기  -->
+    $(document).ready(function() {
+      $("#header-include").load("/pages/include/header.html", () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $("#footer-include").load("/pages/include/footer.html")
+      $("#floating-menu-include").load("/pages/include/floating-menu.html")
+    });
+
+    const fills = document.querySelectorAll('.feature-progress-fill');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const w = el.dataset.width || 70;
+          el.style.width = w + '%';
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    fills.forEach(el => observer.observe(el));
+  </script>
+</html>

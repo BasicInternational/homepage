@@ -1,497 +1,588 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
-  <meta charset="UTF-8">
-  <title>베이직인터내셔널</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="title" content="베이직인터내셔널">
-  <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
-  <meta name="keywords" content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바">
-  <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="베이직인터내셔널 홈페이지">
-  <meta property="og:description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
-  <meta property="og:image" content="/assets/images/favicon.png">
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
 
-  <meta property="og:url" content="https://basicit.co.kr">
-  <link href="/assets/images/favicon.png" rel="icon" type="image/png">
+    <meta property="og:url" content="https://basicit.co.kr" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_sync.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
 
     <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/assets/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
   </head>
   <body data-type="detail">
-    <!-- s : 스킵 -->
     <div id="skip__content">
       <a href="#container">본문 바로가기</a>
     </div>
-    <!-- e : 스킵 -->
 
     <!--  Header 영역  -->
     <div id="header-include"></div>
 
-    <main id="container" tabindex="0">
-      <section class="content__banner active">
-        <figure>
-          <img src="/assets/images/pages/sync_boot/banner.jpg" alt="" class="desktop-image" />
-          <img src="/assets/images/pages/sync_boot/banner-m.jpg" alt="" class="mobile-image" />
-        </figure>
-        <div class="inner">
-          <div class="banner__text">
-            <h2>SYNC <strong class="ani-text">BOOT</strong></h2>
-            <p>
-              변화하는 비즈니스 환경 변화에<span class="mbr"></span> 빠르게 대응하기 위한<br />마이크로서비스
-              플랫폼
+    <main id="container" class="eta__main" tabindex="0">
+      <!-- ── HERO ── -->
+      <section class="sync-eta-hero">
+        <div class="sync-eta__bg"></div>
+        <div class="sync-eta__pattern">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M200 20 L380 110 L380 290 L200 380 L20 290 L20 110 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 60 L340 135 L340 265 L200 340 L60 265 L60 135 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 100 L300 160 L300 240 L200 300 L100 240 L100 160 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 140 L260 175 L260 225 L200 260 L140 225 L140 175 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div class="sync-eta__content">
+          <div class="sync-eta__badge">
+            <div class="sync-eta__badge-icon"><i class="bi bi-braces-asterisk"></i></div>
+            <span class="sync-eta__badge-text">오픈소스 기반 마이크로서비스 개발/운영 플랫폼</span>
+          </div>
+          <h2 class="sync-eta__title">SyncBoot<br />E2E 엔터프라이즈 플랫폼</h2>
+          <p class="sync-eta__sub">
+            SyncBoot는 인프라와 프레임워크가 완벽히 준비된 'Low Code' 개발/운영 플랫폼입니다.<br />
+            검증된 오픈소스 솔루션으로 설계부터 검증까지 최단 시간 내 시스템 구축을 지원하며,<br />
+            다양한 관리·통제·모니터링 기능을 통해 서비스에 대한 완벽한 통합을 제공합니다.
+          </p>
+          <div class="sync-eta__btns">
+            <a
+              href="javascript:void(0)"
+              onclick="alert('서비스 준비중 입니다')"
+              class="sync-eta__btn-secondary"
+              >구축 사례 확인</a
+            >
+            <a
+              href="javascript:void(0)"
+              onclick="alert('서비스 준비중 입니다')"
+              class="sync-eta__btn-primary"
+              >기능 상세 보기</a
+            >
+          </div>
+        </div>
+        <div class="syncany__scroll">
+          <span class="syncany__scroll-text"><a href="#why__section">Scroll</a></span>
+          <div class="syncany__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ── STATS BAR ── -->
+      <div class="sync-eta-stats">
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">Low Code</p>
+          <p class="sync-eta-stats__label">TC 작성 시간 단축</p>
+        </div>
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">MSA 환경</p>
+          <p class="sync-eta-stats__label">QA 리소스 절감</p>
+        </div>
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">DevOps</p>
+          <p class="sync-eta-stats__label">직관적 GUI 환경</p>
+        </div>
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">오픈소스</p>
+          <p class="sync-eta-stats__label">완벽한 마이크로인 연동</p>
+        </div>
+      </div>
+
+      <!-- ── WHY ── -->
+      <section id="why__section" class="sync-eta-why sync-boot-why">
+        <div class="sync-eta-why__header">
+          <h2 class="sync-eta-why__title">클라우드 네이티브 및<br />오픈소스 철학</h2>
+          <p class="sync-eta-why__sub sync-eta__sub">
+            SyncBoot는 '클라우드'와 '클라우드 네이티브'의 차이를 명확히 인지합니다.<br />
+            특정 클라우드 벤더에 종속되지 않는 진정한 클라우드 호환성, 운영성, 이식성을 확보하는
+            환경을 지향합니다.
+          </p>
+          <p class="sync-eta-why__sub">
+            <span> "바퀴를 다시 발명하지 말자!" </span>
+            필요한 기능을 직접 개발하기보다 해당 기능을 제공하는 오픈소스 프로젝트를 먼저 찾아보고
+            도입합니다. 이는 DevOps 문화 전파와 자동화 코드를 위해 필수적이며, 핵심 역량만 개발
+            리소스를 집중할 수 있게 합니다.
+          </p>
+        </div>
+        <div class="sync-boot-why__grid">
+          <div class="sync-eta-why__card">
+            <div class="sync-eta-why__card-icon sync-eta-why__card-icon--red">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                  fill="#EF4444"
+                />
+              </svg>
+            </div>
+            <h3 class="sync-eta-why__card-title">MSA 운영 환경 확립</h3>
+            <p class="sync-eta-why__card-desc">
+              컨테이너 운영 환경을 확립하여 유연한 시스템 확장의 기반 마련
+            </p>
+          </div>
+          <div class="sync-eta-why__card">
+            <div class="sync-eta-why__card-icon sync-eta-why__card-icon--blue">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+                  fill="#3B82F6"
+                />
+              </svg>
+            </div>
+            <h3 class="sync-eta-why__card-title">DevOps 환경 정착</h3>
+            <p class="sync-eta-why__card-desc">
+              CI/CD를 통한 중단 없는 개발/배포로 시장 요구사항에 즉각 대응
+            </p>
+          </div>
+          <div class="sync-eta-why__card">
+            <div class="sync-eta-why__card-icon sync-eta-why__card-icon--purple">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"
+                  fill="#8B5CF6"
+                />
+              </svg>
+            </div>
+            <h3 class="sync-eta-why__card-title">장애 대응력 향상</h3>
+            <p class="sync-eta-why__card-desc">
+              선제적 모니터링 및 격리/트레이스 서비스 안정성 극대화
+            </p>
+          </div>
+          <div class="sync-eta-why__card">
+            <div class="sync-eta-why__card-icon sync-eta-why__card-icon--purple">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"
+                  fill="#8B5CF6"
+                />
+              </svg>
+            </div>
+            <h3 class="sync-eta-why__card-title">벤더 종속성 탈피</h3>
+            <p class="sync-eta-why__card-desc">
+              100% 오픈소스 기반으로 특정 업체 종속 없이 최신 기술 추구 도입
             </p>
           </div>
         </div>
       </section>
-      <section class="content__service sync-boot">
-        <span class="page__deco__text" style="top: 21%; left: 0">SYNC BOOT</span>
-        <span class="page__deco__text" style="bottom: 0; right: 0">MICRO SERVICE</span>
-        <div class="inner">
-          <p class="service__desc">
-            오픈소스 기반으로 마이크로 서비스 아키텍처 컨테이너 운영 및 DevOps 플랫폼으로<br />
-            검증되고 안정적인 최적의 솔루션을 제공하는 <strong>개발/운영 플랫폼</strong>입니다.
+
+      <!-- ── FEATURES ── -->
+      <section class="sync-eta-features sync-eta-tech">
+        <div class="sync-eta-features__header sync-eta-tech__header">
+          <p class="sync-eta-features__eyebrow">TECHNOLOGY STACK</p>
+          <h2 class="sync-eta-features__title sync-eta-tech__title">
+            플랫폼 핵심 기술 및 운영 환경
+          </h2>
+          <p class="sync-eta-tech__sub">
+            100% 검증된 오픈소스 생태계로 구축된 강력한 분산 시스템 스택
           </p>
-          <div class="service__wrap">
-            <div>
-              <div class="service-01">
-                <h4>Containers</h4>
-                <p>
-                  속도를 위한 가볍고 일관된 애플리케이션 제공<br />
-                  컨테이너 이미지 생성 및 레지스트리 등록<br />
-                  선택한 프라이빗 혹은 퍼블릭 클라우드에 배포
-                </p>
-              </div>
-              <div class="service-02">
-                <h4>Apps Performance<br />Monitoring</h4>
-                <p>
-                  Celebrities<br />
-                  Landmarks
-                </p>
-              </div>
-            </div>
-            <div>
-              <div class="service-03">
-                <h4>DevOps</h4>
-                <p>
-                  속도 및 확장을 위한 개발, 테스트, 스테이지, 운영,<br />
-                  자동화, CI/CD 파이프라인을 통한 마이크로 서비스 배포
-                </p>
-              </div>
-              <div class="service-04">
-                <h4>Microservices</h4>
-                <p>
-                  복잡한 모놀리식 애플리케이션을 분해하여 비즈니스<br />
-                  요구에 집중하기 위한 15가지 요소를 기반으로 하는<br />
-                  마이크로 서비스 구축
-                </p>
-              </div>
-            </div>
-          </div>
-          <span class="page__deco type1"></span>
         </div>
-      </section>
-      <section class="content__feature">
-        <div class="inner">
-          <div class="content__title">
-            <span>핵심 기능</span>
-            <h3>Main <strong>Features</strong></h3>
-          </div>
 
-          <div class="h100"></div>
-
-          <div class="mobile-swiper">
-            <ul class="feature_wrap">
-              <li class="">
-                <img src="/assets/images/pages/sync_boot/feature-01.png" alt="" />
-                <h4>오픈소스 기반<br />MSA 플랫폼</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-                </p>
-              </li>
-              <li class="">
-                <img src="/assets/images/pages/sync_boot/feature-02.png" alt="" />
-                <h4>검증된 솔루션</h4>
-                <p>다수의 구축 사례를 통해 검증된 솔루션으로 빠른 구축 지원</p>
-              </li>
-              <li class="">
-                <img src="/assets/images/pages/sync_boot/feature-03.png" alt="" />
-                <h4>부가기능 및<br />SLA 보장</h4>
-                <p>
-                  오픈소스에 대한 기술력을 바탕으로 표준 기술지원 서비스는 물론 SLA를 보장하는
-                  엔터프라이즈 기술지원 서비스를 제공
-                </p>
-              </li>
-              <li class="">
-                <img src="/assets/images/pages/sync_boot/feature-04.png" alt="" />
-                <h4>모듈화된<br />설계</h4>
-                <p>모듈화된 구조로 고객의 수요에 맞게 선택적으로 구축 가능</p>
-              </li>
-              <li class="">
-                <img src="/assets/images/pages/sync_boot/feature-05.png" alt="" />
-                <h4>확장성</h4>
-                <p>서비스 수요에 따라 유연하게 확장 가능하며, 이음새 없이 부가 기능을 수용</p>
-              </li>
-              <li class="">
-                <img src="/assets/images/pages/sync_boot/feature-06.png" alt="" />
-                <h4>E2E 솔루션</h4>
-                <p>
-                  컨테이너 관리에서 CI/CD, 모니터링, API 관리, 인증에 이르기까지 E2E 솔루션 제공
-                </p>
-              </li>
+        <!-- 3열 기술 카드 -->
+        <div class="sync-eta-tech__grid">
+          <div class="sync-eta-feat-card sync-eta-tech__card">
+            <h3 class="sync-eta-feat-card__title sync-eta-tech__card-title">
+              백엔드 &amp; 데이터베이스
+            </h3>
+            <ul class="sync-eta-tech__list">
+              <li>Spring Boot / Spring Cloud</li>
+              <li>MyBatis-Plus</li>
+              <li>JWT (JSON Web Token)</li>
+              <li>MySQL, Oracle 등 다수 지원</li>
             </ul>
-            <div class="swiper-controls">
-              <div class="swiper-pagination"></div>
-              <div class="swiper-navigator">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
-            </div>
           </div>
-        </div>
-        <script>
-          function handleResize() {
-            if (window.innerWidth <= 1280) {
-              if (swiperInstance === null) {
-                initSwiper(".mobile-swiper");
-              }
-            } else {
-              destroySwiper(".mobile-swiper");
-            }
-          }
-          handleResize();
 
-          window.addEventListener("resize", handleResize);
-        </script>
-      </section>
-      <section class="content__composition">
-        <div class="inner">
-          <div class="content__title">
-            <span>시스템 구성</span>
-            <h3>System <strong>Composition</strong></h3>
-          </div>
-          <figure class="diagram">
-            <img
-              src="/assets/images/pages/sync_boot/composition-img.png"
-              alt=""
-              class="desktop-image"
-            />
-            <img
-              src="/assets/images/pages/sync_boot/composition-img-m.png"
-              alt=""
-              class="mobile-image"
-            />
-          </figure>
-        </div>
-        <span class="page__deco type2"></span>
-      </section>
-      <section class="content__function sync-boot">
-        <div class="inner">
-          <div class="content__title alignLeft mCenter">
-            <span>주요 기능</span>
-            <h3>Main <strong>Function</strong></h3>
-            <h4>클라우드 네이티브/오픈소스</h4>
-          </div>
-          <div class="content__dial">
-            <div class="dial__wrap">
-              <button class="active" type="button" id="dial-01">
-                <div class="btn__inner">
-                  <img src="/assets/images/pages/sync_boot/dial-01.svg" alt="" />
-                  <span>Container</span>
-                </div>
-              </button>
-              <button type="button" id="dial-02">
-                <div class="btn__inner">
-                  <img src="/assets/images/pages/sync_boot/dial-02.svg" alt="" />
-                  <span>Service Mesh</span>
-                </div>
-              </button>
-              <button type="button" id="dial-03">
-                <div class="btn__inner">
-                  <img src="/assets/images/pages/sync_boot/dial-03.svg" alt="" />
-                  <span>Service Discovery</span>
-                </div>
-              </button>
-              <button type="button" id="dial-04">
-                <div class="btn__inner">
-                  <img src="/assets/images/pages/sync_boot/dial-04.svg" alt="" />
-                  <span>API Gateway</span>
-                </div>
-              </button>
-              <button type="button" id="dial-05">
-                <div class="btn__inner">
-                  <img src="/assets/images/pages/sync_boot/dial-05.svg" alt="" />
-                  <span>Monitoring</span>
-                </div>
-              </button>
-              <button type="button" id="dial-06">
-                <div class="btn__inner">
-                  <img src="/assets/images/pages/sync_boot/dial-06.svg" alt="" />
-                  <span>CD/DI</span>
-                </div>
-              </button>
-              <button type="button" id="dial-07">
-                <div class="btn__inner">
-                  <img src="/assets/images/pages/sync_boot/dial-06.svg" alt="" />
-                  <span>Services</span>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="dial__desc">
-          <div class="desc__wrap">
-            <ul>
-              <li class="dial-item active">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-01.svg" alt="" /> Container
-                </h4>
-                <p class="title">서비스 가상화</p>
-                <p class="desc">
-                  Kubernetes, Docker, Apache Mesos,<br />
-                  OKD, Operator Hub, Swarm,<br />
-                  LXC, Portainer, Rancher
-                </p>
-              </li>
-              <li class="dial-item">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-02.svg" alt="" /> Service Mesh
-                </h4>
-                <p class="title">애플리케이션 데이터 공유 제어</p>
-                <p class="desc">Istio, Linkerd, Cilium, Consul connect, Traefik, OSM, NSM, Kuma</p>
-              </li>
-              <li class="dial-item">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-03.svg" alt="" /> Service
-                  Discovery
-                </h4>
-                <p class="title">서비스의 가용 상태, 서비스 식별 관리</p>
-                <p class="desc">
-                  Consul, Etcd, Apache Zookeeper, Doozer, Netfilx's Eureka, SamrtStack, Serf
-                </p>
-              </li>
-              <li class="dial-item">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-04.svg" alt="" /> API Gateway
-                </h4>
-                <p class="title">모든 서비스 요청의 단일지점</p>
-                <p class="desc">
-                  Kong, Tyk, KrakenD.io, Gravitee, Gloo Edge, Goku, WSO2, Fusio, Apiman
-                </p>
-              </li>
-              <li class="dial-item">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-05.svg" alt="" /> Monitoring
-                </h4>
-                <p class="title">서비스 상태/서비스 통찰</p>
-                <p class="desc">
-                  SigNoz, Graphite, Pinpoint, Prometheus, Javamelody, Stagemonitor, Scouter, Zipkin,
-                  Jaeger, Apache Skywalking, Elastic APM, App Metrics, Glowroot
-                </p>
-              </li>
-              <li class="dial-item">
-                <h4><img src="/assets/images/pages/sync_boot/dial-06.svg" alt="" /> CD/DI</h4>
-                <p class="title">통합/배포 자동화</p>
-                <p class="desc">
-                  Argo CD, CircleCI, GoCD, Gradle, Helm, Jenkins, GitLab, Codeship, Buddy
-                </p>
-              </li>
-              <li class="dial-item">
-                <h4><img src="/assets/images/pages/sync_boot/dial-07.svg" alt="" /> Service</h4>
-                <p class="title">고객에게 제공할 가치</p>
-                <p class="desc">
-                  Spring, Django, CakePHP, Rails, ASP.NET, Laravel, Vue, Express, Angular, React
-                </p>
-              </li>
+          <div class="sync-eta-feat-card sync-eta-tech__card">
+            <h3 class="sync-eta-feat-card__title sync-eta-tech__card-title">프론트엔드</h3>
+            <ul class="sync-eta-tech__list">
+              <li>Vue.js</li>
+              <li>Ant Design Vue</li>
+              <li>React (옵션)</li>
+              <li>반응형 웹 디자인 지원</li>
             </ul>
-            <div class="pagenation">
-              <span class="current">01</span><span class="divide"></span
-              ><span class="total">07</span>
+          </div>
+
+          <div class="sync-eta-feat-card sync-eta-tech__card">
+            <h3 class="sync-eta-feat-card__title sync-eta-tech__card-title">운영 환경 요구사항</h3>
+            <ul class="sync-eta-tech__list">
+              <li><strong>Java:</strong> Java 8 최적화</li>
+              <li><strong>Build:</strong> Maven 3.5.3</li>
+              <li><strong>DB:</strong> MySQL 5.7+ / 8.0.14+</li>
+              <li><strong>Cache:</strong> Redis 4+</li>
+              <li><strong>Search:</strong> Elasticsearch 7.x</li>
+              <li><strong>Container:</strong> Docker 1.13.1+</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MSA 태그 영역 -->
+        <div class="sync-eta-tech__msa">
+          <h4 class="sync-eta-tech__msa-title">분산 시스템 생태계 (MSA Stack)</h4>
+          <div class="sync-eta-tech__tags">
+            <span class="sync-eta-tech__tag">Spring Cloud Alibaba (Nacos, Sentinel)</span>
+            <span class="sync-eta-tech__tag">Spring Cloud Gateway / Zuul</span>
+            <span class="sync-eta-tech__tag">OpenFeign &amp; Ribbon</span>
+            <span class="sync-eta-tech__tag">Spring Security</span>
+            <span class="sync-eta-tech__tag">Seata / RocketMQ</span>
+            <span class="sync-eta-tech__tag">ELK + Filebeat</span>
+            <span class="sync-eta-tech__tag">Spring Cloud Admin / Prometheus</span>
+            <span class="sync-eta-tech__tag">Skywalking</span>
+            <span class="sync-eta-tech__tag">XXL-JOB</span>
+            <span class="sync-eta-tech__tag">Sharding-JDBC</span>
+            <span class="sync-eta-tech__tag">Rancher</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PROCESS (플랫폼 상세 기능) ── -->
+      <section class="sync-boot-process sync-boot-detail">
+        <div class="sync-boot-process__header">
+          <h2 class="sync-boot-process__title sync-boot-detail__title">플랫폼 상세 기능</h2>
+          <p class="sync-eta-tech__sub sync-boot-process__sub sync-boot-detail__sub">
+            개발, 운영, 모니터링, 비즈니스 확장을 아우르는 통합 기능
+          </p>
+        </div>
+        <div class="sync-boot-detail__grid">
+          <div class="sync-boot-detail__card">
+            <div class="sync-boot-detail__card-head">
+              <span class="sync-boot-detail__icon sync-boot-detail__icon--blue">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path
+                    d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3m8 0h3a2 2 0 002-2v-3"
+                    stroke="#3B82F6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="sync-boot-detail__card-title">UI/UX 및 개발 생산성</h3>
+            </div>
+            <div class="sync-boot-detail__card-body">
+              <p>
+                <strong>Ant Design Vue 래핑 컴포넌트:</strong> 정형화된 페이지를 빠르게 생산하여
+                디자이너/퍼블리서 자원 최소화. 반응형 환경 지원.
+              </p>
+              <p>
+                <strong>코드 생성기 (Code Generator):</strong> Velocity, Freemarker 기반 코드
+                생성기를 통해 CRUD 및 복잡한 기능 구현 효율화.
+              </p>
+              <p>
+                <strong>온라인 개발 모드 (No Code):</strong> 온라인 설정 폼/리포트, 온라인
+                차트/프로세스 디자인 기능을 통해 개발 비용 대폭 절감.
+              </p>
+            </div>
+          </div>
+          <div class="sync-boot-detail__card">
+            <div class="sync-boot-detail__card-head">
+              <span class="sync-boot-detail__icon sync-boot-detail__icon--green">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path
+                    d="M5 12h14M12 5l7 7-7 7"
+                    stroke="#10B981"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="sync-boot-detail__card-title">시스템 관리 및 분산 환경</h3>
+            </div>
+            <div class="sync-boot-detail__card-body">
+              <p>
+                <strong>Nacos 기반 관리:</strong> 서비스 등록/검색 및 분산 환경의 설정을 중앙에서
+                통합 관리(통합 설정 센터).
+              </p>
+              <p>
+                <strong>게이트웨이 라우팅:</strong> Gateway/Zuul을 통해 API 단일 진입점 제공,
+                라우팅, 메시지 변환 수행.
+              </p>
+              <p>
+                <strong>서킷 브레이커 &amp; 트래픽 제어:</strong> Alibaba Sentinel을 활용한 서비스
+                다운그레이드 및 로드 보호.
+              </p>
+              <p>
+                <strong>다양한 분산 기술:</strong> 분산 트랜잭션(Seata), 캐싱(Redis), 분산
+                스케줄러(XXL-JOB), 메세지큐(Kafka/RabbitMQ) 지원 및 Docker/K8s/Portainer 컨테이너
+                운영 지원.
+              </p>
+            </div>
+          </div>
+          <div class="sync-boot-detail__card">
+            <div class="sync-boot-detail__card-head">
+              <span class="sync-boot-detail__icon sync-boot-detail__icon--purple">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    stroke="#8B5CF6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="sync-boot-detail__card-title">통합 인증 및 권한 관리</h3>
+            </div>
+            <div class="sync-boot-detail__card-body">
+              <p>
+                <strong>게이트웨이 &amp; URL 수준 권한:</strong> API Gateway 통합 인증 및 세부화된
+                URL-level 제어로 보안 강화.
+              </p>
+              <p>
+                <strong>다양한 로그인 및 다중 사용자:</strong> OAuth2, 패스워드, 모바일, SSO(OpenID)
+                지원 및 여러 유형의 사용자를 별도 DB로 분리 후 통합 인증관리 지원.
+              </p>
+              <p>
+                <strong>JWT &amp; RBAC:</strong> JSON Web Token 방식 및 여러/사용자/역할/부서별
+                세분화된 권한 접근 제어(RBAC) 체계 제공.
+              </p>
+            </div>
+          </div>
+          <div class="sync-boot-detail__card">
+            <div class="sync-boot-detail__card-head">
+              <span class="sync-boot-detail__icon sync-boot-detail__icon--orange">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                  <path
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    stroke="#F97316"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="sync-boot-detail__card-title">모니터링 및 로깅</h3>
+            </div>
+            <div class="sync-boot-detail__card-body">
+              <p>
+                <strong>통합 로그 센터 (ELK):</strong> Elasticsearch, Logstash, Kibana + Filebeat로
+                비즈니스 로그 수집/시각화.
+              </p>
+              <p>
+                <strong>시스템 &amp; APM:</strong> Grafana, Prometheus(Three Musketeers) 매트릭 수집
+                및 SkyWalking을 통한 마이크로서비스 분산 호출 추적, 병목 감지.
+              </p>
+              <p>
+                <strong>로그 링크 &amp; SQL 모니터링:</strong> 트랜잭션 추적을 GTXID/LTXID 생성 및
+                느린 쿼리(Slow SQL) 통계 제공.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="sync-boot-detail__wide">
+          <div class="sync-boot-detail__wide-inner">
+            <div class="sync-boot-detail__wide-col">
+              <div class="sync-boot-detail__card-head">
+                <span class="sync-boot-detail__icon sync-boot-detail__icon--indigo">
+                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                    <path
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6l2 2-2 2M8 6L6 8l2 2"
+                      stroke="#6366F1"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h3 class="sync-boot-detail__card-title">비즈니스 지원 기능 &amp; 인프라 툴</h3>
+              </div>
+              <div class="sync-boot-detail__card-body">
+                <p>
+                  <strong>멀티 테넌시:</strong> 애플리케이션 격리를 통해 여러 테넌트가 동일 시스템
+                  분리 사용.
+                </p>
+                <p>
+                  <strong>멱등성 보장:</strong> 동일 작업 요청에 대한 일관성 유지 (중복 클릭 부작용
+                  방지).
+                </p>
+                <p>
+                  <strong>문서 자동화 &amp; 도구:</strong> Swagger API 문서 자동화, Hutool 기반 개발
+                  도구, Autopoi를 활용한 엑셀 입출력 지원, 통합 에러 처리.
+                </p>
+              </div>
+            </div>
+            <div class="sync-boot-detail__wide-col">
+              <div class="sync-boot-detail__card-body sync-boot-detail__card-body--top">
+                <p><strong>데이터 시각화:</strong> Drag &amp; Drop 대시보드 및 차트 리포트 빌더.</p>
+                <p>
+                  <strong>CI/CD 인프라:</strong> GitLab, Jenkins, Nexus, Sonarqube를 포함한 지속적
+                  통합/배포 자동화.
+                </p>
+                <p>
+                  <strong>강력한 보안:</strong> OWASP TOP 10 방어, 파라미터 필터링, AES/SHA256
+                  등으로 데이터 안전화.
+                </p>
+                <p>
+                  <strong>클라우드 스토리지:</strong> Nextcloud, Onlyoffice를 통한 파일 저장/편집
+                  기능.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="content__flatform">
-        <span class="page__deco__text" style="bottom: 0; left: 0">OPEN SOURCE<br />PLATFORM</span>
-        <div class="inner">
-          <div class="content__title alignLeft mCenter">
-            <h4>오픈소스 플랫폼 구축</h4>
-          </div>
-          <div class="content__list">
-            <div class="item">
-              <div class="head">통합 인증/권한</div>
-              <div class="body">
-                <ul>
-                  <li>
-                    <span class="category">통합 인증</span>
-                    <span class="name type1">SpringCloudGateway</span>
-                  </li>
-                  <li>
-                    <span class="category">URL 권한 관리</span>
-                    <span class="name type1">SpringCloudGateway</span>
-                  </li>
-                  <li>
-                    <span class="category">OAuth2</span>
-                    <span class="name type2">SpringSecurity/Auth0</span>
-                  </li>
-                  <li>
-                    <span class="category">아이디/패스워드 로그인</span>
-                    <span class="name type2">SpringSecurity/Auth0</span>
-                  </li>
-                  <li>
-                    <span class="category">OpenID 로그인</span>
-                    <span class="name type2">SpringSecurity/Auth0</span>
-                  </li>
-                  <li>
-                    <span class="category">써드파티 로그인</span>
-                    <span class="name type2">SpringSecurity/Auth0</span>
-                  </li>
-                </ul>
-              </div>
+
+      <!-- ── TESTIMONIALS ── -->
+      <section class="sync-eta-testimonials section__syncboot">
+        <div class="sync-eta-testimonials__header">
+          <p class="sync-eta-testimonials__eyebrow">USE CASES</p>
+          <h2 class="sync-eta-testimonials__title">운영 환경 및 성곡 구축 사례</h2>
+        </div>
+
+        <div class="sync-boot-testimonials__grid sync-boot-cases__grid">
+          <div class="sync-boot-testi-card sync-boot-cases__card">
+            <div class="sync-boot-cases__card-head">
+              <i class="bi bi-check-lg"></i>
+              <h3 class="sync-boot-cases__title">홈플러스 MIS 재구축</h3>
+              <span class="sync-boot-cases__badge sync-boot-cases__badge--ing">진행 중</span>
             </div>
-            <div class="item">
-              <div class="head">모니터링</div>
-              <div class="body">
-                <ul>
-                  <li>
-                    <span class="category">콜체인 모니터링</span>
-                    <span class="name type3">SKYWalking</span>
-                  </li>
-                  <li>
-                    <span class="category">어플리케이션 토폴로지</span>
-                    <span class="name type3">SKYWalking</span>
-                  </li>
-                  <li>
-                    <span class="category">SQL 모니터링</span>
-                    <span class="name type4">Elasticsearch, Logstach, Kibana</span>
-                  </li>
-                  <li>
-                    <span class="category">서비스 성능 모니터링</span>
-                    <span class="name type5">Sentinel</span>
-                  </li>
-                  <li>
-                    <span class="category">서비스 흐름 조절</span>
-                    <span class="name type5">Sentinel</span>
-                  </li>
-                  <li>
-                    <span class="category">서비스 모니터링</span>
-                    <span class="name type6">Grafana, Prometheus, Exporter</span>
-                  </li>
-                  <li>
-                    <span class="category">서버 모니터링</span>
-                    <span class="name type6">Grafana, Prometheus, Exporter</span>
-                  </li>
-                </ul>
-              </div>
+            <p class="sync-boot-cases__desc">
+              노후화된 임대매장 관리 시스템을 현대화하고 플랫폼 환경을 표준화한 프로젝트입니다.
+              (2023.03 ~ 진행 중)
+            </p>
+
+            <div class="sync-boot-cases__block">
+              <p class="sync-boot-cases__block-title">기존 시스템의 문제점</p>
+              <p class="sync-boot-cases__block-desc">
+                서버 단일 구성 및 노후화된 프레임워크(ASP.Net 1.1, Oracle 9i, Pro*C) 사용으로 인한
+                성능 저하 및 기술 지원 한계 발생.
+              </p>
             </div>
-            <div class="item">
-              <div class="head">분산 시스템</div>
-              <div class="body">
-                <ul>
-                  <li>
-                    <span class="category">서비스 장애 대응</span>
-                    <span class="name type5">Sentinel</span>
-                  </li>
-                  <li>
-                    <span class="category">URL/메소드별 유입량 조절</span>
-                    <span class="name type5">Sentinel</span>
-                  </li>
-                  <li>
-                    <span class="category">통합 설정 관리</span>
-                    <span class="name type7">Nacos</span>
-                  </li>
-                  <li>
-                    <span class="category">통합 로그 관리</span>
-                    <span class="name type4">Elasticsearch, Logstach, Kibana</span>
-                  </li>
-                  <li>
-                    <span class="category">통합 검색</span>
-                    <span class="name type8">Elasticsearch</span>
-                  </li>
-                  <li>
-                    <span class="category">분산 캐시</span>
-                    <span class="name type9">Redis</span>
-                  </li>
-                  <li>
-                    <span class="category">분산 Lock</span>
-                    <span class="name type9">Redis</span>
-                  </li>
-                  <li>
-                    <span class="category">분산 배치 관리</span>
-                    <span class="name type10">XXL Job</span>
-                  </li>
-                  <li>
-                    <span class="category">분산 트랜잭션</span>
-                    <span class="name type11">TX LCN /Seata/RocketMQ</span>
-                  </li>
-                  <li>
-                    <span class="category">서비스 호출 로그 추적</span>
-                    <span class="name type4">Elasticsearch, Logstach, Kibana</span>
-                  </li>
-                </ul>
-              </div>
+
+            <div class="sync-boot-cases__block">
+              <p class="sync-boot-cases__block-title">플랫폼 현대화 (SyncBoot 적용)</p>
+              <ul class="sync-boot-cases__list">
+                <li>ASP.Net → Java Spring Boot 전환</li>
+                <li>Oracle 9i → 오픈소스 EDB (PostgreSQL) 전환</li>
+                <li>Pro*C → Java 기반 배치 처리로 전환</li>
+              </ul>
             </div>
-            <div class="item">
-              <div class="head">업무 지원</div>
-              <div class="body">
-                <ul>
-                  <li>
-                    <span class="category">멀티 테넌트(Tenant)</span>
-                    <span class="name type12">MybatisPlus</span>
-                  </li>
-                  <li>
-                    <span class="category">RBAC 기반 권한 관리</span>
-                    <span class="name type13">Spring Security</span>
-                  </li>
-                  <li>
-                    <span class="category">엑셀 내보내기/가져오기</span>
-                    <span class="name type14">Autopoi</span>
-                  </li>
-                  <li>
-                    <span class="category">Code Generator</span>
-                    <span class="name type15">Velocity, Freemarker</span>
-                  </li>
-                  <li>
-                    <span class="category">Unified Exception Handling</span>
-                    <span class="name type4">Spring</span>
-                  </li>
-                  <li>
-                    <span class="category">Audit Log</span>
-                    <span class="name type4">Spring</span>
-                  </li>
-                </ul>
-              </div>
+
+            <div class="sync-boot-cases__result">
+              <svg viewBox="0 0 20 20" fill="none" width="16" height="16">
+                <path
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  fill="#10B981"
+                />
+              </svg>
+              <p>
+                <strong>도입 효과:</strong> 신규 요구사항에 민첩하게 대응 가능한 아키텍처 마련,
+                확장성 및 클라우드 전환 용이성 확보.
+              </p>
             </div>
           </div>
-          <span class="page__deco type3"></span>
+
+          <div class="sync-boot-testi-card sync-boot-cases__card">
+            <div class="sync-boot-cases__card-head">
+              <i class="bi bi-check-lg"></i>
+              <h3 class="sync-boot-cases__title">SK매직 매직플러스 Back Office</h3>
+            </div>
+            <p class="sync-boot-cases__desc">
+              구독형 이커머스 서비스 관리를 위한 전사 통합 어드민 시스템 구축.<br />
+              (약 4개월, 예산 2억 내외)
+            </p>
+
+            <div class="sync-boot-cases__block">
+              <p class="sync-boot-cases__block-title">핵심 개발 범위</p>
+              <p class="sync-boot-cases__block-desc">
+                주문/결제/배송, 제품 전열, 고객 문의 응대, 콘텐츠(리뷰 등) 관리 및 API 통계
+                대시보드의 공통 기능 플랫폼화.
+              </p>
+            </div>
+
+            <div class="sync-boot-cases__block">
+              <p class="sync-boot-cases__block-title">SyncBoot 플랫폼의 역할</p>
+              <ul class="sync-boot-cases__list">
+                <li>AWS 상에 Spring Boot + MSA 유연한 운영 기반 구축</li>
+                <li>Jenkins/GitLab 활용 CI/CD 환경 정착 및 무중단 배포</li>
+                <li>ReactJS 기반의 UI/UX 표준 프레임워크 적용</li>
+                <li>API 게이트웨이를 통한 인터페이스 통합 관리</li>
+                <li>ELK, Grafana, Skywalking 기반 실시간 로깅 및 성능 모니터링 적용</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-
     <!--  Footer 영역  -->
     <div id="footer-include"></div>
-
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
+    <script>
+      function toggleFaq(el) {
+        const item = el.closest('.sync-eta-faq__item');
+        const isOpen = item.classList.contains('is-open');
+        document
+          .querySelectorAll('.sync-eta-faq__item.is-open')
+          .forEach((i) => i.classList.remove('is-open'));
+        if (!isOpen) item.classList.add('is-open');
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 
   <script>
-    <!--  공통 프레임 불러오기  -->
-    $(document).ready(function() {
-      $("#header-include").load("/pages/include/header.html", () => {
-        initCommon(); // 헤더가 로드된 후 초기화
-      });
-      $("#footer-include").load("/pages/include/footer.html")
-      $("#floating-menu-include").load("/pages/include/floating-menu.html")
-    })
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('/pages/include/header.html')
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById('header-include').innerHTML = html;
+          initCommon();
+        });
+
+      fetch('/pages/include/footer.html')
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById('footer-include').innerHTML = html;
+        });
+
+      fetch('/pages/include/floating-menu.html')
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById('floating-menu-include').innerHTML = html;
+        });
+    });
   </script>
 </html>

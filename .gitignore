@@ -3,3 +3,4 @@
 *.txt
 .idea/
 *.iml
+.vscode/settings.json

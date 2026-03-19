@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+
+    <meta property="og:url" content="https://basicit.co.kr" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_business.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- 
+    <style>
+
+
+      /* ══════════════════════════════
+         SPLASH — DARK HERO
+      ══════════════════════════════ */
+      .commerce-splash {
+        background: linear-gradient(155deg, #0d1228 0%, #151a35 55%, #1a1030 100%);
+        padding: 68px 60px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .commerce-splash::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -80px;
+        width: 460px;
+        height: 460px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 92, 58, 0.22) 0%, transparent 68%);
+        pointer-events: none;
+      }
+
+      .commerce-splash::after {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        left: 15%;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 65%);
+        pointer-events: none;
+      }
+
+      .splash-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--coral-mid);
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      .splash-title {
+        font-size: 42px;
+        font-weight: 900;
+        line-height: 1.22;
+        letter-spacing: -1px;
+        color: var(--white);
+        margin-bottom: 14px;
+      }
+
+      .splash-title .splash-accent {
+        color: var(--coral);
+      }
+
+      .splash-subtitle {
+        font-size: 16px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 20px;
+      }
+
+      .splash-desc {
+        font-size: 13px;
+        color: #9b8ec8;
+        line-height: 1.9;
+        max-width: 520px;
+        margin-bottom: 10px;
+      }
+
+      .commerce-splash {
+        background: linear-gradient(155deg, #0d1228 0%, #151a35 55%, #1a1030 100%);
+        padding: 68px 60px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .commerce-splash::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -80px;
+        width: 460px;
+        height: 460px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 92, 58, 0.22) 0%, transparent 68%);
+        pointer-events: none;
+      }
+
+      .commerce-splash::after {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        left: 15%;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 65%);
+        pointer-events: none;
+      }
+
+      .splash-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--coral-mid);
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      .splash-block {
+        background: linear-gradient(160deg, #0b1229 0%, #131e3a 55%, #0f2050 100%);
+        padding: 72px 64px 80px;
+        position: relative;
+        overflow: hidden;
+        min-height: 480px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .splash-block::before {
+        content: '';
+        position: absolute;
+        top: -120px;
+        right: -80px;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(46, 111, 224, 0.22) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .splash-block::after {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        left: 30%;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 65%);
+        pointer-events: none;
+      }
+
+      .splash-eyebrow {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--cyan);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .splash-heading {
+        font-size: 46px;
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        color: var(--white);
+        margin-bottom: 10px;
+        max-width: 600px;
+      }
+
+      .splash-heading .accent-word {
+        color: var(--cyan);
+      }
+
+      .splash-heading .bracket-text {
+        display: inline-block;
+        color: var(--white);
+      }
+
+      .splash-subhead {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--blue-mid);
+        margin-bottom: 20px;
+      }
+
+      .splash-body {
+        font-size: 16px;
+        color: #8ea6c8;
+        line-height: 1.9;
+        max-width: 520px;
+        margin-bottom: 36px;
+      }
+
+      .splash-checklist {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .splash-checklist li {
+        font-size: 13px;
+        color: #b0c8e8;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .splash-checklist li::before {
+        content: '✓';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(46, 111, 224, 0.4);
+        border: 1px solid rgba(46, 111, 224, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: var(--cyan);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* ══════════════════════════════
+         INTRO SECTION
+      ══════════════════════════════ */
+      .intro-section {
+        padding: 68px 60px;
+        display: flex;
+        flex-direction: row;
+        gap: 52px;
+        align-items: start;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .intro-left {
+        flex: 5;
+      }
+
+      .intro-main-text {
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1.4;
+        color: var(--text-dark);
+        letter-spacing: -0.4px;
+        margin-bottom: 22px;
+      }
+
+      .intro-main-text em {
+        font-style: normal;
+      }
+
+      .intro-body-text {
+        font-size: 1rem;
+        color: var(--text-body);
+        line-height: 1.9;
+        margin-bottom: 28px;
+      }
+
+      .intro-bullet-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .intro-bullet-list li {
+        font-size: 14px;
+        color: var(--text-body);
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.7;
+      }
+
+      .intro-bullet-list li::before {
+        content: '▶';
+        font-size: 10px;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      .intro-right {
+        background: var(--coral-pale);
+        border-radius: 16px;
+        text-align: center;
+        flex: 5;
+        height: 332px;
+      }
+      .intro-right img {
+        height: 100%;
+      }
+      .intro-badge-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, var(--coral), var(--orange));
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 14px;
+        box-shadow: 0 8px 24px rgba(255, 92, 58, 0.35);
+      }
+
+      .intro-badge-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .intro-badge-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--coral);
+        margin-bottom: 6px;
+      }
+
+      .intro-badge-desc {
+        font-size: 11px;
+        color: #aa6655;
+        line-height: 1.7;
+      }
+
+      /* ══════════════════════════════
+         SOLUTION GRID
+      ══════════════════════════════ */
+      .solution-section {
+        background: var(--off-white);
+        padding: 68px 60px;
+      }
+
+      .section-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--coral);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .section-heading {
+        font-size: 24px;
+        font-weight: 900;
+        text-align: center;
+        color: var(--text-dark);
+        letter-spacing: -0.3px;
+        margin-bottom: 44px;
+      }
+
+      .solution-card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .sol-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px 24px;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+
+      /* .sol-card:hover {
+        box-shadow: 0 8px 28px rgba(255,92,58,0.10);
+        transform: translateY(-3px);
+      } */
+
+      .sol-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--coral-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+
+      .sol-card-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .sol-card-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+      }
+
+      .sol-card-desc {
+        font-size: 12px;
+        color: var(--text-body);
+        line-height: 1.85;
+        color: var(--text-dark) !important;
+      }
+
+      /* ══════════════════════════════
+         EFFECT SECTION
+      ══════════════════════════════ */
+      .effect-section {
+        background: var(--white);
+        padding: 68px 60px;
+        border-top: 1px solid var(--border);
+      }
+
+      .effect-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 44px;
+      }
+
+      .effect-card {
+        background: var(--off-white);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .effect-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, var(--coral), var(--orange));
+        border-radius: 14px 14px 0 0;
+      }
+
+      .effect-card-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+      }
+
+      .effect-card-desc {
+        font-size: 12px;
+        color: var(--text-body);
+        line-height: 1.85;
+      }
+
+      
+    </style> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body data-type="detail">
+    <!-- s : 스킵 -->
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- e : 스킵 -->
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+    <main id="container" class="commerce__main" tabindex="0">
+      <!-- ── HERO ── -->
+      <section class="ac-hero">
+        <div class="ac-hero__container">
+          <div class="ac-hero__inner">
+            <div class="ac-hero__left">
+              <span class="ac-hero__badge">New Product Release</span>
+              <h1 class="ac-hero__title">
+                초개인화된 쇼핑 경험의 시작<br />
+                AI커머스 플랫폼
+              </h1>
+              <p class="ac-hero__desc">
+                단순한 쇼핑몰을 넘어 고객의 마음을 읽고 행동을 예측합니다. 빅데이터와 인공지능이
+                결합된 스마트 커머스 환경으로 매출과 고객 만족을 동시에 높이세요.
+              </p>
+              <a href="#" class="ac-hero__btn">자세히</a>
+            </div>
+            <div class="ac-hero__right">
+              <div class="ac-hero__img-wrap">
+                <img
+                  src="https://landinggo.com/assets/img/stock/hero/saas-figcomp-1320x900.webp"
+                  alt="Product dashboard interface"
+                  class="ac-hero__img"
+                  width="1320"
+                  height="900"
+                  loading="lazy"
+                />
+                <div class="ac-hero__float ac-hero__float--tr">
+                  <div class="ac-hero__float-icon ac-hero__float-icon--green">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      width="16"
+                      height="16"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="ac-hero__float-label">Monthly Growth</p>
+                    <p class="ac-hero__float-value">+27.4%</p>
+                  </div>
+                </div>
+                <div class="ac-hero__float ac-hero__float--bl">
+                  <div class="ac-hero__float-icon ac-hero__float-icon--blue">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      width="16"
+                      height="16"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="ac-hero__float-label">Active Users</p>
+                    <p class="ac-hero__float-value">12.8k</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── INTRO ── -->
+      <section class="ac-intro">
+        <div class="ac-intro__container">
+          <div class="ac-intro__inner">
+            <div class="ac-intro__left">
+              <h3 class="ac-intro__title">
+                상품 탐색부터 구매, 리텐션까지<br />
+                <em>커머스 여정의 전 과정을 지능화합니다.</em>
+              </h3>
+              <p class="ac-intro__desc">
+                수 많은 고객의 클릭, 체류시간, 구매이력등 행동 데이터를 실시간으로 분석합니다. 각
+                고객에게 가장 알맞은 상품을 제안하고 쇼핑 경험을 최적화하는 맞춤형 e-커머스 플랫폼을
+                구축합니다.
+              </p>
+              <ul class="intro-bullet-list">
+                <li>협업 필터링 및 딥러닝 기반의 정교한 1:1 상품추천</li>
+                <li>카메라 촬영 및 음성을 통한 지능형 상품 검색(Visual/Voice Search)</li>
+                <li>트래픽 폭주에도 유연하게 대응하는 클라우드기반 쇼핑인프라</li>
+                <li>자동화된 고객 행동분석(CRM) 및 맞춤형 마케팅 오토메이션</li>
+              </ul>
+            </div>
+            <div class="ac-intro__right">
+              <div class="ac-intro__img-wrap">
+                <img
+                  src="/assets/images/pages/business_commerce/service-04.png"
+                  alt="AI 커머스 서비스"
+                  class="ac-intro__img"
+                  loading="lazy"
+                  width="1920"
+                  height="1080"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SOLUTION ── -->
+      <section class="ac-solution">
+        <div class="ac-solution__container">
+          <div class="ac-solution__header">
+            <h2 class="ac-solution__title">AI 커머스 핵심 솔루션</h2>
+          </div>
+          <div class="ac-solution__grid">
+            <div class="ac-sol-card">
+              <div class="ac-sol-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+              </div>
+              <h3 class="ac-sol-card__title">초개인화 추천 시스템</h3>
+              <p class="ac-sol-card__desc">
+                고객의 과거 구매 내역, 장바구니, 검색 패턴을 분석하여 취향에 딱 맞는 상품을 메인
+                화면과 상세 페이지에 실시간으로 노출시킵니다.
+              </p>
+            </div>
+
+            <div class="ac-sol-card">
+              <div class="ac-sol-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  />
+                </svg>
+              </div>
+              <h3 class="ac-sol-card__title">이미지 / 음성 검색</h3>
+              <p class="ac-sol-card__desc">
+                원하는 상품의 사진을 찍거나 말로 설명하면, 비전 AI와 자연어 처리(NLP) 기술을 통해
+                쇼핑몰 내 가장 유사한 상품을 빠르고 정확하게 찾아냅니다.
+              </p>
+            </div>
+
+            <div class="ac-sol-card">
+              <div class="ac-sol-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 class="ac-sol-card__title">동적 가격 최적화 (Dynamic Pricing)</h3>
+              <p class="ac-sol-card__desc">
+                재고 현황, 경쟁사 가격, 시장 수요, 프로모션 데이터를 종합적으로 분석하여 이익을
+                극대화할 수 있는 최적의 판매 가격을 실시간으로 산출합니다.
+              </p>
+            </div>
+
+            <div class="ac-sol-card">
+              <div class="ac-sol-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="ac-sol-card__title">AI 쇼핑 챗봇 (가상 점원)</h3>
+              <p class="ac-sol-card__desc">
+                24시간 대기하는 지능형 챗봇이 상품 문의, 사이즈 추천, 배송 조회, 반품 접수 등 고객의
+                다양한 요구를 사람처럼 자연스럽게 응대합니다.
+              </p>
+            </div>
+
+            <div class="ac-sol-card">
+              <div class="ac-sol-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                  />
+                </svg>
+              </div>
+              <h3 class="ac-sol-card__title">자동 상품 태깅 및 분류</h3>
+              <p class="ac-sol-card__desc">
+                상품 이미지를 업로드하면 AI가 색상, 패턴, 카테고리 등의 속성을 자동으로 인식하여
+                태그를 생성하고 분류 업무를 획기적으로 단축합니다.
+              </p>
+            </div>
+
+            <div class="ac-sol-card">
+              <div class="ac-sol-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="ac-sol-card__title">마케팅 오토메이션 (CRM)</h3>
+              <p class="ac-sol-card__desc">
+                고객의 이탈 징후를 사전에 예측하고, 적절한 타이밍에 맞춤형 할인 쿠폰이나 리마인드
+                메시지를 자동으로 발송하여 재구매를 유도합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EFFECT ── -->
+      <section class="ac-effect">
+        <div class="ac-effect__container">
+          <div class="ac-effect__header">
+            <p class="ac-effect__eyebrow">BUSINESS BENEFITS</p>
+            <h2 class="ac-effect__title">스마트 커머스 도입 효과</h2>
+          </div>
+        </div>
+        <div class="ac-effect__grid">
+          <div class="ac-effect-card">
+            <h3 class="ac-effect-card__title">구매 전환율(CVR) 및 객단가 상승</h3>
+            <p class="ac-effect-card__desc">
+              고객이 원할 만한 상품을 즉시에 제안(업셀링/크로스셀링)함으로써 상품 탐색의 피로도를
+              낮추고 장바구니에 담기는 상품의 수와 결제액을 증가시킵니다.
+            </p>
+          </div>
+
+          <div class="ac-effect-card">
+            <h3 class="ac-effect-card__title">고객 이탈 방지 및 충성도 강화</h3>
+            <p class="ac-effect-card__desc">
+              마치 전담 쇼퍼가 붙은 듯한 초개인화된 쇼핑 경험과 24시간 신속한 챗봇 응대를 통해
+              쇼핑몰에 대한 고객 만족도와 브랜드 충성도를 높입니다.
+            </p>
+          </div>
+
+          <div class="ac-effect-card">
+            <h3 class="ac-effect-card__title">MD 및 운영자 리소스 대폭 절감</h3>
+            <p class="ac-effect-card__desc">
+              수만 개의 상품 카테고리 분류, 태그 작성, 메인 상품 진열 등의 수작업을 AI가 자동화하여
+              MD는 기획과 프로모션 등 핵심 업무에 집중할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="ac-effect-card">
+            <h3 class="ac-effect-card__title">데이터 기반의 재고 리스크 최소화</h3>
+            <p class="ac-effect-card__desc">
+              AI의 정교한 수요 예측을 통해 과잉 재고로 인한 보관 비용이나, 품절로 인한 판매 기회
+              손실을 막고 물류(SCM) 효율성을 극대화합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+  </body>
+
+  <script>
+    <!--  공통 프레임 불러오기  -->
+    $(document).ready(function () {
+      $('#header-include').load('/pages/include/header.html', () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $('#footer-include').load('/pages/include/footer.html');
+      $('#floating-menu-include').load('/pages/include/floating-menu.html');
+    });
+
+    const fills = document.querySelectorAll('.feature-progress-fill');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const w = el.dataset.width || 70;
+            el.style.width = w + '%';
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    fills.forEach((el) => observer.observe(el));
+  </script>
+</html>

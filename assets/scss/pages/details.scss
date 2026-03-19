@@ -2112,3 +2112,201 @@ section {
 //     all: unset !important;
 //   }
 // }
+
+
+// ... existing code ...
+
+// History Timeline Styles
+.background_dark {
+  background-color: #1a1a1a;
+  color: $white-color;
+  
+  .content__title {
+    span {
+      color: lighten($root-color, 20%);
+    }
+    
+    h3 {
+      color: $white-color;
+    }
+  }
+}
+
+.history_timeline_wrap {
+  position: relative;
+  padding: 80px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline_line {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, $sign-color, lighten($sign-color, 20%));
+  z-index: 1;
+}
+
+.history_item {
+  position: relative;
+  display: flex;
+  margin-bottom: 60px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.year_marker {
+  position: relative;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  
+  .year {
+    font-size: 24px;
+    font-weight: 700;
+    color: $sign-color;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .marker_dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $sign-color;
+    border: 4px solid #1a1a1a;
+    box-shadow: 0 0 0 2px $sign-color;
+  }
+}
+
+.history_content {
+  flex: 1;
+  margin-left: 40px;
+}
+
+.history_card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(14, 153, 142, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: $white-color;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      position: relative;
+      padding: 8px 0 8px 20px;
+      color: lighten($white-color, 10%);
+      font-size: 16px;
+      line-height: 1.5;
+      
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: $sign-color;
+        font-weight: bold;
+      }
+      
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .history_timeline_wrap {
+    padding: 40px 20px;
+  }
+  
+  .timeline_line {
+    left: 30px;
+  }
+  
+  .year_marker {
+    width: 80px;
+    
+    .year {
+      font-size: 18px;
+    }
+    
+    .marker_dot {
+      width: 12px;
+      height: 12px;
+      border-width: 3px;
+    }
+  }
+  
+  .history_content {
+    margin-left: 20px;
+  }
+  
+  .history_card {
+    padding: 20px;
+    
+    h4 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    
+    ul li {
+      font-size: 14px;
+      padding: 6px 0 6px 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .history_item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  
+  .timeline_line {
+    display: none;
+  }
+  
+  .year_marker {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    
+    .year {
+      margin-bottom: 0;
+      margin-right: 15px;
+    }
+  }
+  
+  .history_content {
+    margin-left: 0;
+    width: 100%;
+  }
+}

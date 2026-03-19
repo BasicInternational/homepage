@@ -1,0 +1,375 @@
+@charset "UTF-8";
+@media screen and (max-width: 769px) {
+  main {
+    width: 100%;
+  }
+  main section {
+    flex-direction: column;
+    padding: 45px 15px;
+  }
+  .mo-br {
+    display: block;
+  }
+  header nav {
+    padding: 0;
+  }
+  /* 모바일사이즈 padding */
+  .experience-section,
+  section.ai-services,
+  section.overview-cards,
+  .ai-services,
+  .xbus-history,
+  .ht-inner,
+  .corp-section,
+  #tabto-pay .flow-section,
+  #tabto-pay .ecosystem-wrap,
+  .cta-bar,
+  .edu-feature-section,
+  .effect-section,
+  .cloud__main > section,
+  .commmuni__main > section,
+  .commerce__main > section,
+  .benev__main > section,
+  .bi__main > section,
+  .finance__main > section {
+    padding: 45px 15px;
+  }
+  /* Card items padding */
+  .effect-item,
+  .service-card {
+    padding: 20px;
+  }
+  header {
+    padding: 0 15px;
+  }
+  header nav.bi__nav .nav__body,
+  header nav.bi__nav .nav__head {
+    padding: 20px;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu {
+    padding-left: 0;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__list {
+    padding-left: 20px;
+  }
+  header nav.bi__nav .nav__body .nav__support a {
+    color: #fff;
+  }
+  footer {
+    padding: 40px 15px;
+  }
+  footer .footer__inner {
+    max-width: 100%;
+  }
+  /* index.html */
+  .hero-modern-business__container .hero-modern-business__content .hero-modern-business__actions {
+    width: 100%;
+  }
+  .hero-modern-business__container
+    .hero-modern-business__content
+    .hero-modern-business__actions
+    > a {
+    width: calc(100% / 2);
+  }
+  .solution {
+    flex-direction: column;
+    background: #222;
+    height: 100%;
+  }
+  .solution .solution-grid {
+    padding: 0;
+  }
+  .agency {
+    height: 100%;
+  }
+  .more-link {
+    position: unset;
+  }
+  /* Sync-Any */
+  .syncany-hero {
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    min-height: unset;
+    overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    padding-top: 50px;
+  }
+  .syncany__scroll {
+    position: unset;
+    width: 100%;
+  }
+  .syncany-hero .syncany__content {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .syncany-hero .syncany__content .syncany__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    color: #fff;
+    animation-delay: 0.25s;
+    margin-bottom: 24px;
+  }
+
+  /* aboutus_history.html */
+  .overview-cards .cases-header h2 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+  .history-page-wrap .ht-heading h2,
+  .corp-heading h2,
+  .org-section .org-header h2,
+  h2.section-title {
+    font-weight: 600;
+  }
+  .overview-cards .overview-cards-wrap {
+    flex-direction: column;
+  }
+  .overview-cards-wrap .card-info .departments .tag__wrap {
+    gap: 8px;
+  }
+  .overview-cards-wrap .card-info .departments .tag__wrap .tag {
+    width: calc(100% / 4);
+    white-space: nowrap;
+  }
+  .overview-cards-wrap .card-info {
+    padding: 20px;
+  }
+  .overview-cards .overview-cards-wrap .card-staff {
+    width: 100%;
+  }
+  .org-section .org-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .corp-cards {
+    padding: 0;
+    gap: 20px;
+  }
+  .card-header {
+    flex-direction: column;
+  }
+  .workforce-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  /* pages/aiservice/ai-book.html */
+  #aisound__body section,
+  #aisound__body nav,
+  #aisound__body footer {
+    padding: 45px 15px;
+  }
+  #aisound__body nav {
+    white-space: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px 15px;
+  }
+  #aisound__body .preview-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #aisound__body .preview-content > *,
+  .preview-item {
+    width: 100%;
+  }
+
+  #aisound__body .preview-content .preview-list .preview-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  #aisound__body .features .features-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  #aisound__body .main-banner h1 {
+    font-weight: 500;
+    font-size: 32px;
+  }
+  #aisound__body .main-banner-sub {
+    font-size: 16px;
+    color: #555;
+  }
+  #aisound__body .tech-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  #aisound__body .tech-inner .tech-col p {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  #aisound__body nav .nav-cta {
+    width: 100%;
+    margin-top: 24px;
+  }
+  #aisound__body .process-steps {
+    max-width: 768px;
+    overflow-x: auto;
+  }
+  /* 구축사례 */
+  .experience-projects__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .experience-section .experience-projects__grid .experience-projects__card-body {
+    padding: 20px;
+  }
+  .xbus-projects {
+    padding: 64px 24px;
+  }
+  .xbus-projects__grid {
+    grid-template-columns: 1fr;
+  }
+  .xbus-history {
+    flex-direction: column;
+  }
+  .xbus-history .xbus-history__table--wrap {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .xbus-history__header {
+    flex-direction: column;
+  }
+  .xbus-history__table th,
+  .xbus-history__table td {
+    padding: 12px 14px;
+  }
+
+  .xbus-history .xbus-history__table--wrap .xbus-history__table {
+    overflow-x: scroll;
+  }
+  .xbus-history .xbus-history__table--wrap .xbus-history__table td,
+  .xbus-history .xbus-history__table--wrap .xbus-history__table th {
+    min-width: 150px;
+  }
+  .xbus-history__table td:first-child {
+    font-weight: normal;
+  }
+  .xbus-history__footer {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .xbus-history__footer .xbus-history__btn {
+    width: 100%;
+  }
+  /* pages/aiservice/tabtopay.html */
+  #tabto-pay .opening-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 15px;
+  }
+  #tabto-pay .opening-btn-row > button {
+    width: calc(100% / 2);
+  }
+  #tabto-pay .opening-right {
+    width: 100%;
+  }
+  #tabto-pay .ecosystem-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #tabto-pay.opening-body {
+    margin-bottom: 45px;
+  }
+  #tabto-pay .opening-headline {
+    font-size: 32px;
+  }
+  .payment-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+  .pay-method-card {
+    border-right: none;
+  }
+  .icon-row {
+    flex-direction: column;
+  }
+  .flow-steps-row {
+    display: flex;
+    overflow-x: auto;
+  }
+  .icon-row .icon-row-item {
+    width: 100%;
+  }
+  .flow-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+  .flow-step-cell {
+    width: 200px;
+    white-space: nowrap;
+  }
+  .flow-benefit-icon {
+    width: auto;
+  }
+  .payment-grid,
+  .flow-section,
+  .ecosystem-wrap {
+    padding: 45px 15px;
+  }
+
+  /* pages/aiservice/pickup.html */
+  .biz-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .dual-section {
+    grid-template-columns: 1fr;
+  }
+  .dual-panel {
+    padding: 20px;
+  }
+  .biz-left,
+  .biz-right {
+    padding: 0;
+  }
+  .cta-bar {
+    grid-template-columns: 1fr;
+  }
+  .biz-stats {
+    margin-bottom: 24px;
+  }
+  /* pages/aiservice/ai-book */
+  .tech-col ul li {
+    justify-content: center;
+  }
+  /* pages/business/aisolution.html */
+  .edu-card-grid,
+  .effect-section__grid {
+    grid-template-columns: 1fr;
+  }
+  .effect-card,
+  .edu-card {
+    padding: 20px;
+  }
+  /* pages/business/communication.html */
+  .service-card-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* pages/business/commerce.html */
+  .ac-hero__inner {
+    flex-direction: column;
+  }
+  .ac-intro__inner {
+    grid-template-columns: 1fr;
+  }
+  .ac-solution__grid {
+    grid-template-columns: 1fr;
+  }
+  .ac-effect__grid {
+    grid-template-columns: 1fr;
+  }
+}
