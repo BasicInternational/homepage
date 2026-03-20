@@ -48,7 +48,7 @@
 
 .biz-hero {
   position: relative;
-  background: #f9fafb;
+  background: var(--off-white);
   overflow: hidden;
 }
 
@@ -1678,7 +1678,6 @@ main section {
   display: flex;
   gap: 0;
   background: var(--off-white);
-  border-top: 1px solid var(--border);
 }
 
 .biz-left {

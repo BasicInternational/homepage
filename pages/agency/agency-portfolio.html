@@ -1,490 +1,649 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,SyncSSL,SSL,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+    <meta property="og:url" content="https://basicit.co.kr" />
 
-<head>
-  <meta charset="UTF-8">
-  <title>베이직인터내셔널</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="title" content="베이직인터내셔널">
-  <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
-  <meta name="keywords" content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,SyncSSL,SSL,생산성,개발,자바">
-  <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="베이직인터내셔널 홈페이지">
-  <meta property="og:description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
-  <meta property="og:image" content="/assets/images/favicon.png">
-  <meta property="og:url" content="https://basicit.co.kr">
-  
-  <!-- 구조화된 데이터 추가 -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "베이직인터내셔널 신사업&에이전시",
-    "description": "고객이 필요로하는 솔루션을 제공하는 전문 에이전시입니다.",
-    "url": "https://basicit.co.kr/pages/agency/agency.html",
-    "mainEntity": {
-      "@type": "Service",
-      "name": "신사업&에이전시 서비스",
-      "description": "고객의 비즈니스 목표를 실현하기 위한 전문 에이전시 서비스",
-      "provider": {
-        "@type": "Organization",
-        "name": "베이직인터내셔널"
-      },
-      "serviceType": "Business Consulting",
-      "areaServed": "KR",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "에이전시 서비스 카탈로그",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "시장조사 및 데이터 분석",
-              "description": "철저한 시장 조사와 데이터 분석을 통한 프로젝트 전략 수립"
-            }
+    <!-- 구조화된 데이터 추가 -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "베이직인터내셔널 신사업&에이전시",
+        "description": "고객이 필요로하는 솔루션을 제공하는 전문 에이전시입니다.",
+        "url": "https://basicit.co.kr/pages/agency/agency.html",
+        "mainEntity": {
+          "@type": "Service",
+          "name": "신사업&에이전시 서비스",
+          "description": "고객의 비즈니스 목표를 실현하기 위한 전문 에이전시 서비스",
+          "provider": {
+            "@type": "Organization",
+            "name": "베이직인터내셔널"
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "요구사항 정리 및 서비스 컨셉 구체화",
-              "description": "고객 요구사항 정리 및 서비스 컨셉 구체화"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "서비스 개발 및 실행 계획",
-              "description": "상세 실행 계획 수립 및 개발 진행"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "서비스 출시 지원",
-              "description": "안정적인 서비스 출시를 위한 지원"
-            }
+          "serviceType": "Business Consulting",
+          "areaServed": "KR",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "에이전시 서비스 카탈로그",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "시장조사 및 데이터 분석",
+                  "description": "철저한 시장 조사와 데이터 분석을 통한 프로젝트 전략 수립"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "요구사항 정리 및 서비스 컨셉 구체화",
+                  "description": "고객 요구사항 정리 및 서비스 컨셉 구체화"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "서비스 개발 및 실행 계획",
+                  "description": "상세 실행 계획 수립 및 개발 진행"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "서비스 출시 지원",
+                  "description": "안정적인 서비스 출시를 위한 지원"
+                }
+              }
+            ]
           }
-        ]
+        }
       }
-    }
-  }
-  </script>
-
-  <link href="/assets/images/favicon.png" rel="icon" type="image/png">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
-  <script src="/assets/js/common.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
-</head>
-
-<body data-type="detail">
-  <!-- s : 스킵 -->
-  <div id="skip__content">
-    <a href="#container">본문 바로가기</a>
-  </div>
-  <!-- e : 스킵 -->
-
-  <!--  Header 영역  -->
-  <div id="header-include"></div>
-
-  <main id="container" tabindex="0">
-    <section class="content__banner">
-      <figure>
-        <img src="/assets/images/pages/agency/banner.jpg" alt="" class="desktop-image" />
-        <img src="/assets/images/pages/agency/banner-m.jpg" alt="" class="mobile-image" />
-      </figure>
-      <div class="inner">
-        <div class="banner__text">
-          <h2>신사업&에이전시<strong></strong></h2>
-          <p>
-            고객이 필요로하는 솔루션을 <span class="mbr"></span>제공하는 전문 에이전시입니다.<br />
-            다양한 업계에서의 풍부한 경험과<span class="mbr"></span> 전문 지식을 바탕으로
-            <span class="pbr"></span>고객의 비즈니스<span class="mbr"></span> 목표를 실현하기 위해
-            최선을 다하고 있습니다.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="content__introduce">
-      <div class="inner">
-        <span class="page__deco type1"></span>
-        <div class="content__title">
-          <span>서비스 소개</span>
-          <h3>Service <strong>Introduce</strong></h3>
-        </div>
-      </div>
-    </section>
-    <section class="service_content_wrap cont1">
-      <span class="page__deco__text p_ui" style="top: 2%; left: 0">SERVICE</span>
-      <span class="page__deco__text p_ui" style="bottom: -3%; right: 0">AGENCY</span>
-      <div class="inner">
-        <div class="service_number">
-          <p>ABOUT BUSINESS #1</p>
-        </div>
-        <div class="service_slide_wrap">
-          <div class="swiper service_content_slide">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/assets/images/pages/agency/slide01_1.png" alt="slide image1">
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/pages/agency/slide01_2.png" alt="slide image2">
-              </div>
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="swiper service_text_box">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <p class="number">
-                01
-              </p>
-              <h4 class="title">
-                시장조사
-              </h4>
-              <p class="text">
-                철저한 시장 조사를 통해 서비스 타겟층, 경쟁사,
-                트렌드, 고객 니즈 등을 파악합니다.<br>
-                이를 통해 얻은 정보를 기반으로 프로젝트 전략을
-                수립합니다.
-              </p>
-            </div>
-            <div class="swiper-slide">
-              <p class="number">
-                02
-              </p>
-              <h4 class="title">
-                데이터 분석
-              </h4>
-              <p class="text">
-                데이터 분석 결과에 따라 도출된 내용은 모두 문서화하여 제작합니다.<br>
-                필요 시 종합보고서 형태로 제작하여 제공합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="service_content_wrap right cont2">
-      <div class="inner">
-        <div class="service_number">
-          <p>ABOUT BUSINESS #2</p>
-        </div>
-        <div class="service_slide_wrap">
-          <div class="swiper service_content_slide">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/assets/images/pages/agency/slide02_1.png" alt="slide image1">
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/pages/agency/slide02_2.png" alt="slide image2">
-              </div>
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="swiper service_text_box">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <p class="number">
-                02
-              </p>
-              <h4 class="title">
-                요구사항 정리
-              </h4>
-              <p class="text">
-                고객의 요구사항에 대해 철저하게 이해하고,
-                체계적으로 정리합니다.<br>
-                요구사항에 대한 구체적 기술을 담은
-                요구사항 명세서를 작성하여 고객과 함께 검토합니다.
-              </p>
-            </div>
-            <div class="swiper-slide">
-              <p class="number">
-                02
-              </p>
-              <h4 class="title">
-                서비스 컨셉 구체화
-              </h4>
-              <p class="text">
-                서비스 정의, 핵심 가치의 제안,<br>
-                차별화 요소 명확화를 통해 서비스 컨셉을
-                구체화합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="service_content_wrap cont3">
-      <span class="page__deco__text p_ui" style="top: 14%; left: 0">SERVICE</span>
-      <span class="page__deco__text p_ui" style="bottom: -3%; right: 0">AGENCY</span>
-      <div class="inner">
-        <div class="service_number">
-          <p>ABOUT BUSINESS #3</p>
-        </div>
-        <div class="service_slide_wrap">
-          <div class="swiper service_content_slide">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/assets/images/pages/agency/slide03.png" alt="slide image1">
-              </div>
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="swiper service_text_box">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <p class="number">
-                03
-              </p>
-              <h4 class="title">
-                서비스 개발 및 실행 계획 수립
-              </h4>
-              <p class="text">
-                상세 실행 계획을 문서화하여 수립하고,
-                작업 인력을 산정하여 역할을 부여합니다.<br>
-                이에 따른 작업 예산 책정 및 관리 계획도 수립합니다.<br>
-                기획서 작성이 마무리되면 디자인 작업과 퍼블리싱 과정을
-                거쳐 개발을 진행합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="service_content_wrap right cont4">
-      <div class="inner">
-        <div class="service_number">
-          <p>ABOUT BUSINESS #4</p>
-        </div>
-        <div class="service_slide_wrap">
-          <div class="swiper service_content_slide">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/assets/images/pages/agency/slide04_1.png" alt="slide image1">
-              </div>
-              <div class="swiper-slide">
-                <img src="/assets/images/pages/agency/slide04_2.png" alt="slide image2">
-              </div>
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="swiper service_text_box">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <p class="number">
-                04
-              </p>
-              <h4 class="title">
-                서비스 출시
-              </h4>
-              <p class="text">
-                서비스 출시 일정에 맞춰 예상되는
-                문제점들을 파악하고 해결하여 안정적인
-                서비스 제공이 가능하도록 준비합니다.
-              </p>
-            </div>
-            <div class="swiper-slide">
-              <p class="number">
-                02
-              </p>
-              <h4 class="title">
-                운영 및 유지보수
-              </h4>
-              <p class="text">
-                운영 지원 및 모니터링을 통해
-                지속적인 서비스 업데이트 및 개선 작업을
-                진행합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      var swiper = new Swiper('.cont1 .service_content_slide', {
-        loop: false,
-        freeMode: false,
-        on: {
-          slideChange: function () {
-            setTimeout(() => {
-              swiper2.slideTo(this.activeIndex);
-            }, 0);
-          },
-        },
-
-      });
-      var swiper2 = new Swiper(".cont1 .service_text_box", {
-        spaceBetween: 10,
-        thumbs: {
-          swiper: swiper,
-        },
-        pagination: {
-          el: '.cont1 .swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.cont1 .swiper-button-next',
-          prevEl: '.cont1 .swiper-button-prev',
-        },
-        on: {
-          slideChange: function () {
-            setTimeout(() => {
-
-              swiper1.slideTo(this.activeIndex);
-            }, 0);
-          },
-        },
-
-
-      });
-
-      var swiper3 = new Swiper('.cont2 .service_content_slide', {
-        loop: false,
-        freeMode: false,
-        on: {
-          slideChange: function () {
-            setTimeout(() => {
-              swiper4.slideTo(this.activeIndex);
-            }, 0);
-
-          },
-        },
-
-      });
-      var swiper4 = new Swiper(".cont2 .service_text_box", {
-        spaceBetween: 10,
-        thumbs: {
-          swiper: swiper3,
-        },
-        pagination: {
-          el: '.cont2 .swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.cont2 .swiper-button-next',
-          prevEl: '.cont2 .swiper-button-prev',
-        },
-
-      });
-
-      var swiper5 = new Swiper('.cont3 .service_content_slide', {
-        loop: false,
-        freeMode: false,
-        on: {
-          slideChange: function () {
-            setTimeout(() => {
-              swiper6.slideTo(this.activeIndex);
-            }, 0);
-          },
-        },
-
-      });
-      var swiper6 = new Swiper(".cont3 .service_text_box", {
-        spaceBetween: 10,
-        thumbs: {
-          swiper: swiper5,
-        },
-        pagination: {
-          el: '.cont3 .swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.cont3 .swiper-button-next',
-          prevEl: '.cont3 .swiper-button-prev',
-        },
-        on: {
-          slideChange: function () {
-            setTimeout(() => {
-
-              swiper5.slideTo(this.activeIndex);
-            }, 0);
-
-          },
-        },
-      });
-
-      var swiper7 = new Swiper('.cont4 .service_content_slide', {
-        loop: false,
-        freeMode: false,
-        on: {
-          slideChange: function () {
-            setTimeout(() => {
-
-              swiper8.slideTo(this.activeIndex);
-            }, 0);
-
-          },
-        },
-
-      });
-      var swiper8 = new Swiper(".cont4 .service_text_box", {
-        spaceBetween: 10,
-        thumbs: {
-          swiper: swiper7,
-        },
-        pagination: {
-          el: '.cont4 .swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.cont4 .swiper-button-next',
-          prevEl: '.cont4 .swiper-button-prev',
-        },
-        on: {
-          slideChange: function () {
-            setTimeout(() => {
-              swiper7.slideTo(this.activeIndex);
-            }, 0);
-
-          },
-        },
-      });
     </script>
-  </main>
-  <!--  Footer 영역  -->
-  <div id="footer-include"></div>
 
-  <!--  Floating Menu 영역  -->
-  <div id="floating-menu-include"></div>
-</body>
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
-<!--  공통 프레임 불러오기  -->
-<script>
-  $(document).ready(function () {
-    $("#header-include").load("/pages/include/header.html", () => {
-      initCommon(); // 헤더가 로드된 후 초기화
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+
+    <style>
+      :root {
+        --slate-50: #f8fafc;
+        --slate-100: #f1f5f9;
+        --slate-200: #e2e8f0;
+        --slate-300: #cbd5e1;
+        --slate-400: #94a3b8;
+        --slate-500: #64748b;
+        --slate-600: #475569;
+        --slate-700: #334155;
+        --slate-900: #0f172a;
+        --blue-50: #eff6ff;
+        --blue-400: #60a5fa;
+        --blue-600: #2563eb;
+        --blue-700: #1d4ed8;
+        --brand-hflor: #1a5d48;
+        --brand-himacs: #6fb4c4;
+        --brand-viatera: #a6a18d;
+      }
+      .container__agency {
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        flex-direction: column;
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .mb-2 {
+        margin-bottom: 0.5rem;
+      }
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+
+      /* =========================================
+           3. Layout Components
+        ========================================= */
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 50;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--slate-200);
+      }
+      .nav-inner {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        max-width: 1440px;
+      }
+      .logo__agency {
+        font-size: 1.5rem;
+        color: #333;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+      }
+      .logo span {
+        color: var(--blue-600);
+      }
+      .nav-links {
+        display: none;
+        gap: 2rem;
+        font-weight: 500;
+        color: var(--slate-600);
+        align-items: center;
+      }
+      .nav-links > a {
+        font-size: 1rem;
+        color: #333;
+      }
+      .nav-links a:hover {
+        color: var(--blue-600);
+      }
+      .btn-contact {
+        background-color: var(--blue-600);
+        color: white !important;
+        padding: 0.5rem 1.25rem;
+        border-radius: 9999px;
+        transition: background-color 0.3s;
+      }
+      .btn-contact:hover {
+        background-color: var(--blue-700);
+      }
+      .menu-toggle {
+        font-size: 1.5rem;
+        color: var(--slate-900);
+        display: block;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+      }
+      .hero-subtitle {
+        color: var(--blue-600);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+      }
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+      .hero-desc {
+        font-size: 1.125rem;
+        color: var(--slate-600);
+        max-width: 42rem;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* Works Section */
+      .works-section {
+        padding: 6rem 0;
+        background-color: white;
+      }
+      .section-header {
+        margin-bottom: 4rem;
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+      .section-desc {
+        color: var(--slate-500);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      /* Project Card */
+      .project-card {
+        cursor: pointer;
+      }
+      .card-image-wrapper {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        background-color: var(--slate-900);
+        box-shadow:
+          0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+      .card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        transition: transform 0.7s ease;
+      }
+      .project-card:hover .card-image {
+        transform: scale(1.05);
+      }
+
+      .card-overlay {
+        position: absolute;
+        inset: 0;
+        padding: 2.5rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2), transparent);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .card-tag {
+        color: var(--blue-400);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .card-title {
+        color: white;
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      .card-link {
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+      .card-link i {
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover .card-link i {
+        transform: translateX(0.5rem);
+      }
+
+      .card-info {
+        margin-top: 1.5rem;
+      }
+      .card-info-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+      }
+      .card-info-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+      .card-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--blue-600);
+        background-color: var(--blue-50);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+      }
+      .card-desc {
+        color: var(--slate-500);
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 6rem 0;
+        border-top: 1px solid var(--slate-200);
+        background-color: white;
+        text-align: center;
+      }
+
+      /* =========================================
+           4. Modal & PDF Viewer
+        ========================================= */
+      .modal-container {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .modal-container.active {
+        display: flex;
+      }
+
+      .modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(15, 23, 42, 0.9);
+        backdrop-filter: blur(4px);
+      }
+
+      .modal-content {
+        position: relative;
+        background-color: white;
+        width: 100%;
+        max-width: 80rem; /* PDF를 크게 보기 위해 너비 증가 */
+        height: 100%;
+        max-height: 95vh; /* PDF를 크게 보기 위해 높이 증가 */
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.3s ease-out;
+      }
+      .modal-container.active .modal-content {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--slate-200);
+        background-color: white;
+        z-index: 10;
+      }
+      .modal-header h3 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--slate-900);
+      }
+      .modal-header p {
+        font-size: 1rem;
+        color: var(--slate-500);
+        margin-top: 0.25rem;
+      }
+
+      .btn-close {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: var(--slate-100);
+        color: var(--slate-600);
+        transition: background-color 0.2s;
+        font-size: 1.25rem;
+      }
+      .btn-close:hover {
+        background-color: var(--slate-200);
+      }
+
+      /* PDF Viewer Container */
+      .modal-body {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #525659; /* PDF 뷰어의 일반적인 배경색 */
+        overflow: hidden; /* iframe 스크롤 사용 */
+        position: relative;
+      }
+
+      /* Loading Spinner */
+      .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2rem;
+        display: none; /* JS로 제어 */
+      }
+
+      /* =========================================
+           5. Responsive Media Queries
+        ========================================= */
+      @media (min-width: 768px) {
+        .nav-links {
+          display: flex;
+          flex-direction: row;
+        }
+        .menu-toggle {
+          display: none;
+        }
+        .hero-title {
+          font-size: 4.5rem;
+        }
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body data-type="detail">
+    <!-- s : 스킵 -->
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- e : 스킵 -->
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+    <main>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container__agency nav-inner">
+          <div class="logo__agency">AGENCY<span>.</span></div>
+          <div class="nav-links">
+            <a href="#home">홈</a>
+            <a href="#work">구축 사례</a>
+            <a href="#process">프로세스</a>
+            <a href="#contact" class="btn-contact">문의하기</a>
+          </div>
+          <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero container__agency text-center">
+        <h2 class="hero-subtitle">Global Digital Agency</h2>
+        <h1 class="hero-title">
+          글로벌 브랜드의 <br />
+          <span class="gradient-text">디지털 가치를 극대화합니다</span>
+        </h1>
+        <p class="hero-desc">
+          단순 번역을 넘어선 현지화 전략과 통합 플랫폼 구축. <br />
+          LX하우시스 등 글로벌 기업이 선택한 검증된 프로젝트를 확인하세요.
+        </p>
+      </section>
+
+      <!-- Project Grid Section -->
+      <section id="work" class="works-section">
+        <div class="container__agency">
+          <div class="section-header">
+            <h3 class="section-title">Featured Case Studies</h3>
+            <p class="section-desc">카드를 클릭하여 상세 구축 사례(PDF)를 확인하세요.</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- LX Hausys Project Card -->
+            <div
+              class="project-card"
+              onclick="openModal('/assets/file/agency.pdf', 'A-Bank 차세대 뱅킹 서비스')"
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200"
+                  alt="LX Hausys Global"
+                  class="card-image"
+                />
+                <div class="card-overlay">
+                  <span class="card-tag">Global Platform / Renewal</span>
+                  <h4 class="card-title">LX하우시스 글로벌 플랫폼</h4>
+                  <div class="card-link">
+                    <span>상세보기</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title">LX하우시스 글로벌 온라인 리뉴얼</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <p class="card-desc">기획/디자인/퍼블리싱/개발 전 과정 수행</p>
+              </div>
+            </div>
+
+            <!-- Existing Project 1: A-Bank -->
+            <div class="project-card">
+              <div class="card-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">Fintech / Mobile App</span>
+                  <h4 class="card-title">A-Bank 차세대 뱅킹</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <h4 class="card-info-title mb-2">A-Bank 디지털 전환 프로젝트</h4>
+                <div class="card-badges">
+                  <span class="badge-gray">React Native</span>
+                  <span class="badge-gray">Cloud</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pop-up Modal (PDF Content) -->
+      <div id="projectModal" class="modal-container">
+        <!-- Backdrop -->
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+
+        <!-- Modal Content Container -->
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <div>
+              <h3>LX하우시스 글로벌 온라인 플랫폼 리뉴얼</h3>
+              <p>Portfolio</p>
+            </div>
+            <button onclick="closeModal()" class="btn-close">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+
+          <!-- Modal Body (Scrollable) -->
+          <div class="modal-body">
+            <!-- 로딩 스피너 -->
+            <i id="pdfLoading" class="fa-solid fa-circle-notch fa-spin loading-spinner"></i>
+
+            <!-- PDF Viewer (iframe) -->
+            <!-- toolbar=0 옵션 등을 추가하여 브라우저 기본 UI를 일부 제어할 수 있습니다 -->
+            <iframe
+              id="pdfViewer"
+              src=""
+              width="100%"
+              height="100%"
+              style="border: none; display: block"
+              onload="document.getElementById('pdfLoading').style.display = 'none'"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+  </body>
+
+  <!--  공통 프레임 불러오기  -->
+  <script>
+    const agencyModal = document.getElementById('projectModal');
+    const agencyPdfViewer = document.getElementById('pdfViewer');
+    const agencyPdfLoading = document.getElementById('pdfLoading');
+
+    function openModal(pdfUrl, title) {
+      if (!agencyModal || !agencyPdfViewer) return;
+
+      agencyPdfLoading.style.display = 'block';
+      agencyPdfViewer.src = pdfUrl + '#view=FitH&toolbar=1';
+
+      agencyModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!agencyModal) return;
+      agencyModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      setTimeout(() => {
+        agencyPdfViewer.src = '';
+      }, 300);
+    }
+
+    $(document).ready(function () {
+      $('#header-include').load('/pages/include/header.html', () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $('#footer-include').load('/pages/include/footer.html');
+      $('#floating-menu-include').load('/pages/include/floating-menu.html');
     });
-    $("#footer-include").load("/pages/include/footer.html")
-    $("#floating-menu-include").load("/pages/include/floating-menu.html")
-  })
-</script>
-
+  </script>
 </html>

@@ -417,3 +417,20 @@ function updateMegaMenuWidth() {
     megaMenu.style.width = tabsWidth + 'px';
   }
 }
+const modal = document.getElementById('projectModal');
+const pdfViewer = document.getElementById('pdfViewer');
+const modalTitle = document.getElementById('modalTitle');
+const pdfLoading = document.getElementById('pdfLoading');
+
+function openModal(pdfUrl, title) {
+  if (!modal || !pdfViewer) return;
+
+  modalTitle.innerText = title;
+  pdfLoading.style.display = 'block';
+
+  // PDF 경로 설정 (전달받은 로컬 상대경로 사용)
+  pdfViewer.src = pdfUrl + '#view=FitH&toolbar=1';
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
