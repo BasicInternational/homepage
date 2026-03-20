@@ -24,6 +24,9 @@
   --text-muted: #9ca3af;
   --border: #e5e7eb;
   --green: #0e998e;
+  --decrip: #555;
+  --bold-title: #333;
+  --sub-title: #333;
 }
 /* aisolution */
 .biz-container {
@@ -587,7 +590,8 @@ nav {
   border: none;
   padding: 10px 22px;
   border-radius: 24px;
-  font-size: 14px;
+  font-size: 16px;
+  margin-top: 24px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -628,7 +632,7 @@ section.main-banner {
 }
 
 .main-banner-sub {
-  font-size: 14px;
+  font-size: 16px;
   color: #888;
   max-width: 500px;
   margin: 18px auto 0;
@@ -645,7 +649,7 @@ section.features {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
 }
@@ -701,7 +705,7 @@ section.features {
 
 /* ─── PROCESS ─── */
 section.process {
-  padding: 70px 40px;
+  padding: 70px 0px;
   justify-content: space-between;
   text-align: center;
 }
@@ -897,7 +901,7 @@ section.tech {
 }
 
 .tech-col ul li {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   padding: 5px 0;
   display: flex;
@@ -1067,7 +1071,7 @@ main section {
 .payment-grid,
 .flow-section,
 .ecosystem-wrap {
-  padding: 100px 80px;
+  padding: 56px 40px;
 }
 
 .payment-grid {
@@ -1432,7 +1436,7 @@ main section {
   background: var(--navy);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   padding: 24px 64px;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -1462,9 +1466,9 @@ main section {
 }
 
 main section {
-  flex-direction: column;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 56px 40px;
 }
 /* pages/aiservice/pickup.html */
 .top-banner {

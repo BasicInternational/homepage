@@ -295,9 +295,12 @@ function initCommon() {
   // ------- 데스크톱 상단 GNB 메가메뉴 구성 -------
   const tabs = document.querySelector('.bi__tabs');
   const headerEl = document.querySelector('.bi__header');
+  const tabsEl = document.querySelector('.bi__tabs');
+  const tabsWidth = tabsEl ? tabsEl.offsetWidth : 0;
+  console.log('tabsEl', tabsEl);
+  console.log('tabsWidth', tabsWidth);
 
   if (tabs) {
-    // 메가메뉴 DOM 생성 (한 번만)
     if (!tabs.querySelector('.mega-menu')) {
       const mega = document.createElement('div');
       mega.className = 'mega-menu';
@@ -306,52 +309,44 @@ function initCommon() {
       inner.className = 'mega-menu__inner';
       mega.appendChild(inner);
 
-      // 서브메뉴가 있는 메뉴만 메가메뉴 컬럼으로 구성
       const topItems = tabs.querySelectorAll('.bi__tabs > ul > li');
       topItems.forEach((li) => {
         const submenu = li.querySelector('.submenu');
-        if (!submenu) return;
-
         const col = document.createElement('div');
         col.className = 'mega-menu__col';
 
-        const listClone = submenu.cloneNode(true);
-        listClone.classList.remove('submenu');
-        listClone.classList.add('mega-menu__list');
-        col.appendChild(listClone);
+        if (submenu) {
+          // 서브메뉴 있는 경우 - 기존 방식
+          const listClone = submenu.cloneNode(true);
+          listClone.classList.remove('submenu');
+          listClone.classList.add('mega-menu__list');
+          col.appendChild(listClone);
+        } else {
+          // 서브메뉴 없는 경우 - 1depth a태그를 단독 아이템으로
+          const topLink = li.querySelector('a');
+          if (!topLink) return;
+
+          const singleList = document.createElement('ul');
+          singleList.className = 'mega-menu__list';
+
+          const singleItem = document.createElement('li');
+          const linkClone = topLink.cloneNode(true);
+          singleItem.appendChild(linkClone);
+          singleList.appendChild(singleItem);
+          col.appendChild(singleList);
+        }
+
         inner.appendChild(col);
       });
 
       tabs.appendChild(mega);
+
+      const megaMenu = tabs.querySelector('.mega-menu');
+      megaMenu.style.width = tabsWidth + 'px';
     }
 
-    // 메가메뉴를 'AI 서비스·사업분야·솔루션' 바로 아래에 맞춰 위치·너비 설정
-    function positionMegaMenu() {
-      const mega = tabs.querySelector('.mega-menu');
-      if (!mega) return;
-      const ul = tabs.querySelector('.bi__tabs > ul');
-      if (!ul) return;
-      const itemsWithSub = [];
-      ul.querySelectorAll(':scope > li').forEach((li) => {
-        if (li.querySelector('.submenu')) itemsWithSub.push(li);
-      });
-      if (itemsWithSub.length === 0) return;
-      const first = itemsWithSub[0];
-      const last = itemsWithSub[itemsWithSub.length - 1];
-      const left = ul.offsetLeft + first.offsetLeft;
-      const width = last.offsetLeft + last.offsetWidth - first.offsetLeft;
-      mega.style.left = left + 'px';
-      mega.style.width = width + 'px';
-    }
-
-    // 서브메뉴가 있는 메뉴에만 마우스 올리면 메가메뉴 열기
     document.querySelectorAll('.bi__tabs > ul > li > a').forEach((link) => {
-      const parentLi = link.parentElement;
-      const submenu = parentLi.querySelector('.submenu');
-      if (!submenu) return;
-
-      link.addEventListener('mouseenter', (e) => {
-        e.preventDefault();
+      link.addEventListener('mouseenter', () => {
         document.body.classList.add('mega-open');
       });
     });
@@ -372,32 +367,29 @@ function initCommon() {
   });
 }
 
-window.addEventListener('resize', function () {
-  device.init();
-  dialObj.init();
-  if (device.type === 'mobile') {
-    gnb.tabs.style.display = 'none';
-  } else {
-    gnb.tabs.style.display = 'block';
-    var tabs = document.querySelector('.bi__tabs');
-    if (tabs && tabs.querySelector('.mega-menu')) {
-      var mega = tabs.querySelector('.mega-menu');
-      var ul = tabs.querySelector('ul');
-      if (ul) {
-        var itemsWithSub = [];
-        ul.querySelectorAll(':scope > li').forEach(function (li) {
-          if (li.querySelector('.submenu')) itemsWithSub.push(li);
-        });
-        if (itemsWithSub.length) {
-          var first = itemsWithSub[0],
-            last = itemsWithSub[itemsWithSub.length - 1];
-          mega.style.left = ul.offsetLeft + first.offsetLeft + 'px';
-          mega.style.width = last.offsetLeft + last.offsetWidth - first.offsetLeft + 'px';
+window.addEventListener(
+  'resize',
+  function () {
+    device.init();
+    dialObj.init();
+    if (device.type === 'mobile') {
+      gnb.tabs.style.display = 'none';
+    } else {
+      gnb.tabs.style.display = 'block';
+      updateMegaMenuWidth();
+
+      var tabs = document.querySelector('.bi__tabs');
+      if (tabs) {
+        var tabsWidth = tabs.offsetWidth;
+        var megaMenu = tabs.querySelector('.mega-menu');
+        if (megaMenu) {
+          megaMenu.style.width = tabsWidth + 'px';
         }
       }
     }
-  }
-});
+  },
+  { once: true },
+);
 
 $(document).ready(function () {
   $('#header-include').load('/pages/include/header.html', () => {
@@ -406,3 +398,22 @@ $(document).ready(function () {
   $('#footer-include').load('/pages/include/footer.html');
   $('#floating-menu-include').load('/pages/include/floating-menu.html');
 });
+
+// 메가메뉴 너비 갱신 함수
+function updateMegaMenuWidth() {
+  var tabs = document.querySelector('.bi__tabs');
+  if (!tabs) return;
+
+  var tabsWidth = tabs.offsetWidth;
+
+  // 0px 방어
+  if (tabsWidth === 0) {
+    requestAnimationFrame(updateMegaMenuWidth); // 렌더링 후 재시도
+    return;
+  }
+
+  var megaMenu = tabs.querySelector('.mega-menu');
+  if (megaMenu) {
+    megaMenu.style.width = tabsWidth + 'px';
+  }
+}
