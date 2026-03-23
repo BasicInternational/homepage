@@ -84,7 +84,10 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_business.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
@@ -93,7 +96,6 @@
     <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/assets/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
 
     <style>
       :root {
@@ -113,353 +115,6 @@
         --brand-hflor: #1a5d48;
         --brand-himacs: #6fb4c4;
         --brand-viatera: #a6a18d;
-      }
-      .container__agency {
-        margin: 0 auto;
-        padding: 0 1.5rem;
-        flex-direction: column;
-      }
-      .gradient-text {
-        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .mb-2 {
-        margin-bottom: 0.5rem;
-      }
-      .mb-6 {
-        margin-bottom: 1.5rem;
-      }
-
-      /* =========================================
-           3. Layout Components
-        ========================================= */
-      /* Navigation */
-      .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 50;
-        background-color: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--slate-200);
-      }
-      .nav-inner {
-        height: 5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row;
-        width: 100%;
-        max-width: 1440px;
-      }
-      .logo__agency {
-        font-size: 1.5rem;
-        color: #333;
-        font-weight: 900;
-        letter-spacing: -0.05em;
-      }
-      .logo span {
-        color: var(--blue-600);
-      }
-      .nav-links {
-        display: none;
-        gap: 2rem;
-        font-weight: 500;
-        color: var(--slate-600);
-        align-items: center;
-      }
-      .nav-links > a {
-        font-size: 1rem;
-        color: #333;
-      }
-      .nav-links a:hover {
-        color: var(--blue-600);
-      }
-      .btn-contact {
-        background-color: var(--blue-600);
-        color: white !important;
-        padding: 0.5rem 1.25rem;
-        border-radius: 9999px;
-        transition: background-color 0.3s;
-      }
-      .btn-contact:hover {
-        background-color: var(--blue-700);
-      }
-      .menu-toggle {
-        font-size: 1.5rem;
-        color: var(--slate-900);
-        display: block;
-      }
-
-      /* Hero Section */
-      .hero {
-        padding: 70px 40px 60px;
-      }
-      .hero-subtitle {
-        color: var(--blue-600);
-        font-weight: 700;
-        margin-bottom: 1rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        font-size: 0.875rem;
-      }
-      .hero-title {
-        font-size: 3rem;
-        font-weight: 900;
-        margin-bottom: 2rem;
-        line-height: 1.2;
-      }
-      .hero-desc {
-        font-size: 1.125rem;
-        color: var(--slate-600);
-        max-width: 42rem;
-        margin: 0 auto;
-        line-height: 1.6;
-      }
-
-      /* Works Section */
-      .works-section {
-        padding: 6rem 0;
-        background-color: white;
-      }
-      .section-header {
-        margin-bottom: 4rem;
-      }
-      .section-title {
-        font-size: 1.875rem;
-        font-weight: 700;
-        font-style: italic;
-        margin-bottom: 1rem;
-      }
-      .section-desc {
-        color: var(--slate-500);
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      /* Project Card */
-      .project-card {
-        cursor: pointer;
-      }
-      .card-image-wrapper {
-        position: relative;
-        border-radius: 1.5rem;
-        overflow: hidden;
-        aspect-ratio: 4/3;
-        background-color: var(--slate-900);
-        box-shadow:
-          0 20px 25px -5px rgb(0 0 0 / 0.1),
-          0 8px 10px -6px rgb(0 0 0 / 0.1);
-      }
-      .card-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.8;
-        transition: transform 0.7s ease;
-      }
-      .project-card:hover .card-image {
-        transform: scale(1.05);
-      }
-
-      .card-overlay {
-        position: absolute;
-        inset: 0;
-        padding: 1rem;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2), transparent);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-      }
-      .card-tag {
-        color: var(--blue-400);
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-      .card-title {
-        color: white;
-        font-size: 1.875rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-      .card-link {
-        display: flex;
-        align-items: center;
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1rem;
-        font-weight: 500;
-      }
-      .card-link i {
-        margin-left: 0.5rem;
-        transition: transform 0.3s ease;
-      }
-      .project-card:hover .card-link i {
-        transform: translateX(0.5rem);
-      }
-
-      .card-info {
-        margin-top: 1.5rem;
-      }
-      .card-info-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 0.5rem;
-      }
-      .card-info-title {
-        font-size: 1.25rem;
-        font-weight: 700;
-      }
-      .card-badge {
-        font-size: 14px;
-        font-weight: normal;
-        color: #444;
-        background-color: var(--blue-50);
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-      }
-      .card-desc {
-        color: var(--slate-500);
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-
-      /* Footer */
-      .footer {
-        padding: 6rem 0;
-        border-top: 1px solid var(--slate-200);
-        background-color: white;
-        text-align: center;
-      }
-
-      /* =========================================
-           4. Modal & PDF Viewer
-        ========================================= */
-      .modal-container {
-        position: fixed;
-        inset: 0;
-        z-index: 100;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-      }
-      .modal-container.active {
-        display: flex;
-      }
-
-      .modal-backdrop {
-        position: absolute;
-        inset: 0;
-        background-color: rgba(51, 51, 51, 0.8);
-        backdrop-filter: blur(4px);
-      }
-
-      .modal-content {
-        position: relative;
-        background-color: white;
-        width: 100%;
-        max-width: 80rem; /* PDF를 크게 보기 위해 너비 증가 */
-        height: 100%;
-        max-height: 95vh; /* PDF를 크게 보기 위해 높이 증가 */
-        border-radius: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        opacity: 0;
-        transform: scale(0.95);
-        transition: all 0.3s ease-out;
-      }
-      .modal-container.active .modal-content {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem 2rem;
-        border-bottom: 1px solid var(--slate-200);
-        background-color: white;
-        z-index: 10;
-      }
-      .modal-header h3 {
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: var(--slate-900);
-      }
-      .modal-header p {
-        font-size: 1rem;
-        color: var(--slate-500);
-        margin-top: 0.25rem;
-      }
-
-      .btn-close {
-        width: 2.5rem;
-        height: 2.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background-color: var(--slate-100);
-        color: var(--slate-600);
-        transition: background-color 0.2s;
-        font-size: 1.25rem;
-      }
-      .btn-close:hover {
-        background-color: var(--slate-200);
-      }
-
-      /* PDF Viewer Container */
-      .modal-body {
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        background-color: #525659; /* PDF 뷰어의 일반적인 배경색 */
-        overflow: hidden; /* iframe 스크롤 사용 */
-        position: relative;
-      }
-
-      /* Loading Spinner */
-      .loading-spinner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 2rem;
-        display: none; /* JS로 제어 */
-      }
-
-      /* =========================================
-           5. Responsive Media Queries
-        ========================================= */
-      @media (min-width: 768px) {
-        .nav-links {
-          display: flex;
-          flex-direction: row;
-        }
-        .menu-toggle {
-          display: none;
-        }
-        .hero-title {
-          font-size: 4.5rem;
-        }
-        .projects-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
       }
     </style>
   </head>
@@ -505,7 +160,7 @@
       <section id="work" class="works-section">
         <div class="container__agency">
           <div class="section-header">
-            <h3 class="section-title">Featured Case Studies</h3>
+            <h3 class="section-title">구축 사례</h3>
             <p class="section-desc">카드를 클릭하여 상세 구축 사례(PDF)를 확인하세요.</p>
           </div>
 
@@ -513,11 +168,13 @@
             <!-- LX Hausys Project Card -->
             <div
               class="project-card"
-              onclick="openModal('/assets/file/agency.pdf', 'A-Bank 차세대 뱅킹 서비스')"
+              onclick="
+                openModal('/assets/images/pages/agency/hausys', 'hausys', 6, 'LX하우시스 글로벌')
+              "
             >
               <div class="card-image-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200"
+                  src="/assets/images/pages/agency/hausys/hausys2.png"
                   alt="LX Hausys Global"
                   class="card-image"
                 />
@@ -532,18 +189,23 @@
               </div>
               <div class="card-info">
                 <div class="card-info-header">
-                  <h4 class="card-info-title">LX하우시스 글로벌 온라인 리뉴얼</h4>
+                  <h4 class="card-info-title">LX하우시스 글로벌 사이트 개발</h4>
                   <span class="card-badge">PC/MOBILE</span>
                 </div>
-                <p class="card-desc">기획/디자인/퍼블리싱/개발 전 과정 수행</p>
+                <p class="card-desc">기획/디자인/퍼블리싱/개발</p>
               </div>
             </div>
 
-            <!-- Existing Project 1: A-Bank -->
-            <div class="project-card">
+            <!-- 포트폴리오 2: 마몽드 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/mamongd', 'mamon', 5, '마몽드 UI/UX 개편')
+              "
+            >
               <div class="card-image-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
+                  src="/assets/images/pages/agency/mamongd/mamon2.png"
                   alt="Fintech App"
                   class="card-image"
                 />
@@ -551,16 +213,334 @@
                   class="card-overlay"
                   style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
                 >
-                  <span class="card-tag">Fintech / Mobile App</span>
-                  <h4 class="card-title">A-Bank 차세대 뱅킹</h4>
+                  <span class="card-tag">PC / Tablet / Mobile </span>
+                  <h4 class="card-title">마몽드 UI/UX</h4>
                 </div>
               </div>
               <div class="card-info">
                 <div class="card-info-header">
-                  <h4 class="card-info-title mb-2">A-Bank 디지털 전환 프로젝트</h4>
+                  <h4 class="card-info-title mb-2">마몽드 UI/UX 리뉴얼 프로젝트</h4>
                   <span class="card-badge">PC/MOBILE</span>
                 </div>
-                <span class="card-desc">React Native</span>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 3: 서울아산병원 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/asan',
+                  'asan',
+                  4,
+                  '서울아산병원 글로벌 웹사이트',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/asan/asan2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag"> PC / Mobile</span>
+                  <h4 class="card-title">서울아산병원</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">서울아산병원 글로벌 사이트 리뉴얼 프로젝트</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 4: 오설록 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/oseol',
+                  'oseol',
+                  5,
+                  '오설록 웹 사이트 고도화',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/oseol/oseol2.png"
+                  alt="오설록"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / MOBILE</span>
+                  <h4 class="card-title">오설록 웹 사이트</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">오설록 고도화 프로젝트</h4>
+                  <span class="card-badge">PC / MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 5: PMK -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/pmk', 'pmk', 4, 'PMK Partner Portal 디자인')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img src="/assets/images/pages/agency/pmk/pmk2.png" alt="pmk" class="card-image" />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">PMK Partner Portal</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">PMK Partner Portal UI/UX 구축</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 6: 삼성전자 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/sec',
+                  'sec',
+                  4,
+                  '삼성전자 ACE프로젝트 사이트 구축',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/sec/sec2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">삼성전자 ACE 프로젝트 사이트</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">삼성전자 ACE프로젝트 사이트 UI/UX</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/퍼블리싱</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 7: LX하우시스 운영 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/lx-online',
+                  'lx-online',
+                  4,
+                  'LX하우시스 글로벌 온라인플랫폼 운영',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/lx-online/lx-online2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">LX하우시스 글로벌</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">LX하우시스 글로벌 온라인플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 8: COWAY -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/coway', 'coway', 4, 'COWAY IoCare+ APP 운영')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/coway/coway2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">COWAY IoCare+ APP 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">COWAY IoCare+ APP 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인</span>
+              </div>
+            </div>
+
+            <!-- 포트폴리오 9: SK-Magic -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/sk-m', 'sk-m', 4, 'SK매직 온라인 플랫폼')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/sk-m/sk-m2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">SK매직 온라인 플랫폼</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">SK매직 온라인 플랫폼</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+
+            <!-- 포트폴리오 10: 기아자동차 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/kia',
+                  'kia',
+                  4,
+                  '기아자동차 온라인 플랫폼 운영',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/kia/kia2.png"
+                  alt="기아자동차"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">기아자동차 온라인 플랫폼 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">기아자동차 온라인 플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 11: 파리바게트 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/paris',
+                  'paris',
+                  4,
+                  '파리바게트 온라인 플랫폼 운영',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/paris/paris2.png"
+                  alt="파리바게트"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">파리바게트 온라인 플랫폼 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">파리바게트 온라인 플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 12: 현대백화점 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/hd', 'hd', 3, '현대백화점 온라인 플랫폼')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/hd/hd2.png"
+                  alt="현대백화점 온라인 플랫폼"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">PC / Mobile WEB</span>
+                  <h4 class="card-title">현대백화점 온라인 플랫폼 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">현대백화점 온라인 플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱</span>
               </div>
             </div>
           </div>
@@ -577,7 +557,7 @@
           <!-- Modal Header -->
           <div class="modal-header">
             <div>
-              <h3>LX하우시스 글로벌 온라인 플랫폼 리뉴얼</h3>
+              <h3>{title}</h3>
               <p>Portfolio</p>
             </div>
             <button onclick="closeModal()" class="btn-close">
@@ -587,19 +567,7 @@
 
           <!-- Modal Body (Scrollable) -->
           <div class="modal-body">
-            <!-- 로딩 스피너 -->
-            <i id="pdfLoading" class="fa-solid fa-circle-notch fa-spin loading-spinner"></i>
-
-            <!-- PDF Viewer (iframe) -->
-            <!-- toolbar=0 옵션 등을 추가하여 브라우저 기본 UI를 일부 제어할 수 있습니다 -->
-            <iframe
-              id="pdfViewer"
-              src=""
-              width="100%"
-              height="100%"
-              style="border: none; display: block"
-              onload="document.getElementById('pdfLoading').style.display = 'none'"
-            ></iframe>
+            <div id="pdf__img"></div>
           </div>
         </div>
       </div>
@@ -615,14 +583,22 @@
   <!--  공통 프레임 불러오기  -->
   <script>
     const agencyModal = document.getElementById('projectModal');
-    const agencyPdfViewer = document.getElementById('pdfViewer');
-    const agencyPdfLoading = document.getElementById('pdfLoading');
+    const agencyImage = document.getElementById('projectImage');
 
-    function openModal(pdfUrl, title) {
-      if (!agencyModal || !agencyPdfViewer) return;
+    function openModal(folderPath, prefix, count, title) {
+      if (!agencyModal) return;
 
-      agencyPdfLoading.style.display = 'block';
-      agencyPdfViewer.src = pdfUrl + '#view=FitH&toolbar=1';
+      document.querySelector('.modal-header h3').textContent = title;
+      const container = document.getElementById('pdf__img');
+      container.innerHTML = ''; // 이전 이미지 초기화
+
+      // 이미지 생성 후 순서대로 append
+      Array.from({ length: count }, (_, i) => {
+        const img = document.createElement('img');
+        img.src = folderPath + '/' + prefix + (i === 0 ? '' : i + 1) + '.png';
+        img.alt = title + ' ' + (i + 1);
+        container.appendChild(img);
+      });
 
       agencyModal.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -633,7 +609,7 @@
       agencyModal.classList.remove('active');
       document.body.style.overflow = 'auto';
       setTimeout(() => {
-        agencyPdfViewer.src = '';
+        agencyImage.src = '';
       }, 300);
     }
 

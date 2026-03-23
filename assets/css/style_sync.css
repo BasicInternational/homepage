@@ -539,6 +539,7 @@ body {
 
 .sync-eta__btns {
   display: flex;
+  display: none;
   justify-content: center;
   gap: 14px;
   flex-wrap: nowrap;
