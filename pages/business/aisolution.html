@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/style_business.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/assets/js/common.js"></script>
@@ -421,8 +425,8 @@
       }
 
       .edu-feature-eyebrow {
-        font-size: 11px;
-        font-weight: 700;
+        font-size: 13px;
+        font-weight: normal;
         letter-spacing: 2.5px;
         color: var(--teal);
         text-transform: uppercase;
@@ -463,6 +467,9 @@
         justify-content: center;
         margin-bottom: 22px;
       }
+      .edu-card-icon i {
+        font-size: 2rem;
+      }
 
       .edu-card-icon svg {
         width: 28px;
@@ -500,10 +507,12 @@
         <div class="biz-container biz-hero__container">
           <div class="biz-hero__grid">
             <div class="biz-hero__content aisolution__herotxt">
-              <span class="biz-pill">New Product Release</span>
+              <span class="biz-pill">Business Area 01</span>
               <h1 class="biz-hero__title">
-                비즈니스의 미래를 혁신하는<br />
-                AI (인공지능) 솔루션
+                비즈니스의 미래를<br class="mo-br" />
+                혁신하는<br class="pc-br" />
+                AI 인공지능<br class="mo-br" />
+                솔루션
               </h1>
               <p class="biz-hero__desc">
                 단순한 자동화를 넘어 기업의 데이터 가치를 극대화합니다. 최신 머신러닝 및 딥러닝
@@ -513,7 +522,7 @@
             <div class="biz-hero__media">
               <div class="biz-media-card">
                 <img
-                  src="https://landinggo.com/assets/img/stock/hero/saas-figcomp-1320x900.webp"
+                  src="/assets/images/pages/business/bg-04.jpg"
                   alt="Product dashboard interface"
                   width="1320"
                   height="900"
@@ -621,43 +630,7 @@
         <div class="edu-card-grid">
           <!-- 1. 지능형 학습 관리 (LMS) -->
           <div class="edu-card">
-            <div class="edu-card-icon">
-              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect
-                  x="3"
-                  y="4"
-                  width="16"
-                  height="20"
-                  rx="2"
-                  fill="#0ABFB8"
-                  fill-opacity="0.15"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M7 9H15M7 13H15M7 17H12"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <circle
-                  cx="21"
-                  cy="21"
-                  r="5"
-                  fill="#0ABFB8"
-                  fill-opacity="0.2"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M19 21L20.5 22.5L23 20"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
+            <div class="edu-card-icon"><i class="bi bi-filetype-txt"></i></div>
             <h3 class="edu-card-title">자연어 처리 (NLP)</h3>
             <p class="edu-card-desc">
               챗봇, 문서 요약, 감성 분석, 번역 등 인간의 언어를 이해하고 처리하는 지능형 텍스트 분석
@@ -667,35 +640,7 @@
 
           <!-- 2. 학습 경험 기록 (LRS) -->
           <div class="edu-card">
-            <div class="edu-card-icon">
-              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect
-                  x="3"
-                  y="6"
-                  width="22"
-                  height="16"
-                  rx="2"
-                  fill="#0ABFB8"
-                  fill-opacity="0.15"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M7 18L11 13L14 16L18 11L21 14"
-                  stroke="#0ABFB8"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M6 22H22"
-                  stroke="#0ABFB8"
-                  stroke-width="1.2"
-                  stroke-linecap="round"
-                  opacity="0.4"
-                />
-              </svg>
-            </div>
+            <div class="edu-card-icon"><i class="bi bi-code-slash"></i></div>
             <h3 class="edu-card-title">컴퓨터 비전 (Vision AI)</h3>
             <p class="edu-card-desc">
               이미지 및 영상 속의 객체 인식, 불량 검출, 안면 인식 등 시각적 데이터를 분석하여 스마트
@@ -705,35 +650,7 @@
 
           <!-- 3. 맞춤형 코스 추천 -->
           <div class="edu-card">
-            <div class="edu-card-icon">
-              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle
-                  cx="14"
-                  cy="14"
-                  r="10"
-                  fill="#0ABFB8"
-                  fill-opacity="0.12"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="14"
-                  cy="14"
-                  r="4"
-                  fill="#0ABFB8"
-                  fill-opacity="0.3"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M14 4V7M14 21V24M4 14H7M21 14H24"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  opacity="0.5"
-                />
-              </svg>
-            </div>
+            <div class="edu-card-icon"><i class="bi bi-graph-up"></i></div>
             <h3 class="edu-card-title">예측 분석 (Predictive)</h3>
             <p class="edu-card-desc">
               시계열 데이터와 통계적 알고리즘을 활용하여 수요 예측, 설비 고장 예측, 고객 이탈 예측
@@ -743,33 +660,7 @@
 
           <!-- 4. 학습 이탈 예측 & 알림 -->
           <div class="edu-card">
-            <div class="edu-card-icon">
-              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M14 4C14 4 7 8 7 15C7 18.31 10.13 21 14 21C17.87 21 21 18.31 21 15C21 8 14 4 14 4Z"
-                  fill="#0ABFB8"
-                  fill-opacity="0.15"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14 10V15L17 17"
-                  stroke="#0ABFB8"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M10 23L14 25L18 23"
-                  stroke="#0ABFB8"
-                  stroke-width="1.3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  opacity="0.5"
-                />
-              </svg>
-            </div>
+            <div class="edu-card-icon"><i class="bi bi-database-check"></i></div>
             <h3 class="edu-card-title">머신러닝 & 딥러닝</h3>
             <p class="edu-card-desc">
               업무 특성에 맞는 맞춤형 알고리즘을 설계하고 대규모 데이터를 학습시켜 분류, 군집화,
@@ -779,45 +670,7 @@
 
           <!-- 5. AI 튜터 (학습 챗봇) -->
           <div class="edu-card">
-            <div class="edu-card-icon">
-              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect
-                  x="4"
-                  y="5"
-                  width="20"
-                  height="15"
-                  rx="3"
-                  fill="#0ABFB8"
-                  fill-opacity="0.15"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                />
-                <circle cx="10" cy="12" r="2" fill="#0ABFB8" />
-                <circle cx="14" cy="12" r="2" fill="#0ABFB8" />
-                <circle cx="18" cy="12" r="2" fill="#0ABFB8" />
-                <path
-                  d="M10 20L8 24"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  opacity="0.5"
-                />
-                <path
-                  d="M18 20L20 24"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  opacity="0.5"
-                />
-                <path
-                  d="M8 24H20"
-                  stroke="#0ABFB8"
-                  stroke-width="1.2"
-                  stroke-linecap="round"
-                  opacity="0.5"
-                />
-              </svg>
-            </div>
+            <div class="edu-card-icon"><i class="bi bi-volume-down"></i></div>
             <h3 class="edu-card-title">음성 인식 & 합성 (STT/TTS)</h3>
             <p class="edu-card-desc">
               사용자의 음성을 텍스트로 변환(STT)하거나, 텍스트를 자연스러운 사람의 음성으로
@@ -827,40 +680,7 @@
 
           <!-- 6. 데이터 시각화 대시보드 -->
           <div class="edu-card">
-            <div class="edu-card-icon">
-              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect
-                  x="3"
-                  y="3"
-                  width="22"
-                  height="22"
-                  rx="3"
-                  fill="#0ABFB8"
-                  fill-opacity="0.10"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                />
-                <rect x="6" y="16" width="4" height="6" rx="1" fill="#0ABFB8" fill-opacity="0.4" />
-                <rect
-                  x="12"
-                  y="11"
-                  width="4"
-                  height="11"
-                  rx="1"
-                  fill="#0ABFB8"
-                  fill-opacity="0.6"
-                />
-                <rect x="18" y="7" width="4" height="15" rx="1" fill="#0ABFB8" />
-                <path
-                  d="M6 13L10 10L14 12L18 7"
-                  stroke="#0ABFB8"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  opacity="0.5"
-                />
-              </svg>
-            </div>
+            <div class="edu-card-icon"><i class="bi bi-database"></i></div>
             <h3 class="edu-card-title">생성형 AI (Generative AI)</h3>
             <p class="edu-card-desc">
               텍스트, 이미지, 비디오, 오디오 등 새로운 콘텐츠를 자동으로 생성하는 멀티모달 기술을
@@ -873,8 +693,8 @@
       <!-- ── EFFECT SECTION ── -->
       <section class="effect-section">
         <div class="effect-section__header">
-          <p class="effect-section__eyebrow">BUSINESS BENEFITS</p>
-          <h2 class="effect-section__title">AI 도입 기대 효과</h2>
+          <p class="edu-feature-eyebrow">BUSINESS BENEFITS</p>
+          <h2 class="edu-feature-title">AI 도입 기대 효과</h2>
         </div>
 
         <div class="effect-section__grid">

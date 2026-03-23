@@ -5,7 +5,7 @@
   }
   main section {
     flex-direction: column;
-    padding: 45px 15px;
+    padding: 30px 15px;
   }
   .mo-br {
     display: block;
@@ -44,7 +44,8 @@
   .section-admin-ecosystem,
   .sync-eta-pipeline,
   .scm-hero,
-  .xbus-encryption {
+  .xbus-encryption,
+  .container__agency {
     padding: 45px 15px;
   }
   main .cms-stats,
@@ -148,6 +149,7 @@
   .org-section .org-header h2,
   h2.section-title {
     font-weight: 600;
+    margin-bottom: 20px;
   }
   .overview-cards .overview-cards-wrap {
     flex-direction: column;
@@ -373,6 +375,9 @@
     justify-content: center;
   }
   /* pages/business/aisolution.html */
+  .biz-container {
+    padding: 20px 0 0;
+  }
   .edu-card-grid,
   .effect-section__grid {
     grid-template-columns: 1fr;
@@ -390,15 +395,23 @@
   /* pages/business/commerce.html */
   .ac-hero__inner {
     flex-direction: column;
+    gap: 1rem;
   }
   .ac-intro__inner {
     grid-template-columns: 1fr;
   }
   .ac-solution__grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ac-sol-card {
+    padding: 20px;
   }
   .ac-effect__grid {
     grid-template-columns: 1fr;
+  }
+  .ac-effect-card {
+    padding: 20px;
   }
 
   /*  sync > * */

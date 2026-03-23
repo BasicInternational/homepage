@@ -45,11 +45,6 @@ const gnb = {
 
     gnb.btnClose.addEventListener('click', (e) => {
       gnb.close();
-      // gnb.menuItem.forEach(item => {
-      //   item.style.visibility = "hidden";
-      //   item.style.transform = "translateY(3.125vw)";
-      //   item.style.opacity = 0;
-      // });
     });
 
     gnb.menuItemBtn.forEach((button) => {
@@ -175,13 +170,8 @@ const dialObj = {
 
 // go to top
 function goToTop() {
-  if ($('#fullpage').length) {
-    console.log('fullpage : ', $('#fullpage'.length));
-    $.fn.fullpage.moveTo('sec1');
-  } else {
-    $('html, body').animate({ scrollTop: 0 });
-    return false;
-  }
+  $('html, body').animate({ scrollTop: 0 });
+  return false;
 }
 
 window.addEventListener('scroll', function () {
@@ -367,29 +357,25 @@ function initCommon() {
   });
 }
 
-window.addEventListener(
-  'resize',
-  function () {
-    device.init();
-    dialObj.init();
-    if (device.type === 'mobile') {
-      gnb.tabs.style.display = 'none';
-    } else {
-      gnb.tabs.style.display = 'block';
-      updateMegaMenuWidth();
+window.addEventListener('resize', function () {
+  device.init();
+  dialObj.init();
+  if (device.type === 'mobile') {
+    gnb.tabs.style.display = 'none';
+  } else {
+    gnb.tabs.style.display = 'block';
+    updateMegaMenuWidth();
 
-      var tabs = document.querySelector('.bi__tabs');
-      if (tabs) {
-        var tabsWidth = tabs.offsetWidth;
-        var megaMenu = tabs.querySelector('.mega-menu');
-        if (megaMenu) {
-          megaMenu.style.width = tabsWidth + 'px';
-        }
+    var tabs = document.querySelector('.bi__tabs');
+    if (tabs) {
+      var tabsWidth = tabs.offsetWidth;
+      var megaMenu = tabs.querySelector('.mega-menu');
+      if (megaMenu) {
+        megaMenu.style.width = tabsWidth + 'px';
       }
     }
-  },
-  { once: true },
-);
+  }
+});
 
 $(document).ready(function () {
   $('#header-include').load('/pages/include/header.html', () => {
@@ -416,21 +402,4 @@ function updateMegaMenuWidth() {
   if (megaMenu) {
     megaMenu.style.width = tabsWidth + 'px';
   }
-}
-const modal = document.getElementById('projectModal');
-const pdfViewer = document.getElementById('pdfViewer');
-const modalTitle = document.getElementById('modalTitle');
-const pdfLoading = document.getElementById('pdfLoading');
-
-function openModal(pdfUrl, title) {
-  if (!modal || !pdfViewer) return;
-
-  modalTitle.innerText = title;
-  pdfLoading.style.display = 'block';
-
-  // PDF 경로 설정 (전달받은 로컬 상대경로 사용)
-  pdfViewer.src = pdfUrl + '#view=FitH&toolbar=1';
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
 }

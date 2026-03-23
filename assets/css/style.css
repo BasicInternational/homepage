@@ -2568,11 +2568,7 @@ key__group > * {
   text-align: center;
   margin-bottom: 52px;
 }
-.system-eyebrow {
-  font-size: 13px;
-  color: #6b7280;
-  margin-bottom: 8px;
-}
+
 .system-title {
   font-size: 32px;
   font-weight: 700;
@@ -2621,7 +2617,8 @@ key__group > * {
   flex-direction: column;
 }
 
-.encryption-title {
+.encryption-title,
+.system-title {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
@@ -2700,13 +2697,16 @@ key__group > * {
   margin-bottom: 56px;
 }
 
-.main-features__eyebrow {
-  font-size: 13px;
-  color: #6b7280;
+.main-features__eyebrow,
+.system-eyebrow {
+  font-size: 16px;
+  color: #555;
   margin-bottom: 8px;
 }
 
-.main-features__title {
+.main-features__title,
+.encryption-title,
+.system-title {
   font-size: 32px;
   font-weight: 700;
   color: #111827;
@@ -2818,7 +2818,7 @@ key__group > * {
 }
 
 .ssl-desc__list li {
-  font-size: 14px;
+  font-size: 15px;
   color: #475569;
   line-height: 1.7;
   padding-left: 14px;
@@ -2982,8 +2982,8 @@ key__group > * {
 }
 
 .node-label {
-  font-size: 14px;
-  color: #444;
+  font-size: 16px;
+  color: #222;
   line-height: 1.45;
   text-align: center;
   white-space: nowrap;
@@ -4902,13 +4902,13 @@ nav ul li a:hover {
 .business-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 2열 */
-  grid-auto-rows: 300px; /* 모든 행 높이 고정 */
+  grid-auto-rows: 280px; /* 모든 행 높이 고정 */
   gap: 20px;
 }
 
 .biz-card {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
   background: var(--white);
   border-radius: 12px;
@@ -4920,7 +4920,7 @@ nav ul li a:hover {
   box-sizing: border-box;
   border: 1px solid #ddd;
   padding: 20px;
-  overflow: hidden; /* 내용 넘치면 잘라냄 */
+  overflow: hidden;
 }
 
 .biz-card:hover {
@@ -4966,7 +4966,7 @@ nav ul li a:hover {
 }
 
 .biz-tag {
-  font-size: 11px;
+  font-size: 13px;
   padding: 3px 10px;
   border-radius: 20px;
   border: 1px solid var(--mid-gray);
@@ -5438,10 +5438,11 @@ section.overview-cards {
 .overview-cards-wrap .card-info .departments .tag__wrap .tag {
   padding: 10px;
   border-radius: 10px;
-  font-size: 12px;
+  font-size: 1rem;
+  text-align: center;
   font-weight: 500;
   border: 1px solid #ddd;
-  color: #555;
+  color: #222;
 }
 
 .card-staff {
@@ -5902,7 +5903,7 @@ h2.section-title,
 }
 .corp-heading p {
   font-size: 1rem;
-  color: #6b7c99;
+  color: #333;
   line-height: 1.85;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -5990,6 +5991,7 @@ h2.section-title,
   }
   .corp-card {
     padding: 26px 20px;
+    text-align: center;
   }
 }
 
@@ -6111,7 +6113,7 @@ h2.section-title,
 
 /* 사업부 설명 */
 .org-section .org-desc {
-  font-size: 12px;
+  font-size: 14px;
   color: #6b7a90;
   line-height: 1.6;
   user-select: none;
@@ -6251,8 +6253,8 @@ h2.section-title,
 }
 
 .total-sub {
-  color: #9299ad;
-  font-size: 11px;
+  color: #555;
+  font-size: 14px;
   margin-top: 4px;
 }
 
@@ -6345,7 +6347,7 @@ h2.section-title,
 }
 
 .field-name {
-  font-size: 13px;
+  font-size: 16px;
   color: #555d72;
   font-weight: 500;
 }
@@ -6358,4 +6360,7 @@ h2.section-title,
 
 .field-pct.gray {
   color: #9299ad;
+}
+.cases__wrap {
+  display: none;
 }

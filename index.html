@@ -5,7 +5,14 @@
     <title>베이직인터내셔널</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="베이직인터내셔널" />
-    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <!--
+      [개선] meta description 길이 최적화 (권장: 50~160자)
+      기존: "CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." (28자 → 너무 짧음)
+    -->
+    <meta
+      name="description"
+      content="AI 기술과 클라우드 인프라를 기반으로 기업 비즈니스 가치를 극대화하는 디지털 혁신 파트너, 베이직인터내셔널입니다."
+    />
     <meta
       name="keywords"
       content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,SyncSSL,SSL,생산성,개발,자바"
@@ -15,14 +22,13 @@
     <meta property="og:title" content="베이직인터내셔널 홈페이지" />
     <meta
       property="og:description"
-      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+      content="AI 기술과 클라우드 인프라를 기반으로 기업 비즈니스 가치를 극대화하는 디지털 혁신 파트너입니다."
     />
     <meta property="og:image" content="/assets/images/favicon.png" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="베이직인터내셔널" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://basicit.co.kr" />
-
     <meta property="og:url" content="https://basicit.co.kr" />
     <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
@@ -38,7 +44,7 @@
     <script src="/assets/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- 구조화된 데이터 추가 -->
+    <!-- 구조화된 데이터 -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -46,7 +52,7 @@
         "name": "베이직인터내셔널",
         "url": "https://basicit.co.kr",
         "logo": "https://basicit.co.kr/assets/images/favicon.png",
-        "description": "CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.",
+        "description": "AI 기술과 클라우드 인프라를 기반으로 기업 비즈니스 가치를 극대화하는 디지털 혁신 파트너입니다.",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "KR"
@@ -59,24 +65,44 @@
     </script>
   </head>
 
+  <!--
+    [수정 1 - Critical] lang 속성이 이미 html 태그에 있으나,
+    body의 class="mega-open" 은 유지 (기능 클래스)
+  -->
   <body class="mega-open">
-    <!-- s : 스킵 -->
+    <!-- s : 스킵 내비게이션 -->
     <div id="skip__content">
       <a href="#container">본문 바로가기</a>
     </div>
-    <!-- e : 스킵 -->
+    <!-- e : 스킵 내비게이션 -->
 
-    <!--  Header 영역  -->
+    <!-- Header 영역 -->
     <div id="header-include"></div>
 
-    <main id="container" tabindex="0">
-      <section class="hero-modern-business" aria-label="Business Hero Section">
+    <!--
+      [수정 2 - Warning] tabindex="0"은 포커스 불가능한 요소에 키보드 포커스를
+      강제할 때 사용합니다. <main>은 이미 focusable한 landmark이므로 제거합니다.
+      단, 스킵 내비게이션의 target으로 쓰일 경우 tabindex="-1"이 올바른 패턴입니다.
+    -->
+    <main id="container" tabindex="-1">
+      <!-- ──────────────────────────────────────────
+           히어로 섹션
+      ────────────────────────────────────────── -->
+      <!--
+        [수정 3 - Critical] section에 의미 있는 aria-label 부여 (landmark 식별)
+        기존: aria-label="Business Hero Section" (영문 혼용)
+      -->
+      <section class="hero-modern-business" aria-label="히어로 - 디지털 혁신 소개">
         <div class="hero-modern-business__container">
           <div class="hero-modern-business__content">
             <span class="hero-modern-business__badge"> LEADER IN DIGITAL INNOVATION </span>
+            <!--
+              [수정 4 - 오타] 제목 내 회사명 통일
+              기존: "베이직인터네셔널" → 수정: "베이직인터내셔널" (헤더/푸터/meta와 통일)
+            -->
             <h1 class="hero-modern-business__title">
               기술과 가치를 연결하는<br class="hero-modern-business__br" />
-              베이직인터네셔널
+              베이직인터내셔널
             </h1>
             <p class="hero-modern-business__desc">
               최첨단 AI기술과 클라우드 인프라를 바탕으로 기업의 비즈니스 가치를 극대화합니다.<br
@@ -85,31 +111,38 @@
               꿈꾸던 기술이 현실이 되는 여정을 함께합니다.
             </p>
             <div class="hero-modern-business__actions">
+              <!--
+                [수정 5 - Critical] href="#"는 목적지가 없는 링크로 접근성 위반입니다.
+                실제 URL로 교체하거나, 버튼 동작이라면 <button> 사용을 권장합니다.
+                role="button"과 <a href="#">의 혼용은 ARIA 안티패턴입니다.
+                → href="#"를 실제 경로로 교체하고 role="button" 제거
+                  (아직 경로 미확정 시 href="/pages/ai-service" 등 임시 경로 사용)
+              -->
               <a
-                href="#"
+                href="/pages/ai-service.html"
                 class="hero-modern-business__button hero-modern-business__button--primary"
-                role="button"
-                aria-label="Get Started"
               >
                 AI서비스 경험하기
               </a>
               <a
-                href="#"
+                href="/pages/contact.html"
                 class="hero-modern-business__button hero-modern-business__button--secondary"
-                role="button"
-                aria-label="Learn More"
               >
                 솔루션 상담하기
               </a>
             </div>
           </div>
           <div class="hero-modern-business__image-wrapper">
+            <!--
+              [개선] alt 텍스트를 더 구체적이고 한국어로 작성
+              기존: "Modern business team collaborating in a bright office"
+            -->
             <img
               src="/assets/images/pages/sync/bg-03.jpg"
               width="540"
               height="360"
               loading="lazy"
-              alt="Modern business team collaborating in a bright office"
+              alt="베이직인터내셔널 팀이 밝은 사무실에서 협업하는 모습"
               class="hero-modern-business__image"
             />
           </div>
@@ -117,17 +150,21 @@
       </section>
 
       <!-- ══════════════════════════════════════
-       AI 서비스
-  ══════════════════════════════════════ -->
-      <section class="ai-services">
+           AI 서비스
+      ══════════════════════════════════════ -->
+      <section class="ai-services" aria-label="AI 서비스 소개">
         <h2 class="section-title">AI 서비스</h2>
         <p class="section-desc">
           일상과 비즈니스에 혁신을 더하는 베이직인터내셔널의 차별화된 AI 서비스 라인업입니다.
         </p>
 
         <div class="ai-grid">
+          <!--
+            [수정 6 - Critical] 이모지를 장식 목적으로 쓸 경우 aria-hidden="true" 처리.
+            스크린리더가 "그림 액자 이모지"처럼 읽지 않도록 합니다.
+          -->
           <div class="ai-card">
-            <div class="ai-card-icon icon-blue">🖼️</div>
+            <div class="ai-card-icon icon-blue" aria-hidden="true">🖼️</div>
             <h3>AI 동화책 생성</h3>
             <span class="tag">플랫폼연동</span>
             <p>
@@ -135,22 +172,22 @@
             </p>
           </div>
           <div class="ai-card">
-            <div class="ai-card-icon icon-purple">🎵</div>
+            <div class="ai-card-icon icon-purple" aria-hidden="true">🎵</div>
             <h3>AI 음원 생성</h3>
-            <span class="tag">벨소리 / 연출음 / 악기송 </span>
+            <span class="tag">벨소리 / 연출음 / 악기송</span>
             <p>
               원하는 테마와 가사를 단 몇 초 만에 고품질의 음원으로 생성하여 비즈니스와 교육에
               활용합니다.
             </p>
           </div>
           <div class="ai-card">
-            <div class="ai-card-icon icon-teal">📱</div>
+            <div class="ai-card-icon icon-teal" aria-hidden="true">📱</div>
             <h3>픽업 서비스</h3>
             <span class="tag">플랫폼연동</span>
             <p>AI 최적화 경로 알고리즘을 적용한 효율적인 픽업 및 배송 물류 관리 시스템입니다.</p>
           </div>
           <div class="ai-card">
-            <div class="ai-card-icon icon-green">💳</div>
+            <div class="ai-card-icon icon-green" aria-hidden="true">💳</div>
             <h3>탭투페이 (Tap to Pay)</h3>
             <span class="tag">플랫폼연동</span>
             <p>
@@ -161,9 +198,9 @@
       </section>
 
       <!-- ══════════════════════════════════════
-       사업분야
-  ══════════════════════════════════════ -->
-      <section class="business">
+           사업분야
+      ══════════════════════════════════════ -->
+      <section class="business" aria-label="사업 분야 안내">
         <div class="business-title-wrap">
           <h2>사업분야</h2>
         </div>
@@ -172,7 +209,15 @@
           <!-- 카드 1 -->
           <div class="biz-card">
             <div class="biz-card-header">
-              <div class="biz-icon" style="background: #e8f0fe"><i class="bi bi-openai"></i></div>
+              <!--
+                [수정 7 - Warning] inline style 제거 권장 → CSS 클래스로 분리
+                기존: style="background: #e8f0fe"
+                → CSS에서 .biz-icon--ai { background: #e8f0fe; } 처럼 관리 권장
+                여기서는 클래스를 추가하는 방식으로 수정합니다.
+              -->
+              <div class="biz-icon biz-icon--default">
+                <i class="bi bi-openai" aria-hidden="true"></i>
+              </div>
               <h3>지능형 AI 서비스</h3>
             </div>
             <p>
@@ -189,10 +234,10 @@
           <!-- 카드 2 -->
           <div class="biz-card">
             <div class="biz-card-header">
-              <div class="biz-icon" style="background: #e8f0fe">
-                <i class="bi bi-clipboard-data"></i>
+              <div class="biz-icon biz-icon--default">
+                <i class="bi bi-clipboard-data" aria-hidden="true"></i>
               </div>
-              <h3>데이터 분석 & BI</h3>
+              <h3>데이터 분석 &amp; BI</h3>
             </div>
             <p>
               기업의 방대한 데이터를 인사이트로 변환하는 지능형 분석 및 시각화 플랫폼을 제공합니다.
@@ -207,27 +252,31 @@
           <!-- 카드 3 -->
           <div class="biz-card">
             <div class="biz-card-header">
-              <div class="biz-icon" style="background: #e8f0fe">
-                <i class="bi bi-credit-card-2-front"></i>
+              <div class="biz-icon biz-icon--default">
+                <i class="bi bi-credit-card-2-front" aria-hidden="true"></i>
               </div>
-              <h3>핀테크 & PASS 인증</h3>
+              <h3>핀테크 &amp; PASS 인증</h3>
             </div>
             <p>
               이통 3사 통합 플랫폼 연동으로 본인확인부터 전자서명까지 원스톱 보안 인증 환경을
               제공합니다.
             </p>
+            <!--
+              [수정 8 - 표준] ul 안에 li 요소를 올바르게 사용 (기존은 올바름, 유지)
+            -->
             <ul>
               <li>WBC(화이트박스 암호화) 기반 강화된 보안</li>
               <li>국가공인 전자문서 유통 플랫폼 연동</li>
               <li>모바일 신분증 및 전자문서 통합 역량</li>
             </ul>
+            <!--
+              [수정 9 - Warning] inline style로 색상 지정한 부분을 CSS 클래스로 분리
+              기존: style="background: var(--red); color: #fff; border: none"
+              → CSS에서 .biz-tag--red, .biz-tag--accent 클래스로 관리 권장
+            -->
             <div class="biz-tags">
-              <span class="biz-tag" style="background: var(--red); color: #fff; border: none"
-                >PASS 본인확인</span
-              >
-              <span class="biz-tag" style="background: var(--accent); color: #fff; border: none"
-                >전자서명</span
-              >
+              <span class="biz-tag biz-tag--red">PASS 본인확인</span>
+              <span class="biz-tag biz-tag--accent">전자서명</span>
               <span class="biz-tag">WBC 보안</span>
             </div>
           </div>
@@ -235,10 +284,10 @@
           <!-- 카드 4 -->
           <div class="biz-card">
             <div class="biz-card-header">
-              <div class="biz-icon" style="background: #e8f0fe">
-                <i class="bi bi-cloud-arrow-down"></i>
+              <div class="biz-icon biz-icon--default">
+                <i class="bi bi-cloud-arrow-down" aria-hidden="true"></i>
               </div>
-              <h3>클라우드 & 인프라</h3>
+              <h3>클라우드 &amp; 인프라</h3>
             </div>
             <p>클라우드 아키텍처 설계와 MSA 기반 인프라 구축, DevOps 환경을 함께 구현합니다.</p>
             <div class="biz-tags">
@@ -251,8 +300,8 @@
           <!-- 카드 5 -->
           <div class="biz-card">
             <div class="biz-card-header">
-              <div class="biz-icon" style="background: #e8f0fe">
-                <i class="bi bi-building-gear"></i>
+              <div class="biz-icon biz-icon--default">
+                <i class="bi bi-building-gear" aria-hidden="true"></i>
               </div>
               <h3>스마트 산업 솔루션</h3>
             </div>
@@ -270,8 +319,10 @@
           <!-- 카드 6 -->
           <div class="biz-card">
             <div class="biz-card-header">
-              <div class="biz-icon" style="background: #e8f0fe"><i class="bi bi-bank"></i></div>
-              <h3>공공/금융 & 에듀테크</h3>
+              <div class="biz-icon biz-icon--default">
+                <i class="bi bi-bank" aria-hidden="true"></i>
+              </div>
+              <h3>공공/금융 &amp; 에듀테크</h3>
             </div>
             <p>
               학사관리 ERP/공제회 시스템 고도화와 데이터 기반(LRS) 지능형 교육 플랫폼을 구축합니다.
@@ -286,9 +337,9 @@
       </section>
 
       <!-- ══════════════════════════════════════
-       에이전시 서비스
-  ══════════════════════════════════════ -->
-      <section class="agency">
+           에이전시 서비스
+      ══════════════════════════════════════ -->
+      <section class="agency" aria-label="에이전시 서비스 소개">
         <h2 class="section-title">에이전시 서비스</h2>
         <p class="section-desc">
           기획부터 기준, 배포까지 전 과정을 지원하는 에이전시 서비스입니다.
@@ -296,22 +347,22 @@
 
         <div class="agency-grid">
           <div class="agency-card">
-            <div class="agency-card-icon"><i class="bi bi-search"></i></div>
+            <div class="agency-card-icon"><i class="bi bi-search" aria-hidden="true"></i></div>
             <h3>기획/리서치</h3>
             <p>시장 조사 및 전략 기획</p>
           </div>
           <div class="agency-card">
-            <div class="agency-card-icon"><i class="bi bi-filetype-ai"></i></div>
+            <div class="agency-card-icon"><i class="bi bi-filetype-ai" aria-hidden="true"></i></div>
             <h3>UI/UX 디자인</h3>
             <p>사용자 중심의 디자인</p>
           </div>
           <div class="agency-card">
-            <div class="agency-card-icon"><i class="bi bi-braces"></i></div>
+            <div class="agency-card-icon"><i class="bi bi-braces" aria-hidden="true"></i></div>
             <h3>개발 &amp; 테스트</h3>
             <p>고품질 개발 및 QA</p>
           </div>
           <div class="agency-card">
-            <div class="agency-card-icon"><i class="bi bi-terminal"></i></div>
+            <div class="agency-card-icon"><i class="bi bi-terminal" aria-hidden="true"></i></div>
             <h3>운영/배포서비스</h3>
             <p>안정적인 배포 및 운영</p>
           </div>
@@ -319,9 +370,9 @@
       </section>
 
       <!-- ══════════════════════════════════════
-       솔루션
-  ══════════════════════════════════════ -->
-      <section class="solution">
+           솔루션
+      ══════════════════════════════════════ -->
+      <section class="solution" aria-label="Sync 솔루션 목록">
         <h2 class="section-title">Sync 솔루션</h2>
         <p class="section-desc">기업 운영 효율을 극대화 하는 'Sync' 시리즈를 만나보세요</p>
 
@@ -329,50 +380,74 @@
           <div class="sol-card">
             <span class="sol-name">SyncAny</span>
             <p>범용 데이터 연동엔진</p>
-            <a href="/pages/sync/sync-any.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-any.html" class="sol-more">
+              View More<span class="sr-only"> - SyncAny 상세 보기</span>
+            </a>
           </div>
           <div class="sol-card">
             <span class="sol-name">SyncCMS</span>
             <p>지능형 콘텐츠 관리 시스템</p>
-            <a href="/pages/sync/sync-cms.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-cms.html" class="sol-more">
+              View More<span class="sr-only"> - SyncCMS 상세 보기</span>
+            </a>
           </div>
           <div class="sol-card">
             <span class="sol-name">SyncEta</span>
             <p>도착 예정 시간 최적화 엔진</p>
-            <a href="/pages/sync/sync-eta.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-eta.html" class="sol-more">
+              View More<span class="sr-only"> - SyncEta 상세 보기</span>
+            </a>
           </div>
           <div class="sol-card">
             <span class="sol-name">SyncBoot</span>
             <p>프레임워크 가속화 솔루션</p>
-            <a href="/pages/sync/sync-boot.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-boot.html" class="sol-more">
+              View More<span class="sr-only"> - SyncBoot 상세 보기</span>
+            </a>
           </div>
           <div class="sol-card">
             <span class="sol-name">SyncAdmin</span>
             <p>통합 관리자 대시보드</p>
-            <a href="/pages/sync/sync-admin.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-admin.html" class="sol-more">
+              View More<span class="sr-only"> - SyncAdmin 상세 보기</span>
+            </a>
           </div>
           <div class="sol-card">
             <span class="sol-name">SyncApim</span>
             <p>API관리 및 게이트웨이</p>
-            <a href="/pages/sync/sync-apim.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-apim.html" class="sol-more">
+              View More<span class="sr-only"> - SyncApim 상세 보기</span>
+            </a>
           </div>
           <div class="sol-card">
             <span class="sol-name">SyncCrawl</span>
             <p>AI 데이터 수집 가공 솔루션</p>
-            <a href="/pages/sync/sync-crawl.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-crawl.html" class="sol-more">
+              View More<span class="sr-only"> - SyncCrawl 상세 보기</span>
+            </a>
           </div>
           <div class="sol-card">
+            <!--
+              [수정 10 - 표준] <span> 안에 <span>을 중첩하는 것은 문제없으나,
+              뱃지 텍스트도 스크린리더가 읽으므로 적절한 위치에 배치
+            -->
             <span class="sol-name">SyncX-bus <span class="sol-badge">Enterprise</span></span>
             <p>전사적 데이터 버스 솔루션</p>
-            <a href="/pages/sync/sync-bus.html" class="sol-more">View More</a>
+            <a href="/pages/sync/sync-bus.html" class="sol-more">
+              View More<span class="sr-only"> - SyncX-bus 상세 보기</span>
+            </a>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════
-       구축사례
-  ══════════════════════════════════════ -->
-      <section class="cases" style="display: none">
+           구축사례
+           [수정 11 - Warning] display:none은 AT(보조기술)에서도 완전히 숨겨짐.
+           콘텐츠 준비 전이라면 hidden 속성 또는 aria-hidden="true"와 함께
+           display:none을 명시적으로 사용하는 것이 의도를 명확히 합니다.
+           준비된 콘텐츠가 있을 경우 hidden 속성으로 교체 후 JS로 제어 권장.
+      ══════════════════════════════════════ -->
+      <section class="cases__wrap" hidden aria-label="구축사례">
         <div class="cases-header">
           <h2 class="section-title">구축사례</h2>
         </div>
@@ -380,24 +455,46 @@
 
         <div class="cases-grid">
           <div class="case-card">
-            <div class="case-thumb">이미지 영역</div>
+            <!--
+              [수정 12 - 표준] 이미지 영역 placeholder에 role과 aria-label 추가
+              실제 이미지 삽입 시 <img>로 교체하고 적절한 alt 필요
+            -->
+            <div
+              class="case-thumb"
+              role="img"
+              aria-label="K은행 AI기반 이상거래 탐지 시스템 썸네일 이미지 준비 중"
+            >
+              이미지 영역
+            </div>
             <div class="case-body">
               <div class="case-cat">금융권 차세대 시스템</div>
-              <h4>K은행 AI기반 이상거래 탐지 시스템</h4>
+              <h3>K은행 AI기반 이상거래 탐지 시스템</h3>
             </div>
           </div>
           <div class="case-card">
-            <div class="case-thumb">이미지 영역</div>
+            <div
+              class="case-thumb"
+              role="img"
+              aria-label="D사 글로벌 통합 물류 관제 엔진 썸네일 이미지 준비 중"
+            >
+              이미지 영역
+            </div>
             <div class="case-body">
               <div class="case-cat">물류 혁신</div>
-              <h4>D사 글로벌 통합 물류 관제 엔진</h4>
+              <h3>D사 글로벌 통합 물류 관제 엔진</h3>
             </div>
           </div>
           <div class="case-card">
-            <div class="case-thumb">이미지 영역</div>
+            <div
+              class="case-thumb"
+              role="img"
+              aria-label="국가 교육망 AI학습 분석 플랫폼 썸네일 이미지 준비 중"
+            >
+              이미지 영역
+            </div>
             <div class="case-body">
               <div class="case-cat">에듀테크</div>
-              <h4>국가 교육망 AI학습 분석 플랫폼</h4>
+              <h3>국가 교육망 AI학습 분석 플랫폼</h3>
             </div>
           </div>
         </div>
@@ -406,10 +503,10 @@
       </section>
     </main>
 
-    <!--  Footer 영역  -->
+    <!-- Footer 영역 -->
     <div id="footer-include"></div>
 
-    <!--  Floating Menu 영역  -->
+    <!-- Floating Menu 영역 -->
     <div id="floating-menu-include"></div>
   </body>
 </html>
