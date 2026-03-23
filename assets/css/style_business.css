@@ -4617,8 +4617,7 @@ main section {
   justify-content: flex-end;
 }
 .card-tag {
-  color: var(--blue-400);
-  font-weight: 700;
+  color: var(--border);
   margin-bottom: 0.5rem;
   display: block;
 }

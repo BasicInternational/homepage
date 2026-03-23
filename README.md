@@ -32,5 +32,5 @@ live server 폴더 위치기준은 hompage로 잡았습니다.
 - 공통으로 사용되는 Header, Footer, Floating Menu 부분을 include 폴더에서 따로 관리 할 수 있도록 코드를 수정하였습니다. (jquery의 load 사용)
 - 위 html을 load하면 DOM 구성 이전에 common.js가 실행이 되어 init을 함수화 하여 DOM 구성 후 호출 할 수 있도록 수정
 
-## 2026-03-12 리뉴얼
-- gnb 메뉴 UI 변경
+## 2026-03-23 홈페이지 리뉴얼
+- 전체 디자인 리뉴얼

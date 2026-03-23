@@ -4,4 +4,4 @@
 .idea/
 *.iml
 .vscode/settings.json
-assets/file/agency.pdf
+.prettierrc
