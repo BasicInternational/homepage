@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+
+    <meta property="og:url" content="https://basicit.co.kr" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_sync.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body data-type="detail">
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+
+    <main id="container" class="eta__main crawl__main" tabindex="0">
+      <!-- ── HERO ── -->
+      <section class="sync-eta-hero">
+        <div class="sync-eta__bg"></div>
+        <div class="sync-eta__pattern">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M200 20 L380 110 L380 290 L200 380 L20 290 L20 110 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 60 L340 135 L340 265 L200 340 L60 265 L60 135 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 100 L300 160 L300 240 L200 300 L100 240 L100 160 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 140 L260 175 L260 225 L200 260 L140 225 L140 175 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div class="sync-eta__content">
+          <div class="sync-eta__badge">
+            <div class="sync-eta__badge-icon"><i class="bi bi-braces-asterisk"></i></div>
+            <span class="sync-eta__badge-text">LLM &amp; RAG Data Collection Framework</span>
+          </div>
+          <h1 class="sync-eta__title">
+            프롬프트가 곧 코드가 되다<br />
+            자연어로 완성하는 RAG 지식망
+          </h1>
+          <p class="sync-eta__sub">
+            SyncCrawl은 LangChain4j와 Playwright MCP를 결합한 차세대 지능형 웹 크롤링
+            플랫폼입니다.<br />
+            500개 이상의 복잡한 웹 환경에서도 스스로 적응하며, 환각(Hallucination) 없는 완벽한 사내
+            지식망을 즉시 구축합니다.
+          </p>
+          <div class="sync-eta__btns" style="display: none">
+            <a
+              href="javascript:void(0)"
+              onclick="alert('서비스 준비중 입니다')"
+              class="sync-eta__btn-secondary"
+              >기술 백서 다운로드 ↓</a
+            >
+          </div>
+        </div>
+        <div class="syncany__scroll">
+          <span class="syncany__scroll-text"><a href="#status-bar">Scroll</a></span>
+          <div class="syncany__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ── STATS BAR ── -->
+
+      <div id="status-bar" class="sync-eta-stats">
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">0%</p>
+          <p class="sync-eta-stats__label">LLM 환각 (Hallucination)</p>
+        </div>
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">500+</p>
+          <p class="sync-eta-stats__label">복잡한 동적 웹사이트 대응</p>
+        </div>
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">MCP</p>
+          <p class="sync-eta-stats__label">자동화 선택자 재학습</p>
+        </div>
+        <div class="sync-eta-stats__item">
+          <p class="sync-eta-stats__value">Cross</p>
+          <p class="sync-eta-stats__label">PC, Web, Mobile (Quasar)</p>
+        </div>
+      </div>
+
+      <!-- ── FEATURES ── -->
+      <section class="sync-eta-features">
+        <div class="sync-eta-features__header">
+          <p class="sync-eta-pipeline__eyebrow">CORE ADVANTAGES</p>
+          <h2 class="title-txt">웹 데이터의 수집부터 LLM 질의응답까지</h2>
+          <p style="font-size: 14px; color: #64748b; margin-top: 12px">
+            엔터프라이즈 데이터 자산화를 위한 가장 지능적인 접근법
+          </p>
+        </div>
+        <div class="sync-eta-features__grid">
+          <div class="sync-eta-feat-card">
+            <div class="sync-eta-feat-card__icon" style="background: #ede9fe">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2a2 2 0 012 2v1a2 2 0 01-4 0V4a2 2 0 012-2z"
+                  stroke="#7C3AED"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M12 7v10M8 9l4-2 4 2M8 15l4 2 4-2"
+                  stroke="#7C3AED"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="sync-eta-feat-card__title">코딩 없는 자연어 지능형 명령 (Agent)</h3>
+            <p class="sync-eta-feat-card__desc">
+              Python이나 Node.js 스크립트를 작성할 필요가 없습니다. 비개발자도 자연어로 명령을
+              입력하면, LangChain4j Agent가 의도를 스스로 분석하여 알맞은 크롤링 툴(Tool) 호출을
+              자동화합니다. 데이터 수집의 진입 장벽을 완벽하게 허물었습니다.
+            </p>
+          </div>
+
+          <div class="sync-eta-feat-card">
+            <div class="sync-eta-feat-card__icon" style="background: #eff6ff">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="2"
+                  y="3"
+                  width="20"
+                  height="14"
+                  rx="2"
+                  stroke="#3B82F6"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M8 21h8M12 17v4"
+                  stroke="#3B82F6"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M7 10l2 2 5-5"
+                  stroke="#3B82F6"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="sync-eta-feat-card__title">UI 변경에도 멈추지 않는 자동 적응 시스템</h3>
+            <p class="sync-eta-feat-card__desc">
+              크롤링 운영의 가장 큰 골칫거리인 웹사이트 UI/UX 변경에 유연하게 대처합니다. Playwright
+              MCP(Model Context Protocol) 기반의 '자동화된 선택자 재학습 루프'를 통해 타깃 웹 구조가
+              변경되어도 개발 없이 스스로 파이프라인을 복구하여 500개 이상의 사이트를 안정적으로
+              수집합니다.
+            </p>
+          </div>
+
+          <div class="sync-eta-feat-card">
+            <div class="sync-eta-feat-card__icon" style="background: #fef2f2">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                  stroke="#EF4444"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9 12l2 2 4-4"
+                  stroke="#EF4444"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="sync-eta-feat-card__title">Hallucination 방지, RAG 지식망 즉시 구축</h3>
+            <p class="sync-eta-feat-card__desc">
+              단순한 데이터 저장(Scraping)을 넘어섭니다. 수집한 HTML은 즉시 Chunking 및 임베딩
+              과정을 거쳐 벡터 데이터베이스(Vector DB)에 저장됩니다. LLM은 오직 이 검증된 사내
+              지식만을 컨텍스트로 참조하여 답변을 생성하므로 '거짓 정보(환각)' 원천 차단된 시멘틱
+              검색 환경을 제공합니다.
+            </p>
+          </div>
+
+          <div class="sync-eta-feat-card">
+            <div class="sync-eta-feat-card__icon" style="background: #f0fdf4">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="#16A34A" stroke-width="1.8" />
+                <path d="M12 8v4l3 3" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="sync-eta-feat-card__title">한국어 최적화 및 엔터프라이즈 안정성</h3>
+            <p class="sync-eta-feat-card__desc">
+              글로벌 LLM의 한계를 극복하기 위해 한국어 특화 임베딩 모델(HuggingFace)을 채택하여 검색
+              정확도를 비약적으로 높였습니다. 또한 수많은 글로벌 기업이 검증한 Spring Boot 아키텍처
+              위에서 가동되어 24/7 무중단 실시간 모니터링과 안정적인 스케줄링 운영을 보장합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sync-eta-pipeline">
+        <div class="sync-eta-pipeline__header">
+          <p class="sync-eta-pipeline__eyebrow">INTELLIGENT PIPELINE</p>
+          <h2 class="title-txt">데이터가 '지식'으로 변하는 자동화 워크플로우</h2>
+          <p class="sync-eta-pipeline__sub">
+            명령부터 답변 생성까지, 단절 없는 RAG(Retrieval-Augmented Generation) 파이프라인
+          </p>
+        </div>
+
+        <div class="sync-eta-pipeline__steps">
+          <div class="sync-eta-pipeline__step">
+            <div class="sync-eta-pipeline__icon sync-eta-pipeline__icon--dark">
+              <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                <path
+                  d="M4 17l6-6-6-6"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M12 19h8" stroke="white" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="sync-eta-pipeline__step-body">
+              <h3 class="sync-eta-pipeline__step-title">자연어 명령</h3>
+              <p class="sync-eta-pipeline__step-tech">LangChain4j Agent</p>
+              <p class="sync-eta-pipeline__step-desc">
+                사용자의 복잡한 요구사항을 분석하고 의도를 추출
+              </p>
+            </div>
+          </div>
+
+          <div class="sync-eta-pipeline__connector"></div>
+
+          <div class="sync-eta-pipeline__step">
+            <div class="sync-eta-pipeline__icon sync-eta-pipeline__icon--blue">
+              <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                <circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.8" />
+                <path
+                  d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div class="sync-eta-pipeline__step-body">
+              <h3 class="sync-eta-pipeline__step-title">지능형 크롤링</h3>
+              <p class="sync-eta-pipeline__step-tech">Playwright MCP</p>
+              <p class="sync-eta-pipeline__step-desc">
+                다중 브라우저 제어 및 동적 UI 우회 수집 (HTML 캡처)
+              </p>
+            </div>
+          </div>
+
+          <div class="sync-eta-pipeline__connector"></div>
+
+          <div class="sync-eta-pipeline__step">
+            <div class="sync-eta-pipeline__icon sync-eta-pipeline__icon--red">
+              <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5z"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2 17l10 5 10-5M2 12l10 5 10-5"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="sync-eta-pipeline__step-body">
+              <h3 class="sync-eta-pipeline__step-title">데이터 전처리</h3>
+              <p class="sync-eta-pipeline__step-tech">Chunking &amp; Embed</p>
+              <p class="sync-eta-pipeline__step-desc">
+                수집 문서를 쪼개고 한국어 특화 모델로 고차원 벡터 변환
+              </p>
+            </div>
+          </div>
+
+          <div class="sync-eta-pipeline__connector"></div>
+
+          <div class="sync-eta-pipeline__step">
+            <div class="sync-eta-pipeline__icon sync-eta-pipeline__icon--purple">
+              <svg viewBox="0 0 24 24" fill="none" width="24" height="24">
+                <ellipse cx="12" cy="5" rx="9" ry="3" stroke="white" stroke-width="1.8" />
+                <path d="M3 5v5c0 1.66 4.03 3 9 3s9-1.34 9-3V5" stroke="white" stroke-width="1.8" />
+                <path
+                  d="M3 10v5c0 1.66 4.03 3 9 3s9-1.34 9-3v-5"
+                  stroke="white"
+                  stroke-width="1.8"
+                />
+              </svg>
+            </div>
+            <div class="sync-eta-pipeline__step-body">
+              <h3 class="sync-eta-pipeline__step-title">RAG 저장</h3>
+              <p class="sync-eta-pipeline__step-tech">Vector DB</p>
+              <p class="sync-eta-pipeline__step-desc">
+                FAISS, Qdrant 등에 시멘틱 검색을 위한 영속적 저장
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cms-cta">
+        <h2 class="title-txt-dark">
+          새로운 비즈니스 기회 창출,<br />
+          안전한 API 생태계로 부터 시작됩니다
+        </h2>
+        <p class="cms-cta__desc">
+          파트너, 개발자, 고객을 하나로 연결하는 엔터프라이즈 솔루션을 지금 경험하세요
+        </p>
+        <div class="cms-cta__btns" style="display: none">
+          <button class="cms-cta__btn-primary" onclick="alert('서비스 준비중입니다')">
+            제품 데모 신청
+          </button>
+          <button class="cms-cta__btn-secondary" onclick="alert('서비스 준비중입니다')">
+            상세기능 문의
+          </button>
+        </div>
+      </section>
+
+      <section class="sync-eta-features sync-eta-tech sync-eta-tech--light">
+        <div class="sync-eta-features__header sync-eta-tech__header">
+          <p class="sync-eta-features__eyebrow">ROBUST ARCHITECTURE</p>
+          <h2 class="title-txt">
+            크로스 플랫폼 및 시스템<br class="mo-br" />
+            아키텍처
+          </h2>
+          <p class="sync-eta-tech__sub">
+            단일 코드베이스로 모든 기기를 지원하며, 강력한 백엔드 안정성을 보장합니다.
+          </p>
+        </div>
+
+        <div class="sync-eta-tech__grid">
+          <div class="sync-eta-feat-card sync-eta-tech__card">
+            <h3 class="sync-eta-feat-card__title sync-eta-tech__card-title">AI Core Layer</h3>
+            <ul class="sync-eta-tech__list">
+              <li><strong>Multi-LLM 연동:</strong> GPT-4 등 다양한 LLM 호환</li>
+              <li><strong>Agent System:</strong> NLP 의도 분석 및 자동화 툴</li>
+              <li><strong>RAG Engine:</strong> Retriever &amp; Conversational Agent</li>
+            </ul>
+          </div>
+
+          <div class="sync-eta-feat-card sync-eta-tech__card">
+            <h3 class="sync-eta-feat-card__title sync-eta-tech__card-title">
+              Backend &amp; Crawling
+            </h3>
+            <ul class="sync-eta-tech__list">
+              <li><strong>Spring Boot:</strong> 고가용성 엔터프라이즈 서버 기반</li>
+              <li><strong>LangChain4j &amp; Playwright:</strong> 브라우저 완벽 제어</li>
+              <li><strong>Vector DB 플러그인:</strong> FAISS, Qdrant, Weaviate 연동</li>
+            </ul>
+          </div>
+
+          <div class="sync-eta-feat-card sync-eta-tech__card">
+            <h3 class="sync-eta-feat-card__title sync-eta-tech__card-title">Cross-Platform UI</h3>
+            <ul class="sync-eta-tech__list">
+              <li><strong>Quasar Framework:</strong> 원 소스 멀티 플랫폼 UI 아키텍처</li>
+              <li><strong>Electron 데스크톱:</strong> 독립적인 로컬 앱 환경 지원</li>
+              <li><strong>모니터링 대시보드:</strong> 실시간 크롤링 현황/메모리 관리</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sync-eta-tech__msa">
+          <h4 class="sync-eta-tech__msa-title">분산 시스템 생태계 (MSA Stack)</h4>
+          <div class="sync-eta-tech__tags">
+            <span class="sync-eta-tech__tag">Spring Cloud Alibaba (Nacos, Sentinel)</span>
+            <span class="sync-eta-tech__tag">Spring Cloud Gateway / Zuul</span>
+            <span class="sync-eta-tech__tag">OpenFeign &amp; Ribbon</span>
+            <span class="sync-eta-tech__tag">Spring Security</span>
+            <span class="sync-eta-tech__tag">Seata / RocketMQ</span>
+            <span class="sync-eta-tech__tag">ELK + Filebeat</span>
+            <span class="sync-eta-tech__tag">Spring Cloud Admin / Prometheus</span>
+            <span class="sync-eta-tech__tag">Skywalking</span>
+            <span class="sync-eta-tech__tag">XXL-JOB</span>
+            <span class="sync-eta-tech__tag">Sharding-JDBC</span>
+            <span class="sync-eta-tech__tag">Rancher</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FAQ ── -->
+
+      <section class="sync-eta-faq">
+        <div class="sync-eta-faq__header">
+          <h2 class="title-txt">자주 묻는 질문 (FAQ)</h2>
+          <p style="font-size: 14px; color: #64748b; margin-top: 10px">
+            도입 전 가장 많이 물어보시는 질문들을 모았습니다.
+          </p>
+        </div>
+        <div class="sync-eta-faq__list">
+          <div class="sync-eta-faq__item">
+            <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
+              기존 파이썬(Python) 크롤러들과 무엇이 다른가요?
+              <span class="sync-eta-faq__item__icon">+</span>
+            </p>
+            <p class="sync-eta-faq__item__a">
+              기존 Python 크롤러는 개발자가 직접 셀렉터를 작성하고 사이트 구조 변경 시 수동으로
+              유지보수해야 합니다. SyncCrawl은 LangChain4j Agent가 자연어 명령을 해석하고 Playwright
+              MCP가 동적 UI를 스스로 탐색하므로, 코딩 없이도 복잡한 웹 환경에서 자동 적응 수집이
+              가능합니다.
+            </p>
+          </div>
+
+          <div class="sync-eta-faq__item">
+            <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
+              'Sync Series'의 다른 제품과 어떻게 연동되나요?
+              <span class="sync-eta-faq__item__icon">+</span>
+            </p>
+            <p class="sync-eta-faq__item__a">
+              SyncCrawl은 Sync Series 생태계와 REST API 및 Vector DB 커넥터를 통해 유기적으로
+              연동됩니다. 수집된 데이터는 SyncAdmin의 대시보드에서 모니터링하고, SyncAny를 통해
+              파일로 배포하거나 SyncCMS 콘텐츠 파이프라인에 직접 연결할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="sync-eta-faq__item">
+            <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
+              크롤링한 데이터에 대한 한국어 검색 정확도는 믿을 수 있나요?
+              <span class="sync-eta-faq__item__icon">+</span>
+            </p>
+            <p class="sync-eta-faq__item__a">
+              네, HuggingFace 기반의 한국어 특화 임베딩 모델을 채택하여 글로벌 LLM의 한국어 처리
+              한계를 극복했습니다. 형태소 분석 기반의 청킹 전략과 결합되어 일반 키워드 검색 대비
+              월등히 높은 시멘틱 검색 정확도를 제공합니다.
+            </p>
+          </div>
+
+          <div class="sync-eta-faq__item">
+            <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
+              관리를 위한 UI는 웹 브라우저로만 접근 가능한가요?
+              <span class="sync-eta-faq__item__icon">+</span>
+            </p>
+            <p class="sync-eta-faq__item__a">
+              아닙니다. Quasar Framework 기반으로 개발되어 웹 브라우저, Electron 데스크톱 앱, 모바일
+              앱 모두 단일 코드베이스로 지원합니다. 어떤 환경에서도 동일한 UI/UX로 크롤링 현황
+              모니터링 및 관리가 가능합니다.
+            </p>
+          </div>
+        </div>
+        <div class="sync-eta-faq__more">
+          <a href="javascript:void(0)" onclick="alert('서비스 준비중입니다')">FAQ 전체 보기 →</a>
+        </div>
+      </section>
+    </main>
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+    <script>
+      function toggleFaq(el) {
+        const item = el.closest('.sync-eta-faq__item');
+        const isOpen = item.classList.contains('is-open');
+        document
+          .querySelectorAll('.sync-eta-faq__item.is-open')
+          .forEach((i) => i.classList.remove('is-open'));
+        if (!isOpen) item.classList.add('is-open');
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <script>
+    <!--  공통 프레임 불러오기  -->
+    $(document).ready(function () {
+      $('#header-include').load('/pages/include/header.html', () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $('#footer-include').load('/pages/include/footer.html');
+      $('#floating-menu-include').load('/pages/include/floating-menu.html');
+    });
+  </script>
+</html>

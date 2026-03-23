@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title>베이직인터내셔널</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="베이직인터내셔널">
+  <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
+  <meta name="keywords" content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바">
+  <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="베이직인터내셔널 홈페이지">
+  <meta property="og:description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
+  <meta property="og:image" content="/assets/images/favicon.png">
+
+  <meta property="og:url" content="https://basicit.co.kr">
+  <link href="/assets/images/favicon.png" rel="icon" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <style>
+    :root {
+      --navy:         #0B1229;
+      --navy-mid:     #131E3A;
+      --navy-card:    #1A2540;
+      --blue-main:    #2E6FE0;
+      --blue-mid:     #4A8FF5;
+      --blue-pale:    #EBF2FF;
+      --cyan:         #38BDF8;
+      --white:        #FFFFFF;
+      --off-white:    #F6F8FC;
+      --text-dark:    #111827;
+      --text-body:    #4B5563;
+      --text-muted:   #9CA3AF;
+      --border:       #E5E7EB;
+      --border-dark:  rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.65;
+    }
+    main section {
+      margin:  0 auto;
+    }
+    /* ══════════════════════════════
+       TOP HERO — DARK
+    ══════════════════════════════ */
+    .splash-block {
+      background: linear-gradient(160deg, #0B1229 0%, #131E3A 55%, #0F2050 100%);
+      padding: 72px 64px 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .splash-block::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -80px;
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,111,224,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .splash-block::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: 30%;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56,189,248,0.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .splash-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .splash-heading {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: var(--white);
+      margin-bottom: 10px;
+      max-width: 600px;
+    }
+
+    .splash-heading .accent-word {
+      color: var(--cyan);
+    }
+
+    .splash-heading .bracket-text {
+      display: inline-block;
+      color: var(--white);
+    }
+
+    .splash-subhead {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--blue-mid);
+      margin-bottom: 20px;
+    }
+
+    .splash-body {
+      font-size: 16px;
+      color: #8EA6C8;
+      line-height: 1.9;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .splash-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .splash-checklist li {
+      font-size: 13px;
+      color: #B0C8E8;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .splash-checklist li::before {
+      content: '✓';
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(46,111,224,0.4);
+      border: 1px solid rgba(46,111,224,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--cyan);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ══════════════════════════════
+       DATA INTRO SECTION
+    ══════════════════════════════ */
+    .data-intro {
+      padding: 72px 64px;
+      display: flex;
+      gap: 64px;
+      align-items: cwenter;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-intro-left {
+      flex: 4;
+    }
+
+    .data-intro-heading {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.35;
+      color: var(--text-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+    }
+
+    .data-intro-heading em {
+      font-style: normal;
+      color: var(--blue-main);
+    }
+
+    .data-intro-right {      flex: 6;}
+
+    .data-intro-body {
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .data-intro-taglist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .data-intro-taglist li {
+      font-size: 13px;
+      color: var(--text-body);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .data-intro-taglist li::before {
+      content: '▶';
+      color: var(--blue-main);
+      font-size: 10px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════
+       AI TECH GRID SECTION
+    ══════════════════════════════ */
+    .ai-tech-section {
+      background: var(--off-white);
+      padding: 72px 64px;
+      flex-direction: column;
+    }
+
+    .section-eyebrow {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--blue-main);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--text-dark);
+      letter-spacing: -0.3px;
+      margin-bottom: 48px;
+    }
+
+    .tech-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tech-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .tech-card:hover {
+      box-shadow: 0 8px 32px rgba(46,111,224,0.10);
+      transform: translateY(-3px);
+    }
+
+    .tech-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--blue-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .tech-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .tech-card-desc {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.85;
+    }
+
+    /* ══════════════════════════════
+       EFFECT SECTION — DARK BG
+    ══════════════════════════════ */
+    .effect-section {
+      background: linear-gradient(160deg, #0B1229 0%, #131E3A 100%);
+      padding: 72px 64px;
+      position: relative;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .effect-section::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,111,224,0.18) 0%, transparent 70%);
+    }
+
+    .effect-section .section-eyebrow {
+      color: var(--cyan);
+    }
+
+    .effect-section .section-title {
+      color: var(--white);
+    }
+
+    .effect-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .effect-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-dark);
+      border-radius: 14px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .effect-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--blue-main);
+      border-radius: 2px 0 0 2px;
+    }
+
+    .effect-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .effect-card-desc {
+      font-size: 14px;
+      color: #fafafa;
+      line-height: 1.85;
+    }
+
+    /* ══════════════════════════════
+       COMPANY INFO FOOTER
+    ══════════════════════════════ */
+    .company-footer {
+      background: var(--navy);
+      padding: 44px 64px 32px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .company-footer-name {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .company-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 8px 40px;
+      margin-bottom: 28px;
+    }
+
+    .company-info-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .company-info-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #5B7FA6;
+      letter-spacing: 0.5px;
+      min-width: 60px;
+      flex-shrink: 0;
+    }
+
+    .company-info-value {
+      font-size: 11px;
+      color: #8EA6C8;
+      line-height: 1.6;
+    }
+
+    .company-copyright {
+      font-size: 10px;
+      color: #3A5070;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-dark);
+      letter-spacing: 0.3px;
+    }    
+  </style>
+
+
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body data-type="detail">
+    <!-- s : 스킵 -->
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- e : 스킵 -->
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+
+    <main id="container" tabindex="0">
+       <!-- ── INTRO BANNER ── -->
+       <!-- ── SPLASH / HERO ── -->
+      <!-- <section class="splash-block">
+        <p class="splash-eyebrow">Business Story #1</p>
+        <h1 class="splash-heading">
+          비즈니스의 미래를 혁신하는<br />
+          <span class="accent-word">AI</span>
+          <span class="bracket-text">(인공지능) 솔루션</span>
+        </h1>
+        <p class="splash-body">
+          단순한 자동화를넘어 기업의 데이터 가치를 극대화합니다.
+          <br />최신 머신러닝 및 딥러닝 기술을 바탕으로 맞춤형 지능화 시스템을 구축해 드립니다.
+        </p>
+      
+      </section> -->
+      <section class="content__banner">
+        <figure>
+          <img src="/assets/images/pages/business_ai/banner.jpg" alt="" class="desktop-image" />
+          <img src="/assets/images/pages/business_ai/banner-m.jpg" alt="" class="mobile-image" />
+        </figure>
+        <div class="inner">
+          <div class="banner__text">
+            <h2>AI 솔루션<strong></strong></h2>
+            <p>
+              AI 서비스는 비즈니스 성공을 위해 <span class="mbr"></span>반드시 필요합니다.<br />
+              이를 통해 새로운 차원의 성과를 <span class="mbr"></span>달성할 수 있도록
+              지원하겠습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ── DATA INTRO ── -->
+      <section class="data-intro">
+        <div class="data-intro-left">
+          <h2 class="data-intro-heading">
+            데이터 기반의 스마트한 의사결정,<br />
+            <em>베이직인터내셔널 AI가 함께합니다.</em>
+          </h2>
+        </div>
+        <div class="data-intro-right">
+          <p class="data-intro-body">
+           기업이 보유한 수많은 정형 비정형 데이터를 활용하여 업무 생산성을 높이고
+           새로운 비즈니스 인사이트를 발굴합니다. 컨설팅 부터 모델 개발, 시스템
+           연동까지 Ent to End AI서비스를 제공합니다
+          </p>
+          <ul class="data-intro-taglist">
+            <li>고객 맞춤화 머신러닝/딥러닝 모델 개발 및 고도화</li>
+            <li>기존 레거시 시스템과 유연한AI API 연동</li>
+            <li>지속적인 학습 파이프라인(MLOps) 구축을 통한 성능 보장</li>
+            <li>생성형 AI 기반의 차세대 비즈니스 솔루션 적용</li>
+          </ul>
+        </div>
+      </section>
+    
+      <!-- ── AI TECH GRID ── -->
+      <section class="ai-tech-section">
+        <p class="section-eyebrow">CORE TECHNOLOGIES</p>
+        <h2 class="section-title">제공하는 핵심 AI 기술</h2>
+      
+        <div class="tech-card-grid">
+        
+          <div class="tech-card">
+            <div class="tech-card-icon">💬</div>
+            <h3 class="tech-card-title">자연어 처리 (NLP)</h3>
+            <p class="tech-card-desc">
+              텍스트와 음성 데이터를 이해하고 처리하는 자연어 처리 기술을 통해 고객 서비스
+              자동화, 감성 분석, 텍스트 마이닝 등 다양한 비즈니스 솔루션을 제공합니다.
+            </p>
+          </div>
+        
+          <div class="tech-card">
+            <div class="tech-card-icon">👁️</div>
+            <h3 class="tech-card-title">컴퓨터 비전 (Vision AI)</h3>
+            <p class="tech-card-desc">
+              이미지와 영상 데이터를 분석하는 컴퓨터 비전 기술로 품질 검사 자동화, 객체
+              인식, 시각적 데이터 분석 등 제조업과 리테일 분야에서 활용합니다.
+            </p>
+          </div>
+        
+          <div class="tech-card">
+            <div class="tech-card-icon">📈</div>
+            <h3 class="tech-card-title">예측 분석 (Predictive)</h3>
+            <p class="tech-card-desc">
+              과거 데이터와 AI 알고리즘을 결합하여 미래 트렌드를 예측합니다. 수요 예측,
+              이탈률 예측, 리스크 분석 등으로 선제적인 비즈니스 의사결정을 지원합니다.
+            </p>
+          </div>
+        
+          <div class="tech-card">
+            <div class="tech-card-icon">🤖</div>
+            <h3 class="tech-card-title">프로세스 자동화 &amp; 딥러닝</h3>
+            <p class="tech-card-desc">
+              반복적인 업무 프로세스를 AI가 자동화하여 운영 효율을 높입니다.
+              딥러닝 기반의 패턴 인식 기술로 복잡한 데이터에서 인사이트를 도출합니다.
+            </p>
+          </div>
+        
+          <div class="tech-card">
+            <div class="tech-card-icon">🗣️</div>
+            <h3 class="tech-card-title">음성 인식 &amp; 합성 (STT/TTS)</h3>
+            <p class="tech-card-desc">
+              음성을 텍스트로, 텍스트를 자연스러운 음성으로 변환하는 기술입니다.
+              콜센터 자동화, 음성 기반 인터페이스 구축 등에 활용됩니다.
+            </p>
+          </div>
+        
+          <div class="tech-card">
+            <div class="tech-card-icon">✨</div>
+            <h3 class="tech-card-title">생성형 AI (Generative AI)</h3>
+            <p class="tech-card-desc">
+              GPT 기반의 생성형 AI로 콘텐츠 제작, 코드 생성, 창의적인 솔루션을 자동화합니다.
+              ChatGPT, Claude 등 최신 LLM을 비즈니스에 최적화하여 적용합니다.
+            </p>
+          </div>
+        
+        </div>
+      </section>
+    
+      <!-- ── EFFECT SECTION ── -->
+      <section class="effect-section">
+        <p class="section-eyebrow">BUSINESS RESULTS</p>
+        <h2 class="section-title">AI 도입 기대 효과</h2>
+      
+        <div class="effect-card-grid">
+        
+          <div class="effect-card">
+            <h3 class="effect-card-title">업무 생산성 및 운영 비용 대폭</h3>
+            <p class="effect-card-desc">
+              AI 기반 프로세스 자동화로 반복 업무의 70% 이상을 자동화하여 운영 비용을 절감하고,
+              직원들이 창의적이고 고부가치 업무에 집중할 수 있게 합니다.
+            </p>
+          </div>
+        
+          <div class="effect-card">
+            <h3 class="effect-card-title">초개인화 고객 경험 제공 확대</h3>
+            <p class="effect-card-desc">
+              고객 데이터를 AI가 실시간 분석하여 맞춤형 서비스와 제품 추천을 제공합니다.
+              고객 만족도 향상과 재구매율 증가로 매출 성장을 이끌어냅니다.
+            </p>
+          </div>
+        
+          <div class="effect-card">
+            <h3 class="effect-card-title">데이터 기반의 정확한 의사결정</h3>
+            <p class="effect-card-desc">
+              방대한 비즈니스 데이터를 AI가 실시간으로 분석하여 정확한 인사이트를 제공합니다.
+              불확실한 시장 환경에서도 데이터에 근거한 선제적 의사결정이 가능합니다.
+            </p>
+          </div>
+        
+          <div class="effect-card">
+            <h3 class="effect-card-title">경쟁 우위를 위한 차별화된 AI 혁신</h3>
+            <p class="effect-card-desc">
+              산업별 특화된 AI 솔루션을 통해 경쟁사 대비 차별화된 서비스와 운영 방식을 구현합니다.
+              AI 혁신을 통해 시장에서의 지속 가능한 경쟁 우위를 확보합니다.
+            </p>
+          </div>
+        
+        </div>
+      </section>
+        
+    </main>
+
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+  </body>
+
+  <script>
+    <!--  공통 프레임 불러오기  -->
+    $(document).ready(function() {
+      $("#header-include").load("/pages/include/header.html", () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $("#footer-include").load("/pages/include/footer.html")
+      $("#floating-menu-include").load("/pages/include/floating-menu.html")
+    });
+
+    const fills = document.querySelectorAll('.feature-progress-fill');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const w = el.dataset.width || 70;
+          el.style.width = w + '%';
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    fills.forEach(el => observer.observe(el));
+  </script>
+</html>

@@ -6,7 +6,9 @@
   "version": "1.0.0",
   "description": "basic international home",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

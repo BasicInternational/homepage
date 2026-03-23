@@ -1,0 +1,631 @@
+@charset "UTF-8";
+@media screen and (max-width: 769px) {
+  main {
+    width: 100%;
+  }
+  main section {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  .mo-br {
+    display: block;
+  }
+  .pc-br {
+    display: none;
+  }
+  header nav {
+    padding: 0;
+  }
+  /* 모바일사이즈 padding */
+  .experience-section,
+  section.ai-services,
+  section.overview-cards,
+  .ai-services,
+  .xbus-history,
+  .ht-inner,
+  .corp-section,
+  #tabto-pay .flow-section,
+  #tabto-pay .ecosystem-wrap,
+  .cta-bar,
+  .edu-feature-section,
+  .effect-section,
+  .cloud__main > section,
+  .commmuni__main > section,
+  .commerce__main > section,
+  .benev__main > section,
+  .bi__main > section,
+  .finance__main > section,
+  .sync__container > section,
+  .cms__main .cms-stats,
+  .cms__main .cms-tech,
+  .sync-eta-why,
+  .sync-eta-hero,
+  .eta__main .sync-eta-stats,
+  .section-admin-ecosystem,
+  .sync-eta-pipeline,
+  .scm-hero,
+  .xbus-encryption,
+  .container__agency {
+    padding: 45px 15px;
+  }
+  main .cms-stats,
+  .cms__main .cms-stats,
+  .main__syncadmin .cms-stats-admin {
+    padding: 45px 15px 0;
+  }
+  /* Card items padding */
+  .effect-item,
+  .service-card,
+  .sync__container .info-card {
+    padding: 20px;
+  }
+  header {
+    padding: 0 15px;
+  }
+  header nav.bi__nav .nav__body,
+  header nav.bi__nav .nav__head {
+    padding: 20px;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu {
+    padding-left: 0;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__list {
+    padding-left: 20px;
+  }
+  header nav.bi__nav .nav__body .nav__support a {
+    color: #fff;
+  }
+  footer {
+    padding: 40px 15px;
+  }
+  footer .footer__inner {
+    max-width: 100%;
+  }
+  /* index.html */
+  .hero-modern-business__container .hero-modern-business__content .hero-modern-business__actions {
+    width: 100%;
+  }
+  .hero-modern-business__container
+    .hero-modern-business__content
+    .hero-modern-business__actions
+    > a {
+    width: calc(100% / 2);
+  }
+  .solution {
+    flex-direction: column;
+    background: #222;
+    height: 100%;
+  }
+  .solution .solution-grid {
+    padding: 0;
+  }
+  .agency {
+    height: 100%;
+  }
+  .more-link {
+    position: unset;
+  }
+  /* Sync-Any */
+  .syncany-hero {
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    min-height: unset;
+    overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    padding-top: 50px;
+  }
+  .syncany__scroll {
+    position: unset;
+    width: 100%;
+  }
+  .syncany-hero .syncany__content {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .syncany-hero .syncany__content .syncany__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: 0;
+    line-height: 1.2;
+    color: #fff;
+    animation-delay: 0.25s;
+    margin-bottom: 24px;
+  }
+
+  /* aboutus_history.html */
+  .overview-cards .cases-header h2 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+  .history-page-wrap .ht-heading h2,
+  .corp-heading h2,
+  .org-section .org-header h2,
+  h2.section-title {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .overview-cards .overview-cards-wrap {
+    flex-direction: column;
+  }
+  .overview-cards-wrap .card-info .departments .tag__wrap {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .overview-cards-wrap .card-info .departments .tag__wrap .tag {
+    width: 100%;
+    white-space: nowrap;
+  }
+  .overview-cards-wrap .card-info {
+    padding: 20px;
+  }
+  .overview-cards .overview-cards-wrap .card-staff {
+    width: 100%;
+  }
+  .org-section .org-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .corp-cards {
+    padding: 0;
+    gap: 20px;
+  }
+  .card-header {
+    flex-direction: column;
+  }
+  .workforce-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .history-page-wrap .ht-text .title {
+    font-size: 1rem;
+  }
+  .ht-month {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+  /* pages/aiservice/ai-book.html */
+  #aisound__body section,
+  #aisound__body nav,
+  #aisound__body footer {
+    padding: 45px 15px;
+  }
+  #aisound__body nav {
+    white-space: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px 15px;
+  }
+  #aisound__body .preview-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #aisound__body .preview-content > *,
+  .preview-item {
+    width: 100%;
+  }
+
+  #aisound__body .preview-content .preview-list .preview-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  #aisound__body .features .features-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  #aisound__body .main-banner h1 {
+    font-weight: 500;
+    font-size: 32px;
+  }
+  #aisound__body .main-banner-sub {
+    font-size: 16px;
+    color: #555;
+  }
+  #aisound__body .tech-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  #aisound__body .tech-inner .tech-col p {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  #aisound__body nav .nav-cta {
+    width: 100%;
+    margin-top: 24px;
+  }
+  #aisound__body .process-steps {
+    max-width: 768px;
+    overflow-x: auto;
+  }
+  /* 구축사례 */
+  .experience-projects__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .experience-section .experience-projects__grid .experience-projects__card-body {
+    padding: 20px;
+  }
+  .xbus-projects {
+    padding: 64px 24px;
+  }
+  .xbus-projects__grid {
+    grid-template-columns: 1fr;
+  }
+  .xbus-history {
+    flex-direction: column;
+  }
+  .xbus-history .xbus-history__table--wrap {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .xbus-history__header {
+    flex-direction: column;
+  }
+  .xbus-history__table th,
+  .xbus-history__table td {
+    padding: 12px 14px;
+  }
+
+  .xbus-history .xbus-history__table--wrap .xbus-history__table {
+    overflow-x: scroll;
+  }
+  .xbus-history .xbus-history__table--wrap .xbus-history__table td,
+  .xbus-history .xbus-history__table--wrap .xbus-history__table th {
+    min-width: 150px;
+  }
+  .xbus-history__table td:first-child {
+    font-weight: normal;
+  }
+  .xbus-history__footer {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .xbus-history__footer .xbus-history__btn {
+    width: 100%;
+  }
+  /* pages/aiservice/tabtopay.html */
+  #tabto-pay .opening-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 15px;
+  }
+  #tabto-pay .opening-btn-row > button {
+    width: calc(100% / 2);
+  }
+  #tabto-pay .opening-right {
+    width: 100%;
+  }
+  #tabto-pay .ecosystem-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  #tabto-pay.opening-body {
+    margin-bottom: 45px;
+  }
+  #tabto-pay .opening-headline {
+    font-size: 32px;
+  }
+  .payment-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+  .pay-method-card {
+    border-right: none;
+  }
+  .icon-row {
+    flex-direction: column;
+  }
+  .flow-steps-row {
+    display: flex;
+    overflow-x: auto;
+  }
+  .icon-row .icon-row-item {
+    width: 100%;
+  }
+  .flow-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+  .flow-step-cell {
+    width: 200px;
+    white-space: nowrap;
+  }
+  .flow-benefit-icon {
+    width: auto;
+  }
+  .payment-grid,
+  .flow-section,
+  .ecosystem-wrap {
+    padding: 45px 15px;
+  }
+
+  /* pages/aiservice/pickup.html */
+  .biz-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .dual-section {
+    grid-template-columns: 1fr;
+  }
+  .dual-panel {
+    padding: 20px;
+  }
+  .biz-left,
+  .biz-right {
+    padding: 0;
+  }
+  .cta-bar {
+    grid-template-columns: 1fr;
+  }
+  .biz-stats {
+    margin-bottom: 24px;
+  }
+  /* pages/aiservice/ai-book */
+  .tech-col ul li {
+    justify-content: center;
+  }
+  /* pages/business/aisolution.html */
+  .biz-container {
+    padding: 20px 0 0;
+  }
+  .edu-card-grid,
+  .effect-section__grid {
+    grid-template-columns: 1fr;
+  }
+  .effect-card,
+  .edu-card {
+    padding: 20px;
+  }
+  /* pages/business/communication.html */
+  .service-card-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* pages/business/commerce.html */
+  .ac-hero__inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ac-intro__inner {
+    grid-template-columns: 1fr;
+  }
+  .ac-solution__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ac-sol-card {
+    padding: 20px;
+  }
+  .ac-effect__grid {
+    grid-template-columns: 1fr;
+  }
+  .ac-effect-card {
+    padding: 20px;
+  }
+
+  /*  sync > * */
+
+  .sync-eta-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sync-eta-why__grid {
+    grid-template-columns: 1fr;
+  }
+  .sync-eta-features__grid {
+    grid-template-columns: 1fr;
+  }
+  .sync-eta-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+  .sync-eta-why__banner {
+    padding: 36px 28px;
+  }
+  .sync-eta-process__item {
+    padding: 24px 20px;
+    gap: 18px;
+  }
+  .sync-eta__btns {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+  }
+  .sync-eta__pattern {
+    display: none;
+  }
+  .sync-boot-why {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* pages/sync/sync-any */
+  .sync__container .content-row .orbit-diagram {
+    width: 100%;
+    max-width: 739px;
+    overflow-x: auto;
+  }
+  .sync__container .info-card {
+    width: 100%;
+  }
+  .feature-card {
+    text-align: center;
+  }
+  .feature-card__icon {
+    margin: 0 auto 24px;
+  }
+  .feature-card__list {
+    padding-left: 0;
+  }
+  .system-section .composition-row {
+    flex-direction: column;
+  }
+  .system-section .composition-row .composition-col {
+    width: 100%;
+  }
+  /* pages/sync/sync-cms */
+  .cms-stats .cms-stats__item {
+    padding: 20px 0px;
+  }
+  .cms__main .cms-stats {
+    gap: 10px;
+  }
+  .cms-stats__value {
+    white-space: nowrap;
+  }
+  .cms-features .cms-features__grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .cms__main .cms-tech {
+    grid-template-columns: 1fr;
+  }
+  /* pages/sync/sync-eta.html */
+  .sync-eta-why__grid {
+    grid-template-columns: 1fr;
+  }
+  /* pages/sync/sync-boot.html */
+  .sync-eta-stats {
+    margin: 0;
+  }
+  .boot__main .sync-eta-tech__msa {
+    padding: 20px;
+  }
+  .sync-boot-why__grid,
+  .boot__main .sync-eta-tech__msa {
+    gap: 20px;
+  }
+  .sync-eta-tech__tags {
+    justify-content: flex-start;
+  }
+
+  /* pages/sync/sync-admin.html */
+  .main__syncadmin .cms-stats-admin {
+    justify-content: space-between;
+  }
+  .section-admin-ecosystem__stack {
+    gap: 16px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  .section-admin-ecosystem__logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+  }
+
+  .cms-features__grid .cms-feat-card {
+    padding: 20px;
+  }
+
+  /* pages/sync/sync-bus.html */
+  .scm-hero .scm-hero__container {
+    padding: 0;
+  }
+  .x-bus .scm-hero__inner {
+    gap: 20px;
+  }
+  .xbos-diagram__receivers {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .xbos-diagram__flow {
+    flex-direction: column;
+  }
+
+  /* 화살표 영역 전체를 가로 배치 */
+  .xbos-diagram__arrow-wrap {
+    flex: unset;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .xbos-diagram__proto-label {
+    width: 100%;
+    font-size: 12px;
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
+
+  /* 화살표들을 가로(row)로 전환 */
+  .xbos-diagram__arrows {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  /* 화살표 선 — 세로 방향으로 전환 */
+  .xbos-diagram__arrow {
+    width: 2px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  /* 오른쪽 화살표 → 아래 방향 */
+  .xbos-diagram__arrow--right {
+    border-top: none;
+    border-left: 2px dashed #3b82f6;
+  }
+
+  .xbos-diagram__arrow--right::after {
+    right: unset;
+    top: unset;
+    left: -5px;
+    bottom: -7px;
+    border-left: none;
+    border-top: 8px solid #3b82f6;
+    border-right: 5px solid transparent;
+    border-bottom: none;
+    border-left: 5px solid transparent;
+  }
+
+  /* 왼쪽 화살표 → 위 방향 */
+  .xbos-diagram__arrow--left {
+    border-top: none;
+    border-left: 2px dashed #3b82f6;
+  }
+
+  .xbos-diagram__arrow--left::after {
+    left: -5px;
+    top: -7px;
+    border-right: none;
+    border-bottom: 8px solid #3b82f6;
+    border-right: 5px solid transparent;
+    border-top: none;
+    border-left: 5px solid transparent;
+  }
+
+  /* ESB 뱃지 */
+  .xbos-diagram__esb {
+    width: 50%;
+    margin: 0;
+  }
+
+  .xbos-diagram__esb-badge {
+    font-size: 11px;
+    padding: 10px 12px;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .xbos-diagram__node {
+    width: 100%;
+  }
+  .xbos-diagram__receiver {
+    padding: 20px;
+  }
+}

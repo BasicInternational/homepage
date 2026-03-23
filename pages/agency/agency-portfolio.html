@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,SyncSSL,SSL,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+    <meta property="og:url" content="https://basicit.co.kr" />
+
+    <!-- 구조화된 데이터 추가 -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "베이직인터내셔널 신사업&에이전시",
+        "description": "고객이 필요로하는 솔루션을 제공하는 전문 에이전시입니다.",
+        "url": "https://basicit.co.kr/pages/agency/agency.html",
+        "mainEntity": {
+          "@type": "Service",
+          "name": "신사업&에이전시 서비스",
+          "description": "고객의 비즈니스 목표를 실현하기 위한 전문 에이전시 서비스",
+          "provider": {
+            "@type": "Organization",
+            "name": "베이직인터내셔널"
+          },
+          "serviceType": "Business Consulting",
+          "areaServed": "KR",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "에이전시 서비스 카탈로그",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "시장조사 및 데이터 분석",
+                  "description": "철저한 시장 조사와 데이터 분석을 통한 프로젝트 전략 수립"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "요구사항 정리 및 서비스 컨셉 구체화",
+                  "description": "고객 요구사항 정리 및 서비스 컨셉 구체화"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "서비스 개발 및 실행 계획",
+                  "description": "상세 실행 계획 수립 및 개발 진행"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "서비스 출시 지원",
+                  "description": "안정적인 서비스 출시를 위한 지원"
+                }
+              }
+            ]
+          }
+        }
+      }
+    </script>
+
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_business.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+      :root {
+        --slate-50: #f8fafc;
+        --slate-100: #f1f5f9;
+        --slate-200: #e2e8f0;
+        --slate-300: #cbd5e1;
+        --slate-400: #94a3b8;
+        --slate-500: #64748b;
+        --slate-600: #475569;
+        --slate-700: #334155;
+        --slate-900: #0f172a;
+        --blue-50: #eff6ff;
+        --blue-400: #60a5fa;
+        --blue-600: #2563eb;
+        --blue-700: #1d4ed8;
+        --brand-hflor: #1a5d48;
+        --brand-himacs: #6fb4c4;
+        --brand-viatera: #a6a18d;
+      }
+    </style>
+  </head>
+
+  <body data-type="detail">
+    <!-- s : 스킵 -->
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- e : 스킵 -->
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+    <main>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container__agency nav-inner">
+          <div class="logo__agency">AGENCY<span>.</span></div>
+          <div class="nav-links">
+            <a href="#work">구축 사례</a>
+            <a href="mailto:sisocore@basicit.co.kr" class="btn-contact">문의하기</a>
+          </div>
+          <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero container__agency text-center">
+        <h2 class="hero-subtitle">Global Digital Agency</h2>
+        <h1 class="hero-title">
+          글로벌 브랜드의 <br />
+          <span class="gradient-text">디지털 가치를 극대화합니다</span>
+        </h1>
+        <p class="hero-desc">
+          단순 번역을 넘어선 현지화 전략과 통합 플랫폼 구축. <br />
+          LX하우시스 등 글로벌 기업이 선택한 검증된 프로젝트를 확인하세요.
+        </p>
+      </section>
+
+      <!-- Project Grid Section -->
+      <section id="work" class="works-section">
+        <div class="container__agency">
+          <div class="section-header">
+            <h3 class="section-title">포트폴리오</h3>
+            <p class="section-desc">카드를 클릭하여 포트폴리오를 확인하세요.</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- LX Hausys Project Card -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/hausys', 'hausys', 6, 'LX하우시스 글로벌')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/hausys/hausys2.png"
+                  alt="LX Hausys Global"
+                  class="card-image"
+                />
+                <div class="card-overlay">
+                  <span class="card-tag">구축/운영</span>
+                  <h4 class="card-title">LX하우시스 글로벌 플랫폼</h4>
+                  <div class="card-link">
+                    <span>상세보기</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title">LX하우시스 글로벌 사이트 개발</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <p class="card-desc">기획/디자인/퍼블리싱/개발</p>
+              </div>
+            </div>
+
+            <!-- 포트폴리오 2: 마몽드 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/mamongd', 'mamon', 5, '마몽드 UI/UX 개편')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/mamongd/mamon2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">구축</span>
+                  <h4 class="card-title">마몽드 UI/UX</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">마몽드 UI/UX 리뉴얼 프로젝트</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 3: 서울아산병원 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/asan',
+                  'asan',
+                  4,
+                  '서울아산병원 글로벌 웹사이트',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/asan/asan2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">운영</span>
+                  <h4 class="card-title">서울아산병원</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">서울아산병원 글로벌 사이트 리뉴얼 프로젝트</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 4: 오설록 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/oseol',
+                  'oseol',
+                  5,
+                  '오설록 웹 사이트 고도화',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/oseol/oseol2.png"
+                  alt="오설록"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">구축</span>
+                  <h4 class="card-title">오설록 웹 사이트</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">오설록 고도화 프로젝트</h4>
+                  <span class="card-badge">PC / MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 5: PMK -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/pmk', 'pmk', 4, 'PMK Partner Portal 디자인')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img src="/assets/images/pages/agency/pmk/pmk2.png" alt="pmk" class="card-image" />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">UI/UX 구축</span>
+                  <h4 class="card-title">PMK Partner Portal</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">PMK Partner Portal UI/UX 구축</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 6: 삼성전자 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/sec',
+                  'sec',
+                  4,
+                  '삼성전자 ACE프로젝트 사이트 구축',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/sec/sec2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">UI/UX 구축</span>
+                  <h4 class="card-title">삼성전자 ACE 프로젝트 사이트</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">삼성전자 ACE프로젝트 사이트 UI/UX</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/퍼블리싱</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 7: LX하우시스 운영 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/lx-online',
+                  'lx-online',
+                  4,
+                  'LX하우시스 글로벌 온라인플랫폼 운영',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/lx-online/lx-online2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">구축/운영</span>
+                  <h4 class="card-title">LX하우시스 글로벌</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">LX하우시스 글로벌 온라인플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 8: COWAY -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/coway', 'coway', 4, 'COWAY IoCare+ APP 운영')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/coway/coway2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">운영</span>
+                  <h4 class="card-title">COWAY IoCare+ APP 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">COWAY IoCare+ APP 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인</span>
+              </div>
+            </div>
+
+            <!-- 포트폴리오 9: SK-Magic -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/sk-m', 'sk-m', 4, 'SK매직 온라인 플랫폼')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/sk-m/sk-m2.png"
+                  alt="Fintech App"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">운영</span>
+                  <h4 class="card-title">SK매직 온라인 플랫폼</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">SK매직 온라인 플랫폼</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+
+            <!-- 포트폴리오 10: 기아자동차 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/kia',
+                  'kia',
+                  4,
+                  '기아자동차 온라인 플랫폼 운영',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/kia/kia2.png"
+                  alt="기아자동차"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">운영</span>
+                  <h4 class="card-title">기아자동차 온라인 플랫폼 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">기아자동차 온라인 플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 11: 파리바게트 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal(
+                  '/assets/images/pages/agency/paris',
+                  'paris',
+                  4,
+                  '파리바게트 온라인 플랫폼 운영',
+                )
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/paris/paris2.png"
+                  alt="파리바게트"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">운영</span>
+                  <h4 class="card-title">파리바게트 온라인 플랫폼 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">파리바게트 온라인 플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱/개발</span>
+              </div>
+            </div>
+            <!-- 포트폴리오 12: 현대백화점 -->
+            <div
+              class="project-card"
+              onclick="
+                openModal('/assets/images/pages/agency/hd', 'hd', 3, '현대백화점 온라인 플랫폼')
+              "
+            >
+              <div class="card-image-wrapper">
+                <img
+                  src="/assets/images/pages/agency/hd/hd2.png"
+                  alt="현대백화점 온라인 플랫폼"
+                  class="card-image"
+                />
+                <div
+                  class="card-overlay"
+                  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+                >
+                  <span class="card-tag">운영</span>
+                  <h4 class="card-title">현대백화점 온라인 플랫폼 운영</h4>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-info-header">
+                  <h4 class="card-info-title mb-2">현대백화점 온라인 플랫폼 운영</h4>
+                  <span class="card-badge">PC/MOBILE</span>
+                </div>
+                <span class="card-desc">기획/디자인/퍼블리싱</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pop-up Modal (PDF Content) -->
+      <div id="projectModal" class="modal-container">
+        <!-- Backdrop -->
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+
+        <!-- Modal Content Container -->
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <div>
+              <h3>{title}</h3>
+              <p>Portfolio</p>
+            </div>
+            <button onclick="closeModal()" class="btn-close">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+
+          <!-- Modal Body (Scrollable) -->
+          <div class="modal-body">
+            <div id="pdf__img"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+  </body>
+
+  <!--  공통 프레임 불러오기  -->
+  <script>
+    const agencyModal = document.getElementById('projectModal');
+    const agencyImage = document.getElementById('projectImage');
+
+    function openModal(folderPath, prefix, count, title) {
+      if (!agencyModal) return;
+
+      document.querySelector('.modal-header h3').textContent = title;
+      const container = document.getElementById('pdf__img');
+      container.innerHTML = ''; // 이전 이미지 초기화
+
+      // 이미지 생성 후 순서대로 append
+      Array.from({ length: count }, (_, i) => {
+        const img = document.createElement('img');
+        img.src = folderPath + '/' + prefix + (i === 0 ? '' : i + 1) + '.png';
+        img.alt = title + ' ' + (i + 1);
+        container.appendChild(img);
+      });
+
+      agencyModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!agencyModal) return;
+      agencyModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      setTimeout(() => {
+        agencyImage.src = '';
+      }, 300);
+    }
+
+    $(document).ready(function () {
+      $('#header-include').load('/pages/include/header.html', () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $('#footer-include').load('/pages/include/footer.html');
+      $('#floating-menu-include').load('/pages/include/floating-menu.html');
+    });
+  </script>
+</html>

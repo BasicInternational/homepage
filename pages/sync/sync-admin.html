@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+
+    <meta property="og:url" content="https://basicit.co.kr" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_sync.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body data-type="detail">
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+
+    <main id="container" class="main__syncadmin" tabindex="0">
+      <section class="syncany-hero">
+        <!-- 배경 -->
+        <div class="syncany__bg"></div>
+
+        <!-- 우측 장식 패턴 -->
+        <div class="syncany__pattern">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M200 20 L380 110 L380 290 L200 380 L20 290 L20 110 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 60 L340 135 L340 265 L200 340 L60 265 L60 135 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 100 L300 160 L300 240 L200 300 L100 240 L100 160 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M200 140 L260 175 L260 225 L200 260 L140 225 L140 175 Z"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+
+        <!-- 본문 -->
+        <div class="syncany__content">
+          <!-- 배지 -->
+          <div class="syncany__badge">
+            <div class="syncany__badge-icon">
+              <i class="bi bi-window-sidebar"></i>
+            </div>
+            <span class="syncany__badge-text">SyncAdmin Back-Office Framework</span>
+          </div>
+
+          <!-- 타이틀 -->
+          <h2 class="syncany__title">
+            백오피스 개발의 새로운 표준<br class="pc-br" />레고처럼 조립하는 압도적 생산성
+          </h2>
+
+          <!-- 서브타이틀 -->
+          <p class="syncany__sub">
+            SyncAdmin은 Vue 3와 Vite 기반의 최신 프론트엔드 기술을 통합한 엔터프라이즈 관리자 UI
+            프레임워크입니다.<br />
+            중대형 규모의 백오피스 시스템을 가장 빠르고 유연하게 구축하여 비즈니스의 민첩성을
+            극대화하세요.
+          </p>
+          <div class="syncany__btns">
+            <a href="javascript:void(0)" class="syncany__btn-secondary"
+              >컴포넌트 라이브러리 보기 →</a
+            >
+          </div>
+        </div>
+
+        <!-- 스크롤 인디케이터 -->
+        <div class="syncany__scroll">
+          <span class="syncany__scroll-text"><a href="#features_admin">Scroll</a></span>
+          <div class="syncany__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ── STATS BAR ── -->
+      <div class="cms-stats cms-stats-admin">
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">Vue 3</p>
+          <p class="cms-stats__label">최신 렌더링 엔진</p>
+        </div>
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">TypeScript</p>
+          <p class="cms-stats__label">안정적인 타입 시스템</p>
+        </div>
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">HMR</p>
+          <p class="cms-stats__label">실시간 코드 반영 (Vite)</p>
+        </div>
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">100+</p>
+          <p class="cms-stats__label">재사용 UI 컴포넌트</p>
+        </div>
+      </div>
+
+      <!-- ── FEATURES ── -->
+      <section id="features_admin" class="cms-features">
+        <div class="cms-features__header">
+          <p class="cms-features__eyebrow">CORE FEATURES</p>
+          <h2 class="cms-features__title title-txt">비즈니스 속도를 결정짓는 프론트엔드 혁신</h2>
+        </div>
+
+        <div class="cms-features__grid">
+          <div class="cms-feat-card">
+            <div class="cms-feat-card__icon" style="background: #eef2ff">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2L2 7L12 12L22 7L12 2Z"
+                  stroke="#4F46E5"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2 17L12 22L22 17"
+                  stroke="#4F46E5"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2 12L12 17L22 12"
+                  stroke="#4F46E5"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="cms-feat-card__title">초고속 렌더링, 압도적인 개발 속도</h3>
+            <p class="cms-feat-card__desc">
+              Vue 3의 Composition API와 차세대 프론트엔드 툴인 Vite를 도입했습니다. 개발 중 변경
+              사항이 브라우저에 즉각적으로 반영되는 HMR(Hot Module Replacement) 기능으로 관리
+              시스템의 개발 및 빌드 속도를 눈에 띄게 가속화합니다.
+            </p>
+          </div>
+
+          <div class="cms-feat-card">
+            <div class="cms-feat-card__icon" style="background: #f0fdf4">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="7" stroke="#16A34A" stroke-width="1.8" />
+                <path
+                  d="M16.5 16.5L21 21"
+                  stroke="#16A34A"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M8 11H14M11 8V14"
+                  stroke="#16A34A"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="cms-feat-card__title">엔터프라이즈급 최신 기술 스택 통합</h3>
+            <p class="cms-feat-card__desc">
+              단순한 템플릿이 아닙니다. Vue 3, Vite, TypeScript, Pinia(상태 관리), Vue Router 등
+              현대적이고 검증된 최신 기술 스택이 완벽하게 결합되어 있습니다. 강력한 타입 체킹을 통해
+              장기적인 유지보수 편의성을 높이고 엔터프라이즈 환경의 안정성을 보장합니다.
+            </p>
+          </div>
+
+          <div class="cms-feat-card">
+            <div class="cms-feat-card__icon" style="background: #fff7ed">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="3"
+                  y="3"
+                  width="8"
+                  height="8"
+                  rx="1.5"
+                  fill="#F97316"
+                  fill-opacity="0.2"
+                  stroke="#F97316"
+                  stroke-width="1.5"
+                />
+                <rect
+                  x="13"
+                  y="3"
+                  width="8"
+                  height="8"
+                  rx="1.5"
+                  fill="#F97316"
+                  fill-opacity="0.2"
+                  stroke="#F97316"
+                  stroke-width="1.5"
+                />
+                <rect
+                  x="3"
+                  y="13"
+                  width="8"
+                  height="8"
+                  rx="1.5"
+                  fill="#F97316"
+                  fill-opacity="0.2"
+                  stroke="#F97316"
+                  stroke-width="1.5"
+                />
+                <rect
+                  x="13"
+                  y="13"
+                  width="8"
+                  height="8"
+                  rx="1.5"
+                  fill="#F97316"
+                  fill-opacity="0.2"
+                  stroke="#F97316"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <h3 class="cms-feat-card__title">레고처럼 조립하는 쉬운 화면 구축</h3>
+            <p class="cms-feat-card__desc">
+              그리드, 차트, 복잡한 입력 폼, 모달 등 중대형 규모의 백오피스 시스템에 필수적인 수백
+              개의 재사용 가능한 컴포넌트를 내장하고 있습니다. 개발자는 복잡한 UI를 밑바닥부터 그릴
+              필요 없이, 마치 레고 블록을 조립하듯 쉽고 빠르게 화면을 구축할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="cms-feat-card">
+            <div class="cms-feat-card__icon" style="background: #ede9fe">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
+                  fill="#7C3AED"
+                  fill-opacity="0.2"
+                  stroke="#7C3AED"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M8 12h8M12 8v8"
+                  stroke="#7C3AED"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="cms-feat-card__title">변화에 민첩하게 대응하는 비즈니스 무기</h3>
+            <p class="cms-feat-card__desc">
+              오늘날의 백오피스는 정체되어 있지 않습니다. SyncAdmin의 극대화된 개발 생산성과 유연한
+              아키텍처를 바탕으로, 현업의 새로운 요구사항이나 비즈니스 정책 변화가 발생했을 때
+              시스템을 신속하게 업데이트하여 기업의 타임-투-마켓(TTM)을 단축합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TECH SECTION ── -->
+      <section class="section-admin-ecosystem">
+        <div class="section-admin-ecosystem__inner">
+          <p class="section-admin-ecosystem__eyebrow">MODERN FRONTEND ECOSYSTEM</p>
+          <h2 class="section-admin-ecosystem__title title-txt-dark">
+            최신 프론트엔드 생태계의 완벽한 조화
+          </h2>
+          <p class="section-admin-ecosystem__sub">
+            장기적인 유지보수와 퍼포먼스를 고려한 최적의<br class="mo-br" />
+            기술 스택을 제공합니다.
+          </p>
+
+          <div class="section-admin-ecosystem__stack">
+            <div class="section-admin-ecosystem__item">
+              <div class="section-admin-ecosystem__logo section-admin-ecosystem__logo--vue">
+                <div class="section-admin-ecosystem__logo section-admin-ecosystem__logo--vue">
+                  <img src="/assets/images/icon/vueimg.png" alt="Vue 3" width="32" height="32" />
+                </div>
+              </div>
+              <p class="section-admin-ecosystem__name">Vue 3</p>
+            </div>
+
+            <div class="section-admin-ecosystem__item">
+              <div class="section-admin-ecosystem__logo section-admin-ecosystem__logo--ts">
+                <img src="/assets/images/icon/ts.png" alt="Vue 3" width="32" height="32" />
+              </div>
+              <p class="section-admin-ecosystem__name">TypeScript</p>
+            </div>
+
+            <div class="section-admin-ecosystem__item">
+              <div class="section-admin-ecosystem__logo section-admin-ecosystem__logo--vite">
+                <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+                  <path d="M13 2L4.5 13.5H11L10 22L20.5 9H14L13 2z" fill="#FFD700" />
+                </svg>
+              </div>
+              <p class="section-admin-ecosystem__name">Vite</p>
+            </div>
+
+            <div class="section-admin-ecosystem__item">
+              <div class="section-admin-ecosystem__logo section-admin-ecosystem__logo--pinia">
+                <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="5"
+                    fill="#FFD700"
+                    stroke="#E5A000"
+                    stroke-width="1.2"
+                  />
+                  <path
+                    d="M9 15c0 2 1.5 4 3 4s3-2 3-4"
+                    stroke="#6B7280"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="10" cy="9" r="1" fill="#333" />
+                  <circle cx="14" cy="9" r="1" fill="#333" />
+                </svg>
+              </div>
+              <p class="section-admin-ecosystem__name">Pinia</p>
+            </div>
+
+            <div class="section-admin-ecosystem__item">
+              <div class="section-admin-ecosystem__logo section-admin-ecosystem__logo--router">
+                <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+                  <circle cx="5" cy="12" r="2.5" fill="#42B883" />
+                  <circle cx="19" cy="6" r="2.5" fill="#42B883" />
+                  <circle cx="19" cy="18" r="2.5" fill="#42B883" />
+                  <path
+                    d="M7.5 12H14M7.5 12C10 9 14 8.5 16.5 6.5M7.5 12C10 15 14 15.5 16.5 17.5"
+                    stroke="#42B883"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <p class="section-admin-ecosystem__name">Vue Router</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FAQ ── -->
+      <section class="cms-faq">
+        <div class="cms-faq__header">
+          <h2 class="cms-faq__title title-txt">자주 묻는 질문 (FAQ)</h2>
+        </div>
+
+        <div class="cms-faq__list">
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">
+              SyncAdmin은 정확히 어떤 솔루션인가요?
+            </p>
+            <p class="faq-item__a">
+              Sync Series는 SyncCMS, SyncAny 등 다양한 디지털 솔루션을 통합 제공하는 플랫폼입니다.
+              콘텐츠 관리부터 파일 동기화까지 비즈니스에 필요한 모든 기능을 하나의 생태계에서
+              제공합니다.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">
+              ‘Sync Series’의 다른 제품과 어떻게 연동되나요?
+            </p>
+            <p class="faq-item__a">
+              SyncAdmin은 Sync Series의 다른 제품들과 API 및 권한 관리 체계를 통해 유기적으로
+              연동됩니다. 이를 통해 전체 플랫폼을 하나의 대시보드에서 통합 관리할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">
+              Vue.js를 잘 모르는 개발자도 사용할 수 있나요?
+            </p>
+            <p class="faq-item__a">
+              네, 가능합니다. Vue.js 지식이 없어도 직관적인 UI와 문서화된 가이드를 통해 쉽게 사용할
+              수 있으며, 기본적인 웹 개발 경험만으로도 빠르게 적응할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">
+              자체적인 API 서버(레거시)와도 연동이 가능한가요?
+            </p>
+            <p class="faq-item__a">
+              가능합니다. SyncAdmin은 표준 REST API를 지원하기 때문에 기존 레거시 시스템과도 손쉽게
+              연동할 수 있습니다. 이를 통해 기존 인프라를 유지하면서도 새로운 기능을 확장할 수
+              있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="cms-faq__more">
+          <a href="javascript:void(0)">전체 FAQ 보기 →</a>
+        </div>
+      </section>
+    </main>
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+    <script>
+      function toggleFaq(el) {
+        const item = el.closest('.faq-item');
+        const isOpen = item.classList.contains('is-open');
+        document
+          .querySelectorAll('.faq-item.is-open')
+          .forEach((i) => i.classList.remove('is-open'));
+        if (!isOpen) item.classList.add('is-open');
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <script>
+    <!--  공통 프레임 불러오기  -->
+    $(document).ready(function () {
+      $('#header-include').load('/pages/include/header.html', () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $('#footer-include').load('/pages/include/footer.html');
+      $('#floating-menu-include').load('/pages/include/floating-menu.html');
+    });
+  </script>
+</html>

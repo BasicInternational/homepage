@@ -3,3 +3,5 @@
 *.txt
 .idea/
 *.iml
+.vscode/settings.json
+.prettierrc

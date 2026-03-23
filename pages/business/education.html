@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+
+    <meta property="og:url" content="https://basicit.co.kr" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+      :root {
+        --coral: #ff5c3a;
+        --coral-mid: #ff7a5c;
+        --coral-pale: #fff0ed;
+        --orange: #ff8c42;
+        --navy: #0d1228;
+        --navy-mid: #1a2040;
+        --white: #ffffff;
+        --off-white: #f8f8fb;
+        --text-dark: #111827;
+        --text-body: #4b5563;
+        --text-muted: #9ca3af;
+        --border: #e5e7eb;
+        --border-dark: rgba(255, 255, 255, 0.08);
+        --purple: #7c3aed;
+        --blue: #2563eb;
+        --green: #059669;
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background: var(--white);
+        color: var(--text-dark);
+        line-height: 1.65;
+      }
+
+      main section {
+        max-width: 1200px;
+      }
+      /* ══════════════════════════════
+         SPLASH — DARK HERO
+      ══════════════════════════════ */
+      .commerce-splash {
+        background: linear-gradient(155deg, #0d1228 0%, #151a35 55%, #1a1030 100%);
+        padding: 68px 60px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .commerce-splash::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -80px;
+        width: 460px;
+        height: 460px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 92, 58, 0.22) 0%, transparent 68%);
+        pointer-events: none;
+      }
+
+      .commerce-splash::after {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        left: 15%;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 65%);
+        pointer-events: none;
+      }
+
+      .splash-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--coral-mid);
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      .splash-title {
+        font-size: 42px;
+        font-weight: 900;
+        line-height: 1.22;
+        letter-spacing: -1px;
+        color: var(--white);
+        margin-bottom: 14px;
+      }
+
+      .splash-title .splash-accent {
+        color: #fff;
+      }
+
+      .splash-subtitle {
+        font-size: 16px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 20px;
+      }
+
+      .splash-desc {
+        font-size: 13px;
+        color: #9b8ec8;
+        line-height: 1.9;
+        max-width: 520px;
+        margin-bottom: 10px;
+      }
+
+      /* ══════════════════════════════
+         INTRO SECTION
+      ══════════════════════════════ */
+      .intro-section {
+        padding: 68px 60px;
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 52px;
+        align-items: start;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .intro-left {
+      }
+
+      .intro-main-text {
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1.4;
+        color: var(--text-dark);
+        letter-spacing: -0.4px;
+        margin-bottom: 22px;
+      }
+
+      .intro-body-text {
+        font-size: 13px;
+        color: var(--text-body);
+        line-height: 1.9;
+        margin-bottom: 28px;
+      }
+
+      .intro-bullet-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .intro-bullet-list li {
+        font-size: 13px;
+        color: var(--text-body);
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.7;
+      }
+
+      .intro-bullet-list li::before {
+        content: '▶';
+        color: var(--coral);
+        font-size: 10px;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      .intro-right {
+        background: var(--coral-pale);
+        border-radius: 16px;
+        padding: 24px 20px;
+        border: 1px solid rgba(255, 92, 58, 0.15);
+        text-align: center;
+      }
+
+      .intro-badge-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, var(--coral), var(--orange));
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 14px;
+        box-shadow: 0 8px 24px rgba(255, 92, 58, 0.35);
+      }
+
+      .intro-badge-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .intro-badge-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--coral);
+        margin-bottom: 6px;
+      }
+
+      .intro-badge-desc {
+        font-size: 11px;
+        color: #aa6655;
+        line-height: 1.7;
+      }
+
+      /* ══════════════════════════════
+         SOLUTION GRID
+      ══════════════════════════════ */
+      .solution-section {
+        background: var(--off-white);
+        padding: 68px 60px;
+      }
+
+      .section-tag {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--coral);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .section-heading {
+        font-size: 24px;
+        font-weight: 900;
+        text-align: center;
+        color: var(--text-dark);
+        letter-spacing: -0.3px;
+        margin-bottom: 44px;
+      }
+
+      .solution-card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .sol-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px 24px;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+
+      .sol-card:hover {
+        box-shadow: 0 8px 28px rgba(255, 92, 58, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .sol-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--coral-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+
+      .sol-card-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .sol-card-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+      }
+
+      .sol-card-desc {
+        font-size: 12px;
+        color: var(--text-body);
+        line-height: 1.85;
+      }
+
+      /* ══════════════════════════════
+         EFFECT SECTION
+      ══════════════════════════════ */
+      .effect-section {
+        background: var(--white);
+        padding: 68px 60px;
+        border-top: 1px solid var(--border);
+      }
+
+      .effect-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 44px;
+      }
+
+      .effect-card {
+        background: var(--off-white);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .effect-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, var(--coral), var(--orange));
+        border-radius: 14px 14px 0 0;
+      }
+
+      .effect-card-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+      }
+
+      .effect-card-desc {
+        font-size: 12px;
+        color: var(--text-body);
+        line-height: 1.85;
+      }
+
+      /* ══════════════════════════════
+         COMPANY FOOTER
+      ══════════════════════════════ */
+      .footer-wrap {
+        background: #0d1228;
+        padding: 40px 60px 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .footer-brand-name {
+        font-size: 16px;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 18px;
+      }
+
+      .footer-info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        margin-bottom: 24px;
+      }
+
+      .footer-info-row {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .footer-info-key {
+        font-size: 10px;
+        font-weight: 700;
+        color: #5b4a6a;
+        letter-spacing: 0.5px;
+        min-width: 56px;
+        flex-shrink: 0;
+        text-transform: uppercase;
+      }
+
+      .footer-info-val {
+        font-size: 11px;
+        color: #7a6a88;
+        line-height: 1.6;
+      }
+
+      .footer-copy {
+        font-size: 10px;
+        color: #3a2a4a;
+        text-align: center;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        letter-spacing: 0.3px;
+      }
+      main section {
+        max-width: 1200px;
+        flex-direction: column;
+      }
+
+      /* ══════════════════════════════
+       FEATURE SECTION
+    ══════════════════════════════ */
+      .edu-feature-section {
+        padding: 80px 60px;
+        background: var(--off-white);
+      }
+
+      .edu-feature-header {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+
+      .edu-feature-eyebrow {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--teal);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .edu-feature-title {
+        font-size: 32px;
+        font-weight: 900;
+        color: var(--text-dark);
+        letter-spacing: -0.5px;
+      }
+
+      /* ══════════════════════════════
+       CARD GRID
+    ══════════════════════════════ */
+      .edu-card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .edu-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px 28px;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+
+      .edu-card:hover {
+        box-shadow: 0 8px 32px rgba(10, 191, 184, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .edu-card-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: var(--teal-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+      }
+
+      .edu-card-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .edu-card-title {
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 12px;
+        letter-spacing: -0.2px;
+      }
+
+      .edu-card-desc {
+        font-size: 13px;
+        color: var(--text-body);
+        line-height: 1.85;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body data-type="detail">
+    <!-- s : 스킵 -->
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- e : 스킵 -->
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+
+    <main id="container" tabindex="0">
+      <section class="relative bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
+          <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+              <span
+                class="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-6"
+                >Business Area 05</span
+              >
+              <h1
+                class="text-3xl md:text-3xl lg:text-3xl font-medium text-gray-800 leading-tight mb-6"
+              >
+                AI교육(LMS/LRS)<br />
+                플랫폼
+              </h1>
+              <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                데이터 기반의 초개인화된 맞춤형 학습 경험으로 에듀테크의 새로운 표준을 제시합니다.
+                강력한 학습 관리와 정밀한 행동 분석이 결합된 지능형 교육 환경을 구축하세요.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a
+                  href="#"
+                  class="px-6 py-3 bg-white border border-gray-200 text-gray-800 font-medium rounded-lg shadow-sm transition duration-300 flex items-center justify-center gap-2"
+                  style="display: none"
+                >
+                  자세히
+                </a>
+              </div>
+            </div>
+            <div class="w-full lg:w-1/2 relative">
+              <div class="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                <img
+                  src="/assets/images/pages/sync_boot/banner.jpg"
+                  alt="Product dashboard interface"
+                  class="w-full h-auto"
+                  width="1320"
+                  height="900"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="absolute -z-10 -top-10 -right-10 w-64 h-64 bg-blue-50 rounded-full opacity-70 blur-3xl"
+              ></div>
+              <div
+                class="absolute -z-10 -bottom-10 -left-10 w-64 h-64 bg-green-50 rounded-full opacity-70 blur-3xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── INTRO SECTION ── -->
+
+      <section class="bg-gray-50 py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div class="order-2 lg:order-1">
+              <h3 class="text-2xl font-medium text-gray-800 mb-6">
+                모든 학습 경험(LRS)을 수집하고<br />
+                <em>최적의 학습 경로(LMS)를 제안합니다.</em>
+              </h3>
+
+              <p class="text-base text-gray-600 mb-6">
+                학습자의 모든 행동 데이터를 수집·분석하는 LRS(Learning Record Store)와,<br />
+                이를 바탕으로 개인별 맞춤형 커리큘럼을 제공하는 차세대 LMS(Learning Management
+                System)를 결합하여 완벽한 에듀테크 통합 환경을 제공합니다.
+              </p>
+
+              <ul class="intro-bullet-list">
+                <li>xAPI 표준 기반의 모든 온/오프라인 학습 경험 데이터 통합 수집</li>
+                <li>머신러닝 기반 학습자 성향 분석 및 맞춤형 콘텐츠 큐레이션</li>
+                <li>비대면/하이브리드 환경에 최적화된 화상 강의 및 평가 연동</li>
+                <li>학습 성취도 분석 및 이탈 예측을 위한 관리자 대시보드 제공</li>
+              </ul>
+            </div>
+
+            <div class="order-1 lg:order-2">
+              <div class="rounded-2xl overflow-hidden shadow-sm">
+                <img
+                  src="/assets/images/pages/business_commerce/service-05.png"
+                  alt="LRS LMS learning platform"
+                  class="w-full h-auto object-cover"
+                  loading="lazy"
+                  width="1920"
+                  height="1080"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── AI 교육 플랫폼 핵심 기능 ── -->
+      <section class="edu-feature-section">
+        <div class="edu-feature-header">
+          <p class="edu-feature-eyebrow">EDUTECH FEATURES</p>
+          <h2 class="edu-feature-title">AI 교육 플랫폼 핵심 기능</h2>
+        </div>
+
+        <div class="edu-card-grid">
+          <!-- 1. 지능형 학습 관리 (LMS) -->
+          <div class="edu-card">
+            <div class="edu-card-icon">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  x="3"
+                  y="4"
+                  width="16"
+                  height="20"
+                  rx="2"
+                  fill="#0ABFB8"
+                  fill-opacity="0.15"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M7 9H15M7 13H15M7 17H12"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <circle
+                  cx="21"
+                  cy="21"
+                  r="5"
+                  fill="#0ABFB8"
+                  fill-opacity="0.2"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M19 21L20.5 22.5L23 20"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="edu-card-title">지능형 학습 관리 (LMS)</h3>
+            <p class="edu-card-desc">
+              수강 신청, 진도 체크, 과제 제출, 온라인 시험, 수료증 발급 등 교육 운영에 필요한 모든
+              학사 행정을 하나의 플랫폼에서 통합 관리합니다.
+            </p>
+          </div>
+
+          <!-- 2. 학습 경험 기록 (LRS) -->
+          <div class="edu-card">
+            <div class="edu-card-icon">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  x="3"
+                  y="6"
+                  width="22"
+                  height="16"
+                  rx="2"
+                  fill="#0ABFB8"
+                  fill-opacity="0.15"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M7 18L11 13L14 16L18 11L21 14"
+                  stroke="#0ABFB8"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6 22H22"
+                  stroke="#0ABFB8"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  opacity="0.4"
+                />
+              </svg>
+            </div>
+            <h3 class="edu-card-title">학습 경험 기록 (LRS)</h3>
+            <p class="edu-card-desc">
+              동영상 재생/일시정지, 퀴즈 정답률, 클릭 패턴 등 학습자의 모든 미세한 행동 데이터를
+              국제 표준인 xAPI 포맷으로 정밀하게 수집하고 저장합니다.
+            </p>
+          </div>
+
+          <!-- 3. 맞춤형 코스 추천 -->
+          <div class="edu-card">
+            <div class="edu-card-icon">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  cx="14"
+                  cy="14"
+                  r="10"
+                  fill="#0ABFB8"
+                  fill-opacity="0.12"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                />
+                <circle
+                  cx="14"
+                  cy="14"
+                  r="4"
+                  fill="#0ABFB8"
+                  fill-opacity="0.3"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M14 4V7M14 21V24M4 14H7M21 14H24"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  opacity="0.5"
+                />
+              </svg>
+            </div>
+            <h3 class="edu-card-title">맞춤형 코스 추천</h3>
+            <p class="edu-card-desc">
+              수집된 LRS 데이터를 AI가 분석하여 학습자의 현재 수준, 취약점, 관심사에 가장 알맞은
+              다음 강의와 커리큘럼을 자동으로 큐레이션합니다.
+            </p>
+          </div>
+
+          <!-- 4. 학습 이탈 예측 & 알림 -->
+          <div class="edu-card">
+            <div class="edu-card-icon">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 4C14 4 7 8 7 15C7 18.31 10.13 21 14 21C17.87 21 21 18.31 21 15C21 8 14 4 14 4Z"
+                  fill="#0ABFB8"
+                  fill-opacity="0.15"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14 10V15L17 17"
+                  stroke="#0ABFB8"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 23L14 25L18 23"
+                  stroke="#0ABFB8"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  opacity="0.5"
+                />
+              </svg>
+            </div>
+            <h3 class="edu-card-title">학습 이탈 예측 &amp; 알림</h3>
+            <p class="edu-card-desc">
+              딥러닝 모델이 학습 포기 징후(결석, 진도 지연 등)를 사전에 탐지하여, 자동 독려 메시지
+              발송이나 튜터 배정을 통해 이탈률을 최소화합니다.
+            </p>
+          </div>
+
+          <!-- 5. AI 튜터 (학습 챗봇) -->
+          <div class="edu-card">
+            <div class="edu-card-icon">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  x="4"
+                  y="5"
+                  width="20"
+                  height="15"
+                  rx="3"
+                  fill="#0ABFB8"
+                  fill-opacity="0.15"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                />
+                <circle cx="10" cy="12" r="2" fill="#0ABFB8" />
+                <circle cx="14" cy="12" r="2" fill="#0ABFB8" />
+                <circle cx="18" cy="12" r="2" fill="#0ABFB8" />
+                <path
+                  d="M10 20L8 24"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  opacity="0.5"
+                />
+                <path
+                  d="M18 20L20 24"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  opacity="0.5"
+                />
+                <path
+                  d="M8 24H20"
+                  stroke="#0ABFB8"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  opacity="0.5"
+                />
+              </svg>
+            </div>
+            <h3 class="edu-card-title">AI 튜터 (학습 챗봇)</h3>
+            <p class="edu-card-desc">
+              LLM 기반의 AI 챗봇이 24시간 대기하며, 강의 내용에 대한 질문 답변, 과제 피드백, 학습
+              가이드 등 1:1 밀착 튜터링을 제공합니다.
+            </p>
+          </div>
+
+          <!-- 6. 데이터 시각화 대시보드 -->
+          <div class="edu-card">
+            <div class="edu-card-icon">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  x="3"
+                  y="3"
+                  width="22"
+                  height="22"
+                  rx="3"
+                  fill="#0ABFB8"
+                  fill-opacity="0.10"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                />
+                <rect x="6" y="16" width="4" height="6" rx="1" fill="#0ABFB8" fill-opacity="0.4" />
+                <rect
+                  x="12"
+                  y="11"
+                  width="4"
+                  height="11"
+                  rx="1"
+                  fill="#0ABFB8"
+                  fill-opacity="0.6"
+                />
+                <rect x="18" y="7" width="4" height="15" rx="1" fill="#0ABFB8" />
+                <path
+                  d="M6 13L10 10L14 12L18 7"
+                  stroke="#0ABFB8"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  opacity="0.5"
+                />
+              </svg>
+            </div>
+            <h3 class="edu-card-title">데이터 시각화 대시보드</h3>
+            <p class="edu-card-desc">
+              관리자와 교수자가 전체 학습 현황, 개인별 성취도, 평가 결과 분포 등을 한눈에 파악할 수
+              있는 직관적인 통계 리포트 화면을 제공합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EFFECT SECTION ── -->
+      <section style="padding: 80px; background: #ffffff">
+        <div style="text-align: center; margin-bottom: 60px">
+          <p
+            style="
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 2.5px;
+              color: #0abfb8;
+              text-transform: uppercase;
+              margin-bottom: 14px;
+            "
+          >
+            BUSINESS BENEFITS
+          </p>
+          <h2 style="font-size: 36px; font-weight: 900; color: #111827; letter-spacing: -0.5px">
+            에듀테크 솔루션 도입 효과
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px">
+          <div
+            style="
+              padding: 32px 28px 32px 32px;
+              border: 1px solid #e5e7eb;
+              border-radius: 4px;
+              border-left: 4px solid #0abfb8;
+              background: #ffffff;
+            "
+          >
+            <h3
+              style="
+                font-size: 17px;
+                font-weight: 800;
+                color: #111827;
+                margin-bottom: 14px;
+                letter-spacing: -0.2px;
+              "
+            >
+              학습 성취도 및 완강률 극대화
+            </h3>
+            <p style="font-size: 13px; color: #4b5563; line-height: 1.9">
+              일률적인 강의가 아닌 초개인화된 학습 경로와 적절한 동기 부여 (게이미피케이션)를 통해
+              학습자들의 몰입도를 높이고 수료율을 대폭 향상시킵니다.
+            </p>
+          </div>
+
+          <div
+            style="
+              padding: 32px 28px 32px 32px;
+              border: 1px solid #e5e7eb;
+              border-radius: 4px;
+              border-left: 4px solid #7c3aed;
+              background: #ffffff;
+            "
+          >
+            <h3
+              style="
+                font-size: 17px;
+                font-weight: 800;
+                color: #111827;
+                margin-bottom: 14px;
+                letter-spacing: -0.2px;
+              "
+            >
+              교육 운영 리소스 및 비용 절감
+            </h3>
+            <p style="font-size: 13px; color: #4b5563; line-height: 1.9">
+              수강 관리, 진도 독려, 질의응답 등 반복적인 학사 행정 업무를 AI와 시스템이 자동화하여
+              운영 인력의 업무 부담과 비용을 절감합니다.
+            </p>
+          </div>
+
+          <div
+            style="
+              padding: 32px 28px 32px 32px;
+              border: 1px solid #e5e7eb;
+              border-radius: 4px;
+              border-left: 4px solid #0abfb8;
+              background: #ffffff;
+            "
+          >
+            <h3
+              style="
+                font-size: 17px;
+                font-weight: 800;
+                color: #111827;
+                margin-bottom: 14px;
+                letter-spacing: -0.2px;
+              "
+            >
+              데이터 기반의 콘텐츠 퀄리티 개선
+            </h3>
+            <p style="font-size: 13px; color: #4b5563; line-height: 1.9">
+              LRS 데이터를 통해 학습자들이 어떤 구간에서 이탈하는지, 어떤 문제를 어려워하는지
+              객관적으로 파악하여 강의 콘텐츠를 지속적으로 개선할 수 있습니다.
+            </p>
+          </div>
+
+          <div
+            style="
+              padding: 32px 28px 32px 32px;
+              border: 1px solid #e5e7eb;
+              border-radius: 4px;
+              border-left: 4px solid #7c3aed;
+              background: #ffffff;
+            "
+          >
+            <h3
+              style="
+                font-size: 17px;
+                font-weight: 800;
+                color: #111827;
+                margin-bottom: 14px;
+                letter-spacing: -0.2px;
+              "
+            >
+              유연한 시스템 확장성 및 안정성
+            </h3>
+            <p style="font-size: 13px; color: #4b5563; line-height: 1.9">
+              클라우드 네이티브 아키텍처로 설계되어 수만 명의 동시 접속을 안정적으로 처리하며, 기업
+              임직원 교육부터 대규모 인강 사이트까지 유연하게 도입 가능합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+  </body>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    <!--  공통 프레임 불러오기  -->
+    $(document).ready(function () {
+      $('#header-include').load('/pages/include/header.html', () => {
+        initCommon(); // 헤더가 로드된 후 초기화
+      });
+      $('#footer-include').load('/pages/include/footer.html');
+      $('#floating-menu-include').load('/pages/include/floating-menu.html');
+    });
+
+    const fills = document.querySelectorAll('.feature-progress-fill');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const w = el.dataset.width || 70;
+            el.style.width = w + '%';
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    fills.forEach((el) => observer.observe(el));
+  </script>
+</html>
