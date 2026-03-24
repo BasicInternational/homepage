@@ -13,7 +13,7 @@ body {
   --primary-color-dark: #4338ca; /* indigo-700 */
   --primary-bg: #f1f5f9; /* slate-50 */
   --primary-text: #0f172a; /* slate-900 */
-  --secondary-text: #475569; /* slate-600 */
+  --secondary-text: #555555; /* slate-600 */
   --badge-bg: #e0e7ff; /* indigo-100 */
   --badge-text: #555; /* indigo-700 */
   --button-border: #e0e7ff; /* indigo-200 */
@@ -519,7 +519,7 @@ main {
 main section {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 56px 0px;
+  padding: 24px 0px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -4416,13 +4416,13 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
 :root {
   --navy: #0a1428;
   --blue: #1a3a6e;
-  --accent: #2b6ef5;
+  --accent: #222;
   --cyan: #00c6ff;
   --white: #ffffff;
   --light-gray: #f5f7fa;
   --mid-gray: #e8ecf2;
-  --text: #222;
-  --text-sub: #666;
+  --text: #333;
+  --text-sub: #555;
   --orange: #ff7a00;
   --green: #00c48c;
   --red: #ff3b3b;
@@ -4607,26 +4607,30 @@ nav ul li a:hover {
 }
 
 .hero-modern-business {
+  position: relative;
   width: 100%;
+  height: 30rem;
+  padding: 0;
   background: var(--primary-bg);
   font-family: var(--font-sans);
 }
 
 .hero-modern-business__container {
-  max-width: 80rem;
+  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
 }
-@media (min-width: 768px) {
-  .hero-modern-business__container {
-    flex-direction: row;
-    gap: 3rem;
-    align-items: stretch;
-  }
+
+.hero-modern-business__container {
+  flex-direction: row;
+  gap: 2rem;
+  align-items: stretch;
 }
+
 .hero-modern-business__content {
   width: 100%;
   display: flex;
@@ -4650,10 +4654,10 @@ nav ul li a:hover {
   letter-spacing: 0.025em;
 }
 .hero-modern-business__title {
-  font-size: 1.875rem;
+  font-size: 24px;
   font-weight: 600;
-  color: var(--primary-text);
-  line-height: 1;
+  color: var(--text);
+  line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 @media (min-width: 640px) {
@@ -4661,11 +4665,11 @@ nav ul li a:hover {
     font-size: 2.25rem;
   }
 }
-@media (min-width: 768px) {
-  .hero-modern-business__title {
-    font-size: 3rem;
-  }
+
+.hero-modern-business__title {
+  font-size: 40px;
 }
+
 .hero-modern-business__desc {
   font-size: 1.125rem;
   color: var(--secondary-text);
@@ -4763,21 +4767,23 @@ nav ul li a:hover {
   justify-content: center;
   margin-bottom: 2rem;
 }
-@media (min-width: 768px) {
-  .hero-modern-business__image-wrapper {
-    width: 50%;
-    margin-bottom: 0;
-    align-items: center;
-  }
+
+.hero-modern-business__image-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  margin-bottom: 0;
+  align-items: center;
 }
+
 .hero-modern-business__image {
-  border-radius: 0.75rem;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--img-border);
   object-fit: cover;
   width: 100%;
-  height: auto;
-  max-height: 22.5rem;
+  height: 100%;
   background: #fff;
   display: block;
 }
@@ -4853,6 +4859,7 @@ nav ul li a:hover {
 }
 
 .ai-card h3 {
+  color: #333;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 6px;
@@ -4862,7 +4869,7 @@ nav ul li a:hover {
   display: inline-block;
   background: #444;
   color: #fff;
-  font-size: 10px;
+  font-size: 13px;
   padding: 2px 8px;
   border-radius: 20px;
   margin-bottom: 10px;
@@ -4870,7 +4877,7 @@ nav ul li a:hover {
 
 .ai-card p {
   color: var(--text-sub);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -4944,25 +4951,29 @@ nav ul li a:hover {
   font-size: 20px;
 }
 .biz-card ul > * {
-  font-size: 0.8rem;
+  font-size: 14px;
   color: #666;
 }
 
 .biz-card h3 {
+  color: #333;
   font-size: 20px;
 }
 
-.biz-card p {
-  color: var(--text-sub);
+.biz-card p,
+.agency-card h3 {
+  color: var(--text);
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 16px;
+  font-weight: 500;
 }
 
 .biz-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: 10px;
 }
 
 .biz-tag {
@@ -5009,14 +5020,8 @@ nav ul li a:hover {
   margin-bottom: 12px;
 }
 
-.agency-card h3 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
 .agency-card p {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--text-sub);
 }
 
@@ -5025,7 +5030,7 @@ nav ul li a:hover {
     ──────────────────────────────────────── */
 .solution {
   flex-direction: column;
-  background: #222;
+  background: var(--navy);
   height: 100vh;
 }
 
@@ -5049,7 +5054,7 @@ nav ul li a:hover {
   background: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 20px;
+  padding: 8px 16px;
   transition:
     background 0.2s,
     border-color 0.2s;
@@ -5064,7 +5069,7 @@ nav ul li a:hover {
 
 .sol-card p {
   font-size: 14px;
-  color: #333;
+  color: var(--text-sub);
   line-height: 1.6;
   flex: 1;
 }

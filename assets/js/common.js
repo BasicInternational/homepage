@@ -266,14 +266,6 @@ function aniText() {
   });
 }
 
-// window.addEventListener("DOMContentLoaded", function () {
-//   device.init();
-//   gnb.init();
-//   if (gnb.pageType === "detail" && dialObj.dial === null) dialObj.init();
-//   tabsFunc();
-//   aniText();
-// });
-
 // header와 같이 다른 파일(html)을 불러올 때 이벤트리스너로 하면 DOM이 구성되기 전에 init이 실행되어 함수로 관리
 function initCommon() {
   device.init();
@@ -334,13 +326,13 @@ function initCommon() {
       const megaMenu = tabs.querySelector('.mega-menu');
       megaMenu.style.width = tabsWidth + 'px';
     }
-
-    document.querySelectorAll('.bi__tabs > ul > li > a').forEach((link) => {
-      link.addEventListener('mouseenter', () => {
-        document.body.classList.add('mega-open');
-      });
-    });
   }
+  document.querySelectorAll('.bi__tabs > ul > li > a').forEach((link) => {
+    link.addEventListener('mouseenter', () => {
+      console.log('li 마우스');
+      document.body.classList.add('mega-open');
+    });
+  });
 
   // 헤더 영역에서 마우스가 완전히 벗어나면 메가메뉴 닫기
   if (headerEl) {
