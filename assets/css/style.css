@@ -519,7 +519,7 @@ main {
 main section {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 0px;
+  padding: 48px 0px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -4822,7 +4822,7 @@ nav ul li a:hover {
 .ai-card {
   background: var(--light-gray);
   border-radius: 12px;
-  padding: 28px 20px;
+  padding: 20px;
   border: 1px solid var(--mid-gray);
   transition:
     box-shadow 0.2s,

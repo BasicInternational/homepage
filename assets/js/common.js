@@ -29,8 +29,6 @@ const gnb = {
     gnb.menuItemBtn = document.querySelectorAll('.item__button');
     gnb.menuItemList = document.querySelectorAll('.item__list');
 
-    console.log(gnb.menu);
-
     if (gnb.pageType === 'detail') {
       document.querySelector('main').classList.add('hide-before');
     } else {
@@ -136,7 +134,6 @@ const dialObj = {
     });
   },
   matchDescs: function (idx) {
-    console.log(idx);
     dialObj.Descs.forEach((desc) => desc.classList.remove('active'));
     dialObj.Descs[idx].classList.add('active');
     this.pagenation(idx);
@@ -164,7 +161,6 @@ const dialObj = {
       btn.style.transform = transformTemp;
       btn.childNodes[1].style.transform = transformTemp2;
     });
-    // console.log(standard.toFixed(4) * 1);
   },
 };
 
@@ -206,7 +202,7 @@ function initSwiper(elem, options) {
   if (swiperInstance === null) {
     const element = document.querySelector(elem);
     element.classList.add('swiper');
-    console.log(element.children[0].children);
+
     element.children[0].classList.add('swiper-wrapper');
     [].forEach.call(element.children[0].children, (item) => {
       item.classList.add('swiper-slide');
@@ -232,7 +228,7 @@ function initSwiper(elem, options) {
         },
       },
     };
-    console.log(_options);
+
     swiperInstance = new Swiper('.swiper', _options);
   }
 }
@@ -244,7 +240,7 @@ function destroySwiper(elem) {
 
   const element = document.querySelector(elem);
   element.classList.remove('swiper');
-  console.log(element.children[0].children);
+
   element.children[0].classList.remove('swiper-wrapper');
   [].forEach.call(element.children[0].children, (item) => {
     item.classList.remove('swiper-slide');
@@ -255,7 +251,6 @@ function aniText() {
   const elements = document.querySelectorAll('.ani-text');
   elements.forEach(function (text) {
     text.innerHTML = text.textContent.replace(/\S/g, '<i>$&</i>');
-    console.log(text.innerHTML);
 
     const items = text.querySelectorAll('i');
     items.forEach(function (item, index) {
@@ -279,8 +274,6 @@ function initCommon() {
   const headerEl = document.querySelector('.bi__header');
   const tabsEl = document.querySelector('.bi__tabs');
   const tabsWidth = tabsEl ? tabsEl.offsetWidth : 0;
-  console.log('tabsEl', tabsEl);
-  console.log('tabsWidth', tabsWidth);
 
   if (tabs) {
     if (!tabs.querySelector('.mega-menu')) {
@@ -329,7 +322,6 @@ function initCommon() {
   }
   document.querySelectorAll('.bi__tabs > ul > li > a').forEach((link) => {
     link.addEventListener('mouseenter', () => {
-      console.log('li 마우스');
       document.body.classList.add('mega-open');
     });
   });

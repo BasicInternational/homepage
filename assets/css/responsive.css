@@ -82,8 +82,22 @@
     max-width: 100%;
   }
   /* index.html */
+  .hero-modern-business {
+    height: 100%;
+    padding: 45px 15px;
+  }
+  .hero-modern-business__container {
+    flex-direction: column;
+  }
+  .hero-modern-business__container .hero-modern-business__image-wrapper {
+    position: unset;
+    width: 100%;
+  }
   .hero-modern-business__container .hero-modern-business__content .hero-modern-business__actions {
     width: 100%;
+  }
+  .hero-modern-business__container .hero-modern-business__content .hero-modern-business__title {
+    font-size: 32px;
   }
   .hero-modern-business__container
     .hero-modern-business__content
