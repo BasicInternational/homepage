@@ -243,16 +243,9 @@ section.service_content_wrap .page__deco__text,
 }
 
 footer .page__deco.type1 {
+  display: none;
   top: -90px;
   right: 140px;
-  background: #1685b2;
-  transform: rotate(25deg);
-  position: absolute;
-  width: 90px;
-  height: 180px;
-  border-radius: 45px;
-  transition: all 0.4s ease;
-  z-index: 1;
 }
 
 @media (max-width: 1439px) {
@@ -277,14 +270,6 @@ footer .page__deco.type1 {
   }
 }
 @media (max-width: 767px) {
-  footer .page__deco.type1 {
-    width: 6.25vw;
-    height: 12.5vw;
-    top: -6.25vw;
-    right: 12.167vw;
-    transform: rotate(25deg);
-  }
-
   .service_content_wrap .inner {
     padding: 0 5.128vw;
     flex-direction: column;

@@ -1,245 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>베이직인터내셔널</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Pretendard', 'Noto Sans KR', Dotum, '돋움', sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Hero Section */
+      .business-info {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+        color: white;
+        padding: 120px 20px;
+        text-align: left;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero-label {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-size: 14px;
+        margin-bottom: 40px;
+        backdrop-filter: blur(10px);
+      }
+
+      .business-info h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        line-height: 1.2;
+      }
+
+      .business-info .highlight {
+        color: #0e998e;
+      }
+
+      .business-info p {
+        font-size: 18px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* Expertise Section */
+      .expertise {
+        padding: 100px 0px;
+      }
+
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      .section-label {
+        color: #0e998e;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-size: 36px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 80px;
+        color: #333;
+      }
+
+      /* Cards Grid */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 40px 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        text-align: left;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-icon {
+        font-size: 32px;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .card p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      .footer {
+        background: #2a2a2a;
+        color: white;
+        padding: 60px 20px 40px;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .footer h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 40px;
+      }
+
+      .footer-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .footer-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .footer-label {
+        font-weight: 600;
+        min-width: 80px;
+        color: #0e998e;
+      }
+
+      .footer-text {
+        color: #ccc;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid #444;
+        color: #888;
+        font-size: 14px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 32px;
         }
 
-        body {
-            font-family: "Pretendard", "Noto Sans KR", Dotum, "돋움", sans-serif;
-            line-height: 1.6;
-            color: #333;
+        .hero p {
+          font-size: 16px;
         }
 
-        /* Hero Section */
-        .business-info {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
-            color: white;
-            padding: 120px 20px;
-            text-align: left;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-label {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 8px 20px;
-            font-size: 14px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-        }
-
-        .business-info h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
-
-        .business-info .highlight {
-            color: #0e998e;
-        }
-
-        .business-info p {
-            font-size: 18px;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        /* Expertise Section */
-        .expertise {
-            padding: 100px 0px;
-        }
-
-        .container {
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            color: #0e998e;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 36px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 80px;
-            color: #333;
-        }
-
-        /* Cards Grid */
         .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1440px;
-            margin: 0 auto;
+          grid-template-columns: 1fr;
+          gap: 20px;
         }
 
         .card {
-            background: white;
-            border-radius: 12px;
-            padding: 40px 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
+          padding: 30px 20px;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        .section-title {
+          font-size: 28px;
         }
-
-        .card-icon {
-            font-size: 32px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        .footer {
-            background: #2a2a2a;
-            color: white;
-            padding: 60px 20px 40px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .footer h2 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-
-        .footer-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .footer-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .footer-label {
-            font-weight: 600;
-            min-width: 80px;
-            color: #0e998e;
-        }
-
-        .footer-text {
-            color: #ccc;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #444;
-            color: #888;
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .card {
-                padding: 30px 20px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-        }
+      }
     </style>
 
-      <link href="/assets/images/favicon.png" rel="icon" type="image/png">
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/jquery.fullpage.css" />
 
     <!-- JS -->
     <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/assets/js/common.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.fullpage.js"></script>
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-</head>
-<body data-type="detail">
-    
+  </head>
+  <body data-type="detail">
     <!--  Header 영역  -->
     <div id="header-include"></div>
     <main id="container" tabindex="0">
+      <!-- Hero Section -->
+      <section class="business-info" style="display: none">
+        <div class="hero-content">
+          <div class="hero-label">Digital Transformation Partner</div>
+          <h1>
+            미래를 연결하는 기술,<br />
+            <span class="highlight">베이직인터내셔널</span>이 만듭니다.
+          </h1>
+          <p>
+            AI, 클라우드, 금융을 아우르는 12개의 핵심 비즈니스 포트폴리오를 통해<br />
+            고객의 비즈니스 혁신과 성공적인 디지털 전환을 이끕니다.
+          </p>
+        </div>
+      </section>
 
-        <!-- Hero Section -->
-        <section class="business-info" style="display: none;">
-            <div class="hero-content">
-                <div class="hero-label">Digital Transformation Partner</div>
-                <h1>
-                    미래를 연결하는 기술,<br>
-                    <span class="highlight">베이직인터내셔널</span>이 만듭니다.
-                </h1>
-                <p>
-                    AI, 클라우드, 금융을 아우르는 12개의 핵심 비즈니스 포트폴리오를 통해<br>
-                    고객의 비즈니스 혁신과 성공적인 디지털 전환을 이끕니다.
-                </p>
-            </div>
-        </section>
-
-           <section class="content__banner" >
+      <section class="content__banner">
         <figure>
           <img src="/assets/images/pages/agency/banner.jpg" alt="" class="desktop-image" />
           <img src="/assets/images/pages/agency/banner-m.jpg" alt="" class="mobile-image" />
@@ -248,91 +246,116 @@
           <div class="banner__text">
             <h2>사업분야<strong></strong></h2>
             <p>
-              ㈜베이직인터내셔널은 보험, 은행, 서비스 분야에서<br>
-              SI 프로젝트를 수행하고 있으며, 다양한 금융권 및 유통,<br>
+              ㈜베이직인터내셔널은 보험, 은행, 서비스 분야에서<br />
+              SI 프로젝트를 수행하고 있으며, 다양한 금융권 및 유통,<br />
               제조업의 유지보수 사업을 성공적으로 수행하고 있습니다.
             </p>
           </div>
         </div>
       </section>
-    
-        <!-- Expertise Section -->
-        <section class="expertise">
-            <div class="container">
-                <div class="section-label">OUR EXPERTISE</div>
-                <h2 class="section-title">핵심 사업 영역</h2>
-                
-                <div class="cards-grid">
-                    <!-- <div class="card">
+
+      <!-- Expertise Section -->
+      <section class="expertise">
+        <div class="container">
+          <div class="section-label">OUR EXPERTISE</div>
+          <h2 class="section-title">핵심 사업 영역</h2>
+
+          <div class="cards-grid">
+            <!-- <div class="card">
                         <span class="card-icon">💡</span>
                         <h3>솔루션</h3>
                         <p>고객의 비즈니스 환경에 최적화된 맞춤형 엔터프라이즈 솔루션 개발 및 통합 컨설팅을 제공합니다.</p>
                     </div> -->
-    
-                    <div class="card">
-                        <span class="card-icon">🖥️</span>
-                        <h3>AI</h3>
-                        <p>최신 AI기술을 접목한 혁신적인 자동화, 효율성 및 새로운 비즈니스 인사이트를 창출합니다.</p>
-                         <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">☁️</span>
-                        <h3>클라우드</h3>
-                        <p>안전하고 확장 가능한 인프라 구축, 마이그레이션 및 클라우드 플랫폼 운영을 지원합니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">📱</span>
-                        <h3>통신(인증)</h3>
-                        <p>대용량 트래픽을 안정적으로 처리하는 통신 인프라 및 강력한 보안 인증 시스템을 구축합니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">🛒</span>
-                        <h3>AI 커머스</h3>
-                        <p>사용자 행동 데이터를 분석하여 초개인화된 추천과 스마트 쇼핑 경험을 제공하는 커머스 플랫폼입니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">🎓</span>
-                        <h3>AI 교육 (LMS/LRS)</h3>
-                        <p>학습 데이터(LRS) 기반의 맞춤형 학습 경로를 추천하는 지능형 학습 관리 시스템(LMS)을 제공합니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">🧠</span>
-                        <h3>AI 물류</h3>
-                        <p>수요 예측, 재고 관리, 위험 관리 등 AI 기반의 스마트 솔루션 및 컨설팅(SCM) 시스템입니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">🏆</span>
-                        <h3>공제회 시스템</h3>
-                        <p>회원 관리, 부금관리 수납, 급여 지급 등 복잡한 공제회 업무를 통합적으로 솔루션합니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">📊</span>
-                        <h3>BI (데이터 분석)</h3>
-                        <p>간편한 데이터를 시각화로 분석하여 경영진의 빠르고 정확한 데이터 기반 의사결정을 지원합니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <div class="card">
-                        <span class="card-icon">🏠</span>
-                        <h3>금융 IT</h3>
-                        <p>은행, 보험, 증권 등 금융권 시스템(Core) 시스템 구축 및 디지털 금융 혁신 서비스를 제공합니다.</p>
-                        <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
-                    </div>
-    
-                    <!-- <div class="card">
+
+            <div class="card">
+              <span class="card-icon">🖥️</span>
+              <h3>AI</h3>
+              <p>
+                최신 AI기술을 접목한 혁신적인 자동화, 효율성 및 새로운 비즈니스 인사이트를
+                창출합니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">☁️</span>
+              <h3>클라우드</h3>
+              <p>
+                안전하고 확장 가능한 인프라 구축, 마이그레이션 및 클라우드 플랫폼 운영을 지원합니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">📱</span>
+              <h3>통신(인증)</h3>
+              <p>
+                대용량 트래픽을 안정적으로 처리하는 통신 인프라 및 강력한 보안 인증 시스템을
+                구축합니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">🛒</span>
+              <h3>AI 커머스</h3>
+              <p>
+                사용자 행동 데이터를 분석하여 초개인화된 추천과 스마트 쇼핑 경험을 제공하는 커머스
+                플랫폼입니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">🎓</span>
+              <h3>AI 교육 (LMS/LRS)</h3>
+              <p>
+                학습 데이터(LRS) 기반의 맞춤형 학습 경로를 추천하는 지능형 학습 관리 시스템(LMS)을
+                제공합니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">🧠</span>
+              <h3>AI 물류</h3>
+              <p>
+                수요 예측, 재고 관리, 위험 관리 등 AI 기반의 스마트 솔루션 및 컨설팅(SCM)
+                시스템입니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">🏆</span>
+              <h3>공제회 시스템</h3>
+              <p>
+                회원 관리, 부금관리 수납, 급여 지급 등 복잡한 공제회 업무를 통합적으로 솔루션합니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">📊</span>
+              <h3>BI (데이터 분석)</h3>
+              <p>
+                간편한 데이터를 시각화로 분석하여 경영진의 빠르고 정확한 데이터 기반 의사결정을
+                지원합니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <div class="card">
+              <span class="card-icon">🏠</span>
+              <h3>금융 IT</h3>
+              <p>
+                은행, 보험, 증권 등 금융권 시스템(Core) 시스템 구축 및 디지털 금융 혁신 서비스를
+                제공합니다.
+              </p>
+              <a href="/pages/business/business-ai.html" class="btn__more">Learn More</a>
+            </div>
+
+            <!-- <div class="card">
                         <span class="card-icon">🛡️</span>
                         <h3>FDS (이상거래탐지)</h3>
                         <p>머신러닝 알고리즘을 활용한 금융 사기 및 이상 거래를 실시간으로 탐지하는 보안 시스템입니다.</p>
@@ -343,51 +366,44 @@
                         <h3>픽업서비스</h3>
                         <p>온 오프라인을 연결(Seamless)하여 편리한 스마트 O2O 픽업과 픽업의 혁신 솔루션입니다.</p>
                     </div> -->
-                </div>
-            </div>
-        </section>
-
-
-
+          </div>
+        </div>
+      </section>
     </main>
 
-
-        <!--  Floating Menu 영역  -->
+    <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
-
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <h2>Basic International</h2>
-            <div class="footer-info">
-                <div class="footer-item">
-                    <span class="footer-label">TEL</span>
-                    <span class="footer-text">02-3489-1115</span>
-                </div>
-                <div class="footer-item">
-                    <span class="footer-label">E-Mail</span>
-                    <span class="footer-text">sisocore@gmail.com</span>
-                </div>
-                <div class="footer-item">
-                    <span class="footer-label">ADDRESS</span>
-                    <span class="footer-text">(08511) 서울특별시 금천구 벚꽃로 36길 30 7층 701~708호</span>
-                </div>
-            </div>
-            <div class="copyright">
-                Copyright © 2024 Basic International. All rights reserved.
-            </div>
+      <div class="footer-content">
+        <h2>Basic International</h2>
+        <div class="footer-info">
+          <div class="footer-item">
+            <span class="footer-label">TEL</span>
+            <span class="footer-text">02-3489-1115</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-label">E-Mail</span>
+            <span class="footer-text">sisocore@gmail.com</span>
+          </div>
+          <div class="footer-item">
+            <span class="footer-label">ADDRESS</span>
+            <span class="footer-text">(08511) 서울특별시 금천구 벚꽃로 36길 30 7층 701~708호</span>
+          </div>
         </div>
+        <div class="copyright">Copyright © 2024 Basic International. All rights reserved.</div>
+      </div>
     </footer>
     <script>
-        // <!--  공통 프레임 불러오기  -->
-        $(document).ready(function () {
-          $("#header-include").load("/pages/include/header.html", () => {
-            initCommon(); // 헤더가 로드된 후 초기화
-          });
-          $("#footer-include").load("/pages/include/footer.html")
-          $("#floating-menu-include").load("/pages/include/floating-menu.html")
-        })
+      // <!--  공통 프레임 불러오기  -->
+      $(document).ready(function () {
+        $('#header-include').load('/pages/include/header.html', () => {
+          initCommon(); // 헤더가 로드된 후 초기화
+        });
+        $('#footer-include').load('/pages/include/footer.html');
+        $('#floating-menu-include').load('/pages/include/floating-menu.html');
+      });
     </script>
-</body>
+  </body>
 </html>

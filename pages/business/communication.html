@@ -145,9 +145,12 @@
         flex-direction: column;
       }
 
-      .service-area-section .sec-eyebrow {
-        font-size: 10px;
-        font-weight: 700;
+      .service-area-section .sec-eyebrow,
+      .effect-area .sec-eyebrow,
+      .content__composition .sec-eyebrow,
+      .sec-eyebrow {
+        font-size: 16px;
+        font-weight: 500;
         letter-spacing: 2.5px;
         color: var(--purple);
         text-transform: uppercase;
@@ -194,10 +197,10 @@
       }
 
       .service-card-title {
-        font-size: 16px;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 600;
         color: var(--text-dark);
-        margin-bottom: 10px;
+        margin-bottom: 32px;
       }
 
       .service-card-desc {
@@ -214,25 +217,6 @@
         padding: 68px 60px;
         border-top: 1px solid var(--border);
         flex-direction: column;
-      }
-
-      .effect-area .sec-eyebrow {
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        color: var(--purple);
-        text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-
-      .effect-area .sec-title {
-        font-size: 24px;
-        font-weight: 900;
-        text-align: center;
-        color: var(--text-dark);
-        letter-spacing: -0.3px;
-        margin-bottom: 44px;
       }
 
       .effect-card-wrap {
@@ -332,7 +316,7 @@
       /* CSS Custom Properties */
       :root {
         --blue-600: #2563eb;
-        --gray-600: #4b5563;
+        --gray-600: #555;
         --gray-900: #111827;
         /* Spacing */
         --spacing-3: 0.75rem;
@@ -379,13 +363,10 @@
         margin-bottom: 4rem;
       }
       .content-text h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--gray-900);
         margin-bottom: 1rem;
       }
       .content-text p {
-        color: var(--gray-600);
+        color: var(--text-sub);
         margin-bottom: 1.5rem;
       }
       .feature-list {
@@ -445,10 +426,10 @@
       }
       @media (min-width: 1024px) {
         .about-section {
-          padding: 5rem 2rem;
+          padding: 56px 40px;
         }
         .container {
-          padding: 0 2rem;
+          padding: 0;
         }
       }
 
@@ -724,7 +705,7 @@
         <div class="container">
           <div class="content-grid">
             <div class="content-text">
-              <h3>
+              <h3 class="title-txt">
                 고객과 기업을 연결하는 가장 안전한 열쇠,<br />
                 통합 인증(PASS) 서비스 연동
               </h3>
@@ -802,7 +783,7 @@
       <!-- ── SERVICE AREA GRID ── -->
       <section class="service-area-section">
         <p class="sec-eyebrow">MAIN FEATURES</p>
-        <h2 class="sec-title">주요 인증 서비스 영역</h2>
+        <h2 class="title-txt">주요 인증 서비스 영역</h2>
 
         <div class="service-card-grid">
           <div class="service-card">
@@ -864,7 +845,7 @@
       <!-- ── EFFECT SECTION ── -->
       <section class="effect-area">
         <p class="sec-eyebrow">BUSINESS RESULTS</p>
-        <h2 class="sec-title">통합 인증 도입 기대 효과</h2>
+        <h2 class="sec-title title-txt">통합 인증 도입 기대 효과</h2>
 
         <div class="effect-card-wrap">
           <div class="effect-item">
@@ -904,8 +885,8 @@
       <section class="content__composition">
         <div class="inner">
           <div class="content__title">
-            <span>서비스 로직</span>
-            <h3>Service <strong>Logic</strong></h3>
+            <span class="sec-eyebrow">서비스 로직</span>
+            <h3 class="title-txt">Service <strong>Logic</strong></h3>
           </div>
           <figure class="diagram">
             <img
@@ -920,7 +901,6 @@
             />
           </figure>
         </div>
-        <span class="page__deco type2"></span>
       </section>
     </main>
 

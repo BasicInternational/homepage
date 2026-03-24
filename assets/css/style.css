@@ -1681,7 +1681,6 @@ section .content__title span {
 
 section .content__title h3 {
   padding-top: 10px;
-  font-size: 56px;
   color: #333;
 }
 
@@ -3692,10 +3691,6 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
     height: 4.688vw;
   }
 
-  section .content__title span {
-    font-size: 1.389vw;
-  }
-
   section .content__title h3 {
     padding-top: 0.694vw;
     font-size: 3.889vw;
@@ -5118,12 +5113,6 @@ nav ul li a:hover {
   width: 100%;
 }
 
-.overview-cards .cases-header h2 {
-  font-size: 26px;
-  font-weight: 900;
-  margin-bottom: 50px;
-}
-
 .more-link {
   display: block;
   display: none;
@@ -5402,6 +5391,7 @@ section.overview-cards {
 .overview-cards-wrap .card-info .info-list li span.value {
   font-size: 1rem;
   font-weight: 500;
+  padding-left: 4px;
 }
 .overview-cards-wrap .card-info .info-list li div > span {
   display: block;
@@ -5563,12 +5553,6 @@ section.overview-cards {
   color: #0b1a33;
 }
 
-.org-section .org-header p {
-  margin-top: 24px;
-  color: #333;
-  font-size: 16px;
-}
-
 /* ─────────────────────────────────────────
        LIGHT HISTORY SECTION
     ───────────────────────────────────────── */
@@ -5689,6 +5673,7 @@ h2.section-title,
 }
 
 .ht-img-col {
+  display: none;
   width: 260px;
   flex-shrink: 0;
   margin-left: 36px;
@@ -5808,8 +5793,6 @@ h2.section-title,
 /* card */
 .ht-card {
   background: #ffffff;
-  border: 1px solid #e4eaf4;
-  border-radius: 14px;
   padding: 22px 26px;
   display: flex;
   align-items: flex-start;
@@ -5828,10 +5811,9 @@ h2.section-title,
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(to bottom, #9aa3b0, rgba(154, 163, 176, 0.2));
   transition:
-    width 0.3s ease,
-    background 0.3s ease;
+    width 0.2s ease,
+    background 0.2s ease;
 }
 .ht-card:hover {
   transform: translateY(-4px);
@@ -5840,7 +5822,7 @@ h2.section-title,
 
 /* 활성 그룹 카드 강조 */
 .ht-group.is-active .ht-card {
-  border-color: rgba(14, 153, 142, 0.25);
+  background: var(--primary-bg);
 }
 .ht-group.is-active .ht-card::before {
   width: 6px;
@@ -5868,17 +5850,25 @@ h2.section-title,
   flex: 1;
 }
 .ht-text .title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  color: #0a0a0a;
+  color: var(--accent);
   margin-bottom: 3px;
   line-height: 1.5;
 }
-.ht-text .desc {
+.ht-text .desc-list {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-top: 10px;
+}
+.ht-text .desc-list li {
   font-size: 16px;
   color: #555;
   line-height: 1.6;
-  margin-top: 10px;
+  margin-top: 0;
+}
+.ht-text .desc-list li + li {
+  margin-top: 4px;
 }
 
 /* ─────────────────────────────────────────
@@ -6119,7 +6109,7 @@ h2.section-title,
 /* 사업부 설명 */
 .org-section .org-desc {
   font-size: 14px;
-  color: #6b7a90;
+  color: var(--decrip);
   line-height: 1.6;
   user-select: none;
 }
