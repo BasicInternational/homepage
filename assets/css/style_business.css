@@ -4818,6 +4818,13 @@ main section {
   flex-direction: row;
   padding: 0 5rem;
 }
+.intro__sound::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 70% 50%, rgba(200, 200, 200, 0.25) 0%, transparent 70%);
+}
 .intro__sound .intro__txt-wrap,
 .intro__sound .hero__sound-wrap {
   flex: 1;
