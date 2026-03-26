@@ -172,7 +172,7 @@ function goToTop() {
 
 window.addEventListener('scroll', function () {
   let pos = window.scrollY;
-  gnb.headerInvert(pos);
+  // gnb.headerInvert(pos);
 });
 
 // Tab menu click event
@@ -341,32 +341,40 @@ function initCommon() {
   });
 }
 
-window.addEventListener('resize', function () {
-  device.init();
-  dialObj.init();
-  if (device.type === 'mobile') {
-    gnb.tabs.style.display = 'none';
-  } else {
-    gnb.tabs.style.display = 'block';
-    updateMegaMenuWidth();
+document.addEventListener('DOMContentLoaded', () => {
+  const loadHTML = (selector, url, callback) => {
+    fetch(url)
+      .then((res) => res.text())
+      .then((html) => {
+        document.querySelector(selector).innerHTML = html;
+        if (callback) callback();
+      });
+  };
 
-    var tabs = document.querySelector('.bi__tabs');
-    if (tabs) {
-      var tabsWidth = tabs.offsetWidth;
-      var megaMenu = tabs.querySelector('.mega-menu');
-      if (megaMenu) {
-        megaMenu.style.width = tabsWidth + 'px';
+  loadHTML('#header-include', '/pages/include/header.html', initCommon);
+  loadHTML('#footer-include', '/pages/include/footer.html');
+  loadHTML('#floating-menu-include', '/pages/include/floating-menu.html');
+  window.addEventListener('resize', function () {
+    device.init();
+    dialObj.init();
+    if (device.type === 'mobile') {
+      console.log('device.type', device.type);
+      console.log('gnb.tabs', gnb.tabs);
+      gnb.tabs.style.display = 'none';
+    } else {
+      gnb.tabs.style.display = 'block';
+      updateMegaMenuWidth();
+
+      var tabs = document.querySelector('.bi__tabs');
+      if (tabs) {
+        var tabsWidth = tabs.offsetWidth;
+        var megaMenu = tabs.querySelector('.mega-menu');
+        if (megaMenu) {
+          megaMenu.style.width = tabsWidth + 'px';
+        }
       }
     }
-  }
-});
-
-$(document).ready(function () {
-  $('#header-include').load('/pages/include/header.html', () => {
-    initCommon(); // 헤더가 로드된 후 초기화
   });
-  $('#footer-include').load('/pages/include/footer.html');
-  $('#floating-menu-include').load('/pages/include/floating-menu.html');
 });
 
 // 메가메뉴 너비 갱신 함수
