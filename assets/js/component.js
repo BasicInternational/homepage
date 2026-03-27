@@ -1,6 +1,6 @@
 /**
  * @component HeroSection
- * @description 페이지 상단 히어로 섹션 공통 컴포넌트
+ * @description 페이지 상단 히로 섹션 공통화 컴포넌트
  *
  * @param {Object} props
  * @param {string} props.badge          - 배지 텍스트
@@ -9,6 +9,8 @@
  * @param {string} props.sub            - 서브타이틀 (HTML 태그 사용 가능)
  * @param {string} [props.btnText]      - 버튼 텍스트 (기본값: '자세히 →')
  * @param {string} [props.btnHref]      - 버튼 링크 (기본값: 'javascript:void(0)')
+ * @param {string} [props.ctaLink]      - 우측 상단 CTA 버튼 링크 (없으면 버튼 미노출)
+ * @param {string} [props.ctaText]      - 우측 상단 CTA 버튼 텍스트 (기본값: '시작하기')
  * @param {string} [props.scrollTarget] - 스크롤 인디케이터 앵커 타겟 (기본값: '#scroll-target')
  */
 
@@ -19,17 +21,16 @@ function heroSection({
   title = '',
   sub = '',
   btnText = '자세히 →',
-  btnHref = 'javascript:void(0)',
+  btnHref = null,
+  ctaLink = null,
+  ctaText = '시작하기',
   scrollTarget = '#scroll-target',
 }) {
   return `
     <section class="syncany-hero">
-      <!-- 배경 -->
       <div class="syncany__bg"></div>
 
-      <!-- 본문 -->
       <div class="syncany__content">
-        <!-- 배지 -->
         <div class="syncany__badge">
           <div class="syncany__badge-icon">
             <i class="bi ${badgeIcon}"></i>
@@ -37,18 +38,22 @@ function heroSection({
           <span class="syncany__badge-text">${badge}</span>
         </div>
 
-        <!-- 타이틀 -->
         <h2 class="syncany__title">${title}</h2>
-
-        <!-- 서브타이틀 -->
         <p class="syncany__sub">${sub}</p>
 
         <div class="syncany__btns">
-          <a href="${btnHref}" class="syncany__btn-secondary">${btnText}</a>
+          ${btnHref ? `<a href="${btnHref}" target="_blank" class="syncany__btn-secondary">${btnText}</a>` : ''}
+          ${
+            ctaLink
+              ? `
+          <button class="nav-cta">
+            <a href="${ctaLink}" target="_blank">${ctaText}</a>
+          </button>`
+              : ''
+          }
         </div>
       </div>
 
-      <!-- 스크롤 인디케이터 -->
       <div class="syncany__scroll">
         <span class="syncany__scroll-text"><a href="${scrollTarget}">Scroll</a></span>
         <div class="syncany__scroll-line"></div>

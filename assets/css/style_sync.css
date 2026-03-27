@@ -1967,7 +1967,6 @@ footer {
 }
 .syncany__btns {
   display: flex;
-  display: none;
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 32px;
@@ -1979,7 +1978,7 @@ footer {
   margin: 0 auto;
   background: transparent;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
   padding: 13px 24px;
   border-radius: 10px;
