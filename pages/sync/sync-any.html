@@ -394,14 +394,4 @@
     ></script>
   </body>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    <!--  공통 프레임 불러오기  -->
-    $(document).ready(function () {
-      $('#header-include').load('/pages/include/header.html', () => {
-        initCommon(); // 헤더가 로드된 후 초기화
-      });
-      $('#footer-include').load('/pages/include/footer.html');
-      $('#floating-menu-include').load('/pages/include/floating-menu.html');
-    });
-  </script>
 </html>

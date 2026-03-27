@@ -1,20 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
-  <meta charset="UTF-8">
-  <title>베이직인터내셔널</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="title" content="베이직인터내셔널">
-  <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
-  <meta name="keywords" content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바">
-  <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="베이직인터내셔널 홈페이지">
-  <meta property="og:description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다.">
-  <meta property="og:image" content="/assets/images/favicon.png">
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
 
-  <meta property="og:url" content="https://basicit.co.kr">
-  <link href="/assets/images/favicon.png" rel="icon" type="image/png">
+    <meta property="og:url" content="https://basicit.co.kr" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
@@ -163,15 +169,15 @@
           function handleResize() {
             if (window.innerWidth <= 1280) {
               if (swiperInstance === null) {
-                initSwiper(".mobile-swiper");
+                initSwiper('.mobile-swiper');
               }
             } else {
-              destroySwiper(".mobile-swiper");
+              destroySwiper('.mobile-swiper');
             }
           }
           handleResize();
 
-          window.addEventListener("resize", handleResize);
+          window.addEventListener('resize', handleResize);
         </script>
       </section>
       <section class="content__composition">
@@ -253,9 +259,7 @@
           <div class="desc__wrap">
             <ul>
               <li class="dial-item active">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-01.svg" alt="" /> Container
-                </h4>
+                <h4><img src="/assets/images/pages/sync_boot/dial-01.svg" alt="" /> Container</h4>
                 <p class="title">서비스 가상화</p>
                 <p class="desc">
                   Kubernetes, Docker, Apache Mesos,<br />
@@ -272,8 +276,7 @@
               </li>
               <li class="dial-item">
                 <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-03.svg" alt="" /> Service
-                  Discovery
+                  <img src="/assets/images/pages/sync_boot/dial-03.svg" alt="" /> Service Discovery
                 </h4>
                 <p class="title">서비스의 가용 상태, 서비스 식별 관리</p>
                 <p class="desc">
@@ -281,18 +284,14 @@
                 </p>
               </li>
               <li class="dial-item">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-04.svg" alt="" /> API Gateway
-                </h4>
+                <h4><img src="/assets/images/pages/sync_boot/dial-04.svg" alt="" /> API Gateway</h4>
                 <p class="title">모든 서비스 요청의 단일지점</p>
                 <p class="desc">
                   Kong, Tyk, KrakenD.io, Gravitee, Gloo Edge, Goku, WSO2, Fusio, Apiman
                 </p>
               </li>
               <li class="dial-item">
-                <h4>
-                  <img src="/assets/images/pages/sync_boot/dial-05.svg" alt="" /> Monitoring
-                </h4>
+                <h4><img src="/assets/images/pages/sync_boot/dial-05.svg" alt="" /> Monitoring</h4>
                 <p class="title">서비스 상태/서비스 통찰</p>
                 <p class="desc">
                   SigNoz, Graphite, Pinpoint, Prometheus, Javamelody, Stagemonitor, Scouter, Zipkin,
@@ -484,15 +483,4 @@
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
   </body>
-
-  <script>
-    <!--  공통 프레임 불러오기  -->
-    $(document).ready(function() {
-      $("#header-include").load("/pages/include/header.html", () => {
-        initCommon(); // 헤더가 로드된 후 초기화
-      });
-      $("#footer-include").load("/pages/include/footer.html")
-      $("#floating-menu-include").load("/pages/include/floating-menu.html")
-    })
-  </script>
 </html>

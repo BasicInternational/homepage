@@ -387,32 +387,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
-    <!--  공통 프레임 불러오기  -->
-    $(document).ready(function () {
-      $('#header-include').load('/pages/include/header.html', () => {
-        initCommon(); // 헤더가 로드된 후 초기화
-      });
-      $('#footer-include').load('/pages/include/footer.html');
-      $('#floating-menu-include').load('/pages/include/floating-menu.html');
-    });
-
-    const fills = document.querySelectorAll('.feature-progress-fill');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            const w = el.dataset.width || 70;
-            el.style.width = w + '%';
-            observer.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.4 },
-    );
-
-    fills.forEach((el) => observer.observe(el));
-
     // 탭메뉴
     const tabColors = {
       aws: { btn: 'bg-orange-400 text-white shadow-md', num: 'text-orange-400' },

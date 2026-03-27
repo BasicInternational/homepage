@@ -2175,6 +2175,7 @@ section.content__feature .all-swiper ul.feature_wrap > li {
 }
 /* 우측 하단 장식 패턴 */
 .syncany__pattern {
+  display: none;
   position: absolute;
   right: -40px;
   bottom: -40px;

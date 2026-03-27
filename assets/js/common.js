@@ -92,11 +92,11 @@ const gnb = {
   },
 };
 
-// window.addEventListener("scroll", function () {
-//   let pos = window.scrollY;
-//   if (gnb.pageType !== "detail") return;
-//   gnb.headerInvert(pos);
-// });
+window.addEventListener('scroll', function () {
+  let pos = window.scrollY;
+  if (gnb.pageType !== 'detail') return;
+  gnb.headerInvert(pos);
+});
 
 // dial function
 const dialObj = {
@@ -166,7 +166,7 @@ const dialObj = {
 
 // go to top
 function goToTop() {
-  $('html, body').animate({ scrollTop: 0 });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   return false;
 }
 
@@ -358,8 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
     device.init();
     dialObj.init();
     if (device.type === 'mobile') {
-      console.log('device.type', device.type);
-      console.log('gnb.tabs', gnb.tabs);
       gnb.tabs.style.display = 'none';
     } else {
       gnb.tabs.style.display = 'block';

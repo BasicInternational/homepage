@@ -37,13 +37,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/reset.css" />
-
-    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
-    <script src="/assets/js/common.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/component.js"></script>
   </head>
-  <body data-type="detail">
+  <body id="sync__cms" data-type="detail">
     <div id="skip__content">
       <a href="#container">본문 바로가기</a>
     </div>
@@ -52,70 +50,6 @@
     <div id="header-include"></div>
 
     <main id="container" class="cms__main" tabindex="0">
-      <section class="syncany-hero">
-        <!-- 배경 -->
-        <div class="syncany__bg"></div>
-
-        <!-- 우측 장식 패턴 -->
-        <div class="syncany__pattern">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M200 20 L380 110 L380 290 L200 380 L20 290 L20 110 Z"
-              stroke="white"
-              stroke-width="2"
-            />
-            <path
-              d="M200 60 L340 135 L340 265 L200 340 L60 265 L60 135 Z"
-              stroke="white"
-              stroke-width="2"
-            />
-            <path
-              d="M200 100 L300 160 L300 240 L200 300 L100 240 L100 160 Z"
-              stroke="white"
-              stroke-width="2"
-            />
-            <path
-              d="M200 140 L260 175 L260 225 L200 260 L140 225 L140 175 Z"
-              stroke="white"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-
-        <!-- 본문 -->
-        <div class="syncany__content">
-          <!-- 배지 -->
-          <div class="syncany__badge">
-            <div class="syncany__badge-icon">
-              <i class="bi bi-braces-asterisk"></i>
-            </div>
-            <span class="syncany__badge-text">콘텐츠 관리의 새로운 패러다임</span>
-          </div>
-
-          <!-- 타이틀 -->
-          <h2 class="syncany__title">
-            Sync CMS<br />
-            개발자 없이 마케터가 직접 설계하다
-          </h2>
-
-          <!-- 서브타이틀 -->
-          <p class="syncany__sub">
-            Sync CMS는 Java 기반의 압도적인 안정성 위에 레고 블록 같은 유연함을 더했습니다.<br />
-            빠른 기획, 신속한 배포, 변화에 가장 완벽하게 대응하는 엔터프라이즈 CMS 솔루션입니다.
-          </p>
-
-          <div class="syncany__btns">
-            <a href="javascript:void(0)" class="syncany__btn-secondary">자세히 →</a>
-          </div>
-        </div>
-
-        <!-- 스크롤 인디케이터 -->
-        <div class="syncany__scroll">
-          <span class="syncany__scroll-text"><a href="#no-code">Scroll</a></span>
-          <div class="syncany__scroll-line"></div>
-        </div>
-      </section>
-
       <!-- ── STATS BAR ── -->
       <div id="no-code" class="cms-stats">
         <div class="cms-stats__item">
@@ -441,7 +375,26 @@
     <div id="footer-include"></div>
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script>
+      //  @component HeroSection
+      document.addEventListener('DOMContentLoaded', () => {
+        render(
+          '#container',
+          heroSection({
+            badge: '콘텐츠 관리의 새로운 패러다임',
+            title: 'Sync CMS<br />개발자 없이 마케터가 직접 설계하다',
+            sub: 'Sync CMS는 Java 기반의 압도적인 안정성 위에 레고 블록 같은 유연함을 더했습니다.<br />빠른 기획, 신속한 배포, 변화에 가장 완벽하게 대응하는 엔터프라이즈 CMS 솔루션입니다.',
+            scrollTarget: '#no-code',
+          }),
+        );
+      });
+
       function toggleFaq(el) {
         const item = el.closest('.faq-item');
         const isOpen = item.classList.contains('is-open');
@@ -451,21 +404,5 @@
         if (!isOpen) item.classList.add('is-open');
       }
     </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
   </body>
-
-  <script>
-    <!--  공통 프레임 불러오기  -->
-    $(document).ready(function () {
-      $('#header-include').load('/pages/include/header.html', () => {
-        initCommon(); // 헤더가 로드된 후 초기화
-      });
-      $('#footer-include').load('/pages/include/footer.html');
-      $('#floating-menu-include').load('/pages/include/floating-menu.html');
-    });
-  </script>
 </html>
