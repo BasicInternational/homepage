@@ -14,7 +14,7 @@
  * @param {string} [props.scrollTarget] - 스크롤 인디케이터 앵커 타겟 (기본값: '#scroll-target')
  */
 
-// hero section Type1 컴포넌트
+// hero section Type1 컴포넌트 
 function heroSection({
   badge = '',
   badgeIcon = 'bi-braces-asterisk',
