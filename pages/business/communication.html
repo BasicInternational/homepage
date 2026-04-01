@@ -24,11 +24,13 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/assets/js/common.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/js/component.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
       main section {
@@ -141,7 +143,7 @@
     ══════════════════════════════ */
       .service-area-section {
         background: var(--off-white);
-        padding: 68px 60px;
+        padding: 48px 0px;
         flex-direction: column;
       }
 
@@ -151,7 +153,7 @@
       .sec-eyebrow {
         font-size: 16px;
         font-weight: 500;
-        letter-spacing: 2.5px;
+        letter-spacing: 1px;
         color: var(--purple);
         text-transform: uppercase;
         text-align: center;
@@ -204,7 +206,7 @@
       }
 
       .service-card-desc {
-        font-size: 14px;
+        font-size: 1rem;
         color: var(--text-body);
         line-height: 1.85;
       }
@@ -214,7 +216,7 @@
     ══════════════════════════════ */
       .effect-area {
         background: var(--white);
-        padding: 68px 60px;
+        padding: 70px 0px;
         border-top: 1px solid var(--border);
         flex-direction: column;
       }
@@ -229,7 +231,7 @@
         background: var(--off-white);
         border: 1px solid var(--border);
         border-radius: 14px;
-        padding: 28px 24px;
+        padding: 10px 24px;
         position: relative;
         overflow: hidden;
         border-left: 1px solid #666;
@@ -368,6 +370,7 @@
       .content-text p {
         color: var(--text-sub);
         margin-bottom: 1.5rem;
+        font-size: 1rem;
       }
       .feature-list {
         list-style: none;
@@ -681,12 +684,12 @@
         <figure>
           <img
             src="/assets/images/pages/business_certification/banner.jpg"
-            alt=""
+            alt="간편본인인증 서비스 배너 이미지"
             class="desktop-image"
           />
           <img
             src="/assets/images/pages/business_certification/banner-m.jpg"
-            alt=""
+            alt="간편본인인증 서비스 배너 이미지"
             class="mobile-image"
           />
         </figure>
@@ -842,6 +845,437 @@
         </div>
       </section>
 
+      <!-- SOLUTIONS -->
+      <section class="solution__section mx-auto effect-area">
+        <div class="text-center mb-16">
+          <h2 class="title-txt">핵심 기술 솔루션</h2>
+          <!-- <div class="w-16 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div> -->
+          <p class="text-slate-500 max-w-xl mx-auto text-base">
+            국내 최고의 보안 가이드라인을 준수하는<br />
+            베이직인터내셔널의 4대 핵심 아키텍처를 소개합니다.
+          </p>
+        </div>
+
+        <div id="solutions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- 통합 본인확인 -->
+          <div
+            class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors text-2xl"
+            >
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <h3 class="service-card-title mb-1">통합 본인확인</h3>
+            <p class="text-xs font-semibold text-blue-500 mb-4 uppercase tracking-wider">
+              Identity Verification
+            </p>
+            <p class="service-card-desc mb-6 leading-relaxed">
+              주민등록번호 대체 수단인 i-PIN 및 휴대폰 본인확인을 통합하여 안전한 사용자 식별 환경을
+              제공합니다.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> AES-256 구간 암호화
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 고유식별정보 암호화 저장
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 실시간 명의도용 차단
+              </li>
+            </ul>
+            <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+              <span
+                class="text-[14px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1"
+              >
+                <i class="fas fa-microchip text-[14px]"></i> RESTful API / gRPC 지원
+              </span>
+            </div>
+          </div>
+
+          <!-- 간편인증 (SaaS) -->
+          <div
+            class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors text-2xl"
+            >
+              <i class="fas fa-fingerprint"></i>
+            </div>
+            <h3 class="service-card-title mb-1">간편인증 (SaaS)</h3>
+            <p class="text-xs font-semibold text-blue-500 mb-4 uppercase tracking-wider">
+              Simple Authentication
+            </p>
+            <p class="service-card-desc mb-6 leading-relaxed">
+              카카오, 네이버, 패스 등 12종 이상의 민간 인증서를 하나의 인터페이스로 통합 제공합니다.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> OIDC 표준 프로토콜 준수
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> Single-Sign-On(SSO) 지원
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 멀티 테넌트 아키텍처
+              </li>
+            </ul>
+            <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+              <span
+                class="text-[14px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1"
+              >
+                <i class="fas fa-microchip text-[14px]"></i> OAuth 2.0 / OpenID Connect
+              </span>
+            </div>
+          </div>
+
+          <!-- PASS 인증 -->
+          <div
+            class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors text-2xl"
+            >
+              <i class="fas fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="service-card-title mb-1">PASS 인증</h3>
+            <p class="text-xs font-semibold text-blue-500 mb-4 uppercase tracking-wider">
+              Carrier-Base PASS
+            </p>
+            <p class="service-card-desc mb-6 leading-relaxed">
+              통신 3사 기반의 강력한 2단계 인증 솔루션으로, 모바일 앱 기반의 간편하고 확실한 인증을
+              보장합니다.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 생체 인식(FIDO) 연동
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> QR 코드 스캔 방식 지원
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 통신사 실시간 DB 대조
+              </li>
+            </ul>
+            <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+              <span
+                class="text-[14px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1"
+              >
+                <i class="fas fa-microchip text-[14px]"></i> FIDO 2.0 Standard
+              </span>
+            </div>
+          </div>
+
+          <!-- 휴대폰 소액결제 -->
+          <div
+            class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors text-2xl"
+            >
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3 class="service-card-title mb-1">휴대폰 소액결제</h3>
+            <p class="text-xs font-semibold text-blue-500 mb-4 uppercase tracking-wider">
+              Mobile Micro-Payment
+            </p>
+            <p class="service-card-desc mb-6 leading-relaxed">
+              통신사 한도를 활용한 온/오프라인 결제 시스템으로, 고성능 트랜잭션 처리 엔진을
+              탑재했습니다.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 실시간 FDS 이상거래 탐지
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 초당 10,000건 이상 TPS 보장
+              </li>
+              <li
+                class="flex items-center gap-2 text-flex items-center gap-2 text-sm font-medium text-slate-700 font-medium text-slate-700"
+              >
+                <i class="fas fa-check-circle text-green-500"></i> 정산 자동화 시스템
+              </li>
+            </ul>
+            <div class="pt-6 border-t border-slate-50 flex items-center justify-between">
+              <span
+                class="text-[14px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1"
+              >
+                <i class="fas fa-microchip text-[14px]"></i> ISO-8583 메시지 규격
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution__section bg-slate-50">
+        <div class="mx-auto px-0 sm:px-16">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-slate-800">통합 기술 프로세스</h2>
+            <p class="text-slate-500 text-base">
+              요청부터 승인까지, 0.5초 이내에 수행되는 고성능 인증 로직 아키텍처입니다.
+            </p>
+          </div>
+
+          <div class="relative">
+            <!-- Connection Line -->
+            <div
+              class="hidden lg:block absolute top-[32px] left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2 z-0"
+            >
+              <div
+                id="progress-line"
+                class="h-full bg-blue-600 transition-all duration-1000 ease-in-out"
+                style="width: 0%"
+              ></div>
+            </div>
+
+            <div
+              id="tech-steps-container"
+              class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10"
+            >
+              <!-- JS will populate this for interaction logic -->
+            </div>
+          </div>
+
+          <!-- Workflow Status Card -->
+          <div
+            class="mt-[100px] bg-white rounded-3xl p-8 border border-slate-200 shadow-sm mx-auto flex flex-col md:flex-row items-center gap-8"
+          >
+            <div
+              class="flex-shrink-0 w-32 h-32 bg-blue-50 rounded-2xl flex flex-col items-center justify-center"
+            >
+              <i class="fas fa-wave-square text-3xl text-blue-600 mb-2 animate-pulse"></i>
+              <span class="text-[14px] font-bold text-blue-400">STATUS: LIVE</span>
+            </div>
+            <div class="w-full">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest"
+                  >Advanced Engine</span
+                >
+                <div class="flex-1 h-px bg-blue-100"></div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-slate-800">
+                초당 <span class="text-blue-600">50,000+</span> 트랜잭션 병렬 처리
+              </h3>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                베이직인터내셔널의 인증 엔진은 분산 큐 시스템과 비동기 논블로킹(Asynchronous
+                Non-blocking) I/O를 활용하여 피크 타임에도 중단 없는 무결성 서비스를 제공합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution__section bg-slate-900 text-white overflow-hidden relative">
+        <div class="container mx-auto px-0 sm:px-16">
+          <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2">
+              <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+                통합 인증 플랫폼<br />
+                <span class="text-blue-400">데이터 처리 아키텍처</span>
+              </h2>
+
+              <div class="space-y-8">
+                <div class="flex gap-5">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-xl flex items-center justify-center text-blue-400"
+                  >
+                    <i class="fas fa-lock text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold mb-2">End-to-End Encryption</h4>
+                    <p class="text-slate-400 text-sm">
+                      사용자 단말에서 전송되는 모든 데이터는 TLS 1.3 기반의 암호화 터널을 통해
+                      전송되어 스니핑 시도를 원천 차단합니다.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-5">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-indigo-500/20 border border-indigo-500/30 rounded-xl flex items-center justify-center text-indigo-400"
+                  >
+                    <i class="fas fa-server text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold mb-2">Distributed Architecture</h4>
+                    <p class="text-slate-400 text-sm">
+                      마이크로서비스 아키텍처(MSA)를 적용하여 특정 서비스 장애 시에도 전체 시스템의
+                      가용성을 유지합니다.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-5">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-cyan-500/20 border border-cyan-500/30 rounded-xl flex items-center justify-center text-cyan-400"
+                  >
+                    <i class="fas fa-shield-virus text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold mb-2">AI-based Fraud Detection</h4>
+                    <p class="text-slate-400 text-sm">
+                      머신러닝 알고리즘이 실시간으로 비정상 거래 패턴을 탐지하여 금융 사고를
+                      예방합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:w-1/2 relative">
+              <div
+                class="relative w-full aspect-square max-w-lg mx-auto bg-blue-600/5 rounded-full border border-blue-500/10 flex items-center justify-center animate-pulse"
+              >
+                <div
+                  class="absolute w-3/4 h-3/4 border border-blue-500/20 rounded-full animate-[spin_20s_linear_infinite]"
+                ></div>
+                <div
+                  class="absolute w-1/2 h-1/2 border border-blue-500/40 rounded-full animate-[spin_10s_linear_infinite_reverse]"
+                ></div>
+
+                <div
+                  class="z-10 bg-slate-800 p-8 rounded-3xl shadow-2xl border border-white/10 text-center"
+                >
+                  <i class="fas fa-globe text-4xl text-blue-400 mx-auto mb-4"></i>
+                  <div class="text-2xl font-black mb-1">Unified API</div>
+                  <div class="text-xs text-slate-400 uppercase tracking-widest">
+                    Global Standard Interface
+                  </div>
+                  <div class="mt-6 space-y-2">
+                    <div class="h-1 w-32 bg-blue-500/30 rounded-full mx-auto overflow-hidden">
+                      <div class="h-full bg-blue-500 w-1/2 animate-shimmer"></div>
+                    </div>
+                    <div class="text-[10px] text-blue-400">CONNECTING...</div>
+                  </div>
+                </div>
+
+                <div
+                  class="absolute top-10 right-20 bg-slate-800 p-3 rounded-xl border border-white/5 shadow-lg"
+                >
+                  <i class="fas fa-mobile-alt text-indigo-400"></i>
+                </div>
+                <div
+                  class="absolute bottom-20 left-10 bg-slate-800 p-3 rounded-xl border border-white/5 shadow-lg"
+                >
+                  <i class="fas fa-credit-card text-green-400"></i>
+                </div>
+                <div
+                  class="absolute top-1/2 -right-4 bg-slate-800 p-3 rounded-xl border border-white/5 shadow-lg"
+                >
+                  <i class="fas fa-fingerprint text-cyan-400"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <div class="demo-card">
+          <h2 class="text-3xl md:text-4xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="#eab308"
+              stroke="#eab308"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+            통합 기술 체험관
+          </h2>
+          <div class="demo-inner">
+            <div class="demo-text">
+              <p>
+                베이직인터내셔널의 솔루션은 어떠한 플랫폼에서도 단 며칠 만에 연동 가능합니다.
+                고도화된 SDK를 통해 복잡한 로직을 단순화하십시오.
+              </p>
+              <div class="code-block">
+                <div class="dots">
+                  <div class="dot dot-r"></div>
+                  <div class="dot dot-y"></div>
+                  <div class="dot dot-g"></div>
+                </div>
+                <div>
+                  <span class="kw">const</span> basicIT = <span class="kw">new</span>
+                  <span class="cls">AuthCore</span>();
+                </div>
+                <div>basicIT.<span style="color: #67e8f9">initialize</span>({</div>
+                <div>&nbsp;&nbsp;apiKey: <span class="str">'BIT_SECURE_TOKEN'</span>,</div>
+                <div>&nbsp;&nbsp;method: <span class="str">'PASS_SIMPLE_AUTH'</span></div>
+                <div>});</div>
+                <div class="cm">// Real-time verification starting...</div>
+              </div>
+              <button class="btn-demo">
+                관리자 데모 신청하기
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+            <div class="auth-preview">
+              <span class="preview-badge">PREVIEW</span>
+              <div class="header">
+                <div class="separator"></div>
+                <h4>인증 요청</h4>
+                <div class="sub">안전한 세션을 생성 중입니다</div>
+              </div>
+              <div class="auth-field">
+                <div class="ph"></div>
+                <div class="line"></div>
+              </div>
+              <div class="auth-field">
+                <div class="ph"></div>
+                <div class="line short"></div>
+              </div>
+              <button class="auth-btn">인증하기</button>
+              <div class="auth-icons">
+                <div class="auth-icon-dot y"><span></span></div>
+                <div class="auth-icon-dot g"><span></span></div>
+                <div class="auth-icon-dot b"><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ── EFFECT SECTION ── -->
       <section class="effect-area">
         <p class="sec-eyebrow">BUSINESS RESULTS</p>
@@ -881,27 +1315,6 @@
           </div>
         </div>
       </section>
-
-      <section class="content__composition" style="display: none">
-        <div class="inner">
-          <div class="content__title">
-            <span class="sec-eyebrow">서비스 로직</span>
-            <h3 class="title-txt">Service <strong>Logic</strong></h3>
-          </div>
-          <figure class="diagram">
-            <img
-              src="/assets/images/pages/business_certification/composition-img.png"
-              alt=""
-              class="desktop-image"
-            />
-            <img
-              src="/assets/images/pages/business_certification/composition-img-m.png"
-              alt=""
-              class="mobile-image"
-            />
-          </figure>
-        </div>
-      </section>
     </main>
 
     <!--  Footer 영역  -->
@@ -909,5 +1322,84 @@
 
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
+
+    <script>
+      // Tech Steps Data for Interaction
+      const techSteps = [
+        {
+          title: 'Secure Gateway',
+          desc: 'Client로부터 유입되는 모든 패킷에 대해 1차 무결성 검증 및 SSL 복호화 수행',
+          icon: 'fa-key',
+        },
+        {
+          title: 'Auth Routing',
+          desc: '요청된 인증 수단별 전용 게이트웨이(Telco, SNS, Bank)로 트래픽을 최적 경로 분산',
+          icon: 'fa-shuffle',
+        },
+        {
+          title: 'Identity Engine',
+          desc: '실시간 명의 대조 및 CI/DI 값을 생성하여 데이터 식별 및 정합성 검증',
+          icon: 'fa-microchip',
+        },
+        {
+          title: 'Security Shield',
+          desc: 'HSM 장비를 통한 키 관리 및 FDS(이상금융거래탐지) 알고리즘 가동',
+          icon: 'fa-shield-virus',
+        },
+        {
+          title: 'Final Response',
+          desc: '최종 처리 결과를 암호화된 토큰 형태로 Client SDK에 전달 및 세션 종료',
+          icon: 'fa-circle-check',
+        },
+      ];
+
+      // Populate Tech Steps & Handle Interaction
+      const stepsContainer = document.getElementById('tech-steps-container');
+      const progressLine = document.getElementById('progress-line');
+
+      techSteps.forEach((step, idx) => {
+        const stepEl = document.createElement('div');
+        stepEl.className = `flex flex-col items-center text-center cursor-pointer transition-all duration-300 step-item opacity-60 grayscale`;
+        stepEl.dataset.index = idx;
+        stepEl.innerHTML = `
+                <div class="step-icon w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-all shadow-lg bg-white text-slate-400 border border-slate-200">
+                    <i class="fas ${step.icon} text-xl"></i>
+                </div>
+                <h4 class="text-lg mb-6 text-slate-700 step-title">${step.title}</h4>
+                <p class="text-sm leading-relaxed px-4" style="color: --gray-600;">${step.desc}</p>
+            `;
+
+        stepEl.addEventListener('mouseenter', () => setActiveStep(idx));
+        stepsContainer.appendChild(stepEl);
+      });
+
+      function setActiveStep(index) {
+        const items = document.querySelectorAll('.step-item');
+        items.forEach((item, idx) => {
+          const iconDiv = item.querySelector('.step-icon');
+          const title = item.querySelector('.step-title');
+
+          if (idx === index) {
+            item.classList.remove('opacity-60', 'grayscale');
+            item.classList.add('scale-110');
+            iconDiv.classList.add('bg-blue-600', 'text-white', 'ring-8', 'ring-blue-100');
+            iconDiv.classList.remove('bg-white', 'text-slate-400', 'border-slate-200');
+            title.classList.add('text-blue-600');
+            title.classList.remove('text-slate-700');
+          } else {
+            item.classList.add('opacity-60', 'grayscale');
+            item.classList.remove('scale-110');
+            iconDiv.classList.remove('bg-blue-600', 'text-white', 'ring-8', 'ring-blue-100');
+            iconDiv.classList.add('bg-white', 'text-slate-400', 'border-slate-200');
+            title.classList.remove('text-blue-600');
+            title.classList.add('text-slate-700');
+          }
+        });
+        progressLine.style.width = `${(index / (techSteps.length - 1)) * 100}%`;
+      }
+
+      // Initialize first step as active
+      setActiveStep(0);
+    </script>
   </body>
 </html>
