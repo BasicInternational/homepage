@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/component.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -40,19 +41,116 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-      :root {
-        --indigo: #5b5bd6;
-        --indigo-mid: #7b7fe8;
-        --indigo-pale: #eeeeff;
-        --navy: #0d0d2b;
-        --navy-card: #141432;
-        --white: #ffffff;
-        --off-white: #f4f4ff;
-        --text-muted: #9999bb;
-        --text-body: #fff;
-        --accent: #f5c842;
-        --border: rgba(255, 255, 255, 0.08);
+      @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;800&display=swap');
+
+      body {
+        font-family: 'Pretendard', sans-serif;
+        background-color: #060608;
+        color: #e2e8f0;
+        scroll-behavior: smooth;
+      }
+      main section {
+        max-width: 1440px;
+      }
+
+      .gradient-text {
+        width: 100%;
+        display: inline-block;
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .tech-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .tech-card:hover {
+        transform: translateY(-12px);
+        border-color: #3b82f6;
+        background: rgba(59, 130, 246, 0.05);
+      }
+
+      .glow-button {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+      }
+
+      .feature-tag {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        color: #60a5fa;
+        padding: 2px 10px;
+        border-radius: 99px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      /* Spectrogram Animation */
+      .spectrogram {
+        display: flex;
+        align-items: flex-end;
+        gap: 2px;
+        height: 40px;
+      }
+      .spec-bar {
+        width: 3px;
+        background: linear-gradient(to top, #3b82f6, #ec4899);
+        animation: flow 1.5s ease-in-out infinite;
+      }
+      @keyframes flow {
+        0%,
+        100% {
+          height: 5px;
+        }
+        50% {
+          height: 35px;
+        }
+      }
+
+      .section-title {
+        position: relative;
+        display: inline-block;
+      }
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: #3b82f6;
+      }
+
+      /* Infographic Pulse */
+      .pulse-circle {
+        animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+      }
+      @keyframes pulse-ring {
+        0% {
+          transform: scale(0.8);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
       }
     </style>
 
@@ -68,177 +166,10 @@
     <!--  Header 영역  -->
     <div id="header-include"></div>
 
-    <main id="container" tabindex="0">
+    <main id="aura-voice" class="aisound-main">
       <!-- ── INTRO BANNER ── -->
-      <section class="intro__sound">
-        <div class="intro__txt-wrap">
-          <p class="intro-label">AI-Powered Music Generation</p>
-          <h1 class="intro-heading">세상에 없던 사운드<br />AI로 디자인하다</h1>
-          <p class="intro-desc">
-            벨소리부터 비즈니스 연결음, 증폭성 있는 암기송 까지<br class="pc-br" />
-            단 10초 만에 완벽한 음원을 생성합니다.
-          </p>
-          <button class="intro-btn-group">
-            <a href="https://www.auravoice.co.kr" class="btn__sound" target="_blank">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <polygon points="4,2 14,8 4,14" fill="white" />
-              </svg>
-              음악 생성 시작하기
-            </a>
-          </button>
-        </div>
-
-        <div class="hero__sound-wrap">
-          <div class="scanline"></div>
-          <div class="crosshair crosshair-h"></div>
-          <div class="crosshair crosshair-v"></div>
-
-          <div
-            class="particle"
-            style="
-              width: 6px;
-              height: 6px;
-              top: 18%;
-              left: 22%;
-              --pd: 3.2s;
-              --px: -10px;
-              --py: 14px;
-              --po1: 0.3;
-              --po2: 0.9;
-              box-shadow: 0 0 6px 2px rgba(0, 210, 180, 0.6);
-            "
-          ></div>
-          <div
-            class="particle"
-            style="
-              width: 4px;
-              height: 4px;
-              top: 35%;
-              left: 12%;
-              --pd: 4.5s;
-              --px: 6px;
-              --py: -8px;
-              --po1: 0.2;
-              --po2: 0.7;
-              box-shadow: 0 0 5px 2px rgba(0, 210, 180, 0.5);
-            "
-          ></div>
-          <div
-            class="particle"
-            style="
-              width: 5px;
-              height: 5px;
-              top: 25%;
-              right: 18%;
-              --pd: 3.8s;
-              --px: 8px;
-              --py: 10px;
-              --po1: 0.3;
-              --po2: 0.85;
-              box-shadow: 0 0 6px 2px rgba(64, 224, 255, 0.6);
-              background: #40e0ff;
-            "
-          ></div>
-          <div
-            class="particle"
-            style="
-              width: 4px;
-              height: 4px;
-              top: 55%;
-              right: 14%;
-              --pd: 5s;
-              --px: -6px;
-              --py: -10px;
-              --po1: 0.2;
-              --po2: 0.75;
-              box-shadow: 0 0 5px 2px rgba(0, 210, 180, 0.5);
-            "
-          ></div>
-          <div
-            class="particle"
-            style="
-              width: 5px;
-              height: 5px;
-              top: 70%;
-              left: 28%;
-              --pd: 4.2s;
-              --px: 10px;
-              --py: -6px;
-              --po1: 0.25;
-              --po2: 0.8;
-              box-shadow: 0 0 6px 2px rgba(64, 224, 255, 0.5);
-              background: #40e0ff;
-            "
-          ></div>
-          <div
-            class="particle"
-            style="
-              width: 3px;
-              height: 3px;
-              top: 15%;
-              right: 30%;
-              --pd: 6s;
-              --px: -8px;
-              --py: 12px;
-              --po1: 0.2;
-              --po2: 0.6;
-              box-shadow: 0 0 4px 1px rgba(0, 210, 180, 0.5);
-            "
-          ></div>
-
-          <div class="circle-stage">
-            <div class="ring ring-1"><div class="orbit-dot"></div></div>
-            <div class="ring ring-2"><div class="orbit-dot"></div></div>
-            <div class="ring ring-3"><div class="orbit-dot"></div></div>
-
-            <div class="center-disk">
-              <div class="note-icon">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  style="
-                    filter: drop-shadow(0 0 6px rgba(79, 184, 247, 0.8))
-                      drop-shadow(0 0 12px rgba(46, 232, 182, 0.5));
-                  "
-                >
-                  <defs>
-                    <linearGradient id="gi" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#4fb8f7"></stop>
-                      <stop offset="100%" stop-color="#2ee8b6"></stop>
-                    </linearGradient>
-                  </defs>
-                  <path d="M9 18V5l12-2v13" stroke="url(#gi)" stroke-width="1.8"></path>
-                  <circle cx="6" cy="18" r="3" stroke="url(#gi)" stroke-width="1.8"></circle>
-                  <circle cx="18" cy="16" r="3" stroke="url(#gi)" stroke-width="1.8"></circle>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <div class="eq-bars">
-            <div class="eq-bar" style="--dur: 0.6s; --min-h: 4px; --max-h: 10px"></div>
-            <div class="eq-bar" style="--dur: 0.75s; --min-h: 6px; --max-h: 22px"></div>
-            <div class="eq-bar" style="--dur: 0.5s; --min-h: 5px; --max-h: 16px"></div>
-            <div class="eq-bar" style="--dur: 0.9s; --min-h: 8px; --max-h: 26px"></div>
-            <div class="eq-bar" style="--dur: 0.65s; --min-h: 4px; --max-h: 20px"></div>
-            <div class="eq-bar" style="--dur: 0.8s; --min-h: 6px; --max-h: 18px"></div>
-            <div class="eq-bar" style="--dur: 0.55s; --min-h: 5px; --max-h: 24px"></div>
-            <div class="eq-bar" style="--dur: 0.7s; --min-h: 4px; --max-h: 14px"></div>
-            <div class="eq-bar" style="--dur: 0.85s; --min-h: 6px; --max-h: 20px"></div>
-            <div class="eq-bar" style="--dur: 0.6s; --min-h: 4px; --max-h: 10px"></div>
-            <div class="eq-bar" style="--dur: 0.75s; --min-h: 5px; --max-h: 16px"></div>
-          </div>
-
-          <div class="hero-label">AI-powered music generation</div>
-        </div>
-      </section>
-
       <!-- ── SPEED CARD ── -->
-      <section class="speed-card">
+      <!-- <section class="speed-card" style="display: none">
         <div class="speed-icon">
           <div class="center-disk">
             <div class="note-icon">
@@ -272,8 +203,6 @@
         <div class="speed-stat">99.9%</div>
         <p class="speed-stat-label">SATISFACTION LEVEL</p>
       </section>
-
-      <!-- ── FEATURE LIST ── -->
       <section class="feature-list">
         <div class="feature-item">
           <div class="feature-item-top">
@@ -328,7 +257,7 @@
       </section>
 
       <!-- ── PROCESS SECTION ── -->
-      <section class="process-section">
+      <!-- <section class="process-section">
         <h2 class="process-heading section-title">제작 프로세스</h2>
         <div class="process-steps">
           <div class="process-step">
@@ -347,13 +276,340 @@
             <p class="process-step-desc">다운로드 및 실행</p>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- ── CTA SECTION ── -->
-      <section class="cta-section">
+      <!-- <section class="cta-section" style="display: none">
         <h2 class="cta-heading">커스텀 음원 문의</h2>
         <p class="cta-desc">기업 전용대량제작및 API 제휴 문의</p>
         <a href="mailto:sisocore@basicit.co.kr" class="btn-cta"> 문의 메일 보내기 </a>
+      </section> -->
+
+      <section id="healthcare" class="py-32 px-6 bg-[#09090b] overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-20">
+            <h2 class="text-4xl font-black mb-6 uppercase tracking-tighter">
+              AI Digital Healthcare
+            </h2>
+            <p class="text-gray-300 max-w-2xl mx-auto italic">
+              "가장 익숙한 목소리가 최고의 약입니다." <br />
+              아우라보이스를 통한 치매 예방 인포그래픽
+            </p>
+          </div>
+
+          <div class="relative grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative mb-8">
+                <div
+                  class="absolute inset-0 bg-blue-500/20 rounded-full blur-xl group-hover:bg-blue-500/40 transition"
+                ></div>
+                <div
+                  class="relative w-32 h-32 rounded-full border-2 border-blue-500/30 flex items-center justify-center bg-black"
+                >
+                  <i class="fas fa-microphone-alt text-4xl text-blue-500"></i>
+                  <div
+                    class="absolute -top-2 -right-2 bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
+                  >
+                    01
+                  </div>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Voice Cloning</h3>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                자녀/손주 목소리를 단 30초의 <br />샘플링으로 정밀 복제하여 <br />친밀감 있는 가상
+                보컬 생성
+              </p>
+            </div>
+
+            <!-- Connect Line 1 -->
+            <div
+              class="hidden lg:block absolute left-[28%] top-[35%] w-[12%] border-t-2 border-dashed border-gray-800"
+            ></div>
+
+            <!-- Step 2 (Center) -->
+            <div class="flex flex-col items-center text-center group scale-110">
+              <div class="relative mb-8">
+                <div class="absolute inset-0 pulse-circle bg-pink-500/20 rounded-full"></div>
+                <div
+                  class="relative w-40 h-40 rounded-full border-2 border-pink-500/50 flex items-center justify-center bg-black shadow-[0_0_50px_rgba(236,72,153,0.2)]"
+                >
+                  <i class="fas fa-phone-alt text-5xl text-pink-500 animate-bounce"></i>
+                  <div
+                    class="absolute -top-2 -right-2 bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                  >
+                    02
+                  </div>
+                </div>
+              </div>
+              <h3 class="text-2xl font-black gradient-text">Daily AI Call</h3>
+              <p class="text-sm text-gray-300 leading-relaxed font-bold">
+                매일 정해진 시간, 자녀의 <br />목소리로 'AI 안부 전화' 발신 <br />정서적 연결 및
+                인지 기능 자극
+              </p>
+            </div>
+
+            <!-- Connect Line 2 -->
+            <div
+              class="hidden lg:block absolute right-[28%] top-[35%] w-[12%] border-t-2 border-dashed border-gray-800"
+            ></div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative mb-8">
+                <div
+                  class="absolute inset-0 bg-purple-500/20 rounded-full blur-xl group-hover:bg-purple-500/40 transition"
+                ></div>
+                <div
+                  class="relative w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center bg-black"
+                >
+                  <i class="fas fa-brain text-4xl text-purple-500"></i>
+                  <div
+                    class="absolute -top-2 -right-2 bg-purple-600 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
+                  >
+                    03
+                  </div>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Dementia Care</h3>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                상호 대화 및 노래 부르기를 통한 <br />기억력 회생 치료 (Reminiscence) <br />치매
+                발병 지연 및 예방 효과
+              </p>
+            </div>
+          </div>
+
+          <!-- Additional Info Tags -->
+          <div class="w-full mt-20 flex flex-wrap justify-space-between flex-nowrap gap-3">
+            <div
+              class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-3 w-1/3"
+            >
+              <i class="fas fa-smile text-yellow-500 text-2xl"></i>
+              <div>
+                <p class="text-xs text-gray-300">우울증 감소</p>
+                <p class="text-sm font-bold">정서적 고립 해소</p>
+              </div>
+            </div>
+            <div
+              class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-4 w-1/3"
+            >
+              <i class="fas fa-chart-line text-emerald-500 text-2xl"></i>
+              <div>
+                <p class="text-xs text-gray-300">인지 활성도</p>
+                <p class="text-sm font-bold">언어 자극 40% 증가</p>
+              </div>
+            </div>
+            <div
+              class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-4 w-1/3"
+            >
+              <i class="fas fa-heartbeat text-red-500 text-2xl"></i>
+              <div>
+                <p class="text-xs text-gray-300">사회적 비용 절감</p>
+                <p class="text-sm font-bold">B2G 복지 혁신</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Pipeline Section -->
+      <section id="mulm" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+            <div>
+              <h2 class="text-4xl text-white mb-4 section-title uppercase tracking-tighter">
+                Core Pipeline
+              </h2>
+              <p class="text-gray-300 max-w-md">MuLM 기반 고해상도 초개인화 가창 합성 원천기술</p>
+            </div>
+            <div class="text-right">
+              <span class="text-5xl font-black text-white/5 italic select-none">TECHNOLOGY</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Tech 1 -->
+            <div class="tech-card p-10 rounded-3xl">
+              <div class="flex justify-between items-start mb-8">
+                <div
+                  class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center border border-blue-600/30"
+                >
+                  <i class="fas fa-music text-blue-500"></i>
+                </div>
+                <span class="feature-tag">MuLM Engine</span>
+              </div>
+              <h3 class="text-xl font-black mb-4">고해상도 가창 합성</h3>
+              <p class="text-gray-100 text-sm leading-relaxed mb-6">
+                K-Pop/국악 데이터를 학습하여 실제 가수의 창법과 감정 표현력을 재현하는 독보적인 MuLM
+                기술력을 확보했습니다.
+              </p>
+              <div class="h-[1px] w-full bg-white/10 mb-6"></div>
+              <p
+                class="text-[10px] font-bold text-blue-400 uppercase tracking-widest leading-loose"
+              >
+                SVS / Prosody Control / High-Res Audio
+              </p>
+            </div>
+
+            <!-- Tech 2 -->
+            <div class="tech-card p-10 rounded-3xl">
+              <div class="flex justify-between items-start mb-8">
+                <div
+                  class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center border border-purple-600/30"
+                >
+                  <i class="fas fa-microscope text-purple-500"></i>
+                </div>
+                <span class="feature-tag">Precision Alignment</span>
+              </div>
+              <h3 class="text-xl font-black mb-4">ms 단위 정밀 정렬</h3>
+              <p class="text-gray-100 text-sm leading-relaxed mb-6">
+                가사와 음원을 밀리초 단위로 일치시켜 기계적인 느낌을 배제하고 인간 보컬 특유의
+                타이밍을 구현합니다.
+              </p>
+              <div class="h-[1px] w-full bg-white/10 mb-6"></div>
+              <p
+                class="text-[10px] font-bold text-purple-400 uppercase tracking-widest leading-loose"
+              >
+                G2P 통합 / Real-time Sync / Phasing Control
+              </p>
+            </div>
+
+            <!-- Tech 3 -->
+            <div class="tech-card p-10 rounded-3xl">
+              <div class="flex justify-between items-start mb-8">
+                <div
+                  class="w-12 h-12 bg-pink-600/20 rounded-xl flex items-center justify-center border border-pink-600/30"
+                >
+                  <i class="fas fa-shield-halved text-pink-500"></i>
+                </div>
+                <span class="feature-tag">Trust AI</span>
+              </div>
+              <h3 class="text-xl font-black mb-4">저작권 보호 워터마킹</h3>
+              <p class="text-gray-100 text-sm leading-relaxed mb-6">
+                비가청 디지털 워터마킹을 삽입하여 무단 복제를 방지하고, 유해 콘텐츠 차단 가드레일을
+                적용한 신뢰 기반의 AI 환경을 구축합니다.
+              </p>
+              <div class="h-[1px] w-full bg-white/10 mb-6"></div>
+              <p
+                class="text-[10px] font-bold text-pink-400 uppercase tracking-widest leading-loose"
+              >
+                Digital Watermark / Safety Guardrail / Compliance
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Business Model Section -->
+      <section id="business" class="py-32 px-6 bg-[#09090b]">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-4xl font-black mb-20 text-center tracking-tighter italic uppercase">
+            Business Architecture
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Model 1 -->
+            <div class="group h-full">
+              <div class="relative overflow-hidden mb-8 h-full">
+                <div
+                  class="absolute inset-0 bg-blue-600/10 group-hover:bg-blue-600/20 transition-all"
+                ></div>
+                <div class="p-12 border border-white/10 bg-black/40 backdrop-blur-sm h-full">
+                  <div class="mb-6 flex items-center gap-4">
+                    <span
+                      class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold italic"
+                      >AI</span
+                    >
+                    <h3 class="text-2xl font-black">AI 비즈링 & 헬스케어</h3>
+                  </div>
+                  <p class="text-gray-300 mb-8 leading-relaxed">
+                    개인화된 목소리로 축하송을 제작하거나, 상황(회의, 운전 등)에 맞는 BGM 합성은
+                    물론, 독거 노인 대상 안부 전화 서비스를 통해 복지 사각지대를 해소합니다.
+                  </p>
+                  <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-base text-gray-300">
+                      <i class="fas fa-check-circle text-blue-500"></i> 맞춤형 노래 비즈링 & 컬러링
+                    </li>
+                    <li class="flex items-center gap-3 text-base text-gray-300">
+                      <i class="fas fa-check-circle text-blue-500"></i> 자녀 목소리 안부 전화 (치매
+                      예방)
+                    </li>
+                    <li class="flex items-center gap-3 text-base text-gray-300">
+                      <i class="fas fa-check-circle text-blue-500"></i> 통신사 연계 오디오
+                      부가서비스
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Model 2 -->
+            <div class="group h-full">
+              <div class="relative overflow-hidden mb-8 h-full">
+                <div
+                  class="absolute inset-0 bg-pink-600/10 group-hover:bg-pink-600/20 transition-all"
+                ></div>
+                <div class="p-12 border border-white/10 bg-black/40 backdrop-blur-sm h-full">
+                  <div class="mb-6 flex items-center gap-4">
+                    <span
+                      class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center font-bold italic"
+                      >EDU</span
+                    >
+                    <h3 class="text-2xl font-black">AI 디지털 교과서</h3>
+                  </div>
+                  <p class="text-gray-300 mb-8 leading-relaxed">
+                    수학 공식/역사 연표를 노래로 변환하는 '텍스트 기반 자동 암기송'을 통해 공교육
+                    현장의 디지털 전환과 학습 몰입도를 혁신합니다.
+                  </p>
+                  <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-base text-gray-300">
+                      <i class="fas fa-check-circle text-pink-500"></i> 자동 암기송 & 페르소나 입체
+                      낭독
+                    </li>
+                    <li class="flex items-center gap-3 text-base text-gray-300">
+                      <i class="fas fa-check-circle text-pink-500"></i> 교육 현장 실감형 콘텐츠 지원
+                    </li>
+                    <li class="flex items-center gap-3 text-base text-gray-300">
+                      <i class="fas fa-check-circle text-pink-500"></i> 에듀테크 플랫폼 연동 API
+                      제공
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision Section -->
+      <section class="py-24 px-6 bg-gradient-to-b from-transparent to-blue-900/10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-black mb-8">
+            "기술에 인간의 마음을 담아 <br />K-AI의 가치를 세계로"
+          </h2>
+          <p class="text-gray-200 leading-relaxed mb-12">
+            베이직인터내셔널은 음원 제작 비용 90% 절감과 TRL 9단계 달성을 통해 <br />
+            정부 주도 디지털 뉴딜 사업의 핵심 파트너로 성장하고 있습니다.
+          </p>
+          <div class="flex justify-center gap-12">
+            <div class="text-center">
+              <p class="text-3xl font-black text-blue-500 mb-1">90%+</p>
+              <p class="text-[10px] text-gray-300 uppercase font-bold tracking-widest">
+                Efficiency
+              </p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-black text-purple-500 mb-1">TRL 9</p>
+              <p class="text-[10px] text-gray-300 uppercase font-bold tracking-widest">Readiness</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-black text-pink-500 mb-1">CARE</p>
+              <p class="text-[10px] text-gray-300 uppercase font-bold tracking-widest">
+                Prevention
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -365,6 +621,30 @@
   </body>
 
   <script>
+    //  @component HeroSection
+    document.addEventListener('DOMContentLoaded', () => {
+      render(
+        '#aura-voice',
+        heroBigSection({
+          badgeIcon: 'bi-braces-asterisk',
+          badgeText: 'MuLM BASED SVS TECHNOLOGY REACHED TRL 9',
+          title: '가창을 넘어',
+          titleSub: '삶의 온기를 합성하다',
+          desc: '베이직인터내셔널의 아우라보이스는 단순 음성 합성을 초월합니다.',
+          btnText: '무료 샘플 제작하기',
+          btnHref: 'https://www.auravoice.co.kr/ ',
+          voiceLabel: 'AI Care-Voice Synthesis',
+          statusLeft: 'STATUS: CARE_PIPELINE_ON',
+          statusRight: 'Dementia Prevention',
+          cards: [
+            { label: '초개인화 클로닝', text: '자녀 목소리 복제 (30초 샘플)', color: 'blue' },
+            { label: '정서 케어 알고리즘', text: '감정 교류를 통한 우울감 해소', color: 'purple' },
+            { label: '인지 자극 서비스', text: '매일 안부전화 & 자동 암기송', color: 'pink' },
+          ],
+        }),
+      );
+    });
+
     const fills = document.querySelectorAll('.feature-progress-fill');
     const observer = new IntersectionObserver(
       (entries) => {

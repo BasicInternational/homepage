@@ -762,6 +762,7 @@ footer .footer__inner .footer__copyright {
 }
 
 .floating__menu button {
+  color: #555;
   margin-top: 10px;
   width: 70px;
   height: 70px;

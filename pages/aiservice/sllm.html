@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="keywords"
+      content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
+    />
+    <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="베이직인터내셔널 홈페이지" />
+    <meta
+      property="og:description"
+      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+
+    <meta property="og:url" content="https://basicit.co.kr" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/component.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap');
+
+      :root {
+          --primary: #0f172a;
+          --secondary: #0284c7;
+          --accent: #0ea5e9;
+          --text-main: #1e293b;
+          --text-muted: #475569;
+      }
+
+      body {
+          font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+          color: var(--text-main);
+          background-color: #ffffff;
+          line-height: 1.6;
+          letter-spacing: -0.01em;
+          scroll-behavior: smooth;
+      }
+
+      .glass-header {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(16px);
+          border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      }
+
+      .gradient-text {
+          color: #38bdf8; /* 이미지와 유사한 청록색 톤 */
+      }
+
+      .hero-bg {
+          background: radial-gradient(circle at 70% 30%, #1e293b 0%, #020617 100%);
+          position: relative;
+          overflow: hidden;
+      }
+
+      .tech-card {
+          transition: all 0.3s ease-out;
+          border: 1px solid #e2e8f0;
+          background: #ffffff;
+      }
+
+      .tech-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.12);
+          border-color: #38bdf8;
+      }
+
+      .step-number {
+          font-family: 'Pretendard', sans-serif;
+          font-weight: 800;
+          line-height: 1;
+          opacity: 0.08;
+          position: absolute;
+          top: 1.5rem;
+          right: 2rem;
+          font-size: 5rem;
+          letter-spacing: -0.05em;
+      }
+
+      .bg-grid {
+          background-size: 40px 40px;
+          background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
+      }
+
+      .pulse-sky {
+          animation: pulse-sky 2s infinite;
+      }
+      @keyframes pulse-sky {
+          0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.6); }
+          70% { box-shadow: 0 0 0 15px rgba(14, 165, 233, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+      }
+
+      .dash-line {
+          stroke-dasharray: 8;
+          animation: dash 5s linear infinite;
+      }
+      @keyframes dash {
+          to { stroke-dashoffset: -50; }
+      }
+
+      h1, h2, h3, h4 {
+          letter-spacing: -0.03em;
+          word-break: keep-all;
+      }
+
+      .desc-text {
+          color: var(--text-muted);
+          font-size: 1.05rem;
+          line-height: 1.7;
+      }
+
+      /* Hero Graphic Styles */
+      .hero-graphic-container {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 2rem;
+          position: relative;
+          aspect-ratio: 1 / 1;
+          max-width: 500px;
+          margin-left: auto;
+      }
+      .hero-graphic-card {
+          background: #0f172a;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 1.5rem;
+          width: 85%;
+          height: 85%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+      }
+      .graphic-icon {
+          width: 48px;
+          height: 48px;
+          background: #2563eb;
+          border-radius: 50%;
+          display: flex;
+          items-center;
+          justify-content: center;
+      }
+      .graphic-line {
+          height: 8px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
+      }
+      .graphic-line.short { width: 40%; }
+      .graphic-line.mid { width: 70%; }
+      .graphic-box-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+          margin-top: auto;
+      }
+      .graphic-box {
+          height: 60px;
+          border-radius: 0.75rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .graphic-box.active {
+          border-color: #0ea5e9;
+          background: rgba(14, 165, 233, 0.05);
+      }
+    </style>
+
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body data-type="detail">
+    <!-- s : 스킵 -->
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- e : 스킵 -->
+
+    <!--  Header 영역  -->
+    <div id="header-include"></div>
+
+    <main id="aura-voice" class="aisound-main">
+      <!-- ── INTRO BANNER ── -->
+      <section id="tech" class="py-32 bg-grid">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl mx-auto text-center mb-24">
+            <h2 class="text-4xl md:text-5xl font-black mb-8 text-slate-900 tracking-tight">
+              Technical Pillars
+            </h2>
+            <p class="text-xl text-slate-600 font-medium">
+              베이직인터내셔널의 독보적인 7가지 핵심 기술 모듈
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-12 mb-32">
+            <!-- 01. Collector -->
+            <div class="tech-card rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden">
+              <span class="step-number text-blue-600">01</span>
+              <div class="flex flex-col lg:flex-row gap-12 items-start">
+                <div class="lg:w-2/5">
+                  <div
+                    class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl"
+                  >
+                    <i class="fas fa-database text-2xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-extrabold mb-5 text-slate-900">
+                    지식 행정 인텔리전스 수집
+                  </h3>
+                  <p class="desc-text mb-0">
+                    범정부 데이터를 실시간 동기화하고 행정 지식의 복잡한 맥락을 벡터화하여 RAG 답변
+                    품질을 극대화합니다.
+                  </p>
+                </div>
+                <div class="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100/50">
+                    <h4 class="font-bold text-slate-900 text-lg mb-3">하이브리드 법률 크롤러</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      국가법령정보센터, 정부24, 보도자료를 API 및 셀레니움 기반으로 정밀 수집합니다.
+                    </p>
+                  </div>
+                  <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100/50">
+                    <h4 class="font-bold text-slate-900 text-lg mb-3">계층 구조 청킹</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      법령의 [편-장-절-조] 위계 구조를 보존하여 검색 시 의미론적 정확도를
+                      확보합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 02. Parsing -->
+            <div class="tech-card rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden">
+              <span class="step-number text-cyan-600">02</span>
+              <div class="flex flex-col lg:flex-row gap-12 items-start">
+                <div class="lg:w-2/5">
+                  <div
+                    class="w-16 h-16 bg-cyan-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl"
+                  >
+                    <i class="fas fa-file-invoice text-2xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-extrabold mb-5 text-slate-900">
+                    고정밀 파싱 및 비식별화
+                  </h3>
+                  <p class="desc-text mb-0">
+                    비정형 행정 문서의 표, 이미지 등 시각적 요소를 정형 데이터로 변환하고 민감
+                    개인정보를 철저히 차단합니다.
+                  </p>
+                </div>
+                <div class="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="bg-cyan-50/50 p-8 rounded-3xl border border-cyan-100/50">
+                    <h4 class="font-bold text-slate-900 text-lg mb-3">Dual-Path OCR</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      로컬 GPU 기반 비전 모델을 사용하여 복잡한 HWP 표 구조를 99% 이상 인식합니다.
+                    </p>
+                  </div>
+                  <div class="bg-cyan-50/50 p-8 rounded-3xl border border-cyan-100/50">
+                    <h4 class="font-bold text-slate-900 text-lg mb-3">로컬 실시간 비식별화</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      외부 통신 없이 로컬 sLLM 기반으로 이름, 연락처, 주민번호를 즉시 마스킹
+                      처리합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 03. Fine-Tuning -->
+            <div
+              class="bg-slate-900 rounded-[3rem] p-12 lg:p-20 text-white relative overflow-hidden shadow-2xl"
+            >
+              <span class="step-number text-white/5">03</span>
+              <div class="text-center max-w-3xl mx-auto mb-16">
+                <h3 class="text-3xl md:text-4xl font-black mb-6">목적별 sLLM 전용 파인튜닝</h3>
+                <p class="text-slate-400 text-lg leading-relaxed font-light">
+                  행정 업무의 각 단계와 성격에 특화된 4가지 전문 튜닝 모델이
+                  <br class="hidden md:block" />어플라이언스에 최적화되어 탑재됩니다.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                  class="p-8 bg-slate-800/50 border border-slate-700/50 rounded-3xl hover:bg-slate-800 transition"
+                >
+                  <div class="text-blue-400 font-extrabold text-xl mb-2">Style FT</div>
+                  <p class="text-xs text-slate-500 uppercase tracking-widest mb-4">
+                    행정 문체 특화
+                  </p>
+                  <p class="text-sm text-slate-400">
+                    공문서 표준 서술 방식과 행정 용어를 완벽히 습득
+                  </p>
+                </div>
+                <div
+                  class="p-8 bg-slate-800/50 border border-slate-700/50 rounded-3xl hover:bg-slate-800 transition"
+                >
+                  <div class="text-blue-400 font-extrabold text-xl mb-2">Table FT</div>
+                  <p class="text-xs text-slate-500 uppercase tracking-widest mb-4">HWP 표 설계</p>
+                  <p class="text-sm text-slate-400">
+                    복잡한 데이터 구조를 HWP 표 형식으로 변환 최적화
+                  </p>
+                </div>
+                <div
+                  class="p-8 bg-slate-800/50 border border-slate-700/50 rounded-3xl hover:bg-slate-800 transition"
+                >
+                  <div class="text-blue-400 font-extrabold text-xl mb-2">Reasoning FT</div>
+                  <p class="text-xs text-slate-500 uppercase tracking-widest mb-4">법률 추론</p>
+                  <p class="text-sm text-slate-400">조문 간 상충 관계 분석 및 논리적 결론 도출</p>
+                </div>
+                <div
+                  class="p-8 bg-slate-800/50 border border-slate-700/50 rounded-3xl hover:bg-slate-800 transition"
+                >
+                  <div class="text-blue-400 font-extrabold text-xl mb-2">Efficiency FT</div>
+                  <p class="text-xs text-slate-500 uppercase tracking-widest mb-4">경량화 최적화</p>
+                  <p class="text-sm text-slate-400">
+                    성능은 유지하면서 추론 속도와 리소스 효율 극대화
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04. Multi-Agent -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-40">
+            <div class="order-2 lg:order-1">
+              <div
+                class="relative bg-white rounded-[4rem] p-12 md:p-16 border border-slate-200 shadow-2xl"
+              >
+                <div class="absolute inset-0 bg-blue-50/30 opacity-40 rounded-[4rem]"></div>
+                <div class="relative z-10 flex justify-center mb-12">
+                  <div
+                    class="bg-blue-600 text-white w-24 h-24 rounded-3xl flex flex-col items-center justify-center shadow-2xl pulse-sky"
+                  >
+                    <i class="fas fa-brain text-3xl mb-1"></i>
+                    <span class="text-[10px] font-bold tracking-widest">ORCHESTRA</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-5 relative z-10">
+                  <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <span class="text-xs font-black text-blue-600 uppercase block mb-2"
+                      >Planner</span
+                    >
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      사용자 의도 분석 및 업무 수행 로직 기획
+                    </p>
+                  </div>
+                  <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <span class="text-xs font-black text-blue-600 uppercase block mb-2"
+                      >Compliance</span
+                    >
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      내부 지침 및 보안 규정 실시간 교차 검증
+                    </p>
+                  </div>
+                  <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <span class="text-xs font-black text-blue-600 uppercase block mb-2"
+                      >Style Guard</span
+                    >
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      공공언어 표준 준수 및 비문 수정 에이전트
+                    </p>
+                  </div>
+                  <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <span class="text-xs font-black text-blue-600 uppercase block mb-2"
+                      >HWP Expert</span
+                    >
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      HWP 컨트롤 엔진을 통한 서식 정밀 구현
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-1 lg:order-2">
+              <div
+                class="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-lg text-xs font-bold mb-6 tracking-widest uppercase"
+              >
+                Process 04
+              </div>
+              <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-8">
+                멀티 에이전트 오케스트레이션
+              </h2>
+              <p class="desc-text mb-10">
+                단일 LLM의 한계를 넘어, 전문 영역별로 특화된 다수의 에이전트가 협력합니다. 기획부터
+                법규 검토, 최종 서식 렌더링까지 지능형 워크플로우를 완성합니다.
+              </p>
+              <ul class="space-y-5">
+                <li class="flex items-start text-slate-700 font-medium">
+                  <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                  <span>환각(Hallucination) 방지를 위한 자가 검증 루프 탑재</span>
+                </li>
+                <li class="flex items-start text-slate-700 font-medium">
+                  <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                  <span>에이전트 간 역할 분담을 통한 초정밀 결과 도출</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 05. Workspace -->
+          <div class="mb-40">
+            <div class="text-center mb-20">
+              <div
+                class="inline-block px-4 py-1 bg-cyan-100 text-cyan-700 rounded-lg text-xs font-bold mb-6 tracking-widest uppercase"
+              >
+                Interface 05
+              </div>
+              <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+                인텔리전트 에디팅 워크스페이스
+              </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div
+                class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl hover:shadow-2xl transition group"
+              >
+                <div
+                  class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+                >
+                  <i class="fas fa-search-location text-xl"></i>
+                </div>
+                <h4 class="text-xl font-extrabold mb-4 text-slate-900">지능형 근거 역추적</h4>
+                <p class="text-[15px] text-slate-500 leading-relaxed">
+                  AI 답변의 원천이 된 법령 본문이나 과거 문서를 하이라이트와 함께 즉시 확인하여 업무
+                  신뢰도를 확보합니다.
+                </p>
+              </div>
+              <div
+                class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl hover:shadow-2xl transition group"
+              >
+                <div
+                  class="w-14 h-14 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cyan-600 group-hover:text-white transition-colors"
+                >
+                  <i class="fas fa-list-ol text-xl"></i>
+                </div>
+                <h4 class="text-xl font-extrabold mb-4 text-slate-900">인터랙티브 문서 구조화</h4>
+                <p class="text-[15px] text-slate-500 leading-relaxed">
+                  대규모 보고서의 목차를 AI가 자동 구성하고, 드래그 앤 드롭으로 문단 구조와 내용을
+                  지능적으로 편집합니다.
+                </p>
+              </div>
+              <div
+                class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl hover:shadow-2xl transition group"
+              >
+                <div
+                  class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-indigo-600 group-hover:text-white transition-colors"
+                >
+                  <i class="fas fa-history text-xl"></i>
+                </div>
+                <h4 class="text-xl font-extrabold mb-4 text-slate-900">의미 기반 변경 이력</h4>
+                <p class="text-[15px] text-slate-500 leading-relaxed">
+                  단순 오타 수정을 넘어 핵심 내용의 변화와 문맥적 차이를 요약 보고하여 의사결정
+                  속도를 2배 이상 높입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06. Admin -->
+          <div
+            class="bg-white rounded-[4rem] p-12 lg:p-20 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 mb-40 overflow-hidden"
+          >
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+              <div class="lg:col-span-7">
+                <div
+                  class="bg-slate-950 rounded-3xl p-8 border border-slate-800 shadow-2xl relative"
+                >
+                  <div
+                    class="flex items-center justify-between mb-10 border-b border-slate-800 pb-5"
+                  >
+                    <div class="flex gap-2">
+                      <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                      <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                      <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    </div>
+                    <div
+                      class="text-[11px] text-slate-500 font-mono font-bold tracking-widest uppercase"
+                    >
+                      Admin Security Monitoring
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="bg-slate-900/50 rounded-2xl p-5 border border-slate-800">
+                      <div
+                        class="text-[10px] text-blue-400 font-black mb-3 uppercase tracking-tighter"
+                      >
+                        Response Time (s)
+                      </div>
+                      <svg class="w-full h-16" viewBox="0 0 100 40">
+                        <path
+                          d="M0,35 Q10,15 20,30 T40,10 T60,25 T80,5 T100,20"
+                          fill="none"
+                          stroke="#38bdf8"
+                          stroke-width="3"
+                          class="dash-line"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-2xl p-5 border border-slate-800">
+                      <div
+                        class="text-[10px] text-amber-400 font-black mb-3 uppercase tracking-tighter"
+                      >
+                        Privacy Filter Log
+                      </div>
+                      <div class="space-y-2">
+                        <div class="h-2 w-full bg-slate-700 rounded-full overflow-hidden">
+                          <div class="h-full bg-amber-500 w-3/4"></div>
+                        </div>
+                        <div class="h-2 w-full bg-slate-700 rounded-full overflow-hidden">
+                          <div class="h-full bg-amber-500 w-1/2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="p-4 bg-blue-950/40 border border-blue-500/20 rounded-xl flex items-center gap-4"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center shrink-0"
+                    >
+                      <i class="fas fa-shield-alt text-white"></i>
+                    </div>
+                    <p class="text-[11px] text-blue-200 font-medium leading-relaxed">
+                      중요 알림: 부서별 프롬프트 최적화 완료 및 PII 필터링 엔진 2.0 활성화 중
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div
+                  class="inline-block px-4 py-1 bg-amber-100 text-amber-700 rounded-lg text-xs font-bold mb-6 tracking-widest uppercase"
+                >
+                  Management 06
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-8 leading-tight">
+                  관리자 관측성 및 <br />전방위 보안 제어
+                </h2>
+                <div class="space-y-8">
+                  <div class="flex gap-5">
+                    <div
+                      class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 font-black text-lg shadow-sm"
+                    >
+                      1
+                    </div>
+                    <div class="pt-1">
+                      <h5 class="font-extrabold text-slate-900 mb-2">로컬 프롬프트 스튜디오</h5>
+                      <p class="text-sm text-slate-500 leading-relaxed">
+                        외부 유출 없이 내부망에서 부서별 페르소나와 최적 프롬프트를 배포·관리합니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-5">
+                    <div
+                      class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 font-black text-lg shadow-sm"
+                    >
+                      2
+                    </div>
+                    <div class="pt-1">
+                      <h5 class="font-extrabold text-slate-900 mb-2">Self-hosted 통합 모니터링</h5>
+                      <p class="text-sm text-slate-500 leading-relaxed">
+                        모든 토큰 사용량과 AI 성능 지표를 외부 전송 없이 내부 서버에서 독립적으로
+                        관리합니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-5">
+                    <div
+                      class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 font-black text-lg shadow-sm"
+                    >
+                      3
+                    </div>
+                    <div class="pt-1">
+                      <h5 class="font-extrabold text-slate-900 mb-2">RBAC 기반 권한 통제</h5>
+                      <p class="text-sm text-slate-500 leading-relaxed">
+                        직무 그룹별로 접근 가능한 데이터 범위와 에이전트 기능을 중앙에서 엄격히
+                        차단합니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 07. Appliance -->
+          <div
+            id="appliance"
+            class="bg-slate-950 text-white rounded-[5rem] p-16 lg:p-24 relative overflow-hidden shadow-2xl"
+          >
+            <div
+              class="absolute right-0 top-0 w-2/3 h-full bg-blue-600/10 -skew-x-12 transform origin-top"
+            ></div>
+
+            <div class="relative z-10">
+              <div class="max-w-3xl mb-20">
+                <div
+                  class="inline-block px-4 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs font-bold mb-6 tracking-widest uppercase border border-blue-500/30"
+                >
+                  Infrastructure 07
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+                  어플라이언스 <br /><span class="text-blue-500">특화 아키텍처</span>
+                </h2>
+                <p class="text-lg text-slate-400 leading-relaxed font-light">
+                  국가 보안 기관을 위한 에어갭(Air-gap) 환경을 완벽히 지원하며, 소프트웨어와
+                  하드웨어가 결합된 고성능 인프라를 제공합니다.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                  class="p-10 bg-slate-900 border border-slate-800 rounded-[3rem] hover:border-blue-500 hover:bg-slate-800 transition-all group"
+                >
+                  <div
+                    class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"
+                  >
+                    <i class="fas fa-satellite-dish text-blue-500 text-2xl"></i>
+                  </div>
+                  <h5 class="text-lg font-extrabold mb-4">Secure Gate Update</h5>
+                  <p class="text-sm text-slate-500 leading-relaxed font-medium">
+                    물리적 폐쇄망 환경에서도 전용 게이트웨이를 통해 최신 모델과 지식 베이스를
+                    안전하게 업데이트합니다.
+                  </p>
+                </div>
+                <div
+                  class="p-10 bg-slate-900 border border-slate-800 rounded-[3rem] hover:border-blue-500 hover:bg-slate-800 transition-all group"
+                >
+                  <div
+                    class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"
+                  >
+                    <i class="fas fa-bolt text-blue-500 text-2xl"></i>
+                  </div>
+                  <h5 class="text-lg font-extrabold mb-4">HWP 가속 엔진</h5>
+                  <p class="text-sm text-slate-500 leading-relaxed font-medium">
+                    하드웨어 단에서 HWP 가속 서버를 탑재하여 대량의 복합 문서 출력을 실시간으로
+                    처리합니다.
+                  </p>
+                </div>
+                <div
+                  class="p-10 bg-slate-900 border border-slate-800 rounded-[3rem] hover:border-blue-500 hover:bg-slate-800 transition-all group"
+                >
+                  <div
+                    class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"
+                  >
+                    <i class="fas fa-microchip text-blue-500 text-2xl"></i>
+                  </div>
+                  <h5 class="text-lg font-extrabold mb-4">vLLM GPU 분할</h5>
+                  <p class="text-sm text-slate-500 leading-relaxed font-medium">
+                    가상 GPU 기술을 적용하여 동시 사용자에게 추론 자원을 지능적으로 배분하고 지연을
+                    최소화합니다.
+                  </p>
+                </div>
+                <div
+                  class="p-10 bg-slate-900 border border-slate-800 rounded-[3rem] hover:border-blue-500 hover:bg-slate-800 transition-all group"
+                >
+                  <div
+                    class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform"
+                  >
+                    <i class="fas fa-archive text-blue-500 text-2xl"></i>
+                  </div>
+                  <h5 class="text-lg font-extrabold mb-4">영구 보존 표준</h5>
+                  <p class="text-sm text-slate-500 leading-relaxed font-medium">
+                    생성된 모든 산출물을 국가기록원 PDF/A 표준에 따라 자동 보관하여 행정 효력을
+                    보장합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section id="contact" class="py-40 bg-white text-center">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl font-black mb-10 text-slate-900 leading-tight">
+            지능형 지식 행정의 완성, <br />베이직인터내셔널이 앞장섭니다.
+          </h2>
+          <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <button
+              class="px-14 py-6 bg-blue-600 text-white rounded-2xl font-bold shadow-2xl shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all text-lg"
+            >
+              솔루션 상담 신청
+            </button>
+            <button
+              class="px-14 py-6 bg-slate-50 text-slate-900 border border-slate-200 rounded-2xl font-bold hover:bg-slate-100 hover:scale-105 transition-all text-lg"
+            >
+              제품 카탈로그 요청
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+  </body>
+
+  <script>
+    //  @component HeroSection
+    document.addEventListener('DOMContentLoaded', () => {
+      render(
+        '#aura-voice',
+        heroBigSection({
+          badgeIcon: 'bi-braces-asterisk',
+          badgeText: 'NEXT-GEN PUBLIC ADMINISTRATION sLLM',
+          title: '대한민국 행정의<br /> 지능형 자동화 표준',
+          titleSub: '',
+          desc: '단순한 생성 AI를 넘어, 법규 수집부터 HWP 서식 완성과 보안 감사까지 행정 업무의 전 과정을 자동화하는 에어갭 기반 온프레미스 어플라이언스를 제공합니다.',
+          btnText: '',
+          btnHref: '#',
+          voiceLabel: '',
+          statusLeft: 'STATUS: CARE_PIPELINE_ON',
+          statusRight: 'Dementia Prevention',
+          cards: [
+            {
+              label: '하이브리드 법률 크롤러',
+              text: '국가법령정보센터, 정부24, 보도자료를 API 및 셀레니움 기반으로 정밀 수집합니다.',
+              color: 'blue',
+            },
+            {
+              label: '계층 구조 청킹',
+              text: '법령의 [편-장-절-조] 위계 구조를 보존하여 검색 시 의미론적 정확도를 확보합니다.',
+              color: 'purple',
+            },
+            {
+              label: 'Dual-Path OCR',
+              text: '로컬 GPU 기반 비전 모델을 사용하여 복잡한 HWP 표 구조를 99% 이상 인식합니다.',
+              color: 'pink',
+            },
+          ],
+        }),
+      );
+    });
+
+    const fills = document.querySelectorAll('.feature-progress-fill');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const w = el.dataset.width || 70;
+            el.style.width = w + '%';
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    fills.forEach((el) => observer.observe(el));
+  </script>
+</html>
