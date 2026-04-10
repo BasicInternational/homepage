@@ -4655,6 +4655,7 @@ main section {
 .card-info-title {
   font-size: 1.25rem;
   font-weight: 700;
+  color: #333;
 }
 .card-badge {
   font-size: 14px;
