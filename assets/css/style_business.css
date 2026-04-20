@@ -19,7 +19,7 @@
 	--blue-pale: #eef3ff;
 	--navy-card: #0d1b3e;
 	--white: #ffffff;
-	--off-white: #f7f8fa;
+	--off-white: #fff;
 	--text-dark: #111827;
 	--text-body: #4b5563;
 	--text-muted: #555;
@@ -46,7 +46,6 @@
 }
 
 .biz-section--muted {
-	background: #f9fafb;
 }
 
 .biz-hero {
@@ -368,7 +367,6 @@
 .scm-hero {
 	max-width: 1440px;
 	position: relative;
-	background: #f9fafb;
 	overflow: hidden;
 	padding: 6rem 3rem;
 }
@@ -441,7 +439,6 @@
 }
 
 .scm-hero__btn:hover {
-	background: #f9fafb;
 	transform: translateY(-1px);
 	text-decoration: none;
 	color: #1f2937;
@@ -1744,7 +1741,7 @@ main section {
 
 main section {
 	max-width: 1280px;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	padding: 56px 40px;
 }
 
@@ -2152,7 +2149,6 @@ main section {
          HERO SECTION
       ══════════════════════════════ */
 .cloud-hero {
-	background: #f9fafb;
 	overflow: hidden;
 	position: relative;
 }
@@ -2220,7 +2216,6 @@ main section {
 }
 
 .cloud-hero__btn:hover {
-	background: #f9fafb;
 	transform: translateY(-1px);
 	text-decoration: none;
 	color: #1f2937;
@@ -2304,7 +2299,6 @@ main section {
          INTRO SECTION
       ══════════════════════════════ */
 .cloud-intro {
-	background: #f9fafb;
 	padding: 64px 32px;
 }
 
@@ -2375,7 +2369,6 @@ main section {
       ══════════════════════════════ */
 .cloud-tab-section {
 	flex-direction: column;
-	background: #f9fafb;
 	padding: 80px 64px;
 }
 
@@ -2803,7 +2796,6 @@ main section {
        HERO SECTION
     ══════════════════════════════ */
 .ac-hero {
-	background: #f9fafb;
 	overflow: hidden;
 	position: relative;
 }
@@ -2871,7 +2863,6 @@ main section {
 }
 
 .ac-hero__btn:hover {
-	background: #f9fafb;
 	transform: translateY(-1px);
 	text-decoration: none;
 	color: #1f2937;
@@ -2955,7 +2946,6 @@ main section {
        INTRO SECTION
     ══════════════════════════════ */
 .ac-intro {
-	background: #f9fafb;
 	padding: 64px 32px;
 }
 
@@ -3032,7 +3022,6 @@ main section {
        SOLUTION SECTION
     ══════════════════════════════ */
 .ac-solution {
-	background: #f9fafb;
 	padding: 64px 32px;
 }
 
@@ -3186,7 +3175,6 @@ main section {
 
 /* pages/business/logistics */
 .scm-hero {
-	background: #f9fafb;
 	overflow: hidden;
 }
 
@@ -3257,7 +3245,6 @@ main section {
 }
 
 .scm-hero__btn:hover {
-	background: #f9fafb;
 	transform: translateY(-1px);
 	text-decoration: none;
 	color: #1f2937;
@@ -3335,7 +3322,6 @@ main section {
        INTRO SECTION
     ══════════════════════════════ */
 .logi-intro {
-	background: #f9fafb;
 	padding: 64px 32px;
 }
 
@@ -3597,7 +3583,6 @@ main section {
 
 /* pages/business/benevolent */
 .benev-hero {
-	background: #f9fafb;
 	overflow: hidden;
 }
 
@@ -3663,7 +3648,6 @@ main section {
 }
 
 .benev-hero__btn:hover {
-	background: #f9fafb;
 	transform: translateY(-1px);
 	text-decoration: none;
 	color: #1f2937;
@@ -3741,7 +3725,6 @@ main section {
        INTRO
     ══════════════════════════════ */
 .benev-intro {
-	background: #f9fafb;
 	padding: 64px 32px;
 }
 
@@ -4003,7 +3986,6 @@ main section {
 
 /* pages/business/bi-solution */
 .bi-hero {
-	background: #f9fafb;
 	overflow: hidden;
 }
 
@@ -4069,7 +4051,6 @@ main section {
 }
 
 .bi-hero__btn:hover {
-	background: #f9fafb;
 	transform: translateY(-1px);
 	text-decoration: none;
 	color: #1f2937;
@@ -4147,7 +4128,6 @@ main section {
        INTRO
     ══════════════════════════════ */
 .bi-intro {
-	background: #f9fafb;
 	padding: 64px 32px;
 }
 
@@ -4397,7 +4377,6 @@ main section {
 
 /* pages/business/finance */
 .finance-hero {
-	background: #f9fafb;
 	overflow: hidden;
 }
 
@@ -4463,7 +4442,6 @@ main section {
 }
 
 .finance-hero__btn:hover {
-	background: #f9fafb;
 	transform: translateY(-1px);
 	text-decoration: none;
 	color: #1f2937;
@@ -4541,7 +4519,6 @@ main section {
        INTRO
     ══════════════════════════════ */
 .finance-intro {
-	background: #f9fafb;
 	padding: 64px 32px;
 }
 

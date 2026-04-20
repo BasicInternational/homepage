@@ -507,7 +507,7 @@ body[data-type='detail'] section.content__banner {
 
 main {
 	width: 100%;
-	margin: 160px auto 0;
+	margin: 100px auto 0;
 }
 
 main section {
@@ -2652,7 +2652,6 @@ client__box > *, key__group > * {
 	gap: 14px;
 	width: 100%;
 	margin: 0 auto;
-	background: #f8fafc;
 	padding: 1rem;
 }
 
@@ -2740,7 +2739,6 @@ client__box > *, key__group > * {
 /* ── 카드 ── */
 .feature-card {
 	flex: 1;
-	background: #f9fafb;
 	border: 1px solid #e5e7eb;
 	border-radius: 16px;
 	padding: 16px 20px;
