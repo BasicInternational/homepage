@@ -719,8 +719,8 @@
 	padding: 8rem 0;
 	margin: 50px auto;
 }
-#aisound__body .grid-3,
-#aisound__body .grid-4 {
+
+#aisound__body .grid-3, #aisound__body .grid-4 {
 	display: grid;
 	gap: 2rem;
 	grid-template-columns: 1fr;
@@ -756,8 +756,9 @@
 	border: 1px solid #e5e7eb;
 	transition: all 0.3s ease;
 }
-#aisound__body .feature-card .step-circle{
-  background: #fff;
+
+#aisound__body .feature-card .step-circle {
+	background: #fff;
 }
 
 #aisound__body .feature-card:hover {
@@ -5001,10 +5002,8 @@ main section {
 }
 
 .card-title {
-	color: white;
 	font-size: 1.875rem;
 	font-weight: 700;
-	margin-bottom: 1rem;
 }
 
 .card-link {
@@ -5812,6 +5811,7 @@ body {
 	background-color: #060608;
 	color: #e2e8f0;
 	scroll-behavior: smooth;
+	background: #f8fbff;
 }
 
 .gradient-text {
@@ -5953,7 +5953,7 @@ section .title-txt, div .title-txt {
 
 /* AI연구소  */
 
-/* Base Reset & Variables */:root {
+/* Base Reset & Variables */:root:has(#article__research) {
 	--bg-color: #030712;
 	--zinc-950:#09090b;
 	--text-main: #f3f4f6;
@@ -5974,8 +5974,7 @@ section .title-txt, div .title-txt {
 
 body#article__research {
 	font-family: 'Pretendard', sans-serif;
-	scroll-behavior: smooth;
-	background-color: var(--bg-color);
+	scroll-behavior: smooth;     /* background-color: #fff; */
 	color: var(--text-main);
 	line-height: 1.5;
 	overflow-x: hidden;
@@ -6068,11 +6067,12 @@ nav#research__nav .nav-container {
 /* Hero Section */
 .hero-research {
 	min-height: 100vh;
+	max-width: unset;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding-top: 80px;
-	background: radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.25) 0%, var(--bg-color) 80%);
+	background: linear-gradient(105deg, rgba(2, 50, 48, 0.98) 0%, rgba(2, 40, 70, 0.95) 45%, rgba(0, 0, 0, 0.88) 100%), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1600&q=80') center/cover no-repeat;
 	text-align: center;
 }
 
@@ -6157,6 +6157,7 @@ nav#research__nav .nav-container {
 	.section-header {
 		flex-direction: row;
 		padding: 50px;
+		align-items: center;
 	}
 
 }
@@ -6166,23 +6167,23 @@ nav#research__nav .nav-container {
 	font-weight: 700;
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
-	font-size: 0.75rem;
+	font-size: 24px;
 	margin-bottom: 1rem;
 }
 
 .header-title h2 {
-	font-size: clamp(2.25rem, 5vw, 3.75rem);
-	font-weight: 900;
-	font-style: italic;
+	font-weight: 700;
 	text-transform: uppercase;
 	line-height: 1;
+	color: #222;
+	font-size: 42px;
 }
 
 .header-desc {
-	color: var(--border);
+	color: #444;
 	max-width: 480px;
 	text-align: left;
-	font-weight: 300;
+	font-weight: 600;
 	border-right: 2px solid var(--primary);
 	padding-right: 1.5rem;
 	font-size: 20px;
@@ -6231,6 +6232,7 @@ nav#research__nav .nav-container {
 	display: flex;
 	flex-direction: column;
 	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	background: #f5f3ff;
 }
 
 .infographic-card::before {
@@ -6272,6 +6274,7 @@ nav#research__nav .nav-container {
 	align-items: center;
 	gap: 1rem;
 	margin-bottom: 1.5rem;
+	justify-content: center;
 }
 
 .icon-wrapper {
@@ -6337,19 +6340,22 @@ nav#research__nav .nav-container {
 }
 
 .card-title {
-	font-size: 1.5rem;
+	font-size: 24px;
 	font-weight: 700;
+	color: #0c4a6e;
+	line-height: 1.2;
 }
 
 .card-title-sm {
 	font-size: 1.25rem;
 	font-weight: 700;
+	color: #0c4a6e;
 }
 
 .agent-desc {
 	font-size: 16px;
 	line-height: 1.6;
-	color: var(--border-light);
+	color: #666;
 	margin-bottom: 1.5rem;
 }
 
@@ -6378,10 +6384,10 @@ nav#research__nav .nav-container {
 
 .stats-container {
 	border-top: 1px solid rgba(255, 255, 255, 0.05);
-	padding-top: 5rem;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 3rem;
+	color: #666;
 	text-align: center;
 }
 
@@ -6405,7 +6411,7 @@ nav#research__nav .nav-container {
 
 .stat-item .label {
 	font-size: 18px;
-	color: var(--border);
+	color: #333;
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
 	margin-bottom: 4px;
@@ -6423,6 +6429,7 @@ nav#research__nav .nav-container {
 	margin-bottom: 3rem;
 	text-transform: uppercase;
 	letter-spacing: -0.02em;
+	color: #333;
 }
 
 .ethics-grid {
@@ -6452,13 +6459,14 @@ nav#research__nav .nav-container {
 	font-size: 24px;
 	font-weight: 700;
 	margin-bottom: 0.75rem;
+	color: #333;
 }
 
 .ethic-card p {
 	font-size: 16px;
-	color: var(--off-white);
+	color: #666;
 	line-height: 1.6;
-	font-weight: 300;
+	font-weight: 500;
 }
 
 /* Footer */
@@ -6511,5 +6519,6 @@ footer {
 
 section.solutions__section {
 	max-width: 1440px;
-	margin: 0 auto;
+	margin: 50px auto 0;
+	background: #fff;
 }
