@@ -45,7 +45,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -53,17 +52,392 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;800&display=swap');
 
+      /* ===== Base Styles ===== */
       body {
         font-family: 'Pretendard', sans-serif;
         color: #e2e8f0;
         scroll-behavior: smooth;
       }
+
       main section {
         max-width: 1440px;
-      }main#aura-voice section:first-child {
-    max-width: unset;
-}
+      }
 
+      main#aura-voice section:first-child {
+        max-width: unset;
+      }
+
+      /* ===== Section Layouts ===== */
+      .section-spacing {
+        padding: 8rem 1.5rem;
+      }
+
+      .section-spacing-lg {
+        padding: 6rem 1.5rem;
+      }
+
+      .section-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+      }
+
+      .section-bg-dark {
+        background-color: #09090b;
+      }
+
+      .section-bg-gradient {
+        background: linear-gradient(to bottom, transparent, rgba(30, 58, 138, 0.1));
+      }
+
+      /* ===== Typography ===== */
+      .text-heading-lg {
+        font-size: 2.25rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.025em;
+      }
+
+      .text-heading-md {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .text-heading-sm {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .text-body-base {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      .text-body-sm {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+
+      .text-body-xs {
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .text-gray-300 {
+        color: #d1d5db;
+      }
+
+      .text-gray-400 {
+        color: #9ca3af;
+      }
+
+      .text-white {
+        color: #ffffff;
+      }
+
+      .text-dark {
+        color: #e2e8f0;
+      }
+
+      .text-muted {
+        color: #9ca3af;
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .font-bold {
+        font-weight: 700;
+      }
+
+      .font-black {
+        font-weight: 900;
+      }
+
+      /* ===== Spacing ===== */
+      .mb-0 { margin-bottom: 0; }
+      .mb-1 { margin-bottom: 0.25rem; }
+      .mb-2 { margin-bottom: 0.5rem; }
+      .mb-3 { margin-bottom: 0.75rem; }
+      .mb-4 { margin-bottom: 1rem; }
+      .mb-6 { margin-bottom: 1.5rem; }
+      .mb-8 { margin-bottom: 2rem; }
+      .mb-12 { margin-bottom: 3rem; }
+      .mb-20 { margin-bottom: 5rem; }
+
+      .mt-0 { margin-top: 0; }
+      .mt-20 { margin-top: 5rem; }
+
+      .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+      .p-4 { padding: 1rem; }
+      .p-6 { padding: 1.5rem; }
+      .p-8 { padding: 2rem; }
+      .p-10 { padding: 2.5rem; }
+
+      .gap-3 { gap: 0.75rem; }
+      .gap-4 { gap: 1rem; }
+      .gap-6 { gap: 1.5rem; }
+      .gap-8 { gap: 2rem; }
+      .gap-12 { gap: 3rem; }
+      .gap-16 { gap: 4rem; }
+
+      /* ===== Display & Layout ===== */
+      .flex {
+        display: flex;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .items-start {
+        align-items: flex-start;
+      }
+
+      .items-end {
+        align-items: flex-end;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .grid {
+        display: grid;
+      }
+
+      .grid-cols-1 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .inset-0 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .h-full {
+        height: 100%;
+      }
+
+      .w-full {
+        width: 100%;
+      }
+
+      .overflow-hidden {
+        overflow: hidden;
+      }
+
+      /* ===== Colors & Backgrounds ===== */
+      .bg-black {
+        background-color: #000000;
+      }
+
+      .bg-blue-500 {
+        background-color: #3b82f6;
+      }
+
+      .bg-blue-600 {
+        background-color: #2563eb;
+      }
+
+      .bg-pink-500 {
+        background-color: #ec4899;
+      }
+
+      .bg-pink-600 {
+        background-color: #db2777;
+      }
+
+      .bg-purple-500 {
+        background-color: #a855f7;
+      }
+
+      .bg-purple-600 {
+        background-color: #9333ea;
+      }
+
+      .bg-yellow-500 {
+        background-color: #eab308;
+      }
+
+      .bg-emerald-500 {
+        background-color: #10b981;
+      }
+
+      .bg-red-500 {
+        background-color: #ef4444;
+      }
+
+      .bg-white-5 {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      .bg-blue-600-10 {
+        background-color: rgba(37, 99, 235, 0.1);
+      }
+
+      .bg-blue-600-20 {
+        background-color: rgba(37, 99, 235, 0.2);
+      }
+
+      .bg-blue-500-20 {
+        background-color: rgba(59, 130, 246, 0.2);
+      }
+
+      .bg-pink-500-20 {
+        background-color: rgba(236, 72, 153, 0.2);
+      }
+
+      .bg-pink-600-10 {
+        background-color: rgba(219, 39, 119, 0.1);
+      }
+
+      .bg-pink-600-20 {
+        background-color: rgba(219, 39, 119, 0.2);
+      }
+
+      .bg-purple-500-20 {
+        background-color: rgba(168, 85, 247, 0.2);
+      }
+
+      .bg-black-40 {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      /* ===== Borders & Shadows ===== */
+      .border {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .border-2 {
+        border-width: 2px;
+      }
+
+      .border-t-2 {
+        border-top-width: 2px;
+      }
+
+      .border-dashed {
+        border-style: dashed;
+      }
+
+      .border-blue-500-30 {
+        border-color: rgba(59, 130, 246, 0.3);
+      }
+
+      .border-blue-600-30 {
+        border-color: rgba(37, 99, 235, 0.3);
+      }
+
+      .border-pink-500-50 {
+        border-color: rgba(236, 72, 153, 0.5);
+      }
+
+      .border-pink-600-30 {
+        border-color: rgba(219, 39, 119, 0.3);
+      }
+
+      .border-purple-500-30 {
+        border-color: rgba(168, 85, 247, 0.3);
+      }
+
+      .border-gray-800 {
+        border-color: #1f2937;
+      }
+
+      .border-white-10 {
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .rounded-xl {
+        border-radius: 0.75rem;
+      }
+
+      .rounded-2xl {
+        border-radius: 1rem;
+      }
+
+      .rounded-3xl {
+        border-radius: 1.5rem;
+      }
+
+      .rounded-full {
+        border-radius: 9999px;
+      }
+
+      .shadow-none {
+        box-shadow: none;
+      }
+
+      .shadow-lg {
+        box-shadow: 0 0 50px rgba(236, 72, 153, 0.2);
+      }
+
+      /* ===== Special Effects ===== */
+      .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+      }
+
+      .blur-xl {
+        filter: blur(24px);
+      }
+
+      .transition {
+        transition: all 0.3s ease;
+      }
+
+      .transition-all {
+        transition: all 0.3s ease;
+      }
+
+      .group:hover .group-hover\:bg-blue-600-40 {
+        background-color: rgba(37, 99, 235, 0.4);
+      }
+
+      /* ===== Gradient ===== */
       .gradient-text {
         width: 100%;
         display: inline-block;
@@ -72,9 +446,9 @@
         -webkit-text-fill-color: transparent;
       }
 
+      /* ===== Cards & Components ===== */
       .tech-card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid;
         backdrop-filter: blur(10px);
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
@@ -97,23 +471,25 @@
         border-radius: 99px;
         font-size: 0.75rem;
         font-weight: 600;
+        display: inline-block;
       }
 
-      /* Spectrogram Animation */
+      /* ===== Animations ===== */
       .spectrogram {
         display: flex;
         align-items: flex-end;
         gap: 2px;
         height: 40px;
       }
+
       .spec-bar {
         width: 3px;
         background: linear-gradient(to top, #3b82f6, #ec4899);
         animation: flow 1.5s ease-in-out infinite;
       }
+
       @keyframes flow {
-        0%,
-        100% {
+        0%, 100% {
           height: 5px;
         }
         50% {
@@ -125,6 +501,7 @@
         position: relative;
         display: inline-block;
       }
+
       .section-title::after {
         content: '';
         position: absolute;
@@ -135,10 +512,10 @@
         background: #3b82f6;
       }
 
-      /* Infographic Pulse */
       .pulse-circle {
         animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
       }
+
       @keyframes pulse-ring {
         0% {
           transform: scale(0.8);
@@ -153,6 +530,923 @@
           opacity: 0;
         }
       }
+
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .animate-bounce {
+        animation: bounce 1s infinite;
+      }
+
+      /* ===== Scroll Animations (data-scroll) ===== */
+      [data-scroll] {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+      }
+
+      [data-scroll].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 카드 및 아이템 순차 등장 */
+      [data-scroll] .healthcare-step,
+      [data-scroll] .healthcare-tag,
+      [data-scroll] .tech-card-item,
+      [data-scroll] .tech-card,
+      [data-scroll] .business-model,
+      [data-scroll] .hero-card,
+      [data-scroll] .feature-item {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.7s ease;
+      }
+
+      [data-scroll].visible .healthcare-step,
+      [data-scroll].visible .healthcare-tag,
+      [data-scroll].visible .tech-card-item,
+      [data-scroll].visible .tech-card,
+      [data-scroll].visible .business-model,
+      [data-scroll].visible .hero-card,
+      [data-scroll].visible .feature-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* nth-child 순차 애니메이션 */
+      [data-scroll].visible .healthcare-step:nth-child(1),
+      [data-scroll].visible .healthcare-tag:nth-child(1),
+      [data-scroll].visible .tech-card-item:nth-child(1),
+      [data-scroll].visible .tech-card:nth-child(1),
+      [data-scroll].visible .business-model:nth-child(1),
+      [data-scroll].visible .hero-card:nth-child(1),
+      [data-scroll].visible .feature-item:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      [data-scroll].visible .healthcare-step:nth-child(2),
+      [data-scroll].visible .healthcare-tag:nth-child(2),
+      [data-scroll].visible .tech-card-item:nth-child(2),
+      [data-scroll].visible .tech-card:nth-child(2),
+      [data-scroll].visible .business-model:nth-child(2),
+      [data-scroll].visible .hero-card:nth-child(2),
+      [data-scroll].visible .feature-item:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      [data-scroll].visible .healthcare-step:nth-child(3),
+      [data-scroll].visible .healthcare-tag:nth-child(3),
+      [data-scroll].visible .tech-card-item:nth-child(3),
+      [data-scroll].visible .tech-card:nth-child(3),
+      [data-scroll].visible .business-model:nth-child(3),
+      [data-scroll].visible .hero-card:nth-child(3),
+      [data-scroll].visible .feature-item:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      [data-scroll].visible .healthcare-step:nth-child(4),
+      [data-scroll].visible .healthcare-tag:nth-child(4),
+      [data-scroll].visible .tech-card-item:nth-child(4),
+      [data-scroll].visible .tech-card:nth-child(4),
+      [data-scroll].visible .business-model:nth-child(4),
+      [data-scroll].visible .hero-card:nth-child(4),
+      [data-scroll].visible .feature-item:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+
+      /* ===== Healthcare Section ===== */
+      .hero-section {
+        padding: 6rem 1.5rem;
+        background: linear-gradient(      105deg,      rgba(2, 50, 48, 0.98) 0%,      rgba(2, 40, 70, 0.95) 45%,      rgba(0, 0, 0, 0.88) 100%    ),    url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1600&q=80') center/cover      no-repeat;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-container {
+        max-width: 1280px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        color: #60a5fa;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+
+      .hero-content {
+        margin-bottom: 4rem;
+        max-width: 100%;
+      }
+
+      .hero-title {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: #e2e8f0;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .hero-title span:first-child {
+        color: #ffffff;
+        font-size: 48px;
+        text-align: center;
+      }
+
+      .hero-subtitle {
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 53px;
+        line-height: 1.2;
+      }
+
+      body .hero-description {
+        font-size: 1.125rem;
+        color: #d1d5db;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        word-break: keep-all;
+      }
+
+      .hero-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        color: #ffffff;
+        font-weight: 700;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      }
+
+      .hero-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 50px rgba(59, 130, 246, 0.5);
+      }
+
+      .hero-info {
+        margin-bottom: 2rem;
+      }
+
+      .hero-voice-label {
+        font-size: 0.875rem;
+        color: #60a5fa;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+
+      .hero-status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .hero-status-item {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        font-weight: 600;
+      }
+
+      .hero-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .hero-card {
+        padding: 1.5rem;
+        background-color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .hero-card:hover {
+        background-color: #fff;
+      }
+
+      .hero-card.blue {
+        border-left: 3px solid #3b82f6;
+      }
+
+      .hero-card.purple {
+        border-left: 3px solid #a855f7;
+      }
+
+      .hero-card.pink {
+        border-left: 3px solid #ec4899;
+      }
+
+      .hero-card-label {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-card-text {
+        font-size: 0.875rem;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      @media (min-width: 768px) {
+     
+        .hero-title {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          font-size: 4rem;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .hero-cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .hero-status {
+          justify-content: space-between;
+          display: none;
+        }
+      }
+ @media (max-width: 767px) {
+  body .healthcare-tags{
+    grid-template-columns: repeat(1,1fr);
+}
+ }
+      /* ===== Healthcare Section ===== */
+      .healthcare-section {
+        padding: 8rem 1.5rem;
+        background-color: #fff;
+        overflow: hidden;
+        max-width: 1280px;
+        padding: 30px 20px;
+      }
+
+      .healthcare-header {
+        margin-bottom: 5rem;
+      }
+
+      .healthcare-title {
+        color: #333;
+        font-size: 2.25rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: -0.025em;
+        text-align: center;
+      }
+
+      .healthcare-description {
+        color: #d1d5db;
+        max-width: 42rem;
+        margin: 0 auto;
+        font-style: italic;
+        text-align: center;
+        color: #666;
+      }
+
+      .healthcare-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+        position: relative;
+      }
+
+      .healthcare-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .step-icon-wrapper {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+
+      .step-icon-bg {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(59, 130, 246, 0.2);
+        border-radius: 9999px;
+        filter: blur(24px);
+      }
+
+      .step-icon-circle {
+        position: relative;
+        width: 128px;
+        height: 128px;
+        border-radius: 9999px;
+        border: 2px solid rgba(59, 130, 246, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .step-icon-circle.blue {
+        border-color: rgba(59, 130, 246, 0.3);
+      }
+
+      .step-icon-circle.pink {
+        border-color: rgba(236, 72, 153, 0.5);
+        width: 160px;
+        height: 160px;
+        border: 2px solid rgba(236, 72, 153, 0.5);
+        box-shadow: 0 0 50px rgba(236, 72, 153, 0.2);
+        transform: scale(1.1);
+      }
+
+      .step-icon-circle.purple {
+        border-color: rgba(168, 85, 247, 0.3);
+      }
+
+      .step-icon {
+        font-size: 2rem;
+      }
+
+      .step-icon.blue { color: #3b82f6; }
+      .step-icon.pink { color: #ec4899; }
+      .step-icon.purple { color: #a855f7; }
+      .step-icon.lg { font-size: 3rem; }
+
+      .step-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #2563eb;
+        width: 32px;
+        height: 32px;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .step-badge.pink {
+        background-color: #db2777;
+        width: 40px;
+        height: 40px;
+        font-size: 0.875rem;
+      }
+
+      .step-badge.purple {
+        background-color: #9333ea;
+        width: 32px;
+        height: 32px;
+      }
+
+      .step-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+
+      .step-title.lg {
+        font-size: 1.875rem;
+        font-weight: 900;
+      }
+
+      .step-description {
+        font-size: 0.875rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .step-description.bold {
+        font-weight: 700;
+      }
+
+      .healthcare-connector {
+        position: absolute;
+        top: 35%;
+        border-top: 2px dashed #1f2937;
+        display: none;
+      }
+
+      .healthcare-tags {
+        width: 100%;
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+      }
+
+      .healthcare-tag {
+        background-color: #e4f8f5;
+        border: 1px solid #eee;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+        justify-content: start;
+        align-items: center;
+      }
+
+      .healthcare-tag-icon {
+        font-size: 1.5rem;
+        width: 42px;
+        height: 42px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background: #fff;
+        border-radius: 100px;
+      }
+
+      .healthcare-tag-icon.yellow { color: #eab308; }
+      .healthcare-tag-icon.green { color: #10b981; }
+      .healthcare-tag-icon.red { color: #ef4444; }
+
+      .healthcare-tag-content > p:first-child {
+        font-size: 17px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .healthcare-tag-content > p:last-child {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #666;
+        font-weight: 600;
+      }
+
+      /* ===== Core Pipeline Section ===== */
+      .pipeline-section {
+        padding: 8rem 1.5rem;
+      }
+
+      .pipeline-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 5rem;
+        gap: 1.5rem;
+      }
+
+      .pipeline-title-group h2 {
+        font-size: 2.25rem;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: -0.025em;
+      }
+
+      .pipeline-title-group p {
+        color: #666;
+        font-size: 24px;
+      }
+
+      .pipeline-tech-text {
+        text-align: right;
+        font-size: 3rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.05);
+        font-style: italic;
+        user-select: none;
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .tech-card-item {
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+      }
+
+      .tech-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+      }
+
+      .tech-icon-box {
+        width: 48px;
+        height: 48px;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid;
+      }
+
+      .tech-icon-box.blue {
+        background-color: rgba(37, 99, 235, 0.1);
+        border-color: rgba(37, 99, 235, 0.3);
+        color: #3b82f6;
+      }
+
+      .tech-icon-box.purple {
+        background-color: rgba(168, 85, 247, 0.1);
+        border-color: rgba(168, 85, 247, 0.3);
+        color: #a855f7;
+      }
+
+      .tech-icon-box.pink {
+        background-color: rgba(219, 39, 119, 0.1);
+        border-color: rgba(219, 39, 119, 0.3);
+        color: #ec4899;
+      }
+
+      .tech-card-title {
+        font-size: 1.25rem;
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .tech-card-description {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.625;
+        margin-bottom: 1.5rem;
+      }
+
+      .tech-card-divider {
+        height: 1px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-bottom: 1.5rem;
+      }
+
+      .tech-card-tags {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 1.2;
+        word-break: break-word;
+      }
+
+      .tech-card-tags.blue {
+        color: #60a5fa;
+      }
+
+      .tech-card-tags.purple {
+        color: #c084fc;
+      }
+
+      .tech-card-tags.pink {
+        color: #f472b6;
+      }
+
+      /* ===== Core Pipeline Section ===== */
+      .business-section {
+        padding: 8rem 1.5rem;
+      }
+
+      .business-title {
+        font-size: 36px;
+        font-weight: 900;
+        margin-bottom: 5rem;
+        text-align: center;
+        letter-spacing: -0.025em;
+        text-transform: uppercase;
+        font-style: italic;
+        color: #333;
+      }
+
+      .business-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        grid-auto-rows: unset;
+      }
+
+      .business-model {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .business-model-bg {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(37, 99, 235, 0.1);
+        transition: all 0.3s ease;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .business-model.pink .business-model-bg {
+        background-color: rgba(219, 39, 119, 0.1);
+      }
+
+      .business-model:hover .business-model-bg {
+        background-color: rgba(37, 99, 235, 0.2);
+      }
+
+      .business-model.pink:hover .business-model-bg {
+        background-color: rgba(219, 39, 119, 0.2);
+      }
+
+      .business-model-content {
+        position: relative;
+        padding: 20px 30px;
+        backdrop-filter: blur(4px);
+        border-radius: 7px;
+        min-height: 100%;
+      }
+
+      .business-model-header {
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .business-model-badge {
+        width: 48px;
+        height: 48px;
+        border-radius: 9999px;
+        background-color: #2563eb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .business-model-badge.pink {
+        background-color: #db2777;
+      }
+
+      .business-model-header h3 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0;
+      }
+
+      .business-model-description {
+        color: #444;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        font-size: 18px;
+        word-break: keep-all;
+      }
+
+      .business-model-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .business-model-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .business-model-item i {
+        color: #3b82f6;
+      }
+
+      .business-model.pink .business-model-item i {
+        color: #ec4899;
+      }
+
+      /* ===== Vision Section ===== */
+      .vision-section {
+        padding: 6rem 1.5rem;
+        background: linear-gradient(to bottom, transparent, rgba(30, 58, 138, 0.1));
+      }
+
+      .vision-container {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .vision-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+
+      .vision-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+      }
+
+      .vision-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+      }
+
+      .vision-stat {
+        text-align: center;
+      }
+
+      .vision-stat-value {
+        font-size: 1.875rem;
+        font-weight: 900;
+        margin-bottom: 0.25rem;
+      }
+
+      .vision-stat-value.blue { color: #3b82f6; }
+      .vision-stat-value.purple { color: #a855f7; }
+      .vision-stat-value.pink { color: #ec4899; }
+
+      .vision-stat-label {
+        font-size: 0.625rem;
+        color: #e2e8f0;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      /* ===== Responsive Design ===== */
+      @media (min-width: 768px) {
+        .md\:flex-row {
+          flex-direction: row;
+        }
+
+        .md\:w-1\/3 {
+          width: 33.333%;
+        }
+
+        .md\:text-3xl {
+          font-size: 1.875rem;
+        }
+
+        .md\:p-8 {
+          padding: 2rem;
+        }
+
+        .md\:flex-row .healthcare-tags {
+          flex-direction: row;
+        }
+
+        .md\:flex-row .healthcare-tag {
+          width: calc(33.333% - 0.5rem);
+        }
+
+        .pipeline-header {
+          flex-direction: row;
+          width: fit-content;
+        }
+
+        .tech-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .business-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .healthcare-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .healthcare-connector {
+          display: block;
+          position: absolute;
+        }
+
+        .healthcare-connector:first-of-type {
+          left: 28%;
+          width: 12%;
+        }
+
+        .healthcare-connector:last-of-type {
+          right: 28%;
+          width: 12%;
+        }
+
+        .vision-title {
+          font-size: 1.875rem;
+        }
+
+        .healthcare-connector {
+          display: block;
+        }
+      }
+
+      @media (min-width: 1024px) {
+      
+        .lg\:flex-col {
+          flex-direction: column;
+        }
+
+        .lg\:grid-cols-3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .lg\:grid-cols-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .lg\:block {
+          display: block;
+        }
+      }
+
+      /* ===== Utility ===== */
+      .select-none {
+        user-select: none;
+      }
+
+      .leading-relaxed {
+        line-height: 1.625;
+      }
+
+      .leading-loose {
+        line-height: 2;
+      }
+
+      .tracking-widest {
+        letter-spacing: 0.1em;
+      }
+
+      .tracking-tighter {
+        letter-spacing: -0.025em;
+      }
+
+      .group {
+        position: relative;
+      }
+
+      .group:hover .group-hover\:bg-blue-500-40 {
+        background-color: rgba(59, 130, 246, 0.4);
+      }
+
+      .group:hover .group-hover\:bg-purple-500-40 {
+        background-color: rgba(168, 85, 247, 0.4);
+      }
+
+      .w-8 { width: 32px; }
+      .w-10 { width: 40px; }
+      .w-12 { width: 48px; }
+      .w-32 { width: 128px; }
+      .w-40 { width: 160px; }
+
+      .h-8 { height: 32px; }
+      .h-10 { height: 40px; }
+      .h-12 { height: 48px; }
+      .h-32 { height: 128px; }
+      .h-40 { height: 160px; }
+
+      .h-\[1px\] {
+        height: 1px;
+      }
+
+      .text-xs { font-size: 0.75rem; }
+      .text-2xl { font-size: 1.5rem; }
+      .text-3xl { font-size: 1.875rem; }
+      .text-4xl { font-size: 2.25rem; }
+      .text-5xl { font-size: 3rem; }
+      .pipeline-title-group{
+    width: fit-content;
+}
     </style>
 
     <link rel="stylesheet" href="/assets/css/responsive.css" />
@@ -286,95 +1580,74 @@
         <a href="mailto:sisocore@basicit.co.kr" class="btn-cta"> 문의 메일 보내기 </a>
       </section> -->
 
-      <section id="healthcare" class="py-32 px-6 bg-[#09090b] overflow-hidden"
-      style="max-width: unset;">
-        <div class="max-w-7xl mx-auto px-0">
-          <div class="text-center mb-20">
-            <h2 class="text-4xl font-black mb-6 uppercase tracking-tighter">
+      <section id="healthcare" class="healthcare-section scroll-animate fade-in-up">
+        <div class="section-container">
+          <div class="healthcare-header">
+            <h2 class="healthcare-title">
               AI Digital Healthcare
             </h2>
-            <p class="text-gray-300 max-w-2xl mx-auto italic">
+            <p class="healthcare-description">
               "가장 익숙한 목소리가 최고의 약입니다." <br />
               아우라보이스를 통한 치매 예방 인포그래픽
             </p>
           </div>
 
-          <div class="relative grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+          <div class="relative healthcare-grid">
             <!-- Step 1 -->
-            <div class="flex flex-col items-center text-center group">
-              <div class="relative mb-8">
-                <div
-                  class="absolute inset-0 bg-blue-500/20 rounded-full blur-xl group-hover:bg-blue-500/40 transition"
-                ></div>
-                <div
-                  class="relative w-32 h-32 rounded-full border-2 border-blue-500/30 flex items-center justify-center bg-black"
-                >
-                  <i class="fas fa-microphone-alt text-4xl text-blue-500"></i>
-                  <div
-                    class="absolute -top-2 -right-2 bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
-                  >
+            <div class="healthcare-step group">
+              <div class="step-icon-wrapper">
+                <div class="step-icon-bg"></div>
+                <div class="step-icon-circle blue">
+                  <i class="fas fa-microphone-alt step-icon blue"></i>
+                  <div class="step-badge">
                     01
                   </div>
                 </div>
               </div>
-              <h3 class="text-xl font-bold mb-4">Voice Cloning</h3>
-              <p class="text-sm text-gray-300 leading-relaxed">
+              <h3 class="step-title">Voice Cloning</h3>
+              <p class="step-description">
                 자녀/손주 목소리를 단 30초의 <br />샘플링으로 정밀 복제하여 <br />친밀감 있는 가상
                 보컬 생성
               </p>
             </div>
 
             <!-- Connect Line 1 -->
-            <div
-              class="hidden lg:block absolute left-[28%] top-[35%] w-[12%] border-t-2 border-dashed border-gray-800"
-            ></div>
+            <div class="healthcare-connector"></div>
 
             <!-- Step 2 (Center) -->
-            <div class="flex flex-col items-center text-center group scale-110">
-              <div class="relative mb-8">
-                <div class="absolute inset-0 pulse-circle bg-pink-500/20 rounded-full"></div>
-                <div
-                  class="relative w-40 h-40 rounded-full border-2 border-pink-500/50 flex items-center justify-center bg-black shadow-[0_0_50px_rgba(236,72,153,0.2)]"
-                >
-                  <i class="fas fa-phone-alt text-5xl text-pink-500 animate-bounce"></i>
-                  <div
-                    class="absolute -top-2 -right-2 bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
-                  >
+            <div class="healthcare-step group">
+              <div class="step-icon-wrapper">
+                <div class="pulse-circle" style="background-color: rgba(236, 72, 153, 0.2); border-radius: 9999px;"></div>
+                <div class="step-icon-circle pink">
+                  <i class="fas fa-phone-alt step-icon pink lg"></i>
+                  <div class="step-badge pink">
                     02
                   </div>
                 </div>
               </div>
-              <h3 class="text-2xl font-black gradient-text">Daily AI Call</h3>
-              <p class="text-sm text-gray-300 leading-relaxed font-bold">
+              <h3 class="step-title lg gradient-text">Daily AI Call</h3>
+              <p class="step-description bold">
                 매일 정해진 시간, 자녀의 <br />목소리로 'AI 안부 전화' 발신 <br />정서적 연결 및
                 인지 기능 자극
               </p>
             </div>
 
             <!-- Connect Line 2 -->
-            <div
-              class="hidden lg:block absolute right-[28%] top-[35%] w-[12%] border-t-2 border-dashed border-gray-800"
-            ></div>
+            <div class="healthcare-connector"></div>
 
             <!-- Step 3 -->
-            <div class="flex flex-col items-center text-center group">
-              <div class="relative mb-8">
-                <div
-                  class="absolute inset-0 bg-purple-500/20 rounded-full blur-xl group-hover:bg-purple-500/40 transition"
-                ></div>
-                <div
-                  class="relative w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center bg-black"
-                >
-                  <i class="fas fa-brain text-4xl text-purple-500"></i>
-                  <div
-                    class="absolute -top-2 -right-2 bg-purple-600 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
-                  >
+            <div class="healthcare-step group">
+              <div class="step-icon-wrapper">
+                <div class="step-icon-bg"></div>
+                <div class="step-icon-circle purple">
+                  <i class="fas fa-brain step-icon purple"></i>
+                  <div class="step-badge purple">
                     03
                   </div>
                 </div>
               </div>
-              <h3 class="text-xl font-bold mb-4">Dementia Care</h3>
-              <p class="text-sm text-gray-300 leading-relaxed">
+              <h3 class="step-title">Dementia Care</h3>
+              <p class="step-description">
                 상호 대화 및 노래 부르기를 통한 <br />기억력 회생 치료 (Reminiscence) <br />치매
                 발병 지연 및 예방 효과
               </p>
@@ -382,35 +1655,28 @@
           </div>
 
           <!-- Additional Info Tags -->
-
-          <div class="w-full mt-20 flex flex-col md:flex-row gap-3">
-            <div
-              class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-3 w-full md:w-1/3"
-            >
-              <i class="fas fa-smile text-yellow-500 text-2xl"></i>
-              <div>
-                <p class="text-xs text-gray-300">우울증 감소</p>
-                <p class="text-sm font-bold">정서적 고립 해소</p>
+          <div class="healthcare-tags">
+            <div class="healthcare-tag">
+              <i class="fas fa-smile healthcare-tag-icon yellow"></i>
+              <div class="healthcare-tag-content">
+                <p>우울증 감소</p>
+                <p>정서적 고립 해소</p>
               </div>
             </div>
 
-            <div
-              class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-4 w-full md:w-1/3"
-            >
-              <i class="fas fa-chart-line text-emerald-500 text-2xl"></i>
-              <div>
-                <p class="text-xs text-gray-300">인지 활성도</p>
-                <p class="text-sm font-bold">언어 자극 40% 증가</p>
+            <div class="healthcare-tag">
+              <i class="fas fa-chart-line healthcare-tag-icon green"></i>
+              <div class="healthcare-tag-content">
+                <p>인지 활성도</p>
+                <p>언어 자극 40% 증가</p>
               </div>
             </div>
 
-            <div
-              class="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl flex items-center gap-4 w-full md:w-1/3"
-            >
-              <i class="fas fa-heartbeat text-red-500 text-2xl"></i>
-              <div>
-                <p class="text-xs text-gray-300">사회적 비용 절감</p>
-                <p class="text-sm font-bold">B2G 복지 혁신</p>
+            <div class="healthcare-tag">
+              <i class="fas fa-heartbeat healthcare-tag-icon red"></i>
+              <div class="healthcare-tag-content">
+                <p>사회적 비용 절감</p>
+                <p>B2G 복지 혁신</p>
               </div>
             </div>
           </div>
@@ -418,86 +1684,72 @@
       </section>
 
       <!-- Core Pipeline Section -->
-      <section id="mulm" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto px-0">
-          <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-            <div>
-              <h2 class="text-4xl text-white mb-4 section-title uppercase tracking-tighter">
+      <section id="mulm" class="pipeline-section scroll-animate fade-in-up">
+        <div class="section-container">
+          <div class="pipeline-header">
+            <div class="pipeline-title-group">
+              <h2 class="section-title uppercase">
                 Core Pipeline
               </h2>
-              <p class="text-dark max-w-md">MuLM 기반 고해상도 초개인화 가창 합성 원천기술</p>
+              <p>MuLM 기반 고해상도 초개인화 가창 합성 원천기술</p>
             </div>
-            <div class="text-right">
-              <span class="text-5xl font-black text-white/5 italic select-none">TECHNOLOGY</span>
-            </div>
+            
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="tech-grid">
             <!-- Tech 1 -->
-            <div class="tech-card p-10 rounded-3xl">
-              <div class="flex justify-between items-start mb-8">
-                <div
-                  class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center border border-blue-600/30"
-                >
-                  <i class="fas fa-music text-blue-500"></i>
+            <div class="tech-card tech-card-item">
+              <div class="tech-card-header">
+                <div class="tech-icon-box blue">
+                  <i class="fas fa-music"></i>
                 </div>
                 <span class="feature-tag">MuLM Engine</span>
               </div>
-              <h3 class="text-xl text-dark font-black mb-4">고해상도 가창 합성</h3>
-              <p class="text-dark text-sm leading-relaxed mb-6">
+              <h3 class="tech-card-title">고해상도 가창 합성</h3>
+              <p class="tech-card-description">
                 K-Pop/국악 데이터를 학습하여 실제 가수의 창법과 감정 표현력을 재현하는 독보적인 MuLM
                 기술력을 확보했습니다.
               </p>
-              <div class="h-[1px] w-full bg-white/10 mb-6"></div>
-              <p
-                class="text-[10px] font-bold text-blue-400 uppercase tracking-widest leading-loose"
-              >
+              <div class="tech-card-divider"></div>
+              <p class="tech-card-tags blue">
                 SVS / Prosody Control / High-Res Audio
               </p>
             </div>
 
             <!-- Tech 2 -->
-            <div class="tech-card p-10 rounded-3xl">
-              <div class="flex justify-between items-start mb-8">
-                <div
-                  class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center border border-purple-600/30"
-                >
-                  <i class="fas fa-microscope text-purple-500"></i>
+            <div class="tech-card tech-card-item">
+              <div class="tech-card-header">
+                <div class="tech-icon-box purple">
+                  <i class="fas fa-microscope"></i>
                 </div>
                 <span class="feature-tag">Precision Alignment</span>
               </div>
-              <h3 class="text-xl text-dark  font-black mb-4">ms 단위 정밀 정렬</h3>
-              <p class="text-dark text-sm leading-relaxed mb-6">
+              <h3 class="tech-card-title">ms 단위 정밀 정렬</h3>
+              <p class="tech-card-description">
                 가사와 음원을 밀리초 단위로 일치시켜 기계적인 느낌을 배제하고 인간 보컬 특유의
                 타이밍을 구현합니다.
               </p>
-              <div class="h-[1px] w-full bg-white/10 mb-6"></div>
-              <p
-                class="text-[10px] font-bold text-purple-400 uppercase tracking-widest leading-loose"
-              >
+              <div class="tech-card-divider"></div>
+              <p class="tech-card-tags purple">
                 G2P 통합 / Real-time Sync / Phasing Control
               </p>
             </div>
 
             <!-- Tech 3 -->
-            <div class="tech-card p-10 rounded-3xl">
-              <div class="flex justify-between items-start mb-8">
-                <div
-                  class="w-12 h-12 bg-pink-600/20 rounded-xl flex items-center justify-center border border-pink-600/30"
-                >
-                  <i class="fas fa-shield-halved text-pink-500"></i>
+            <div class="tech-card tech-card-item">
+              <div class="tech-card-header">
+                <div class="tech-icon-box pink">
+                  <i class="fas fa-shield-halved"></i>
                 </div>
                 <span class="feature-tag">Trust AI</span>
               </div>
-              <h3 class="text-xl text-dark  font-black mb-4">저작권 보호 워터마킹</h3>
-              <p class="text-dark text-sm leading-relaxed mb-6">
+              <h3 class="tech-card-title">저작권 보호 워터마킹</h3>
+              <p class="tech-card-description">
                 비가청 디지털 워터마킹을 삽입하여 무단 복제를 방지하고, 유해 콘텐츠 차단 가드레일을
                 적용한 신뢰 기반의 AI 환경을 구축합니다.
               </p>
-              <div class="h-[1px] w-full bg-white/10 mb-6"></div>
-              <p
-                class="text-[10px] font-bold text-pink-400 uppercase tracking-widest leading-loose"
-              >
+              <div class="tech-card-divider"></div>
+              <p class="tech-card-tags pink">
                 Digital Watermark / Safety Guardrail / Compliance
               </p>
             </div>
@@ -506,80 +1758,62 @@
       </section>
 
       <!-- Business Model Section -->
-      <section id="business" class="py-32 px-6 bg-[#09090b]">
-        <div class="max-w-7xl mx-auto px-0">
-          <h2 class="text-4xl font-black mb-20 text-center tracking-tighter italic uppercase">
+      <section id="business" class="business-section scroll-animate fade-in-up">
+        <div class="section-container">
+          <h2 class="business-title">
             Business Architecture
           </h2>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div class="business-grid">
             <!-- Model 1 -->
-            <div class="group h-full">
-              <div class="relative overflow-hidden mb-8 h-full">
-                <div
-                  class="absolute inset-0 bg-blue-600/10 group-hover:bg-blue-600/20 transition-all"
-                ></div>
-                <div class="p-4 md:p-8 border border-white/10 bg-black/40 backdrop-blur-sm h-full">
-                  <div class="mb-6 flex items-center gap-4">
-                    <span
-                      class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold italic"
-                      >AI</span
-                    >
-                    <h3 class="text-2xl font-black">AI 비즈링 & 헬스케어</h3>
-                  </div>
-                  <p class="text-gray-300 mb-8 leading-relaxed">
-                    개인화된 목소리로 축하송을 제작하거나, 상황(회의, 운전 등)에 맞는 BGM 합성은
-                    물론, 독거 노인 대상 안부 전화 서비스를 통해 복지 사각지대를 해소합니다.
-                  </p>
-                  <ul class="space-y-3">
-                    <li class="flex items-center gap-3 text-base text-gray-300">
-                      <i class="fas fa-check-circle text-blue-500"></i> 맞춤형 노래 비즈링 & 컬러링
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-gray-300">
-                      <i class="fas fa-check-circle text-blue-500"></i> 자녀 목소리 안부 전화 (치매
-                      예방)
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-gray-300">
-                      <i class="fas fa-check-circle text-blue-500"></i> 통신사 연계 오디오
-                      부가서비스
-                    </li>
-                  </ul>
+            <div class="business-model group">
+              <div class="business-model-bg"></div>
+              <div class="business-model-content">
+                <div class="business-model-header">
+                  <span class="business-model-badge">AI</span>
+                  <h3>AI 비즈링 & 헬스케어</h3>
                 </div>
+                <p class="business-model-description">
+                  개인화된 목소리로 축하송을 제작하거나, 상황(회의, 운전 등)에 맞는 BGM 합성은
+                  물론, 독거 노인 대상 안부 전화 서비스를 통해 복지 사각지대를 해소합니다.
+                </p>
+                <ul class="business-model-list">
+                  <li class="business-model-item">
+                    <i class="fas fa-check-circle"></i> 맞춤형 노래 비즈링 & 컬러링
+                  </li>
+                  <li class="business-model-item">
+                    <i class="fas fa-check-circle"></i> 자녀 목소리 안부 전화 (치매 예방)
+                  </li>
+                  <li class="business-model-item">
+                    <i class="fas fa-check-circle"></i> 통신사 연계 오디오 부가서비스
+                  </li>
+                </ul>
               </div>
             </div>
 
             <!-- Model 2 -->
-            <div class="group h-full">
-              <div class="relative overflow-hidden mb-8 h-full">
-                <div
-                  class="absolute inset-0 bg-pink-600/10 group-hover:bg-pink-600/20 transition-all"
-                ></div>
-                <div class="p-4 md:p-8 border border-white/10 bg-black/40 backdrop-blur-sm h-full">
-                  <div class="mb-6 flex items-center gap-4">
-                    <span
-                      class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center font-bold italic"
-                      >EDU</span
-                    >
-                    <h3 class="text-2xl font-black">AI 디지털 교과서</h3>
-                  </div>
-                  <p class="text-gray-300 mb-8 leading-relaxed">
-                    수학 공식/역사 연표를 노래로 변환하는 '텍스트 기반 자동 암기송'을 통해 공교육
-                    현장의 디지털 전환과 학습 몰입도를 혁신합니다.
-                  </p>
-                  <ul class="space-y-3">
-                    <li class="flex items-center gap-3 text-base text-gray-300">
-                      <i class="fas fa-check-circle text-pink-500"></i> 자동 암기송 & 페르소나 입체
-                      낭독
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-gray-300">
-                      <i class="fas fa-check-circle text-pink-500"></i> 교육 현장 실감형 콘텐츠 지원
-                    </li>
-                    <li class="flex items-center gap-3 text-base text-gray-300">
-                      <i class="fas fa-check-circle text-pink-500"></i> 에듀테크 플랫폼 연동 API
-                      제공
-                    </li>
-                  </ul>
+            <div class="business-model pink group">
+              <div class="business-model-bg"></div>
+              <div class="business-model-content">
+                <div class="business-model-header">
+                  <span class="business-model-badge pink">EDU</span>
+                  <h3>AI 디지털 교과서</h3>
                 </div>
+                <p class="business-model-description">
+                  수학 공식/역사 연표를 노래로 변환하는 '텍스트 기반 자동 암기송'을 통해 공교육
+                  현장의 디지털 전환과 학습 몰입도를 혁신합니다.
+                </p>
+                <ul class="business-model-list">
+                  <li class="business-model-item">
+                    <i class="fas fa-check-circle"></i> 자동 암기송 & 페르소나 입체 낭독
+                  </li>
+                  <li class="business-model-item">
+                    <i class="fas fa-check-circle"></i> 교육 현장 실감형 콘텐츠 지원
+                  </li>
+                  <li class="business-model-item">
+                    <i class="fas fa-check-circle"></i> 에듀테크 플랫폼 연동 API 제공
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -587,29 +1821,29 @@
       </section>
 
       <!-- Vision Section -->
-      <section class="py-24 px-6 bg-gradient-to-b from-transparent to-blue-900/10">
-        <div class="w-full mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-black text-dark mb-8">
+      <section class="vision-section scroll-animate fade-in-up">
+        <div class="vision-container">
+          <h2 class="vision-title">
             "기술에 인간의 마음을 담아 <br />K-AI의 가치를 세계로"
           </h2>
-          <p class="text-dark leading-relaxed mb-12">
+          <p class="vision-description">
             베이직인터내셔널은 음원 제작 비용 90% 절감과 TRL 9단계 달성을 통해 <br />
             정부 주도 디지털 뉴딜 사업의 핵심 파트너로 성장하고 있습니다.
           </p>
-          <div class="flex justify-center gap-12">
-            <div class="text-center">
-              <p class="text-3xl font-black text-blue-500 mb-1">90%+</p>
-              <p class="text-[10px] text-dark uppercase font-bold tracking-widest">
+          <div class="vision-stats">
+            <div class="vision-stat">
+              <p class="vision-stat-value blue">90%+</p>
+              <p class="vision-stat-label">
                 Efficiency
               </p>
             </div>
-            <div class="text-center">
-              <p class="text-3xl font-black text-purple-500 mb-1">TRL 9</p>
-              <p class="text-[10px] text-dark uppercase font-bold tracking-widest">Readiness</p>
+            <div class="vision-stat">
+              <p class="vision-stat-value purple">TRL 9</p>
+              <p class="vision-stat-label">Readiness</p>
             </div>
-            <div class="text-center">
-              <p class="text-3xl font-black text-pink-500 mb-1">CARE</p>
-              <p class="text-[10px] text-dark uppercase font-bold tracking-widest">
+            <div class="vision-stat">
+              <p class="vision-stat-value pink">CARE</p>
+              <p class="vision-stat-label">
                 Prevention
               </p>
             </div>
@@ -623,31 +1857,590 @@
 
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
-  </body>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 
   <script>
     //  @component HeroSection
     document.addEventListener('DOMContentLoaded', () => {
-      render(
-        '#aura-voice',
-        heroBigSection({
-          badgeIcon: 'bi-braces-asterisk',
-          badgeText: 'MuLM BASED SVS TECHNOLOGY REACHED TRL 9',
-          title: '가창을 넘어',
-          titleSub: '삶의 온기를 합성하다',
-          desc: '베이직인터내셔널의 아우라보이스는 단순 음성 합성을 초월합니다.',
-          btnText: '무료 샘플 제작하기',
-          btnHref: 'https://www.auravoice.co.kr/ ',
-          voiceLabel: 'AI Care-Voice Synthesis',
-          statusLeft: 'STATUS: CARE_PIPELINE_ON',
-          statusRight: 'Dementia Prevention',
-          cards: [
-            { label: '초개인화 클로닝', text: '자녀 목소리 복제 (30초 샘플)', color: 'blue' },
-            { label: '정서 케어 알고리즘', text: '감정 교류를 통한 우울감 해소', color: 'purple' },
-            { label: '인지 자극 서비스', text: '매일 안부전화 & 자동 암기송', color: 'pink' },
-          ],
-        }),
-      );
+      const heroSection = `
+        <section class="hero-section">
+          <div class="hero-container">
+            <div class="hero-badge">
+              <i class="bi bi-braces-asterisk"></i>
+              MuLM BASED SVS TECHNOLOGY REACHED TRL 9
+            </div>
+            
+            <div class="hero-content">
+              <h1 class="hero-title">
+                <span>가창을 넘어</span>
+                <span class="hero-subtitle">삶의 온기를 합성하다</span>
+              </h1>
+              <p class="hero-description">
+                베이직인터내셔널의 아우라보이스는 단순 음성 합성을 초월합니다.
+              </p>
+              <a href="https://www.auravoice.co.kr/" class="hero-button">무료 샘플 제작하기</a>
+            </div>
+
+            <div class="hero-info">
+              <div class="hero-voice-label">AI Care-Voice Synthesis</div>
+            </div>
+
+            <div class="hero-status">
+              <div class="hero-status-item left">STATUS: CARE_PIPELINE_ON</div>
+              <div class="hero-status-item right">Dementia Prevention</div>
+            </div>
+
+            <div class="hero-cards">
+              <div class="hero-card blue">
+                <div class="hero-card-label">초개인화 클로닝</div>
+                <div class="hero-card-text">자녀 목소리 복제 (30초 샘플)</div>
+              </div>
+              <div class="hero-card purple">
+                <div class="hero-card-label">정서 케어 알고리즘</div>
+                <div class="hero-card-text">감정 교류를 통한 우울감 해소</div>
+              </div>
+              <div class="hero-card pink">
+                <div class="hero-card-label">인지 자극 서비스</div>
+                <div class="hero-card-text">매일 안부전화 & 자동 암기송</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+      
+      document.querySelector('#aura-voice').insertAdjacentHTML('afterbegin', heroSection);
     });
 
     const fills = document.querySelectorAll('.feature-progress-fill');
@@ -666,5 +2459,32 @@
     );
 
     fills.forEach((el) => observer.observe(el));
+
+    // ===== Scroll Animation with data-scroll (ai-book.html 방식) =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // 모든 메인 섹션에 data-scroll 속성 추가
+      const sections = document.querySelectorAll('main section, #aura-voice section');
+      
+      sections.forEach(section => {
+        if (!section.hasAttribute('data-scroll')) {
+          section.setAttribute('data-scroll', '');
+        }
+      });
+
+      // IntersectionObserver로 viewport 진입 시 visible 클래스 추가
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            scrollObserver.unobserve(entry.target); // 한번만 실행
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
+      });
+
+      sections.forEach((section) => scrollObserver.observe(section));
+    });
   </script>
 </html>
