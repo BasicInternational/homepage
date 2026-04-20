@@ -54,7 +54,7 @@
 
       body {
         font-family: 'Noto Sans KR', sans-serif;
-        background: var(--white);
+        /* background: var(--white); */
         color: var(--text-dark);
         line-height: 1.65;
       }
@@ -496,6 +496,31 @@
     </style>
 
     <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <style>
+      [data-scroll] {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+      }
+      [data-scroll].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      [data-scroll] .card, [data-scroll] .feature-card, [data-scroll] .item {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.7s ease;
+      }
+      [data-scroll].visible .card, [data-scroll].visible .feature-card, [data-scroll].visible .item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      [data-scroll].visible .card:nth-child(1), [data-scroll].visible .feature-card:nth-child(1), [data-scroll].visible .item:nth-child(1) { transition-delay: 0.1s; }
+      [data-scroll].visible .card:nth-child(2), [data-scroll].visible .feature-card:nth-child(2), [data-scroll].visible .item:nth-child(2) { transition-delay: 0.2s; }
+      [data-scroll].visible .card:nth-child(3), [data-scroll].visible .feature-card:nth-child(3), [data-scroll].visible .item:nth-child(3) { transition-delay: 0.3s; }
+      [data-scroll].visible .card:nth-child(4), [data-scroll].visible .feature-card:nth-child(4), [data-scroll].visible .item:nth-child(4) { transition-delay: 0.4s; }
+    </style>
   </head>
   <body data-type="detail">
     <!-- s : 스킵 -->
@@ -984,6 +1009,66 @@
 
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
-  </body>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('main section');
+      sections.forEach(section => {
+        if (!section.hasAttribute('data-scroll')) {
+          section.setAttribute('data-scroll', '');
+        }
+      });
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
+      });
+      sections.forEach((section) => scrollObserver.observe(section));
+    });
+  </script>
 </html>

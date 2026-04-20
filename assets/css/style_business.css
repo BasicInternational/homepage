@@ -1361,10 +1361,8 @@ main section {
 }
 
 .pay-method-card {
-	border-right: 1px solid var(--border);
 	background: var(--white);
-	padding: 0;
-	border-right: 1px solid var(--border);
+	padding: 20px;
 	background: var(--white);
 	text-align: center;
 }
