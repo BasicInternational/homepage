@@ -43,6 +43,385 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="/assets/css/responsive.css" />
+
+    <!-- 섹션 스크롤 애니메이션 -->
+    <style>
+      .section-title::after{
+    display: none;
+}
+      /* 섹션 등장 애니메이션 */
+      [data-scroll] {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+      }
+
+      [data-scroll].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 카드 및 아이템 순차 등장 */
+      [data-scroll] .pay-method-card,
+      [data-scroll] .feature-card,
+      [data-scroll] .preview-item,
+      [data-scroll] .plan-item,
+      [data-scroll] .service-item,
+      [data-scroll] .tech-item {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.7s ease;
+      }
+
+      [data-scroll].visible .pay-method-card,
+      [data-scroll].visible .feature-card,
+      [data-scroll].visible .preview-item,
+      [data-scroll].visible .plan-item,
+      [data-scroll].visible .service-item,
+      [data-scroll].visible .tech-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* nth-child 순차 애니메이션 */
+      [data-scroll].visible .pay-method-card:nth-child(1),
+      [data-scroll].visible .feature-card:nth-child(1),
+      [data-scroll].visible .preview-item:nth-child(1),
+      [data-scroll].visible .plan-item:nth-child(1),
+      [data-scroll].visible .service-item:nth-child(1),
+      [data-scroll].visible .tech-item:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      [data-scroll].visible .pay-method-card:nth-child(2),
+      [data-scroll].visible .feature-card:nth-child(2),
+      [data-scroll].visible .preview-item:nth-child(2),
+      [data-scroll].visible .plan-item:nth-child(2),
+      [data-scroll].visible .service-item:nth-child(2),
+      [data-scroll].visible .tech-item:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      [data-scroll].visible .pay-method-card:nth-child(3),
+      [data-scroll].visible .feature-card:nth-child(3),
+      [data-scroll].visible .preview-item:nth-child(3),
+      [data-scroll].visible .plan-item:nth-child(3),
+      [data-scroll].visible .service-item:nth-child(3),
+      [data-scroll].visible .tech-item:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      [data-scroll].visible .pay-method-card:nth-child(4),
+      [data-scroll].visible .feature-card:nth-child(4),
+      [data-scroll].visible .preview-item:nth-child(4),
+      [data-scroll].visible .plan-item:nth-child(4),
+      [data-scroll].visible .service-item:nth-child(4),
+      [data-scroll].visible .tech-item:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+
+      /* ===== ai-book.html 스타일 ===== */
+      /* 컨테이너 */
+      .inner_section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .inner_section {
+          padding: 0 1rem;
+        }
+      }
+
+      /* 섹션 패딩 */
+      .section-padding {
+        padding: 5rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .section-padding {
+          padding: 3rem 0;
+        }
+      }
+
+      /* 헤로 그리드 */
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      /* 텍스트 센터 */
+      .text-center {
+        text-align: center;
+      }
+
+      /* 그리드 4 */
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+      }
+
+      @media (max-width: 1024px) {
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .grid-4 {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+
+      /* 그리드 3 */
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      @media (max-width: 1024px) {
+        .grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .grid-3 {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+
+      /* Feature Card */
+      .feature-card {
+        padding: 2rem;
+        border-radius: 1rem;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12);
+      }
+
+      .feature-card .step-number {
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        background: #3b82f6;
+        color: white;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 1.125rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .feature-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #1f2937;
+      }
+
+      .feature-card p {
+        color: #6b7280;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .feature-card .step-circle {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Hero 제목 */
+      .hero-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+        color: #1f2937;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 1.875rem;
+        }
+      }
+
+      .hero-desc {
+        font-size: 1.1rem;
+        color: #4b5563;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      /* Section 제목 */
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #1f2937;
+      }
+
+      .section-sub {
+        font-size: 1rem;
+        color: #6b7280;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 1.875rem;
+        }
+      }
+
+      /* Floating 애니메이션 */
+      @keyframes floating {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      /* Flow Steps Responsive */
+      .flow-steps-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .flow-step-cell {
+        flex: 0 1 auto;
+        min-width: 120px;
+        text-align: center;
+      }
+
+      .flow-step-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .flow-step-name {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin: 0;
+      }
+
+      .flow-step-arrow {
+        font-size: 1.5rem;
+        color: #3b82f6;
+        display: inline-block;
+      }
+
+      @media (max-width: 1024px) {
+        .flow-steps-row {
+          gap: 0.75rem;
+        }
+
+        .flow-step-cell {
+          min-width: 100px;
+        }
+
+        .flow-step-icon {
+          font-size: 2rem;
+        }
+
+        .flow-step-arrow {
+          font-size: 1.25rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .flow-steps-row {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .flow-step-cell {
+          width: 100%;
+          padding: 1rem;
+          background: #f9fafb;
+          border-radius: 0.75rem;
+        }
+
+        .flow-step-icon {
+          font-size: 2.25rem;
+        }
+
+        .flow-step-arrow {
+          font-size: 1.5rem;
+          transform: rotate(90deg);
+          margin: 0.75rem 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .flow-steps-row {
+          gap: 1rem;
+        }
+
+        .flow-step-cell {
+          padding: 0.75rem;
+        }
+
+        .flow-step-icon {
+          font-size: 1.75rem;
+        }
+
+        .flow-step-name {
+          font-size: 0.8rem;
+        }
+
+        .flow-step-arrow {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
   </head>
   <body id="tabto-pay" data-type="detail">
     <!-- s : 스킵 -->
@@ -55,169 +434,160 @@
     <div id="header-include"></div>
 
     <main id="container" tabindex="0">
-      <!-- ── OPENING SECTION ── -->
-      <section class="opening-wrap">
-        <div class="opening-left">
-          <h1 class="opening-headline">
-            단순한 결제를 넘어,<br />
-            <em style="padding-right: 8px">경영의 혁신</em>을 완성하다.
-          </h1>
-          <p class="opening-body">
-            탭투페이(Tap to Pay) 기술로 결제 단말기 유지 비용을 제로화하고, 픽업서비스 와 PASS 앱을
-            연동하여 소상공인의 실질적인 매출 증대를 지원하는 생성형 스마트 결제 생태계 구축
-            프로젝트입니다.
-          </p>
-          <!-- <div class="opening-btn-row">
-            <button class="btn-fill">단일유지비 Zero화</button>
-            <button class="btn-ghost">디지털 전환 가속화</button>
-          </div> -->
-        </div>
-        <div class="opening-right">
-          <p class="opening-right-label">스마트 결제 솔루션</p>
-          <p class="opening-right-text">결제 정산업무 간소화</p>
-          <p class="opening-right-text">O2O 접근성 강화</p>
+      <!-- ── HERO SECTION ── -->
+      <section class="section-padding" style="background: white;">
+        <div class="inner_section hero-grid">
+          <div>
+            <div style="display: inline-block; padding: 0.4rem 1rem; background: #dbeafe; color: #2563eb; border-radius: 999px; font-weight: 700; font-size: 0.875rem; margin-bottom: 1.5rem;">
+              💳 스마트 결제 솔루션
+            </div>
+            <h1 class="hero-title">
+              단순한 결제를 넘어,<br />
+              <span class="gradient-text">경영의 혁신</span>을 완성하다.
+            </h1>
+            <p class="hero-desc">
+              탭투페이(Tap to Pay) 기술로 결제 단말기 유지 비용을 제로화하고, 픽업서비스와 PASS 앱을 연동하여 소상공인의 실질적인 매출 증대를 지원하는 생성형 스마트 결제 생태계 구축 프로젝트입니다.
+            </p>
+          </div>
+          <div class="text-center">
+            <div style="background: url('/assets/images/pages/business/bg-02.jpg') center center / cover no-repeat;border-radius: 1rem;padding: 3rem 2rem;color: white;min-height: 300px;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+              <p style="font-size: 0.875rem; margin-bottom: 1rem;">핵심 기술</p>
+              <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">단말 ZERO</p>
+              <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">정산 AUTO</p>
+              <p style="font-size: 1.5rem; font-weight: 700;">페이벡 PLUS</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- ── PLAN STRIP ── -->
-      <div class="plan-strip">
-        <p class="plan-strip-kicker">TECHNOLOGY LABEL</p>
-        <h2 class="flow-section-title">단말 ZERO | 정산 AUTO | 페이벡 PLUS</h2>
-      </div>
+      <!-- ── PAYMENT METHOD SECTION ── -->
+      <section class="section-padding" style="background: #f9fafb;">
+        <div class="inner_section text-center">
+          <h2 class="section-title">
+            결제 방식의<br />
+            <span class="gradient-text">새로운 경험</span>
+          </h2>
+          <p class="section-sub">고객과 점주 모두를 위한 혁신적인 결제 솔루션</p>
 
-      <!-- ── PAYMENT METHOD CARDS ── -->
-      <section class="payment-grid">
-        <div class="pay-method-card">
-          <div class="pay-method-icon-wrap"><i class="bi bi-credit-card-2-front"></i></div>
-          <h3 class="pay-method-title">TAP TO PAY (NFC)</h3>
-          <p class="pay-method-desc">
-            단말기 없이 스마트폰으로 결제하는 경험으로 빠르게,<br />
-            어디서나, 간편하게 결제 서비스를 제공합니다.
-          </p>
-          <span class="pay-method-tag">✓ 애플리케이션 추가 연계</span>
-        </div>
+          <div class="grid-4" style="max-width: 100%;">
+            <div class="pay-method-card">
+              <div class="pay-method-icon-wrap"><i class="bi bi-credit-card-2-front" style="font-size: 2.5rem; color: #3b82f6;"></i></div>
+              <h3 class="pay-method-title">TAP TO PAY (NFC)</h3>
+              <p class="pay-method-desc">
+                단말기 없이 스마트폰으로 결제하는 경험으로 빠르게,<br />
+                어디서나, 간편하게 결제 서비스를 제공합니다.
+              </p>
+              <span class="pay-method-tag">✓ 애플리케이션 추가 연계</span>
+            </div>
 
-        <div class="pay-method-card">
-          <div class="pay-method-icon-wrap"><i class="bi bi-qr-code"></i></div>
-          <h3 class="pay-method-title">QR / 간편결제</h3>
-          <p class="pay-method-desc">
-            QR코드 기반의 간편결제와 다양한 페이 수단의 연계를 통해<br />
-            고객의 결제 방식을 자유롭게 선택할 수 있도록 합니다.
-          </p>
-          <span class="pay-method-tag">✓ 다양한 결제수단 지원</span>
+            <div class="pay-method-card">
+              <div class="pay-method-icon-wrap"><i class="bi bi-qr-code" style="font-size: 2.5rem; color: #10b981;"></i></div>
+              <h3 class="pay-method-title">QR / 간편결제</h3>
+              <p class="pay-method-desc">
+                QR코드 기반의 간편결제와 다양한 페이 수단의 연계를 통해<br />
+                고객의 결제 방식을 자유롭게 선택할 수 있도록 합니다.
+              </p>
+              <span class="pay-method-tag">✓ 다양한 결제수단 지원</span>
+            </div>
+
+            <div class="pay-method-card">
+              <div class="pay-method-icon-wrap"><i class="bi bi-cash-coin" style="font-size: 2.5rem; color: #f59e0b;"></i></div>
+              <h3 class="pay-method-title">정산 자동화</h3>
+              <p class="pay-method-desc">
+                모든 거래가 자동으로 정리되고 정산되어<br />
+                점주의 업무 부담을 획기적으로 감소시킵니다.
+              </p>
+              <span class="pay-method-tag">✓ 수동 정산 제로화</span>
+            </div>
+
+            <div class="pay-method-card">
+              <div class="pay-method-icon-wrap"><i class="bi bi-gift" style="font-size: 2.5rem; color: #ec4899;"></i></div>
+              <h3 class="pay-method-title">페이백 PLUS</h3>
+              <p class="pay-method-desc">
+                고객 맞춤형 페이백과 포인트 적립으로<br />
+                재방문율을 높이고 매출을 증대합니다.
+              </p>
+              <span class="pay-method-tag">✓ 고객 충성도 강화</span>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- ── ICON FEATURE ROW ── -->
-      <section class="icon-row">
-        <div class="icon-row-item">
-          <div class="icon-row-symbol">
-            <i class="bi bi-credit-card"></i>
+
+      <!-- ── FEATURES SECTION ── -->
+      <section class="section-padding" style="background: white;">
+        <div class="inner_section text-center">
+          <h2 class="section-title">
+            핵심 기능<br />
+            <span class="gradient-text">자세히 살펴보기</span>
+          </h2>
+          <p class="section-sub">점주의 편의와 고객 만족을 모두 높이는 기능들</p>
+
+          <div class="grid-4">
+            <div class="feature-card">
+              <div class="icon">💳</div>
+              <h3>통합 수납</h3>
+              <p>모든 결제 수단이 하나로 통합되어 정산이 간편합니다.</p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">📜</div>
+              <h3>전자영수증 자동</h3>
+              <p>거래 완료 시 자동으로 전자영수증이 발행됩니다.</p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">⏱️</div>
+              <h3>정리 시간 절감</h3>
+              <p>수동 정산 과정을 완전히 제거하여 시간을 절감합니다.</p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">🎁</div>
+              <h3>페이백 혜택</h3>
+              <p>고객 맞춤형 페이백으로 재방문율을 높입니다.</p>
+            </div>
           </div>
-          <p class="icon-row-label">통합 수납</p>
-        </div>
-        <div class="icon-row-item">
-          <div class="icon-row-symbol"><i class="bi bi-credit-card-2-front"></i></div>
-          <p class="icon-row-label">전자영수증 자동</p>
-        </div>
-        <div class="icon-row-item">
-          <div class="icon-row-symbol"><i class="bi bi-clock-history"></i></div>
-          <p class="icon-row-label">정리 시간 절감</p>
-        </div>
-        <div class="icon-row-item">
-          <div class="icon-row-symbol"><i class="bi bi-cash-coin"></i></div>
-          <p class="icon-row-label">페이백 혜택</p>
         </div>
       </section>
 
-      <!-- ── PAYMENT FLOW SECTION ── -->
-      <section class="flow-section">
-        <h2 class="flow-section-title">
-          결제 부터 혜택까지<br class="mo-br" />
-          자동 처리
-        </h2>
-        <p class="flow-section-sub">
-          모든 단계는 점주와 고객의 개입을 최소화하여 데이터로 연결됩니다
-        </p>
+      <!-- ── FLOW SECTION ── -->
+      <section class="section-padding" style="background: #f9fafb;">
+        <div class="inner_section text-center">
+          <h2 class="section-title">
+            결제부터 혜택까지<br />
+            <span class="gradient-text">자동 처리</span>
+          </h2>
+          <p class="section-sub">모든 단계가 자동으로 처리되는 스마트한 흐름</p>
 
-        <div class="flow-steps-row">
-          <div class="flow-step-cell">
-            <div class="flow-step-icon"><i class="bi bi-calculator"></i></div>
-            <p class="flow-step-name">금액 입력</p>
-          </div>
-
-          <i class="bi bi-arrow-right flow-step-arrow"></i>
-
-          <div class="flow-step-cell">
-            <div class="flow-step-icon"><i class="bi bi-credit-card"></i></div>
-            <p class="flow-step-name">결제 (NFC/QR/Pay)</p>
-          </div>
-
-          <i class="bi bi-arrow-right flow-step-arrow"></i>
-
-          <div class="flow-step-cell">
-            <div class="flow-step-icon"><i class="bi bi-credit-card"></i></div>
-            <p class="flow-step-name">결제 완료</p>
-          </div>
-
-          <i class="bi bi-arrow-right flow-step-arrow"></i>
-
-          <div class="flow-step-cell">
-            <div class="flow-step-icon"><i class="bi bi-card-checklist"></i></div>
-            <p class="flow-step-name">전자영수증 생성</p>
-          </div>
-
-          <i class="bi bi-arrow-right flow-step-arrow"></i>
-
-          <div class="flow-step-cell">
-            <div class="flow-step-icon"><i class="bi bi-credit-card-2-front"></i></div>
-            <p class="flow-step-name">자동 정리</p>
-          </div>
-
-          <i class="bi bi-arrow-right flow-step-arrow"></i>
-
-          <div class="flow-step-cell">
-            <div class="flow-step-icon"><i class="bi bi-cash-coin"></i></div>
-            <p class="flow-step-name">페이백 누적/지급</p>
-          </div>
-        </div>
-
-        <div class="flow-benefit-grid">
-          <div class="flow-benefit-item">
-            <div class="flow-benefit-icon">&#35;</div>
-            <div>
-              <p class="flow-benefit-title">쉬운 결제</p>
-              <p class="flow-benefit-desc">
-                탭투페이, QR, 간편결제를 우리 매장과 함께 관리하여 고객의 모든 결제 방식을 한
-                화면에서 처리합니다.
-              </p>
+          <div class="flow-steps-row">
+            <div class="flow-step-cell">
+              <div class="flow-step-icon"><i class="bi bi-calculator"></i></div>
+              <p class="flow-step-name">금액 입력</p>
             </div>
-          </div>
-          <div class="flow-benefit-item">
-            <div class="flow-benefit-icon">&#35;</div>
-            <div>
-              <p class="flow-benefit-title">정산업무 감소</p>
-              <p class="flow-benefit-desc">
-                결제와 동시에 전자영수증이 자동 발행/보관되어, 정산 정리 시간을 획기적으로
-                절감합니다.
-              </p>
+
+            <i class="bi bi-arrow-right flow-step-arrow"></i>
+
+            <div class="flow-step-cell">
+              <div class="flow-step-icon"><i class="bi bi-credit-card"></i></div>
+              <p class="flow-step-name">결제</p>
             </div>
-          </div>
-          <div class="flow-benefit-item">
-            <div class="flow-benefit-icon">&#35;</div>
-            <div>
-              <p class="flow-benefit-title">현금성(적립금) 혜택</p>
-              <p class="flow-benefit-desc">
-                결제 건별로 페이백(적립금)이 자동 누적되며, 실질적인 경영 지원금으로 돌아옵니다.
-              </p>
+
+            <i class="bi bi-arrow-right flow-step-arrow"></i>
+
+            <div class="flow-step-cell">
+              <div class="flow-step-icon"><i class="bi bi-check-circle"></i></div>
+              <p class="flow-step-name">완료</p>
             </div>
-          </div>
-          <div class="flow-benefit-item">
-            <div class="flow-benefit-icon">&#35;</div>
-            <div>
-              <p class="flow-benefit-title">혜택 알림</p>
-              <p class="flow-benefit-desc">
-                앱 내에서 전자영수증, 페이백 누적액, 지급 결과를 실시간으로 즉시 확인 가능합니다.
-              </p>
+
+            <i class="bi bi-arrow-right flow-step-arrow"></i>
+
+            <div class="flow-step-cell">
+              <div class="flow-step-icon"><i class="bi bi-card-checklist"></i></div>
+              <p class="flow-step-name">영수증</p>
+            </div>
+
+            <i class="bi bi-arrow-right flow-step-arrow"></i>
+
+            <div class="flow-step-cell">
+              <div class="flow-step-icon"><i class="bi bi-gift"></i></div>
+              <p class="flow-step-name">혜택 적립</p>
             </div>
           </div>
         </div>
@@ -287,9 +657,112 @@
 
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
-  </body>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 모든 메인 섹션에 data-scroll 속성 추가
+      const sections = document.querySelectorAll('main section');
+      
+      sections.forEach(section => {
+        if (!section.hasAttribute('data-scroll')) {
+          section.setAttribute('data-scroll', '');
+        }
+      });
+
+      // IntersectionObserver로 viewport 진입 시 visible 클래스 추가
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            scrollObserver.unobserve(entry.target); // 한번만 실행
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
+      });
+
+      sections.forEach((section) => scrollObserver.observe(section));
+    });
+
+    // Progress bar 애니메이션
     const fills = document.querySelectorAll('.feature-progress-fill');
     const observer = new IntersectionObserver(
       (entries) => {
