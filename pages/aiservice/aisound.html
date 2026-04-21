@@ -1305,6 +1305,45 @@
       }
 
       /* ===== Responsive Design ===== */
+      @media (max-width: 767px) {
+        .vision-section {
+          padding: 3rem 1.5rem;
+        }
+
+        .vision-title {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+          line-height: 1.4;
+        }
+
+        .vision-description {
+          font-size: 0.875rem;
+          margin-bottom: 2rem;
+          line-height: 1.5;
+        }
+
+        .vision-stats {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .vision-stat {
+          text-align: center;
+        }
+
+        .vision-stat-value {
+          font-size: 1.5rem;
+          font-weight: 900;
+          margin-bottom: 0.25rem;
+        }
+
+        .vision-stat-label {
+          font-size: 0.5rem;
+          font-weight: 700;
+        }
+      }
+
       @media (min-width: 768px) {
         .md\:flex-row {
           flex-direction: row;
@@ -1363,6 +1402,22 @@
         }
 
         .vision-title {
+          font-size: 1.875rem;
+        }
+
+        .vision-description {
+          font-size: 1rem;
+        }
+
+        .vision-stats {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .vision-stat-value {
           font-size: 1.875rem;
         }
 
