@@ -41,6 +41,42 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <style>
+      .experience-projects__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      /* Responsive Grid */
+      @media (max-width: 1280px) {
+        .experience-projects__grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .experience-projects__grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .experience-projects__grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .experience-projects__grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+    </style>
   </head>
   <body data-type="detail">
     <!-- s : 스킵 -->
