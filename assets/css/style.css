@@ -1109,7 +1109,8 @@ footer .footer__inner .footer__copyright {
 	}
 
 	header .header__wrap {
-		padding: 20px 0px;
+
+		/* padding: 20px 0px; */
 	}
 
 	header .header__wrap .bi__logo {

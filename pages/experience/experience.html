@@ -41,6 +41,27 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <style>
+      .experience-projects__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 1200px) {
+        .experience-projects__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .experience-projects__grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body data-type="detail">
     <!-- s : 스킵 -->

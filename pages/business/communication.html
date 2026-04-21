@@ -262,6 +262,71 @@
       }
 
       /* ══════════════════════════════
+       EFFECT AREA - RESPONSIVE
+    ══════════════════════════════ */
+      @media (max-width: 767px) {
+        .effect-area {
+          padding: 40px 1.5rem;
+        }
+
+        .effect-card-wrap {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .effect-item {
+          padding: 20px 16px;
+        }
+
+        .effect-item-title {
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+
+        .effect-item-desc {
+          font-size: 12px;
+          line-height: 1.7;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .effect-area {
+          padding: 50px 1.5rem;
+        }
+
+        .effect-card-wrap {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+
+        .effect-item {
+          padding: 16px 20px;
+        }
+
+        .effect-item-title {
+          font-size: 15px;
+        }
+
+        .effect-item-desc {
+          font-size: 13px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .effect-area {
+          padding: 70px 2rem;
+          max-width: 1280px;
+          margin: 0 auto;
+        }
+
+        .effect-card-wrap {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+      }
+
+      /* ══════════════════════════════
        COMPANY FOOTER
     ══════════════════════════════ */
       .company-bottom {

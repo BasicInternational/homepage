@@ -520,6 +520,395 @@
       [data-scroll].visible .card:nth-child(2), [data-scroll].visible .feature-card:nth-child(2), [data-scroll].visible .item:nth-child(2) { transition-delay: 0.2s; }
       [data-scroll].visible .card:nth-child(3), [data-scroll].visible .feature-card:nth-child(3), [data-scroll].visible .item:nth-child(3) { transition-delay: 0.3s; }
       [data-scroll].visible .card:nth-child(4), [data-scroll].visible .feature-card:nth-child(4), [data-scroll].visible .item:nth-child(4) { transition-delay: 0.4s; }
+
+      /* ══════════════════════════════
+         RESPONSIVE STYLES
+      ══════════════════════════════ */
+      @media (max-width: 767px) {
+        .commerce-splash {
+          padding: 40px 20px 50px;
+        }
+
+        .splash-tag {
+          font-size: 9px;
+        }
+
+        .splash-title {
+          font-size: 28px;
+        }
+
+        .splash-desc {
+          font-size: 13px;
+        }
+
+        .intro-section {
+          padding: 40px 20px;
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .intro-main-text {
+          font-size: 20px;
+          margin-bottom: 16px;
+        }
+
+        .intro-body-text {
+          font-size: 12px;
+          margin-bottom: 20px;
+        }
+
+        .intro-bullet-list li {
+          font-size: 12px;
+          gap: 8px;
+        }
+
+        .intro-right {
+          padding: 20px 16px;
+        }
+
+        .intro-badge-icon {
+          width: 56px;
+          height: 56px;
+          margin-bottom: 12px;
+        }
+
+        .intro-badge-icon svg {
+          width: 28px;
+          height: 28px;
+        }
+
+        .intro-badge-name {
+          font-size: 12px;
+        }
+
+        .intro-badge-desc {
+          font-size: 10px;
+        }
+
+        .solution-section {
+          padding: 40px 20px;
+        }
+
+        .section-tag {
+          font-size: 9px;
+          letter-spacing: 1.5px;
+          margin-bottom: 8px;
+        }
+
+        .section-heading {
+          font-size: 22px;
+          margin-bottom: 32px;
+        }
+
+        .solution-card-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .sol-card {
+          padding: 24px 20px;
+        }
+
+        .sol-card-icon {
+          width: 44px;
+          height: 44px;
+          margin-bottom: 12px;
+        }
+
+        .sol-card-icon svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .sol-card-title {
+          font-size: 13px;
+          margin-bottom: 8px;
+        }
+
+        .sol-card-desc {
+          font-size: 11px;
+          line-height: 1.7;
+        }
+
+        .effect-section {
+          padding: 40px 20px;
+        }
+
+        .effect-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          margin-top: 32px;
+        }
+
+        .effect-card {
+          padding: 24px 20px;
+        }
+
+        .effect-card-title {
+          font-size: 13px;
+          margin-bottom: 8px;
+        }
+
+        .effect-card-desc {
+          font-size: 11px;
+          line-height: 1.7;
+        }
+
+        .footer-wrap {
+          padding: 30px 20px 20px;
+        }
+
+        .footer-brand-name {
+          font-size: 14px;
+          margin-bottom: 14px;
+        }
+
+        .footer-info-list {
+          gap: 6px;
+          margin-bottom: 18px;
+        }
+
+        .footer-info-key {
+          font-size: 9px;
+          min-width: 50px;
+        }
+
+        .footer-info-val {
+          font-size: 10px;
+        }
+
+        .footer-copy {
+          font-size: 9px;
+          padding-top: 14px;
+        }
+
+        .edu-feature-section {
+          padding: 50px 20px;
+        }
+
+        .edu-feature-header {
+          margin-bottom: 40px;
+        }
+
+        .edu-feature-title {
+          font-size: 24px;
+        }
+
+        .edu-card-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .edu-card {
+          padding: 24px 20px;
+        }
+
+        .edu-card-icon {
+          width: 48px;
+          height: 48px;
+          margin-bottom: 16px;
+        }
+
+        .edu-card-icon svg {
+          width: 24px;
+          height: 24px;
+        }
+
+        .edu-card-title {
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+
+        .edu-card-desc {
+          font-size: 12px;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .commerce-splash {
+          padding: 50px 30px 60px;
+        }
+
+        .intro-section {
+          padding: 50px 30px;
+          grid-template-columns: 1fr 250px;
+          gap: 40px;
+        }
+
+        .intro-main-text {
+          font-size: 22px;
+        }
+
+        .intro-body-text {
+          font-size: 13px;
+        }
+
+        .solution-section {
+          padding: 50px 30px;
+        }
+
+        .section-heading {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+
+        .solution-card-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+
+        .sol-card {
+          padding: 24px 20px;
+        }
+
+        .effect-section {
+          padding: 50px 30px;
+        }
+
+        .effect-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          margin-top: 40px;
+        }
+
+        .effect-card {
+          padding: 24px 20px;
+        }
+
+        .footer-wrap {
+          padding: 35px 30px 24px;
+        }
+
+        .edu-feature-section {
+          padding: 60px 30px;
+        }
+
+        .edu-feature-title {
+          font-size: 28px;
+        }
+
+        .edu-card-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+
+        .edu-card {
+          padding: 28px 24px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .commerce-splash {
+          padding: 68px 60px 80px;
+        }
+
+        .intro-section {
+          padding: 68px 60px;
+          grid-template-columns: 1fr 280px;
+          gap: 52px;
+        }
+
+        .solution-section {
+          padding: 68px 60px;
+        }
+
+        .solution-card-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .effect-section {
+          padding: 68px 60px;
+        }
+
+        .effect-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-wrap {
+          padding: 40px 60px 28px;
+        }
+
+        .edu-feature-section {
+          padding: 80px 60px;
+        }
+
+        .edu-card-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* ══════════════════════════════
+         EFFECT SECTION RESPONSIVE
+      ══════════════════════════════ */
+      @media (max-width: 767px) {
+        #effect-section {
+          padding: 40px 20px !important;
+        }
+
+        #effect-section > div:first-child {
+          margin-bottom: 40px !important;
+        }
+
+        #effect-section h2 {
+          font-size: 24px !important;
+        }
+
+        #effect-section p.sec-eyebrow {
+          font-size: 9px !important;
+          margin-bottom: 10px !important;
+          letter-spacing: 1px;
+        }
+
+        #effect-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+
+        #effect-grid > div {
+          padding: 20px 16px !important;
+        }
+
+        #effect-grid h3 {
+          font-size: 14px !important;
+          margin-bottom: 10px !important;
+        }
+
+        #effect-grid p {
+          font-size: 12px !important;
+          line-height: 1.7 !important;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        #effect-section {
+          padding: 50px 30px !important;
+        }
+
+        #effect-section > div:first-child {
+          margin-bottom: 50px !important;
+        }
+
+        #effect-section h2 {
+          font-size: 28px !important;
+        }
+
+        #effect-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 20px !important;
+        }
+
+        #effect-grid > div {
+          padding: 28px 24px !important;
+        }
+
+        #effect-grid h3 {
+          font-size: 16px !important;
+        }
+
+        #effect-grid p {
+          font-size: 13px !important;
+        }
+      }
     </style>
   </head>
   <body data-type="detail">
@@ -886,7 +1275,7 @@
       </section>
 
       <!-- ── EFFECT SECTION ── -->
-      <section style="padding: 80px; background: #ffffff">
+      <section id="effect-section" style="padding: 80px; background: #ffffff">
         <div style="text-align: center; margin-bottom: 60px">
           <p style="text-transform: uppercase; margin-bottom: 14px" class="sec-eyebrow">
             BUSINESS BENEFITS
@@ -896,7 +1285,7 @@
           </h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px">
+        <div id="effect-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px">
           <div
             style="
               padding: 32px 28px 32px 32px;

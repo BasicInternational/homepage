@@ -68,6 +68,306 @@
       [data-scroll].visible .card:nth-child(2), [data-scroll].visible .feature-card:nth-child(2), [data-scroll].visible .item:nth-child(2) { transition-delay: 0.2s; }
       [data-scroll].visible .card:nth-child(3), [data-scroll].visible .feature-card:nth-child(3), [data-scroll].visible .item:nth-child(3) { transition-delay: 0.3s; }
       [data-scroll].visible .card:nth-child(4), [data-scroll].visible .feature-card:nth-child(4), [data-scroll].visible .item:nth-child(4) { transition-delay: 0.4s; }
+
+      /* ══════════════════════════════
+         ORBIT DIAGRAM - DESKTOP DEFAULT
+      ══════════════════════════════ */
+      .orbit-diagram {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      .orbit-ring {
+        position: absolute;
+        inset: 0;
+        border: 2px solid rgba(124, 58, 237, 0.2);
+        border-radius: 50%;
+      }
+
+      .center-circle {
+        display: flex;
+        position: absolute;
+        inset: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(124, 58, 237, 0.1);
+        border: 2px solid rgba(124, 58, 237, 0.3);
+        font-weight: 700;
+        color: #7c3aed;
+        font-size: 14px;
+        z-index: 10;
+      }
+
+      .node {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .node-dot {
+        width: 12px;
+        height: 12px;
+        background: #7c3aed;
+        border-radius: 50%;
+        box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+      }
+
+      .node-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #1f2937;
+        line-height: 1.4;
+        text-align: center;
+        max-width: 80px;
+        white-space: normal;
+      }
+
+      /* Node Positions - Desktop */
+      .node-top {
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .node-topright {
+        top: 14%;
+        right: 3%;
+        left: auto;
+      }
+
+      .node-right {
+        top: 50%;
+        right: -33px;
+        transform: translateY(-50%);
+        left: auto;
+      }
+
+      .node-botright {
+        bottom: 14%;
+        right: -9%;
+        left: auto;
+      }
+
+      .node-bot {
+        bottom: -54px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: auto;
+      }
+
+      .node-botleft {
+        bottom: 14%;
+        left: 14%;
+      }
+
+      .node-left-lower {
+        top: 50%;
+        left: -33px;
+        transform: translateY(-50%);
+      }
+
+      .node-left-upper {
+        top: 14%;
+        left: 19%;
+      }
+
+      /* ══════════════════════════════
+         MOBILE - LIST LAYOUT
+      ══════════════════════════════ */
+      @media (max-width: 1023px) {
+        .orbit-diagram {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          position: relative;
+          width: 100%;
+          aspect-ratio: auto;
+          max-width: none;
+          margin: 0;
+          height: auto;
+        }
+
+        .orbit-ring,
+        .center-circle {
+          display: none;
+        }
+
+        .node {
+          position: static;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 12px;
+          background: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 8px;
+          padding: 16px;
+          transform: none;
+          top: auto;
+          right: auto;
+          bottom: auto;
+          left: auto;
+        }
+
+        .node-dot {
+          width: 10px;
+          height: 10px;
+          flex-shrink: 0;
+        }
+
+        .node-label {
+          font-size: 13px;
+          text-align: left;
+          max-width: 100%;
+        }
+
+        /* Reset all node positions for mobile */
+        .node-top,
+        .node-topright,
+        .node-right,
+        .node-botright,
+        .node-bot,
+        .node-botleft,
+        .node-left-lower,
+        .node-left-upper {
+          position: static !important;
+          transform: none !important;
+          top: auto !important;
+          right: auto !important;
+          bottom: auto !important;
+          left: auto !important;
+        }
+
+        /* node-botleft: node-dot 앞에 오기 */
+        .node-botleft {
+          flex-direction: row;
+        }
+
+        .node-botleft .node-dot {
+          order: -1;
+        }
+
+        .node-botleft .node-label {
+          order: 1;
+        }
+      }
+
+      /* Content Row Responsive */
+      .content-row {
+        display: grid;
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      @media (max-width: 1023px) {
+        .content-row {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .content-row {
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+        }
+      }
+
+      .info-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 32px;
+        width: 100%;
+      }
+
+      @media (max-width: 1023px) {
+        .info-card {
+          padding: 24px;
+        }
+      }
+
+      .card-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 1023px) {
+        .card-title {
+          font-size: 16px;
+          margin-bottom: 16px;
+        }
+      }
+
+      .info-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .info-card li {
+        font-size: 14px;
+        color: #4b5563;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      @media (max-width: 1023px) {
+        .info-card li {
+          font-size: 13px;
+        }
+      }
+
+      .info-card li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #7c3aed;
+        font-weight: 700;
+      }
+
+      .section-wrapper {
+        padding: 80px 60px;
+        background: #f9fafb;
+      }
+
+      @media (max-width: 767px) {
+        .section-wrapper {
+          padding: 40px 20px;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .section-wrapper {
+          padding: 60px 30px;
+        }
+      }
+
+      .system-title {
+        font-size: 32px;
+        font-weight: 900;
+        color: #1f2937;
+        margin-bottom: 40px;
+      }
+
+      @media (max-width: 1023px) {
+        .system-title {
+          font-size: 24px;
+          margin-bottom: 30px;
+        }
+      }
     </style>
   </head>
   <body data-type="detail">
@@ -445,6 +745,120 @@
         sections.forEach((section) => scrollObserver.observe(section));
       });
     </script>
-  </body>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
   <script src="https://cdn.tailwindcss.com"></script>
 </html>
