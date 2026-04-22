@@ -2053,6 +2053,7 @@ main section {
 	grid-template-columns: 1fr auto;
 	align-items: center;
 	gap: 40px;
+	max-width: 100%;
 }
 
 .cta-bar-left {
