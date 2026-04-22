@@ -848,6 +848,43 @@
 
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.querySelector('.syncany-hero');
+        const nextSection = document.querySelector('#work');
+
+        if (!heroSection || !nextSection) return;
+
+        let isScrolling = false;
+        let scrollTimeout;
+
+        heroSection.addEventListener(
+          'wheel',
+          (e) => {
+            if (isScrolling || e.deltaY < 0) return;
+
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+
+            if (heroBottom > windowHeight * 0.3) {
+              e.preventDefault();
+              isScrolling = true;
+
+              nextSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+              }, 1000);
+            }
+          },
+          { passive: false },
+        );
+      });
+    </script>
   <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
