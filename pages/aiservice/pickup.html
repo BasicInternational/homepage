@@ -29,6 +29,47 @@
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <style>
+      [data-scroll] {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+      }
+
+      [data-scroll].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-scroll] .biz-step,
+      [data-scroll] .dual-panel {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.7s ease;
+      }
+
+      [data-scroll].visible .biz-step,
+      [data-scroll].visible .dual-panel {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-scroll].visible .biz-step:nth-child(1),
+      [data-scroll].visible .dual-panel:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      [data-scroll].visible .biz-step:nth-child(2),
+      [data-scroll].visible .dual-panel:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      [data-scroll].visible .biz-step:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+    </style>
+
     <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/assets/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -224,6 +265,34 @@
           }, 1000);
         }
       }, { passive: false });
+    });
+
+    // ===== 섹션 스크롤 애니메이션 =====
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('main section');
+
+      sections.forEach((section) => {
+        if (!section.hasAttribute('data-scroll')) {
+          section.setAttribute('data-scroll', '');
+        }
+      });
+
+      const scrollObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+          rootMargin: '0px 0px -80px 0px',
+        },
+      );
+
+      sections.forEach((section) => scrollObserver.observe(section));
     });
   </script>
 </html>
