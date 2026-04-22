@@ -1492,5 +1492,33 @@
       // Initialize first step as active
       setActiveStep(0);
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('main section');
+
+        sections.forEach((section) => {
+          if (!section.hasAttribute('data-scroll')) {
+            section.setAttribute('data-scroll', '');
+          }
+        });
+
+        const scrollObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                scrollObserver.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px',
+          },
+        );
+
+        sections.forEach((section) => scrollObserver.observe(section));
+      });
+    </script>
   </body>
 </html>

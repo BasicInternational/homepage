@@ -33,6 +33,58 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <style>
+      [data-scroll] {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+      }
+
+      [data-scroll].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-scroll] .cloud-tab-card,
+      [data-scroll] .effect-card,
+      [data-scroll] .intro-bullet-list li {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.7s ease;
+      }
+
+      [data-scroll].visible .cloud-tab-card,
+      [data-scroll].visible .effect-card,
+      [data-scroll].visible .intro-bullet-list li {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-scroll].visible .cloud-tab-card:nth-child(1),
+      [data-scroll].visible .effect-card:nth-child(1),
+      [data-scroll].visible .intro-bullet-list li:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      [data-scroll].visible .cloud-tab-card:nth-child(2),
+      [data-scroll].visible .effect-card:nth-child(2),
+      [data-scroll].visible .intro-bullet-list li:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      [data-scroll].visible .cloud-tab-card:nth-child(3),
+      [data-scroll].visible .effect-card:nth-child(3),
+      [data-scroll].visible .intro-bullet-list li:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      [data-scroll].visible .cloud-tab-card:nth-child(4),
+      [data-scroll].visible .effect-card:nth-child(4),
+      [data-scroll].visible .intro-bullet-list li:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+    </style>
   </head>
   <body data-type="detail">
     <!-- s : 스킵 -->
