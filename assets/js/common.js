@@ -114,7 +114,8 @@ const gnb = {
 
 window.addEventListener('scroll', function () {
   let pos = window.scrollY;
-  if (gnb.pageType !== 'detail') return;
+  const isIndexPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+  if (gnb.pageType !== 'detail' && !isIndexPage) return;
   gnb.headerInvert(pos);
   gnb.headerDirection(pos);
 });

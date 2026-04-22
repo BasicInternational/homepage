@@ -102,7 +102,7 @@ header {
 	width: 100%;
 }
 
-header.fix_header .header__wrap {
+header.fix_header {
 	background: rgba(255, 255, 255, 0.96);
 	box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
 	backdrop-filter: blur(6px);
@@ -124,6 +124,7 @@ header.bi__header.is-scroll-hidden {
 
 header.bi__header.fix_header .header__wrap {
 	padding: 14px 24px;
+	max-width: 1480px;
 }
 
 header.bi__header.fix_header .header__wrap .bi__tabs ul li {
@@ -165,8 +166,7 @@ header.bi__header.fix_header .header__wrap .mega-menu__col li a {
 }
 
 header .header__wrap {
-
-	/* max-width: 1440px; */
+	max-width: 1440px;
 	width: 100%;
 	padding: 25px 30px;
 	position: relative;
