@@ -2579,5 +2579,39 @@
 
       sections.forEach((section) => scrollObserver.observe(section));
     });
+
+    // ===== Hero 섹션 휠 스크롤 자동 이동 =====
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroSection = document.querySelector('.hero-section');
+      const nextSection = document.querySelector('#healthcare');
+      
+      if (!heroSection || !nextSection) return;
+      
+      let isScrolling = false;
+      let scrollTimeout;
+
+      heroSection.addEventListener('wheel', (e) => {
+        if (isScrolling || e.deltaY < 0) return;
+        
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        
+        if (heroBottom > windowHeight * 0.3) {
+          e.preventDefault();
+          isScrolling = true;
+          
+          const targetPosition = nextSection.offsetTop;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+          }, 1000);
+        }
+      }, { passive: false });
+    });
   </script>
 </html>

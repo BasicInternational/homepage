@@ -591,51 +591,83 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-  </body>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('/pages/include/header.html')
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById('header-include').innerHTML = html;
+            initCommon();
+          });
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('/pages/include/header.html')
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById('header-include').innerHTML = html;
-          initCommon();
-        });
+        fetch('/pages/include/footer.html')
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById('footer-include').innerHTML = html;
+          });
 
-      fetch('/pages/include/footer.html')
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById('footer-include').innerHTML = html;
-        });
-
-      fetch('/pages/include/floating-menu.html')
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById('floating-menu-include').innerHTML = html;
-        });
-    });
-  </script>
-  <script>
-    // ===== 스크롤 애니메이션 (data-scroll) =====
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('main section');
-      sections.forEach(section => {
-        if (!section.hasAttribute('data-scroll')) {
-          section.setAttribute('data-scroll', '');
-        }
+        fetch('/pages/include/floating-menu.html')
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById('floating-menu-include').innerHTML = html;
+          });
       });
-      const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            scrollObserver.unobserve(entry.target);
+    </script>
+    <script>
+      // ===== 스크롤 애니메이션 (data-scroll) =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('main section');
+        sections.forEach(section => {
+          if (!section.hasAttribute('data-scroll')) {
+            section.setAttribute('data-scroll', '');
           }
         });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px'
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -80px 0px'
+        });
+        sections.forEach((section) => scrollObserver.observe(section));
       });
-      sections.forEach((section) => scrollObserver.observe(section));
-    });
-  </script>
+
+      // ===== Hero 섹션 휠 스크롤 자동 이동 =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.querySelector('.sync-eta-hero');
+        const nextSection = document.querySelector('.sync-eta-features');
+        
+        if (!heroSection || !nextSection) return;
+        
+        let isScrolling = false;
+        let scrollTimeout;
+
+        heroSection.addEventListener('wheel', (e) => {
+          if (isScrolling || e.deltaY < 0) return;
+          
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          const windowHeight = window.innerHeight;
+          
+          if (heroBottom > windowHeight * 0.3) {
+            e.preventDefault();
+            isScrolling = true;
+            
+            nextSection.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+              isScrolling = false;
+            }, 1000);
+          }
+        }, { passive: false });
+      });
+    </script>
+  </body>
 </html>
