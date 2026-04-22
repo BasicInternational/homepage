@@ -69,6 +69,9 @@
       [data-scroll].visible .card:nth-child(2), [data-scroll].visible .feature-card:nth-child(2), [data-scroll].visible .item:nth-child(2) { transition-delay: 0.2s; }
       [data-scroll].visible .card:nth-child(3), [data-scroll].visible .feature-card:nth-child(3), [data-scroll].visible .item:nth-child(3) { transition-delay: 0.3s; }
       [data-scroll].visible .card:nth-child(4), [data-scroll].visible .feature-card:nth-child(4), [data-scroll].visible .item:nth-child(4) { transition-delay: 0.4s; }
+      .syncany-hero{
+        height: calc(100vh - 270px);
+      }
     </style>
   </head>
   <body id="sync__cms" data-type="detail">
@@ -455,6 +458,44 @@
           rootMargin: '0px 0px -80px 0px'
         });
         sections.forEach((section) => scrollObserver.observe(section));
+      });
+    </script>
+    <script>
+      // ===== Hero 섹션 휠 스크롤 자동 이동 =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.querySelector('.syncany-hero');
+        const nextSection = document.querySelector('#no-code');
+
+        if (!heroSection || !nextSection) return;
+
+        let isScrolling = false;
+        let scrollTimeout;
+
+        heroSection.addEventListener(
+          'wheel',
+          (e) => {
+            if (isScrolling || e.deltaY < 0) return;
+
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+
+            if (heroBottom > windowHeight * 0.3) {
+              e.preventDefault();
+              isScrolling = true;
+
+              window.scrollTo({
+                top: nextSection.offsetTop,
+                behavior: 'smooth',
+              });
+
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+              }, 1000);
+            }
+          },
+          { passive: false },
+        );
       });
     </script>
   </body>

@@ -551,7 +551,7 @@
       // ===== Hero 섹션 휠 스크롤 자동 이동 =====
       document.addEventListener('DOMContentLoaded', () => {
         const heroSection = document.querySelector('.sync-eta-hero');
-        const nextSection = document.querySelector('.sync-eta-features');
+        const nextSection = document.querySelector('#eta__why');
         
         if (!heroSection || !nextSection) return;
         
@@ -567,12 +567,10 @@
           if (heroBottom > windowHeight * 0.3) {
             e.preventDefault();
             isScrolling = true;
-            
-            // 정확한 최상단 위치로 스크롤
-            const targetPosition = nextSection.offsetTop;
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
+
+            nextSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
             });
             
             clearTimeout(scrollTimeout);
