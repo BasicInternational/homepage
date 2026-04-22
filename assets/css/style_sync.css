@@ -2753,6 +2753,7 @@ footer {
 .xbus-encryption__tag {
   font-size: 13px;
   background: #eef2ff;
+  color: #333;
   border-radius: 100px;
   padding: 12px 16px;
 }

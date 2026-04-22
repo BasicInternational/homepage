@@ -2722,7 +2722,7 @@ main section {
 
 .edu-feature-section {
 	padding: 80px 60px;
-	background: var(--off-white);
+	/* background: var(--off-white); */
 }
 
 .edu-feature-header {
