@@ -39,9 +39,39 @@
 	}
 
 	header {
-		padding: 0 15px;
+		padding: 0;
 		position: unset;
 		height: fit-content;
+	}
+
+	header.bi__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		display: flex;
+		transition: transform 0.25s ease, opacity 0.25s ease;
+	}
+
+	header.bi__header .header__wrap {
+		padding: 14px 15px;
+	}
+
+	header.bi__header .header__wrap .bi__logo img {
+
+		/* filter: none; */
+	}
+
+	header.bi__header.fix_header .header__wrap {
+		background: rgba(255, 255, 255, 0.96);
+		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+		backdrop-filter: blur(6px);
+	}
+
+	header.bi__header.is-scroll-hidden {
+		transform: translateY(-100%);
+		opacity: 0;
 	}
 
 	header nav.bi__nav .nav__body, header nav.bi__nav .nav__head {
