@@ -617,7 +617,7 @@ li:has(.example_flex_wrap) {
   aspect-ratio: 330 / 160;
 }
 .experience-section {
-  padding: 100px 80px;
+  padding: 100px 20px;
   background: #ffffff;
   flex-direction: column;
 }
@@ -839,7 +839,9 @@ li:has(.example_flex_wrap) {
   flex-shrink: 0;
   margin: 0 auto;
 }
-
+.xbus-history__table--wrap {
+	width: 100%;
+}
 .xbus-history__table {
   width: 100%;
   border-collapse: collapse;
