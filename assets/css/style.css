@@ -6,7 +6,9 @@
 body {
 	background-color: #f8fbff;
 }
-
+body *{
+	word-break: keep-all;
+}
 :root {
 	--c1:#4f8cff;
 	--primary-color: #4f46e5;     /* indigo-600 */
