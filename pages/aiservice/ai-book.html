@@ -92,6 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 모든 메인 섹션 자동 선택
   const sections = document.querySelectorAll('main section');
 
+  const heroSection = document.querySelector('.syncany-hero');
+  const nextSection = document.querySelector('#hero-01') || (heroSection ? heroSection.nextElementSibling : null);
+  let isScrolling = false;
+  let scrollTimeout;
+
   // 자동으로 data-scroll 속성 추가
   sections.forEach(section => {
     section.setAttribute('data-scroll', '');
@@ -110,6 +115,30 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   sections.forEach((section) => observer.observe(section));
+
+  if (heroSection && nextSection) {
+    heroSection.addEventListener('wheel', (e) => {
+      if (isScrolling || e.deltaY < 0) return;
+
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
+
+      if (heroBottom > windowHeight * 0.3) {
+        e.preventDefault();
+        isScrolling = true;
+
+        window.scrollTo({
+          top: nextSection.offsetTop,
+          behavior: 'smooth'
+        });
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 1000);
+      }
+    }, { passive: false });
+  }
 });
 </script>
 </head>
@@ -125,9 +154,33 @@ document.addEventListener('DOMContentLoaded', () => {
   <div id="header-include"></div>
 
   <main id="container" tabindex="0">
+<section class="syncany-hero">
+      <div class="syncany__bg"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
+      <div class="syncany__content">
+        <div class="syncany__badge">
+          <div class="syncany__badge-icon">
+            <i class="bi bi-journal-richtext"></i>
+          </div>
+          <span class="syncany__badge-text">꿈틀꿈틀</span>
+        </div>
+
+        <h2 class="syncany__title">AI 기반 어린이 맞춤형<br> 동화책 생성 플래폼</h2>
+        <p class="syncany__sub">아이의 이름, 좋아하는 캐릭터, 관심 주제를 입력하면 맞춤형 AI<br>스토리를 쓰고, 일러스트를 그리고, 음성으로 이야기해주는 서비스입니다.</p>
+
+        <div class="syncany__btns">
+          <a href="https://www.wriggle.co.kr/" target="_blank" class="syncany__btn-secondary">시작하기</a>
+          
+        </div>
+      </div>
+
+      <div class="syncany__scroll">
+        <span class="syncany__scroll-text"><a href="#hero-01">Scroll</a></span>
+        <div class="syncany__scroll-line"></div>
+      </div>
+    </section>
+    <!-- Hero 01 -->
+    <section id="hero-01" class="hero">
       <div class="inner_section hero-grid">
         <div>
           <div
@@ -398,23 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <!--  Floating Menu 영역  -->
   <div id="floating-menu-include"></div>
-  <script>
-    //  @component HeroSection
-    document.addEventListener('DOMContentLoaded', () => {
-      render(
-        '#container',
-        heroSection({
-          badge: '꿈틀꿈틀',
-          badgeIcon: 'bi-journal-richtext',
-          title: 'AI 기반 어린이 맞춤형<br /> 동화책 생성 플래폼',
-          sub: '아이의 이름, 좋아하는 캐릭터, 관심 주제를 입력하면 맞춤형 AI<br />스토리를 쓰고, 일러스트를 그리고, 음성으로 이야기해주는 서비스입니다.',
-          btnText: '시작하기',
-          btnHref: 'https://www.wriggle.co.kr/',
-          scrollTarget: '#book__feature',
-        }),
-      );
-    });
-  </script>
+  
 </body>
 
 </html>

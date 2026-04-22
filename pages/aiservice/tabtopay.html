@@ -779,5 +779,37 @@
     );
 
     fills.forEach((el) => observer.observe(el));
+
+    // ===== Hero 섹션 휠 스크롤 자동 이동 =====
+    const heroSection = document.querySelector('main section:first-child');
+    const nextSection = document.querySelector('main section:nth-child(2)');
+    
+    if (heroSection && nextSection) {
+      let isScrolling = false;
+      let scrollTimeout;
+
+      heroSection.addEventListener('wheel', (e) => {
+        if (isScrolling || e.deltaY < 0) return;
+        
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        
+        if (heroBottom > windowHeight * 0.3) {
+          e.preventDefault();
+          isScrolling = true;
+          
+          const targetPosition = nextSection.offsetTop;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+          }, 1000);
+        }
+      }, { passive: false });
+    }
   </script>
 </html>

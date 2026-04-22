@@ -744,6 +744,44 @@
         });
         sections.forEach((section) => scrollObserver.observe(section));
       });
+
+      // ===== Hero 섹션 휠 스크롤 자동 이동 =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.querySelector('.syncany-hero');
+        const nextSection = document.querySelector('#section__features');
+        
+        if (!heroSection || !nextSection) return;
+        
+        let isScrolling = false;
+        let scrollTimeout;
+
+        heroSection.addEventListener('wheel', (e) => {
+          // 이미 스크롤 중이거나 위로 스크롤하는 경우 무시
+          if (isScrolling || e.deltaY < 0) return;
+          
+          // hero 섹션 하단에 있는지 확인
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          const windowHeight = window.innerHeight;
+          
+          // hero 섹션이 화면에 보이고 아래로 스크롤하는 경우
+          if (heroBottom > windowHeight * 0.3) {
+            e.preventDefault();
+            isScrolling = true;
+            
+            // 다음 섹션으로 부드럽게 이동
+            nextSection.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // 스크롤 완료 후 플래그 초기화
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+              isScrolling = false;
+            }, 1000);
+          }
+        }, { passive: false });
+      });
     </script>
   <!-- Code injected by live-server -->
 <script>

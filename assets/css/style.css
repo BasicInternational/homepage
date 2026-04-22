@@ -2153,7 +2153,7 @@ section.content__feature .all-swiper ul.feature_wrap > li {
 	position: relative;
 	max-width: 100%;
 	width: 100%;
-	height: 92vh;
+	height: calc(100vh - 100px);
 	min-height: 560px;
 	overflow: hidden;
 	display: flex;
@@ -2572,7 +2572,7 @@ client__box > *, key__group > * {
 
 .sync__container section.syncany-hero {
 	max-width: 100%;
-	height: 90vh;
+	height: 9calc(100vh - 100px);
 }
 
 .system-section {

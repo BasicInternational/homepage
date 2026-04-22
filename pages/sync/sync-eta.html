@@ -141,7 +141,7 @@
       </section>
 
       <!-- ── STATS BAR ── -->
-      <div class="sync-eta-stats">
+      <div id="eta__stats" class="sync-eta-stats">
         <div class="sync-eta-stats__item">
           <p class="sync-eta-stats__value">80%</p>
           <p class="sync-eta-stats__label">TC 작성 시간 단축</p>
@@ -546,6 +546,41 @@
           rootMargin: '0px 0px -80px 0px'
         });
         sections.forEach((section) => scrollObserver.observe(section));
+      });
+
+      // ===== Hero 섹션 휠 스크롤 자동 이동 =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.querySelector('.sync-eta-hero');
+        const nextSection = document.querySelector('.sync-eta-features');
+        
+        if (!heroSection || !nextSection) return;
+        
+        let isScrolling = false;
+        let scrollTimeout;
+
+        heroSection.addEventListener('wheel', (e) => {
+          if (isScrolling || e.deltaY < 0) return;
+          
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          const windowHeight = window.innerHeight;
+          
+          if (heroBottom > windowHeight * 0.3) {
+            e.preventDefault();
+            isScrolling = true;
+            
+            // 정확한 최상단 위치로 스크롤
+            const targetPosition = nextSection.offsetTop;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+              isScrolling = false;
+            }, 1000);
+          }
+        }, { passive: false });
       });
     </script>    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

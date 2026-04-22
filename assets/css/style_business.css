@@ -6041,7 +6041,7 @@ nav#research__nav .nav-container {
 
 /* Hero Section */
 .hero-research {
-	min-height: 100vh;
+	min-height: calc(100vh - 100px);
 	max-width: unset;
 	display: flex;
 	align-items: center;
