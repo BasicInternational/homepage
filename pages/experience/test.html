@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#cad3ff",
+                    "primary-container": "#1d4ed8",
+                    "outline-variant": "#c4c5d7",
+                    "on-primary-fixed": "#001551",
+                    "on-secondary-fixed": "#121c28",
+                    "surface-bright": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-fixed-dim": "#bdc7d8",
+                    "inverse-surface": "#2e3132",
+                    "on-secondary-container": "#596372",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#d5d5d5",
+                    "secondary": "#555f6d",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#5c5c5c",
+                    "on-secondary-fixed-variant": "#3e4755",
+                    "secondary-fixed": "#d9e3f4",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "surface-container-highest": "#e1e3e4",
+                    "outline": "#747686",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#dce1ff",
+                    "surface-dim": "#d9dadb",
+                    "surface-container": "#edeeef",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-tint": "#2151da",
+                    "background": "#f8f9fa",
+                    "on-background": "#191c1d",
+                    "on-primary-fixed-variant": "#0039b5",
+                    "inverse-primary": "#b7c4ff",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-container": "#d6e0f1",
+                    "error": "#ba1a1a",
+                    "tertiary": "#454545",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1d",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "primary": "#0037b0",
+                    "on-surface-variant": "#434655"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "xs": "4px",
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
+<div class="max-w-[1280px] mx-auto flex justify-between items-center h-20 px-8">
+<div class="text-xl font-black tracking-tighter text-gray-900">BASIC IT</div>
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="font-sans text-sm font-medium tracking-tight text-blue-700 border-b-2 border-blue-700 pb-1 transition-all duration-200" href="#">Home</a>
+<a class="font-sans text-sm font-medium tracking-tight text-gray-600 hover:text-blue-700 transition-all duration-200" href="#">Services</a>
+<a class="font-sans text-sm font-medium tracking-tight text-gray-600 hover:text-blue-700 transition-all duration-200" href="#">Business Areas</a>
+<a class="font-sans text-sm font-medium tracking-tight text-gray-600 hover:text-blue-700 transition-all duration-200" href="#">Agency</a>
+<a class="font-sans text-sm font-medium tracking-tight text-gray-600 hover:text-blue-700 transition-all duration-200" href="#">Portfolio</a>
+<a class="font-sans text-sm font-medium tracking-tight text-gray-600 hover:text-blue-700 transition-all duration-200" href="#">Contact</a>
+</nav>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-label-md transition-transform active:scale-95 hover:opacity-90">Get Started</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 overflow-hidden bg-white">
+<div class="max-w-[1280px] mx-auto px-8 relative z-10">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1 bg-primary/10 text-primary font-label-sm rounded-full mb-6">GLOBAL IT INNOVATION LEADER</span>
+<h1 class="font-headline-xl text-on-background mb-8 leading-tight">기술과 가치를 연결하는<br/><span class="text-primary">베이직인터내셔널</span></h1>
+<p class="font-body-lg text-secondary mb-10 max-w-xl">우리는 복잡한 문제를 단순화하고, 혁신적인 기술을 통해 비즈니스의 새로운 가치를 창출합니다. 글로벌 표준의 IT 솔루션을 지금 경험하세요.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md flex items-center gap-2 hover:opacity-90 transition-all">
+                        프로젝트 시작하기 <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-outline-variant text-secondary px-8 py-4 rounded-xl font-label-md hover:bg-surface-container-low transition-all">
+                        회사소개서 다운로드
+                    </button>
+</div>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img alt="hero-bg" class="w-full h-full object-cover" data-alt="Abstract digital network connections with glowing blue nodes and lines representing global data infrastructure and artificial intelligence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2TmXvm5gqHthrYZpDy78lg4s_62KzbdVJv518dZ9VQIvpIJ1HCtEf2PONKZFt0eyVHY2GpL3XnTIkDLA1SPCxiP_9re9A4dzSN4W0ScWSMxoAXhjMuQfa6xubj5di856dOC6sHfr7YMs4XXThfRKkPSUPHUs98YzaPW31U5dIeEor15IiZrF3laXmPinR_IvBiUsoczmFuqcwEdt9qq-xEuLs-tQhvRbJyZ7u17_SFr99IYjZSW10gnad4JxKOwhRpamrFo790boP"/>
+</div>
+</section>
+<!-- AI Services Section (Bento Grid) -->
+<section class="py-xl bg-surface">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="mb-16">
+<h2 class="font-headline-lg text-on-background mb-4">AI Services</h2>
+<p class="font-body-md text-secondary max-w-2xl">생성형 AI부터 실생활 밀착형 서비스까지, 베이직의 독보적인 AI 기술력을 확인하세요.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter h-auto md:h-[600px]">
+<!-- 동화책 생성 -->
+<div class="md:col-span-2 md:row-span-1 bg-white border border-gray-100 p-8 rounded-xl flex flex-col justify-between group hover:border-primary transition-all">
+<div>
+<div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<h3 class="font-headline-md mb-2">동화책 생성</h3>
+<p class="font-body-md text-secondary">AI 기술을 활용한 창의적인 맞춤형 디지털 동화 제작 솔루션</p>
+</div>
+<div class="mt-8 overflow-hidden rounded-lg h-40">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Whimsical storybook illustration style with magical elements and soft pastel colors depicting creativity and storytelling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZMxGVBaN4JKDgd4oIDgJT0cJTHWrXuqpwJU1DKAB_F7BxK9ZdB8TgSKK0w-77X5BMij74aO6SchV0TtnvgJtCPum4zoAoxYQTnMqi4s8SAlwIeK6rdbNWPr7tTMLLJnpC77Uf06b7UhZa_NToSKBojk5cCG4dp4E_QVC2FObWqtmJdBvGh8OLtZ6XIWsMQxPtIR2mqDoUQPoSVVBdXRwFIKx2PPpBIP6JvrQ5vWmLmIz_gpX2moFuMOTJYAivqtk8k3QR37jKnNUX"/>
+</div>
+</div>
+<!-- 음원 생성 -->
+<div class="md:col-span-1 md:row-span-1 bg-white border border-gray-100 p-8 rounded-xl group hover:border-primary transition-all">
+<div class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 mb-6">
+<span class="material-symbols-outlined">music_note</span>
+</div>
+<h3 class="font-label-md text-lg mb-2">음원 생성</h3>
+<p class="font-label-sm text-secondary">장르와 분위기에 맞춘 인공지능 기반 고품질 작곡 솔루션</p>
+</div>
+<!-- 픽업 서비스 -->
+<div class="md:col-span-1 md:row-span-2 bg-primary-container text-on-primary-container p-8 rounded-xl flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<h3 class="font-headline-md mb-4 text-white">픽업 서비스</h3>
+<p class="font-body-md text-on-primary-container/80">실시간 위치 기반 데이터로 최적화된 물류 및 이동 서비스 플랫폼</p>
+</div>
+<div class="h-64 mt-8 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="Modern logistics and delivery concept with a clean white van in a sunny urban setting representing efficient transportation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0hFGx2rzCp0p8hrIzPM7lxa_4gAXaPi6T3aS4Jo2t_vNSxnVWi6-2UMiasHhoOE-o2mEcN-VjbegtgKj80B5wNK2RCTZqY87BcJ7v-GykHxiTnIDJuBcViwlOtbMlLIb8t_3NM4PQYdnL73UaGPnYwuL-Erw2Ymqb1xYIupJZzryM4u0B8UgVJvdAJFJoIP2BeW0L4PxsUZvPZQ2O5wdHXARraCEcWw_njAVi4CeiTxBgA2wLZLD45OHu5AjmxXukDotJQYwi2WfI"/>
+</div>
+</div>
+<!-- 탭투페이 -->
+<div class="md:col-span-2 md:row-span-1 bg-white border border-gray-100 p-8 rounded-xl flex flex-row items-center gap-8 group hover:border-primary transition-all">
+<div class="flex-1">
+<div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center text-green-600 mb-6">
+<span class="material-symbols-outlined">contactless</span>
+</div>
+<h3 class="font-headline-md mb-2">탭투페이</h3>
+<p class="font-body-md text-secondary">별도 단말기 없는 모바일 기반 차세대 결제 기술</p>
+</div>
+<div class="w-1/3 h-full rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of a contactless payment transaction being made with a sleek modern smartphone near a terminal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ww7Z95Jvdsqf7Q_cqR8UATvQcZZnuAcxcOEIt_DTsjs8Udy2TW0oRyznkukoDEIbr3NHxFe_IxiO379x9LjshTdPmOpZvy1J2LWEed1YHn4eEvxcaFVc8qc_Aj2QxcPQCzZ_JU1U6R5TUPJEbdMajUCCtZUAM6cw-nbjODQ-1mjrHAyr-0jIndxGB-eBom-mMZT0dylunn3qrnihqlLGiH--Poq0vHg_NtSvZSpZlW1-c-NsY16-ndkpPB-j4b9lBZ14e8B_3vFu"/>
+</div>
+</div>
+<!-- AI BI -->
+<div class="md:col-span-1 md:row-span-1 bg-white border border-gray-100 p-8 rounded-xl group hover:border-primary transition-all">
+<div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-6">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h3 class="font-label-md text-lg mb-2">데이터 분석</h3>
+<p class="font-label-sm text-secondary">비즈니스 통찰력을 위한 AI 기반 BI 엔진</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Areas Section -->
+<section class="py-xl bg-white">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg mb-4">Business Areas</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition-shadow group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">neurology</span>
+<h3 class="font-headline-md text-xl mb-4">지능형 AI 서비스</h3>
+<p class="font-body-md text-secondary leading-relaxed">자연어 처리, 이미지 인식 등 최첨단 AI 알고리즘을 기업 환경에 최적화하여 제공합니다.</p>
+<ul class="mt-6 space-y-2 text-sm text-secondary">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> LLM 커스텀 튜닝</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> 챗봇 &amp; 가상 비서</li>
+</ul>
+</div>
+<!-- Card 2 -->
+<div class="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">database</span>
+<h3 class="font-headline-md text-xl mb-4">데이터 분석 &amp; BI</h3>
+<p class="font-body-md text-secondary leading-relaxed">빅데이터 수집부터 시각화까지 데이터 중심 의사결정을 돕는 토털 솔루션을 지원합니다.</p>
+<ul class="mt-6 space-y-2 text-sm text-secondary">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> 실시간 대시보드</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> 예측 분석 모델</li>
+</ul>
+</div>
+<!-- Card 3 -->
+<div class="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">verified_user</span>
+<h3 class="font-headline-md text-xl mb-4">핀테크 &amp; PASS 인증</h3>
+<p class="font-body-md text-secondary leading-relaxed">보안이 생명인 금융 서비스와 간편 인증 연동으로 안전한 비즈니스 환경을 구축합니다.</p>
+<ul class="mt-6 space-y-2 text-sm text-secondary">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> 전자서명 솔루션</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> 간편 결제 인터페이스</li>
+</ul>
+</div>
+<!-- Card 4 -->
+<div class="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">cloud</span>
+<h3 class="font-headline-md text-xl mb-4">클라우드 &amp; 인프라</h3>
+<p class="font-body-md text-secondary leading-relaxed">안정적이고 확장 가능한 하이브리드 클라우드 설계 및 운영 서비스를 제공합니다.</p>
+</div>
+<!-- Card 5 -->
+<div class="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">precision_manufacturing</span>
+<h3 class="font-headline-md text-xl mb-4">스마트 산업 솔루션</h3>
+<p class="font-body-md text-secondary leading-relaxed">제조, 물류 현장의 디지털 전환을 가속화하는 IoT 기반 산업 자동화 시스템입니다.</p>
+</div>
+<!-- Card 6 -->
+<div class="p-8 border border-gray-100 rounded-xl hover:shadow-xl transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">school</span>
+<h3 class="font-headline-md text-xl mb-4">공공/금융 &amp; 에듀테크</h3>
+<p class="font-body-md text-secondary leading-relaxed">공공기관의 신뢰성과 에듀테크의 혁신을 결합한 맞춤형 플랫폼 개발 전문입니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Agency Services Section (Asymmetric) -->
+<section class="py-xl bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-8 flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 order-2 md:order-1">
+<div class="relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
+<img alt="agency-team" class="rounded-2xl shadow-2xl relative z-10" data-alt="A diverse team of creative professionals collaborating in a bright, modern studio space with design tools and digital screens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvpQPjjehH70XhlxrS7bPTAeOB2_bTuGniwnoCo1AtToY4bbQeORS4Ojgqf2l_EkI9kiiC2ip_bDWwfiubzVnN7u2XPbgM9wpYkCvA6uNopYHQhSZLbFWHzGCV5SHn6YOzNLFhF9LvpIO15B-YS6BAVA_jxsxz3_f1vCd8H-4wxzg6KIMGhUsdTi57mS1sg8HcOWHWttgCddOVmeFOaHZmrSecngrQ_0L1FHhP7qB0k8jN2YKFr0U7nPT5AlwHCElJmU__PQY_fhSh"/>
+<div class="absolute -bottom-8 -right-8 p-6 bg-white rounded-xl shadow-lg border border-gray-50 z-20 hidden md:block">
+<div class="text-primary font-bold text-3xl">100+</div>
+<div class="text-secondary font-label-sm">Successful Projects</div>
+</div>
+</div>
+</div>
+<div class="flex-1 order-1 md:order-2">
+<h2 class="font-headline-lg mb-6">Agency Services</h2>
+<p class="font-body-lg text-secondary mb-8">아이디어를 현실로 바꾸는 최고의 크리에이티브 파트너. 우리는 단순한 외주 개발이 아닌 비즈니스의 성공을 함께 설계하는 전략적 동반자입니다.</p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div>
+<h4 class="font-headline-md text-lg">UX/UI 컨설팅</h4>
+<p class="font-body-md text-secondary">사용자 경험을 최우선으로 하는 데이터 기반 디자인 전략</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div>
+<h4 class="font-headline-md text-lg">풀스택 개발 인프라</h4>
+<p class="font-body-md text-secondary">안정적인 백엔드와 유연한 프론트엔드의 완벽한 조화</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div>
+<h4 class="font-headline-md text-lg">기술 고도화 전략</h4>
+<p class="font-body-md text-secondary">기존 시스템의 성능 최적화 및 최신 스택 전환 지원</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sync Solutions Section (Glassmorphism) -->
+<section class="py-xl relative bg-primary-container text-white overflow-hidden">
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-white rounded-full blur-[160px] translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-400 rounded-full blur-[140px] -translate-x-1/2 translate-y-1/2"></div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 relative z-10">
+<div class="max-w-2xl mx-auto text-center mb-16">
+<h2 class="font-headline-lg mb-6">Sync Solutions</h2>
+<p class="font-body-lg text-on-primary-container">실시간 데이터 동기화로 중단 없는 비즈니스 환경을 구축하십시오.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white/10 backdrop-blur-md p-10 rounded-2xl border border-white/20">
+<h3 class="font-headline-md mb-6">Basic Sync Enterprise</h3>
+<p class="font-body-md mb-8 opacity-80">대규모 데이터 센터와 클라우드 간의 완벽한 미러링과 자동 복구 기능을 제공합니다.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white/10 rounded-full text-xs font-label-sm">High-Speed Transfer</span>
+<span class="px-4 py-2 bg-white/10 rounded-full text-xs font-label-sm">E2E Encryption</span>
+<span class="px-4 py-2 bg-white/10 rounded-full text-xs font-label-sm">Auto-Scale</span>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-10 rounded-2xl border border-white/20">
+<h3 class="font-headline-md mb-6">Global Connect Bridge</h3>
+<p class="font-body-md mb-8 opacity-80">전 세계 어디서든 지연 없는 데이터 접근성을 보장하는 엣지 컴퓨팅 기반 솔루션입니다.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white/10 rounded-full text-xs font-label-sm">Low Latency</span>
+<span class="px-4 py-2 bg-white/10 rounded-full text-xs font-label-sm">Region Free</span>
+<span class="px-4 py-2 bg-white/10 rounded-full text-xs font-label-sm">Smart Routing</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl bg-white border-b border-gray-100">
+<div class="max-w-[1280px] mx-auto px-8 text-center">
+<h2 class="font-headline-lg mb-8">혁신의 다음 단계를 함께 그리세요</h2>
+<p class="font-body-lg text-secondary mb-10 max-w-xl mx-auto">베이직인터내셔널의 전문가들이 여러분의 아이디어를 기술로 완성합니다.</p>
+<button class="bg-primary text-white px-12 py-5 rounded-full font-headline-md text-lg hover:shadow-xl transition-all active:scale-95">
+                Contact Us Now
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-gray-200 bg-gray-50">
+<div class="max-w-[1280px] mx-auto py-16 px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+<div>
+<div class="text-lg font-bold text-gray-900 mb-4">BASIC IT Services</div>
+<p class="max-w-md font-sans text-xs leading-relaxed text-gray-500 mb-6">베이직인터내셔널은 기술을 통해 세상을 더 편리하고 가치 있게 만드는 글로벌 IT 솔루션 파트너입니다. 최고의 기술력과 전문성을 바탕으로 비즈니스 혁신을 선도합니다.</p>
+<div class="flex space-x-4">
+<a class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h5 class="font-label-md text-gray-900 mb-4">Company</h5>
+<ul class="space-y-3">
+<li><a class="text-gray-500 hover:text-blue-700 hover:underline underline-offset-4 transition-colors font-sans text-xs" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-500 hover:text-blue-700 hover:underline underline-offset-4 transition-colors font-sans text-xs" href="#">Terms of Service</a></li>
+<li><a class="text-gray-500 hover:text-blue-700 hover:underline underline-offset-4 transition-colors font-sans text-xs" href="#">Company Profile</a></li>
+<li><a class="text-gray-500 hover:text-blue-700 hover:underline underline-offset-4 transition-colors font-sans text-xs" href="#">Sitemap</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-gray-900 mb-4">Support</h5>
+<ul class="space-y-3">
+<li><a class="text-gray-500 hover:text-blue-700 transition-colors font-sans text-xs" href="#">Customer Center</a></li>
+<li><a class="text-gray-500 hover:text-blue-700 transition-colors font-sans text-xs" href="#">Technical Support</a></li>
+<li><a class="text-gray-500 hover:text-blue-700 transition-colors font-sans text-xs" href="#">Partner Program</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 pb-8">
+<div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-sans text-xs leading-relaxed text-gray-500">© 2024 BASIC IT Services. All Rights Reserved.</div>
+<div class="flex gap-6">
+<span class="font-sans text-xs text-gray-400">HQ: Seoul, Republic of Korea</span>
+<span class="font-sans text-xs text-gray-400">Global Hub: Singapore</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

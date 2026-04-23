@@ -877,6 +877,7 @@ li:has(.example_flex_wrap) {
 	flex-wrap: wrap;
 	width: 100%;
 	flex-direction: column;
+	align-items: center;
 }
 
 .xbus-history__title {
