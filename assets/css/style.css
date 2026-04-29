@@ -5811,6 +5811,116 @@ section.ai-services, section.overview-cards {
 	line-height: 1;
 }
 
+/* ════════════════════════════════════════
+   페이지 로드 & 스크롤 애니메이션
+════════════════════════════════════════ */
+
+/* ── 히어로 섹션 입장 애니메이션 ── */
+@keyframes heroFadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes heroFadeInRight {
+	from {
+		opacity: 0;
+		transform: translateX(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.hero-modern-business__badge {
+	animation: heroFadeInUp 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.10s both;
+}
+
+.hero-modern-business__title {
+	animation: heroFadeInUp 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.28s both;
+}
+
+.hero-modern-business__desc {
+	animation: heroFadeInUp 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.44s both;
+}
+
+.hero-modern-business__actions {
+	animation: heroFadeInUp 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.58s both;
+}
+
+.hero-modern-business__image-wrapper {
+	animation: heroFadeInRight 0.80s cubic-bezier(0.4, 0, 0.2, 1) 0.32s both;
+}
+
+/* ── 스크롤 트리거 공통 ── */
+[data-animate] {
+	opacity: 0;
+	transform: translateY(36px);
+	transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+	            transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-animate="fade-left"] {
+	transform: translateX(-36px);
+}
+
+[data-animate="fade-right"] {
+	transform: translateX(36px);
+}
+
+[data-animate].is-animated {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+/* ── 카드 그리드 스태거 ── */
+[data-stagger] > * {
+	opacity: 0;
+	transform: translateY(32px);
+	transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+	            transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-stagger].is-animated > *:nth-child(1) { transition-delay: 0.05s; }
+[data-stagger].is-animated > *:nth-child(2) { transition-delay: 0.14s; }
+[data-stagger].is-animated > *:nth-child(3) { transition-delay: 0.23s; }
+[data-stagger].is-animated > *:nth-child(4) { transition-delay: 0.32s; }
+[data-stagger].is-animated > *:nth-child(5) { transition-delay: 0.41s; }
+[data-stagger].is-animated > *:nth-child(6) { transition-delay: 0.50s; }
+[data-stagger].is-animated > *:nth-child(7) { transition-delay: 0.59s; }
+[data-stagger].is-animated > *:nth-child(8) { transition-delay: 0.68s; }
+
+[data-stagger].is-animated > * {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ── 모션 줄이기 설정 존중 ── */
+@media (prefers-reduced-motion: reduce) {
+	[data-animate],
+	[data-stagger] > * {
+		opacity: 1 !important;
+		transform: none !important;
+		transition: none !important;
+	}
+
+	.hero-modern-business__badge,
+	.hero-modern-business__title,
+	.hero-modern-business__desc,
+	.hero-modern-business__actions,
+	.hero-modern-business__image-wrapper {
+		animation: none;
+	}
+}
+
+/* ════════════════════════════════════════ */
+
 .history-page-wrap .deco-bg.left {
 	top: 4%;
 	left: -10px;

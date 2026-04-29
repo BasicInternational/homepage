@@ -290,6 +290,7 @@ function initCommon() {
   if (gnb.pageType === 'detail' && dialObj.dial === null) dialObj.init();
   tabsFunc();
   aniText();
+  scrollAnimInit();
 
   // ------- 데스크톱 상단 GNB 메가메뉴 구성 -------
   const tabs = document.querySelector('.bi__tabs');
@@ -396,6 +397,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ─────────────────────────────────────────
+// 스크롤 애니메이션 (IntersectionObserver)
+// ─────────────────────────────────────────
+function scrollAnimInit() {
+  // 구버전 브라우저 폴백: 즉시 표시
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-animate], [data-stagger]').forEach(function (el) {
+      el.classList.add('is-animated');
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  document.querySelectorAll('[data-animate], [data-stagger]').forEach(function (el) {
+    observer.observe(el);
+  });
+}
 
 // 메가메뉴 너비 갱신 함수
 function updateMegaMenuWidth() {
