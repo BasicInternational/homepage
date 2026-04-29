@@ -145,18 +145,13 @@ header.bi__header.fix_header .header__wrap .bi__tabs a {
 
 header.bi__header.fix_header .mega-menu {
 	top: 47px;
-	padding: 6px 8px;
-	box-shadow: 0 -2px 18px rgba(0, 0, 0, 0.08);
+	padding: 8px 10px;
+	box-shadow: none;
 	border-top: none;
 }
 
 header.bi__header.fix_header .mega-menu__inner {
 	gap: 6px;
-}
-
-header.bi__header.fix_header .mega-menu__title {
-	font-size: 12px;
-	margin-bottom: 8px;
 }
 
 header.bi__header.fix_header .mega-menu__list li {
@@ -204,7 +199,7 @@ header .header__wrap .bi__tabs > ul {
 
 header .header__wrap .bi__tabs ul li {
 	padding: 0 2rem;
-	width: 130px;
+	width: 105px;
 	height: 100%;
 	border-radius: 3px;
 	text-align: center;
@@ -462,6 +457,34 @@ header nav.bi__nav.active .nav__body ul.nav__menu .menu__item {
 	position: relative;
 }
 
+.bi__tabs > ul > li > a {
+	position: relative;
+	display: inline-block;
+	padding-bottom: 2px;
+}
+
+.bi__tabs > ul > li > a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 100%;
+	height: 1px;
+	background: linear-gradient(90deg, var(--mega-accent), #39a89d);
+	transform: scaleX(0);
+	transform-origin: left center;
+	transition: transform 0.22s ease;
+}
+
+.bi__tabs > ul > li > a:focus-visible {
+	outline: 2px solid var(--mega-accent);
+	outline-offset: 3px;
+}
+
+.bi__tabs > ul > li.is-current > a::after, body.mega-open .bi__tabs > ul > li:hover > a::after, .bi__tabs > ul > li:focus-within > a::after {
+	transform: scaleX(1);
+}
+
 /* 상단 GNB 메가메뉴 기본 숨김 */
 .bi__tabs .submenu {
 	display: none;
@@ -470,20 +493,46 @@ header nav.bi__nav.active .nav__body ul.nav__menu .menu__item {
 /* 메가메뉴 레이아웃 */
 .bi__tabs {
 	position: relative;
+	--mega-bg: #ffffff;
+	--mega-border: #c8d2de;
+	--mega-divider: #dde5ef;
+	--mega-text: #0f172a;
+	--mega-text-sub: #1f2937;
+	--mega-hover-bg: #edf3f8;
+	--mega-hover-border: #bccbdb;
+	--mega-accent: #0b5f58;
 }
 
 .mega-menu {
-	display: none;
+	display: block;
 	position: absolute;
 	left: 130px;
 	top: 49px;     /* 1차 메뉴 바로 아래에 위치 */
-	background: #ffffff;
-	border: 1px solid #ddd;     /* 메가메뉴 전체 테두리 */
-	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-	padding: 10px;
+	background: var(--mega-bg);
+	border: 1px solid var(--mega-border);     /* 플랫 스타일: 보더 중심 */
+	box-shadow: none;
+	padding: 12px;
 	box-sizing: border-box;
 	max-height: calc(100vh - 80px);     /* 헤더 높이만큼 빼고 나머지 영역 */
 	overflow-y: auto;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateY(6px);
+	transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.mega-menu::-webkit-scrollbar {
+	width: 8px;
+}
+
+.mega-menu::-webkit-scrollbar-track {
+	background: #eef2f6;
+}
+
+.mega-menu::-webkit-scrollbar-thumb {
+	background: #b8c4d1;
+	border-radius: 999px;
 }
 
 .mega-menu__inner {
@@ -491,72 +540,106 @@ header nav.bi__nav.active .nav__body ul.nav__menu .menu__item {
 	margin: 0 auto;
 	display: flex;
 	gap: 0;
-	align-items: start;
+	align-items: stretch;
 	justify-content: space-evenly;
 }
 
 .mega-menu__col {
 	min-width: fit-content;
+	padding: 0px 0px;
+	border-right: 1px solid var(--mega-divider);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
-.mega-menu__title {
-	display: block;
-	font-size: 13px;
-	font-weight: 700;
-	margin-bottom: 14px;
-	color: #111;
-	letter-spacing: -0.01em;
+.mega-menu__col:last-child {
+	border-right: 0;
 }
 
 .mega-menu__list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
 }
 
 .mega-menu__list li {
-	margin-bottom: 6px;
+	margin-bottom: 2px;
 }
 
 header .header__wrap .bi__tabs ul.mega-menu__list li {
-	padding: 10px 10px 10px 30px;
+	padding: 9px 9px;
 	text-align: left;
+	border: 1px solid transparent;
+	border-radius: 0;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+	margin: 0 -2px;
 }
 
 header .header__wrap .bi__tabs ul.mega-menu__list li:hover {
-	background-color: #f9fafb;
-	color: #0066cc;
+	background-color: var(--mega-hover-bg);
+	border-color: var(--mega-hover-border);
+	color: var(--mega-accent);
+}
+
+header .header__wrap .bi__tabs ul.mega-menu__list li:focus-within {
+	background-color: var(--mega-hover-bg);
+	border-color: var(--mega-hover-border);
 }
 
 .mega-menu__list li a {
 	display: block;
 	font-size: 14px;
-	color: #555;
+	color: var(--mega-text-sub);
 	white-space: nowrap;
+	line-height: 1.45;
+}
+
+.mega-menu__list li a[href*='javascript:void(0)'] {
+	color: var(--mega-text);
+	font-weight: 600;
 }
 
 header .header__wrap .bi__tabs ul.mega-menu__list li:hover a {
-	color: #333;
-	transition: 0.3s;
+	color: var(--mega-accent);
+	transition: 0.2s;
 }
 
 header .header__wrap .mega-menu__col li a {
-	font-size: 16px;
-	color: #333;
-	transition: 0.3s;
+	font-size: 15px;
+	color: var(--mega-text);
+	transition: color 0.22s ease, background-color 0.22s ease, border-color 0.22s ease;
 	font-weight: normal;
+	word-break: keep-all;
+	white-space: normal;
+	line-height: 1.2;
+	text-align: center;
 }
 
 .mega-menu__list li a:hover {
-	color: #0e998e;
+	color: var(--mega-accent);
+}
+
+.mega-menu__list li a:focus-visible {
+	outline: 2px solid #084b45;
+	outline-offset: 2px;
+	color: var(--mega-accent);
 }
 
 /* body 에 mega-open 클래스가 있을 때 전체 서브메뉴(메가메뉴) 표시 */
 body.mega-open .mega-menu {
-	display: block;
+	width: 640px !important;
 	position: absolute;
-	left: -8px;
+	left: 11px;
 	overflow-x: hidden;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transform: translateY(0);
+	transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 /* data-type이 detail인 body만 선택 */

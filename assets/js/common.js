@@ -310,6 +310,7 @@ function initCommon() {
       const topItems = tabs.querySelectorAll('.bi__tabs > ul > li');
       topItems.forEach((li) => {
         const submenu = li.querySelector('.submenu');
+        const topLink = li.querySelector(':scope > a');
         const col = document.createElement('div');
         col.className = 'mega-menu__col';
 
@@ -321,7 +322,6 @@ function initCommon() {
           col.appendChild(listClone);
         } else {
           // 서브메뉴 없는 경우 - 1depth a태그를 단독 아이템으로
-          const topLink = li.querySelector('a');
           if (!topLink) return;
 
           const singleList = document.createElement('ul');
@@ -343,9 +343,17 @@ function initCommon() {
       megaMenu.style.width = tabsWidth + 'px';
     }
   }
+
+  const topMenuItems = document.querySelectorAll('.bi__tabs > ul > li');
   document.querySelectorAll('.bi__tabs > ul > li > a').forEach((link) => {
     link.addEventListener('mouseenter', () => {
       document.body.classList.add('mega-open');
+
+      topMenuItems.forEach((item) => item.classList.remove('is-current'));
+      const currentItem = link.parentElement;
+      if (currentItem) {
+        currentItem.classList.add('is-current');
+      }
     });
   });
 
@@ -353,6 +361,7 @@ function initCommon() {
   if (headerEl) {
     headerEl.addEventListener('mouseleave', () => {
       document.body.classList.remove('mega-open');
+      topMenuItems.forEach((item) => item.classList.remove('is-current'));
     });
   }
 
@@ -360,6 +369,7 @@ function initCommon() {
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.bi__header')) {
       document.body.classList.remove('mega-open');
+      topMenuItems.forEach((item) => item.classList.remove('is-current'));
     }
   });
 }
