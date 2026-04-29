@@ -4653,11 +4653,28 @@ nav ul li a:hover {
 .hero-modern-business {
 	position: relative;
 	width: auto;
-	min-height: 34rem;
+	min-height: 40rem;
 	height: auto;
-	padding: 20px 0 0;
-	background: #fff;
+	padding: 48px 0 24px;
+	background:
+		radial-gradient(circle at 8% 18%, rgba(13, 116, 107, 0.14), rgba(13, 116, 107, 0) 36%),
+		radial-gradient(circle at 84% 8%, rgba(88, 198, 188, 0.2), rgba(88, 198, 188, 0) 32%),
+		linear-gradient(180deg, #ffffff 0%, #f4fbfa 100%);
 	font-family: var(--font-sans);
+	overflow: hidden;
+}
+
+.hero-modern-business::before {
+	content: '';
+	position: absolute;
+	left: -120px;
+	top: -80px;
+	width: 320px;
+	height: 320px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(13, 116, 107, 0.18) 0%, rgba(13, 116, 107, 0) 72%);
+	pointer-events: none;
+	animation: heroOrbFloat 10s ease-in-out infinite;
 }
 
 .hero-modern-business__container {
@@ -4666,25 +4683,28 @@ nav ul li a:hover {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 2.8rem;
 	align-items: center;
+	padding: 0 20px;
 }
 
 .hero-modern-business__container {
 	flex-direction: row;
-	gap: 3rem;
+	gap: 3.5rem;
 	align-items: stretch;
 }
 
 .hero-modern-business__content {
 	width: 100%;
-	max-width: 620px;
+	max-width: 640px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
 	text-align: left;
-	padding: 24px 24px 24px 10px;
+	padding: 28px 28px 28px 8px;
+	position: relative;
+	z-index: 2;
 }
 
 @media (min-width:768px) {
@@ -4696,24 +4716,25 @@ nav ul li a:hover {
 
 .hero-modern-business__badge {
 	display: inline-block;
-	padding: 0.35rem 0.9rem;
-	margin-bottom: 1rem;
-	color: #334155;
-	background: #eef2ff;
-	border: 1px solid #dbeafe;
+	padding: 0.42rem 0.96rem;
+	margin-bottom: 1.15rem;
+	color: #0d746b;
+	background: #e8f7f5;
+	border: 1px solid #b8e5e0;
 	border-radius: 999px;
-	font-size: 0.875rem;
+	font-size: 0.82rem;
 	font-weight: 600;
-	letter-spacing: 0.02em;
+	letter-spacing: 0.05em;
 }
 
 .hero-modern-business__title {
-	font-size: clamp(2rem, 3.2vw, 3rem);
+	font-size: clamp(2.2rem, 3.5vw, 3.35rem);
 	font-weight: 700;
 	color: #0f172a;
-	line-height: 1.28;
+	line-height: 1.23;
 	letter-spacing: -0.02em;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.2rem;
+	text-wrap: balance;
 }
 
 @media (min-width:640px) {
@@ -4728,11 +4749,11 @@ nav ul li a:hover {
 }
 
 .hero-modern-business__desc {
-	font-size: 1.06rem;
+	font-size: 1.08rem;
 	color: #475569;
-	line-height: 1.82;
+	line-height: 1.78;
 	margin-bottom: 2rem;
-	max-width: 34rem;
+	max-width: 35rem;
 }
 
 @media (min-width:640px) {
@@ -4746,34 +4767,39 @@ nav ul li a:hover {
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;
-	margin-bottom: 1rem;
-	display: none;
+	margin-bottom: 0.4rem;
+	flex-wrap: wrap;
 }
 
 .hero-modern-business__button {
 	display: inline-block;
-	padding: 0.75rem 1.5rem;
+	padding: 0.82rem 1.48rem;
 	border-radius: var(--radius-lg);
-	font-size: 1rem;
-	font-weight: 500;
-	box-shadow: var(--shadow-lg);
+	font-size: 0.95rem;
+	font-weight: 600;
+	box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
 	border: none;
 	outline: none;
 	cursor: pointer;
-	transition: background var(--transition), color var(--transition), border-color var(--transition);
+	transition: transform 0.24s ease, box-shadow 0.24s ease, background var(--transition), color var(--transition), border-color var(--transition);
 	text-decoration: none;
 	position: relative;
 }
 
 .hero-modern-business__button--primary {
-	background: #0e998e;
+	background: linear-gradient(135deg, #0d746b 0%, #13877d 100%);
 	color: #fff;
 }
 
 .hero-modern-business__button--secondary {
 	background: #fff;
-	color: #333;
-	border: 1px solid var(--button-border);
+	color: #0d746b;
+	border: 1px solid #b8dcd8;
+}
+
+.hero-modern-business__button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 14px 26px rgba(15, 23, 42, 0.18);
 }
 
 .hero-modern-business__avatars {
@@ -4839,21 +4865,82 @@ nav ul li a:hover {
 .hero-modern-business__image-wrapper {
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: 8px;
 	width: 50%;
-	height: 100%;
+	height: calc(100% - 16px);
 	margin-bottom: 0;
 	align-items: center;
+	padding-right: 12px;
 }
 
 .hero-modern-business__image {
-	box-shadow: var(--shadow-lg);
-	border: 1px solid var(--img-border);
+	box-shadow: 0 24px 48px rgba(8, 30, 28, 0.18);
+	border: 1px solid rgba(13, 116, 107, 0.16);
+	border-radius: 18px;
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
 	background: #fff;
 	display: block;
+	animation: heroImageFloat 7s ease-in-out infinite;
+}
+
+@keyframes heroImageFloat {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes heroOrbFloat {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 0.9;
+	}
+	50% {
+		transform: translate3d(20px, 14px, 0);
+		opacity: 0.55;
+	}
+}
+
+@media (max-width: 1024px) {
+	.hero-modern-business {
+		min-height: auto;
+		padding: 24px 0 12px;
+	}
+
+	.hero-modern-business__container {
+		flex-direction: column;
+		gap: 1.4rem;
+	}
+
+	.hero-modern-business__content {
+		max-width: none;
+		padding: 18px 12px 10px;
+	}
+
+	.hero-modern-business__image-wrapper {
+		position: relative;
+		width: 100%;
+		height: 300px;
+		top: 0;
+		padding-right: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-modern-business::before,
+	.hero-modern-business__image {
+		animation: none;
+	}
+
+	.hero-modern-business__button:hover {
+		transform: none;
+	}
 }
 
 /* ────────────────────────────────────────
