@@ -411,11 +411,102 @@ document.addEventListener('DOMContentLoaded', () => {
 // ─────────────────────────────────────────
 // 스크롤 애니메이션 (IntersectionObserver)
 // ─────────────────────────────────────────
+function prepareWorkforceAnimations() {
+  document.querySelectorAll('[data-workforce-animate]').forEach(function (container) {
+    if (container.dataset.workforcePrepared === 'true') return;
+    container.dataset.workforcePrepared = 'true';
+
+    container.querySelectorAll('.bar-fill, .staff-item .progress > span').forEach(function (bar) {
+      const target = bar.style.width || '0%';
+      bar.dataset.targetWidth = target;
+      bar.style.width = '0%';
+    });
+
+    container.querySelectorAll('.sw-rate-num, .field-pct, .staff-top strong').forEach(function (el) {
+      const original = el.textContent.trim();
+      const match = original.match(/\d+(?:\.\d+)?/);
+      if (!match) return;
+
+      const numberText = match[0];
+      const suffix = original.slice(match.index + numberText.length);
+      const decimals = numberText.includes('.') ? numberText.split('.')[1].length : 0;
+      el.dataset.targetNumber = numberText;
+      el.dataset.targetSuffix = suffix;
+      el.dataset.targetDecimals = String(decimals);
+      el.textContent = `${decimals > 0 ? (0).toFixed(decimals) : '0'}${suffix}`;
+    });
+  });
+}
+
+function animateNumberText(el, duration) {
+  const target = parseFloat(el.dataset.targetNumber || '0');
+  const suffix = el.dataset.targetSuffix || '';
+  const decimals = parseInt(el.dataset.targetDecimals || '0', 10);
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const formatted = decimals > 0 ? current.toFixed(decimals) : String(Math.round(current));
+    el.textContent = `${formatted}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      const finalText = decimals > 0 ? target.toFixed(decimals) : String(Math.round(target));
+      el.textContent = `${finalText}${suffix}`;
+    }
+  }
+
+  requestAnimationFrame(tick);
+}
+
+function animateWorkforceSection(container) {
+  if (container.dataset.animated === 'true') return;
+  container.dataset.animated = 'true';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  container.querySelectorAll('.bar-fill, .staff-item .progress > span').forEach(function (bar) {
+    const target = bar.dataset.targetWidth || bar.style.width || '0%';
+
+    if (reduceMotion) {
+      bar.style.transition = 'none';
+      bar.style.width = target;
+      return;
+    }
+
+    bar.style.transition = 'width 900ms cubic-bezier(0.2, 0.7, 0.2, 1)';
+    requestAnimationFrame(function () {
+      bar.style.width = target;
+    });
+  });
+
+  container.querySelectorAll('.sw-rate-num, .field-pct, .staff-top strong').forEach(function (el) {
+    if (reduceMotion) {
+      const target = parseFloat(el.dataset.targetNumber || '0');
+      const suffix = el.dataset.targetSuffix || '';
+      const decimals = parseInt(el.dataset.targetDecimals || '0', 10);
+      const finalText = decimals > 0 ? target.toFixed(decimals) : String(Math.round(target));
+      el.textContent = `${finalText}${suffix}`;
+      return;
+    }
+
+    animateNumberText(el, 1100);
+  });
+}
+
 function scrollAnimInit() {
+  prepareWorkforceAnimations();
+
   // 구버전 브라우저 폴백: 즉시 표시
   if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('[data-animate], [data-stagger]').forEach(function (el) {
+    document.querySelectorAll('[data-animate], [data-stagger], [data-workforce-animate]').forEach(function (el) {
       el.classList.add('is-animated');
+      if (el.matches('[data-workforce-animate]')) {
+        animateWorkforceSection(el);
+      }
     });
     return;
   }
@@ -425,6 +516,9 @@ function scrollAnimInit() {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-animated');
+          if (entry.target.matches('[data-workforce-animate]')) {
+            animateWorkforceSection(entry.target);
+          }
           observer.unobserve(entry.target);
         }
       });
@@ -432,7 +526,7 @@ function scrollAnimInit() {
     { threshold: 0.12 }
   );
 
-  document.querySelectorAll('[data-animate], [data-stagger]').forEach(function (el) {
+  document.querySelectorAll('[data-animate], [data-stagger], [data-workforce-animate]').forEach(function (el) {
     observer.observe(el);
   });
 }

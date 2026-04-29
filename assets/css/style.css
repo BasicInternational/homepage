@@ -6258,7 +6258,7 @@ section.ai-services, section.overview-cards {
 	background: #ffffff;
 	padding: 22px 26px;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	gap: 16px;
 	position: relative;
 	overflow: hidden;
@@ -6829,6 +6829,7 @@ section.ai-services, section.overview-cards {
 	font-size: 18px;
 	font-weight: 800;
 	letter-spacing: -0.02em;
+	color: #333;
 }
 
 .field-pct.gray {
