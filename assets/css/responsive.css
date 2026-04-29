@@ -3,7 +3,7 @@
 @media screen and (max-width:769px) {
 	main {
 		width: 100%;
-		margin: 0 auto;
+		margin: 80px auto;
 		overflow: hidden;
 	}
 
@@ -26,7 +26,7 @@
 
 	/* 모바일사이즈 padding */
 	.experience-section, section.ai-services, section.overview-cards, .ai-services, .xbus-history, .ht-inner, .corp-section, #tabto-pay .flow-section, #tabto-pay .ecosystem-wrap, .cta-bar, .edu-feature-section, .effect-section, .cloud__main > section, .commmuni__main > section, .commerce__main > section, .benev__main > section, .bi__main > section, .finance__main > section, .sync__container > section, .cms__main .cms-stats, .cms__main .cms-tech, .sync-eta-why, .sync-eta-hero, .eta__main .sync-eta-stats, .section-admin-ecosystem, .sync-eta-pipeline, .scm-hero, .xbus-encryption, .container__agency {
-		padding: 45px 15px;
+		padding: 45px 15px 45px;
 	}
 
 	main .cms-stats, .cms__main .cms-stats, .main__syncadmin .cms-stats-admin {
@@ -153,8 +153,7 @@
 		min-height: unset;
 		overflow: hidden;
 		display: flex;
-		align-items: baseline;
-		padding-top: 50px;
+		align-items: baseline;         /* padding-top: 50px; */
 	}
 
 	.syncany__scroll {

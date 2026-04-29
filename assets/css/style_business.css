@@ -365,6 +365,7 @@
 
 /* business-logistics */
 .scm-hero {
+
 	/* max-width: 1440px; */
 	position: relative;
 	overflow: hidden;
@@ -1741,7 +1742,7 @@ main section {
 
 main section {
 	max-width: 1280px;
-	margin: 30px auto 0;
+	margin: 0px auto 0;
 	padding: 56px 40px;
 }
 
@@ -2722,8 +2723,7 @@ main section {
 }
 
 .edu-feature-section {
-	padding: 80px 60px;
-	/* background: var(--off-white); */
+	padding: 80px 60px;     /* background: var(--off-white); */
 }
 
 .edu-feature-header {
