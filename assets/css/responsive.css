@@ -653,8 +653,8 @@
 
 	.section-admin-ecosystem__stack {
 		gap: 16px;
-		justify-content: flex-start;
-		flex-wrap: nowrap;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 
 	.section-admin-ecosystem__logo {
