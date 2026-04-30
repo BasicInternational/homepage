@@ -605,16 +605,31 @@
 	}
 
 	/* pages/sync/sync-cms */
+	.cms-stats {
+		flex-wrap: wrap;
+		padding: 30px 15px;
+		gap: 16px;
+	}
+
 	.cms-stats .cms-stats__item {
-		padding: 20px 0px;
+		flex: 1 1 calc(50% - 8px);
+		min-width: 140px;
+		max-width: none;
+		padding: 20px 12px;
 	}
 
 	.cms__main .cms-stats {
-		gap: 10px;
+		gap: 16px;
 	}
 
 	.cms-stats__value {
+		font-size: 20px;
 		white-space: nowrap;
+	}
+
+	.cms-stats__label {
+		font-size: 13px;
+		margin-top: 12px;
 	}
 
 	.cms-features .cms-features__grid {
@@ -835,4 +850,28 @@
 		padding: 20px;
 	}
 
+}
+
+/* Small Mobile Devices (480px 이하) */
+@media screen and (max-width: 480px) {
+	.cms-stats {
+		padding: 25px 12px;
+		gap: 12px;
+	}
+
+	.cms-stats .cms-stats__item {
+		flex: 1 1 100%;
+		padding: 16px 10px;
+		min-width: unset;
+	}
+
+	.cms-stats__value {
+		font-size: 18px;
+	}
+
+	.cms-stats__label {
+		font-size: 12px;
+		margin-top: 10px;
+		line-height: 1.3;
+	}
 }

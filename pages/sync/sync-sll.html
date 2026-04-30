@@ -569,6 +569,14 @@
         margin: 0 auto;
       }
 
+      /* Tablet Size - ai-grid 5개 카드 대응 */
+      @media (max-width: 1024px) and (min-width: 769px) {
+        .ai-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+      }
+
       @media (max-width: 768px) {
         .ssl-dashboard {
           padding: 60px 20px;
@@ -609,6 +617,25 @@
 
         .tech-stack-section__left h2 {
           font-size: 28px;
+        }
+      }
+
+      /* Small Mobile */
+      @media (max-width: 480px) {
+        .ai-grid {
+          gap: 16px;
+        }
+
+        .ai-card {
+          padding: 20px 16px;
+        }
+
+        .ai-card h3 {
+          font-size: 16px;
+        }
+
+        .ai-card p {
+          font-size: 13px;
         }
       }
     </style>
