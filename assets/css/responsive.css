@@ -58,11 +58,6 @@
 		padding: 14px 15px;
 	}
 
-	header.bi__header .header__wrap .bi__logo img {
-
-		/* filter: none; */
-	}
-
 	header.bi__header.fix_header .header__wrap {
 		background: rgba(255, 255, 255, 0.96);
 		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
@@ -90,12 +85,19 @@
 		color: #fff;
 	}
 
-	footer {
+	footer.bi__footer {
 		padding: 40px 15px;
 	}
 
-	footer .footer__inner {
+	footer.bi__footer .footer__inner {
 		max-width: 100%;
+		grid-template-columns: 1fr;
+		gap: 16px;
+		padding: 0;
+	}
+
+	footer.bi__footer .footer__inner .footer__info ul {
+		grid-template-columns: 1fr;
 	}
 
 	/* index.html */
