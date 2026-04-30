@@ -5230,17 +5230,9 @@ nav ul li a:hover {
 	background: #fff;
 }
 
-.business-title-wrap h2 {
-	font-size: 32px;
-	font-weight: 900;
-	display: inline-block;
-	padding-bottom: 6px;
-}
-
 .business-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);     /* 2열 */
-	grid-auto-rows: 280px;     /* 모든 행 높이 고정 */
+	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
 
@@ -5331,7 +5323,7 @@ nav ul li a:hover {
 	font-weight: 700;
 }
 
-.biz-card p, .agency-card h3 {
+.biz-card p {
 	color: #334155;
 	font-size: 15.5px;
 	line-height: 1.78;
@@ -5424,6 +5416,14 @@ nav ul li a:hover {
 	font-size: 15.5px;
 	line-height: 1.72;
 	color: #4b5563;
+}
+
+.agency-card h3 {
+	color: #111827;
+	font-size: 21px;
+	line-height: 1.36;
+	font-weight: 700;
+	margin-bottom: 10px;
 }
 
 /* ────────────────────────────────────────
