@@ -1,0 +1,1341 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직인터내셔널" />
+    <meta
+      name="description"
+      content="SYNC SSL은 인증서 감지부터 갱신, 배포, 보안 승인까지 자동화하는 지능형 SSL 중앙 집중 관리 시스템입니다."
+    />
+    <meta
+      name="keywords"
+      content="SYNC SSL,SSL 인증서,중앙 관리,인증서 자동 갱신,Go Agent,Spring Boot,보안 모니터링"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SYNC SSL | 베이직인터내셔널" />
+    <meta
+      property="og:description"
+      content="인증서 관리, 이제 완전히 잊으셔도 됩니다. 감지부터 배포까지 자동화하는 지능형 SSL 중앙 집중 관리 시스템."
+    />
+    <meta property="og:image" content="/assets/images/favicon.png" />
+    <meta property="og:url" content="https://basicit.co.kr/pages/sync/sync-sll.html" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="베이직인터내셔널" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="https://basicit.co.kr/pages/sync/sync-sll.html" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_sync.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    
+    <!-- amCharts 5 -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/component.js"></script>
+    <style>
+      .ai-grid{grid-template-columns: repeat(5, 1fr);}
+      [data-scroll] {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+      }
+
+      [data-scroll].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-scroll] .card,
+      [data-scroll] .feature-card,
+      [data-scroll] .item {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.7s ease;
+      }
+
+      [data-scroll].visible .card,
+      [data-scroll].visible .feature-card,
+      [data-scroll].visible .item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-scroll].visible .card:nth-child(1),
+      [data-scroll].visible .feature-card:nth-child(1),
+      [data-scroll].visible .item:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      [data-scroll].visible .card:nth-child(2),
+      [data-scroll].visible .feature-card:nth-child(2),
+      [data-scroll].visible .item:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      [data-scroll].visible .card:nth-child(3),
+      [data-scroll].visible .feature-card:nth-child(3),
+      [data-scroll].visible .item:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      [data-scroll].visible .card:nth-child(4),
+      [data-scroll].visible .feature-card:nth-child(4),
+      [data-scroll].visible .item:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+
+      .syncany-hero {
+        height: calc(100vh - 190px);
+      }
+
+      /* amCharts Donut Chart */
+      #chartdiv {
+        width: 100%;
+        height: 320px;
+        margin: 0 auto;
+      }
+
+      /* SSL Dashboard Section */
+      .ssl-dashboard {
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        position: relative;
+        max-width: 100vw;
+      }
+
+      .ssl-dashboard__container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        width: 100%;
+      }
+
+      .ssl-dashboard__header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .ssl-dashboard__title {
+        font-size: clamp(2rem, 3vw, 2.75rem);
+        font-weight: 900;
+        color: white;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .ssl-dashboard__title span {
+        background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .ssl-dashboard__subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      .ssl-dashboard__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 32px;
+      }
+
+      .dashboard-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 32px;
+        transition: all 0.3s ease;
+      }
+
+      .dashboard-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-4px);
+      }
+
+      .dashboard-card__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+      }
+
+      .dashboard-card__title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+      }
+
+      .dashboard-card__badge {
+        background: #10b981;
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 32px;
+      }
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .stat-item__value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #3b82f6;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .stat-item__value--green {
+        color: #10b981;
+      }
+
+      .stat-item__label {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .progress-group {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 32px;
+      }
+
+      .progress-item__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .progress-item__label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      .progress-item__value {
+        color: #10b981;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .progress-item__value--blue {
+        color: #3b82f6;
+      }
+
+      .progress-bar {
+        height: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-bar__fill {
+        height: 100%;
+        background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+        border-radius: 20px;
+        width: var(--progress-width, 0%);
+        transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+      }
+
+      .progress-bar__fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      .progress-bar__fill--blue {
+        background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+      }
+
+      .ssl-dashboard__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .ssl-dashboard__btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .ssl-dashboard__btn:hover::before {
+        left: 100%;
+      }
+
+      .ssl-dashboard__btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 30px rgba(59, 130, 246, 0.5);
+      }
+
+      .ssl-dashboard__btn:active {
+        transform: scale(0.98);
+      }
+
+      .ssl-dashboard__btn.processing {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        pointer-events: none;
+      }
+
+      .ssl-dashboard__btn.processing i {
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .chart-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .chart-legend {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .legend-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .legend-dot--green {
+        background: #10b981;
+      }
+
+      .legend-dot--blue {
+        background: #3b82f6;
+      }
+
+      .legend-dot--red {
+        background: #ef4444;
+      }
+
+      /* Modern Tech Stack Section */
+      .tech-stack-section {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        padding: 100px 20px;
+        border-radius: 24px;
+        margin: 80px auto;
+        max-width: 1200px;
+      }
+
+      .tech-stack-section__inner {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .tech-stack-section__left h2 {
+        font-size: 38px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .tech-stack-section__left p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .tech-category {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tech-category__label {
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .tech-category__label--backend {
+        color: #10b981;
+      }
+
+      .tech-category__label--frontend {
+        color: #06b6d4;
+      }
+
+      .tech-category__label--database {
+        color: #f59e0b;
+      }
+
+      .tech-category__label--agent {
+        color: #a78bfa;
+      }
+
+      .tech-category__items {
+        color: white;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .terminal-code {
+        background: #1e1e1e;
+        border-radius: 12px;
+        padding: 24px;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 13px;
+        line-height: 1.8;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .terminal-code__header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .terminal-code__dots {
+        display: flex;
+        gap: 6px;
+      }
+
+      .terminal-code__dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .terminal-code__dot--red {
+        background: #ef4444;
+      }
+
+      .terminal-code__dot--yellow {
+        background: #f59e0b;
+      }
+
+      .terminal-code__dot--green {
+        background: #10b981;
+      }
+
+      .terminal-code__title {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+        margin-left: 8px;
+      }
+
+      .terminal-code__line {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 4px;
+      }
+
+      .terminal-code__comment {
+        color: #10b981;
+      }
+
+      .terminal-code__key {
+        color: #60a5fa;
+      }
+
+      .terminal-code__value {
+        color: #fbbf24;
+      }
+
+      .terminal-code__value--cyan {
+        color: #22d3ee;
+      }
+
+      .terminal-code__section {
+        margin-bottom: 16px;
+      }
+
+      /* Security Section */
+      .security-section {
+        padding: 80px 20px;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .security-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        .ssl-dashboard {
+          padding: 60px 20px;
+        }
+
+        .ssl-dashboard__content {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .chart-legend {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .ai-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tech-stack-section__inner {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .tech-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .security-cards {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .tech-stack-section__left h2 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body id="sync__cms" data-type="detail">
+    <div id="skip__content">
+      <a href="#container">본문 바로가기</a>
+    </div>
+
+    <div id="header-include"></div>
+
+    <main id="container" class="cms__main" tabindex="0">
+      <div id="no-code" class="cms-stats">
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">24/7</p>
+          <p class="cms-stats__label">인증서 만료 상시 모니터링</p>
+        </div>
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">99.9%</p>
+          <p class="cms-stats__label">자동화 성공률 목표</p>
+        </div>
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">Go Agent Mesh</p>
+          <p class="cms-stats__label">분산 서버 중앙 제어</p>
+        </div>
+        <div class="cms-stats__item">
+          <p class="cms-stats__value">Multi-Approve</p>
+          <p class="cms-stats__label">중요 변경 다단계 승인</p>
+        </div>
+      </div>
+
+      <section id="ssl-core" class="cms-features" aria-label="주요 기능 안내">
+        <h2 class="section-title" data-animate>엔터프라이즈급 주요 기능</h2>
+        <p class="section-desc" data-animate>
+          SSL 인증서 관리의 모든 프로세스를 자동화하여 무중단 운영을 보장하는 핵심 기능입니다.
+        </p>
+
+        <div class="ai-grid" data-stagger>
+          <div class="ai-card">
+            <div class="ai-card-icon icon-blue">
+              <i class="bi bi-bell" aria-hidden="true"></i>
+            </div>
+            <h3>인증서 모니터링</h3>
+            <p>
+              전체 도메인의 만료일을 실시간 추적하고 위험 임계치 도달 시 즉시 알림을 발송합니다.
+            </p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-icon icon-green">
+              <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+            </div>
+            <h3>자동/수동 갱신</h3>
+            <p>
+              환경에 맞춘 자동 갱신 정책을 적용하거나 운영자가 즉시 수동 갱신을 실행할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-icon icon-teal">
+              <i class="bi bi-diagram-3" aria-hidden="true"></i>
+            </div>
+            <h3>에이전트 기반 관리</h3>
+            <p>
+              각 서버에 설치된 Go 에이전트를 통해 분산된 서버를 중앙에서 통합 제어합니다.
+            </p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-icon icon-purple">
+              <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+            </div>
+            <h3>보안 알림 시스템</h3>
+            <p>
+              이상 징후 포착 시 담당자에게 Slack, Email 등 다채널로 즉시 알림을 전송합니다.
+            </p>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-icon icon-purple">
+              <i class="bi bi-key" aria-hidden="true"></i>
+            </div>
+            <h3>다단계 승인</h3>
+            <p>중요 시스템의 경우 관리자의 최종 승인 절차를 거쳐 안전을 확보합니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ssl-dashboard" data-scroll>
+        <div class="ssl-dashboard__container">
+          <div class="ssl-dashboard__header">
+            <h2 class="ssl-dashboard__title">
+              모든 상태를 <span>실시간으로</span> 증명합니다
+            </h2>
+            <p class="ssl-dashboard__subtitle">
+              수백 대의 서버 상태를 단일 화면에서 제어하며, 진행 중인 갱신 프로세스를 직관적으로 확인할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="ssl-dashboard__content">
+            <!-- 통계 카드 -->
+            <div class="dashboard-card">
+              <div class="dashboard-card__header">
+                <h3 class="dashboard-card__title">시스템 현황</h3>
+                <span class="dashboard-card__badge">LIVE</span>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-item__value stat-item__value--green">127</span>
+                  <span class="stat-item__label">관리 도메인</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-item__value">99.9%</span>
+                  <span class="stat-item__label">가동률</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-item__value stat-item__value--green">24/7</span>
+                  <span class="stat-item__label">모니터링</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-item__value">3</span>
+                  <span class="stat-item__label">에이전트</span>
+                </div>
+              </div>
+
+              <div class="progress-group">
+                <div class="progress-item">
+                  <div class="progress-item__header">
+                    <span class="progress-item__label">자동화 성공률</span>
+                    <span class="progress-item__value">99.2%</span>
+                  </div>
+                  <div class="progress-bar" data-progress="99.2">
+                    <div class="progress-bar__fill" style="--progress-width: 99.2%"></div>
+                  </div>
+                </div>
+
+                <div class="progress-item">
+                  <div class="progress-item__header">
+                    <span class="progress-item__label">현재 갱신 진행</span>
+                    <span class="progress-item__value progress-item__value--blue">6%</span>
+                  </div>
+                  <div class="progress-bar" data-progress="6">
+                    <div class="progress-bar__fill progress-bar__fill--blue" style="--progress-width: 6%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="ssl-dashboard__btn" id="renewalTestBtn">
+                <i class="bi bi-play-circle"></i>
+                <span>갱신 프로세스 테스트</span>
+              </button>
+            </div>
+
+            <!-- 차트 카드 -->
+            <div class="dashboard-card">
+              <div class="dashboard-card__header">
+                <h3 class="dashboard-card__title">도메인 상태 분포</h3>
+                <span class="dashboard-card__badge">REALTIME</span>
+              </div>
+
+              <div class="chart-wrapper">
+                <div id="chartdiv"></div>
+
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-dot legend-dot--green"></span>
+                    <span>정상 운영</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot legend-dot--blue"></span>
+                    <span>갱신 대기</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot legend-dot--red"></span>
+                    <span>점검 필요</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modern Tech Stack -->
+      <section class="tech-stack-section" data-scroll>
+        <div class="tech-stack-section__inner">
+          <div class="tech-stack-section__left">
+            <h2>Modern Tech Stack</h2>
+            <p>검증된 기술 조합으로 대규모 인프라에서의 안정성이 입증된 시스템을 구축합니다.</p>
+
+            <div class="tech-grid">
+              <div class="tech-category">
+                <div class="tech-category__label tech-category__label--backend">Backend</div>
+                <div class="tech-category__items">
+                  Spring Boot Java 17<br />
+                  JEECG-BOOT
+                </div>
+              </div>
+
+              <div class="tech-category">
+                <div class="tech-category__label tech-category__label--frontend">Frontend</div>
+                <div class="tech-category__items">
+                  Vue.js Vben Admin
+                </div>
+              </div>
+
+              <div class="tech-category">
+                <div class="tech-category__label tech-category__label--database">Database</div>
+                <div class="tech-category__items">PostgreSQL</div>
+              </div>
+
+              <div class="tech-category">
+                <div class="tech-category__label tech-category__label--agent">Agent & Infra</div>
+                <div class="tech-category__items">
+                  Go Language Docker
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-stack-section__right">
+            <div class="terminal-code">
+              <div class="terminal-code__header">
+                <div class="terminal-code__dots">
+                  <span class="terminal-code__dot terminal-code__dot--red"></span>
+                  <span class="terminal-code__dot terminal-code__dot--yellow"></span>
+                  <span class="terminal-code__dot terminal-code__dot--green"></span>
+                </div>
+                <span class="terminal-code__title">system-architecture —info</span>
+              </div>
+
+              <div class="terminal-code__section">
+                <div class="terminal-code__line">
+                  <span class="terminal-code__comment">$ Infrastructure Status</span>
+                </div>
+                <div class="terminal-code__line">
+                  <span class="terminal-code__key">Containerization:</span>
+                  <span class="terminal-code__value">Docker Active</span>
+                </div>
+                <div class="terminal-code__line">
+                  <span class="terminal-code__key">Distributed:</span>
+                  <span class="terminal-code__value">Go-Agent Mesh</span>
+                </div>
+                <div class="terminal-code__line">
+                  <span class="terminal-code__key">Database:</span>
+                  <span class="terminal-code__value">PostgreSQL Connected</span>
+                </div>
+              </div>
+
+              <div class="terminal-code__section">
+                <div class="terminal-code__line">
+                  <span class="terminal-code__comment">$ System Analysis</span>
+                </div>
+                <div class="terminal-code__line">
+                  <span class="terminal-code__key">Backend:</span>
+                  <span class="terminal-code__value--cyan">JEECG-BOOT (Java 17)</span>
+                </div>
+                <div class="terminal-code__line">
+                  <span class="terminal-code__key">Admin UI:</span>
+                  <span class="terminal-code__value--cyan">Vben (Vue.js)</span>
+                </div>
+              </div>
+
+              <div class="terminal-code__line" style="margin-top: 12px; color: rgba(255,255,255,0.4)">
+                —
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Section -->
+      <section class="security-section" data-scroll aria-label="보안 기능 안내">
+        <h2 class="section-title" data-animate>자동화의 완성은 보안입니다</h2>
+        <p class="section-desc" data-animate>
+          관리가 편해질수록 보안은 더 강력해져야 합니다.
+        </p>
+
+        <div class="security-cards" data-stagger>
+          <div class="biz-card">
+            <div class="biz-card-header">
+              <div class="biz-icon biz-icon--ai">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+              </div>
+              <h3>명령어 필터링</h3>
+            </div>
+            <p>
+              Go 에이전트가 위험한 쉘 명령어를 사전에 차단하여 시스템 안전성을 확보합니다.
+            </p>
+          </div>
+
+          <div class="biz-card">
+            <div class="biz-card-header">
+              <div class="biz-icon biz-icon--data">
+                <i class="bi bi-key" aria-hidden="true"></i>
+              </div>
+              <h3>다단계 승인</h3>
+            </div>
+            <p>
+              결정적인 시스템 변경 시 관리자 간 교차 승인이 필요합니다.
+            </p>
+          </div>
+
+          <div class="biz-card">
+            <div class="biz-card-header">
+              <div class="biz-icon biz-icon--fintech">
+                <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+              </div>
+              <h3>무결성 로그</h3>
+            </div>
+            <p>
+              모든 작업 내역은 PostgreSQL에 위변조 방지 형태로 기록되어 추적합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cms-faq" aria-label="자주 묻는 질문">
+        <h2 class="section-title" data-animate>자주 묻는 질문</h2>
+        <p class="section-desc" data-animate>
+          SYNC SSL 시스템에 대해 궁금하신 사항을 확인하세요.
+        </p>
+
+        <div class="cms-faq__list">
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">명령어 필터링은 어떻게 동작하나요?</p>
+            <p class="faq-item__a">
+              Go 에이전트가 위험한 쉘 명령어를 사전 감지하여 차단함으로써 운영 안전성을 높입니다.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">다단계 승인이 필요한 이유는 무엇인가요?</p>
+            <p class="faq-item__a">
+              결정적인 시스템 변경 시 관리자 간 교차 승인을 적용해 실수와 오남용 리스크를 줄입니다.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">무결성 로그는 어디에 저장되나요?</p>
+            <p class="faq-item__a">
+              모든 작업 내역은 PostgreSQL에 위변조 방지 형태로 기록되어 감사 추적과 대응에 활용됩니다.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-item__q" onclick="toggleFaq(this)">Slack/Email 알림은 어떤 조건에서 발송되나요?</p>
+            <p class="faq-item__a">
+              만료 임박, 갱신 실패, 이상 징후 등 운영 위험 이벤트 발생 시 정책 기반으로 즉시 발송됩니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="cms-faq__more">
+          <a href="javascript:void(0)">전체 보안 기능 보기 →</a>
+        </div>
+      </section>
+
+      
+    </main>
+
+    <div id="footer-include"></div>
+    <div id="floating-menu-include"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //  @component HeroSection
+      document.addEventListener('DOMContentLoaded', () => {
+        render(
+          '#container',
+          heroSection({
+            badge: 'NEXT-GEN SSL AUTOMATION SYSTEM',
+            title: 'SYNC SSL<br />인증서 관리, 이제 완전히 잊으셔도 됩니다',
+            sub: 'SYNC SSL은 단 한 번의 설치로 인증서 감지부터 배포까지 전 과정을 자동화합니다.<br />지능형 에이전트가 365일 24시간 귀사의 서비스를 무중단으로 수호합니다.',
+            scrollTarget: '#no-code',
+          }),
+        );
+      });
+
+      function toggleFaq(el) {
+        const item = el.closest('.faq-item');
+        const isOpen = item.classList.contains('is-open');
+        document
+          .querySelectorAll('.faq-item.is-open')
+          .forEach((i) => i.classList.remove('is-open'));
+        if (!isOpen) item.classList.add('is-open');
+      }
+
+      // amCharts 5 도넛 차트 초기화
+      let chart;
+      let series;
+
+      function initAmChart() {
+        // Create root element
+        let root = am5.Root.new("chartdiv");
+
+        // Set themes
+        root.setThemes([
+          am5themes_Animated.new(root)
+        ]);
+
+        // Create chart
+        chart = root.container.children.push(am5percent.PieChart.new(root, {
+          layout: root.verticalLayout
+        }));
+
+        // Create series with 10px thickness (95% innerRadius)
+        series = chart.series.push(am5percent.PieSeries.new(root, {
+          valueField: "value",
+          categoryField: "category",
+          alignLabels: false,
+          innerRadius: am5.percent(95),
+          radius: am5.percent(100)
+        }));
+
+        // 라벨 숨기기
+        series.labels.template.set("visible", false);
+        series.ticks.template.set("visible", false);
+        
+        // 색상 설정
+        series.slices.template.adapters.add("fill", function(fill, target) {
+          const dataItem = target.dataItem;
+          if (dataItem) {
+            const category = dataItem.get("category");
+            if (category === "정상 운영") return am5.color(0x10b981);
+            if (category === "갱신 대기") return am5.color(0x3b82f6);
+            if (category === "점검 필요") return am5.color(0xef4444);
+          }
+          return fill;
+        });
+
+        // Set data
+        series.data.setAll([
+          { value: 85, category: "정상 운영" },
+          { value: 12, category: "갱신 대기" },
+          { value: 3, category: "점검 필요" }
+        ]);
+
+        // Play initial animations
+        series.appear(1000, 100);
+      }
+
+      // 갱신 프로세스 테스트 버튼 애니메이션
+      document.addEventListener('DOMContentLoaded', () => {
+        // amCharts 초기화
+        if (typeof am5 !== 'undefined') {
+          initAmChart();
+        }
+
+        const renewalBtn = document.getElementById('renewalTestBtn');
+        if (renewalBtn) {
+          renewalBtn.addEventListener('click', function() {
+            if (this.classList.contains('processing')) return;
+            
+            // 버튼 상태 변경
+            this.classList.add('processing');
+            const icon = this.querySelector('i');
+            const text = this.querySelector('span');
+            const originalText = text.textContent;
+            
+            icon.className = 'bi bi-arrow-repeat';
+            text.textContent = '갱신 진행 중...';
+            
+            // 프로그레스 바 애니메이션
+            const progressBars = document.querySelectorAll('.ssl-dashboard .progress-bar__fill');
+            progressBars.forEach(bar => {
+              const currentWidth = parseFloat(bar.style.getPropertyValue('--progress-width'));
+              bar.style.setProperty('--progress-width', '0%');
+              
+              setTimeout(() => {
+                bar.style.setProperty('--progress-width', currentWidth + '%');
+              }, 100);
+            });
+            
+            // 통계 카운팅 애니메이션
+            const statValues = document.querySelectorAll('.stat-item__value');
+            statValues.forEach(stat => {
+              const originalValue = stat.textContent;
+              let currentNum = 0;
+              const targetMatch = originalValue.match(/\d+/);
+              if (targetMatch) {
+                const target = parseInt(targetMatch[0]);
+                const increment = Math.ceil(target / 30);
+                const counter = setInterval(() => {
+                  currentNum += increment;
+                  if (currentNum >= target) {
+                    stat.textContent = originalValue;
+                    clearInterval(counter);
+                  } else {
+                    stat.textContent = originalValue.replace(/\d+/, currentNum);
+                  }
+                }, 50);
+              }
+            });
+            
+            // amCharts 차트 재애니메이션
+            if (series) {
+              series.hide();
+              setTimeout(() => {
+                series.show();
+              }, 100);
+            }
+            
+            // 3초 후 원상복구
+            setTimeout(() => {
+              this.classList.remove('processing');
+              icon.className = 'bi bi-play-circle';
+              text.textContent = originalText;
+            }, 3000);
+          });
+        }
+      });
+    </script>
+    <script>
+      // ===== 스크롤 애니메이션 (data-scroll) =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('main section');
+        sections.forEach(section => {
+          if (!section.hasAttribute('data-scroll')) {
+            section.setAttribute('data-scroll', '');
+          }
+        });
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              
+              // ssl-dashboard 섹션 프로그레스 바 애니메이션 트리거
+              if (entry.target.classList.contains('ssl-dashboard')) {
+                setTimeout(() => {
+                  const progressBars = entry.target.querySelectorAll('.progress-bar');
+                  progressBars.forEach(bar => {
+                    bar.classList.add('animate');
+                  });
+                }, 300);
+              }
+              
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -80px 0px'
+        });
+        sections.forEach((section) => scrollObserver.observe(section));
+      });
+    </script>
+    <script>
+      // ===== 도넛 차트 애니메이션 =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const dashboardSection = document.querySelector('.ssl-dashboard');
+        if (!dashboardSection) return;
+
+        const chartObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const segments = entry.target.querySelectorAll('.donut-segment');
+              segments.forEach((segment, index) => {
+                setTimeout(() => {
+                  segment.style.animation = `donut-fill 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
+                }, index * 200);
+              });
+              chartObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.3
+        });
+
+        chartObserver.observe(dashboardSection);
+      });
+    </script>
+    <script>
+      // ===== Hero 섹션 휠 스크롤 자동 이동 =====
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.querySelector('.syncany-hero');
+        const nextSection = document.querySelector('#no-code');
+
+        if (!heroSection || !nextSection) return;
+
+        let isScrolling = false;
+        let scrollTimeout;
+
+        heroSection.addEventListener(
+          'wheel',
+          (e) => {
+            if (isScrolling || e.deltaY < 0) return;
+
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+
+            if (heroBottom > windowHeight * 0.3) {
+              e.preventDefault();
+              isScrolling = true;
+
+              window.scrollTo({
+                top: nextSection.offsetTop,
+                behavior: 'smooth',
+              });
+
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+              }, 1000);
+            }
+          },
+          { passive: false },
+        );
+      });
+    </script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

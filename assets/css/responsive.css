@@ -25,7 +25,7 @@
 	}
 
 	/* 모바일사이즈 padding */
-	.experience-section, section.ai-services, section.overview-cards, .ai-services, .xbus-history, .ht-inner, .corp-section, #tabto-pay .flow-section, #tabto-pay .ecosystem-wrap, .cta-bar, .edu-feature-section, .effect-section, .cloud__main > section, .commmuni__main > section, .commerce__main > section, .benev__main > section, .bi__main > section, .finance__main > section, .sync__container > section, .cms__main .cms-stats, .cms__main .cms-tech, .sync-eta-why, .sync-eta-hero, .eta__main .sync-eta-stats, .section-admin-ecosystem, .sync-eta-pipeline, .scm-hero, .xbus-encryption, .container__agency {
+	.experience-section, section.ai-services, section.overview-cards, .ai-services, .xbus-history, .ht-inner, .corp-section, #tabto-pay .flow-section, #tabto-pay .ecosystem-wrap, .cta-bar, .edu-feature-section, .effect-section, .cloud__main > section, .commmuni__main > section, .commerce__main > section, .benev__main > section, .bi__main > section, .finance__main > section, .sync__container > section, .cms__main .cms-stats, .cms__main .cms-tech, .ssl-dashboard, .security-section, .cms-features, .sync-eta-why, .sync-eta-hero, .eta__main .sync-eta-stats, .section-admin-ecosystem, .sync-eta-pipeline, .scm-hero, .xbus-encryption, .container__agency {
 		padding: 45px 15px 45px;
 	}
 
@@ -624,6 +624,66 @@
 
 	.cms__main .cms-tech {
 		grid-template-columns: 1fr;
+	}
+
+	.ai-grid {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.ssl-dashboard {
+		padding: 60px 20px;
+	}
+
+	.ssl-dashboard__content {
+		grid-template-columns: 1fr;
+	}
+
+	.stats-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.security-cards {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.ssl-dashboard__right {
+		width: 100%;
+	}
+
+	.cms-tech__left {
+		max-width: 100% !important;
+		margin-bottom: 40px;
+	}
+
+	.chart-card {
+		padding: 28px !important;
+		max-width: 100% !important;
+	}
+
+	.donut-chart {
+		width: 220px !important;
+		height: 220px !important;
+	}
+
+	.donut-chart svg {
+		width: 220px !important;
+		height: 220px !important;
+	}
+
+	.chart-legend {
+		flex-direction: row;
+		justify-content: center;
+		gap: 16px !important;
+	}
+
+	.progress-label {
+		font-size: 13px !important;
+	}
+
+	.progress-bar {
+		height: 12px !important;
 	}
 
 	/* pages/sync/sync-eta.html */
