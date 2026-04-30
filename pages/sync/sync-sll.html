@@ -201,6 +201,7 @@
         letter-spacing: 0.5px;
         animation: pulse 2s ease-in-out infinite;
       }
+      .faq-item__q::after{color: #fff;}
 
       @keyframes pulse {
         0%, 100% { opacity: 1; }
@@ -638,6 +639,150 @@
           font-size: 13px;
         }
       }
+
+      /* FAQ Section Styling - tone & manner aligned */
+      .cms-faq {
+        padding: 80px 20px;
+        background: linear-gradient(180deg, rgba(8,11,20,0.95) 0%, rgba(18,24,37,0.95) 100%);
+        color: rgba(255,255,255,0.95);
+      }
+
+      .cms-faq .section-title {
+        color: #e6eef8;
+        margin-bottom: 8px;
+      }
+
+      .cms-faq .section-desc {
+        color: rgba(230,238,248,0.8);
+        margin-bottom: 32px;
+        max-width: 900px;
+      }
+
+      .cms-faq__list {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .faq-item {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 12px;
+        padding: 18px 20px;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .faq-item:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .faq-item__q {
+        font-weight: 700;
+        cursor: pointer;
+        color: #ffffff;
+        margin: 0;
+        padding: 4px 0;
+      }
+
+      .faq-item__a {
+        margin: 0;
+        margin-top: 8px;
+        color: rgba(230,238,248,0.95);
+        max-height: none;
+        overflow: visible;
+        transition: none;
+        padding-top: 12px;
+        line-height: 1.6;
+      }
+
+      /* remove accordion dependency - make all items card-based */
+      .faq-item.is-open .faq-item__a {
+        /* kept for compatibility but no-op in card mode */
+      }
+
+      /* New card-based FAQ styles */
+      .faq-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 12px;
+        padding: 20px;
+      }
+
+      .faq-card::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+      }
+
+      .faq-card__header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .faq-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(59,130,246,0.08);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #3b82f6;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .faq-card__q {
+        margin: 0;
+        font-size: 1.05rem;
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .faq-card__body {
+        color: rgba(230,238,248,0.95);
+        margin-top: 6px;
+        line-height: 1.6;
+      }
+
+      .cms-faq__more {
+        text-align: center;
+        margin-top: 28px;
+      }
+
+      .cms-faq__more a {
+        display: inline-block;
+        padding: 10px 18px;
+        background: linear-gradient(90deg,#3b82f6,#8b5cf6);
+        color: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* FAQ responsive */
+      @media (max-width: 768px) {
+        .cms-faq__list { grid-template-columns: 1fr; }
+        .cms-faq { padding: 48px 16px; }
+      }
+
+      @media (max-width: 480px) {
+        .cms-faq { padding: 36px 12px; }
+        .faq-item { padding: 14px 12px; }
+      }
     </style>
   </head>
   <body id="sync__cms" data-type="detail">
@@ -960,33 +1105,45 @@
         </p>
 
         <div class="cms-faq__list">
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">명령어 필터링은 어떻게 동작하나요?</p>
-            <p class="faq-item__a">
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <div class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></div>
+              <h4 class="faq-card__q">명령어 필터링은 어떻게 동작하나요?</h4>
+            </div>
+            <div class="faq-card__body">
               Go 에이전트가 위험한 쉘 명령어를 사전 감지하여 차단함으로써 운영 안전성을 높입니다.
-            </p>
-          </div>
+            </div>
+          </article>
 
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">다단계 승인이 필요한 이유는 무엇인가요?</p>
-            <p class="faq-item__a">
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <div class="faq-card__icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
+              <h4 class="faq-card__q">다단계 승인이 필요한 이유는 무엇인가요?</h4>
+            </div>
+            <div class="faq-card__body">
               결정적인 시스템 변경 시 관리자 간 교차 승인을 적용해 실수와 오남용 리스크를 줄입니다.
-            </p>
-          </div>
+            </div>
+          </article>
 
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">무결성 로그는 어디에 저장되나요?</p>
-            <p class="faq-item__a">
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <div class="faq-card__icon"><i class="bi bi-journal-check" aria-hidden="true"></i></div>
+              <h4 class="faq-card__q">무결성 로그는 어디에 저장되나요?</h4>
+            </div>
+            <div class="faq-card__body">
               모든 작업 내역은 PostgreSQL에 위변조 방지 형태로 기록되어 감사 추적과 대응에 활용됩니다.
-            </p>
-          </div>
+            </div>
+          </article>
 
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">Slack/Email 알림은 어떤 조건에서 발송되나요?</p>
-            <p class="faq-item__a">
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <div class="faq-card__icon"><i class="bi bi-envelope-check" aria-hidden="true"></i></div>
+              <h4 class="faq-card__q">Slack/Email 알림은 어떤 조건에서 발송되나요?</h4>
+            </div>
+            <div class="faq-card__body">
               만료 임박, 갱신 실패, 이상 징후 등 운영 위험 이벤트 발생 시 정책 기반으로 즉시 발송됩니다.
-            </p>
-          </div>
+            </div>
+          </article>
         </div>
 
         <div class="cms-faq__more">
