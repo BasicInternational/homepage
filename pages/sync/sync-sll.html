@@ -1203,12 +1203,12 @@
           layout: root.verticalLayout
         }));
 
-        // Create series with 10px thickness (95% innerRadius)
+        // Create series with ~14px thickness (use ~91% innerRadius)
         series = chart.series.push(am5percent.PieSeries.new(root, {
           valueField: "value",
           categoryField: "category",
           alignLabels: false,
-          innerRadius: am5.percent(95),
+          innerRadius: am5.percent(91),
           radius: am5.percent(100)
         }));
 
