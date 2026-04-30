@@ -169,6 +169,9 @@
         border-radius: 20px;
         padding: 32px;
         transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        padding-left: 44px;
       }
 
       .dashboard-card:hover {
@@ -200,6 +203,105 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
         animation: pulse 2s ease-in-out infinite;
+      }
+      /* Color variants for dashboard cards */
+      .dashboard-card--blue {
+        border-color: rgba(59,130,246,0.14);
+        box-shadow: 0 10px 30px rgba(59,130,246,0.06);
+        background: linear-gradient(180deg, rgba(59,130,246,0.06), rgba(59,130,246,0.01));
+      }
+      .dashboard-card--green {
+        border-color: rgba(16,185,129,0.14);
+        box-shadow: 0 10px 30px rgba(16,185,129,0.05);
+        background: linear-gradient(180deg, rgba(16,185,129,0.06), rgba(16,185,129,0.01));
+      }
+      .dashboard-card--teal {
+        border-color: rgba(6,182,212,0.12);
+        box-shadow: 0 10px 30px rgba(6,182,212,0.05);
+        background: linear-gradient(180deg, rgba(6,182,212,0.06), rgba(6,182,212,0.01));
+      }
+      .dashboard-card--purple {
+        border-color: rgba(139,92,246,0.12);
+        box-shadow: 0 10px 30px rgba(139,92,246,0.06);
+        background: linear-gradient(180deg, rgba(139,92,246,0.06), rgba(139,92,246,0.01));
+      }
+      .dashboard-card--accent {
+        border-color: rgba(249,115,22,0.12);
+        box-shadow: 0 10px 30px rgba(249,115,22,0.06);
+        background: linear-gradient(180deg, rgba(249,115,22,0.06), rgba(249,115,22,0.01));
+      }
+
+      /* left accent bar for visual cue */
+      .dashboard-card--blue::before,
+      .dashboard-card--green::before,
+      .dashboard-card--teal::before,
+      .dashboard-card--purple::before,
+      .dashboard-card--accent::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+      .dashboard-card--blue::before   { background: linear-gradient(180deg,#3b82f6,#06b6d4); }
+      .dashboard-card--green::before  { background: linear-gradient(180deg,#10b981,#34d399); }
+      .dashboard-card--teal::before   { background: linear-gradient(180deg,#06b6d4,#0ea5a3); }
+      .dashboard-card--purple::before { background: linear-gradient(180deg,#8b5cf6,#a78bfa); }
+      .dashboard-card--accent::before { background: linear-gradient(180deg,#f97316,#f59e0b); }
+      .dashboard-card--rose::before   { background: linear-gradient(180deg,#f43f5e,#fb7185); }
+      .dashboard-card--amber::before  { background: linear-gradient(180deg,#f59e0b,#fcd34d); }
+      .dashboard-card--indigo::before { background: linear-gradient(180deg,#6366f1,#818cf8); }
+      .dashboard-card--cyan::before   { background: linear-gradient(180deg,#22d3ee,#67e8f9); }
+      .dashboard-card--slate::before  { background: linear-gradient(180deg,#94a3b8,#cbd5e1); }
+
+      /* rose */
+      .dashboard-card--rose {
+        border-color: rgba(244,63,94,0.14);
+        box-shadow: 0 10px 30px rgba(244,63,94,0.06);
+        background: linear-gradient(180deg, rgba(244,63,94,0.06), rgba(244,63,94,0.01));
+      }
+      /* amber */
+      .dashboard-card--amber {
+        border-color: rgba(245,158,11,0.14);
+        box-shadow: 0 10px 30px rgba(245,158,11,0.06);
+        background: linear-gradient(180deg, rgba(245,158,11,0.06), rgba(245,158,11,0.01));
+      }
+      /* indigo */
+      .dashboard-card--indigo {
+        border-color: rgba(99,102,241,0.14);
+        box-shadow: 0 10px 30px rgba(99,102,241,0.06);
+        background: linear-gradient(180deg, rgba(99,102,241,0.06), rgba(99,102,241,0.01));
+      }
+      /* cyan */
+      .dashboard-card--cyan {
+        border-color: rgba(34,211,238,0.12);
+        box-shadow: 0 10px 30px rgba(34,211,238,0.05);
+        background: linear-gradient(180deg, rgba(34,211,238,0.06), rgba(34,211,238,0.01));
+      }
+      /* slate */
+      .dashboard-card--slate {
+        border-color: rgba(148,163,184,0.14);
+        box-shadow: 0 10px 30px rgba(148,163,184,0.05);
+        background: linear-gradient(180deg, rgba(148,163,184,0.06), rgba(148,163,184,0.01));
+      }
+
+      /* ::before 공통 속성 확장 */
+      .dashboard-card--rose::before,
+      .dashboard-card--amber::before,
+      .dashboard-card--indigo::before,
+      .dashboard-card--cyan::before,
+      .dashboard-card--slate::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
       }
       .faq-item__q::after{color: #fff;}
 
@@ -881,7 +983,7 @@
 
           <div class="ssl-dashboard__content">
             <!-- 통계 카드 -->
-            <div class="dashboard-card">
+            <div class="dashboard-card dashboard-card--blue">
               <div class="dashboard-card__header">
                 <h3 class="dashboard-card__title">시스템 현황</h3>
                 <span class="dashboard-card__badge">LIVE</span>
@@ -935,7 +1037,7 @@
             </div>
 
             <!-- 차트 카드 -->
-            <div class="dashboard-card">
+            <div class="dashboard-card dashboard-card--teal">
               <div class="dashboard-card__header">
                 <h3 class="dashboard-card__title">도메인 상태 분포</h3>
                 <span class="dashboard-card__badge">REALTIME</span>
@@ -1250,28 +1352,67 @@
         if (renewalBtn) {
           renewalBtn.addEventListener('click', function() {
             if (this.classList.contains('processing')) return;
-            
+
             // 버튼 상태 변경
             this.classList.add('processing');
             const icon = this.querySelector('i');
             const text = this.querySelector('span');
             const originalText = text.textContent;
-            
+
             icon.className = 'bi bi-arrow-repeat';
             text.textContent = '갱신 진행 중...';
-            
-            // 프로그레스 바 애니메이션
-            const progressBars = document.querySelectorAll('.ssl-dashboard .progress-bar__fill');
-            progressBars.forEach(bar => {
-              const currentWidth = parseFloat(bar.style.getPropertyValue('--progress-width'));
-              bar.style.setProperty('--progress-width', '0%');
-              
-              setTimeout(() => {
-                bar.style.setProperty('--progress-width', currentWidth + '%');
-              }, 100);
+
+            // total orchestration duration (ms)
+            const totalDuration = 3200;
+            const numberAnimDuration = Math.max(600, totalDuration - 800);
+
+            // Animate all progress bars: reset → 0 instantly → animate to target
+            const progressItems = document.querySelectorAll('.progress-item');
+            progressItems.forEach(item => {
+              const valueEl = item.querySelector('.progress-item__value');
+              const barEl   = item.querySelector('.progress-bar');
+              const barFill = item.querySelector('.progress-bar__fill');
+              if (!barFill || !valueEl) return;
+
+              // determine target from data-progress attribute
+              let target = 0;
+              if (barFill.classList.contains('progress-bar__fill--blue')) {
+                target = 100;
+              } else {
+                target = parseFloat(barEl && barEl.dataset.progress) || 0;
+              }
+              const hasDecimal = String(target).includes('.');
+
+              // 1) transition 잠깐 끄고 즉각 0으로 리셋
+              barFill.style.transition = 'none';
+              barFill.style.setProperty('--progress-width', '0%');
+              valueEl.textContent = '0%';
+
+              // 2) 다음 프레임에서 transition 복원 후 목표값으로 애니메이션
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  barFill.style.transition = '';
+                  barFill.style.setProperty('--progress-width', target + '%');
+                });
+              });
+
+              // 3) 숫자 카운터 (2s transition 과 동기화)
+              const duration = numberAnimDuration;
+              const steps    = Math.max(30, Math.floor(duration / 40));
+              const interval = Math.floor(duration / steps);
+              let step = 0;
+              const numTimer = setInterval(() => {
+                step++;
+                const val = (target / steps) * step;
+                valueEl.textContent = hasDecimal ? val.toFixed(1) + '%' : Math.round(val) + '%';
+                if (step >= steps) {
+                  valueEl.textContent = (hasDecimal ? target.toFixed(1) : Math.round(target)) + '%';
+                  clearInterval(numTimer);
+                }
+              }, interval);
             });
-            
-            // 통계 카운팅 애니메이션
+
+            // 통계 카운팅 애니메이션 (existing stat cards)
             const statValues = document.querySelectorAll('.stat-item__value');
             statValues.forEach(stat => {
               const originalValue = stat.textContent;
@@ -1291,21 +1432,43 @@
                 }, 50);
               }
             });
-            
-            // amCharts 차트 재애니메이션
+
+            // Coordinate amCharts animation to align with progress completion
             if (series) {
-              series.hide();
+              // hide immediately, then show/appear near the end of the orchestration
+              try { series.hide(); } catch (e) {}
+              const chartAppearDelay = Math.max(200, totalDuration - 900);
               setTimeout(() => {
-                series.show();
-              }, 100);
+                try {
+                  series.show();
+                  // play a pronounced appear animation
+                  if (typeof series.appear === 'function') series.appear(800, 100);
+                } catch (e) {}
+              }, chartAppearDelay);
             }
-            
-            // 3초 후 원상복구
+
+            // finalization: restore each bar to its original data-progress value and reset button
             setTimeout(() => {
+              document.querySelectorAll('.progress-item').forEach(item => {
+                const barEl  = item.querySelector('.progress-bar');
+                const fillEl = item.querySelector('.progress-bar__fill');
+                const valEl  = item.querySelector('.progress-item__value');
+                if (!barEl || !fillEl || !valEl) return;
+
+                // blue bar always ends at 100 during demo, others restore to original
+                const isBlueFill = fillEl.classList.contains('progress-bar__fill--blue');
+                const original = isBlueFill ? 100 : (parseFloat(barEl.dataset.progress) || 0);
+                const hasDecimal = String(original).includes('.');
+
+                fillEl.style.setProperty('--progress-width', original + '%');
+                valEl.textContent = (hasDecimal ? original.toFixed(1) : Math.round(original)) + '%';
+              });
+
+              // restore button state
               this.classList.remove('processing');
               icon.className = 'bi bi-play-circle';
               text.textContent = originalText;
-            }, 3000);
+            }, totalDuration);
           });
         }
       });
@@ -1313,27 +1476,62 @@
     <script>
       // ===== 스크롤 애니메이션 (data-scroll) =====
       document.addEventListener('DOMContentLoaded', () => {
+        // 프로그레스 바를 0%로 초기화 (CSS transition 작동 보장)
+        document.querySelectorAll('.progress-bar__fill').forEach(fill => {
+          fill.style.setProperty('--progress-width', '0%');
+        });
+
         const sections = document.querySelectorAll('main section');
         sections.forEach(section => {
           if (!section.hasAttribute('data-scroll')) {
             section.setAttribute('data-scroll', '');
           }
         });
+
+        function animateProgressItems(container) {
+          const progressItems = container.querySelectorAll('.progress-item');
+          progressItems.forEach(item => {
+            const valueEl   = item.querySelector('.progress-item__value');
+            const barEl     = item.querySelector('.progress-bar');
+            const fillEl    = item.querySelector('.progress-bar__fill');
+            if (!fillEl || !valueEl || !barEl) return;
+
+            const target    = parseFloat(barEl.dataset.progress) || 0;
+            const hasDecimal = String(target).includes('.');
+
+            // 1) CSS 너비 애니메이션
+            setTimeout(() => {
+              fillEl.style.setProperty('--progress-width', target + '%');
+            }, 80);
+
+            // 2) 숫자 카운터 (바 transition 2s 와 동기화)
+            const duration = 1800;
+            const steps    = Math.max(30, Math.floor(duration / 40));
+            const interval = Math.floor(duration / steps);
+            let step = 0;
+            const timer = setInterval(() => {
+              step++;
+              const val = (target / steps) * step;
+              valueEl.textContent = hasDecimal
+                ? val.toFixed(1) + '%'
+                : Math.round(val) + '%';
+              if (step >= steps) {
+                valueEl.textContent = (hasDecimal ? target.toFixed(1) : Math.round(target)) + '%';
+                clearInterval(timer);
+              }
+            }, interval);
+          });
+        }
+
         const scrollObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
-              
-              // ssl-dashboard 섹션 프로그레스 바 애니메이션 트리거
+
               if (entry.target.classList.contains('ssl-dashboard')) {
-                setTimeout(() => {
-                  const progressBars = entry.target.querySelectorAll('.progress-bar');
-                  progressBars.forEach(bar => {
-                    bar.classList.add('animate');
-                  });
-                }, 300);
+                setTimeout(() => animateProgressItems(entry.target), 300);
               }
-              
+
               scrollObserver.unobserve(entry.target);
             }
           });
