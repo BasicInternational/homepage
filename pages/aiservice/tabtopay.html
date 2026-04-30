@@ -5,7 +5,10 @@
     <title>베이직인터내셔널</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="베이직인터내셔널" />
-    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="description"
+      content="탭투페이(Tap to Pay) 기반 스마트 결제로 단말 부담을 줄이고 소상공인 매출 증대를 지원하는 베이직인터내셔널 결제 혁신 서비스입니다."
+    />
     <meta
       name="keywords"
       content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
@@ -15,11 +18,14 @@
     <meta property="og:title" content="베이직인터내셔널 홈페이지" />
     <meta
       property="og:description"
-      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+      content="탭투페이(Tap to Pay) 기반 스마트 결제로 단말 부담을 줄이고 소상공인 매출 증대를 지원하는 결제 혁신 서비스입니다."
     />
     <meta property="og:image" content="/assets/images/favicon.png" />
-
-    <meta property="og:url" content="https://basicit.co.kr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="베이직인터내셔널" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="https://basicit.co.kr/pages/aiservice/tabtopay.html" />
+    <meta property="og:url" content="https://basicit.co.kr/pages/aiservice/tabtopay.html" />
     <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
     <!-- CSS -->
@@ -27,12 +33,6 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/style_business.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
@@ -46,9 +46,30 @@
 
     <!-- 섹션 스크롤 애니메이션 -->
     <style>
-      .section-title::after{
-    display: none;
-}
+      .section-title::after {
+        display: none;
+      }
+
+      .tabtopay-hero {
+        background: #ffffff;
+      }
+
+      .tabtopay-surface {
+        background: #f8fbff;
+      }
+
+      .tabtopay-surface-alt {
+        background: #f3f6fb;
+      }
+
+      .pay-icon {
+        font-size: 22px;
+      }
+
+      .pay-icon--blue { color: #3b82f6; }
+      .pay-icon--green { color: #10b981; }
+      .pay-icon--amber { color: #f59e0b; }
+      .pay-icon--pink { color: #ec4899; }
       /* 섹션 등장 애니메이션 */
       [data-scroll] {
         opacity: 0;
@@ -146,21 +167,6 @@
         }
       }
 
-      /* 헤로 그리드 */
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-      }
-
-      @media (max-width: 768px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-      }
-
       /* 텍스트 센터 */
       .text-center {
         text-align: center;
@@ -236,48 +242,33 @@
       }
 
       .feature-card .icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 14px;
+        font-size: 22px;
+        background: #e8f0fe;
       }
 
       .feature-card h3 {
-        font-size: 1.25rem;
+        font-size: 21px;
         font-weight: 700;
         margin-bottom: 0.75rem;
         color: #1f2937;
       }
 
       .feature-card p {
-        color: #6b7280;
-        font-size: 0.95rem;
-        line-height: 1.6;
+        color: #4b5563;
+        font-size: 15.5px;
+        line-height: 1.78;
       }
 
       .feature-card .step-circle {
         font-size: 2rem;
         margin-bottom: 1rem;
-      }
-
-      /* Hero 제목 */
-      .hero-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 1.3;
-        margin-bottom: 1.5rem;
-        color: #1f2937;
-      }
-
-      @media (max-width: 768px) {
-        .hero-title {
-          font-size: 1.875rem;
-        }
-      }
-
-      .hero-desc {
-        font-size: 1.1rem;
-        color: #4b5563;
-        line-height: 1.7;
-        margin-bottom: 2rem;
       }
 
       /* Gradient text */
@@ -292,17 +283,22 @@
 
       /* Section 제목 */
       .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: #1f2937;
+        text-align: center;
+        font-size: clamp(1.85rem, 2.1vw, 2.35rem);
+        font-weight: 900;
+        color: #0f172a;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+        margin-bottom: 12px;
       }
 
       .section-sub {
-        font-size: 1rem;
-        color: #6b7280;
-        max-width: 600px;
-        margin: 0 auto 3rem;
+        text-align: center;
+        color: #4b5563;
+        font-size: 1.05rem;
+        line-height: 1.78;
+        max-width: 760px;
+        margin: 0 auto 48px;
       }
 
       @media (max-width: 768px) {
@@ -329,74 +325,96 @@
       .flow-steps-row {
         display: flex;
         align-items: center;
-        gap: 1rem;
+  gap: 0.9rem;
         flex-wrap: wrap;
         justify-content: center;
+  padding: 10px;
+  border-radius: 16px;
+  background: #f8fbff;
+  border: none;
       }
 
       .flow-step-cell {
         flex: 0 1 auto;
-        min-width: 120px;
+  min-width: 132px;
         text-align: center;
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
       }
 
       .flow-step-icon {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 22px;
+  margin: 0 auto 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef4ff;
+  color: #2563eb;
       }
 
       .flow-step-name {
-        font-size: 0.875rem;
+  font-size: 0.95rem;
         font-weight: 600;
-        color: #1f2937;
+  color: #0f172a;
+  line-height: 1.35;
         margin: 0;
       }
 
       .flow-step-arrow {
-        font-size: 1.5rem;
-        color: #3b82f6;
+  font-size: 1.2rem;
+  color: #94a3b8;
         display: inline-block;
+  line-height: 1;
       }
 
       @media (max-width: 1024px) {
         .flow-steps-row {
-          gap: 0.75rem;
+    gap: 0.7rem;
         }
 
-        .flow-step-cell {
-          min-width: 100px;
+  .flow-step-cell {
+    min-width: 116px;
+    padding: 12px 10px;
         }
 
         .flow-step-icon {
-          font-size: 2rem;
+          font-size: 20px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
         }
 
         .flow-step-arrow {
-          font-size: 1.25rem;
+    font-size: 1rem;
         }
       }
 
       @media (max-width: 768px) {
         .flow-steps-row {
           flex-direction: column;
-          gap: 1.5rem;
+    gap: 0.85rem;
+    padding: 0;
+    border: none;
+    background: transparent;
         }
 
         .flow-step-cell {
           width: 100%;
-          padding: 1rem;
-          background: #f9fafb;
-          border-radius: 0.75rem;
+    padding: 14px 12px;
         }
 
         .flow-step-icon {
-          font-size: 2.25rem;
+          font-size: 20px;
         }
 
         .flow-step-arrow {
-          font-size: 1.5rem;
-          transform: rotate(90deg);
-          margin: 0.75rem 0;
+    display: none;
         }
       }
 
@@ -406,15 +424,17 @@
         }
 
         .flow-step-cell {
-          padding: 0.75rem;
+          padding: 12px 10px;
         }
 
         .flow-step-icon {
-          font-size: 1.75rem;
+          font-size: 18px;
+          width: 36px;
+          height: 36px;
         }
 
         .flow-step-name {
-          font-size: 0.8rem;
+          font-size: 0.88rem;
         }
 
         .flow-step-arrow {
@@ -433,35 +453,50 @@
     <!--  Header 영역  -->
     <div id="header-include"></div>
 
-    <main id="container" tabindex="0">
+    <main id="container" tabindex="-1">
       <!-- ── HERO SECTION ── -->
-      <section class="section-padding" style="background: white;">
-        <div class="inner_section hero-grid">
-          <div>
-            <div style="display: inline-block; padding: 0.4rem 1rem; background: #dbeafe; color: #2563eb; border-radius: 999px; font-weight: 700; font-size: 0.875rem; margin-bottom: 1.5rem;">
-              💳 스마트 결제 솔루션
-            </div>
-            <h1 class="hero-title">
-              단순한 결제를 넘어,<br />
-              <span class="gradient-text">경영의 혁신</span>을 완성하다.
+      <section class="hero-modern-business tabtopay-hero" aria-label="히어로 - 탭투페이 서비스 소개">
+        <div class="hero-modern-business__container">
+          <div class="hero-modern-business__content">
+            <span class="hero-modern-business__badge"> SMART PAYMENT INNOVATION </span>
+            <h1 class="hero-modern-business__title">
+              단순한 결제를 넘어<br class="hero-modern-business__br" />
+              탭투페이로 경영 혁신을 완성하다
             </h1>
-            <p class="hero-desc">
-              탭투페이(Tap to Pay) 기술로 결제 단말기 유지 비용을 제로화하고, 픽업서비스와 PASS 앱을 연동하여 소상공인의 실질적인 매출 증대를 지원하는 생성형 스마트 결제 생태계 구축 프로젝트입니다.
+            <p class="hero-modern-business__desc">
+              탭투페이(Tap to Pay) 기술로 결제 단말기 유지 비용을 낮추고,<br class="pc-br" />
+              픽업서비스와 PASS 앱 연동으로 소상공인의 실질적인 매출 성장을 지원합니다.
             </p>
-          </div>
-          <div class="text-center">
-            <div style="background: url('/assets/images/pages/business/bg-02.jpg') center center / cover no-repeat;border-radius: 1rem;padding: 3rem 2rem;color: white;min-height: 300px;display: flex;flex-direction: column;justify-content: center;align-items: center;">
-              <p style="font-size: 0.875rem; margin-bottom: 1rem;">핵심 기술</p>
-              <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">단말 ZERO</p>
-              <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">정산 AUTO</p>
-              <p style="font-size: 1.5rem; font-weight: 700;">페이벡 PLUS</p>
+            <div class="hero-modern-business__actions">
+              <a
+                href="#tabtopay-payment"
+                class="hero-modern-business__button hero-modern-business__button--primary"
+              >
+                결제 방식 보기
+              </a>
+              <a
+                href="mailto:sisocore@basicit.co.kr"
+                class="hero-modern-business__button hero-modern-business__button--secondary"
+              >
+                도입 상담하기
+              </a>
             </div>
+          </div>
+          <div class="hero-modern-business__image-wrapper">
+            <img
+              src="/assets/images/pages/business/bg-02.jpg"
+              width="540"
+              height="360"
+              loading="lazy"
+              alt="탭투페이 기반의 스마트 결제 솔루션을 표현한 이미지"
+              class="hero-modern-business__image"
+            />
           </div>
         </div>
       </section>
 
       <!-- ── PAYMENT METHOD SECTION ── -->
-      <section class="section-padding" style="background: #f9fafb;">
+      <section id="tabtopay-payment" class="section-padding tabtopay-surface" aria-label="탭투페이 결제 방식">
         <div class="inner_section text-center">
           <h2 class="section-title">
             결제 방식의<br />
@@ -469,9 +504,9 @@
           </h2>
           <p class="section-sub">고객과 점주 모두를 위한 혁신적인 결제 솔루션</p>
 
-          <div class="grid-4" style="max-width: 100%;">
+          <div class="grid-4">
             <div class="pay-method-card">
-              <div class="pay-method-icon-wrap"><i class="bi bi-credit-card-2-front" style="font-size: 2.5rem; color: #3b82f6;"></i></div>
+              <div class="pay-method-icon-wrap"><i class="bi bi-credit-card-2-front pay-icon pay-icon--blue"></i></div>
               <h3 class="pay-method-title">TAP TO PAY (NFC)</h3>
               <p class="pay-method-desc">
                 단말기 없이 스마트폰으로 결제하는 경험으로 빠르게,<br />
@@ -481,7 +516,7 @@
             </div>
 
             <div class="pay-method-card">
-              <div class="pay-method-icon-wrap"><i class="bi bi-qr-code" style="font-size: 2.5rem; color: #10b981;"></i></div>
+              <div class="pay-method-icon-wrap"><i class="bi bi-qr-code pay-icon pay-icon--green"></i></div>
               <h3 class="pay-method-title">QR / 간편결제</h3>
               <p class="pay-method-desc">
                 QR코드 기반의 간편결제와 다양한 페이 수단의 연계를 통해<br />
@@ -491,7 +526,7 @@
             </div>
 
             <div class="pay-method-card">
-              <div class="pay-method-icon-wrap"><i class="bi bi-cash-coin" style="font-size: 2.5rem; color: #f59e0b;"></i></div>
+              <div class="pay-method-icon-wrap"><i class="bi bi-cash-coin pay-icon pay-icon--amber"></i></div>
               <h3 class="pay-method-title">정산 자동화</h3>
               <p class="pay-method-desc">
                 모든 거래가 자동으로 정리되고 정산되어<br />
@@ -501,7 +536,7 @@
             </div>
 
             <div class="pay-method-card">
-              <div class="pay-method-icon-wrap"><i class="bi bi-gift" style="font-size: 2.5rem; color: #ec4899;"></i></div>
+              <div class="pay-method-icon-wrap"><i class="bi bi-gift pay-icon pay-icon--pink"></i></div>
               <h3 class="pay-method-title">페이백 PLUS</h3>
               <p class="pay-method-desc">
                 고객 맞춤형 페이백과 포인트 적립으로<br />
@@ -514,7 +549,7 @@
       </section>
 
       <!-- ── FEATURES SECTION ── -->
-      <section class="section-padding" style="background: white;">
+      <section class="section-padding tabtopay-hero" aria-label="탭투페이 핵심 기능">
         <div class="inner_section text-center">
           <h2 class="section-title">
             핵심 기능<br />
@@ -548,7 +583,7 @@
       </section>
 
       <!-- ── FLOW SECTION ── -->
-      <section class="section-padding" style="background: #f9fafb;">
+      <section class="section-padding tabtopay-surface-alt" aria-label="탭투페이 처리 흐름">
         <div class="inner_section text-center">
           <h2 class="section-title">
             결제부터 혜택까지<br />
@@ -594,7 +629,7 @@
       </section>
 
       <!-- ── ECOSYSTEM SECTION ── -->
-      <section class="ecosystem-wrap">
+      <section class="ecosystem-wrap" aria-label="탭투페이 생태계">
         <div class="ecosystem-left">
           <h2 class="ecosystem-title">지속 가능한<br />로열 커머스 생태계</h2>
           <p class="ecosystem-body">
@@ -641,7 +676,7 @@
       </section>
 
       <!-- ── PARTNER STRIP ── -->
-      <div class="partner-strip">
+      <div class="partner-strip" aria-label="탭투페이 채널 파트너">
         <p class="partner-strip-label">CHANNEL PARTNERS</p>
         <div class="partner-logo-row">
           <span class="partner-logo-item">여신금융협회</span>
@@ -657,159 +692,40 @@
 
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
-  <!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-</body>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 모든 메인 섹션에 data-scroll 속성 추가
-      const sections = document.querySelectorAll('main section');
-      
-      sections.forEach(section => {
-        if (!section.hasAttribute('data-scroll')) {
-          section.setAttribute('data-scroll', '');
-        }
-      });
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const sections = document.querySelectorAll('main section');
 
-      // IntersectionObserver로 viewport 진입 시 visible 클래스 추가
-      const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            scrollObserver.unobserve(entry.target); // 한번만 실행
+        sections.forEach((section) => {
+          if (!section.hasAttribute('data-scroll')) {
+            section.setAttribute('data-scroll', '');
           }
         });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px'
-      });
 
-      sections.forEach((section) => scrollObserver.observe(section));
-    });
-
-    // Progress bar 애니메이션
-    const fills = document.querySelectorAll('.feature-progress-fill');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            const w = el.dataset.width || 70;
-            el.style.width = w + '%';
-            observer.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.4 },
-    );
-
-    fills.forEach((el) => observer.observe(el));
-
-    // ===== Hero 섹션 휠 스크롤 자동 이동 =====
-    const heroSection = document.querySelector('main section:first-child');
-    const nextSection = document.querySelector('main section:nth-child(2)');
-    
-    if (heroSection && nextSection) {
-      let isScrolling = false;
-      let scrollTimeout;
-
-      heroSection.addEventListener('wheel', (e) => {
-        if (isScrolling || e.deltaY < 0) return;
-        
-        const heroBottom = heroSection.getBoundingClientRect().bottom;
-        const windowHeight = window.innerHeight;
-        
-        if (heroBottom > windowHeight * 0.3) {
-          e.preventDefault();
-          isScrolling = true;
-          
-          const targetPosition = nextSection.offsetTop;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
+        if (prefersReducedMotion) {
+          sections.forEach((section) => section.classList.add('visible'));
+          return;
         }
-      }, { passive: false });
-    }
-  </script>
+
+        const scrollObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                scrollObserver.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px',
+          },
+        );
+
+        sections.forEach((section) => scrollObserver.observe(section));
+      });
+    </script>
+  </body>
 </html>

@@ -5,7 +5,10 @@
     <title>베이직인터내셔널</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="베이직인터내셔널" />
-    <meta name="description" content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다." />
+    <meta
+      name="description"
+      content="AI 기반 경로 최적화로 출퇴근 동선의 혜택 탐색과 픽업 경험을 고도화하는 베이직인터내셔널 Pick It Up 서비스입니다."
+    />
     <meta
       name="keywords"
       content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
@@ -15,9 +18,13 @@
     <meta property="og:title" content="베이직인터내셔널 홈페이지" />
     <meta
       property="og:description"
-      content="CMS와 마이크로서비스, 클라우드를 주로 하는 SI 업체입니다."
+      content="AI 기반 경로 최적화로 출퇴근 동선의 혜택 탐색과 픽업 경험을 고도화하는 Pick It Up 서비스입니다."
     />
     <meta property="og:image" content="/assets/images/favicon.png" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="베이직인터내셔널" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href="https://basicit.co.kr/pages/aiservice/pickup.html" />
 
     <meta property="og:url" content="https://basicit.co.kr" />
     <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
@@ -32,8 +39,8 @@
     <style>
       [data-scroll] {
         opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
+        transform: translateY(32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
         will-change: opacity, transform;
       }
 
@@ -45,8 +52,8 @@
       [data-scroll] .biz-step,
       [data-scroll] .dual-panel {
         opacity: 0;
-        transform: translateY(35px);
-        transition: all 0.7s ease;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
       }
 
       [data-scroll].visible .biz-step,
@@ -55,18 +62,28 @@
         transform: translateY(0);
       }
 
-      [data-scroll].visible .biz-step:nth-child(1),
-      [data-scroll].visible .dual-panel:nth-child(1) {
+      .dual-section.visible .dual-panel:nth-child(1),
+      .biz-section.visible .biz-step:nth-child(1) {
         transition-delay: 0.1s;
       }
 
-      [data-scroll].visible .biz-step:nth-child(2),
-      [data-scroll].visible .dual-panel:nth-child(2) {
+      .dual-section.visible .dual-panel:nth-child(2),
+      .biz-section.visible .biz-step:nth-child(2) {
         transition-delay: 0.2s;
       }
 
-      [data-scroll].visible .biz-step:nth-child(3) {
+      .biz-section.visible .biz-step:nth-child(3) {
         transition-delay: 0.3s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        [data-scroll],
+        [data-scroll] .biz-step,
+        [data-scroll] .dual-panel {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
       }
     </style>
 
@@ -84,42 +101,57 @@
     <!--  Header 영역  -->
     <div id="header-include"></div>
 
-    <main id="container" tabindex="0">
-      <!-- ── TOP BANNER ── -->
-      <section class="top-banner">
-        <div class="top-banner-left">
-          <p class="top-badge">Smart Commute Solution</p>
-          <h1 class="top-headline">
-            출퇴근 동선 위에서<br />
-            혜택을 발견하다.
-          </h1>
-          <p class="top-body">
-            바쁜 일상 속, 당신의 이동 경로를 분석하여 최적의 타임세일과 픽업 경험을 제공합니다.
-            낭비하는 시간과 재고를 줄이는 스마트한 연결을 시작합니다.
-          </p>
-        </div>
-
-        <div class="route-card">
-          <h2 class="route-card-title">Route-Based<br />Curation</h2>
-          <p class="route-card-desc">
-            사용자의 경로 데이터를 기반으로 동선 이탈 없는 최적의 매장을 추천합니다.
-          </p>
-          <ul class="route-card-features">
-            <li>실시간 동선 추적 엔진</li>
-            <li>지능형 맞춤형 매칭</li>
-          </ul>
+    <main id="container" tabindex="-1">
+      <!-- ── HERO SECTION ── -->
+      <section class="hero-modern-business" aria-label="히어로 - Pick It Up 서비스 소개">
+        <div class="hero-modern-business__container">
+          <div class="hero-modern-business__content">
+            <span class="hero-modern-business__badge"> SMART COMMUTE SOLUTION </span>
+            <h1 class="hero-modern-business__title">
+              출퇴근 동선 위에서<br class="hero-modern-business__br" />
+              혜택을 발견하다
+            </h1>
+            <p class="hero-modern-business__desc">
+              바쁜 일상 속 이동 경로를 분석해 최적의 타임세일과 픽업 경험을 제공합니다.<br class="pc-br" />
+              낭비되는 시간과 재고를 줄이는 스마트한 연결을 시작합니다.
+            </p>
+            <div class="hero-modern-business__actions">
+              <a
+                href="#pickup-core"
+                class="hero-modern-business__button hero-modern-business__button--primary"
+              >
+                핵심 기능 보기
+              </a>
+              <a
+                href="mailto:sisocore@basicit.co.kr"
+                class="hero-modern-business__button hero-modern-business__button--secondary"
+              >
+                도입 상담하기
+              </a>
+            </div>
+          </div>
+          <div class="hero-modern-business__image-wrapper">
+            <img
+              src="/assets/images/pages/business/bg-02.jpg"
+              width="540"
+              height="360"
+              loading="lazy"
+              alt="Pick It Up 경로 기반 큐레이션 서비스를 표현한 이미지"
+              class="hero-modern-business__image"
+            />
+          </div>
         </div>
       </section>
 
       <!-- ── PICK / PICKUP DUAL ── -->
-      <section class="dual-section">
+      <section id="pickup-core" class="dual-section" aria-label="Pick It Up 핵심 기능">
         <div class="dual-panel">
           <div class="dual-panel-icon">👆</div>
           <p class="dual-panel-kicker">PICKUP</p>
           <h2 class="dual-panel-title">선별의 혁신</h2>
           <p class="dual-panel-body">
-            수령한 매장 정보 중 사용자의 <strong>**출퇴근 시간과 경로**</strong>에 일치하는 매장
-            만을 선별합니다. 단순한 광고가 아닌, 사용자 동선 최적화에 맞춘 비교적 매장 리스트를
+            수령 가능한 매장 정보 중 사용자의 <strong>출퇴근 시간과 경로</strong>에 일치하는 매장만을
+            선별합니다. 단순한 광고가 아닌, 사용자 동선 최적화에 맞춘 최적 매장 리스트를
             제공합니다.
           </p>
           <ul class="dual-panel-tags">
@@ -134,8 +166,8 @@
           <h2 class="dual-panel-title">수령의 완성</h2>
           <p class="dual-panel-body">
             온라인의 결제와 오프라인의 수령 사이의 간극을 좁힙니다. 픽업은 주문 분산
-            <strong>**을 통해 효율적으로 매장을 운영하고,</strong> 사용자는
-            <strong>**당기 시간 재고**</strong>의 픽업을 경험합니다.
+            <strong>운영을 통해 효율적으로 매장을 운영하고,</strong> 사용자는
+            <strong>단기 재고</strong> 중심의 빠른 픽업을 경험합니다.
           </p>
           <ul class="dual-panel-tags">
             <li>주문 분산 운영 효율화</li>
@@ -145,12 +177,12 @@
       </section>
 
       <!-- ── BUSINESS SECTION ── -->
-      <section class="biz-section">
+      <section class="biz-section" aria-label="Pick It Up 상생 비즈니스">
         <div class="biz-left">
           <p class="biz-kicker">소상공인과 함께하는</p>
           <h2 class="biz-title">상생 비즈니스</h2>
           <p class="biz-desc">
-            지역 매장의 재고 구성을 줄이고 새로운 고객 부입을 창출하는 데이터 기반 의 상생 생태계를
+            지역 매장의 재고 부담을 줄이고 새로운 고객 유입을 창출하는 데이터 기반의 상생 생태계를
             구축합니다.
           </p>
           <div class="biz-stats">
@@ -178,7 +210,7 @@
             <div>
               <p class="biz-step-title">지능형 매칭 및 알림</p>
               <p class="biz-step-desc">
-                동선 이탈 없이 최적의 타임세일 정보를 실시간 매칭이 됩니다.
+                동선 이탈 없이 최적의 타임세일 정보를 실시간으로 매칭합니다.
               </p>
             </div>
           </div>
@@ -193,19 +225,7 @@
       </section>
 
       <!-- ── CTA BAR ── -->
-      <section class="cta-bar">
-        <div class="cta-bar-left">
-          <h2 class="cta-bar-title">Pick It Up과 함께 혁신을 만드세요.</h2>
-          <p class="cta-bar-desc">플롯중 입점 및 투자 제휴 문의는 언제든 열려있습니다.</p>
-        </div>
-        <div class="cta-bar-right">
-          <p class="cta-email-label">Email Inquiry</p>
-          <p class="cta-email-addr">
-            <a href="mailto:sisocore@basicit.co.kr">sisocore@basicit.co.kr</a>
-          </p>
-          <button class="cta-submit-btn" style="display: none">지금 문의하기</button>
-        </div>
-      </section>
+      
     </main>
 
     <!--  Footer 영역  -->
@@ -233,42 +253,9 @@
 
     fills.forEach((el) => observer.observe(el));
 
-    // ===== Hero 섹션 휠 스크롤 자동 이동 =====
-    document.addEventListener('DOMContentLoaded', () => {
-      const heroSection = document.querySelector('.top-banner');
-      const nextSection = document.querySelector('.dual-section');
-      
-      if (!heroSection || !nextSection) return;
-      
-      let isScrolling = false;
-      let scrollTimeout;
-
-      heroSection.addEventListener('wheel', (e) => {
-        if (isScrolling || e.deltaY < 0) return;
-        
-        const heroBottom = heroSection.getBoundingClientRect().bottom;
-        const windowHeight = window.innerHeight;
-        
-        if (heroBottom > windowHeight * 0.3) {
-          e.preventDefault();
-          isScrolling = true;
-          
-          const targetPosition = nextSection.offsetTop;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
-        }
-      }, { passive: false });
-    });
-
     // ===== 섹션 스크롤 애니메이션 =====
     document.addEventListener('DOMContentLoaded', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const sections = document.querySelectorAll('main section');
 
       sections.forEach((section) => {
@@ -276,6 +263,11 @@
           section.setAttribute('data-scroll', '');
         }
       });
+
+      if (prefersReducedMotion) {
+        sections.forEach((section) => section.classList.add('visible'));
+        return;
+      }
 
       const scrollObserver = new IntersectionObserver(
         (entries) => {

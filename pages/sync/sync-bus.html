@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="/assets/css/style_business.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link
-      href="https://cdn.jsdelivr.n주요 고객사et/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
@@ -82,51 +82,38 @@
     <!--  Header 영역  -->
     <div id="header-include"></div>
 
-    <main id="container" class="x-bus" tabindex="0">
-      <section class="scm-hero">
-        <div class="scm-hero__container">
-          <div class="scm-hero__inner">
-            <div class="scm-hero__left">
-              <span class="scm-hero__badge">Professional Finance ESB Solution</span>
-              <h1 class="scm-hero__title title-txt">
-                금융 인프라의새로운 미래를<br />
-                여는 기술력
-              </h1>
-              <p class="scm-hero__desc">
-                Sync-XBus는 여신금융협회와 각 카드사 간의 대용량 파일 송수신을 위한 전용 인프라를
-                구축합니다. 금융권 표준 암호화 프로토콜을 기반으로 단 1초의 끊김 없는 데이터 허브를
-                실현합니다.
-              </p>
-              <div class="scm-hero__btns" style="display: none">
-                <a
-                  href="#"
-                  onclick="alert('서비스 준비중입니다')"
-                  class="scm-hero__btn scm-hero__btn--primary"
-                  >송수신 체계 보기</a
-                >
-                <a href="#" onclick="alert('서비스 준비중입니다')" class="scm-hero__btn"
-                  >기술 상담 신청</a
-                >
-              </div>
+    <main id="container" class="x-bus" tabindex="-1">
+      <section class="hero-modern-business" aria-label="히어로 - Sync XBus ESB 솔루션 소개">
+        <div class="hero-modern-business__container">
+          <div class="hero-modern-business__content">
+            <span class="hero-modern-business__badge"> PROFESSIONAL FINANCE ESB SOLUTION </span>
+            <h1 class="hero-modern-business__title">
+              금융 인프라의 새로운 미래를 여는<br class="hero-modern-business__br" />
+              Sync XBus 기술력
+            </h1>
+            <p class="hero-modern-business__desc">
+              여신금융협회와 카드사 간 대용량 파일 송수신 전용 인프라를 구축합니다.<br class="pc-br" />
+              금융권 표준 암호화 프로토콜 기반의 안정적인 데이터 허브를 제공합니다.
+            </p>
+            <div class="hero-modern-business__actions">
+              <a href="#xbus-overview" class="hero-modern-business__button hero-modern-business__button--primary">송수신 체계 보기</a>
+              <a href="mailto:sisocore@basicit.co.kr" class="hero-modern-business__button hero-modern-business__button--secondary">기술 상담 신청</a>
             </div>
-
-            <div class="scm-hero__right">
-              <div class="scm-hero__img-wrap">
-                <img
-                  src="\assets\images\pages\business\bg-01.jpg"
-                  alt="Product dashboard interface"
-                  class="scm-hero__img"
-                  width="1320"
-                  height="900"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+          </div>
+          <div class="hero-modern-business__image-wrapper">
+            <img
+              src="/assets/images/pages/business/bg-01.jpg"
+              alt="금융 ESB 데이터 허브 이미지"
+              class="hero-modern-business__image"
+              width="1320"
+              height="900"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
       <!-- ── DIAGRAM ── -->
-      <section class="xbos-diagram">
+      <section id="xbus-overview" class="xbos-diagram">
         <div class="xbos-diagram__header">
           <h2 class="xbos-diagram__title title-txt">여신금융협회 - 카드사 파일 송수신 체계</h2>
           <p class="xbos-diagram__sub">

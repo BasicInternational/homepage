@@ -96,40 +96,40 @@
     <!--  Header 영역  -->
     <div id="header-include"></div>
 
-    <main id="container" class="cloud__main" tabindex="0">
+    <main id="container" class="cloud__main" tabindex="-1">
       <!-- ── HERO ── -->
-      <section class="cloud-hero">
-        <div class="cloud-hero__container">
-          <div class="cloud-hero__inner">
-            <div class="cloud-hero__left">
-              <span class="cloud-hero__badge">Business Area 02</span>
-              <h1 class="cloud-hero__title">
-                비즈니스의 성공을 약속하는<br />
-                클라우드 솔루션
-              </h1>
-              <p class="cloud-hero__desc">
-                고객이 원하는 맞춤형 솔루션을 제공합니다. 안정적인 데이터 접근과 관리로 기업의
-                경쟁력을 한층 높여드립니다.
-              </p>
+      <section class="hero-modern-business" aria-label="히어로 - 클라우드 솔루션 소개">
+        <div class="hero-modern-business__container">
+          <div class="hero-modern-business__content">
+            <span class="hero-modern-business__badge"> BUSINESS AREA 02 </span>
+            <h1 class="hero-modern-business__title">
+              비즈니스의 성공을 약속하는<br class="hero-modern-business__br" />
+              클라우드 솔루션
+            </h1>
+            <p class="hero-modern-business__desc">
+              고객이 원하는 맞춤형 솔루션을 제공합니다.<br class="pc-br" />
+              안정적인 데이터 접근과 관리로 기업의 경쟁력을 한층 높여드립니다.
+            </p>
+            <div class="hero-modern-business__actions">
+              <a href="#cloud-intro" class="hero-modern-business__button hero-modern-business__button--primary">핵심 소개 보기</a>
+              <a href="mailto:sisocore@basicit.co.kr" class="hero-modern-business__button hero-modern-business__button--secondary">솔루션 상담하기</a>
             </div>
-            <div class="cloud-hero__right">
-              <div class="cloud-hero__img-wrap">
-                <img
-                  src="/assets/images/pages/business/bg-04.jpg"
-                  alt="Product dashboard interface"
-                  class="cloud-hero__img"
-                  width="1320"
-                  height="900"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+          </div>
+          <div class="hero-modern-business__image-wrapper">
+            <img
+              src="/assets/images/pages/business/bg-04.jpg"
+              alt="클라우드 솔루션 대시보드 이미지"
+              class="hero-modern-business__image"
+              width="1320"
+              height="900"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
 
       <!-- ── INTRO ── -->
-      <section class="cloud-intro">
+      <section id="cloud-intro" class="cloud-intro">
         <div class="cloud-intro__container">
           <div class="cloud-intro__inner">
             <div class="cloud-intro__left">
