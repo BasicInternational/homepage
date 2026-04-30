@@ -1210,6 +1210,7 @@
         aspect-ratio: 16 / 10;
         object-fit: cover;
         display: block;
+        opacity: .6;
       }
       .ssl-roi__preview-badge {
         position: absolute;
@@ -1989,13 +1990,34 @@
 
       /* ROI stat cards: cleaner card hierarchy and subtle accent depth */
       #sync__cms .ssl-roi .roi-stat {
+        --roi-accent: #13877d;
+        --roi-accent-deep: #0f766e;
+        --roi-accent-rgb: 19, 135, 125;
         position: relative;
         isolation: isolate;
         overflow: hidden;
-        border: 1px solid #cfe9e5;
+        border: 1px solid rgba(var(--roi-accent-rgb), 0.24);
         background: linear-gradient(180deg, #ffffff 0%, #fbfefe 100%);
         box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
         transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      }
+
+      #sync__cms .ssl-roi .roi-stat--safety {
+        --roi-accent: #13877d;
+        --roi-accent-deep: #0f766e;
+        --roi-accent-rgb: 19, 135, 125;
+      }
+
+      #sync__cms .ssl-roi .roi-stat--efficiency {
+        --roi-accent: #3e8f89;
+        --roi-accent-deep: #356f69;
+        --roi-accent-rgb: 62, 143, 137;
+      }
+
+      #sync__cms .ssl-roi .roi-stat--stability {
+        --roi-accent: #4d8298;
+        --roi-accent-deep: #3a667a;
+        --roi-accent-rgb: 77, 130, 152;
       }
 
       #sync__cms .ssl-roi .roi-stat::before {
@@ -2004,8 +2026,8 @@
         left: 0;
         top: 0;
         width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, #13877d 0%, #53b8ad 100%);
+        height: 2px;
+        background: linear-gradient(90deg, var(--roi-accent) 0%, var(--roi-accent-deep) 100%);
         z-index: 0;
       }
 
@@ -2017,15 +2039,15 @@
         width: 130px;
         height: 130px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(19, 135, 125, 0.1) 0%, rgba(19, 135, 125, 0) 72%);
+        background: radial-gradient(circle, rgba(var(--roi-accent-rgb), 0.09) 0%, rgba(var(--roi-accent-rgb), 0) 72%);
         z-index: 0;
         pointer-events: none;
       }
 
       #sync__cms .ssl-roi .roi-stat:hover {
-        transform: translateY(-3px);
-        border-color: #addbd5;
-        box-shadow: 0 14px 26px rgba(15, 23, 42, 0.1);
+        transform: translateY(-1px);
+        border-color: rgba(var(--roi-accent-rgb), 0.34);
+        box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
       }
 
       #sync__cms .ssl-roi .roi-stat > * {
@@ -2034,13 +2056,14 @@
       }
 
       #sync__cms .ssl-roi .roi-stat__icon {
-        border: 1px solid rgba(19, 135, 125, 0.22);
-        background: linear-gradient(180deg, #eff9f7 0%, #e6f4f2 100%);
+        border: 1px solid rgba(var(--roi-accent-rgb), 0.22);
+        background: linear-gradient(180deg, rgba(var(--roi-accent-rgb), 0.11) 0%, rgba(var(--roi-accent-rgb), 0.05) 100%);
+        color: var(--roi-accent);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
       }
 
       #sync__cms .ssl-roi .roi-stat__number {
-        color: #0b1324;
+        color: var(--roi-accent-deep);
         letter-spacing: -0.02em;
         font-variant-numeric: tabular-nums;
       }
@@ -2634,17 +2657,17 @@
 
           <p class="ssl-roi__kpi-caption">Key Metrics</p>
           <div class="ssl-roi__grid">
-            <div class="roi-stat">
+            <div class="roi-stat roi-stat--safety">
               <div class="roi-stat__icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
               <div class="roi-stat__number">0%</div>
               <div class="roi-stat__label">인증서 만료 장애율</div>
             </div>
-            <div class="roi-stat">
+            <div class="roi-stat roi-stat--efficiency">
               <div class="roi-stat__icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></div>
               <div class="roi-stat__number">90% ↓</div>
               <div class="roi-stat__label">연간 관리 리소스 절감</div>
             </div>
-            <div class="roi-stat">
+            <div class="roi-stat roi-stat--stability">
               <div class="roi-stat__icon"><i class="bi bi-clock-history" aria-hidden="true"></i></div>
               <div class="roi-stat__number">24/7</div>
               <div class="roi-stat__label">실시간 보안 무결성 유지</div>
@@ -3075,6 +3098,44 @@
       });
     </script>
   <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
