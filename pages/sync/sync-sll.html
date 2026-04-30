@@ -1210,7 +1210,6 @@
         aspect-ratio: 16 / 10;
         object-fit: cover;
         display: block;
-        opacity: .6;
       }
       .ssl-roi__preview-badge {
         position: absolute;
@@ -1910,10 +1909,28 @@
         --tone-surface: #ffffff;
         --tone-surface-soft: #f4faf9;
         --tone-border: #d5ece9;
+        --type-display: clamp(1.95rem, 2.8vw, 2.45rem);
+        --type-title: clamp(1.45rem, 2vw, 1.85rem);
+        --type-heading: 1.04rem;
+        --type-body: 0.96rem;
+        --type-caption: 0.8rem;
+        --type-micro: 0.74rem;
+        --lh-tight: 1.32;
+        --lh-body: 1.68;
         color: var(--tone-text-body);
         font-size: 16px;
-        line-height: 1.6;
+        line-height: var(--lh-body);
+        font-weight: 500;
+        letter-spacing: -0.002em;
         overflow-x: hidden;
+      }
+
+      #sync__cms,
+      #sync__cms button,
+      #sync__cms input,
+      #sync__cms select,
+      #sync__cms textarea {
+        font-family: inherit;
       }
 
       #sync__cms .section-title,
@@ -1925,6 +1942,19 @@
       #sync__cms .dashboard-card__title {
         color: var(--tone-text-strong);
         letter-spacing: -0.01em;
+        line-height: var(--lh-tight);
+        font-weight: 800;
+      }
+
+      #sync__cms .section-title,
+      #sync__cms .ssl-dashboard__title,
+      #sync__cms .ssl-roi__title {
+        font-size: var(--type-display);
+      }
+
+      #sync__cms .tech-stack-section__left h2,
+      #sync__cms .live-sim__head h2 {
+        font-size: var(--type-title);
       }
 
       #sync__cms .section-desc,
@@ -1939,12 +1969,14 @@
       #sync__cms .stat-item__label,
       #sync__cms .terminal-code__line {
         color: var(--tone-text-soft);
-        font-size: 0.97rem;
+        font-size: var(--type-body);
+        line-height: var(--lh-body);
+        font-weight: 500;
       }
 
       #sync__cms .section-desc,
       #sync__cms .ssl-roi__desc {
-        line-height: 1.75;
+        line-height: calc(var(--lh-body) + 0.04);
       }
 
       #sync__cms .dashboard-card__title,
@@ -1954,7 +1986,9 @@
       #sync__cms .live-sim-card__name,
       #sync__cms .event-item__title,
       #sync__cms .problem-card__sub {
-        font-size: 1.02rem;
+        font-size: var(--type-heading);
+        line-height: 1.45;
+        font-weight: 700;
       }
 
       #sync__cms .progress-item__label,
@@ -1964,7 +1998,27 @@
       #sync__cms .live-sim-card__state,
       #sync__cms .event-item__time,
       #sync__cms .problem-card__tag {
-        font-size: 0.82rem;
+        font-size: var(--type-caption);
+        letter-spacing: 0.03em;
+        font-weight: 700;
+      }
+
+      #sync__cms .dashboard-card__badge,
+      #sync__cms .ssl-roi__kpi-caption,
+      #sync__cms .live-sim-card__steps,
+      #sync__cms .roi-stat__label {
+        font-size: var(--type-micro);
+        letter-spacing: 0.06em;
+        font-weight: 700;
+      }
+
+      #sync__cms .stat-item__value,
+      #sync__cms .progress-item__value,
+      #sync__cms .progress-item__value--blue,
+      #sync__cms .roi-stat__number,
+      #sync__cms .live-sim-card__pct,
+      #sync__cms .live-sim__summary-item strong {
+        font-variant-numeric: tabular-nums;
       }
 
       #sync__cms .dashboard-card,
@@ -3098,6 +3152,44 @@
       });
     </script>
   <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
