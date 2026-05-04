@@ -53,7 +53,8 @@
           radial-gradient(ellipse 60% 40% at 80% 100%, rgba(59,130,246,.09) 0%, transparent 60%),
           linear-gradient(170deg, #080d18 0%, #0f172a 55%, #0c1523 100%);
         padding: 100px 24px 80px;
-        overflow: hidden;
+        overflow-x: clip;
+        overflow-y: visible;
         max-width: unset;
         margin-top: 0;
         position: relative;
@@ -91,7 +92,7 @@
         border: 1px solid rgba(255,255,255,.15);
         border-radius: 999px;
         color: rgba(255,255,255,.8);
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 600;
         cursor: pointer;
         transition: background .22s, border-color .22s, color .22s, box-shadow .22s;
@@ -114,14 +115,17 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255,255,255,.12) transparent;
+        scrollbar-color: rgba(255,255,255,.25) transparent;
+        cursor: grab;
       }
+      .tol-chart-wrap::-webkit-scrollbar { height: 5px; }
+      .tol-chart-wrap::-webkit-scrollbar-track { background: transparent; }
+      .tol-chart-wrap::-webkit-scrollbar-thumb { background: rgba(255,255,255,.22); border-radius: 99px; }
       .tol-chart-wrap svg {
         display: block;
         margin: 0 auto;
-        min-width: 640px;
-        max-width: 100%;
-        width: 1320px;
+        width: min(1320px, 100%);
+        min-width: 760px;
         height: auto;
       }
       #tolTooltip {
@@ -142,6 +146,7 @@
         backdrop-filter: blur(8px);
         box-shadow: 0 8px 32px rgba(0,0,0,.45);
         font-family: 'Noto Sans KR','Apple SD Gothic Neo',sans-serif;
+        max-width: calc(100vw - 32px);
       }
       #tolTooltip.visible { opacity: 1; transform: translateY(0); }
       #tolTooltip .tt-dot {
@@ -153,10 +158,11 @@
       }
       .tol-legend {
         display: flex;
-        gap: 12px;
+        gap: 10px;
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 28px;
+        padding: 0 8px;
       }
       .tol-legend-item {
         display: flex;
@@ -167,16 +173,18 @@
         border-radius: 999px;
         padding: 6px 14px 6px 10px;
         color: rgba(255,255,255,.8);
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 600;
         transition: background .2s, border-color .2s;
       }
       .tol-legend-item:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.22); }
       .tol-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-      .tol-legend-count { opacity: .5; font-size: 11px; margin-left: 3px; }
+      .tol-legend-count { opacity: .5; font-size: 12px; margin-left: 3px; }
+      @media (max-width: 1024px) {
+        .tech-ecosystem { padding: 80px 20px 64px; }
+      }
       @media (max-width: 768px) {
-        .tech-ecosystem { padding: 64px 16px 56px; }
-        .tol-legend { gap: 10px; }
+        .tech-ecosystem { display: none !important; }
       }
     </style>
 
@@ -696,17 +704,8 @@
         name: '베이직인터내셔널', length: 0,
         branchset: [
           { name: '회사소개', length: 0.22, branchset: [
-            { name: '회사 정보', length: 0.14, branchset: [
-              { name: '회사연혁',  length: 0.18, url: 'pages/aboutus/aboutus_history.html',     desc: '창립부터 현재까지 성장 연혁' },
-              { name: '경영이념',  length: 0.19, url: 'pages/aboutus/aboutus_management.html',  desc: '핵심 가치와 경영 철학' }
-            ]},
-            { name: '조직/인력', length: 0.14, branchset: [
-              { name: '조직현황',  length: 0.20, url: 'pages/aboutus/aboutus_organization.html', desc: '부서 구조 및 체계' },
-              { name: '인력현황',  length: 0.18, url: 'pages/aboutus/aboutus_workforce.html',    desc: '기술 인력 구성 현황' }
-            ]},
-            { name: '연구개발', length: 0.14, branchset: [
-              { name: 'AI 연구소', length: 0.25, url: 'pages/aboutus/research-basic.html',       desc: 'AI 에이전트·LLM 연구' }
-            ]}
+            { name: '베이직은?',  length: 0.18, url: 'pages/aboutus/aboutus_history.html',  desc: '창립부터 현재까지 성장 연혁' },
+            { name: 'AI 연구소', length: 0.25, url: 'pages/aboutus/research-basic.html',    desc: 'AI 에이전트·LLM 연구개발' }
           ]},
           { name: 'AI 서비스', length: 0.30, branchset: [
             { name: 'AI 콘텐츠', length: 0.16, branchset: [
@@ -715,8 +714,7 @@
             ]},
             { name: 'AI 플랫폼', length: 0.16, branchset: [
               { name: '픽업 서비스', length: 0.20, url: 'pages/aiservice/pickup.html',     desc: 'AI 동선 최적화 픽업 서비스' },
-              { name: '탭투페이',    length: 0.24, url: 'pages/aiservice/tabtopay.html',   desc: '커머스 결제·픽업 통합 플랫폼' },
-              { name: '소형 LLM',    length: 0.18, url: 'pages/aiservice/sllm.html',       desc: '경량 LLM 추론·자동화' }
+              { name: '탭투페이',    length: 0.24, url: 'pages/aiservice/tabtopay.html',   desc: '커머스 결제·픽업 통합 플랫폼' }
             ]}
           ]},
           { name: 'Sync 솔루션', length: 0.32, branchset: [
@@ -728,45 +726,34 @@
               { name: 'SyncAPIM',  length: 0.21, url: 'pages/sync/sync-apim.html',  desc: 'API 생태계 보안·모니터링' },
               { name: 'SyncX-bus', length: 0.28, url: 'pages/sync/sync-bus.html',   desc: '금융 ESB 메시지 송수신 인프라' }
             ]},
-            { name: '개발 플랫폼', length: 0.14, branchset: [
+            { name: '개발/자동화', length: 0.14, branchset: [
               { name: 'SyncBoot',  length: 0.25, url: 'pages/sync/sync-boot.html',  desc: 'E2E 마이크로서비스·LowCode' },
-              { name: 'SyncAdmin', length: 0.17, url: 'pages/sync/sync-admin.html', desc: 'Vue3 컴포넌트 백오피스 빌더' }
-            ]},
-            { name: 'AI 자동화', length: 0.14, branchset: [
+              { name: 'SyncAdmin', length: 0.17, url: 'pages/sync/sync-admin.html', desc: 'Vue3 컴포넌트 백오피스 빌더' },
               { name: 'SyncCrawl', length: 0.23, url: 'pages/sync/sync-crawl.html', desc: '자연어 RAG 지식망 크롤러' },
               { name: 'SyncEta',   length: 0.19, url: 'pages/sync/sync-eta.html',   desc: 'AI 기반 자동 QA 테스트' },
-              { name: 'SyncSSL',   length: 0.20, url: 'pages/sync/sync-sll.html',   desc: 'AI 행정 문서 처리 솔루션' }
+              { name: 'Sync SSL',  length: 0.20, url: 'pages/sync/sync-sll.html',   desc: 'AI 행정 문서 처리 솔루션' }
             ]}
           ]},
           { name: '사업분야', length: 0.26, branchset: [
             { name: 'AI/데이터', length: 0.14, branchset: [
-              { name: 'AI 솔루션',    length: 0.22, url: 'pages/business/aisolution.html',        desc: 'AI 지식망·행정 자동화' },
-              { name: 'BI 솔루션',    length: 0.20, url: 'pages/business/bi-solution.html',        desc: '대시보드·비즈니스 인사이트' }
-            ]},
-            { name: '커머스/채널', length: 0.14, branchset: [
-              { name: 'AI 커머스',    length: 0.22, url: 'pages/business/commerce.html',           desc: 'AI 추천·초개인화 커머스' },
-              { name: '포탈',         length: 0.18, url: 'pages/business/business-portal.html',    desc: '통합 포털 관리 플랫폼' },
-              { name: '세일즈포스',   length: 0.19, url: 'pages/business/business-salesforce.html',desc: 'Salesforce CRM 영업 자동화' }
-            ]},
-            { name: '클라우드', length: 0.14, branchset: [
-              { name: '클라우드',     length: 0.24, url: 'pages/business/cloudsolution.html',      desc: '클라우드 마이그레이션·보안' }
+              { name: 'AI 솔루션', length: 0.22, url: 'pages/business/aisolution.html',    desc: 'AI 지식망·행정 자동화' },
+              { name: 'BI 솔루션', length: 0.20, url: 'pages/business/bi-solution.html',   desc: '대시보드·비즈니스 인사이트' },
+              { name: 'AI 커머스', length: 0.22, url: 'pages/business/commerce.html',      desc: 'AI 추천·초개인화 커머스' },
+              { name: '클라우드',  length: 0.24, url: 'pages/business/cloudsolution.html', desc: '클라우드 마이그레이션·보안' }
             ]},
             { name: '산업 특화', length: 0.14, branchset: [
-              { name: '금융 IT',       length: 0.24, url: 'pages/business/finance.html',           desc: '코어뱅킹·디지털 결제 IT' },
-              { name: '물류 AI',       length: 0.21, url: 'pages/business/logistics.html',         desc: 'AI 예측 스마트 물류 최적화' },
-              { name: '교육 IT',       length: 0.18, url: 'pages/business/education.html',         desc: 'LMS·지능형 교육 플랫폼' },
-              { name: '통신 솔루션',   length: 0.20, url: 'pages/business/communication.html',     desc: '챗봇·상담 자동화 솔루션' },
-              { name: '공제회 시스템', length: 0.23, url: 'pages/business/benevolent.html',        desc: '공제회 회원관리·복지 통합' }
+              { name: '금융IT',    length: 0.24, url: 'pages/business/finance.html',       desc: '코어뱅킹·디지털 결제 IT' },
+              { name: 'AI 물류',   length: 0.21, url: 'pages/business/logistics.html',     desc: 'AI 예측 스마트 물류 최적화' },
+              { name: 'AI 교육',   length: 0.18, url: 'pages/business/education.html',     desc: 'LMS·지능형 교육 플랫폼' },
+              { name: '통신/인증', length: 0.20, url: 'pages/business/communication.html', desc: '챗봇·상담 자동화 솔루션' },
+              { name: '공제회',    length: 0.23, url: 'pages/business/benevolent.html',    desc: '공제회 회원관리·복지 통합' }
             ]}
           ]},
           { name: '에이전시', length: 0.22, branchset: [
-            { name: '신사업 소개', length: 0.22, url: 'pages/agency/agency.html',           desc: '신사업·에이전시 솔루션 컨설팅' },
-            { name: '포트폴리오',  length: 0.26, url: 'pages/agency/agency-portfolio.html', desc: '구축 레퍼런스·프로젝트 사례' }
+            { name: '포트폴리오', length: 0.26, url: 'pages/agency/agency-portfolio.html', desc: '구축 레퍼런스·프로젝트 사례' }
           ]},
           { name: '구축사례', length: 0.20, branchset: [
-            { name: '성공 레퍼런스', length: 0.22, url: 'pages/experience/experience.html',           desc: '디지털 혁신 성공 레퍼런스' },
-            { name: '주요 고객사',   length: 0.20, url: 'pages/experience/experience_customers.html', desc: '협력 파트너·고객사 목록' },
-            { name: '구축 사례',     length: 0.24, url: 'pages/experience/experience_example.html',   desc: '업종별 시스템 구축 사례' }
+            { name: '성공 레퍼런스', length: 0.22, url: 'pages/experience/experience.html', desc: '디지털 혁신 성공 레퍼런스' }
           ]}
         ]
       };
@@ -781,6 +768,7 @@
         var W      = 1320;
         var outerR = W / 2;
         var innerR = outerR - 230;
+        var isMobile = (window.innerWidth <= 480);
 
         /* ── helpers ── */
         var color = d3.scaleOrdinal()
@@ -826,7 +814,7 @@
         var svg = d3.create('svg')
           .attr('viewBox', [-outerR, -outerR, W, W].join(' '))
           .attr('font-family', "'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif")
-          .attr('font-size', 13);
+          .attr('font-size', 15);
 
         /* defs: per-branch glow filter + root glow */
         var defs = svg.append('defs');
@@ -855,20 +843,37 @@
         rg.append('stop').attr('offset','100%').attr('stop-color','rgba(255,255,255,0.06)');
 
         svg.append('style').text([
+          '@keyframes tolBranchPulse { 0%,100%{ opacity:1 } 50%{ opacity:0.55 } }',
+          '@keyframes tolRootGlow    { 0%,100%{ opacity:.75 } 50%{ opacity:1 } }',
+          '@keyframes tolSpinRing    { from{ transform:rotate(0deg) } to{ transform:rotate(360deg) } }',
+          '@keyframes tolSpinRingRev { from{ transform:rotate(0deg) } to{ transform:rotate(-360deg) } }',
           '.tol-link { transition: stroke-opacity .25s, stroke-width .25s; }',
-          '.tol-link--active { stroke-opacity: 1 !important; stroke-width: 3px !important; }',
-          '.tol-ext--active  { stroke-opacity: .9 !important; stroke-dasharray: none !important; }',
-          '.tol-lbl--active  { font-weight: 800 !important; }'
-        ].join(''));
+          '.tol-link--active { stroke-opacity: 1 !important; stroke-width: 4px !important; }',
+          '.tol-ext--active  { stroke-opacity: .95 !important; stroke-dasharray: none !important; }',
+          '.tol-lbl--active  { font-weight: 900 !important; }',
+          '.tol-branch-dot   { animation: tolBranchPulse 2.6s ease-in-out infinite; animation-delay: 2s; }',
+          '.tol-root-circle  { animation: tolRootGlow 2s ease-in-out infinite; }',
+          '.tol-spin-ring    { transform-origin: 0px 0px; animation: tolSpinRing 50s linear infinite; }',
+          '.tol-spin-ring2   { transform-origin: 0px 0px; animation: tolSpinRingRev 32s linear infinite; }'
+        ].join('\n'));
 
         /* ── guide rings ── */
         svg.append('circle').attr('r', innerR + 4)
-          .attr('fill','url(#ring-grad)').attr('stroke','rgba(255,255,255,.07)').attr('stroke-width', 1);
+          .attr('fill','url(#ring-grad)').attr('stroke','rgba(255,255,255,.09)').attr('stroke-width', 1.5);
         [0.35, 0.65].forEach(function (f) {
           svg.append('circle').attr('r', innerR * f)
-            .attr('fill','none').attr('stroke','rgba(255,255,255,.035)')
+            .attr('fill','none').attr('stroke','rgba(255,255,255,.04)')
             .attr('stroke-width', 1).attr('stroke-dasharray','3,6');
         });
+        /* spinning deco rings */
+        svg.append('circle').attr('class','tol-spin-ring')
+          .attr('r', innerR + 34)
+          .attr('fill','none').attr('stroke','rgba(255,255,255,.055)').attr('stroke-width', 1)
+          .attr('stroke-dasharray','10 28');
+        svg.append('circle').attr('class','tol-spin-ring2')
+          .attr('r', innerR + 52)
+          .attr('fill','none').attr('stroke','rgba(255,255,255,.03)').attr('stroke-width', 1)
+          .attr('stroke-dasharray','5 40');
 
         /* ── link extensions ── */
         var linkExt = svg.append('g').attr('fill','none')
@@ -891,14 +896,14 @@
             .attr('class', 'tol-link')
             .attr('stroke', function (d) { return d.target.color; })
             .attr('stroke-opacity', function (d) {
-              if (d.target.depth === 1) return 0.90;
-              if (d.target.depth === 2) return 0.60;
-              return 0.40;
+              if (d.target.depth === 1) return 0.95;
+              if (d.target.depth === 2) return 0.70;
+              return 0.50;
             })
             .attr('stroke-width', function (d) {
-              if (d.target.depth === 1) return 2.6;
-              if (d.target.depth === 2) return 1.8;
-              return 1.1;
+              if (d.target.depth === 1) return 3.2;
+              if (d.target.depth === 2) return 2.2;
+              return 1.5;
             })
             .attr('d', linkVar);
 
@@ -910,9 +915,10 @@
             .attr('transform', function (d) {
               return 'rotate('+(d.x-90)+') translate('+d.radius+',0)';
             })
+            .attr('class', 'tol-branch-dot')
             .attr('r', 0)
             .attr('fill', function (d) { return d.color; })
-            .attr('stroke', '#080d18').attr('stroke-width', 2.5)
+            .attr('stroke', '#080d18').attr('stroke-width', 3)
             .attr('filter', function (d) {
               var m = BRANCH_META[d.data.name];
               return m ? 'url(#'+m.filterId+')' : null;
@@ -930,9 +936,9 @@
             })
             .attr('text-anchor', 'middle')
             .attr('fill', function (d) { return d.color; })
-            .attr('font-size', 15)
-            .attr('font-weight', '800')
-            .attr('letter-spacing', '0.05em')
+            .attr('font-size', 20)
+            .attr('font-weight', '900')
+            .attr('letter-spacing', '0.06em')
             .attr('opacity', 0)
             .text(function (d) {
               var m = BRANCH_META[d.data.name];
@@ -949,8 +955,8 @@
             })
             .attr('r', 0)
             .attr('fill', function (d) { return d.color; })
-            .attr('opacity', 0.75)
-            .attr('stroke', '#080d18').attr('stroke-width', 1.5);
+            .attr('opacity', 0.85)
+            .attr('stroke', '#080d18').attr('stroke-width', 2);
 
         /* ── depth-2 sub-group labels ── */
         var subLbl = svg.append('g')
@@ -964,9 +970,8 @@
             })
             .attr('text-anchor', function (d) { return d.x < 180 ? 'start' : 'end'; })
             .attr('fill', function (d) { return d.color; })
-            .attr('font-size', 11)
+            .attr('font-size', 13)
             .attr('font-weight', '700')
-            .attr('font-style', 'italic')
             .attr('opacity', 0)
             .text(function (d) { return d.data.name; });
 
@@ -982,7 +987,7 @@
           .attr('fill', 'rgba(255,255,255,.5)')
           .attr('font-size', 12).attr('font-weight', '700')
           .attr('opacity', 0)
-          .text('Hub');
+          .text('Basic International');
 
         /* ── leaf dots ── */
         var leafDot = svg.append('g')
@@ -1014,7 +1019,7 @@
             })
             .attr('text-anchor', function (d) { return d.x < 180 ? 'start' : 'end'; })
             .attr('fill', function (d) { return d.color; })
-            .attr('font-size', 13)
+            .attr('font-size', 16)
             .attr('font-weight', '600')
             .attr('opacity', 0)
             .style('cursor', function (d) { return d.data.url ? 'pointer' : 'default'; })
@@ -1032,9 +1037,9 @@
         ═══════════════════════════════════════ */
 
         /* Stage 1: root pop-in */
-        rootCircle.transition().delay(80).duration(550)
-          .ease(d3.easeBackOut.overshoot(2.2)).attr('r', 8);
-        rootLbl.transition().delay(200).duration(400).attr('opacity', 1);
+        rootCircle.transition().delay(80).duration(680)
+          .ease(d3.easeBackOut.overshoot(2.5)).attr('r', 14);
+        rootLbl.transition().delay(320).duration(500).attr('opacity', 1);
 
         /* Stage 2: links draw (dashoffset animation) */
         var allLinks  = svg.selectAll('.tol-link');
@@ -1075,42 +1080,42 @@
 
         /* Stage 3: branch dots glow pop */
         branchDot.transition()
-          .delay(function (d, i) { return branchDelay + i * 140; })
-          .duration(480).ease(d3.easeBackOut.overshoot(1.9))
-          .attr('r', 8);
+          .delay(function (d, i) { return branchDelay + i * 160; })
+          .duration(580).ease(d3.easeBackOut.overshoot(2.2))
+          .attr('r', 12);
 
         /* Stage 4: branch labels */
         branchLbl.transition()
-          .delay(function (d, i) { return branchDelay + 80 + i * 140; })
-          .duration(380).ease(d3.easeQuadOut)
+          .delay(function (d, i) { return branchDelay + 100 + i * 160; })
+          .duration(450).ease(d3.easeQuadOut)
           .attr('opacity', 1);
 
-        var subDelay = branchDelay + 500;
+        var subDelay = branchDelay + 620;
 
         /* Stage 4.5: sub-group dots */
         subDot.transition()
-          .delay(function (d, i) { return subDelay + i * 60; })
-          .duration(340).ease(d3.easeBackOut.overshoot(1.6))
-          .attr('r', 5);
+          .delay(function (d, i) { return subDelay + i * 65; })
+          .duration(380).ease(d3.easeBackOut.overshoot(1.8))
+          .attr('r', 8);
 
         /* Stage 4.6: sub-group labels */
         subLbl.transition()
-          .delay(function (d, i) { return subDelay + 60 + i * 55; })
-          .duration(300).ease(d3.easeQuadOut)
+          .delay(function (d, i) { return subDelay + 80 + i * 60; })
+          .duration(340).ease(d3.easeQuadOut)
           .attr('opacity', 1);
 
-        var leafDelay = subDelay + 500;
+        var leafDelay = subDelay + 580;
 
         /* Stage 5: leaf dots cascade */
         leafDot.transition()
-          .delay(function (d, i) { return leafDelay + i * 20; })
-          .duration(260).ease(d3.easeBackOut.overshoot(1.6))
-          .attr('r', 4.5);
+          .delay(function (d, i) { return leafDelay + i * 22; })
+          .duration(300).ease(d3.easeBackOut.overshoot(1.8))
+          .attr('r', 6.5);
 
         /* Stage 6: leaf labels cascade */
         label.transition()
-          .delay(function (d, i) { return leafDelay + 60 + i * 18; })
-          .duration(280).ease(d3.easeQuadOut)
+          .delay(function (d, i) { return leafDelay + 80 + i * 20; })
+          .duration(320).ease(d3.easeQuadOut)
           .attr('opacity', 1);
 
         /* ═══════════════════════════════
@@ -1121,14 +1126,14 @@
             /* label highlight */
             d3.select(this)
               .classed('tol-lbl--active', active)
-              .transition().duration(160)
-              .attr('font-size', active ? 15 : 13);
+              .transition().duration(180)
+              .attr('font-size', active ? 19 : 16);
 
             /* leaf dot grow */
             d3.select(d.dotNode)
-              .transition().duration(160)
-              .attr('r', active ? 8 : 4.5)
-              .attr('stroke-width', active ? 2.5 : 1.5);
+              .transition().duration(180)
+              .attr('r', active ? 11 : 6.5)
+              .attr('stroke-width', active ? 3 : 1.5);
 
             /* extension highlight */
             d3.select(d.linkExtNode)
