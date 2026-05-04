@@ -732,6 +732,7 @@
       }
     </style>
 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="/assets/css/responsive.css" />
     <style>
       [data-scroll] {
@@ -1290,6 +1291,20 @@
         </div>
       </section>
 
+      <!-- ── D3 RADIAL CLUSTER SECTION ── -->
+      <section class="solution__section" style="background: #0f172a; padding: 80px 0; overflow: hidden;">
+        <div class="container mx-auto px-4 sm:px-16">
+          <div class="text-center mb-10">
+            <p style="font-size:13px; font-weight:600; letter-spacing:2px; color:#60a5fa; text-transform:uppercase; margin-bottom:10px;">SERVICE ECOSYSTEM</p>
+            <h2 style="font-size:28px; font-weight:900; color:#f1f5f9; letter-spacing:-0.3px; margin-bottom:14px;">통합 인증 서비스 구조</h2>
+            <p style="font-size:14px; color:#94a3b8; line-height:1.8; max-width:520px; margin:0 auto;">
+              PASS 통합 인증 플랫폼이 제공하는<br/>서비스 계층 구조를 시각화합니다.
+            </p>
+          </div>
+          <div id="radial-cluster-wrap" style="width:100%; display:flex; justify-content:center; align-items:center;"></div>
+        </div>
+      </section>
+
       <section class="demo-section">
         <div class="demo-card">
           <h2 class="text-3xl md:text-4xl">
@@ -1526,6 +1541,273 @@
         sections.forEach((section) => scrollObserver.observe(section));
       });
     </script>
+
+    <script>
+      // ── D3 Radial Cluster – PASS 통합 인증 서비스 구조 ──
+      (function () {
+        const data = {
+          name: "PASS\n통합인증",
+          children: [
+            {
+              name: "본인확인",
+              children: [
+                { name: "간편인증" },
+                { name: "휴대폰 인증" },
+                { name: "i-PIN" },
+                { name: "바이오인증" }
+              ]
+            },
+            {
+              name: "디지털 신분증",
+              children: [
+                { name: "모바일\n운전면허" },
+                { name: "건강보험증" },
+                { name: "주민등록증" }
+              ]
+            },
+            {
+              name: "전자서명",
+              children: [
+                { name: "PASS\n전자서명" },
+                { name: "인증서 발급" },
+                { name: "법인 서명" }
+              ]
+            },
+            {
+              name: "간편결제",
+              children: [
+                { name: "소액결제" },
+                { name: "QR 결제" },
+                { name: "정산 자동화" }
+              ]
+            },
+            {
+              name: "보안 인프라",
+              children: [
+                { name: "FIDO\n생체인증" },
+                { name: "AES-256\n암호화" },
+                { name: "FDS\n이상탐지" },
+                { name: "HSM\n키관리" }
+              ]
+            }
+          ]
+        };
+
+        function buildChart() {
+          const wrap = document.getElementById("radial-cluster-wrap");
+          if (!wrap || typeof d3 === "undefined") return;
+
+          // 이미 그려진 경우 재사용
+          wrap.innerHTML = "";
+
+          const width  = Math.min(900, wrap.clientWidth || 900);
+          const height = width;
+          const cx     = width * 0.5;
+          const cy     = height * 0.52;
+          const radius = Math.min(width, height) / 2 - 100;
+
+          const branchColors = ["#60a5fa", "#34d399", "#f472b6", "#facc15", "#a78bfa"];
+
+          const tree = d3.cluster()
+            .size([2 * Math.PI, radius])
+            .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
+
+          const root = tree(
+            d3.hierarchy(data)
+              .sort((a, b) => d3.ascending(a.data.name, b.data.name))
+          );
+
+          root.descendants().forEach(d => {
+            let anc = d;
+            while (anc.depth > 1) anc = anc.parent;
+            d._color = anc.depth === 0
+              ? "#94a3b8"
+              : branchColors[root.children.indexOf(anc) % branchColors.length];
+          });
+
+          const svg = d3.create("svg")
+            .attr("width",   width)
+            .attr("height",  height)
+            .attr("viewBox", [-cx, -cy, width, height])
+            .style("max-width",  "100%")
+            .style("height",     "auto")
+            .style("font-family","ui-sans-serif, system-ui, sans-serif")
+            .style("background", "transparent");
+
+          // ── 1. 링크: stroke-dasharray로 선이 자라나는 효과 ──
+          const linkGroup = svg.append("g")
+            .attr("fill", "none")
+            .attr("stroke-width", 1.5);
+
+          const linkPaths = linkGroup.selectAll("path")
+            .data(root.links())
+            .join("path")
+              .attr("stroke", d => d.target._color)
+              .attr("stroke-opacity", 0)
+              .attr("d", d3.linkRadial()
+                .angle(d => d.x)
+                .radius(d => d.y));
+
+          // 각 path 길이 계산 후 dasharray 애니메이션
+          linkPaths.each(function () {
+            const len = this.getTotalLength();
+            d3.select(this)
+              .attr("stroke-dasharray", `${len} ${len}`)
+              .attr("stroke-dashoffset", len);
+          });
+
+          linkPaths.transition()
+            .delay((d, i) => i * 18)
+            .duration(600)
+            .ease(d3.easeCubicOut)
+            .attr("stroke-opacity", 0.45)
+            .attr("stroke-dashoffset", 0);
+
+          // ── 2. 노드: 크기 0 → 실제 크기로 팝업 ──
+          const nodeG = svg.append("g");
+
+          const nodes = nodeG.selectAll("circle")
+            .data(root.descendants())
+            .join("circle")
+              .attr("transform", d =>
+                `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y},0)`)
+              .attr("fill",    d => d._color)
+              .attr("r",       0)
+              .attr("opacity", 0);
+
+          nodes.transition()
+            .delay((d, i) => 200 + i * 22)
+            .duration(400)
+            .ease(d3.easeBackOut.overshoot(1.6))
+            .attr("r",       d => d.depth === 0 ? 6 : d.children ? 4 : 3)
+            .attr("opacity", 0.9);
+
+          // ── 3. 루트 노드 펄스 (CSS 애니메이션) ──
+          const rootNode = root.descendants().find(d => d.depth === 0);
+          svg.append("circle")
+            .attr("transform",
+              `rotate(${rootNode.x * 180 / Math.PI - 90}) translate(${rootNode.y},0)`)
+            .attr("fill",    "none")
+            .attr("stroke",  "#94a3b8")
+            .attr("stroke-width", 1.5)
+            .attr("r",       6)
+            .attr("opacity", 0)
+            .attr("class",   "root-pulse");
+
+          // ── 4. 레이블: 깊이별 순차 fade-in ──
+          const labelGroup = svg.append("g")
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-width", 3);
+
+          root.descendants().forEach((d, i) => {
+            const angle      = d.x * 180 / Math.PI - 90;
+            const isRight    = d.x < Math.PI;
+            const anchor     = isRight === !d.children ? "start" : "end";
+            const xOffset    = isRight === !d.children ? 8 : -8;
+            const rotate     = d.x >= Math.PI ? 180 : 0;
+            const lines      = d.data.name.split("\n");
+            const lineHeight = 1.25;
+
+            const t = labelGroup.append("text")
+              .attr("transform", `rotate(${angle}) translate(${d.y},0) rotate(${rotate})`)
+              .attr("dy",          `${-(lines.length - 1) * lineHeight / 2}em`)
+              .attr("x",           xOffset)
+              .attr("text-anchor", anchor)
+              .attr("paint-order", "stroke")
+              .attr("stroke",      "#0f172a")
+              .attr("fill",        d._color)
+              .style("font-size",  d.depth === 0 ? "13px" : d.children ? "12px" : "11px")
+              .style("font-weight",d.depth === 0 ? "900"  : d.children ? "700"  : "400")
+              .attr("opacity",     0);
+
+            lines.forEach((line, li) => {
+              t.append("tspan")
+                .attr("x",  xOffset)
+                .attr("dy", li === 0 ? "0" : `${lineHeight}em`)
+                .text(line);
+            });
+
+            t.transition()
+              .delay(400 + d.depth * 120 + i * 15)
+              .duration(500)
+              .ease(d3.easeCubicOut)
+              .attr("opacity", 1);
+          });
+
+          // ── 5. 호버: 가지 하이라이트 ──
+          nodeG.selectAll("circle")
+            .on("mouseover", function (event, d) {
+              // 해당 노드의 조상 & 자손 경로 수집
+              const related = new Set();
+              let cur = d;
+              while (cur) { related.add(cur); cur = cur.parent; }
+              if (d.descendants) d.descendants().forEach(n => related.add(n));
+
+              linkGroup.selectAll("path")
+                .transition().duration(150)
+                .attr("stroke-opacity", ld =>
+                  (related.has(ld.source) && related.has(ld.target)) ? 0.9 : 0.08);
+
+              nodeG.selectAll("circle")
+                .transition().duration(150)
+                .attr("opacity", nd => related.has(nd) ? 1 : 0.2)
+                .attr("r",       nd => {
+                  const base = nd.depth === 0 ? 6 : nd.children ? 4 : 3;
+                  return nd === d ? base * 1.8 : base;
+                });
+
+              labelGroup.selectAll("text")
+                .transition().duration(150)
+                .attr("opacity", nd => related.has(nd) ? 1 : 0.15);
+            })
+            .on("mouseout", function () {
+              linkGroup.selectAll("path")
+                .transition().duration(300)
+                .attr("stroke-opacity", 0.45);
+              nodeG.selectAll("circle")
+                .transition().duration(300)
+                .attr("opacity", 0.9)
+                .attr("r",       nd => nd.depth === 0 ? 6 : nd.children ? 4 : 3);
+              labelGroup.selectAll("text")
+                .transition().duration(300)
+                .attr("opacity", 1);
+            });
+
+          wrap.appendChild(svg.node());
+
+          // ── 6. CSS 펄스 규칙 주입 ──
+          if (!document.getElementById("radial-cluster-style")) {
+            const style = document.createElement("style");
+            style.id = "radial-cluster-style";
+            style.textContent = `
+              @keyframes radialPulse {
+                0%   { r: 6;  opacity: 0.6; }
+                50%  { r: 18; opacity: 0;   }
+                100% { r: 6;  opacity: 0;   }
+              }
+              .root-pulse { animation: radialPulse 2.4s ease-out infinite 0.8s; }
+            `;
+            document.head.appendChild(style);
+          }
+        }
+
+        // IntersectionObserver로 뷰포트 진입 시 실행
+        const wrap = document.getElementById("radial-cluster-wrap");
+        if (!wrap) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              buildChart();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.2 });
+
+        observer.observe(wrap);
+      })();
+    </script>
+
   <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
