@@ -63,6 +63,38 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "SyncETA는 어떤 테스트 영역을 지원하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SyncETA는 기능 테스트, 회귀 테스트, 품질 모니터링 등 엔터프라이즈 애플리케이션 품질 관리 영역을 지원합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "AI 기반 테스트 자동화의 장점은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "테스트 케이스 생성과 실행 최적화를 자동화하여 반복 작업을 줄이고, 릴리즈 주기 단축과 품질 일관성 확보에 도움이 됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "품질 관리 지표도 확인할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. SyncETA는 테스트 결과와 품질 지표를 시각화해 결함 추적과 개선 우선순위 수립을 지원합니다."
+            }
+          }
+        ]
+      }
+    </script>
     <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
     <!-- CSS -->
@@ -523,30 +555,29 @@
         <div class="sync-eta-faq__list">
           <div class="sync-eta-faq__item">
             <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
-              기존에 사용 중인 CI/CD 도구와 연동이 가능한가요?
+              SyncETA는 어떤 테스트 영역을 지원하나요?
               <span class="sync-eta-faq__item__icon">+</span>
             </p>
             <p class="sync-eta-faq__item__a">
-              네, 완벽하게 연동됩니다. Jenkins, Git, Azure DevOps 등 기존 파이프라인과 통합하여 전체
-              개발 주기의 효율을 높일 수 있습니다.
+              SyncETA는 기능 테스트, 회귀 테스트, 품질 모니터링 등 엔터프라이즈 애플리케이션 품질 관리 영역을 지원합니다.
             </p>
           </div>
           <div class="sync-eta-faq__item">
             <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
-              솔루션 도입 후 교육이나 기술 지원이 제공되나요?
+              AI 기반 테스트 자동화의 장점은 무엇인가요?
               <span class="sync-eta-faq__item__icon">+</span>
             </p>
             <p class="sync-eta-faq__item__a">
-              네, 도입 후 유지보수팀이 온보딩 교육 및 지속적인 기술 지원을 제공합니다.
+              테스트 케이스 생성과 실행 최적화를 자동화하여 반복 작업을 줄이고, 릴리즈 주기 단축과 품질 일관성 확보에 도움이 됩니다.
             </p>
           </div>
           <div class="sync-eta-faq__item">
             <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
-              폐쇄망(On-Premise) 환경에서도 AI 사용이 가능한가요?
+              품질 관리 지표도 확인할 수 있나요?
               <span class="sync-eta-faq__item__icon">+</span>
             </p>
             <p class="sync-eta-faq__item__a">
-              네, 온프레미스 환경에서도 LLM 모델을 로컬 배포하여 완전한 폐쇄망 운영이 가능합니다.
+              가능합니다. SyncETA는 테스트 결과와 품질 지표를 시각화해 결함 추적과 개선 우선순위 수립을 지원합니다.
             </p>
           </div>
         </div>

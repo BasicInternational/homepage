@@ -63,6 +63,38 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "SyncAPIM은 어떤 역할을 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SyncAPIM은 API Gateway 운영, API 보안 정책 적용, 트래픽 제어와 모니터링을 통합적으로 지원합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "멀티 서비스 환경에서도 사용할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. SyncAPIM은 다수의 내부·외부 API를 일관된 정책으로 관리해 마이크로서비스 환경에 적합합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "API 운영 자동화도 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 라우팅, 인증, 접근 제어, 버전 관리 정책을 표준화하여 운영 자동화와 안정성을 높일 수 있습니다."
+            }
+          }
+        ]
+      }
+    </script>
     <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
     <!-- CSS -->
@@ -476,43 +508,18 @@
 
         <div class="cms-faq__list">
           <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">SyncAPIM은 어떤 솔루션인가요?</p>
-            <p class="faq-item__a">
-              Sync Series는 SyncCMS, SyncAny 등 다양한 디지털 솔루션을 통합 제공하는 플랫폼입니다.
-              콘텐츠 관리부터 파일 동기화까지 비즈니스에 필요한 모든 기능을 하나의 생태계에서
-              제공합니다.
-            </p>
+            <p class="faq-item__q" onclick="toggleFaq(this)">SyncAPIM은 어떤 역할을 하나요?</p>
+            <p class="faq-item__a">SyncAPIM은 API Gateway 운영, API 보안 정책 적용, 트래픽 제어와 모니터링을 통합적으로 지원합니다.</p>
           </div>
 
           <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">
-              기존 레거시 API게이트웨이와 비교할 때 장점은 무엇인가요?
-            </p>
-            <p class="faq-item__a">
-              SyncAny는 오픈 소스 기반의 클라우드 스토리지 및 파일 공유 동기화 애플리케이션입니다.
-              다양한 환경에서 안전하고 빠른 파일 동기화를 지원합니다.
-            </p>
+            <p class="faq-item__q" onclick="toggleFaq(this)">멀티 서비스 환경에서도 사용할 수 있나요?</p>
+            <p class="faq-item__a">가능합니다. SyncAPIM은 다수의 내부·외부 API를 일관된 정책으로 관리해 마이크로서비스 환경에 적합합니다.</p>
           </div>
 
           <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">
-              Sync 시리즈의 다른 제품과 어떻게 연동되나요?
-            </p>
-            <p class="faq-item__a">
-              SyncAdmin은 전체 Sync Series 플랫폼의 통합 관리 대시보드입니다. 사용자 관리, 권한
-              설정, 모니터링, 로그 분석 등 운영에 필요한 모든 기능을 제공합니다.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">
-              개인정보보호와 관련된 보안 규정(컴플라이언스)을 준수하나요?
-            </p>
-            <p class="faq-item__a">
-              SyncCMS는 표준 RESTful API를 완벽하게 지원합니다. API 키 발급 후 원하는 프론트엔드
-              또는 모바일 앱과 자유롭게 연동할 수 있으며, Swagger UI로 모든 API 명세를 확인할 수
-              있습니다.
-            </p>
+            <p class="faq-item__q" onclick="toggleFaq(this)">API 운영 자동화도 가능한가요?</p>
+            <p class="faq-item__a">가능합니다. 라우팅, 인증, 접근 제어, 버전 관리 정책을 표준화하여 운영 자동화와 안정성을 높일 수 있습니다.</p>
           </div>
         </div>
 

@@ -63,6 +63,38 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "SyncCrawl의 주요 목적은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SyncCrawl은 LLM·RAG 환경에서 필요한 데이터를 수집하고 정제해 검색 및 답변 품질을 높이는 것을 주요 목적으로 합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "RAG 파이프라인에 바로 활용할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. SyncCrawl은 문서 수집, 전처리, 구조화 단계를 통해 RAG 기반 지식 파이프라인 구성에 활용할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "데이터 품질 관리는 어떻게 지원하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "중복 제거, 정규화, 메타데이터 보강 등 전처리 기능으로 데이터 일관성과 검색 정확도를 향상시킵니다."
+            }
+          }
+        ]
+      }
+    </script>
     <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
     <!-- CSS -->
@@ -518,50 +550,31 @@
         <div class="sync-eta-faq__list">
           <div class="sync-eta-faq__item">
             <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
-              기존 파이썬(Python) 크롤러들과 무엇이 다른가요?
+              SyncCrawl의 주요 목적은 무엇인가요?
               <span class="sync-eta-faq__item__icon">+</span>
             </p>
             <p class="sync-eta-faq__item__a">
-              기존 Python 크롤러는 개발자가 직접 셀렉터를 작성하고 사이트 구조 변경 시 수동으로
-              유지보수해야 합니다. SyncCrawl은 LangChain4j Agent가 자연어 명령을 해석하고 Playwright
-              MCP가 동적 UI를 스스로 탐색하므로, 코딩 없이도 복잡한 웹 환경에서 자동 적응 수집이
-              가능합니다.
+              SyncCrawl은 LLM·RAG 환경에서 필요한 데이터를 수집하고 정제해 검색 및 답변 품질을 높이는 것을 주요 목적으로 합니다.
             </p>
           </div>
 
           <div class="sync-eta-faq__item">
             <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
-              'Sync Series'의 다른 제품과 어떻게 연동되나요?
+              RAG 파이프라인에 바로 활용할 수 있나요?
               <span class="sync-eta-faq__item__icon">+</span>
             </p>
             <p class="sync-eta-faq__item__a">
-              SyncCrawl은 Sync Series 생태계와 REST API 및 Vector DB 커넥터를 통해 유기적으로
-              연동됩니다. 수집된 데이터는 SyncAdmin의 대시보드에서 모니터링하고, SyncAny를 통해
-              파일로 배포하거나 SyncCMS 콘텐츠 파이프라인에 직접 연결할 수 있습니다.
+              가능합니다. SyncCrawl은 문서 수집, 전처리, 구조화 단계를 통해 RAG 기반 지식 파이프라인 구성에 활용할 수 있습니다.
             </p>
           </div>
 
           <div class="sync-eta-faq__item">
             <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
-              크롤링한 데이터에 대한 한국어 검색 정확도는 믿을 수 있나요?
+              데이터 품질 관리는 어떻게 지원하나요?
               <span class="sync-eta-faq__item__icon">+</span>
             </p>
             <p class="sync-eta-faq__item__a">
-              네, HuggingFace 기반의 한국어 특화 임베딩 모델을 채택하여 글로벌 LLM의 한국어 처리
-              한계를 극복했습니다. 형태소 분석 기반의 청킹 전략과 결합되어 일반 키워드 검색 대비
-              월등히 높은 시멘틱 검색 정확도를 제공합니다.
-            </p>
-          </div>
-
-          <div class="sync-eta-faq__item">
-            <p class="sync-eta-faq__item__q" onclick="toggleFaq(this)">
-              관리를 위한 UI는 웹 브라우저로만 접근 가능한가요?
-              <span class="sync-eta-faq__item__icon">+</span>
-            </p>
-            <p class="sync-eta-faq__item__a">
-              아닙니다. Quasar Framework 기반으로 개발되어 웹 브라우저, Electron 데스크톱 앱, 모바일
-              앱 모두 단일 코드베이스로 지원합니다. 어떤 환경에서도 동일한 UI/UX로 크롤링 현황
-              모니터링 및 관리가 가능합니다.
+              중복 제거, 정규화, 메타데이터 보강 등 전처리 기능으로 데이터 일관성과 검색 정확도를 향상시킵니다.
             </p>
           </div>
         </div>
