@@ -659,7 +659,7 @@
         padding: 80px 20px;
         background: #fff;
         max-width: 100%;
-        margin-top: 0;
+        margin-top: 30px;
       }
 
       .cms-faq .section-title,
@@ -995,39 +995,7 @@
         </div>
       </section>
 
-      <section class="cms-faq" aria-label="자주 묻는 질문">
-        <h2 class="section-title" data-animate>자주 묻는 질문</h2>
-        <p class="section-desc" data-animate>
-          AI 인공지능 솔루션 도입 전 자주 확인하시는 핵심 질문을 정리했습니다.
-        </p>
-
-        <div class="cms-faq__list">
-          <article class="faq-card" style="position:relative;">
-            <div class="faq-card__header">
-              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-briefcase" aria-hidden="true"></i></span>AI 인공지능 솔루션은 어떤 기업에 적합한가요?</h4>
-            </div>
-            <div class="faq-card__body">
-              데이터 기반 의사결정과 업무 자동화를 강화하려는 기업, 그리고 예측·분석 역량을 높이려는 조직에 적합합니다.
-            </div>
-          </article>
-          <article class="faq-card" style="position:relative;">
-            <div class="faq-card__header">
-              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-plug" aria-hidden="true"></i></span>기존 시스템과 AI 솔루션 연동이 가능한가요?</h4>
-            </div>
-            <div class="faq-card__body">
-              가능합니다. 기존 레거시 시스템과 API 기반 연동을 지원해 점진적 도입이 가능합니다.
-            </div>
-          </article>
-          <article class="faq-card" style="position:relative;">
-            <div class="faq-card__header">
-              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>도입 후에도 모델 성능을 계속 개선할 수 있나요?</h4>
-            </div>
-            <div class="faq-card__body">
-              가능합니다. MLOps 기반 운영으로 모델 재학습과 성능 모니터링을 지속 수행할 수 있습니다.
-            </div>
-          </article>
-        </div>
-      </section>
+ 
 
       <!-- ── EFFECT SECTION ── -->
       <section class="effect-section">
@@ -1070,6 +1038,39 @@
           </div>
         </div>
       </section>
+           <section class="cms-faq" aria-label="자주 묻는 질문">
+        <h2 class="section-title" data-animate>자주 묻는 질문</h2>
+        <p class="section-desc" data-animate>
+          AI 인공지능 솔루션 도입 전 자주 확인하시는 핵심 질문을 정리했습니다.
+        </p>
+
+        <div class="cms-faq__list">
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-briefcase" aria-hidden="true"></i></span>AI 인공지능 솔루션은 어떤 기업에 적합한가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              데이터 기반 의사결정과 업무 자동화를 강화하려는 기업, 그리고 예측·분석 역량을 높이려는 조직에 적합합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-plug" aria-hidden="true"></i></span>기존 시스템과 AI 솔루션 연동이 가능한가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              가능합니다. 기존 레거시 시스템과 API 기반 연동을 지원해 점진적 도입이 가능합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>도입 후에도 모델 성능을 계속 개선할 수 있나요?</h4>
+            </div>
+            <div class="faq-card__body">
+              가능합니다. MLOps 기반 운영으로 모델 재학습과 성능 모니터링을 지속 수행할 수 있습니다.
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
 
     <!--  Footer 영역  -->
@@ -1078,6 +1079,44 @@
     <!--  Floating Menu 영역  -->
     <div id="floating-menu-include"></div>
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
   <!-- Tailwind 제거: style_business.css로 이관 -->
 
