@@ -5,12 +5,11 @@
     <title>Pick It Up | 베이직인터내셔널</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="Pick It Up | 베이직인터내셔널" />
-    <meta
-      name="description"
+      <meta name="description"
+    <meta name="author" content="베이직인터내셔널" />
       content="AI 기반 경로 최적화로 출퇴근 동선의 혜택 탐색과 픽업 경험을 고도화하는 베이직인터내셔널 Pick It Up 서비스입니다."
     />
-    <meta
-      name="keywords"
+      <meta name="keywords"
       content="경로최적화,AI픽업,픽업서비스,공유경제,스마트물류,라스트마일,출퇴근최적화,클라우드,마이크로서비스"
     />
     <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
@@ -25,8 +24,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="베이직인터내셔널" />
     <meta property="og:title" content="Pick It Up | 베이직인터내셔널" />
-    <meta
-      property="og:description"
+      <meta property="og:description"
       content="AI 기반 경로 최적화로 출퇴근 동선의 혜택 탐색과 픽업 경험을 고도화하는 Pick It Up 서비스입니다."
     />
     <meta property="og:image" content="https://basicit.co.kr/assets/images/favicon.png" />
@@ -40,39 +38,40 @@
     <meta name="twitter:title" content="Pick It Up | 베이직인터내셔널" />
     <meta name="twitter:description" content="AI 기반 경로 최적화로 출퇴근 동선의 혜택 탐색과 픽업 경험을 고도화하는 Pick It Up 서비스입니다." />
     <meta name="twitter:image" content="https://basicit.co.kr/assets/images/favicon.png" />
-    <script type="application/ld+json">
+        <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
           {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "홈",
-            "item": "https://basicit.co.kr"
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://basicit.co.kr"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Pick It Up",
+                "item": "https://basicit.co.kr/pages/aiservice/pickup.html"
+              }
+            ]
           },
           {
-            "@type": "ListItem",
-            "position": 2,
+            "@type": "Service",
             "name": "Pick It Up",
-            "item": "https://basicit.co.kr/pages/aiservice/pickup.html"
+            "url": "https://basicit.co.kr/pages/aiservice/pickup.html",
+            "description": "AI 기반 경로 최적화로 출퇴근 동선의 혜택 탐색과 픽업 경험을 고도화하는 베이직인터내셔널 Pick It Up 서비스입니다.",
+            "provider": {
+              "@type": "Organization",
+              "name": "베이직인터내셔널",
+              "url": "https://basicit.co.kr"
+            },
+            "serviceType": "Mobility Recommendation Service"
           }
         ]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Pick It Up",
-        "url": "https://basicit.co.kr/pages/aiservice/pickup.html",
-        "description": "AI 기반 경로 최적화로 출퇴근 동선의 혜택 탐색과 픽업 경험을 고도화하는 베이직인터내셔널 Pick It Up 서비스입니다.",
-        "provider": {
-          "@type": "Organization",
-          "name": "베이직인터내셔널",
-          "url": "https://basicit.co.kr"
-        },
-        "serviceType": "Mobility Recommendation Service"
       }
     </script>
     <link href="/assets/images/favicon.png" rel="icon" type="image/png" />

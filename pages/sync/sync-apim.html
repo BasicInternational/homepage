@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -6,91 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="SyncAPIM | 베이직인터내셔널" />
     <meta name="description" content="API Gateway 운영과 통합 관리를 지원하는 베이직인터내셔널의 SyncAPIM 솔루션을 소개합니다." />
-    <meta
-      name="keywords"
+    <meta name="author" content="베이직인터내셔널" />
+    <meta name="geo.region" content="KR-11" />
+    <meta name="geo.placename" content="서울" />
+    <meta name="geo.position" content="37.5665;126.9780" />
+    <meta name="ICBM" content="37.5665, 126.9780" />
+    <meta name="keywords"
       content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
     />
     <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="베이직인터내셔널" />
     <meta property="og:title" content="SyncAPIM | 베이직인터내셔널" />
-    <meta
-      property="og:description"
+      <meta property="og:description"
       content="API Gateway 운영과 통합 관리를 지원하는 베이직인터내셔널의 SyncAPIM 솔루션을 소개합니다."
     />
-    <meta property="og:image" content="/assets/images/favicon.png" />
+    <meta property="og:image" content="https://basicit.co.kr/assets/images/favicon.png" />
     <link rel="canonical" href="https://basicit.co.kr/pages/sync/sync-apim.html" />
     <meta property="og:url" content="https://basicit.co.kr/pages/sync/sync-apim.html" />
-    <script type="application/ld+json">
+    <meta property="og:locale" content="ko_KR" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SyncAPIM | 베이직인터내셔널" />
+    <meta name="twitter:description" content="API Gateway 운영과 통합 관리를 지원하는 베이직인터내셔널의 SyncAPIM 솔루션을 소개합니다." />
+    <meta name="twitter:image" content="https://basicit.co.kr/assets/images/favicon.png" />
+        <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
           {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "홈",
-            "item": "https://basicit.co.kr"
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://basicit.co.kr"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "기술 허브",
+                "item": "https://basicit.co.kr/pages/hub-tech.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "SyncAPIM",
+                "item": "https://basicit.co.kr/pages/sync/sync-apim.html"
+              }
+            ]
           },
           {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "기술 허브",
-            "item": "https://basicit.co.kr/pages/hub-tech.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
+            "@type": "SoftwareApplication",
             "name": "SyncAPIM",
-            "item": "https://basicit.co.kr/pages/sync/sync-apim.html"
-          }
-        ]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "SyncAPIM",
-        "url": "https://basicit.co.kr/pages/sync/sync-apim.html",
-        "description": "API Gateway 운영과 통합 관리를 지원하는 베이직인터내셔널의 SyncAPIM 솔루션을 소개합니다.",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "publisher": {
-          "@type": "Organization",
-          "name": "베이직인터내셔널",
-          "url": "https://basicit.co.kr"
-        }
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "SyncAPIM은 어떤 역할을 하나요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SyncAPIM은 API Gateway 운영, API 보안 정책 적용, 트래픽 제어와 모니터링을 통합적으로 지원합니다."
+            "url": "https://basicit.co.kr/pages/sync/sync-apim.html",
+            "description": "API Gateway 운영과 통합 관리를 지원하는 베이직인터내셔널의 SyncAPIM 솔루션을 소개합니다.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "publisher": {
+              "@type": "Organization",
+              "name": "베이직인터내셔널",
+              "url": "https://basicit.co.kr"
             }
           },
           {
-            "@type": "Question",
-            "name": "멀티 서비스 환경에서도 사용할 수 있나요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "가능합니다. SyncAPIM은 다수의 내부·외부 API를 일관된 정책으로 관리해 마이크로서비스 환경에 적합합니다."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "API 운영 자동화도 가능한가요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "가능합니다. 라우팅, 인증, 접근 제어, 버전 관리 정책을 표준화하여 운영 자동화와 안정성을 높일 수 있습니다."
-            }
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "SyncAPIM은 어떤 역할을 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SyncAPIM은 API Gateway 운영, API 보안 정책 적용, 트래픽 제어와 모니터링을 통합적으로 지원합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "멀티 서비스 환경에서도 사용할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "가능합니다. SyncAPIM은 다수의 내부·외부 API를 일관된 정책으로 관리해 마이크로서비스 환경에 적합합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "API 운영 자동화도 가능한가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "가능합니다. 라우팅, 인증, 접근 제어, 버전 관리 정책을 표준화하여 운영 자동화와 안정성을 높일 수 있습니다."
+                }
+              }
+            ]
           }
         ]
       }
@@ -662,3 +671,4 @@
 </script>
 </body>
 </html>
+

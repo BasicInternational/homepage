@@ -34,78 +34,76 @@
   <meta name="twitter:description" content="AI 기반 맞춤형 스토리 생성으로 아이만의 동화책 제작 경험을 제공하는 베이직인터내셔널 서비스입니다." />
   <meta name="twitter:image" content="https://basicit.co.kr/assets/images/favicon.png" />
   <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "베이직인터내셔널",
-      "url": "https://basicit.co.kr",
-      "logo": "https://basicit.co.kr/assets/images/favicon.png",
-      "description": "클라우드 기반 엔터프라이즈 솔루션 및 AI 서비스 제공 기업",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "KR",
-        "addressRegion": "서울",
-        "addressLocality": "서울특별시"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "대한민국"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "37.5665",
-        "longitude": "126.9780"
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "베이직인터내셔널",
+            "url": "https://basicit.co.kr",
+            "logo": "https://basicit.co.kr/assets/images/favicon.png",
+            "description": "클라우드 기반 엔터프라이즈 솔루션 및 AI 서비스 제공 기업",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "KR",
+              "addressRegion": "서울",
+              "addressLocality": "서울특별시"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "대한민국"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "37.5665",
+              "longitude": "126.9780"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://basicit.co.kr"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "AI 동화책 생성 플랫폼",
+                "item": "https://basicit.co.kr/pages/aiservice/ai-book.html"
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "name": "AI 동화책 생성 플랫폼",
+            "alternateName": "꿈틀꿈틀",
+            "url": "https://basicit.co.kr/pages/aiservice/ai-book.html",
+            "description": "AI 기반 맞춤형 스토리 생성으로 아이만의 동화책 제작 경험을 제공하는 베이직인터내셔널 서비스입니다.",
+            "inLanguage": "ko-KR",
+            "serviceType": "AI 콘텐츠 생성",
+            "areaServed": {
+              "@type": "Country",
+              "name": "대한민국"
+            },
+            "provider": {
+              "@type": "Organization",
+              "name": "베이직인터내셔널",
+              "url": "https://basicit.co.kr"
+            },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "price": "0",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
       }
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "홈",
-          "item": "https://basicit.co.kr"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "AI 동화책 생성 플랫폼",
-          "item": "https://basicit.co.kr/pages/aiservice/ai-book.html"
-        }
-      ]
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "AI 동화책 생성 플랫폼",
-      "alternateName": "꿈틀꿈틀",
-      "url": "https://basicit.co.kr/pages/aiservice/ai-book.html",
-      "description": "AI 기반 맞춤형 스토리 생성으로 아이만의 동화책 제작 경험을 제공하는 베이직인터내셔널 서비스입니다.",
-      "inLanguage": "ko-KR",
-      "serviceType": "AI 콘텐츠 생성",
-      "areaServed": {
-        "@type": "Country",
-        "name": "대한민국"
-      },
-      "provider": {
-        "@type": "Organization",
-        "name": "베이직인터내셔널",
-        "url": "https://basicit.co.kr"
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "price": "0",
-        "priceCurrency": "KRW"
-      }
-    }
-  </script>
+    </script>
   <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
 
   <!-- CSS -->
