@@ -131,6 +131,7 @@ header.bi__header.is-scroll-hidden {
 header.bi__header.fix_header .header__wrap {
 	padding: 14px 24px;
 	max-width: 1480px;
+	min-height: unset;
 }
 
 header.bi__header.fix_header .header__wrap .bi__tabs ul li {
@@ -179,6 +180,7 @@ header .header__wrap {
 	align-items: center;
 	transition: background-color 0.3s ease-in-out;
 	margin: 0 auto;
+	min-height: 100px;
 }
 
 header .header__wrap .bi__logo img {

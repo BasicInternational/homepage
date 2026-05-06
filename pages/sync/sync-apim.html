@@ -160,6 +160,201 @@
         height: calc(100vh - 270px);
       }
     </style>
+  
+    <style id="faq-unified-style">
+      /* FAQ Unified Style (sync-sll aligned) */
+      .cms-faq,
+      .aeo-faq,
+      .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px;
+        background: #fff;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .cms-faq .section-title,
+      .aeo-faq .section-title,
+      .aeo-faq__title,
+      .sync-eta-faq .title-txt,
+      .cms-faq__title,
+      .cms-features__title {
+        color: #0f172a;
+        margin-bottom: 8px;
+        font-size: clamp(28px, 3vw, 40px);
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .cms-faq .section-desc,
+      .aeo-faq .section-desc,
+      .aeo-faq__desc,
+      .sync-eta-faq__header p {
+        color: #64748b;
+        margin-bottom: 32px;
+        max-width: 900px;
+        line-height: 1.75;
+      }
+
+      .cms-faq__header,
+      .sync-eta-faq__header {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .cms-faq__list,
+      .aeo-faq__list,
+      .sync-eta-faq__list {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        border-top: 0;
+      }
+
+      .faq-card,
+      .faq-item,
+      .aeo-faq details,
+      .sync-eta-faq__item {
+        position: relative;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      }
+
+      .faq-card::before,
+      .faq-item::before,
+      .aeo-faq details::before,
+      .sync-eta-faq__item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-radius: 12px 0 0 12px;
+        background: linear-gradient(180deg, #13877d, #0f766e);
+      }
+
+      .faq-item,
+      .sync-eta-faq__item {
+        border-bottom: none;
+      }
+
+      .faq-item__q,
+      .faq-card__q,
+      .aeo-faq summary,
+      .sync-eta-faq__item__q {
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      
+      .faq-card__header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .faq-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(19, 135, 125, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #13877d;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .faq-card__q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      .faq-card__body {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+.faq-item__q::after,
+      .sync-eta-faq__item__icon {
+        display: none !important;
+      }
+
+      .faq-item__a,
+      .faq-card__body,
+      .aeo-faq p,
+      .sync-eta-faq__item__a {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+
+      .aeo-faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .cms-faq__more,
+      .sync-eta-faq__more {
+        display: none !important;
+      }
+
+      @media (max-width: 768px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 48px 16px;
+        }
+
+        .cms-faq__list,
+        .aeo-faq__list,
+        .sync-eta-faq__list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 36px 12px;
+        }
+
+        .faq-card,
+        .faq-item,
+        .aeo-faq details,
+        .sync-eta-faq__item {
+          padding: 14px 12px;
+        }
+      }
+    </style>
+
   </head>
   <body data-type="detail">
     <div id="skip__content">
@@ -510,30 +705,38 @@
       </section>
 
       <!-- ── FAQ ── -->
-      <section class="cms-faq">
-        <div class="cms-faq__header">
-          <h2 class="cms-faq__title title-txt">자주 묻는 질문 (FAQ)</h2>
-        </div>
+      
+      <section class="cms-faq" aria-label="자주 묻는 질문">
+        <h2 class="section-title" data-animate>자주 묻는 질문 (FAQ)</h2>
+        <p class="section-desc" data-animate>
+          서비스에 대해 궁금하신 사항을 확인하세요.
+        </p>
 
         <div class="cms-faq__list">
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">SyncAPIM은 어떤 역할을 하나요?</p>
-            <p class="faq-item__a">SyncAPIM은 API Gateway 운영, API 보안 정책 적용, 트래픽 제어와 모니터링을 통합적으로 지원합니다.</p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">멀티 서비스 환경에서도 사용할 수 있나요?</p>
-            <p class="faq-item__a">가능합니다. SyncAPIM은 다수의 내부·외부 API를 일관된 정책으로 관리해 마이크로서비스 환경에 적합합니다.</p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">API 운영 자동화도 가능한가요?</p>
-            <p class="faq-item__a">가능합니다. 라우팅, 인증, 접근 제어, 버전 관리 정책을 표준화하여 운영 자동화와 안정성을 높일 수 있습니다.</p>
-          </div>
-        </div>
-
-        <div class="cms-faq__more">
-          <a href="javascript:void(0)" onclick="alert('서비스 준비중입니다')">전체 FAQ 보기 →</a>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-plug" aria-hidden="true"></i></span>SyncAPIM은 어떤 역할을 하나요?</h4>
+            </div>
+            <div class="faq-card__body">
+              SyncAPIM은 API Gateway 운영, API 보안 정책 적용, 트래픽 제어와 모니터링을 통합적으로 지원합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-layers" aria-hidden="true"></i></span>멀티 서비스 환경에서도 사용할 수 있나요?</h4>
+            </div>
+            <div class="faq-card__body">
+              가능합니다. SyncAPIM은 다수의 내부·외부 API를 일관된 정책으로 관리해 마이크로서비스 환경에 적합합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-plug" aria-hidden="true"></i></span>API 운영 자동화도 가능한가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              가능합니다. 라우팅, 인증, 접근 제어, 버전 관리 정책을 표준화하여 운영 자동화와 안정성을 높일 수 있습니다.
+            </div>
+          </article>
         </div>
       </section>
 

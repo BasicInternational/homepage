@@ -5,14 +5,15 @@
     <title>클라우드 솔루션 | 베이직인터내셔널</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="클라우드 솔루션 | 베이직인터내셔널" />
-      <meta name="description"
+    <meta
+      name="description"
+      content="엔터프라이즈 클라우드 인프라 통합 구축과 운영 최적화를 지원하는 클라우드 솔루션입니다."
+    />
     <meta name="author" content="베이직인터내셔널" />
     <meta name="geo.region" content="KR-11" />
     <meta name="geo.placename" content="서울" />
     <meta name="geo.position" content="37.5665;126.9780" />
     <meta name="ICBM" content="37.5665, 126.9780" />
-      content="엔터프라이즈 클라우드 인프라 통합 구축과 운영 최적화를 지원하는 클라우드 솔루션입니다."
-    />
       <meta name="keywords"
       content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,생산성,개발,자바"
     />
@@ -111,6 +112,7 @@
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/style_business.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
@@ -170,6 +172,201 @@
         transition-delay: 0.4s;
       }
     </style>
+  
+    <style id="faq-unified-style">
+      /* FAQ Unified Style (sync-sll aligned) */
+      .cms-faq,
+      .aeo-faq,
+      .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px;
+        background: #fff;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .cms-faq .section-title,
+      .aeo-faq .section-title,
+      .aeo-faq__title,
+      .sync-eta-faq .title-txt,
+      .cms-faq__title,
+      .cms-features__title {
+        color: #0f172a;
+        margin-bottom: 8px;
+        font-size: clamp(28px, 3vw, 40px);
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .cms-faq .section-desc,
+      .aeo-faq .section-desc,
+      .aeo-faq__desc,
+      .sync-eta-faq__header p {
+        color: #64748b;
+        margin-bottom: 32px;
+        max-width: 900px;
+        line-height: 1.75;
+      }
+
+      .cms-faq__header,
+      .sync-eta-faq__header {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .cms-faq__list,
+      .aeo-faq__list,
+      .sync-eta-faq__list {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        border-top: 0;
+      }
+
+      .faq-card,
+      .faq-item,
+      .aeo-faq details,
+      .sync-eta-faq__item {
+        position: relative;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      }
+
+      .faq-card::before,
+      .faq-item::before,
+      .aeo-faq details::before,
+      .sync-eta-faq__item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-radius: 12px 0 0 12px;
+        background: linear-gradient(180deg, #13877d, #0f766e);
+      }
+
+      .faq-item,
+      .sync-eta-faq__item {
+        border-bottom: none;
+      }
+
+      .faq-item__q,
+      .faq-card__q,
+      .aeo-faq summary,
+      .sync-eta-faq__item__q {
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      
+      .faq-card__header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .faq-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(19, 135, 125, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #13877d;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .faq-card__q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      .faq-card__body {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+.faq-item__q::after,
+      .sync-eta-faq__item__icon {
+        display: none !important;
+      }
+
+      .faq-item__a,
+      .faq-card__body,
+      .aeo-faq p,
+      .sync-eta-faq__item__a {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+
+      .aeo-faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .cms-faq__more,
+      .sync-eta-faq__more {
+        display: none !important;
+      }
+
+      @media (max-width: 768px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 48px 16px;
+        }
+
+        .cms-faq__list,
+        .aeo-faq__list,
+        .sync-eta-faq__list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 36px 12px;
+        }
+
+        .faq-card,
+        .faq-item,
+        .aeo-faq details,
+        .sync-eta-faq__item {
+          padding: 14px 12px;
+        }
+      }
+    </style>
+
   </head>
   <body data-type="detail">
     <!-- s : 스킵 -->
@@ -514,24 +711,37 @@
         </div>
       </section>
 
-      <section class="effect-section" style="padding-top: 0;">
-        <div class="effect-section__header">
-          <p class="effect-section__eyebrow">FAQ</p>
-          <h2 class="cloud-tab-section__title">자주 묻는 질문</h2>
-        </div>
-        <div class="effect-section__grid">
-          <div class="effect-card effect-card--teal">
-            <h3 class="effect-card__title">클라우드 솔루션에서 지원하는 플랫폼은 무엇인가요?</h3>
-            <p class="effect-card__desc">AWS, Azure, Heroku, Naver Cloud, Yandex 등 다양한 플랫폼 기반 구축과 운영을 지원합니다.</p>
-          </div>
-          <div class="effect-card effect-card--purple">
-            <h3 class="effect-card__title">하이브리드 환경 구축도 가능한가요?</h3>
-            <p class="effect-card__desc">가능합니다. 온프레미스와 클라우드를 함께 활용하는 하이브리드 아키텍처 설계 및 전환을 지원합니다.</p>
-          </div>
-          <div class="effect-card effect-card--teal">
-            <h3 class="effect-card__title">보안과 컴플라이언스 대응은 어떻게 하나요?</h3>
-            <p class="effect-card__desc">산업별 요구에 맞춘 보안 정책, 접근 제어, 모니터링 및 규정 준수 체계를 함께 설계합니다.</p>
-          </div>
+      <section class="cms-faq" aria-label="자주 묻는 질문">
+        <h2 class="section-title" data-animate>자주 묻는 질문</h2>
+        <p class="section-desc" data-animate>
+          클라우드 솔루션 도입 시 자주 문의하시는 핵심 항목을 정리했습니다.
+        </p>
+
+        <div class="cms-faq__list">
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-layers" aria-hidden="true"></i></span>클라우드 솔루션에서 지원하는 플랫폼은 무엇인가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              AWS, Azure, Heroku, Naver Cloud, Yandex 등 다양한 플랫폼 기반 구축과 운영을 지원합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>하이브리드 환경 구축도 가능한가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              가능합니다. 온프레미스와 클라우드를 함께 활용하는 하이브리드 아키텍처 설계 및 전환을 지원합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>보안과 컴플라이언스 대응은 어떻게 하나요?</h4>
+            </div>
+            <div class="faq-card__body">
+              산업별 요구에 맞춘 보안 정책, 접근 제어, 모니터링 및 규정 준수 체계를 함께 설계합니다.
+            </div>
+          </article>
         </div>
       </section>
     </main>

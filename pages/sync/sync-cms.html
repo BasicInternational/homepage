@@ -77,26 +77,34 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "SyncCMS는 어떤 팀이 사용하기 적합한가요?",
+                "name": "Sync Series는 어떤 서비스인가요?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "SyncCMS는 마케터, 콘텐츠 운영팀, 웹 서비스 운영팀이 개발 의존도를 낮추고 빠르게 페이지를 구성해야 할 때 적합합니다."
+                  "text": "Sync Series는 SyncCMS, SyncAny 등 다양한 디지털 솔루션을 통합 제공하는 플랫폼입니다. 콘텐츠 관리부터 파일 동기화까지 비즈니스에 필요한 모든 기능을 하나의 생태계에서 제공합니다."
                 }
               },
               {
                 "@type": "Question",
-                "name": "SyncCMS의 핵심 기능은 무엇인가요?",
+                "name": "SyncAny는 어떤 플랫폼인가요?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "블록 기반 페이지 빌더, AI 기반 SEO 자동화, 모듈형 기능 확장, 운영 워크플로우 최적화가 SyncCMS의 핵심 기능입니다."
+                  "text": "SyncAny는 오픈 소스 기반의 클라우드 스토리지 및 파일 공유 동기화 애플리케이션입니다. 다양한 환경에서 안전하고 빠른 파일 동기화를 지원합니다."
                 }
               },
               {
                 "@type": "Question",
-                "name": "SyncCMS로 SEO 대응도 가능한가요?",
+                "name": "SyncAdmin의 주요 기능은 무엇인가요?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "가능합니다. SyncCMS는 메타데이터와 구조화 데이터 운영을 지원해 검색 노출 최적화와 콘텐츠 품질 관리를 함께 수행할 수 있습니다."
+                  "text": "SyncAdmin은 전체 Sync Series 플랫폼의 통합 관리 대시보드입니다. 사용자 관리, 권한 설정, 모니터링, 로그 분석 등 운영에 필요한 모든 기능을 제공합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "SyncCMS는 어떻게 API/Rest Processing을 활용할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SyncCMS는 표준 RESTful API를 완벽하게 지원합니다. API 키 발급 후 원하는 프론트엔드 또는 모바일 앱과 자유롭게 연동할 수 있으며, Swagger UI로 모든 API 명세를 확인할 수 있습니다."
                 }
               }
             ]
@@ -157,6 +165,201 @@
         height: calc(100vh - 190px);
       }
     </style>
+  
+    <style id="faq-unified-style">
+      /* FAQ Unified Style (sync-sll aligned) */
+      .cms-faq,
+      .aeo-faq,
+      .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px;
+        background: #fff;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .cms-faq .section-title,
+      .aeo-faq .section-title,
+      .aeo-faq__title,
+      .sync-eta-faq .title-txt,
+      .cms-faq__title,
+      .cms-features__title {
+        color: #0f172a;
+        margin-bottom: 8px;
+        font-size: clamp(28px, 3vw, 40px);
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .cms-faq .section-desc,
+      .aeo-faq .section-desc,
+      .aeo-faq__desc,
+      .sync-eta-faq__header p {
+        color: #64748b;
+        margin-bottom: 32px;
+        max-width: 900px;
+        line-height: 1.75;
+      }
+
+      .cms-faq__header,
+      .sync-eta-faq__header {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .cms-faq__list,
+      .aeo-faq__list,
+      .sync-eta-faq__list {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        border-top: 0;
+      }
+
+      .faq-card,
+      .faq-item,
+      .aeo-faq details,
+      .sync-eta-faq__item {
+        position: relative;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      }
+
+      .faq-card::before,
+      .faq-item::before,
+      .aeo-faq details::before,
+      .sync-eta-faq__item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-radius: 12px 0 0 12px;
+        background: linear-gradient(180deg, #13877d, #0f766e);
+      }
+
+      .faq-item,
+      .sync-eta-faq__item {
+        border-bottom: none;
+      }
+
+      .faq-item__q,
+      .faq-card__q,
+      .aeo-faq summary,
+      .sync-eta-faq__item__q {
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      
+      .faq-card__header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .faq-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(19, 135, 125, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #13877d;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .faq-card__q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      .faq-card__body {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+.faq-item__q::after,
+      .sync-eta-faq__item__icon {
+        display: none !important;
+      }
+
+      .faq-item__a,
+      .faq-card__body,
+      .aeo-faq p,
+      .sync-eta-faq__item__a {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+
+      .aeo-faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .cms-faq__more,
+      .sync-eta-faq__more {
+        display: none !important;
+      }
+
+      @media (max-width: 768px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 48px 16px;
+        }
+
+        .cms-faq__list,
+        .aeo-faq__list,
+        .sync-eta-faq__list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 36px 12px;
+        }
+
+        .faq-card,
+        .faq-item,
+        .aeo-faq details,
+        .sync-eta-faq__item {
+          padding: 14px 12px;
+        }
+      }
+    </style>
+
   </head>
   <body id="sync__cms" data-type="detail">
     <div id="skip__content">
@@ -428,51 +631,46 @@
       </section>
 
       <!-- ── FAQ ── -->
-      <section class="cms-faq">
-        <div class="cms-faq__header">
-          <h2 class="cms-features__title">자주 묻는 질문 (FAQ)</h2>
-        </div>
+      
+      <section class="cms-faq" aria-label="자주 묻는 질문">
+        <h2 class="section-title" data-animate>자주 묻는 질문 (FAQ)</h2>
+        <p class="section-desc" data-animate>
+          Sync Series는 SyncCMS, SyncAny 등 다양한 디지털 솔루션을 통합 제공하는 플랫폼입니다. 콘텐츠 관리부터 파일 동기화까지 비즈니스에 필요한 모든 기능을 하나의 생태계에서 제공합니다.
+        </p>
 
         <div class="cms-faq__list">
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">Sync Series는 어떤 서비스인가요?</p>
-            <p class="faq-item__a">
-              Sync Series는 SyncCMS, SyncAny 등 다양한 디지털 솔루션을 통합 제공하는 플랫폼입니다.
-              콘텐츠 관리부터 파일 동기화까지 비즈니스에 필요한 모든 기능을 하나의 생태계에서
-              제공합니다.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">SyncAny는 어떤 플랫폼인가요?</p>
-            <p class="faq-item__a">
-              SyncAny는 오픈 소스 기반의 클라우드 스토리지 및 파일 공유 동기화 애플리케이션입니다.
-              다양한 환경에서 안전하고 빠른 파일 동기화를 지원합니다.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">SyncAdmin의 주요 기능은 무엇인가요?</p>
-            <p class="faq-item__a">
-              SyncAdmin은 전체 Sync Series 플랫폼의 통합 관리 대시보드입니다. 사용자 관리, 권한
-              설정, 모니터링, 로그 분석 등 운영에 필요한 모든 기능을 제공합니다.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <p class="faq-item__q" onclick="toggleFaq(this)">
-              SyncCMS는 어떻게 API/Rest Processing을 활용할 수 있나요?
-            </p>
-            <p class="faq-item__a">
-              SyncCMS는 표준 RESTful API를 완벽하게 지원합니다. API 키 발급 후 원하는 프론트엔드
-              또는 모바일 앱과 자유롭게 연동할 수 있으며, Swagger UI로 모든 API 명세를 확인할 수
-              있습니다.
-            </p>
-          </div>
-        </div>
-
-        <div class="cms-faq__more">
-          <a href="javascript:void(0)">전체 FAQ 보기 →</a>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-layers" aria-hidden="true"></i></span>Sync Series는 어떤 서비스인가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              Sync Series는 SyncCMS, SyncAny 등 다양한 디지털 솔루션을 통합 제공하는 플랫폼입니다. 콘텐츠 관리부터 파일 동기화까지 비즈니스에 필요한 모든 기능을 하나의 생태계에서 제공합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-layers" aria-hidden="true"></i></span>SyncAny는 어떤 플랫폼인가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              SyncAny는 오픈 소스 기반의 클라우드 스토리지 및 파일 공유 동기화 애플리케이션입니다. 다양한 환경에서 안전하고 빠른 파일 동기화를 지원합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-sliders" aria-hidden="true"></i></span>SyncAdmin의 주요 기능은 무엇인가요?</h4>
+            </div>
+            <div class="faq-card__body">
+              SyncAdmin은 전체 Sync Series 플랫폼의 통합 관리 대시보드입니다. 사용자 관리, 권한 설정, 모니터링, 로그 분석 등 운영에 필요한 모든 기능을 제공합니다.
+            </div>
+          </article>
+          <article class="faq-card" style="position:relative;">
+            <div class="faq-card__header">
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-plug" aria-hidden="true"></i></span>SyncCMS는 어떻게 API/Rest Processing을 활용할 수 있나요?</h4>
+            </div>
+            <div class="faq-card__body">
+              SyncCMS는 표준 RESTful API를 완벽하게 지원합니다. API 키 발급 후 원하는 프론트엔드 또는 모바일 앱과 자유롭게 연동할 수 있으며, Swagger UI로 모든 API 명세를 확인할 수 있습니다.
+            </div>
+          </article>
         </div>
       </section>
 

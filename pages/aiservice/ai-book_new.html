@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>꿈틀꿈틀 | 우리 아이 첫 작가 데뷔</title>
     <meta name="title" content="꿈틀꿈틀 | 우리 아이 첫 작가 데뷔" />
-        <meta name="description"
+    <meta
+      name="description"
+      content="아이의 상상력을 AI로 확장해 첫 창작 경험을 돕는 꿈틀꿈틀 동화 제작 플랫폼입니다."
+    />
     <meta name="author" content="베이직인터내셔널" />
     <meta name="geo.region" content="KR-11" />
     <meta name="geo.placename" content="서울" />
     <meta name="geo.position" content="37.5665;126.9780" />
     <meta name="ICBM" content="37.5665, 126.9780" />
-        content="아이의 상상력을 AI로 확장해 첫 창작 경험을 돕는 꿈틀꿈틀 동화 제작 플랫폼입니다."
-    />
     <meta name="robots" content="noindex, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="베이직인터내셔널" />
@@ -133,7 +134,202 @@
           "url": "https://basicit.co.kr"
         }
       }
-    </script></head>
+    </script>
+    <style id="faq-unified-style">
+      /* FAQ Unified Style (sync-sll aligned) */
+      .cms-faq,
+      .aeo-faq,
+      .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px;
+        background: #fff;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .cms-faq .section-title,
+      .aeo-faq .section-title,
+      .aeo-faq__title,
+      .sync-eta-faq .title-txt,
+      .cms-faq__title,
+      .cms-features__title {
+        color: #0f172a;
+        margin-bottom: 8px;
+        font-size: clamp(28px, 3vw, 40px);
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .cms-faq .section-desc,
+      .aeo-faq .section-desc,
+      .aeo-faq__desc,
+      .sync-eta-faq__header p {
+        color: #64748b;
+        margin-bottom: 32px;
+        max-width: 900px;
+        line-height: 1.75;
+      }
+
+      .cms-faq__header,
+      .sync-eta-faq__header {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .cms-faq__list,
+      .aeo-faq__list,
+      .sync-eta-faq__list {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        border-top: 0;
+      }
+
+      .faq-card,
+      .faq-item,
+      .aeo-faq details,
+      .sync-eta-faq__item {
+        position: relative;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      }
+
+      .faq-card::before,
+      .faq-item::before,
+      .aeo-faq details::before,
+      .sync-eta-faq__item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-radius: 12px 0 0 12px;
+        background: linear-gradient(180deg, #13877d, #0f766e);
+      }
+
+      .faq-item,
+      .sync-eta-faq__item {
+        border-bottom: none;
+      }
+
+      .faq-item__q,
+      .faq-card__q,
+      .aeo-faq summary,
+      .sync-eta-faq__item__q {
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      
+      .faq-card__header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .faq-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(19, 135, 125, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #13877d;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .faq-card__q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      .faq-card__body {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+.faq-item__q::after,
+      .sync-eta-faq__item__icon {
+        display: none !important;
+      }
+
+      .faq-item__a,
+      .faq-card__body,
+      .aeo-faq p,
+      .sync-eta-faq__item__a {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+
+      .aeo-faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .cms-faq__more,
+      .sync-eta-faq__more {
+        display: none !important;
+      }
+
+      @media (max-width: 768px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 48px 16px;
+        }
+
+        .cms-faq__list,
+        .aeo-faq__list,
+        .sync-eta-faq__list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 36px 12px;
+        }
+
+        .faq-card,
+        .faq-item,
+        .aeo-faq details,
+        .sync-eta-faq__item {
+          padding: 14px 12px;
+        }
+      }
+    </style>
+
+  </head>
 <body class="bg-blue-50/30">
 
     <!-- Navigation -->

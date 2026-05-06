@@ -935,6 +935,9 @@
       }
 
       .faq-card__q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
         margin: 0;
         font-size: 1.05rem;
         color: #ffffff;
@@ -2267,6 +2270,201 @@
         .live-sim__cards { grid-template-columns: 1fr; }
       }
     </style>
+  
+    <style id="faq-unified-style">
+      /* FAQ Unified Style (sync-sll aligned) */
+      .cms-faq,
+      .aeo-faq,
+      .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px;
+        background: #fff;
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .cms-faq .section-title,
+      .aeo-faq .section-title,
+      .aeo-faq__title,
+      .sync-eta-faq .title-txt,
+      .cms-faq__title,
+      .cms-features__title {
+        color: #0f172a;
+        margin-bottom: 8px;
+        font-size: clamp(28px, 3vw, 40px);
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .cms-faq .section-desc,
+      .aeo-faq .section-desc,
+      .aeo-faq__desc,
+      .sync-eta-faq__header p {
+        color: #64748b;
+        margin-bottom: 32px;
+        max-width: 900px;
+        line-height: 1.75;
+      }
+
+      .cms-faq__header,
+      .sync-eta-faq__header {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .cms-faq__list,
+      .aeo-faq__list,
+      .sync-eta-faq__list {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        border-top: 0;
+      }
+
+      .faq-card,
+      .faq-item,
+      .aeo-faq details,
+      .sync-eta-faq__item {
+        position: relative;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      }
+
+      .faq-card::before,
+      .faq-item::before,
+      .aeo-faq details::before,
+      .sync-eta-faq__item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-radius: 12px 0 0 12px;
+        background: linear-gradient(180deg, #13877d, #0f766e);
+      }
+
+      .faq-item,
+      .sync-eta-faq__item {
+        border-bottom: none;
+      }
+
+      .faq-item__q,
+      .faq-card__q,
+      .aeo-faq summary,
+      .sync-eta-faq__item__q {
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      
+      .faq-card__header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .faq-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(19, 135, 125, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #13877d;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .faq-card__q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+      }
+
+      .faq-card__body {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+.faq-item__q::after,
+      .sync-eta-faq__item__icon {
+        display: none !important;
+      }
+
+      .faq-item__a,
+      .faq-card__body,
+      .aeo-faq p,
+      .sync-eta-faq__item__a {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
+        max-height: none !important;
+        overflow: visible;
+        padding-top: 0 !important;
+      }
+
+      .aeo-faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .cms-faq__more,
+      .sync-eta-faq__more {
+        display: none !important;
+      }
+
+      @media (max-width: 768px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 48px 16px;
+        }
+
+        .cms-faq__list,
+        .aeo-faq__list,
+        .sync-eta-faq__list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cms-faq,
+        .aeo-faq,
+        .sync-eta-faq {
+        display: flex;
+        flex-direction: column;
+          padding: 36px 12px;
+        }
+
+        .faq-card,
+        .faq-item,
+        .aeo-faq details,
+        .sync-eta-faq__item {
+          padding: 14px 12px;
+        }
+      }
+    </style>
+
   </head>
   <body id="sync__cms" data-type="detail">
     <div id="skip__content">
@@ -2825,8 +3023,7 @@
         <div class="cms-faq__list">
           <article class="faq-card" style="position:relative;">
             <div class="faq-card__header">
-              <div class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></div>
-              <h4 class="faq-card__q">명령어 필터링은 어떻게 동작하나요?</h4>
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>명령어 필터링은 어떻게 동작하나요?</h4>
             </div>
             <div class="faq-card__body">
               Go 에이전트가 위험한 쉘 명령어를 사전 감지하여 차단함으로써 운영 안전성을 높입니다.
@@ -2835,8 +3032,7 @@
 
           <article class="faq-card" style="position:relative;">
             <div class="faq-card__header">
-              <div class="faq-card__icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
-              <h4 class="faq-card__q">다단계 승인이 필요한 이유는 무엇인가요?</h4>
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>다단계 승인이 필요한 이유는 무엇인가요?</h4>
             </div>
             <div class="faq-card__body">
               결정적인 시스템 변경 시 관리자 간 교차 승인을 적용해 실수와 오남용 리스크를 줄입니다.
@@ -2845,8 +3041,7 @@
 
           <article class="faq-card" style="position:relative;">
             <div class="faq-card__header">
-              <div class="faq-card__icon"><i class="bi bi-journal-check" aria-hidden="true"></i></div>
-              <h4 class="faq-card__q">무결성 로그는 어디에 저장되나요?</h4>
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>무결성 로그는 어디에 저장되나요?</h4>
             </div>
             <div class="faq-card__body">
               모든 작업 내역은 PostgreSQL에 위변조 방지 형태로 기록되어 감사 추적과 대응에 활용됩니다.
@@ -2855,8 +3050,7 @@
 
           <article class="faq-card" style="position:relative;">
             <div class="faq-card__header">
-              <div class="faq-card__icon"><i class="bi bi-envelope-check" aria-hidden="true"></i></div>
-              <h4 class="faq-card__q">Slack/Email 알림은 어떤 조건에서 발송되나요?</h4>
+              <h4 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>Slack/Email 알림은 어떤 조건에서 발송되나요?</h4>
             </div>
             <div class="faq-card__body">
               만료 임박, 갱신 실패, 이상 징후 등 운영 위험 이벤트 발생 시 정책 기반으로 즉시 발송됩니다.
