@@ -61,9 +61,9 @@
           },
           {
             "@type": "WebPage",
-            "name": "베이직인터내셔널 신사업&에이전시",
-            "description": "고객이 필요로하는 솔루션을 제공하는 전문 에이전시입니다.",
-            "url": "https://basicit.co.kr/pages/agency/agency.html",
+            "name": "글로벌 에이전시 포트폴리오 | 베이직인터내셔널",
+            "description": "글로벌 브랜드의 디지털 현지화와 통합 플랫폼 구축 사례를 담은 베이직인터내셔널의 포트폴리오입니다.",
+            "url": "https://basicit.co.kr/pages/agency/agency-portfolio.html",
             "mainEntity": {
               "@type": "Service",
               "name": "신사업&에이전시 서비스",
@@ -113,6 +113,35 @@
                 ]
               }
             }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "포트폴리오에는 어떤 프로젝트가 포함되어 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "리빙, 유통, 금융, 자동차 등 다양한 산업군의 웹/앱 구축 및 운영 프로젝트가 포함되어 있습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "브랜드별 상세 화면도 확인할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "가능합니다. 각 카드 선택 시 모달을 통해 프로젝트별 상세 이미지를 순차적으로 확인할 수 있습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "유사한 에이전시 프로젝트를 의뢰할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "가능합니다. 업종, 목표, 예산에 맞춘 기획부터 디자인, 개발, 운영까지 맞춤형으로 제안합니다."
+                }
+              }
+            ]
           }
         ]
       }
@@ -377,6 +406,43 @@
         color: #64748b;
         margin: 0;
         line-height: 1.6;
+      }
+
+      .aeo-faq {
+        padding: 64px 20px;
+        background: #fff;
+      }
+
+      .aeo-faq__inner {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .aeo-faq__list {
+        margin-top: 22px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .aeo-faq details {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 16px 0;
+      }
+
+      .aeo-faq summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: #0f172a;
+        list-style: none;
+      }
+
+      .aeo-faq summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .aeo-faq p {
+        margin-top: 10px;
+        color: #475569;
+        line-height: 1.7;
       }
     </style>
   </head>
@@ -855,6 +921,27 @@
         </div>
       </section>
 
+      <section class="aeo-faq" aria-label="자주 묻는 질문">
+        <div class="aeo-faq__inner">
+          <h2 class="section-title">자주 묻는 질문</h2>
+          <p class="section-desc">에이전시 포트폴리오와 프로젝트 진행 방식에 대해 자주 확인하시는 내용을 정리했습니다.</p>
+          <div class="aeo-faq__list">
+            <details>
+              <summary>포트폴리오에는 어떤 프로젝트가 포함되어 있나요?</summary>
+              <p>리빙, 유통, 금융, 자동차 등 다양한 산업군의 웹/앱 구축 및 운영 프로젝트가 포함되어 있습니다.</p>
+            </details>
+            <details>
+              <summary>브랜드별 상세 화면도 확인할 수 있나요?</summary>
+              <p>가능합니다. 각 카드 선택 시 모달을 통해 프로젝트별 상세 이미지를 순차적으로 확인할 수 있습니다.</p>
+            </details>
+            <details>
+              <summary>유사한 에이전시 프로젝트를 의뢰할 수 있나요?</summary>
+              <p>가능합니다. 업종, 목표, 예산에 맞춘 기획부터 디자인, 개발, 운영까지 맞춤형으로 제안합니다.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <!-- Pop-up Modal (PDF Content) -->
       <div id="projectModal" class="modal-container">
         <!-- Backdrop -->
@@ -923,47 +1010,8 @@
         );
       });
     </script>
-  <!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-</body>
 
-  <script>
+    <script>
     const agencyModal = document.getElementById('projectModal');
     const agencyImage = document.getElementById('projectImage');
 
@@ -995,5 +1043,6 @@
       }, 300);
     }
   </script>
+  </body>
 </html>
 
