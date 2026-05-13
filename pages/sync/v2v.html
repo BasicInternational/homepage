@@ -1380,9 +1380,10 @@
     }
 
     h1 {
-      font-size: 34px;
-      line-height: 1.2;
-      margin: 20px 0;
+    font-size: 48px;
+    line-height: 1.3;
+    margin: 20px 0;
+    font-weight: 600;
     }
 
     .ssl-roi__ghost {
@@ -2912,10 +2913,13 @@
     }
 
     .section {
+      margin-top: 0;
       padding: 80px 0;
       max-width: 100vw;
     }
-
+.section + section {
+  margin-top: 0;
+}
     .section-head {
       display: flex;
       align-items: end;
@@ -3750,215 +3754,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-  <script>
-    //  @component HeroSection
-    document.addEventListener('DOMContentLoaded', () => {
-      render(
-        '#container',
-        heroSection({
-          badge: 'NEXT-GEN SSL AUTOMATION SYSTEM',
-          title: 'SYNC SSL<br />인증서 관리, 이제 완전히 잊으셔도 됩니다',
-          sub: 'SYNC SSL은 단 한 번의 설치로 인증서 감지부터 배포까지 전 과정을 자동화합니다.<br />지능형 에이전트가 365일 24시간 귀사의 서비스를 무중단으로 수호합니다.',
-          scrollTarget: '#no-code',
-        }),
-      );
-    });
-
-    function toggleFaq(el) {
-      const item = el.closest('.faq-item');
-      const isOpen = item.classList.contains('is-open');
-      document
-        .querySelectorAll('.faq-item.is-open')
-        .forEach((i) => i.classList.remove('is-open'));
-      if (!isOpen) item.classList.add('is-open');
-    }
-
-    // amCharts 5 도넛 차트 초기화
-    let chart;
-    let series;
-
-    function initAmChart() {
-      // Create root element
-      let root = am5.Root.new("chartdiv");
-
-      // Set themes
-      root.setThemes([
-        am5themes_Animated.new(root)
-      ]);
-
-      // Create chart
-      chart = root.container.children.push(am5percent.PieChart.new(root, {
-        layout: root.verticalLayout
-      }));
-
-      // Create series with ~14px thickness (use ~91% innerRadius)
-      series = chart.series.push(am5percent.PieSeries.new(root, {
-        valueField: "value",
-        categoryField: "category",
-        alignLabels: false,
-        innerRadius: am5.percent(91),
-        radius: am5.percent(100)
-      }));
-
-      // 라벨 숨기기
-      series.labels.template.set("visible", false);
-      series.ticks.template.set("visible", false);
-
-      // 색상 설정
-      series.slices.template.adapters.add("fill", function (fill, target) {
-        const dataItem = target.dataItem;
-        if (dataItem) {
-          const category = dataItem.get("category");
-          if (category === "정상 운영") return am5.color(0x10b981);
-          if (category === "갱신 대기") return am5.color(0x3b82f6);
-          if (category === "점검 필요") return am5.color(0xef4444);
-        }
-        return fill;
-      });
-
-      // Set data
-      series.data.setAll([
-        { value: 85, category: "정상 운영" },
-        { value: 12, category: "갱신 대기" },
-        { value: 3, category: "점검 필요" }
-      ]);
-
-      // Play initial animations
-      series.appear(1000, 100);
-    }
-
-    // 갱신 프로세스 테스트 버튼 애니메이션
-    document.addEventListener('DOMContentLoaded', () => {
-      // amCharts 초기화
-      if (typeof am5 !== 'undefined') {
-        initAmChart();
-      }
-
-      const renewalBtn = document.getElementById('renewalTestBtn');
-      if (renewalBtn) {
-        renewalBtn.addEventListener('click', function () {
-          if (this.classList.contains('processing')) return;
-
-          // 버튼 상태 변경
-          this.classList.add('processing');
-          const icon = this.querySelector('i');
-          const text = this.querySelector('span');
-          const originalText = text.textContent;
-
-          icon.className = 'bi bi-arrow-repeat';
-          text.textContent = '갱신 진행 중...';
-
-          // total orchestration duration (ms)
-          const totalDuration = 3200;
-          const numberAnimDuration = Math.max(600, totalDuration - 800);
-
-          // Animate all progress bars: reset → 0 instantly → animate to target
-          const progressItems = document.querySelectorAll('.progress-item');
-          progressItems.forEach(item => {
-            const valueEl = item.querySelector('.progress-item__value');
-            const barEl = item.querySelector('.progress-bar');
-            const barFill = item.querySelector('.progress-bar__fill');
-            if (!barFill || !valueEl) return;
-
-            // determine target from data-progress attribute
-            let target = 0;
-            if (barFill.classList.contains('progress-bar__fill--blue')) {
-              target = 100;
-            } else {
-              target = parseFloat(barEl && barEl.dataset.progress) || 0;
-            }
-            const hasDecimal = String(target).includes('.');
-
-            // 1) transition 잠깐 끄고 즉각 0으로 리셋
-            barFill.style.transition = 'none';
-            barFill.style.setProperty('--progress-width', '0%');
-            valueEl.textContent = '0%';
-
-            // 2) 다음 프레임에서 transition 복원 후 목표값으로 애니메이션
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                barFill.style.transition = '';
-                barFill.style.setProperty('--progress-width', target + '%');
-              });
-            });
-
-            // 3) 숫자 카운터 (2s transition 과 동기화)
-            const duration = numberAnimDuration;
-            const steps = Math.max(30, Math.floor(duration / 40));
-            const interval = Math.floor(duration / steps);
-            let step = 0;
-            const numTimer = setInterval(() => {
-              step++;
-              const val = (target / steps) * step;
-              valueEl.textContent = hasDecimal ? val.toFixed(1) + '%' : Math.round(val) + '%';
-              if (step >= steps) {
-                valueEl.textContent = (hasDecimal ? target.toFixed(1) : Math.round(target)) + '%';
-                clearInterval(numTimer);
-              }
-            }, interval);
-          });
-
-          // 통계 카운팅 애니메이션 (existing stat cards)
-          const statValues = document.querySelectorAll('.stat-item__value');
-          statValues.forEach(stat => {
-            const originalValue = stat.textContent;
-            let currentNum = 0;
-            const targetMatch = originalValue.match(/\d+/);
-            if (targetMatch) {
-              const target = parseInt(targetMatch[0]);
-              const increment = Math.ceil(target / 30);
-              const counter = setInterval(() => {
-                currentNum += increment;
-                if (currentNum >= target) {
-                  stat.textContent = originalValue;
-                  clearInterval(counter);
-                } else {
-                  stat.textContent = originalValue.replace(/\d+/, currentNum);
-                }
-              }, 50);
-            }
-          });
-
-          // Coordinate amCharts animation to align with progress completion
-          if (series) {
-            // hide immediately, then show/appear near the end of the orchestration
-            try { series.hide(); } catch (e) { }
-            const chartAppearDelay = Math.max(200, totalDuration - 900);
-            setTimeout(() => {
-              try {
-                series.show();
-                // play a pronounced appear animation
-                if (typeof series.appear === 'function') series.appear(800, 100);
-              } catch (e) { }
-            }, chartAppearDelay);
-          }
-
-          // finalization: restore each bar to its original data-progress value and reset button
-          setTimeout(() => {
-            document.querySelectorAll('.progress-item').forEach(item => {
-              const barEl = item.querySelector('.progress-bar');
-              const fillEl = item.querySelector('.progress-bar__fill');
-              const valEl = item.querySelector('.progress-item__value');
-              if (!barEl || !fillEl || !valEl) return;
-
-              // blue bar always ends at 100 during demo, others restore to original
-              const isBlueFill = fillEl.classList.contains('progress-bar__fill--blue');
-              const original = isBlueFill ? 100 : (parseFloat(barEl.dataset.progress) || 0);
-              const hasDecimal = String(original).includes('.');
-
-              fillEl.style.setProperty('--progress-width', original + '%');
-              valEl.textContent = (hasDecimal ? original.toFixed(1) : Math.round(original)) + '%';
-            });
-
-            // restore button state
-            this.classList.remove('processing');
-            icon.className = 'bi bi-play-circle';
-            text.textContent = originalText;
-          }, totalDuration);
-        });
-      }
-    });
-  </script>
+  
   <script>
     // ===== 스크롤 애니메이션 (data-scroll) =====
     document.addEventListener('DOMContentLoaded', () => {
@@ -4044,69 +3840,8 @@
       }, 500);
     });
   </script>
-  <script>
-    // ===== 도넛 차트 애니메이션 =====
-    document.addEventListener('DOMContentLoaded', () => {
-      const dashboardSection = document.querySelector('.ssl-dashboard');
-      if (!dashboardSection) return;
-
-      const chartObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const segments = entry.target.querySelectorAll('.donut-segment');
-            segments.forEach((segment, index) => {
-              setTimeout(() => {
-                segment.style.animation = `donut-fill 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
-              }, index * 200);
-            });
-            chartObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.3
-      });
-
-      chartObserver.observe(dashboardSection);
-    });
-  </script>
-  <script>
-    // ===== Hero 섹션 휠 스크롤 자동 이동 =====
-    document.addEventListener('DOMContentLoaded', () => {
-      const heroSection = document.querySelector('.syncany-hero');
-      const nextSection = document.querySelector('#no-code');
-
-      if (!heroSection || !nextSection) return;
-
-      let isScrolling = false;
-      let scrollTimeout;
-
-      heroSection.addEventListener(
-        'wheel',
-        (e) => {
-          if (isScrolling || e.deltaY < 0) return;
-
-          const heroBottom = heroSection.getBoundingClientRect().bottom;
-          const windowHeight = window.innerHeight;
-
-          if (heroBottom > windowHeight * 0.3) {
-            e.preventDefault();
-            isScrolling = true;
-
-            window.scrollTo({
-              top: nextSection.offsetTop,
-              behavior: 'smooth',
-            });
-
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-              isScrolling = false;
-            }, 1000);
-          }
-        },
-        { passive: false },
-      );
-    });
-  </script>
+  
+  
 
 
 
