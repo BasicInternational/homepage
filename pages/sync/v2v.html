@@ -3,23 +3,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>SYNC SSL | 베이직인터내셔널</title>
+  <title>v2v 워크플로우 | 베이직인터내셔널</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="title" content="SYNC SSL | 베이직인터내셔널" />
-  <meta name="description" content="SYNC SSL은 인증서 감지부터 갱신, 배포, 보안 승인까지 자동화하는 지능형 SSL 중앙 집중 관리 시스템입니다." />
-  <meta name="keywords" content="SYNC SSL,SSL 인증서,중앙 관리,인증서 자동 갱신,Go Agent,Spring Boot,보안 모니터링" />
+  <meta name="title" content="v2v 워크플로우 | 베이직인터내셔널" />
+  <meta name="description"
+    content="내부망에서 LLM, API, DB, Webhook, Tool Runner를 하나의 캔버스에서 연결하는 온프레미스 자동화 플랫폼. 기업과 공공기관이 자체 LLM을 실제 업무 자동화로 확장할 수 있도록 설계되었습니다." />
+  <meta name="keywords" content="v2v, 워크플로우, 온프레미스, LLM, API, DB, Webhook, 자동화, DAG, 베이직인터내셔널" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="베이직인터내셔널" />
-  <meta property="og:title" content="SYNC SSL | 베이직인터내셔널" />
-  <meta property="og:description" content="인증서 관리, 이제 완전히 잊으셔도 됩니다. 감지부터 배포까지 자동화하는 지능형 SSL 중앙 집중 관리 시스템." />
+  <meta property="og:title" content="v2v 워크플로우 | 베이직인터내셔널" />
+  <meta property="og:description"
+    content="내부망에서 LLM, API, DB, Webhook, Tool Runner를 하나의 캔버스에서 연결하는 온프레미스 자동화 플랫폼. 기업과 공공기관이 자체 LLM을 실제 업무 자동화로 확장할 수 있도록 설계되었습니다." />
   <meta property="og:image" content="https://basicit.co.kr/assets/images/favicon.png" />
   <meta property="og:url" content="https://basicit.co.kr/pages/sync/sync-sll.html" />
   <meta property="og:locale" content="ko_KR" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SYNC SSL | 베이직인터내셔널" />
-  <meta name="twitter:description" content="베이직인터내셔널 공식 페이지입니다." />
+  <meta name="twitter:title" content="v2v 워크플로우 | 베이직인터내셔널" />
+  <meta name="twitter:description" content="내부망에서 LLM, API, DB, Webhook, Tool Runner를 하나의 캔버스에서 연결하는 온프레미스 자동화 플랫폼." />
   <meta name="twitter:image" content="https://basicit.co.kr/assets/images/favicon.png" />
   <meta name="author" content="베이직인터내셔널" />
   <meta name="geo.region" content="KR-11" />
@@ -1377,6 +1379,12 @@
       flex-wrap: wrap;
     }
 
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 20px 0;
+    }
+
     .ssl-roi__ghost {
       display: inline-flex;
       align-items: center;
@@ -2709,9 +2717,9 @@
       font-weight: 750;
     }
 
-    h1 {
+    .syncany__title {
       margin: 22px 0 18px;
-      font-size: 42px;
+      font-size: clamp(36px, 6vw, 72px);
       line-height: 1.2;
       letter-spacing: 0;
       font-weight: 700;
@@ -2761,6 +2769,7 @@
       overflow: hidden;
       min-height: 470px;
       overflow: hidden;
+      margin-top: 40px;
     }
 
     .window-head {
@@ -4083,7 +4092,45 @@
 
 
   <!-- Code injected by live-server -->
-  
+
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+        var address = protocol + window.location.host + window.location.pathname + '/ws';
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == 'reload') window.location.reload();
+          else if (msg.data == 'refreshcss') refreshCSS();
+        };
+        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+          console.log('Live reload enabled.');
+          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+        }
+      })();
+    }
+    else {
+      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+  </script>
 </body>
 
 </html>
