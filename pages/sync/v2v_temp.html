@@ -254,6 +254,7 @@
       font-size: clamp(36px, 6vw, 72px);
       line-height: .98;
       letter-spacing: 0;
+      margin: 0 auto;
     }
   
     .sub {
@@ -552,20 +553,44 @@
   <div id="header-include"></div>
 
   <main>
-    <section class="hero">
-      <div class="shell">
-        <div class="eyebrow">Workflow Demo Library</div>
-        <h1>업무별 워크플로우를 만들고 실행 성공까지 확인하는 화면</h1>
-        <p class="sub">각 데모는 실제 v2v 화면 캡처를 기반으로 구성했습니다. 빈 캔버스에서 블럭을 하나씩 놓고, 엣지를 연결하고, 실행 버튼을 눌러 성공 로그를 확인하는 흐름을 한 화면에서
-          크게 볼 수 있습니다.</p>
-        <div class="category-nav">
-          <a href="#etl">ETL / 대량 데이터</a>
-          <a href="#baas">BaaS API</a>
-          <a href="#webhook-ai">웹훅 + 로컬 LLM</a>
-          <a href="#cicd">CI/CD</a>
-          <a href="#eai">EAI / 시스템 연계</a>
-          <a href="#ops">운영 모니터링</a>
+    <section class="syncany-hero">
+      <!-- 배경 -->
+      <div class="syncany__bg"></div>
+
+      <!-- 우측 장식 패턴 -->
+      <div class="syncany__pattern">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M200 20 L380 110 L380 290 L200 380 L20 290 L20 110 Z" stroke="white" stroke-width="2" />
+          <path d="M200 60 L340 135 L340 265 L200 340 L60 265 L60 135 Z" stroke="white" stroke-width="2" />
+          <path d="M200 100 L300 160 L300 240 L200 300 L100 240 L100 160 Z" stroke="white" stroke-width="2" />
+          <path d="M200 140 L260 175 L260 225 L200 260 L140 225 L140 175 Z" stroke="white" stroke-width="2" />
+        </svg>
+      </div>
+
+      <!-- 본문 -->
+      <div class="syncany__content">
+        <!-- 배지 -->
+        <div class="syncany__badge">
+          <div class="syncany__badge-icon">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          <span class="syncany__badge-text">온프레미스 워크플로우 자동화</span>
         </div>
+
+        <!-- 타이틀 -->
+        <h1 class="syncany__title">v2v Workflow</h1>
+
+        <!-- 서브타이틀 -->
+        <p class="syncany__sub">
+          내부망에서 LLM, API, DB, Webhook, Tool Runner를<br />
+          하나의 캔버스에서 연결하는 자동화 플랫폼
+        </p>
+      </div>
+
+      <!-- 스크롤 인디케이터 -->
+      <div class="syncany__scroll">
+        <span class="syncany__scroll-text"><a href="#etl">Scroll</a></span>
+        <div class="syncany__scroll-line"></div>
       </div>
     </section>
   
@@ -789,6 +814,124 @@
   <div id="floating-menu-include"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        <script>
+          // Hero wheel scroll to #etl
+          document.addEventListener('DOMContentLoaded', () => {
+            const heroSection = document.querySelector('.syncany-hero');
+            const etlSection = document.querySelector('#etl');
+            if (heroSection && etlSection) {
+              let isScrolling = false;
+              let scrollTimeout;
+              heroSection.addEventListener('wheel', (e) => {
+                if (isScrolling || e.deltaY < 0) return;
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+                if (heroBottom > windowHeight * 0.3) {
+                  e.preventDefault();
+                  isScrolling = true;
+                  etlSection.scrollIntoView({ behavior: 'smooth' });
+                  clearTimeout(scrollTimeout);
+                  scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                  }, 1000);
+                }
+              }, { passive: false });
+            }
+          });
+
+          // Section-by-section fade-in animation
+          document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+              section.classList.add('section-animate');
+            });
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('in-view');
+                }
+              });
+            }, { threshold: 0.15 });
+            sections.forEach(section => observer.observe(section));
+          });
+        </script>
+        <style>
+          .section-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+          }
+          .section-animate.in-view {
+            opacity: 1;
+            transform: none;
+          }
+        </style>
+      <script>
+        // Hero wheel scroll to #etl and trigger validation
+        document.addEventListener('DOMContentLoaded', () => {
+          const heroSection = document.querySelector('.syncany-hero');
+          const etlSection = document.querySelector('#etl');
+          if (heroSection && etlSection) {
+            let isScrolling = false;
+            let scrollTimeout;
+            heroSection.addEventListener('wheel', (e) => {
+              if (isScrolling || e.deltaY < 0) return;
+              const heroBottom = heroSection.getBoundingClientRect().bottom;
+              const windowHeight = window.innerHeight;
+              if (heroBottom > windowHeight * 0.3) {
+                e.preventDefault();
+                isScrolling = true;
+                etlSection.scrollIntoView({ behavior: 'smooth' });
+                // Trigger completeness validation for ETL section
+                if (window.triggerCompletenessValidation) {
+                  window.triggerCompletenessValidation('etl');
+                }
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                  isScrolling = false;
+                }, 1000);
+              }
+            }, { passive: false });
+          }
+        });
+
+        // Section-by-section fade-in animation
+        document.addEventListener('DOMContentLoaded', () => {
+          const sections = document.querySelectorAll('main section');
+          sections.forEach(section => {
+            section.classList.add('section-animate');
+          });
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+              }
+            });
+          }, { threshold: 0.15 });
+          sections.forEach(section => observer.observe(section));
+        });
+
+        // Define a global callback for Copilot to trigger validation
+        window.triggerCompletenessValidation = function(section) {
+          if (section === 'etl') {
+            // Copilot will call the validation tool here
+            if (window.CopilotAppmodCompletenessValidation) {
+              window.CopilotAppmodCompletenessValidation('etl');
+            }
+          }
+        }
+      </script>
+      <style>
+        .section-animate {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+        }
+        .section-animate.in-view {
+          opacity: 1;
+          transform: none;
+        }
+      </style>
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <script>
@@ -1185,6 +1328,8 @@
     });
   </script>
   
+<!-- Code injected by live-server -->
+
 </body>
 
 </html>
