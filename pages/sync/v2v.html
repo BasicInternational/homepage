@@ -3088,7 +3088,22 @@
       font-weight: 800;
       z-index: 2;
     }
-
+  .mini-canvas::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      background: #232a3a;
+      border-radius: 8px;
+    }
+    .mini-canvas::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #38bdf8 0%, #0d746b 100%);
+      border-radius: 8px;
+      min-height: 32px;
+    }
+    .mini-canvas::-webkit-scrollbar-track {
+      background: #232a3a;
+      border-radius: 8px;
+    }
+    
     .mini-node.ai {
       background: linear-gradient(180deg, #f080aa 0 32%, #323950 32%);
       padding-top: 36px;
