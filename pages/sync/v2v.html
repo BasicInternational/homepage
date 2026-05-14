@@ -129,6 +129,11 @@
         margin: 100px auto 0;
         overflow: hidden;
       }
+
+      body .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     html {
@@ -922,7 +927,7 @@
 
       .feature-grid,
       .scenario-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
       }
 
       .demo-grid {
@@ -963,13 +968,13 @@
         }
 
         .hero-grid h1 {
-          font-size: clamp(18px, 6vw, 22px) !important;
-          margin: 10px 0 8px;
+          font-size: 30px;
+          margin: 30px 0 28px;
         }
 
         .lead {
-          font-size: 13px !important;
-          margin-bottom: 8px;
+          font-size: 16px !important;
+          margin-bottom: 28px;
         }
 
         .section h2 {
@@ -998,7 +1003,7 @@
         }
 
         .hero-stats {
-          margin-top: 10px;
+          margin-top: 70px;
         }
 
         .stat strong {
@@ -1012,6 +1017,7 @@
         .shell {
           width: min(100% - 24px, 1180px);
         }
+
         .hero-stats,
         .feature-grid,
         .scenario-grid,
@@ -1454,6 +1460,8 @@
   </script>
 
 
+
+  <!-- Code injected by live-server -->
   
 </body>
 
