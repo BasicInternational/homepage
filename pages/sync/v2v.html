@@ -3945,6 +3945,36 @@
     crossorigin="anonymous"></script>
   
   <script>
+    // ===== Hero Section One-Scroll to Next Section =====
+    (function() {
+      let hero = document.querySelector('.hero');
+      let nextSection = document.querySelector('.hero').nextElementSibling;
+      let scrolled = false;
+      if(hero && nextSection) {
+        const scrollToNext = (e) => {
+          if(scrolled) return;
+          // Only trigger on downward scroll or swipe
+          if((e.type === 'wheel' && e.deltaY > 0) || e.type === 'touchend') {
+            scrolled = true;
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => { scrolled = false; }, 1200);
+          }
+        };
+        // Mouse wheel
+        hero.addEventListener('wheel', scrollToNext, { passive: false });
+        // Touch swipe (mobile)
+        let touchStartY = null;
+        hero.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; });
+        hero.addEventListener('touchend', e => {
+          if(touchStartY !== null) {
+            let touchEndY = e.changedTouches[0].clientY;
+            if(touchStartY < touchEndY - 40) return; // upward swipe only
+            scrollToNext(e);
+            touchStartY = null;
+          }
+        });
+      }
+    })();
     // ===== 스크롤 애니메이션 (data-scroll) =====
     document.addEventListener('DOMContentLoaded', () => {
       // 프로그레스 바를 0%로 초기화 (CSS transition 작동 보장)
