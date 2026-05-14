@@ -4704,8 +4704,7 @@ nav ul li a:hover {
 }
 
 .hero {
-	max-width: 1440px;
-	margin-top: 56px;
+	max-width: 1440px;     /* margin-top: 56px; */
 	min-height: 420px;
 	display: flex;
 	justify-content: space-between;

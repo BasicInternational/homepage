@@ -3,7 +3,7 @@
 @media screen and (max-width:769px) {
 	main {
 		width: 100%;
-		margin: 68px auto 0;
+		margin: 100px auto 0;
 		overflow: hidden;
 	}
 
@@ -853,7 +853,7 @@
 }
 
 /* Small Mobile Devices (480px 이하) */
-@media screen and (max-width: 480px) {
+@media screen and (max-width:480px) {
 	.cms-stats {
 		padding: 25px 12px;
 		gap: 12px;
@@ -874,4 +874,5 @@
 		margin-top: 10px;
 		line-height: 1.3;
 	}
+
 }
