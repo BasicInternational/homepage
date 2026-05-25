@@ -1441,6 +1441,7 @@
       ).join('');
     }
 
+    let firstSelectStep = true;
     function selectStep(id) {
       document.querySelectorAll('.aiops-flow__step').forEach((el) => {
         el.classList.remove('is-active');
@@ -1455,13 +1456,18 @@
       if (card) {
         card.classList.add('is-active');
         card.setAttribute('aria-pressed', 'true');
-        card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        if (!firstSelectStep) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
       }
       if (row) row.classList.add('is-active');
       if (detail) {
         detail.classList.add('is-active');
-        detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (!firstSelectStep) {
+          detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }
+      firstSelectStep = false;
     }
 
     function updateSimulation() {
@@ -1509,11 +1515,11 @@
     });
   </script>
   <!-- Code injected by live-server -->
-  <script>
+  <!-- <script>
     window.onload = function () {
       window.scrollTo(0, 0);
     };
-  </script>
+  </script> -->
   <!-- Code injected by live-server -->
   
 </body>
