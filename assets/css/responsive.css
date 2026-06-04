@@ -9,7 +9,7 @@
 
 	main section {
 		flex-direction: column;
-		padding: 30px 15px;
+		padding: 45px 15px 45px;
 	}
 
 	.mo-br {
@@ -25,16 +25,56 @@
 	}
 
 	/* 모바일사이즈 padding */
-	.experience-section, section.ai-services, section.overview-cards, .ai-services, .xbus-history, .ht-inner, .corp-section, #tabto-pay .flow-section, #tabto-pay .ecosystem-wrap, .cta-bar, .edu-feature-section, .effect-section, .cloud__main > section, .commmuni__main > section, .commerce__main > section, .benev__main > section, .bi__main > section, .finance__main > section, .sync__container > section, .cms__main .cms-stats, .cms__main .cms-tech, .ssl-dashboard, .security-section, .cms-features, .sync-eta-why, .sync-eta-hero, .eta__main .sync-eta-stats, .section-admin-ecosystem, .sync-eta-pipeline, .scm-hero, .xbus-encryption, .container__agency {
+	.experience-section,
+	section.ai-services,
+	section.overview-cards,
+	.ai-services,
+	.xbus-history,
+	.ht-inner,
+	.corp-section,
+	#tabto-pay .flow-section,
+	#tabto-pay .ecosystem-wrap,
+	.cta-bar,
+	.edu-feature-section,
+	.effect-section,
+	.cloud__main>section,
+	.commmuni__main>section,
+	.commerce__main>section,
+	.benev__main>section,
+	.bi__main>section,
+	.finance__main>section,
+	.sync__container>section,
+	.cms__main .cms-stats,
+	.cms__main .cms-tech,
+	.ssl-dashboard,
+	.security-section,
+	.cms-features,
+	.sync-eta-why,
+	.sync-eta-hero,
+	.eta__main .sync-eta-stats,
+	.section-admin-ecosystem,
+	.sync-eta-pipeline,
+	.scm-hero,
+	.xbus-encryption,
+	.container__agency,
+	section.aiops {
 		padding: 45px 15px 45px;
 	}
 
-	main .cms-stats, .cms__main .cms-stats, .main__syncadmin .cms-stats-admin {
+	main .cms-stats,
+	.cms__main .cms-stats,
+	.main__syncadmin .cms-stats-admin {
 		padding: 45px 15px 0;
 	}
 
+	.hero-modern-business__container {
+		padding: 0;
+	}
+
 	/* Card items padding */
-	.effect-item, .service-card, .sync__container .info-card {
+	.effect-item,
+	.service-card,
+	.sync__container .info-card {
 		padding: 20px;
 	}
 
@@ -69,7 +109,8 @@
 		opacity: 0;
 	}
 
-	header nav.bi__nav .nav__body, header nav.bi__nav .nav__head {
+	header nav.bi__nav .nav__body,
+	header nav.bi__nav .nav__head {
 		padding: 20px;
 	}
 
@@ -123,7 +164,7 @@
 		font-size: 32px;
 	}
 
-	.hero-modern-business__container .hero-modern-business__content .hero-modern-business__actions > a {
+	.hero-modern-business__container .hero-modern-business__content .hero-modern-business__actions>a {
 		width: 100%;
 		text-align: center;
 		margin-bottom: 0px;
@@ -155,7 +196,8 @@
 		min-height: unset;
 		overflow: hidden;
 		display: flex;
-		align-items: baseline;         /* padding-top: 50px; */
+		align-items: baseline;
+		/* padding-top: 50px; */
 	}
 
 	.syncany__scroll {
@@ -189,7 +231,10 @@
 		font-size: 20px;
 	}
 
-	.history-page-wrap .ht-heading h2, .corp-heading h2, .org-section .org-header h2, h2.section-title {
+	.history-page-wrap .ht-heading h2,
+	.corp-heading h2,
+	.org-section .org-header h2,
+	h2.section-title {
 		font-weight: 600;
 		margin-bottom: 20px;
 	}
@@ -245,7 +290,9 @@
 	}
 
 	/* pages/aiservice/ai-book.html */
-	#aisound__body section, #aisound__body nav, #aisound__body footer {
+	#aisound__body section,
+	#aisound__body nav,
+	#aisound__body footer {
 		padding: 45px 15px;
 	}
 
@@ -261,7 +308,8 @@
 		flex-direction: column;
 	}
 
-	#aisound__body .preview-content > *, .preview-item {
+	#aisound__body .preview-content>*,
+	.preview-item {
 		width: 100%;
 	}
 
@@ -362,7 +410,8 @@
 		padding: 0 20px;
 	}
 
-	.xbus-history__table th, .xbus-history__table td {
+	.xbus-history__table th,
+	.xbus-history__table td {
 		padding: 12px 14px;
 	}
 
@@ -370,7 +419,8 @@
 		overflow-x: scroll;
 	}
 
-	.xbus-history .xbus-history__table--wrap .xbus-history__table td, .xbus-history .xbus-history__table--wrap .xbus-history__table th {
+	.xbus-history .xbus-history__table--wrap .xbus-history__table td,
+	.xbus-history .xbus-history__table--wrap .xbus-history__table th {
 		min-width: 150px;
 	}
 
@@ -394,7 +444,7 @@
 		padding: 45px 15px;
 	}
 
-	#tabto-pay .opening-btn-row > button {
+	#tabto-pay .opening-btn-row>button {
 		width: calc(100% / 2);
 	}
 
@@ -451,7 +501,9 @@
 		width: auto;
 	}
 
-	.payment-grid, .flow-section, .ecosystem-wrap {
+	.payment-grid,
+	.flow-section,
+	.ecosystem-wrap {
 		padding: 45px 15px;
 	}
 
@@ -469,7 +521,8 @@
 		padding: 20px;
 	}
 
-	.biz-left, .biz-right {
+	.biz-left,
+	.biz-right {
 		padding: 0;
 	}
 
@@ -491,11 +544,13 @@
 		padding: 20px 0 0;
 	}
 
-	.edu-card-grid, .effect-section__grid {
+	.edu-card-grid,
+	.effect-section__grid {
 		grid-template-columns: 1fr;
 	}
 
-	.effect-card, .edu-card {
+	.effect-card,
+	.edu-card {
 		padding: 20px;
 	}
 
@@ -715,7 +770,8 @@
 		padding: 20px;
 	}
 
-	.sync-boot-why__grid, .boot__main .sync-eta-tech__msa {
+	.sync-boot-why__grid,
+	.boot__main .sync-eta-tech__msa {
 		gap: 20px;
 	}
 
@@ -846,10 +902,129 @@
 		width: 100%;
 	}
 
-	.xbos-diagram__receiver {
+	section.aiops.xbos-diagram__receiver {
 		padding: 20px;
 	}
 
+	section.aiops .aiops-flow {
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+
+	section.aiops .aiops-flow .flow-connector {
+		display: none;
+	}
+
+	section.aiops .feedback-loop {
+		position: unset;
+		border: none;
+	}
+
+	section.aiops .aiops-flow--down {
+		padding-bottom: 0;
+		padding: 12px;
+	}
+
+	section.aiops .feedback-loop .feedback-text {
+		position: unset;
+	}
+
+	section.aiops .aiops-flow--reverse::before,
+	section.aiops .aiops-flow--reverse::after {
+		display: none;
+	}
+
+	.feedback-loop::before,
+	.feedback-loop::after {
+		display: none;
+	}
+
+	.aiops-flow--down {
+		gap: 16px;
+	}
+
+	section.aiops .aiops-flow .aiops-card {
+		padding: 12px;
+		width: 100%;
+	}
+
+	section.aiops .syncops-legend-box {
+		justify-content: center;
+	}
+
+	.syncops-legend-item {
+		font-size: 14px;
+	}
+
+	section.aiops .syncops-panel-container {
+		flex-direction: column;
+	}
+
+	section.aiops .aiops-flow .list-style {
+		margin: 4px 0 0 28px;
+	}
+
+	section.aiops .syncops-store-wrapper {
+		flex-direction: column;
+	}
+
+	section.aiops .syncops-store-wrapper .bi-arrow-left-right {
+		margin: 0 auto;
+		transform: rotate(90deg);
+	}
+
+	section.aiops .syncops-pipeline-steps {
+		flex-direction: column;
+	}
+
+	section.aiops .syncops-p-step {
+		width: 100%;
+	}
+
+	section.aiops .syncops-row-bottom {
+		flex-direction: column;
+	}
+
+	section.aiops .syncops-vertical-container {
+		width: 100%;
+	}
+
+	section.aiops .syncops-doc-top {
+		display: block;
+	}
+
+	section.aiops .syncops-doc-top .syncops_doc--wrap {
+		display: block;
+		margin-bottom: 56px;
+	}
+
+	section.aiops .syncops-body {
+		padding: 0;
+	}
+
+	section.aiops .syncops-tech-grid,
+	section.aiops .syncops-body {
+		padding: 12px;
+	}
+
+	.syncops-legend-box {
+		position: unset;
+	}
+
+	section.aiops .aiops-flow--reverse,
+	section.aiops .aiops-flow--down,
+	section.aiops .aiops-flow--top {
+		margin-bottom: 16px;
+	}
+
+	.syncops-vertical-container {
+		gap: 16px;
+	}
+
+	/* 에이전시 페이지 */
+	section.works-section .projects-grid {
+		padding: 0;
+	}
 }
 
 /* Small Mobile Devices (480px 이하) */

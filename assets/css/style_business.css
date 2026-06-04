@@ -45,8 +45,7 @@
 
 }
 
-.biz-section--muted {
-}
+.biz-section--muted {}
 
 .biz-hero {
 	position: relative;
@@ -321,7 +320,8 @@
 	margin-bottom: 14px;
 }
 
-.effect-section__title, .edu-feature-title {
+.effect-section__title,
+.edu-feature-title {
 	font-size: 32px;
 	font-weight: 700;
 	color: #111827;
@@ -536,7 +536,8 @@
 		flex-direction: column;
 	}
 
-	.scm-hero__left, .scm-hero__right {
+	.scm-hero__left,
+	.scm-hero__right {
 		width: 100%;
 	}
 
@@ -718,7 +719,8 @@
 	margin: 50px auto;
 }
 
-#aisound__body .grid-3, #aisound__body .grid-4 {
+#aisound__body .grid-3,
+#aisound__body .grid-4 {
 	display: grid;
 	gap: 2rem;
 	grid-template-columns: 1fr;
@@ -786,7 +788,9 @@
 }
 
 @keyframes floating {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(0);
 	}
 
@@ -826,7 +830,8 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	padding: 14px 40px;
-	background: #fff;     /* position: sticky; */
+	background: #fff;
+	/* position: sticky; */
 	top: 0;
 	z-index: 100;
 	height: 100px;
@@ -989,7 +994,6 @@ section.process {
 .section-title {
 	font-size: 26px;
 	font-weight: 700;
-	color: var(--dark);
 	margin-bottom: 8px;
 }
 
@@ -1086,14 +1090,15 @@ section.preview {
 .preview-image {
 	border-radius: 16px;
 	overflow: hidden;
-	background: #f0e8e0;     /* height: 220px; */
+	background: #f0e8e0;
+	/* height: 220px; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 48px;
 }
 
-.preview-image > img {
+.preview-image>img {
 	width: 100%;
 	height: auto;
 }
@@ -1224,13 +1229,14 @@ main section {
 .opening-wrap {
 	padding: 96px 30px;
 	display: flex;
-	flex-direction: row;     /* grid-template-columns: 6fr 4fr; */
+	flex-direction: row;
+	/* grid-template-columns: 6fr 4fr; */
 	gap: 24px;
 	align-items: center;
 	background: var(--white);
 }
 
-.opening-wrap > div {
+.opening-wrap>div {
 	width: 100%;
 }
 
@@ -1348,7 +1354,9 @@ main section {
 /* ══════════════════════════════
        PAYMENT METHOD CARDS
     ══════════════════════════════ */
-.payment-grid, .flow-section, .ecosystem-wrap {
+.payment-grid,
+.flow-section,
+.ecosystem-wrap {
 	padding: 56px 40px;
 }
 
@@ -1491,7 +1499,8 @@ main section {
 
 .flow-step-cell {
 	padding: 20px;
-	text-align: center;     /* border-right: 1px solid var(--border); */
+	text-align: center;
+	/* border-right: 1px solid var(--border); */
 	background: var(--white);
 	transition: background 0.2s;
 }
@@ -1504,7 +1513,8 @@ main section {
 	background: var(--primary);
 }
 
-.flow-step-cell.is-active .flow-step-icon, .flow-step-cell.is-active .flow-step-name {
+.flow-step-cell.is-active .flow-step-icon,
+.flow-step-cell.is-active .flow-step-name {
 	color: var(--white);
 }
 
@@ -1582,8 +1592,7 @@ main section {
 	color: #fff;
 }
 
-.ecosystem-left {
-}
+.ecosystem-left {}
 
 .ecosystem-kicker {
 	font-size: 10px;
@@ -1741,7 +1750,8 @@ main section {
 }
 
 main section {
-	max-width: 1280px;     /* margin: 0px auto 0; */
+	max-width: 1280px;
+	/* margin: 0px auto 0; */
 	padding: 56px 40px;
 }
 
@@ -2056,8 +2066,7 @@ main section {
 	max-width: 100%;
 }
 
-.cta-bar-left {
-}
+.cta-bar-left {}
 
 .cta-bar-title {
 	font-size: 30px;
@@ -2722,7 +2731,8 @@ main section {
 }
 
 .edu-feature-section {
-	padding: 80px 60px;     /* background: var(--off-white); */
+	padding: 80px 60px;
+	/* background: var(--off-white); */
 }
 
 .edu-feature-header {
@@ -3190,7 +3200,8 @@ main section {
 	gap: 64px;
 }
 
-.scm-hero__left, .scm-hero__right {
+.scm-hero__left,
+.scm-hero__right {
 	flex: 1;
 	min-width: 0;
 }
@@ -3598,7 +3609,8 @@ main section {
 	gap: 64px;
 }
 
-.benev-hero__left, .benev-hero__right {
+.benev-hero__left,
+.benev-hero__right {
 	flex: 1;
 	min-width: 0;
 }
@@ -4001,7 +4013,8 @@ main section {
 	gap: 64px;
 }
 
-.bi-hero__left, .bi-hero__right {
+.bi-hero__left,
+.bi-hero__right {
 	flex: 1;
 	min-width: 0;
 }
@@ -4392,7 +4405,8 @@ main section {
 	gap: 64px;
 }
 
-.finance-hero__left, .finance-hero__right {
+.finance-hero__left,
+.finance-hero__right {
 	flex: 1;
 	min-width: 0;
 }
@@ -4852,7 +4866,7 @@ main section {
 	align-items: center;
 }
 
-.nav-links > a {
+.nav-links>a {
 	font-size: 1rem;
 	color: #333;
 }
@@ -5066,9 +5080,11 @@ main section {
 	position: relative;
 	background-color: white;
 	width: 100%;
-	max-width: 80rem;     /* PDF를 크게 보기 위해 너비 증가 */
+	max-width: 80rem;
+	/* PDF를 크게 보기 위해 너비 증가 */
 	height: 100%;
-	max-height: 95vh;     /* PDF를 크게 보기 위해 높이 증가 */
+	max-height: 95vh;
+	/* PDF를 크게 보기 위해 높이 증가 */
 	border-radius: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -5128,8 +5144,10 @@ main section {
 	flex: 1;
 	width: 100%;
 	height: 100%;
-	background-color: #525659;     /* PDF 뷰어의 일반적인 배경색 */
-	overflow: hidden;     /* iframe 스크롤 사용 */
+	background-color: #525659;
+	/* PDF 뷰어의 일반적인 배경색 */
+	overflow: hidden;
+	/* iframe 스크롤 사용 */
 	position: relative;
 }
 
@@ -5179,7 +5197,7 @@ main section {
 	position: relative;
 }
 
-#pdf__img > img {
+#pdf__img>img {
 	width: 100%;
 }
 
@@ -5199,7 +5217,8 @@ main section {
 	background: radial-gradient(ellipse at 70% 50%, rgba(200, 200, 200, 0.25) 0%, transparent 70%);
 }
 
-.intro__sound .intro__txt-wrap, .intro__sound .hero__sound-wrap {
+.intro__sound .intro__txt-wrap,
+.intro__sound .hero__sound-wrap {
 	flex: 1;
 }
 
@@ -5673,7 +5692,9 @@ main section {
 }
 
 @keyframes pulse-icon {
-	0%, 100% {
+
+	0%,
+	100% {
 		opacity: 0.85;
 		transform: scale(1);
 	}
@@ -5837,7 +5858,9 @@ body {
 }
 
 @keyframes flow {
-	0%, 100% {
+
+	0%,
+	100% {
 		height: 5px;
 	}
 
@@ -5886,7 +5909,11 @@ body {
 }
 
 /* business */
-.service-area-section .sec-eyebrow, .effect-area .sec-eyebrow, .content__composition .sec-eyebrow, .sec-eyebrow, .edu-feature-eyebrow {
+.service-area-section .sec-eyebrow,
+.effect-area .sec-eyebrow,
+.content__composition .sec-eyebrow,
+.sec-eyebrow,
+.edu-feature-eyebrow {
 	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 2.5px;
@@ -5899,7 +5926,8 @@ body {
 /* TEXT style */
 
 /* 타이틀 텍스트 */
-section .title-txt, div .title-txt {
+section .title-txt,
+div .title-txt {
 	font-size: 32px;
 	font-weight: 600;
 	color: var(--text-dark);
@@ -5928,9 +5956,10 @@ section .title-txt, div .title-txt {
 
 /* AI연구소  */
 
-/* Base Reset & Variables */:root:has(#article__research) {
+/* Base Reset & Variables */
+:root:has(#article__research) {
 	--bg-color: #030712;
-	--zinc-950:#09090b;
+	--zinc-950: #09090b;
 	--text-main: #f3f4f6;
 	--text-muted: #9ca3af;
 	--primary: #3b82f6;
@@ -5949,7 +5978,8 @@ section .title-txt, div .title-txt {
 
 body#article__research {
 	font-family: 'Pretendard', sans-serif;
-	scroll-behavior: smooth;     /* background-color: #fff; */
+	scroll-behavior: smooth;
+	/* background-color: #fff; */
 	color: var(--text-main);
 	line-height: 1.5;
 	overflow-x: hidden;
@@ -5973,8 +6003,6 @@ ul {
 }
 
 .gradient-text {
-	background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 50%, var(--pink) 100%);
-	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
@@ -6031,7 +6059,7 @@ nav#research__nav .nav-container {
 
 }
 
-.research__nav-links > a {
+.research__nav-links>a {
 	font-size: 1rem;
 	font-weight: 700;
 	transition: 0.3s;
@@ -6067,7 +6095,9 @@ nav#research__nav .nav-container {
 }
 
 @keyframes pulse {
-	0%, 100% {
+
+	0%,
+	100% {
 		opacity: 1;
 	}
 
