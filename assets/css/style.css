@@ -5672,6 +5672,8 @@ section.aiops .aiops-flow .inner-box.has-btn span {
     border-radius: 6px;
     border: 1px solid #64748b;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 section.aiops .aiops-flow .inner-box.has-btn span:first-child,
