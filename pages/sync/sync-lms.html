@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>베이직싱크교육LMS | 베이직인터내셔널</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="베이직싱크교육LMS | 베이직인터내셔널" />
+    <meta
+      name="description"
+      content="베이직싱크교육LMS. 과정 개설부터 학습, 평가, 수료까지 연결하는 교육 운영 플랫폼. 핵심 기능과 도입 가치, AI 확장 방향을 소개합니다."
+    />
+    <meta name="author" content="베이직인터내셔널" />
+    <meta
+      name="keywords"
+      content="LMS,교육,이러닝,집체교육,수료관리,베이직싱크교육LMS,베이직인터내셔널"
+    />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="베이직인터내셔널" />
+    <meta property="og:title" content="베이직싱크교육LMS | 베이직인터내셔널" />
+    <meta
+      property="og:description"
+      content="과정 개설부터 학습, 평가, 수료까지 연결하는 통합 교육 운영 플랫폼."
+    />
+    <meta property="og:image" content="https://basicit.co.kr/assets/images/pages/sync_lms/basic_logo.png" />
+    <link rel="canonical" href="https://basicit.co.kr/pages/sync/sync-lms.html" />
+    <meta property="og:url" content="https://basicit.co.kr/pages/sync/sync-lms.html" />
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style_sync.css" />
+    <link rel="stylesheet" href="/assets/css/style_business.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/css/solution-intro.css" />
+
+    <script src="/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js"></script>
+
+    <style>
+      /* Site GNB + original page: neutralize global main section rules */
+      body.lms-basic-page {
+        background: var(--paper, #f6f7f2) !important;
+        padding-top: 88px;
+      }
+      body.lms-basic-page main#main {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+      }
+      body.lms-basic-page main#main > section.scene,
+      body.lms-basic-page main#main section.scene {
+        display: block !important;
+        width: 100% !important;
+        max-width: 1400px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      html {
+        scroll-padding-top: 100px;
+      }
+      /* sync-any와 동일한 사이트 푸터: solution-intro 영향 차단 */
+      body.lms-basic-page #footer-include {
+        letter-spacing: normal;
+        word-break: normal;
+      }
+      body.lms-basic-page #footer-include footer.bi__footer,
+      body.lms-basic-page #footer-include footer.bi__footer * {
+        letter-spacing: normal !important;
+        word-break: normal !important;
+      }
+      body.lms-basic-page #footer-include footer.bi__footer p {
+        margin: revert;
+      }
+
+      /* Alternating full-bleed section bands (restore original rhythm) */
+      body.lms-basic-page main#main section.scene.lms-band {
+        max-width: none !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        padding-left: max(40px, calc((100vw - 1400px) / 2)) !important;
+        padding-right: max(40px, calc((100vw - 1400px) / 2)) !important;
+      }
+      body.lms-basic-page main#main section#difference.scene,
+      body.lms-basic-page main#main section#onsite.scene,
+      body.lms-basic-page main#main section#tech.scene {
+        background: #e9f0e9 !important;
+      }
+      body.lms-basic-page main#main section#experience.scene,
+      body.lms-basic-page main#main section#governance.scene {
+        background: #ffffff !important;
+      }
+      body.lms-basic-page main#main section#journey.scene,
+      body.lms-basic-page main#main section#assets.scene {
+        background: #f1f5f1 !important;
+      }
+      @media (max-width: 800px) {
+        body.lms-basic-page main#main section.scene.lms-band {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+        }
+      }
+
+      /* Restore #future dark band (global scene bg was forced transparent) */
+      body.lms-basic-page main#main section#future.scene.future {
+        background:
+          radial-gradient(ellipse 80% 60% at 20% 10%, rgba(8, 127, 120, 0.35), transparent 55%),
+          radial-gradient(ellipse 70% 50% at 90% 80%, rgba(215, 239, 229, 0.12), transparent 50%),
+          var(--ink, #182f37) !important;
+        color: #edf5ec !important;
+        max-width: none !important;
+        width: 100% !important;
+        padding-left: max(40px, calc((100vw - 1400px) / 2)) !important;
+        padding-right: max(40px, calc((100vw - 1400px) / 2)) !important;
+        box-sizing: border-box;
+      }
+      body.lms-basic-page #future .section-meta { color: #adc5bd !important; }
+      body.lms-basic-page #future h2,
+      body.lms-basic-page #future h3,
+      body.lms-basic-page #future strong { color: #edf5ec !important; }
+      body.lms-basic-page #future p,
+      body.lms-basic-page #future .future-intro > p,
+      body.lms-basic-page #future .future-foot p {
+        color: #c5d6cf !important;
+      }
+      body.lms-basic-page #future .ai-grid article {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border: 1px solid rgba(237, 245, 236, 0.14);
+        border-radius: 18px;
+        padding: 28px 24px !important;
+      }
+      body.lms-basic-page #future .ai-grid article p {
+        color: #c5d6cf !important;
+        font-size: 16px !important;
+        line-height: 1.75 !important;
+      }
+      body.lms-basic-page #future .ai-grid h3 {
+        font-size: 23px !important;
+      }
+      body.lms-basic-page #future .outline-badge {
+        border-color: #647f76 !important;
+        color: #d7efe5 !important;
+        font-size: 13px !important;
+      }
+      body.lms-basic-page #future .ai-tag {
+        color: #9fd4c8 !important;
+        font-size: 14px !important;
+      }
+      body.lms-basic-page #future .future-foot strong {
+        font-size: 22px !important;
+      }
+
+      /* Overall typography bump for readability */
+      body.lms-basic-page {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+      body.lms-basic-page main#main h1 {
+        font-size: clamp(50px, 5.4vw, 78px) !important;
+      }
+      body.lms-basic-page main#main h2 {   
+        text-align: left;     
+        font-size: clamp(40px, 3.8vw, 52px) !important;
+        line-height: 1.32 !important;
+      }
+      body.lms-basic-page main#main h3 {
+        font-size: 22px !important;
+      }
+      body.lms-basic-page main#main h4 {
+        font-size: 18px !important;
+      }
+      body.lms-basic-page main#main .lead {
+        font-size: 19px !important;
+        line-height: 1.8 !important;
+      }
+      body.lms-basic-page main#main .section-title > p,
+      body.lms-basic-page main#main .section-note {
+        font-size: 16px !important;
+        line-height: 1.85 !important;
+      }
+      body.lms-basic-page main#main .feature-grid p,
+      body.lms-basic-page main#main .compare-row p,
+      body.lms-basic-page main#main .onsite-grid p,
+      body.lms-basic-page main#main .governance-grid p,
+      body.lms-basic-page main#main .lifecycle p,
+      body.lms-basic-page main#main .asset-details p,
+      body.lms-basic-page main#main .workspace-cards p,
+      body.lms-basic-page main#main .insight-band p,
+      body.lms-basic-page main#main .use-case p,
+      body.lms-basic-page main#main .next-steps p {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+      }
+      body.lms-basic-page main#main .tags span,
+      body.lms-basic-page main#main .audience span,
+      body.lms-basic-page main#main .section-meta {
+        font-size: 13px !important;
+      }
+      body.lms-basic-page main#main .compare-row h3 {
+        font-size: 22px !important;
+      }
+      body.lms-basic-page main#main .compare-row h4 {
+        font-size: 19px !important;
+      }
+      body.lms-basic-page main#main .compare-row small,
+      body.lms-basic-page main#main .onsite-grid li,
+      body.lms-basic-page main#main .governance-grid li {
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+      }
+      body.lms-basic-page main#main .primary {
+        font-size: 16px !important;
+        padding: 16px 24px !important;
+      }
+      body.lms-basic-page main#main .eyebrow {
+        font-size: 15px !important;
+      }
+      body.lms-basic-page main#main .hero-bottom p,
+      body.lms-basic-page main#main .hero-bottom span {
+        font-size: 15px !important;
+      }
+      body.lms-basic-page main#main .hero-bottom b {
+        font-size: 34px !important;
+      }
+      body.lms-basic-page main#main .role-note,
+      body.lms-basic-page main#main #role-description {
+        font-size: 15px !important;
+        line-height: 1.75 !important;
+      }
+      @media (max-width: 800px) {
+        body.lms-basic-page main#main h2 {
+          font-size: 30px !important;
+        }
+        body.lms-basic-page main#main h3 {
+          font-size: 19px !important;
+        }
+        body.lms-basic-page main#main .lead {
+          font-size: 17px !important;
+        }
+        body.lms-basic-page main#main section#future.scene.future {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+        }
+      }
+      body.lms-basic-page .topbar { display: none !important; }
+    </style>
+  </head>
+  <body class="lms-basic-page" data-type="detail">
+    <div id="skip__content">
+      <a href="#main">본문 바로가기</a>
+    </div>
+    <div id="header-include"></div>
+
+    <main id="main">
+<section id="overview" class="scene hero" aria-labelledby="hero-title">
+ <div class="section-meta"><span>SOLUTION OVERVIEW</span><span>01 — 11</span></div>
+ <div class="hero-grid"><div class="hero-copy"><p class="eyebrow"><span class="dot"></span> 베이직싱크교육LMS</p><h1 id="hero-title">교육 운영을<br>하나의 <em>흐름</em>으로.</h1><p class="lead">과정 개설부터 학습, 평가, 수료까지.<br>학습자·강사·관리자의 업무를 연결하는<br>통합 교육 운영 플랫폼.</p><a class="primary" href="#difference">베이직싱크교육LMS를 선택하는 이유 <span>↗</span></a><div class="audience"><span>기관 교육</span><span>기업 연수</span><span>집체·이러닝 운영</span></div></div>
+ <div class="flow-art" aria-label="과정 설계, 수강 운영, 학습과 평가, 수료와 이력을 연결하는 개념도"><div class="art-head"><span>ONE CONNECTED JOURNEY</span><span class="signal">● 교육 운영</span></div><div class="orbit-label">LEARNING + OPERATIONS</div><div class="flow-center"><span class="small">베이직싱크교육LMS</span><strong>하나의 과정,<br>연결된 경험.</strong><div class="role-chips"><span>학습자</span><span>강사</span><span>관리자</span></div></div><div class="flow-node node-one"><b>01</b><div><strong>과정 설계</strong><small>마스터 · 기수 · 콘텐츠</small></div></div><div class="flow-node node-two"><b>02</b><div><strong>수강 운영</strong><small>신청 · 강사 · 분반</small></div></div><div class="flow-node node-three"><b>03</b><div><strong>학습과 평가</strong><small>진도 · 출석 · 시험</small></div></div><div class="flow-node node-four"><b>04</b><div><strong>수료와 이력</strong><small>성적 · 기준 · 수료</small></div></div><div class="art-foot">과정 중심의 업무 연결 <span>운영 구조 개념도 ↗</span></div></div></div>
+ <div class="hero-bottom"><p>교육의 기본을 탄탄하게.<br><strong>기관의 운영 방식은 더 세밀하게.</strong></p><div><b>3</b><span>역할별 업무 공간</span></div><div><b>6</b><span>핵심 기능 영역</span></div><div><b>→</b><span>AI 학습 경험으로 확장</span></div></div>
+</section>
+<section id="features" class="scene" aria-labelledby="features-title"><div class="section-meta"><span>01 / CORE CAPABILITIES</span><span>02 — 11</span></div><div class="section-title"><h2 id="features-title">LMS의 기본,<br>교육 운영의 전 과정을 담다.</h2><p>필요한 기능을 과정 단위로 연결합니다.<br>학습 현황과 운영 조건을 함께 관리하세요.</p></div><div class="feature-grid">
+<article><span class="feature-index">01 <i>▤</i></span><h3>과정·수강 관리</h3><p>마스터과정과 운영 기수를 구분하고<br>신청기간·정원·승인 방식을 설정합니다.</p><div class="tags"><span>과정 분류</span><span>기수 운영</span><span>수강 현황</span></div></article>
+<article><span class="feature-index">02 <i>▷</i></span><h3>학습·출석 관리</h3><p>온라인 학습의 진도와 학습시간,<br>집체 수업의 시간표와 출석을 관리합니다.</p><div class="tags"><span>이러닝목차</span><span>시간표</span><span>진도 현황</span></div></article>
+<article><span class="feature-index">03 <i>✓</i></span><h3>시험·평가 관리</h3><p>시험지·문항과 평가비율을 구성하고<br>시험·과제·토론·설문을 운영합니다.</p><div class="tags"><span>문항 관리</span><span>응시 현황</span><span>평가비율</span></div></article>
+<article><span class="feature-index">04 <i>▧</i></span><h3>콘텐츠 자산 관리</h3><p>과목과 리소스를 분류하고<br>시험·설문 자료를 별도 자산으로 관리합니다.</p><div class="tags"><span>과목 분류</span><span>리소스</span><span>시험·설문지</span></div></article>
+<article><span class="feature-index">05 <i>◎</i></span><h3>성적·수료 관리</h3><p>과정별 성적과 수료 상태를 확인하고<br>수료기준·처리방법·증명서 발급을 설정합니다.</p><div class="tags"><span>성적 현황</span><span>수료기준</span><span>수료증</span></div></article>
+<article><span class="feature-index">06 <i>⌘</i></span><h3>소통·운영 관리</h3><p>공지·자료·문의와 알림 템플릿부터<br>회원·권한·접속 이력까지 관리합니다.</p><div class="tags"><span>과정 게시판</span><span>알림 템플릿</span><span>권한·로그</span></div></article>
+</div><p class="section-note">기관의 교육 정책과 연동 환경에 따라 제공 범위 및 세부 구성을 협의합니다.</p></section>
+<section id="difference" class="scene difference lms-band" aria-labelledby="difference-title"><div class="section-meta"><span>02 / WHY BASIC SYNC</span><span>03 — 11</span></div><div class="section-title"><h2 id="difference-title">베이직싱크교육LMS를 선택할 이유는<br><em>운영의 디테일</em>에 있습니다.</h2><p>교육을 실제로 운영할 때 필요한 조건.<br>LMS 비교 시 이 네 가지를 확인하세요.</p></div><div class="compare-head"><span>도입 시 확인할 기준</span><span>베이직싱크교육LMS의 기능과 선택 가치</span></div><div class="compare-row"><div><span>01</span><h3>매 기수 운영을<br>체계적으로 준비하는가?</h3></div><div><h4>마스터와 운영 기수를 분리하는 구조</h4><p>과정의 공통 틀과 기수별 일정·정원·승인 조건을 나눠 관리합니다.</p><small>반복 교육을 운영하는 기관에 적합</small></div></div><div class="compare-row"><div><span>02</span><h3>온라인과 현장 운영을<br>함께 다루는가?</h3></div><div><h4>이러닝부터 집체 교육 행정까지</h4><p>진도 관리에 더해 강사·분반·시간표·출석·기숙사 요청을 함께 다룹니다.</p><small>연수원·집체 교육의 세부 운영을 지원</small></div></div><div class="compare-row"><div><span>03</span><h3>기관별 교육 정책을<br>세밀하게 반영하는가?</h3></div><div><h4>신청·평가·수료를 과정별로 설정</h4><p>노출·신청·교육기간, 승인 방식, 평가비율과 수료기준을 구분합니다.</p><small>기관과 과정의 운영 규칙을 설정에 반영</small></div></div><div class="compare-row"><div><span>04</span><h3>역할과 책임에 맞는<br>업무 공간이 있는가?</h3></div><div><h4>세 가지 역할과 운영 관리 체계</h4><p>학습자·강사·관리자 화면에 메뉴 권한과 개인정보 조회 이력을 더합니다.</p><small>교육 참여와 관리 업무의 역할을 구분</small></div></div><p class="section-note">비교 관점은 도입 검토 기준입니다. 특정 경쟁 제품의 기능 부재나 성능 열위를 전제로 하지 않습니다.</p></section>
+<section id="experience" class="scene experience lms-band" aria-labelledby="experience-title"><div class="section-meta"><span>03 / CONNECTED EXPERIENCE</span><span>04 — 11</span></div><div class="section-title"><h2 id="experience-title">같은 교육, 다른 역할.<br>각자의 업무에 맞는 경험.</h2><p>학습자는 학습에, 강사는 수업에,<br>관리자는 과정 운영에 집중할 수 있도록.</p></div><div class="role-layout"><div class="role-side"><div class="role-tabs" role="tablist" aria-label="역할별 기능"><button id="tab-learner" type="button" role="tab" aria-selected="true" aria-controls="role-panel" data-role="learner">01 <strong>학습자</strong><span>→</span></button><button id="tab-tutor" type="button" role="tab" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="tutor">02 <strong>강사</strong><span>→</span></button><button id="tab-admin" type="button" role="tab" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="admin">03 <strong>관리자</strong><span>→</span></button></div><p class="role-note">역할을 선택해<br>핵심 업무 흐름을 살펴보세요.</p></div><div id="role-panel" class="role-panel" role="tabpanel" aria-labelledby="tab-learner" tabindex="0"><div class="panel-top"><span class="window-dots">● ● ●</span><span>역할별 화면 구성 예시</span><span>베이직싱크교육LMS</span></div><div class="panel-body"><div class="panel-heading"><p class="eyebrow" id="role-kicker">LEARNER WORKSPACE</p><h3 id="role-title">나의 학습을 한눈에.</h3><p id="role-description">과정을 찾고, 수강 중인 교육과 평가 결과를 확인합니다.</p></div><div id="role-flow" class="mini-flow"><span>과정 탐색</span><b>→</b><span>강의실</span><b>→</b><span>학습·수료 이력</span></div><div id="role-cards" class="workspace-cards"><article><span>01 / FIND</span><h4>과정 탐색</h4><p>교육원·온라인 과정<br>과정 정보·신청 내역</p></article><article><span>02 / LEARN</span><h4>나의 강의실</h4><p>학습목차·시간표<br>진도·평가 결과</p></article><article><span>03 / RECORD</span><h4>학습 이력</h4><p>수강현황<br>수료 이력 확인</p></article></div><div class="panel-footer"><span id="role-bottom">필요한 과정에서 자신의 학습 현황까지.</span><span>● 역할 중심</span></div></div></div></div></section>
+
+<section id="journey" class="scene lms-band" aria-labelledby="journey-title"><div class="section-meta"><span>EDUCATION LIFECYCLE</span><span>05 — 11</span></div><div class="section-title"><h2 id="journey-title">한 번의 교육이 끝날 때까지,<br>업무 흐름을 연결합니다.</h2><p>개설·신청·학습·평가·수료.<br>각 단계의 조건과 현황을 과정 안에서 확인합니다.</p></div><div class="lifecycle"><article><b>01</b><h3>과정 준비</h3><p>마스터 연결<br>기수·기간·정원 설정</p><span>관리자</span></article><article><b>02</b><h3>수강 운영</h3><p>신청 현황 확인<br>강사·튜터·분반 관리</p><span>관리자 · 학습자</span></article><article><b>03</b><h3>학습 진행</h3><p>목차·시간표 제공<br>진도·출석 현황 확인</p><span>학습자 · 강사</span></article><article><b>04</b><h3>평가 확인</h3><p>시험·과제·토론 운영<br>평가비율·성적 확인</p><span>강사 · 관리자</span></article><article><b>05</b><h3>수료 관리</h3><p>수료기준·상태 관리<br>수료증·학습 이력</p><span>관리자 · 학습자</span></article></div><div class="insight-band"><div><span>운영 포인트</span><h3>같은 과정에서도<br>기간과 처리 방식은 세밀하게.</h3></div><div><p><strong>기간을 구분합니다.</strong><br>홈페이지 노출·신청·교육·청강 종료를 각각 설정합니다.</p><p><strong>정책을 반영합니다.</strong><br>자동/관리자 승인, 수료 처리 방식과 수료기준을 구성합니다.</p></div></div><p class="section-note">과정별 설정과 조회 화면을 기반으로 재구성한 업무 흐름입니다. 실제 적용 정책은 도입 시 확정합니다.</p></section>
+<section id="assets" class="scene lms-band" aria-labelledby="assets-title"><div class="section-meta"><span>CONTENT & ASSESSMENT</span><span>06 — 11</span></div><div class="section-title"><h2 id="assets-title">콘텐츠와 평가 자료를<br>다음 교육에도 쓰이는 자산으로.</h2><p>과정과 자료의 관리 단위를 나누고,<br>분류·유형·사용 여부로 필요한 자산을 찾습니다.</p></div><div class="asset-layout"><div class="asset-stack"><span class="eyebrow">LEARNING ASSETS</span><article><span>01</span><div><h3>과목</h3><p>이러닝·집체/실시간화상 과목과 분류</p></div></article><article><span>02</span><div><h3>리소스</h3><p>PDF·URL·동영상·유튜브·카드뉴스 유형</p></div></article><article><span>03</span><div><h3>운영과정의 학습목차</h3><p>과목·학습 순서·분반·담당 강사 관리</p></div></article><div class="asset-end">분류된 교육 자산 → 과정별 학습 구성</div></div><div class="asset-details"><article><span class="small">QUESTION BANK</span><h3>시험지와 문항을 분리 관리</h3><p>단일선택·다중선택·단답·서술형 문항을 구분하고 난이도와 사용 여부로 관리합니다.</p><div class="tags"><span>문항 유형</span><span>난이도</span><span>시험지 구성</span></div></article><article><span class="small">COURSE EVALUATION</span><h3>과정에 맞는 평가 구성</h3><p>시험·과제·토론의 운영 목록과 평가비율을 관리하고, 설문지·문항을 별도로 구성합니다.</p><div class="tags"><span>평가비율</span><span>응시·제출 현황</span><span>설문 구성</span></div></article></div></div><p class="section-note">리소스 유형 및 관리 화면 기준의 소개입니다. 미디어 처리와 외부 서비스 연동 범위는 도입 환경에 맞춰 확인합니다.</p></section>
+<section id="onsite" class="scene onsite lms-band" aria-labelledby="onsite-title"><div class="section-meta"><span>ON-SITE OPERATIONS</span><span>07 — 11</span></div><div class="section-title"><h2 id="onsite-title">현장 교육의 복잡함까지,<br>운영 범위 안으로.</h2><p>집체 교육에는 강의 외에도 많은 업무가 있습니다.<br>사람·시간·출석·체류를 과정과 함께 다룹니다.</p></div><div class="onsite-grid"><article><b>PEOPLE</b><h3>강사·튜터·분반</h3><p>담당 강사와 주튜터를 지정하고<br>교번·분반별 수강생 현황을 관리합니다.</p><ul><li>강사·튜터 배정 정보</li><li>분반·교번 관리 화면</li><li>신청·승인 상태 조회</li></ul></article><article><b>SCHEDULE</b><h3>시간표·출석</h3><p>강의일자·시간·수업 구분과<br>출석 처리 현황을 한 목록에서 확인합니다.</p><ul><li>집합교육목차</li><li>과정출석체크·QR 코드 진입점</li><li>시간표 출력 진입점</li></ul></article><article><b>STAY & SUPPORT</b><h3>체류·현장 지원</h3><p>기숙사 요청과 외출외박 등<br>연수 운영에 필요한 부가 업무를 다룹니다.</p><ul><li>기숙사 요청·상태</li><li>외출·외박 현황</li><li>셔틀 위치·신청 관련 정보</li></ul></article></div><div class="use-case"><span>활용 시나리오</span><strong>기관 연수 · 신입사원 집체교육 · 직무교육</strong><p>강사와 분반을 준비하고, 수업 일정과 출석을 확인한 뒤 성적·수료 관리로 이어집니다.</p></div><p class="section-note">활용 시나리오는 기능 조합 예시입니다. 출석 처리·QR·출력 등의 실행 결과는 별도 검증 범위입니다.</p></section>
+<section id="governance" class="scene lms-band" aria-labelledby="governance-title"><div class="section-meta"><span>COMMUNICATION & GOVERNANCE</span><span>08 — 11</span></div><div class="section-title"><h2 id="governance-title">교육을 알리고 지원하며,<br>운영 이력을 살핍니다.</h2><p>학습 지원부터 관리자 통제까지.<br>교육 서비스의 일상적인 운영을 뒷받침합니다.</p></div><div class="governance-grid"><article><span>01 / COMMUNICATE</span><h3>교육 소통</h3><p>공통 게시판과 과정별 소통 공간을<br>업무 목적에 맞게 구분합니다.</p><ul><li>공지·자료실·FAQ</li><li>과정 질의응답·성적이의신청</li><li>SMS·이메일·알림톡 템플릿</li></ul></article><article><span>02 / CONTROL</span><h3>운영 권한</h3><p>회원과 강사 현황을 관리하고<br>그룹별 메뉴 권한을 구성합니다.</p><ul><li>회원 상태·역할 정보</li><li>강사 신청·동의·인증 관련 항목</li><li>조회·등록·수정 등 메뉴 권한</li></ul></article><article><span>03 / REVIEW</span><h3>이력과 현황</h3><p>접속·사용·개인정보 조회 이력과<br>교육 운영 현황을 확인합니다.</p><ul><li>사용·웹·접속 로그</li><li>개인정보 조회 이력</li><li>수강·성적·수료 현황</li></ul></article></div><div class="insight-band compact"><div><span>도입 시 함께 설계할 범위</span><h3>기능에 기관의 운영 규칙을 더합니다.</h3></div><div><p>역할별 접근 범위 · 개인정보 취급 기준<br>알림 수신대상과 발송 조건 · 외부 서비스 연동</p></div></div><p class="section-note">권한·로그·템플릿 관리 화면을 기준으로 소개합니다. 보안 인증, 로그 보존 정책, 외부 발송 연동은 별도 협의·검증 대상입니다.</p></section>
+
+<section id="tech" class="scene lms-band" aria-labelledby="tech-title"><div class="section-meta"><span>ARCHITECTURE & TECH STACK</span><span>09 — 11</span></div><div class="section-title"><h2 id="tech-title">검증된 표준 기술 스택과<br>고성능·고가동 아키텍처.</h2><p>전자정부 4.3 및 OWASP 보안 규격을 준수하며<br>안정적인 무장애 교육 운영 환경을 제공합니다.</p></div><div class="governance-grid"><article><span>01 / FRAMEWORK</span><h3>표준 코어 프레임워크</h3><p>엔터프라이즈 환경에서 검증된<br>전자정부 표준프레임워크 기반.</p><ul><li>전자정부 표준프레임워크 4.3 (eGovFrame)</li><li>Java 17 LTS &amp; Spring Framework</li><li>MyBatis 데이터 매핑</li></ul></article><article><span>02 / INFRA &amp; DATABASE</span><h3>데이터 무결성 &amp; 인프라</h3><p>대용량 동시 접속과 트랜잭션<br>ACID 안정성을 보장합니다.</p><ul><li>MariaDB RDBMS</li><li>Apache Tomcat 웹 어플리케이션 서버</li><li>99.9% 고가동률 및 데이터 위변조 방지</li></ul></article><article><span>03 / SECURITY &amp; INTEGRATION</span><h3>보안 &amp; 연동 체계</h3><p>공공·기업 필수 보안 기준 준수와<br>유연한 외부 시스템 연동.</p><ul><li>OWASP Top 10 보안 규격 &amp; SQL Injection 방지</li><li>SSO (Single Sign-On) 통합 인증 체계</li><li>SMS·이메일·카카오 알림톡 메시징 연동</li></ul></article></div><div class="insight-band compact"><div><span>표준·보안 준수</span><h3>안정성과 보안성을 갖춘 기술 기반</h3></div><div><p>eGovFrame 4.3 Verified · Java 17 LTS · OWASP Security Compliant<br>99.9% Uptime Guarantee · Transaction ACID · SSO &amp; Messaging API</p></div></div><p class="section-note">기관별 인프라 환경(클라우드·온프레미스)에 맞춰 최적화된 구축 체계를 제공합니다.</p></section>
+
+<section id="future" class="scene future lms-band" aria-labelledby="future-title"><div class="section-meta"><span>10 / NEXT LEARNING EXPERIENCE</span><span>10 — 11</span></div><div class="future-intro"><span class="outline-badge">AI · LXP 확장 제안</span><h2 id="future-title">탄탄한 LMS 위에,<br>더 개인적인 <em>학습 경험</em>을.</h2><p>과정·콘텐츠·학습 이력을 기반으로<br>학습자와 교육 담당자를 돕는 AI 서비스를 단계적으로 제안합니다.</p></div><div class="ai-grid"><article><span class="ai-symbol">✳</span><span class="small">FOR LEARNERS</span><h3>자료 기반 AI 튜터</h3><p>강의자료를 근거로 질문에 답하고<br>핵심 요약과 복습을 돕는 학습 지원.</p><span class="ai-tag">질문 → 근거 → 복습</span></article><article><span class="ai-symbol">↗</span><span class="small">FOR INSTRUCTORS</span><h3>강사 업무 지원</h3><p>문제·피드백·Q&A 답변의 초안을<br>생성하고 강사가 검토해 활용.</p><span class="ai-tag">초안 → 검토 → 활용</span></article><article><span class="ai-symbol">⌁</span><span class="small">FOR OPERATORS</span><h3>운영 점검 도우미</h3><p>과정 설정과 평가 데이터의<br>불일치를 점검하고 현황을 요약.</p><span class="ai-tag">점검 → 확인 → 개선</span></article></div><div class="future-foot"><strong>지금의 교육 운영에서, 다음 학습 경험으로.</strong><p>위 AI 기능은 신규 구축 제안입니다.<br>자료 권한·데이터 품질·검토 절차를 정한 뒤 적용 범위를 설계합니다.</p></div></section>
+<section id="next" class="scene closing" aria-labelledby="next-title"><div class="section-meta"><span>11 / BUILT AROUND YOUR OPERATIONS</span><span>11 — 11</span></div><div class="closing-grid"><div><p class="eyebrow">기관의 교육 방식에서 시작합니다.</p><h2 id="next-title">우리의 교육 운영에<br>맞는 LMS를<br><em>함께 설계합니다.</em></h2><p class="lead">핵심 교육 운영을 먼저 정리하고,<br>필요한 기능과 연동, AI 확장을 단계적으로.</p><button class="primary" id="print-end" type="button">소개자료 인쇄 / PDF 저장 <span>↗</span></button></div><div class="next-steps"><article><span>01</span><div><h3>운영 방식 확인</h3><p>교육 대상·유형·과정 규모<br>신청·평가·수료 정책</p></div></article><article><span>02</span><div><h3>도입 범위 구성</h3><p>필요 모듈·데이터 이관<br>인증·알림 등 외부 연동</p></div></article><article><span>03</span><div><h3>단계별 적용</h3><p>대표 과정으로 운영 검증<br>콘텐츠 정비와 AI 시범 적용</p></div></article></div></div><div class="closing-summary"><strong>교육 운영의 기본부터,<br>학습 경험의 다음 단계까지.</strong><a class="brand" href="#overview"><img class="brand-logo" src="/assets/images/pages/sync_lms/basic_logo.png" alt="베이직싱크교육"><b class="brand-lms">LMS ↗</b></a></div></section>
+</main>
+
+<!--  Footer 영역  -->
+    <div id="footer-include"></div>
+
+    <!--  Floating Menu 영역  -->
+    <div id="floating-menu-include"></div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/solution-intro.js" defer></script>
+  </body>
+</html>
