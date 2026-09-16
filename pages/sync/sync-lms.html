@@ -396,7 +396,7 @@
       /* Overall typography bump for readability */
       body.lms-basic-page {
         font-size: 18px;
-        line-height: 1.8;
+        line-height: 1.85;
         letter-spacing: -0.01em;
         word-break: keep-all;
         overflow-wrap: break-word;
@@ -971,6 +971,684 @@
       }
 
       
+      
+      
+      
+      /* Animated section gradients */
+      @keyframes lms-bg-drift {
+        0% { background-position: 0% 40%, 100% 60%, 0% 0%; }
+        50% { background-position: 30% 20%, 70% 80%, 100% 100%; }
+        100% { background-position: 0% 40%, 100% 60%, 0% 0%; }
+      }
+      @keyframes lms-bg-drift-dark {
+        0% { background-position: 20% 10%, 90% 80%, 50% 50%; }
+        50% { background-position: 35% 25%, 75% 65%, 50% 50%; }
+        100% { background-position: 20% 10%, 90% 80%, 50% 50%; }
+      }
+      body.lms-basic-page main#main section#overview.scene,
+      body.lms-basic-page main#main section#features.scene,
+      body.lms-basic-page main#main section#difference.scene,
+      body.lms-basic-page main#main section#experience.scene,
+      body.lms-basic-page main#main section#journey.scene,
+      body.lms-basic-page main#main section#assets.scene,
+      body.lms-basic-page main#main section#onsite.scene,
+      body.lms-basic-page main#main section#governance.scene,
+      body.lms-basic-page main#main section#tech.scene,
+      body.lms-basic-page main#main section#next.scene.closing {
+        background-size: 140% 140%, 140% 140%, 100% 100% !important;
+        animation: lms-bg-drift 22s ease-in-out infinite;
+      }
+      body.lms-basic-page main#main section#future.scene.future {
+        background-size: 150% 150%, 150% 150%, 100% 100% !important;
+        animation: lms-bg-drift-dark 26s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body.lms-basic-page main#main section#overview.scene,
+        body.lms-basic-page main#main section#features.scene,
+        body.lms-basic-page main#main section#difference.scene,
+        body.lms-basic-page main#main section#experience.scene,
+        body.lms-basic-page main#main section#journey.scene,
+        body.lms-basic-page main#main section#assets.scene,
+        body.lms-basic-page main#main section#onsite.scene,
+        body.lms-basic-page main#main section#governance.scene,
+        body.lms-basic-page main#main section#tech.scene,
+        body.lms-basic-page main#main section#next.scene.closing,
+        body.lms-basic-page main#main section#future.scene.future {
+          animation: none !important;
+          background-size: auto !important;
+        }
+      }
+
+      /* Subtle impact animations */
+      @keyframes lms-fade-rise {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes lms-soft-pulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.08); opacity: 1; }
+      }
+      @keyframes lms-orbit-breathe {
+        0%, 100% { transform: translate(-50%, -50%) rotate(-18deg) scale(1); opacity: 0.55; }
+        50% { transform: translate(-50%, -50%) rotate(-12deg) scale(1.04); opacity: 0.85; }
+      }
+      @keyframes lms-float-y {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes lms-glow-line {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+      @keyframes lms-shimmer {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
+      }
+
+      body.lms-basic-page main#main .eyebrow .dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--teal, #087f78);
+        margin-right: 6px;
+        vertical-align: middle;
+        animation: lms-soft-pulse 2.8s ease-in-out infinite;
+      }
+      body.lms-basic-page main#main .primary {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      body.lms-basic-page main#main .primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(8, 127, 120, 0.22);
+      }
+      body.lms-basic-page main#main .primary::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.22) 48%, transparent 66%);
+        background-size: 200% 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+      body.lms-basic-page main#main .primary:hover::after {
+        opacity: 1;
+        animation: lms-shimmer 1.1s ease;
+      }
+      body.lms-basic-page main#main em {
+        background: linear-gradient(120deg, #087f78, #2aa39a, #087f78);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent !important;
+        animation: lms-glow-line 6s linear infinite;
+      }
+      body.lms-basic-page main#main .flow-art:before {
+        animation: lms-orbit-breathe 10s ease-in-out infinite;
+      }
+      body.lms-basic-page main#main .flow-art:after {
+        animation: lms-orbit-breathe 14s ease-in-out infinite reverse;
+      }
+      body.lms-basic-page main#main .flow-art .flow-node {
+        animation: lms-float-y 5.5s ease-in-out infinite;
+      }
+      body.lms-basic-page main#main .flow-art .node-two {
+        animation-delay: 0.6s;
+      }
+      body.lms-basic-page main#main .flow-art .node-three {
+        animation-delay: 1.2s;
+      }
+      body.lms-basic-page main#main .flow-art .node-four {
+        animation-delay: 1.8s;
+      }
+      body.lms-basic-page main#main .flow-art .flow-center {
+        animation: lms-float-y 7s ease-in-out infinite;
+        animation-delay: 0.3s;
+      }
+      body.lms-basic-page main#main .role-tabs button {
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      body.lms-basic-page main#main .role-tabs button:hover,
+      body.lms-basic-page main#main .role-tabs button[aria-selected="true"] {
+        transform: translateX(4px);
+        box-shadow: 0 8px 20px rgba(8, 127, 120, 0.12);
+      }
+      body.lms-basic-page main#main section.scene[data-aos].aos-animate .section-title {
+        animation: lms-fade-rise 0.7s ease-out both;
+      }
+      body.lms-basic-page main#main section.scene[data-aos].aos-animate .section-meta {
+        animation: lms-fade-rise 0.55s ease-out both;
+      }
+      body.lms-basic-page main#main .insight-band,
+      body.lms-basic-page main#main .use-case {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      body.lms-basic-page main#main .insight-band:hover,
+      body.lms-basic-page main#main .use-case:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(24, 47, 55, 0.08);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body.lms-basic-page main#main .eyebrow .dot,
+        body.lms-basic-page main#main .primary::after,
+        body.lms-basic-page main#main em,
+        body.lms-basic-page main#main .flow-art:before,
+        body.lms-basic-page main#main .flow-art:after,
+        body.lms-basic-page main#main .flow-art .flow-node,
+        body.lms-basic-page main#main .flow-art .flow-center,
+        body.lms-basic-page main#main section.scene[data-aos].aos-animate .section-title,
+        body.lms-basic-page main#main section.scene[data-aos].aos-animate .section-meta {
+          animation: none !important;
+        }
+        body.lms-basic-page main#main .feature-grid article:hover,
+        body.lms-basic-page main#main .onsite-grid article:hover,
+        body.lms-basic-page main#main .governance-grid article:hover,
+        body.lms-basic-page main#main .lifecycle article:hover,
+        body.lms-basic-page main#main .ai-grid article:hover,
+        body.lms-basic-page main#main .primary:hover,
+        body.lms-basic-page main#main .role-tabs button:hover,
+        body.lms-basic-page main#main .role-tabs button[aria-selected="true"],
+        body.lms-basic-page main#main .insight-band:hover,
+        body.lms-basic-page main#main .use-case:hover {
+          transform: none !important;
+        }
+      }
+      @media (max-width: 800px) {
+        body.lms-basic-page main#main .flow-art .flow-node,
+        body.lms-basic-page main#main .flow-art .flow-center {
+          animation-duration: 7s;
+        }
+      }
+
+      /* Readability floor + design polish */
+      body.lms-basic-page main#main {
+        --lms-text: 17px;
+        --lms-text-sm: 15px;
+        --lms-label: 14px;
+        --lms-meta: 13px;
+      }
+      body.lms-basic-page main#main .section-meta {
+        font-size: var(--lms-meta) !important;
+        letter-spacing: 0.08em !important;
+        margin-bottom: 28px !important;
+        opacity: 0.9;
+      }
+      body.lms-basic-page main#main .eyebrow,
+      body.lms-basic-page main#main .panel-heading .eyebrow,
+      body.lms-basic-page main#main #role-kicker {
+        font-size: var(--lms-label) !important;
+        letter-spacing: 0.04em !important;
+      }
+      body.lms-basic-page main#main .audience span,
+      body.lms-basic-page main#main .tags span {
+        font-size: var(--lms-label) !important;
+        padding: 6px 12px !important;
+        border-radius: 999px !important;
+        line-height: 1.4 !important;
+      }
+      body.lms-basic-page main#main .feature-index {
+        font-size: var(--lms-meta) !important;
+        margin-bottom: 18px !important;
+      }
+      body.lms-basic-page main#main .section-note,
+      body.lms-basic-page main#main .role-note,
+      body.lms-basic-page main#main .compare-row small,
+      body.lms-basic-page main#main .panel-top,
+      body.lms-basic-page main#main .panel-footer,
+      body.lms-basic-page main#main #role-bottom {
+        font-size: var(--lms-text-sm) !important;
+        line-height: 1.75 !important;
+      }
+      body.lms-basic-page main#main .compare-head {
+        font-size: var(--lms-label) !important;
+        padding-bottom: 14px !important;
+      }
+      body.lms-basic-page main#main .compare-row {
+        padding: 26px 8px !important;
+        gap: 20px;
+      }
+      body.lms-basic-page main#main .compare-row > div > span {
+        font-size: var(--lms-label) !important;
+        font-weight: 700 !important;
+      }
+      body.lms-basic-page main#main .role-tabs button {
+        font-size: var(--lms-label) !important;
+        padding: 16px 18px !important;
+      }
+      body.lms-basic-page main#main .lifecycle article > span:last-child,
+      body.lms-basic-page main#main .onsite-grid article > b,
+      body.lms-basic-page main#main .governance-grid article > span:not(.lms-ico),
+      body.lms-basic-page main#main .ai-grid .small,
+      body.lms-basic-page main#main .ai-tag,
+      body.lms-basic-page main#main .asset-details .small,
+      body.lms-basic-page main#main .asset-stack > .eyebrow,
+      body.lms-basic-page main#main .use-case > span,
+      body.lms-basic-page main#main .insight-band > div > span,
+      body.lms-basic-page main#main .outline-badge {
+        font-size: var(--lms-label) !important;
+        letter-spacing: 0.04em !important;
+        line-height: 1.45 !important;
+      }
+      body.lms-basic-page main#main .mini-flow span,
+      body.lms-basic-page main#main .mini-flow b,
+      body.lms-basic-page main#main .role-chips span {
+        font-size: 13px !important;
+      }
+      body.lms-basic-page main#main .flow-art .art-head,
+      body.lms-basic-page main#main .flow-art .art-foot,
+      body.lms-basic-page main#main .flow-art .orbit-label,
+      body.lms-basic-page main#main .flow-art .signal,
+      body.lms-basic-page main#main .flow-art .small {
+        font-size: 12px !important;
+        letter-spacing: 0.06em !important;
+      }
+      body.lms-basic-page main#main .flow-art .flow-node strong {
+        font-size: 14px !important;
+      }
+      body.lms-basic-page main#main .flow-art .flow-node small {
+        font-size: 12px !important;
+      }
+      body.lms-basic-page main#main .flow-art .flow-center strong {
+        font-size: clamp(22px, 4vw, 28px) !important;
+      }
+      body.lms-basic-page main#main .workspace-cards article span,
+      body.lms-basic-page main#main .next-steps article > span:not(.lms-step-ico) {
+        font-size: var(--lms-label) !important;
+      }
+      body.lms-basic-page main#main .hero-bottom p,
+      body.lms-basic-page main#main .hero-bottom span {
+        font-size: var(--lms-text-sm) !important;
+        line-height: 1.7 !important;
+      }
+      body.lms-basic-page main#main .section-title > p,
+      body.lms-basic-page main#main .lead {
+        font-size: 19px !important;
+        line-height: 1.85 !important;
+      }
+      body.lms-basic-page main#main p,
+      body.lms-basic-page main#main li {
+        font-size: var(--lms-text) !important;
+        line-height: 1.85 !important;
+      }
+      body.lms-basic-page main#main .feature-grid article,
+      body.lms-basic-page main#main .onsite-grid article,
+      body.lms-basic-page main#main .governance-grid article,
+      body.lms-basic-page main#main .ai-grid article,
+      body.lms-basic-page main#main .lifecycle article,
+      body.lms-basic-page main#main .asset-details article {
+        box-shadow: 0 10px 28px rgba(24, 47, 55, 0.05);
+        border-color: rgba(24, 47, 55, 0.08) !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      body.lms-basic-page main#main .feature-grid article:hover,
+      body.lms-basic-page main#main .onsite-grid article:hover,
+      body.lms-basic-page main#main .governance-grid article:hover,
+      body.lms-basic-page main#main .lifecycle article:hover,
+      body.lms-basic-page main#main .ai-grid article:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 34px rgba(24, 47, 55, 0.1);
+      }
+      body.lms-basic-page main#main .insight-band,
+      body.lms-basic-page main#main .use-case {
+        box-shadow: 0 8px 24px rgba(24, 47, 55, 0.04);
+      }
+      body.lms-basic-page main#main .primary {
+        font-size: 17px !important;
+        border-radius: 12px !important;
+        letter-spacing: -0.01em;
+      }
+      body.lms-basic-page #future .ai-grid article p,
+      body.lms-basic-page #future .future-intro > p,
+      body.lms-basic-page #future .future-foot p {
+        font-size: var(--lms-text) !important;
+        line-height: 1.85 !important;
+      }
+      body.lms-basic-page #future .ai-tag,
+      body.lms-basic-page #future .outline-badge,
+      body.lms-basic-page #future .ai-grid .small {
+        font-size: var(--lms-label) !important;
+      }
+      @media (max-width: 800px) {
+        body.lms-basic-page main#main {
+          --lms-text: 16px;
+          --lms-text-sm: 15px;
+          --lms-label: 13px;
+          --lms-meta: 12px;
+        }
+        body.lms-basic-page main#main .section-title > p,
+        body.lms-basic-page main#main .lead {
+          font-size: 17px !important;
+        }
+        body.lms-basic-page main#main .flow-art .art-head,
+        body.lms-basic-page main#main .flow-art .art-foot,
+        body.lms-basic-page main#main .flow-art .orbit-label,
+        body.lms-basic-page main#main .flow-art .signal,
+        body.lms-basic-page main#main .flow-art .small {
+          font-size: 11px !important;
+        }
+        body.lms-basic-page main#main .flow-art .flow-node strong {
+          font-size: 13px !important;
+        }
+        body.lms-basic-page main#main .flow-art .flow-node small {
+          font-size: 11px !important;
+        }
+      }
+
+      
+      /* Design refinement pass */
+      body.lms-basic-page main#main .hero-copy .lead {
+        max-width: 34em;
+      }
+      body.lms-basic-page main#main .hero-bottom {
+        margin-top: 40px !important;
+        padding: 28px 8px 4px !important;
+        border-top: 1px solid rgba(24, 47, 55, 0.1) !important;
+        align-items: end;
+      }
+      body.lms-basic-page main#main .hero-bottom > div {
+        padding: 18px 16px !important;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(24, 47, 55, 0.06);
+      }
+      body.lms-basic-page main#main .hero-bottom > p {
+        padding-right: 12px;
+      }
+      body.lms-basic-page main#main .audience {
+        gap: 10px !important;
+        margin-top: 28px !important;
+      }
+      body.lms-basic-page main#main .audience span {
+        background: rgba(8, 127, 120, 0.08) !important;
+        color: #1d4f4b !important;
+        border: 1px solid rgba(8, 127, 120, 0.12);
+      }
+      body.lms-basic-page main#main .primary {
+        background: linear-gradient(135deg, #0a8f86 0%, #087f78 55%, #066861 100%) !important;
+        color: #edf5ec !important;
+        border: none !important;
+        box-shadow: 0 10px 24px rgba(8, 127, 120, 0.22);
+      }
+      body.lms-basic-page main#main .primary span {
+        opacity: 0.9;
+      }
+      body.lms-basic-page main#main .compare-row {
+        border-radius: 16px;
+        padding: 28px 22px !important;
+        margin: 10px 0;
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(24, 47, 55, 0.06);
+      }
+      body.lms-basic-page main#main .compare-row:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.7);
+      }
+      body.lms-basic-page main#main .compare-head {
+        opacity: 0.85;
+        margin-bottom: 8px;
+      }
+      body.lms-basic-page main#main .onsite-grid ul,
+      body.lms-basic-page main#main .governance-grid ul {
+        margin-top: 16px !important;
+        display: grid;
+        gap: 8px;
+      }
+      body.lms-basic-page main#main .onsite-grid li,
+      body.lms-basic-page main#main .governance-grid li {
+        position: relative;
+        padding-left: 18px !important;
+        color: #3f5854 !important;
+      }
+      body.lms-basic-page main#main .onsite-grid li::before,
+      body.lms-basic-page main#main .governance-grid li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--teal, #087f78);
+        opacity: 0.7;
+      }
+      body.lms-basic-page main#main .section-note {
+        padding: 14px 16px;
+        border-left: 3px solid rgba(8, 127, 120, 0.35);
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 0 10px 10px 0;
+      }
+      body.lms-basic-page main#main .insight-band {
+        background:
+          linear-gradient(135deg, rgba(232, 239, 231, 0.95), rgba(215, 239, 229, 0.55)) !important;
+        border: 1px solid rgba(8, 127, 120, 0.1);
+      }
+      body.lms-basic-page main#main .use-case {
+        padding: 24px 26px !important;
+        border-radius: 16px !important;
+        background: rgba(255, 255, 255, 0.7) !important;
+        border: 1px solid rgba(24, 47, 55, 0.08) !important;
+      }
+      body.lms-basic-page main#main .asset-stack {
+        box-shadow: 0 18px 40px rgba(24, 47, 55, 0.18);
+      }
+      body.lms-basic-page main#main .asset-end {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.01em;
+        opacity: 0.92;
+      }
+      body.lms-basic-page main#main .role-panel {
+        box-shadow: 0 16px 40px rgba(24, 47, 55, 0.1);
+        border: 1px solid rgba(24, 47, 55, 0.08);
+        overflow: hidden;
+      }
+      body.lms-basic-page main#main .closing-summary {
+        margin-top: 12px;
+        padding: 28px 8px 8px !important;
+        align-items: center;
+      }
+      body.lms-basic-page main#main .closing-summary > strong {
+        font-size: 20px !important;
+        line-height: 1.55 !important;
+        max-width: 18em;
+      }
+      body.lms-basic-page main#main .next-steps article {
+        border-top-color: rgba(24, 47, 55, 0.1) !important;
+        transition: background 0.25s ease;
+        border-radius: 12px;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      body.lms-basic-page main#main .next-steps article:hover {
+        background: rgba(255, 255, 255, 0.45);
+      }
+      body.lms-basic-page main#main .feature-grid article:hover,
+      body.lms-basic-page main#main .onsite-grid article:hover,
+      body.lms-basic-page main#main .governance-grid article:hover,
+      body.lms-basic-page main#main .lifecycle article:hover,
+      body.lms-basic-page main#main .ai-grid article:hover {
+        transform: translateY(-4px);
+        border-color: rgba(8, 127, 120, 0.22) !important;
+      }
+      body.lms-basic-page main#main section#future .future-intro {
+        max-width: 48em;
+      }
+      body.lms-basic-page main#main section#future .ai-grid article {
+        backdrop-filter: blur(6px);
+      }
+      /* Tone down endless gradient drift slightly for polish */
+      body.lms-basic-page main#main section.scene {
+        animation-duration: 28s;
+      }
+      body.lms-basic-page main#main section#future.scene.future {
+        animation-duration: 32s;
+      }
+      @media (max-width: 800px) {
+        body.lms-basic-page main#main .hero-bottom > div {
+          background: rgba(255, 255, 255, 0.7);
+        }
+        body.lms-basic-page main#main .compare-row {
+          padding: 22px 16px !important;
+        }
+        body.lms-basic-page main#main .section-note {
+          padding: 12px 14px;
+        }
+      }
+
+      
+      /* Design refinement pass 2 */
+      body.lms-basic-page main#main > section.scene {
+        position: relative;
+      }
+      body.lms-basic-page main#main > section.scene + section.scene {
+        scroll-margin-top: 96px;
+      }
+      /* Soft section accent line */
+      body.lms-basic-page main#main > section.scene::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: max(40px, calc((100vw - 1400px) / 2));
+        right: max(40px, calc((100vw - 1400px) / 2));
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(8, 127, 120, 0.22), transparent);
+        pointer-events: none;
+        opacity: 0.9;
+      }
+      body.lms-basic-page main#main > section#overview.scene::before {
+        display: none;
+      }
+      body.lms-basic-page main#main .section-title h2 {
+        max-width: 16em;
+      }
+      body.lms-basic-page main#main .section-title > p {
+        max-width: 28em;
+        color: #4a6360 !important;
+      }
+      body.lms-basic-page main#main .feature-grid article {
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(246,250,247,0.92) 100%) !important;
+      }
+      body.lms-basic-page main#main .feature-index > i.bi {
+        filter: drop-shadow(0 6px 12px rgba(8, 127, 120, 0.18));
+      }
+      body.lms-basic-page main#main .lifecycle {
+        position: relative;
+      }
+      body.lms-basic-page main#main .lifecycle article {
+        background:
+          linear-gradient(180deg, #ffffff 0%, #f4f9f5 100%) !important;
+      }
+      body.lms-basic-page main#main .lifecycle article > b {
+        font-size: 30px !important;
+        font-weight: 650 !important;
+        letter-spacing: -0.03em;
+        color: var(--teal, #087f78) !important;
+      }
+      body.lms-basic-page main#main .role-tabs button[aria-selected="true"] {
+        background: linear-gradient(135deg, #087f78, #0a9a90) !important;
+        color: #edf5ec !important;
+        border-color: transparent !important;
+      }
+      body.lms-basic-page main#main .role-tabs button[aria-selected="true"] strong,
+      body.lms-basic-page main#main .role-tabs button[aria-selected="true"] span {
+        color: inherit !important;
+      }
+      body.lms-basic-page main#main .panel-body {
+        background: linear-gradient(180deg, #ffffff 0%, #f7faf7 100%);
+      }
+      body.lms-basic-page main#main .workspace-cards article {
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 1px solid rgba(24, 47, 55, 0.08);
+        border-radius: 12px !important;
+        padding: 18px 16px !important;
+        box-shadow: 0 8px 20px rgba(24, 47, 55, 0.05);
+      }
+      body.lms-basic-page main#main .asset-details article {
+        background:
+          linear-gradient(165deg, #ffffff 0%, #f3f8f4 100%) !important;
+      }
+      body.lms-basic-page main#main .asset-stack article {
+        border-bottom: 1px solid rgba(237, 245, 236, 0.12);
+        padding-bottom: 16px;
+        margin-bottom: 4px;
+      }
+      body.lms-basic-page main#main .asset-stack article:last-of-type {
+        border-bottom: 0;
+      }
+      body.lms-basic-page main#main .onsite-grid article,
+      body.lms-basic-page main#main .governance-grid article {
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.96), rgba(244,249,245,0.9)) !important;
+      }
+      body.lms-basic-page main#main section#future .future-foot {
+        margin-top: 36px;
+        padding: 26px 28px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(237, 245, 236, 0.12);
+      }
+      body.lms-basic-page main#main section#next.scene.closing {
+        position: relative;
+      }
+      body.lms-basic-page main#main section#next.scene.closing::after {
+        content: "";
+        position: absolute;
+        inset: auto 8% -10% 8%;
+        height: 40%;
+        background: radial-gradient(ellipse at center, rgba(8, 127, 120, 0.16), transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+      }
+      body.lms-basic-page main#main section#next .closing-grid,
+      body.lms-basic-page main#main section#next .closing-summary {
+        position: relative;
+        z-index: 1;
+      }
+      body.lms-basic-page main#main .closing-summary {
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(24, 47, 55, 0.08);
+        border-radius: 18px;
+        padding: 24px 22px !important;
+        margin-top: 20px !important;
+      }
+      body.lms-basic-page main#main .tags {
+        gap: 8px !important;
+        margin-top: 18px !important;
+      }
+      body.lms-basic-page main#main .tags span {
+        background: rgba(8, 127, 120, 0.08) !important;
+        color: #215752 !important;
+        border: 1px solid rgba(8, 127, 120, 0.1);
+      }
+      /* Calmer card hover — less bounce, clearer focus */
+      body.lms-basic-page main#main .feature-grid article,
+      body.lms-basic-page main#main .onsite-grid article,
+      body.lms-basic-page main#main .governance-grid article,
+      body.lms-basic-page main#main .lifecycle article,
+      body.lms-basic-page main#main .ai-grid article,
+      body.lms-basic-page main#main .asset-details article {
+        transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      }
+      @media (max-width: 800px) {
+        body.lms-basic-page main#main > section.scene::before {
+          left: 24px;
+          right: 24px;
+        }
+        body.lms-basic-page main#main .closing-summary {
+          padding: 20px 16px !important;
+        }
+        body.lms-basic-page main#main .flow-art {
+          border-radius: 16px !important;
+          box-shadow: 0 16px 36px rgba(24, 47, 55, 0.16) !important;
+        }
+        body.lms-basic-page main#main .hero-copy {
+          padding: 0 2px;
+        }
+      }
+
       /* Mobile flow-art: prevent clipping / covering */
       @media (max-width: 800px) {
         body.lms-basic-page main#main section#overview.scene {
