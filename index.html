@@ -428,25 +428,14 @@
               기존: "베이직인터네셔널" → 수정: "베이직인터내셔널" (헤더/푸터/meta와 통일)
             -->
           <h1 class="hero-modern-business__title">
-            기술과 가치를 연결하는<br class="hero-modern-business__br" />
-            베이직인터내셔널
+            <span class="hero-modern-business__title-line">기술과 가치를 연결하는</span>
+            <span class="hero-modern-business__title-line hero-modern-business__title-accent">베이직인터내셔널</span>
           </h1>
           <p class="hero-modern-business__desc">
             최첨단 AI기술과 클라우드 인프라를 바탕으로 기업의 비즈니스 가치를 극대화합니다.<br class="pc-br" />
             꿈꾸던 기술이 현실이 되는 여정을 함께합니다.
           </p>
-          <p class="aeo-entity__def" style="margin-top:18px;color:inherit;opacity:.92;max-width:640px;">
-            베이직인터내셔널은 AI·클라우드 기반 디지털 혁신 파트너로, Sync 플랫폼과 AI 서비스로
-            기업의 시스템 구축·운영 자동화를 지원합니다.
-          </p>
           <div class="hero-modern-business__actions">
-            <!--
-                [수정 5 - Critical] href="#"는 목적지가 없는 링크로 접근성 위반입니다.
-                실제 URL로 교체하거나, 버튼 동작이라면 <button> 사용을 권장합니다.
-                role="button"과 <a href="#">의 혼용은 ARIA 안티패턴입니다.
-                → href="#"를 실제 경로로 교체하고 role="button" 제거
-                  (아직 경로 미확정 시 href="/pages/ai-service" 등 임시 경로 사용)
-              -->
             <a href="/pages/aiservice/ai-book.html"
               class="hero-modern-business__button hero-modern-business__button--primary">
               AI서비스 경험하기
@@ -457,13 +446,10 @@
             </a>
           </div>
         </div>
-        <div class="hero-modern-business__image-wrapper">
-          <!--
-              [개선] alt 텍스트를 더 구체적이고 한국어로 작성
-              기존: "Modern business team collaborating in a bright office"
-            -->
-          <img src="/assets/images/pages/sync/bg-03.jpg" width="540" height="360" loading="lazy"
-            alt="베이직인터내셔널 팀이 밝은 사무실에서 협업하는 모습" class="hero-modern-business__image" />
+        <div class="hero-modern-business__image-wrapper" data-hero-parallax>
+          <div class="hero-modern-business__image-bg" aria-hidden="true"></div>
+          <img src="/assets/images/pages/home/hero-main.jpg" width="960" height="540" fetchpriority="high"
+            alt="AI·클라우드 대시보드가 보이는 베이직인터내셔널 업무 환경" class="hero-modern-business__image" />
         </div>
       </div>
     </section>
@@ -1557,58 +1543,87 @@
     </section>
 
     <section class="aeo-entity" aria-label="회사 개요">
-      <h2 class="section-title" data-animate>베이직인터내셔널 한눈에 보기</h2>
-      <p class="aeo-entity__def" data-animate>
-        주식회사 베이직인터내셔널은 2019년 11월 설립된 IT 전문 기업으로,
-        AI 기술과 클라우드 인프라를 바탕으로 SI/ANS, AI부설연구소, SW Sales, Big Data/DW 사업을 수행합니다.
-      </p>
-      <ul class="aeo-entity__facts" data-animate>
-        <li><strong>대표이사</strong>김명아</li>
-        <li><strong>설립</strong>2019년 11월 1일</li>
-        <li><strong>본사</strong>서울 금천구 가산SKV1</li>
-        <li><strong>문의</strong>02-2025-1010</li>
-      </ul>
+      <div class="business-title-wrap">
+        <h2 class="section-title" data-animate>회사 개요</h2>
+        <p class="section-desc aeo-entity__def" data-animate>
+          주식회사 베이직인터내셔널은 2019년 11월 설립된 IT 전문 기업으로,<br class="pc-br" />
+          AI·클라우드 기반으로 SI/ANS, AI부설연구소, SW Sales, Big Data/DW 사업을 수행합니다.
+        </p>
+      </div>
+      <div class="aeo-entity__panel" data-animate>
+        <ul class="aeo-entity__facts">
+          <li class="aeo-entity__facts-row">
+            <div>
+              <span class="aeo-entity__label">대표이사</span>
+              <strong class="aeo-entity__value">김명아</strong>
+            </div>
+            <div>
+              <span class="aeo-entity__label">설립</span>
+              <strong class="aeo-entity__value">2019. 11. 01</strong>
+            </div>
+          </li>
+          <li class="aeo-entity__facts-row aeo-entity__facts-row--full">
+            <div>
+              <span class="aeo-entity__label">본사</span>
+              <strong class="aeo-entity__value">서울특별시 금천구 벚꽃로 368, 가산SKV1 701~708호</strong>
+            </div>
+            <div>
+              <span class="aeo-entity__label">문의</span>
+              <strong class="aeo-entity__value"><a href="tel:0220251010">02-2025-1010</a></strong>
+            </div>
+          </li>
+        </ul>
+        <div class="aeo-entity__departments">
+          <span class="aeo-entity__departments-label">사업분야</span>
+          <div class="tag__wrap">
+            <span class="tag">SI / ANS</span>
+            <span class="tag">AI부설 연구소</span>
+            <span class="tag">SW Sales</span>
+            <span class="tag">Big Data / DW</span>
+          </div>
+        </div>
+        <p class="aeo-entity__cta">
+          <a href="/pages/aboutus/ai-profile.html">회사 프로필 자세히 보기 &rsaquo;</a>
+        </p>
+      </div>
     </section>
 
     <section class="cms-faq aeo-faq" aria-label="자주 묻는 질문">
-      <h2 class="section-title" data-animate>자주 묻는 질문</h2>
-      <p class="section-desc" data-animate>
-        베이직인터내셔널에 대해 가장 많이 확인하시는 질문입니다.
-      </p>
+      <div class="business-title-wrap">
+        <h2 class="section-title" data-animate>자주 묻는 질문</h2>
+        <p class="section-desc" data-animate>
+          베이직인터내셔널에 대해 가장 많이 확인하시는 질문입니다.
+        </p>
+      </div>
       <div class="cms-faq__list">
         <article class="faq-card">
-          <div class="faq-card__header">
-            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>베이직인터내셔널은 어떤 회사인가요?</h3>
-          </div>
-          <div class="faq-card__body">
+          <h3 class="faq-card__q">베이직인터내셔널은 어떤 회사인가요?</h3>
+          <p class="faq-card__body">
             2019년 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다.
-          </div>
+          </p>
         </article>
         <article class="faq-card">
-          <div class="faq-card__header">
-            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>주요 서비스는 무엇인가요?</h3>
-          </div>
-          <div class="faq-card__body">
+          <h3 class="faq-card__q">주요 서비스는 무엇인가요?</h3>
+          <p class="faq-card__body">
             AI 동화책·음원·픽업·탭투페이 등 AI 서비스, SyncCMS·SyncBoot·Sync SSL·v2v·AIOps 등 Sync 플랫폼, 금융·교육·물류·커머스 등 산업별 솔루션을 제공합니다.
-          </div>
+          </p>
         </article>
         <article class="faq-card">
-          <div class="faq-card__header">
-            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>본사는 어디에 있나요?</h3>
-          </div>
-          <div class="faq-card__body">
+          <h3 class="faq-card__q">본사는 어디에 있나요?</h3>
+          <p class="faq-card__body">
             서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호에 있으며, 문의는 02-2025-1010 또는 sisocore@gmail.com으로 가능합니다.
-          </div>
+          </p>
         </article>
         <article class="faq-card">
-          <div class="faq-card__header">
-            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-building" aria-hidden="true"></i></span>산업별 맞춤 구축이 가능한가요?</h3>
-          </div>
-          <div class="faq-card__body">
+          <h3 class="faq-card__q">산업별 맞춤 구축이 가능한가요?</h3>
+          <p class="faq-card__body">
             가능합니다. 금융, 통신, 교육, 물류, 커머스 등 산업 요구에 맞춰 컨설팅부터 구축·운영까지 통합 지원합니다.
-          </div>
+          </p>
         </article>
       </div>
+      <p class="cms-faq__more" data-animate>
+        <a href="/pages/aboutus/ai-profile.html">더 많은 질문 보기 &rsaquo;</a>
+      </p>
     </section>
   </main>
 

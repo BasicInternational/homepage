@@ -387,6 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadHTML('#header-include', '/pages/include/header.html', initCommon);
   loadHTML('#footer-include', '/pages/include/footer.html');
   loadHTML('#floating-menu-include', '/pages/include/floating-menu.html');
+  initHeroImageParallax();
   window.addEventListener('resize', function () {
     device.init();
     dialObj.init();
@@ -529,6 +530,67 @@ function scrollAnimInit() {
   document.querySelectorAll('[data-animate], [data-stagger], [data-workforce-animate]').forEach(function (el) {
     observer.observe(el);
   });
+}
+
+// 히어로 이미지 배경 패럴랙스 (CSS 루프 애니메이션 없음)
+function initHeroImageParallax() {
+  const wrap = document.querySelector('[data-hero-parallax]');
+  if (!wrap) return;
+
+  const bg = wrap.querySelector('.hero-modern-business__image-bg');
+  if (!bg) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let pointerX = 0;
+  let pointerY = 0;
+  let scrollY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let rafId = 0;
+
+  const render = () => {
+    const targetX = pointerX;
+    const targetY = pointerY + scrollY;
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+    bg.style.transform = 'translate3d(' + currentX.toFixed(2) + '%, ' + currentY.toFixed(2) + '%, 0) scale(1.08)';
+    rafId = requestAnimationFrame(render);
+  };
+
+  wrap.addEventListener('pointermove', (e) => {
+    const rect = wrap.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    pointerX = px * -4.5;
+    pointerY = py * -3.2;
+  });
+
+  wrap.addEventListener('pointerleave', () => {
+    pointerX = 0;
+    pointerY = 0;
+  });
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      const rect = wrap.getBoundingClientRect();
+      const viewH = window.innerHeight || 1;
+      const progress = (viewH / 2 - (rect.top + rect.height / 2)) / viewH;
+      scrollY = progress * -3.5;
+    },
+    { passive: true }
+  );
+
+  rafId = requestAnimationFrame(render);
+  window.addEventListener(
+    'beforeunload',
+    () => {
+      cancelAnimationFrame(rafId);
+    },
+    { once: true }
+  );
 }
 
 // 메가메뉴 너비 갱신 함수
