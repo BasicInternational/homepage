@@ -8813,6 +8813,66 @@ section.cms-faq {
   color: #1a2b2a;
 }
 
+.geo-entity {
+  width: min(960px, 100%);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px 8px;
+  box-sizing: border-box;
+}
+
+.geo-entity__title {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0d746b;
+}
+
+.geo-entity__def {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #1a2b2a;
+}
+
+.geo-entity__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.geo-entity__grid li {
+  padding: 14px 16px;
+  background: rgba(13, 116, 107, 0.05);
+  border: 1px solid rgba(13, 116, 107, 0.12);
+}
+
+.geo-entity__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0d746b;
+  text-transform: uppercase;
+}
+
+.geo-entity__value {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #243332;
+}
+
+@media (max-width: 768px) {
+  .geo-entity__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cms-faq__list,
 .aeo-faq__list,
 .sync-eta-faq__list {

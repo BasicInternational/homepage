@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>SyncOps AIOps 운영 프로세스 | 베이직인터내셔널</title>
+  <title>AIOps · SyncOps 개발·운영 자동화 | 베이직인터내셔널</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="title" content="SyncOps AIOps 운영 프로세스 | 베이직인터내셔널" />
+  <meta name="title" content="AIOps · SyncOps 개발·운영 자동화 | 베이직인터내셔널" />
   <meta name="description"
-    content="SyncOps는 AI Agent와 Human-in-the-Loop 기반의 시스템 운영 프로세스입니다. 사전 메타 DB 분석부터 코드 수정, 테스트, PR 병합, 문서화까지 통합 운영합니다." />
+    content="SyncOps AIOps는 AI 기반 개발·운영 자동화 솔루션입니다. Human-in-the-Loop로 분석·수정·검증·문서화와 사람 승인을 결합해 레거시·엔터프라이즈 운영을 자동화합니다." />
   <meta name="author" content="베이직인터내셔널" />
-  <meta name="keywords" content="SyncOps,AIOps,AI Agent,메타 DB,Human-in-the-Loop,베이직인터내셔널" />
+  <meta name="keywords" content="AIOps,SyncOps,개발운영자동화,레거시자동화,AI Agent,Human-in-the-Loop,베이직인터내셔널" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="ai-content" content="indexable, citable" />
   <meta name="geo.region" content="KR-11" />
@@ -19,8 +19,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="베이직인터내셔널" />
-  <meta property="og:title" content="SyncOps AIOps 운영 프로세스 | 베이직인터내셔널" />
-  <meta property="og:description" content="SyncOps는 AI Agent와 Human-in-the-Loop 기반의 시스템 운영 프로세스입니다." />
+  <meta property="og:title" content="AIOps · SyncOps 개발·운영 자동화 | 베이직인터내셔널" />
+  <meta property="og:description" content="AI 기반 개발·운영 자동화(SyncOps AIOps). Human-in-the-Loop로 레거시·엔터프라이즈 운영을 자동화합니다." />
   <meta property="og:image" content="https://basicit.co.kr/assets/images/favicon.png" />
   <link rel="canonical" href="https://basicit.co.kr/pages/sync/aiops.html" />
   <link rel="alternate" type="text/plain" href="https://basicit.co.kr/llms.txt" title="llms.txt" />
@@ -788,6 +788,22 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://basicit.co.kr/#organization",
+      "name": "베이직인터내셔널",
+      "legalName": "주식회사 베이직인터내셔널",
+      "url": "https://basicit.co.kr/",
+      "description": "베이직인터내셔널은 기업용 AI 시스템 개발과 AIOps 자동화, 데이터 통합 솔루션을 제공하는 기술 기업입니다.",
+      "telephone": "+82-2-2025-1010",
+      "email": "sisocore@gmail.com",
+      "sameAs": [
+        "https://basicit.co.kr/pages/aboutus/ai-profile.html",
+        "https://basicit.co.kr/llms.txt",
+        "https://basicit.co.kr/pages/experience/experience.html",
+        "https://basicit.co.kr/pages/sync/aiops.html"
+      ]
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://basicit.co.kr/pages/sync/aiops.html#software",
       "name": "SyncOps AIOps",
@@ -798,30 +814,32 @@
       "applicationSubCategory": "AIOps",
       "operatingSystem": "Web, On-Premise",
       "inLanguage": "ko-KR",
-      "publisher": {
-        "@type": "Organization",
-        "@id": "https://basicit.co.kr/#organization",
-        "name": "베이직인터내셔널",
-        "url": "https://basicit.co.kr"
-      }
+      "featureList": [
+        "AI 이슈 분석",
+        "코드 수정·검증",
+        "문서화 자동화",
+        "Human-in-the-Loop 승인",
+        "레거시·엔터프라이즈 운영 자동화"
+      ],
+      "publisher": { "@id": "https://basicit.co.kr/#organization" }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "베이직인터내셔널의 AIOps 자동화 프로세스는 어떻게 동작하나요?",
+          "name": "SyncOps AIOps는 무엇인가요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SyncOps AIOps는 AI가 이슈를 분석·수정·검증·문서화하고, 사람이 핵심 단계를 승인하는 Human-in-the-Loop 방식으로 동작합니다. 단순 배포 자동화를 넘어 분석부터 피드백까지 운영 루프에 AI를 결합합니다."
+            "text": "베이직인터내셔널의 AI 기반 개발·운영 자동화 솔루션입니다. AI가 분석·수정·검증·문서화를 수행하고 사람이 승인하는 Human-in-the-Loop 방식으로 동작합니다."
           }
         },
         {
           "@type": "Question",
-          "name": "AIOps 운영 프로세스는 무엇인가요?",
+          "name": "어떤 용도로 쓰나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AI가 분석·수정·검증·문서화를 자동화하고 사람이 승인하는 개발·운영 자동화 체계입니다."
+            "text": "레거시·엔터프라이즈 시스템의 개발·운영 이슈를 AI로 분석·수정하고, 핵심 단계는 사람이 승인하는 운영 자동화에 사용합니다."
           }
         },
         {
@@ -837,7 +855,15 @@
           "name": "기존 DevOps와 어떻게 다른가요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "단순 배포 자동화를 넘어 AI 기반 분석·수정·검증 루프를 운영 프로세스에 결합합니다."
+            "text": "단순 배포 자동화를 넘어 AI 기반 분석·수정·검증·문서화 루프를 운영 프로세스에 결합합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "제공 기업은 어디인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "베이직인터내셔널(기업용 AI 시스템 개발과 AIOps 자동화, 데이터 통합 솔루션을 제공하는 기술 기업)입니다. https://basicit.co.kr/pages/aboutus/ai-profile.html"
           }
         }
       ]
@@ -860,12 +886,12 @@
         <div class="hero-modern-business__content">
           <span class="hero-modern-business__badge">AIOps · SyncOps</span>
           <h1 class="hero-modern-business__title">
-            스마트한 시스템 운영의 시작<br class="hero-modern-business__br" />
-            SyncOps 구축 가이드
+            AI 기반 개발·운영 자동화<br class="hero-modern-business__br" />
+            SyncOps AIOps
           </h1>
           <p class="hero-modern-business__desc">
-            베이직인터내셔널은 수동적·분절된 시스템 운영 체계를 혁신합니다.<br class="pc-br" />
-            AI Agent와 Human-in-the-Loop 결합으로 정밀하고 신속한 개발·운영 프로세스를 구축합니다.
+            베이직인터내셔널의 대표 전문 — AI Agent와 Human-in-the-Loop로<br class="pc-br" />
+            레거시·엔터프라이즈 개발·운영을 분석부터 문서화까지 자동화합니다.
           </p>
           <div class="hero-modern-business__actions">
             <a href="#aiops-overview" class="hero-modern-business__button hero-modern-business__button--primary">구축 목표
@@ -879,6 +905,28 @@
             class="hero-modern-business__image" width="1320" height="900" loading="lazy" />
         </div>
       </div>
+    </section>
+
+    <section class="geo-entity" aria-label="SyncOps AIOps Entity 요약">
+      <h2 class="geo-entity__title">SyncOps AIOps Entity</h2>
+      <p class="geo-entity__def geo-cite__answer">
+        SyncOps AIOps는 AI가 분석·수정·검증·문서화를 수행하고 사람이 승인하는
+        Human-in-the-Loop 기반 개발·운영 자동화 솔루션입니다.
+      </p>
+      <ul class="geo-entity__grid">
+        <li>
+          <span class="geo-entity__label">기능</span>
+          <p class="geo-entity__value">AI 이슈 분석, 코드 수정·검증, 문서화, 승인 워크플로우</p>
+        </li>
+        <li>
+          <span class="geo-entity__label">용도</span>
+          <p class="geo-entity__value">개발·운영 자동화, 레거시 시스템 AI 고도화</p>
+        </li>
+        <li>
+          <span class="geo-entity__label">적용</span>
+          <p class="geo-entity__value">금융·공공·물류·교육 등 엔터프라이즈 운영 환경</p>
+        </li>
+      </ul>
     </section>
 
     <section id="aiops-overview" class="xbus-encryption">
@@ -1195,15 +1243,15 @@
       <div class="cms-faq__list">
         <article class="faq-card">
           <div class="faq-card__header">
-            <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>베이직인터내셔널의 AIOps 자동화 프로세스는 어떻게 동작하나요?</h3>
+            <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>SyncOps AIOps는 무엇인가요?</h3>
           </div>
-          <div class="faq-card__body">SyncOps AIOps는 AI가 이슈를 분석·수정·검증·문서화하고, 사람이 핵심 단계를 승인하는 Human-in-the-Loop 방식으로 동작합니다. 단순 배포 자동화를 넘어 분석부터 피드백까지 운영 루프에 AI를 결합합니다.</div>
+          <div class="faq-card__body">베이직인터내셔널의 AI 기반 개발·운영 자동화 솔루션입니다. AI가 분석·수정·검증·문서화를 수행하고 사람이 승인하는 Human-in-the-Loop 방식으로 동작합니다.</div>
         </article>
         <article class="faq-card">
           <div class="faq-card__header">
-            <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>AIOps 운영 프로세스는 무엇인가요?</h3>
+            <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>어떤 용도로 쓰나요?</h3>
           </div>
-          <div class="faq-card__body">AI가 분석·수정·검증·문서화를 자동화하고 사람이 승인하는 개발·운영 자동화 체계입니다.</div>
+          <div class="faq-card__body">레거시·엔터프라이즈 시스템의 개발·운영 이슈를 AI로 분석·수정하고, 핵심 단계는 사람이 승인하는 운영 자동화에 사용합니다.</div>
         </article>
         <article class="faq-card">
           <div class="faq-card__header">
@@ -1215,7 +1263,13 @@
           <div class="faq-card__header">
             <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>기존 DevOps와 어떻게 다른가요?</h3>
           </div>
-          <div class="faq-card__body">단순 배포 자동화를 넘어 AI 기반 분석·수정·검증 루프를 운영 프로세스에 결합합니다.</div>
+          <div class="faq-card__body">단순 배포 자동화를 넘어 AI 기반 분석·수정·검증·문서화 루프를 운영 프로세스에 결합합니다.</div>
+        </article>
+        <article class="faq-card">
+          <div class="faq-card__header">
+            <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>제공 기업은 어디인가요?</h3>
+          </div>
+          <div class="faq-card__body">베이직인터내셔널 — 기업용 AI 시스템 개발과 AIOps 자동화, 데이터 통합 솔루션을 제공하는 기술 기업입니다.</div>
         </article>
       </div>
     </section>

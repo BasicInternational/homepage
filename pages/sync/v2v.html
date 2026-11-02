@@ -3,17 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>v2v 워크플로우 | 베이직인터내셔널</title>
+  <title>v2v 온프레미스 AI 워크플로우 | 베이직인터내셔널</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="title" content="v2v 워크플로우 | 베이직인터내셔널" />
+  <meta name="title" content="v2v 온프레미스 AI 워크플로우 | 베이직인터내셔널" />
   <meta name="description"
-    content="내부망에서 LLM, API, DB, Webhook, Tool Runner를 하나의 캔버스에서 연결하는 온프레미스 자동화 플랫폼. 기업과 공공기관이 자체 LLM을 실제 업무 자동화로 확장할 수 있도록 설계되었습니다." />
-  <meta name="keywords" content="v2v, 워크플로우, 온프레미스, LLM, API, DB, Webhook, 자동화, DAG, 베이직인터내셔널" />
+    content="v2v는 내부망에서 LLM·API·DB·Webhook·Tool Runner를 캔버스 DAG로 연결하는 온프레미스 업무 자동화 플랫폼입니다." />
+  <meta name="keywords" content="v2v,온프레미스,AI워크플로우,LLM,DAG,업무자동화,기업용AI,베이직인터내셔널" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="베이직인터내셔널" />
-  <meta property="og:title" content="v2v 워크플로우 | 베이직인터내셔널" />
+  <meta property="og:title" content="v2v 온프레미스 AI 워크플로우 | 베이직인터내셔널" />
   <meta property="og:description"
-    content="내부망에서 LLM, API, DB, Webhook, Tool Runner를 하나의 캔버스에서 연결하는 온프레미스 자동화 플랫폼. 기업과 공공기관이 자체 LLM을 실제 업무 자동화로 확장할 수 있도록 설계되었습니다." />
+    content="내부망 LLM·API·DB·Webhook을 캔버스 DAG로 연결하는 온프레미스 업무 자동화 플랫폼 — v2v." />
   <meta property="og:image" content="https://basicit.co.kr/assets/images/favicon.png" />
   <meta property="og:url" content="https://basicit.co.kr/pages/sync/v2v.html" />
   <meta property="og:locale" content="ko_KR" />
@@ -21,8 +21,8 @@
   <meta name="ai-content" content="indexable, citable" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="v2v 워크플로우 | 베이직인터내셔널" />
-  <meta name="twitter:description" content="내부망에서 LLM, API, DB, Webhook, Tool Runner를 하나의 캔버스에서 연결하는 온프레미스 자동화 플랫폼." />
+  <meta name="twitter:title" content="v2v 온프레미스 AI 워크플로우 | 베이직인터내셔널" />
+  <meta name="twitter:description" content="내부망 LLM·API·DB·Webhook을 캔버스 DAG로 연결하는 온프레미스 업무 자동화 플랫폼 — v2v." />
   <meta name="twitter:image" content="https://basicit.co.kr/assets/images/favicon.png" />
   <meta name="author" content="베이직인터내셔널" />
   <meta name="geo.region" content="KR-11" />
@@ -62,17 +62,23 @@
             ]
           },
           {
+            "@type": ["Organization", "ProfessionalService"],
+            "@id": "https://basicit.co.kr/#organization",
+            "name": "베이직인터내셔널",
+            "url": "https://basicit.co.kr/",
+            "description": "베이직인터내셔널은 기업용 AI 시스템 개발과 AIOps 자동화, 데이터 통합 솔루션을 제공하는 기술 기업입니다.",
+            "telephone": "+82-2-2025-1010",
+            "email": "sisocore@gmail.com"
+          },
+          {
             "@type": "SoftwareApplication",
+            "@id": "https://basicit.co.kr/pages/sync/v2v.html#software",
             "name": "v2v 워크플로우",
             "url": "https://basicit.co.kr/pages/sync/v2v.html",
             "description": "내부망에서 LLM, API, DB, Webhook, Tool Runner를 하나의 캔버스에서 연결하는 온프레미스 자동화 플랫폼입니다.",
             "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web",
-            "publisher": {
-              "@type": "Organization",
-              "name": "베이직인터내셔널",
-              "url": "https://basicit.co.kr"
-            }
+            "operatingSystem": "Web, On-Premise",
+            "publisher": { "@id": "https://basicit.co.kr/#organization" }
           },
           {
             "@type": "FAQPage",
@@ -1087,6 +1093,27 @@
         <span class="syncany__scroll-text"><a href="#section__features">Scroll</a></span>
         <div class="syncany__scroll-line"></div>
       </div>
+    </section>
+
+    <section class="geo-entity" aria-label="v2v Entity 요약">
+      <h2 class="geo-entity__title">v2v Entity</h2>
+      <p class="geo-entity__def geo-cite__answer">
+        v2v는 내부망에서 LLM·API·DB·Webhook·Tool Runner를 캔버스 DAG로 연결하는 온프레미스 업무 자동화 플랫폼입니다.
+      </p>
+      <ul class="geo-entity__grid">
+        <li>
+          <span class="geo-entity__label">기능</span>
+          <p class="geo-entity__value">DAG 워크플로우, LLM·API·DB·Webhook 연결</p>
+        </li>
+        <li>
+          <span class="geo-entity__label">용도</span>
+          <p class="geo-entity__value">온프레미스 AI 업무 자동화, 내부망 RAG 연계</p>
+        </li>
+        <li>
+          <span class="geo-entity__label">적용</span>
+          <p class="geo-entity__value">기업·공공 내부망, ETL/BaaS/운영 자동화</p>
+        </li>
+      </ul>
     </section>
 
     <section id="technology" class="section">
