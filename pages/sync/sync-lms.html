@@ -1841,37 +1841,167 @@
       body.lms-basic-page .topbar { display: none !important; }
     </style>
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "베이직 싱크 교육 LMS는 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "학습 운영을 위한 베이직인터내셔널의 교육 LMS 솔루션입니다."
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["Organization", "ProfessionalService"],
+            "@id": "https://basicit.co.kr/#organization",
+            "name": "베이직인터내셔널",
+            "legalName": "주식회사 베이직인터내셔널",
+            "alternateName": ["Basic International", "주식회사 베이직인터내셔널"],
+            "url": "https://basicit.co.kr/",
+            "logo": "https://basicit.co.kr/assets/images/favicon.png",
+            "description": "베이직인터내셔널은 AI·클라우드 기반 디지털 혁신 파트너로 Sync 플랫폼, 교육 LMS, 산업별 솔루션을 제공합니다.",
+            "foundingDate": "2019-11-01",
+            "telephone": "+82-2-2025-1010",
+            "email": "sisocore@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "벚꽃로 368, 가산SKV1 701~708호",
+              "addressLocality": "금천구",
+              "addressRegion": "서울특별시",
+              "postalCode": "08511",
+              "addressCountry": "KR"
+            },
+            "areaServed": "KR",
+            "sameAs": [
+              "https://basicit.co.kr/pages/aboutus/ai-profile.html",
+              "https://basicit.co.kr/llms.txt"
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://basicit.co.kr/pages/sync/sync-lms.html#software",
+            "name": "베이직싱크교육LMS",
+            "alternateName": ["Basic Sync Education LMS", "Sync LMS", "베이직 싱크 교육 LMS"],
+            "url": "https://basicit.co.kr/pages/sync/sync-lms.html",
+            "description": "과정 개설부터 학습·평가·수료까지 연결하는 통합 교육 운영 플랫폼입니다. 학습자·강사·관리자 역할 공간과 이러닝·집체 교육 운영, AI 학습 경험 확장을 지원합니다.",
+            "applicationCategory": "EducationalApplication",
+            "applicationSubCategory": "Learning Management System",
+            "operatingSystem": "Web, On-Premise",
+            "inLanguage": "ko-KR",
+            "featureList": [
+              "과정·수강 관리",
+              "학습·출석 관리",
+              "시험·평가 관리",
+              "콘텐츠 자산 관리",
+              "성적·수료 관리",
+              "소통·권한·이력 관리",
+              "집체 교육 운영",
+              "AI 학습 경험 확장"
+            ],
+            "publisher": { "@id": "https://basicit.co.kr/#organization" },
+            "provider": { "@id": "https://basicit.co.kr/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://basicit.co.kr/pages/sync/sync-lms.html#webpage",
+            "url": "https://basicit.co.kr/pages/sync/sync-lms.html",
+            "name": "베이직싱크교육LMS | 베이직인터내셔널",
+            "description": "과정 개설부터 학습, 평가, 수료까지 연결하는 통합 교육 운영 플랫폼.",
+            "inLanguage": "ko-KR",
+            "isPartOf": { "@id": "https://basicit.co.kr/#website" },
+            "about": [
+              { "@id": "https://basicit.co.kr/#organization" },
+              { "@id": "https://basicit.co.kr/pages/sync/sync-lms.html#software" }
+            ],
+            "mainEntity": [
+              { "@id": "https://basicit.co.kr/pages/sync/sync-lms.html#software" },
+              { "@id": "https://basicit.co.kr/pages/sync/sync-lms.html#faq" }
+            ],
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [".faq-card__q", ".faq-card__body", "#hero-title", ".lead"]
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://basicit.co.kr"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "기술 허브",
+                "item": "https://basicit.co.kr/pages/hub-tech.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "베이직싱크교육LMS",
+                "item": "https://basicit.co.kr/pages/sync/sync-lms.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://basicit.co.kr/pages/sync/sync-lms.html#faq",
+            "url": "https://basicit.co.kr/pages/sync/sync-lms.html#faq",
+            "isPartOf": { "@id": "https://basicit.co.kr/pages/sync/sync-lms.html#webpage" },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "베이직싱크교육LMS는 무엇인가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "베이직싱크교육LMS는 베이직인터내셔널의 통합 교육 운영 플랫폼입니다. 과정 개설부터 학습·평가·수료까지를 연결하고, 학습자·강사·관리자 역할별 업무 공간을 제공합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "어떤 교육 유형을 지원하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "이러닝과 집체(현장) 교육을 함께 지원합니다. 진도·학습시간 관리뿐 아니라 강사·분반·시간표·출석, 기숙사·외출외박 등 현장 운영 업무까지 다룰 수 있습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "마스터 과정과 운영 기수는 어떻게 구분하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "과정의 공통 틀(마스터)과 기수별 일정·정원·승인 조건을 분리해 관리합니다. 반복 교육을 운영하는 기관이 매 기수 설정을 체계적으로 준비할 수 있습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "기술 스택과 보안 기준은 무엇인가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "전자정부 표준프레임워크 4.3(eGovFrame), Java 17, Spring, MyBatis, MariaDB, Apache Tomcat 기반이며 OWASP Top 10 보안 규격과 SSO·메시징 연동을 지원합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "AI 교육 사업·학습 경험과 연결되나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "네. AI 교육(LMS/LRS) 사업 영역과 연계할 수 있으며, 자료 기반 AI 튜터·강사 업무 지원·운영 점검 도우미 등 AI 학습 경험을 단계적으로 확장할 수 있습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "맞춤 기능 확장이 가능한가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "가능합니다. 기관·기업 교육 정책, 인증·알림 연동, 데이터 이관 범위에 맞춰 도입 모듈과 기능을 설계합니다."
+                }
+              }
+            ]
+          }
+        ]
       }
-    },
-    {
-      "@type": "Question",
-      "name": "AI 교육 사업과 연결되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "네. AI 교육(LMS/LRS) 사업 영역과 연계해 학습 플랫폼을 구성할 수 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "맞춤 기능 확장이 가능한가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "가능합니다. 기관·기업 교육 요구에 맞춰 기능 범위를 설계합니다."
-      }
-    }
-  ]
-}
-  </script>
+    </script>
 </head>
   <body class="lms-basic-page" data-type="detail">
     <div id="skip__content">
@@ -1907,22 +2037,34 @@
 <section id="future" class="scene future lms-band" data-aos="fade-up" data-aos-duration="750" aria-labelledby="future-title"><div class="section-meta"><span>10 / NEXT LEARNING EXPERIENCE</span><span>10 — 11</span></div><div class="future-intro"><span class="outline-badge">AI · LXP 확장 제안</span><h2 id="future-title">탄탄한 LMS 위에,<br>더 개인적인 <em>학습 경험</em>을.</h2><p>과정·콘텐츠·학습 이력을 기반으로<br>학습자와 교육 담당자를 돕는 AI 서비스를 단계적으로 제안합니다.</p></div><div class="ai-grid"><article><span class="ai-symbol" aria-hidden="true"><i class="bi bi-stars"></i></span><span class="small">FOR LEARNERS</span><h3>자료 기반 AI 튜터</h3><p>강의자료를 근거로 질문에 답하고<br>핵심 요약과 복습을 돕는 학습 지원.</p><span class="ai-tag">질문 → 근거 → 복습</span></article><article><span class="ai-symbol" aria-hidden="true"><i class="bi bi-pencil-square"></i></span><span class="small">FOR INSTRUCTORS</span><h3>강사 업무 지원</h3><p>문제·피드백·Q&A 답변의 초안을<br>생성하고 강사가 검토해 활용.</p><span class="ai-tag">초안 → 검토 → 활용</span></article><article><span class="ai-symbol" aria-hidden="true"><i class="bi bi-clipboard-data"></i></span><span class="small">FOR OPERATORS</span><h3>운영 점검 도우미</h3><p>과정 설정과 평가 데이터의<br>불일치를 점검하고 현황을 요약.</p><span class="ai-tag">점검 → 확인 → 개선</span></article></div><div class="future-foot"><strong>지금의 교육 운영에서, 다음 학습 경험으로.</strong><p>위 AI 기능은 신규 구축 제안입니다.<br>자료 권한·데이터 품질·검토 절차를 정한 뒤 적용 범위를 설계합니다.</p></div></section>
 <section id="next" class="scene closing" data-aos="fade-up" data-aos-duration="750" aria-labelledby="next-title"><div class="section-meta"><span>11 / BUILT AROUND YOUR OPERATIONS</span><span>11 — 11</span></div><div class="closing-grid"><div><p class="eyebrow">기관의 교육 방식에서 시작합니다.</p><h2 id="next-title">우리의 교육 운영에<br>맞는 LMS를<br><em>함께 설계합니다.</em></h2><p class="lead">핵심 교육 운영을 먼저 정리하고,<br>필요한 기능과 연동, AI 확장을 단계적으로.</p><button class="primary" id="print-end" type="button">소개자료 인쇄 / PDF 저장 <span>↗</span></button></div><div class="next-steps"><article><span class="lms-step-ico" aria-hidden="true" title="01"><i class="bi bi-search"></i></span><div><h3>운영 방식 확인</h3><p>교육 대상·유형·과정 규모<br>신청·평가·수료 정책</p></div></article><article><span class="lms-step-ico" aria-hidden="true" title="02"><i class="bi bi-puzzle"></i></span><div><h3>도입 범위 구성</h3><p>필요 모듈·데이터 이관<br>인증·알림 등 외부 연동</p></div></article><article><span class="lms-step-ico" aria-hidden="true" title="03"><i class="bi bi-rocket-takeoff"></i></span><div><h3>단계별 적용</h3><p>대표 과정으로 운영 검증<br>콘텐츠 정비와 AI 시범 적용</p></div></article></div></div><div class="closing-summary"><strong>교육 운영의 기본부터,<br>학습 경험의 다음 단계까지.</strong><a class="brand" href="#overview"><img class="brand-logo" src="/assets/images/pages/sync_lms/basic_logo.png" alt="베이직싱크교육"><b class="brand-lms">LMS ↗</b></a></div></section>
 
-    <section class="cms-faq aeo-faq lms-band" aria-label="자주 묻는 질문">
-      <div class="section-meta"><span>FAQ / Q&amp;A</span><span>Q&amp;A</span></div>
+    <section id="faq" class="cms-faq aeo-faq lms-band" aria-label="자주 묻는 질문">
+      <div class="section-meta"><span>FAQ / Q&amp;A</span><span>AEO READY</span></div>
       <h2 class="section-title">자주 묻는 질문</h2>
-      <p class="section-desc">베이직싱크교육LMS 도입·운영 관련 자주 묻는 질문입니다.</p>
+      <p class="section-desc">베이직싱크교육LMS 도입·운영·기술 관련 자주 묻는 질문입니다.</p>
       <div class="cms-faq__list">
         <article class="faq-card">
-          <h3 class="faq-card__q">베이직 싱크 교육 LMS는 무엇인가요?</h3>
-          <div class="faq-card__body">학습 운영을 위한 베이직인터내셔널의 교육 LMS 솔루션입니다.</div>
+          <h3 class="faq-card__q">베이직싱크교육LMS는 무엇인가요?</h3>
+          <p class="faq-card__body">베이직싱크교육LMS는 베이직인터내셔널의 통합 교육 운영 플랫폼입니다. 과정 개설부터 학습·평가·수료까지를 연결하고, 학습자·강사·관리자 역할별 업무 공간을 제공합니다.</p>
         </article>
         <article class="faq-card">
-          <h3 class="faq-card__q">AI 교육 사업과 연결되나요?</h3>
-          <div class="faq-card__body">네. AI 교육(LMS/LRS) 사업 영역과 연계해 학습 플랫폼을 구성할 수 있습니다.</div>
+          <h3 class="faq-card__q">어떤 교육 유형을 지원하나요?</h3>
+          <p class="faq-card__body">이러닝과 집체(현장) 교육을 함께 지원합니다. 진도·학습시간 관리뿐 아니라 강사·분반·시간표·출석, 기숙사·외출외박 등 현장 운영 업무까지 다룰 수 있습니다.</p>
+        </article>
+        <article class="faq-card">
+          <h3 class="faq-card__q">마스터 과정과 운영 기수는 어떻게 구분하나요?</h3>
+          <p class="faq-card__body">과정의 공통 틀(마스터)과 기수별 일정·정원·승인 조건을 분리해 관리합니다. 반복 교육을 운영하는 기관이 매 기수 설정을 체계적으로 준비할 수 있습니다.</p>
+        </article>
+        <article class="faq-card">
+          <h3 class="faq-card__q">기술 스택과 보안 기준은 무엇인가요?</h3>
+          <p class="faq-card__body">전자정부 표준프레임워크 4.3(eGovFrame), Java 17, Spring, MyBatis, MariaDB, Apache Tomcat 기반이며 OWASP Top 10 보안 규격과 SSO·메시징 연동을 지원합니다.</p>
+        </article>
+        <article class="faq-card">
+          <h3 class="faq-card__q">AI 교육 사업·학습 경험과 연결되나요?</h3>
+          <p class="faq-card__body">네. AI 교육(LMS/LRS) 사업 영역과 연계할 수 있으며, 자료 기반 AI 튜터·강사 업무 지원·운영 점검 도우미 등 AI 학습 경험을 단계적으로 확장할 수 있습니다.</p>
         </article>
         <article class="faq-card">
           <h3 class="faq-card__q">맞춤 기능 확장이 가능한가요?</h3>
-          <div class="faq-card__body">가능합니다. 기관·기업 교육 요구에 맞춰 기능 범위를 설계합니다.</div>
+          <p class="faq-card__body">가능합니다. 기관·기업 교육 정책, 인증·알림 연동, 데이터 이관 범위에 맞춰 도입 모듈과 기능을 설계합니다.</p>
         </article>
       </div>
     </section>
