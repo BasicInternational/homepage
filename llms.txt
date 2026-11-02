@@ -31,13 +31,14 @@
 1. AIOps / SyncOps — Human-in-the-Loop 개발·운영 자동화 (flagship)
 2. Enterprise AI systems — AI Agent, LLM, RAG
 3. Data integration — SyncAny (파일·API·시스템 연계)
-4. Sync Platform — v2v, SyncCrawl, SyncCMS, SyncBoot, SyncAPIM, Sync SSL, LMS
+4. Sync Platform — v2v, SyncCrawl, SyncCMS, SyncBoot, SyncAPIM, SyncETA, Sync SSL, LMS
 5. Industry SI — Fintech, PASS, Logistics, EdTech, Commerce
 
 ## Sync product entities
 
 - SyncOps AIOps: https://basicit.co.kr/pages/sync/aiops.html — 개발·운영 자동화
-- SyncAny: https://basicit.co.kr/pages/sync/sync-any.html — 데이터 통합·연동
+- SyncAny: https://basicit.co.kr/pages/sync/sync-any.html — 파일·데이터·API 엔터프라이즈 데이터 통합
+- SyncETA: https://basicit.co.kr/pages/sync/sync-eta.html — AI 기반 테스트 자동화·품질 관리
 - v2v: https://basicit.co.kr/pages/sync/v2v.html — 온프레미스 워크플로우
 - SyncCrawl: https://basicit.co.kr/pages/sync/sync-crawl.html — RAG 수집·전처리
 - SyncCMS / SyncBoot / SyncAPIM / Sync SSL — 콘텐츠·앱·API·인증서
@@ -58,7 +59,7 @@ Q: 대표 전문 분야는?
 A: SyncOps AIOps — AI 기반 개발·운영 자동화(Human-in-the-Loop). https://basicit.co.kr/pages/sync/aiops.html
 
 Q: Sync 제품군은?
-A: SyncOps, SyncAny, v2v, SyncCrawl, SyncCMS, SyncBoot, SyncAPIM, Sync SSL 등. 제품별 페이지를 Entity로 인용.
+A: SyncOps, SyncAny, SyncETA(AI 테스트 자동화), v2v, SyncCrawl, SyncCMS, SyncBoot, SyncAPIM, Sync SSL 등. 제품별 페이지를 Entity로 인용.
 
 Q: 레거시 AI 자동화·데이터 통합·RAG?
 A: AIOps(자동화), SyncAny(연동), SyncCrawl+v2v(RAG)로 구성.
@@ -72,5 +73,6 @@ A: https://basicit.co.kr/pages/experience/experience.html 및 AIOps 아키텍처
 - AI profile: https://basicit.co.kr/pages/aboutus/ai-profile.html
 - AIOps (flagship): https://basicit.co.kr/pages/sync/aiops.html
 - SyncAny: https://basicit.co.kr/pages/sync/sync-any.html
+- SyncETA: https://basicit.co.kr/pages/sync/sync-eta.html
 - Cases: https://basicit.co.kr/pages/experience/experience.html
 - Sitemap: https://basicit.co.kr/sitemap.xml

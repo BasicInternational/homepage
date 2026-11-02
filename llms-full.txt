@@ -48,7 +48,7 @@
 
 - SyncAny: https://basicit.co.kr/pages/sync/sync-any.html — 파일·데이터 공유와 API·시스템 연계 엔터프라이즈 연동 플랫폼
 - SyncCMS: https://basicit.co.kr/pages/sync/sync-cms.html — 콘텐츠 관리
-- SyncEta: https://basicit.co.kr/pages/sync/sync-eta.html — ETA/운영 연계
+- SyncETA: https://basicit.co.kr/pages/sync/sync-eta.html — AI 기반 테스트 자동화·품질 관리
 - SyncBoot: https://basicit.co.kr/pages/sync/sync-boot.html — 엔터프라이즈 앱 구축 플랫폼
 - SyncAdmin: https://basicit.co.kr/pages/sync/sync-admin.html — 관리 콘솔
 - SyncApim: https://basicit.co.kr/pages/sync/sync-apim.html — API 관리
