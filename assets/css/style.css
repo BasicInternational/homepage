@@ -8796,6 +8796,23 @@ section.cms-faq {
   text-decoration: underline;
 }
 
+.geo-cite {
+  width: min(860px, 100%);
+  max-width: 860px;
+  margin: 20px auto 0;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  border-left: 3px solid #0d746b;
+  background: rgba(13, 116, 107, 0.06);
+}
+
+.geo-cite__answer {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #1a2b2a;
+}
+
 .cms-faq__list,
 .aeo-faq__list,
 .sync-eta-faq__list {
