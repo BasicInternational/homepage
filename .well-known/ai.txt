@@ -10,7 +10,9 @@ llms.txt: https://basicit.co.kr/llms.txt
 llms-full.txt: https://basicit.co.kr/llms-full.txt
 sitemap: https://basicit.co.kr/sitemap.xml
 citation-page: https://basicit.co.kr/pages/aboutus/ai-profile.html
-brand-positioning: Enterprise AI & Digital Transformation Company
+brand-positioning: 기업용 AI 시스템 개발과 AIOps 자동화, 데이터 통합 솔루션을 제공하는 기술 기업
+flagship: SyncOps AIOps
+evidence: /pages/experience/experience.html , /pages/sync/aiops.html
 
 # Content policy
 Training: allow
