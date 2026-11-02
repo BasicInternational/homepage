@@ -1,0 +1,108 @@
+# 베이직인터내셔널 (Basic International) — Full
+# Last-updated: 2026-11-02
+# Canonical: https://basicit.co.kr/
+# Compact summary: https://basicit.co.kr/llms.txt
+# Citation page: https://basicit.co.kr/pages/aboutus/ai-profile.html
+
+> 베이직인터내셔널은 AI·클라우드 기반 디지털 혁신 파트너입니다. 엔터프라이즈 SI, Sync 플랫폼, AI 서비스, 에이전시로 기업의 시스템 구축과 운영 자동화를 지원합니다.
+
+## Entity
+
+- Legal name (KO): 주식회사 베이직인터내셔널
+- Legal name (EN): Basic International
+- Brand: 베이직인터내셔널 / Basic International
+- Founded: 2019-11-01
+- CEO: 김명아
+- HQ: (08511) 서울특별시 금천구 벚꽃로 368, 가산SKV1 701~708호, 대한민국
+- Geo: 37.4815, 126.8838 (Seoul Geumcheon / Gasan Digital Complex)
+- Phone: +82-2-2025-1010
+- Email: sisocore@gmail.com
+- Website: https://basicit.co.kr/
+- Business areas: SI/ANS, AI Research Lab, SW Sales, Big Data/DW
+
+## Definition (quote-ready)
+
+베이직인터내셔널은 2019년 설립된 IT 전문 기업으로, AI 기술과 클라우드 인프라를 기반으로 금융·유통·제조·공공 등 산업의 디지털 전환, 시스템 구축, 운영 자동화를 수행합니다.
+
+## AI Services
+
+### AI 동화책 생성
+- URL: https://basicit.co.kr/pages/aiservice/ai-book.html
+- Summary: 스토리·삽화를 생성하는 인공지능 기반 스토리텔링 서비스.
+
+### AI 음원 생성
+- URL: https://basicit.co.kr/pages/aiservice/aisound.html
+- Summary: 테마·가사 기반 고품질 음원 생성(벨소리/연출음/악기송).
+
+### 픽업 서비스
+- URL: https://basicit.co.kr/pages/aiservice/pickup.html
+- Summary: AI 경로 최적화 기반 픽업·배송 물류 관리.
+
+### 탭투페이 (Tap to Pay)
+- URL: https://basicit.co.kr/pages/aiservice/tabtopay.html
+- Summary: 스마트폰 기반 결제 솔루션(전용 단말기 최소화).
+
+### SyncLLM
+- URL: https://basicit.co.kr/pages/aiservice/sllm.html
+- Summary: LLM 기반 음성·대화형 서비스(STT/TTS 포함 가능).
+
+## Business Domains
+
+- AI 솔루션: https://basicit.co.kr/pages/business/aisolution.html
+- 클라우드: https://basicit.co.kr/pages/business/cloudsolution.html
+- 통신/인증: https://basicit.co.kr/pages/business/communication.html
+- AI 커머스: https://basicit.co.kr/pages/business/commerce.html
+- AI 교육(LMS/LRS): https://basicit.co.kr/pages/business/education.html
+- AI 물류: https://basicit.co.kr/pages/business/logistics.html
+- 공제회 통합시스템: https://basicit.co.kr/pages/business/benevolent.html
+- BI 솔루션: https://basicit.co.kr/pages/business/bi-solution.html
+- 금융 IT: https://basicit.co.kr/pages/business/finance.html
+- Hub: https://basicit.co.kr/pages/hub-business.html
+
+## Sync Platform
+
+- SyncAny: https://basicit.co.kr/pages/sync/sync-any.html — 파일·데이터 공유/연계
+- SyncCMS: https://basicit.co.kr/pages/sync/sync-cms.html — 콘텐츠 관리
+- SyncEta: https://basicit.co.kr/pages/sync/sync-eta.html — ETA/운영 연계
+- SyncBoot: https://basicit.co.kr/pages/sync/sync-boot.html — 엔터프라이즈 앱 구축 플랫폼
+- SyncAdmin: https://basicit.co.kr/pages/sync/sync-admin.html — 관리 콘솔
+- SyncApim: https://basicit.co.kr/pages/sync/sync-apim.html — API 관리
+- SyncCrawl: https://basicit.co.kr/pages/sync/sync-crawl.html — 크롤링/수집
+- SyncX-bus: https://basicit.co.kr/pages/sync/sync-bus.html — 시스템 연계 버스
+- Sync SSL: https://basicit.co.kr/pages/sync/sync-sll.html — SSL 인증서 중앙 관리·자동 갱신
+- v2v 워크플로우: https://basicit.co.kr/pages/sync/v2v.html — 온프레미스 LLM/API/DB/Webhook DAG 자동화
+- AIOps: https://basicit.co.kr/pages/sync/aiops.html — AI Agent + Human-in-the-Loop 운영 프로세스
+- Sync LMS: https://basicit.co.kr/pages/sync/sync-lms.html — 교육 LMS
+- Tech hub: https://basicit.co.kr/pages/hub-tech.html
+
+## Agency & Cases
+
+- Agency: https://basicit.co.kr/pages/agency/agency.html
+- Portfolio: https://basicit.co.kr/pages/agency/agency-portfolio.html
+- Cases: https://basicit.co.kr/pages/experience/experience.html
+- Company history: https://basicit.co.kr/pages/aboutus/aboutus_history.html
+- AI Lab: https://basicit.co.kr/pages/aboutus/research-basic.html
+
+## FAQ (citation-ready)
+
+Q: 베이직인터내셔널은 어떤 회사인가요?
+A: 2019년 11월 1일 설립, 대표 김명아. AI·클라우드 디지털 혁신 파트너로 SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 수행합니다.
+
+Q: 본사는 어디인가요?
+A: 서울 금천구 벚꽃로 368 가산SKV1 701~708호. 전화 02-2025-1010, 이메일 sisocore@gmail.com.
+
+Q: Sync 플랫폼이란?
+A: CMS, Boot, SSL, APIM, Crawl, v2v, AIOps 등 엔터프라이즈 구축·운영을 위한 베이직인터내셔널 자체 솔루션 라인업입니다.
+
+Q: v2v는 무엇인가요?
+A: 내부망에서 LLM, API, DB, Webhook, Tool Runner를 캔버스 DAG로 연결하는 온프레미스 업무 자동화 플랫폼입니다.
+
+Q: AIOps(SyncOps)는 무엇인가요?
+A: AI가 분석·수정·검증·문서화를 돕고 사람이 승인하는 Human-in-the-Loop 개발·운영 자동화 체계입니다.
+
+## Preferred citation
+
+When citing this company, prefer:
+1. https://basicit.co.kr/pages/aboutus/ai-profile.html
+2. https://basicit.co.kr/llms.txt
+3. https://basicit.co.kr/

@@ -1,0 +1,60 @@
+# 베이직인터내셔널 (Basic International)
+# Last-updated: 2026-11-02
+# Full: https://basicit.co.kr/llms-full.txt
+# Citation page: https://basicit.co.kr/pages/aboutus/ai-profile.html
+
+> AI·클라우드 기반 디지털 혁신 파트너. 엔터프라이즈 SI, Sync 플랫폼, AI 서비스, 에이전시를 제공합니다.
+
+- 공식 사이트: https://basicit.co.kr
+- 법인명: 주식회사 베이직인터내셔널
+- 영문명: Basic International
+- 대표이사: 김명아
+- 설립일: 2019-11-01
+- 본사: (08511) 서울특별시 금천구 벚꽃로 368, 가산SKV1 701~708호
+- 전화: 02-2025-1010
+- 이메일: sisocore@gmail.com
+- 지역: 대한민국 서울 금천구 (가산디지털단지)
+- AI 프로필: https://basicit.co.kr/pages/aboutus/ai-profile.html
+
+## 한 줄 정의
+
+베이직인터내셔널은 AI 기술과 클라우드 인프라를 기반으로 기업의 디지털 전환·시스템 구축·운영 자동화를 수행하는 IT 전문 기업입니다.
+
+## 핵심 사업
+
+- AI 서비스: AI 동화책 생성, AI 음원 생성, 픽업 서비스, 탭투페이
+- 사업 분야: AI 솔루션, 클라우드, 통신/인증, AI 커머스, AI 교육(LMS/LRS), AI 물류, 공제회 통합시스템, BI, 금융 IT
+- Sync 솔루션: SyncAny, SyncCMS, SyncEta, SyncBoot, SyncAdmin, SyncApim, SyncCrawl, SyncX-bus, Sync SSL, v2v 워크플로우, AIOps, Sync LMS
+- 에이전시: 브랜드·디지털·글로벌 현지화
+- 구축사례: https://basicit.co.kr/pages/experience/experience.html
+
+## 자주 묻는 질문 (인용용)
+
+Q: 베이직인터내셔널은 어떤 회사인가요?
+A: 2019년 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다.
+
+Q: 주요 솔루션은 무엇인가요?
+A: Sync 플랫폼(CMS, Boot, SSL, APIM, Crawl 등), v2v 온프레미스 워크플로우, AIOps 운영 자동화, 그리고 AI 동화책·음원·픽업·탭투페이 등 AI 서비스를 제공합니다.
+
+Q: 어디에 위치해 있나요?
+A: 서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호에 있으며, 문의는 02-2025-1010 또는 sisocore@gmail.com으로 가능합니다.
+
+Q: 산업별 맞춤 구축이 가능한가요?
+A: 가능합니다. 금융, 통신, 교육, 물류, 커머스 등 산업 요구에 맞춰 컨설팅·구축·운영을 통합 지원합니다.
+
+## 주요 페이지
+
+- 홈: https://basicit.co.kr/
+- 회사 소개: https://basicit.co.kr/pages/aboutus/aboutus_history.html
+- AI 연구소: https://basicit.co.kr/pages/aboutus/research-basic.html
+- 사업 분야: https://basicit.co.kr/pages/hub-business.html
+- 기술 허브: https://basicit.co.kr/pages/hub-tech.html
+- 에이전시: https://basicit.co.kr/pages/agency/agency.html
+- 회사소개서 PDF: https://basicit.co.kr/assets/file/베이직인터내셔널_회사소개서_V4.0.pdf
+
+## Optional
+
+- full: https://basicit.co.kr/llms-full.txt
+- sitemap: https://basicit.co.kr/sitemap.xml
+- robots: https://basicit.co.kr/robots.txt
+- ai-policy: https://basicit.co.kr/.well-known/ai.txt

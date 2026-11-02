@@ -8543,3 +8543,125 @@ h2.section-title,
         padding: 0;
     }
 }
+/* 式式 AEO / GEO FAQ (site-wide) 式式 */
+.aeo-entity {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 8px;
+}
+.aeo-entity__def {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #334155;
+  max-width: 820px;
+}
+.aeo-entity__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px 20px;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+.aeo-entity__facts li {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.5;
+}
+.aeo-entity__facts strong {
+  display: block;
+  color: #0f172a;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.cms-faq.aeo-faq,
+section.aeo-faq,
+section.cms-faq {
+  padding: 72px 24px 88px;
+  background: #f8fafc;
+}
+.cms-faq .section-title,
+.aeo-faq .section-title,
+.aeo-faq__title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.cms-faq .section-desc,
+.aeo-faq .section-desc,
+.aeo-faq__desc {
+  text-align: center;
+  color: #64748b;
+  margin: 0 auto 36px;
+  max-width: 640px;
+}
+.cms-faq__list,
+.aeo-faq__list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+.faq-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px 20px 20px 24px;
+  overflow: hidden;
+}
+.faq-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #13877d, #0f766e);
+}
+.faq-card__header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.faq-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(19, 135, 125, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #13877d;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.faq-card__q {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 1.02rem;
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.faq-card__body {
+  color: #475569;
+  line-height: 1.7;
+  margin-top: 2px;
+  font-size: 0.95rem;
+}
+@media (max-width: 768px) {
+  .cms-faq.aeo-faq,
+  section.aeo-faq,
+  section.cms-faq {
+    padding: 48px 16px 64px;
+  }
+  .aeo-entity {
+    padding: 32px 16px 0;
+  }
+}

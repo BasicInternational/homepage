@@ -15,13 +15,16 @@
     content="클라우드,마이크로서비스,인프라,CMS,SyncCMS,SyncInfra,SyncBoot,SyncSSL,SSL,생산성,개발,자바,AI솔루션,디지털전환,엔터프라이즈,클라우드마이그레이션,DevOps,베이직인터내셔널" />
   <meta name="author" content="베이직인터내셔널" />
   <meta name="geo.region" content="KR-11" />
-  <meta name="geo.placename" content="서울" />
-  <meta name="geo.position" content="37.5665;126.9780" />
-  <meta name="ICBM" content="37.5665, 126.9780" />
+  <meta name="geo.placename" content="서울 금천구" />
+  <meta name="geo.position" content="37.4815;126.8838" />
+  <meta name="ICBM" content="37.4815, 126.8838" />
   <meta name="naver-site-verification" content="d619c27c3687c9e108733dbee1336c36b87cfbd0" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <link rel="canonical" href="https://basicit.co.kr" />
-
+  <meta name="ai-content" content="indexable, citable" />
+  <link rel="canonical" href="https://basicit.co.kr/" />
+  <link rel="alternate" type="text/plain" href="https://basicit.co.kr/llms.txt" title="llms.txt" />
+  <link rel="alternate" type="text/plain" href="https://basicit.co.kr/llms-full.txt" title="llms-full.txt" />
+  <link rel="describedby" href="https://basicit.co.kr/pages/aboutus/ai-profile.html" title="AI company profile" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="베이직인터내셔널" />
@@ -30,7 +33,7 @@
   <meta property="og:image" content="https://basicit.co.kr/assets/images/favicon.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://basicit.co.kr" />
+  <meta property="og:url" content="https://basicit.co.kr/" />
   <meta property="og:locale" content="ko_KR" />
 
   <!-- Twitter Card -->
@@ -251,36 +254,137 @@
     }
   </style>
 
-  <!-- 구조화된 데이터 -->
+  <!-- 구조화된 데이터 (AEO / GEO) -->
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": ["Organization", "ProfessionalService"],
+            "@id": "https://basicit.co.kr/#organization",
             "name": "베이직인터내셔널",
-            "url": "https://basicit.co.kr",
-            "logo": "https://basicit.co.kr/assets/images/favicon.png",
-            "description": "AI 기술과 클라우드 인프라를 기반으로 기업 비즈니스 가치를 극대화하는 디지털 혁신 파트너입니다.",
+            "alternateName": ["Basic International", "주식회사 베이직인터내셔널"],
+            "url": "https://basicit.co.kr/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://basicit.co.kr/assets/images/favicon.png"
+            },
+            "image": "https://basicit.co.kr/assets/images/favicon.png",
+            "description": "베이직인터내셔널은 AI 기술과 클라우드 인프라를 기반으로 기업의 디지털 전환·시스템 구축·운영 자동화를 수행하는 IT 전문 기업입니다.",
+            "foundingDate": "2019-11-01",
+            "founder": {
+              "@type": "Person",
+              "name": "김명아"
+            },
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "벚꽃로 368, 가산SKV1 701~708호",
+              "addressLocality": "금천구",
+              "addressRegion": "서울특별시",
+              "postalCode": "08511",
               "addressCountry": "KR"
             },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 37.4815,
+              "longitude": 126.8838
+            },
+            "telephone": "+82-2-2025-1010",
+            "email": "sisocore@gmail.com",
+            "areaServed": {
+              "@type": "Country",
+              "name": "대한민국"
+            },
+            "knowsAbout": [
+              "인공지능",
+              "클라우드",
+              "마이크로서비스",
+              "디지털 전환",
+              "엔터프라이즈 SI",
+              "AIOps",
+              "SSL 인증서 관리",
+              "CMS"
+            ],
+            "sameAs": [
+              "https://basicit.co.kr/pages/aboutus/ai-profile.html",
+              "https://basicit.co.kr/llms.txt",
+              "https://basicit.co.kr/llms-full.txt"
+            ],
             "contactPoint": {
               "@type": "ContactPoint",
-              "contactType": "customer service"
+              "telephone": "+82-2-2025-1010",
+              "contactType": "customer service",
+              "email": "sisocore@gmail.com",
+              "availableLanguage": ["ko", "en"],
+              "areaServed": "KR"
             }
           },
           {
             "@type": "WebSite",
+            "@id": "https://basicit.co.kr/#website",
             "name": "베이직인터내셔널",
-            "url": "https://basicit.co.kr",
+            "url": "https://basicit.co.kr/",
             "description": "AI 기술과 클라우드 인프라를 기반으로 기업 비즈니스 가치를 극대화하는 디지털 혁신 파트너입니다.",
+            "inLanguage": "ko-KR",
             "publisher": {
-              "@type": "Organization",
-              "name": "베이직인터내셔널",
-              "url": "https://basicit.co.kr"
+              "@id": "https://basicit.co.kr/#organization"
             }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://basicit.co.kr/#webpage",
+            "url": "https://basicit.co.kr/",
+            "name": "AI·클라우드 디지털 혁신 파트너 | 베이직인터내셔널",
+            "isPartOf": {
+              "@id": "https://basicit.co.kr/#website"
+            },
+            "about": {
+              "@id": "https://basicit.co.kr/#organization"
+            },
+            "description": "베이직인터내셔널은 AI·클라우드 기반 디지털 혁신 파트너로 Sync 플랫폼, AI 서비스, 산업별 솔루션을 제공합니다.",
+            "inLanguage": "ko-KR",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [".hero-modern-business__title", ".hero-modern-business__desc", ".aeo-entity__def"]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://basicit.co.kr/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "베이직인터내셔널은 어떤 회사인가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "베이직인터내셔널은 2019년 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "베이직인터내셔널의 주요 서비스는 무엇인가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI 동화책·음원·픽업·탭투페이 등 AI 서비스, SyncCMS·SyncBoot·Sync SSL·v2v·AIOps 등 Sync 플랫폼, 그리고 금융·교육·물류·커머스 등 산업별 디지털 전환 솔루션을 제공합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "베이직인터내셔널 본사는 어디에 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호에 있으며, 문의는 02-2025-1010 또는 sisocore@gmail.com으로 가능합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "산업별 맞춤형 시스템 구축이 가능한가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "가능합니다. 금융, 통신, 교육, 물류, 커머스 등 산업 요구사항에 맞춰 컨설팅부터 구축·운영까지 통합 지원합니다."
+                }
+              }
+            ]
           }
         ]
       }
@@ -330,6 +434,10 @@
           <p class="hero-modern-business__desc">
             최첨단 AI기술과 클라우드 인프라를 바탕으로 기업의 비즈니스 가치를 극대화합니다.<br class="pc-br" />
             꿈꾸던 기술이 현실이 되는 여정을 함께합니다.
+          </p>
+          <p class="aeo-entity__def" style="margin-top:18px;color:inherit;opacity:.92;max-width:640px;">
+            베이직인터내셔널은 AI·클라우드 기반 디지털 혁신 파트너로, Sync 플랫폼과 AI 서비스로
+            기업의 시스템 구축·운영 자동화를 지원합니다.
           </p>
           <div class="hero-modern-business__actions">
             <!--
@@ -1446,6 +1554,61 @@
       </div>
 
       <a href="/pages/experience/experience.html" class="more-link">전체보기 &rsaquo;</a>
+    </section>
+
+    <section class="aeo-entity" aria-label="회사 개요">
+      <h2 class="section-title" data-animate>베이직인터내셔널 한눈에 보기</h2>
+      <p class="aeo-entity__def" data-animate>
+        주식회사 베이직인터내셔널은 2019년 11월 설립된 IT 전문 기업으로,
+        AI 기술과 클라우드 인프라를 바탕으로 SI/ANS, AI부설연구소, SW Sales, Big Data/DW 사업을 수행합니다.
+      </p>
+      <ul class="aeo-entity__facts" data-animate>
+        <li><strong>대표이사</strong>김명아</li>
+        <li><strong>설립</strong>2019년 11월 1일</li>
+        <li><strong>본사</strong>서울 금천구 가산SKV1</li>
+        <li><strong>문의</strong>02-2025-1010</li>
+      </ul>
+    </section>
+
+    <section class="cms-faq aeo-faq" aria-label="자주 묻는 질문">
+      <h2 class="section-title" data-animate>자주 묻는 질문</h2>
+      <p class="section-desc" data-animate>
+        베이직인터내셔널에 대해 가장 많이 확인하시는 질문입니다.
+      </p>
+      <div class="cms-faq__list">
+        <article class="faq-card">
+          <div class="faq-card__header">
+            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>베이직인터내셔널은 어떤 회사인가요?</h3>
+          </div>
+          <div class="faq-card__body">
+            2019년 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다.
+          </div>
+        </article>
+        <article class="faq-card">
+          <div class="faq-card__header">
+            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>주요 서비스는 무엇인가요?</h3>
+          </div>
+          <div class="faq-card__body">
+            AI 동화책·음원·픽업·탭투페이 등 AI 서비스, SyncCMS·SyncBoot·Sync SSL·v2v·AIOps 등 Sync 플랫폼, 금융·교육·물류·커머스 등 산업별 솔루션을 제공합니다.
+          </div>
+        </article>
+        <article class="faq-card">
+          <div class="faq-card__header">
+            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>본사는 어디에 있나요?</h3>
+          </div>
+          <div class="faq-card__body">
+            서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호에 있으며, 문의는 02-2025-1010 또는 sisocore@gmail.com으로 가능합니다.
+          </div>
+        </article>
+        <article class="faq-card">
+          <div class="faq-card__header">
+            <h3 class="faq-card__q"><span class="faq-card__icon"><i class="bi bi-building" aria-hidden="true"></i></span>산업별 맞춤 구축이 가능한가요?</h3>
+          </div>
+          <div class="faq-card__body">
+            가능합니다. 금융, 통신, 교육, 물류, 커머스 등 산업 요구에 맞춰 컨설팅부터 구축·운영까지 통합 지원합니다.
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 

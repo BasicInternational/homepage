@@ -1,0 +1,84 @@
+User-agent: *
+Allow: /
+Disallow: /public.html
+Disallow: /pages/experience/test.html
+Disallow: /pages/aiservice/ai-book_old.html
+Disallow: /pages/aiservice/ai-book_new.html
+Disallow: /pages/aiservice/aisound_old.html
+Disallow: /pages/sync/sync-boot-old.html
+Disallow: /pages/include/
+
+# AI / generative search crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# Machine-readable facts for AI systems
+# https://basicit.co.kr/llms.txt
+# https://basicit.co.kr/llms-full.txt
+# https://basicit.co.kr/.well-known/ai.txt
+# https://basicit.co.kr/pages/aboutus/ai-profile.html
+
+Sitemap: https://basicit.co.kr/sitemap.xml

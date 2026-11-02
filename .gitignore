@@ -1,6 +1,10 @@
 .history/
 /node_modules
 *.txt
+!robots.txt
+!llms.txt
+!llms-full.txt
+!.well-known/ai.txt
 .idea/
 *.iml
 .vscode/settings.json

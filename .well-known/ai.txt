@@ -1,0 +1,17 @@
+# AI crawler policy for basicit.co.kr
+# Contact: sisocore@gmail.com
+
+User-Agent: *
+Allow: /
+Prefer-Pages: /, /llms.txt, /llms-full.txt, /pages/aboutus/ai-profile.html, /sitemap.xml
+
+# Machine-readable company facts
+llms.txt: https://basicit.co.kr/llms.txt
+llms-full.txt: https://basicit.co.kr/llms-full.txt
+sitemap: https://basicit.co.kr/sitemap.xml
+citation-page: https://basicit.co.kr/pages/aboutus/ai-profile.html
+
+# Content policy
+Training: allow
+Retrieval: allow
+Citation: required when quoting factual company attributes
