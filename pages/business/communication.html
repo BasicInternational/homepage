@@ -112,8 +112,54 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    main section {
-      margin: 0 auto;
+    /* ── 1280 layout system ── */
+    main.commmuni__main {
+      --page-max: 1280px;
+      --page-gutter: clamp(16px, 3vw, 40px);
+      width: 100%;
+    }
+
+    main.commmuni__main > section {
+      width: 100%;
+      max-width: var(--page-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--page-gutter);
+      padding-right: var(--page-gutter);
+      box-sizing: border-box;
+    }
+
+    /* full-bleed shells (inner stays 1280) */
+    main.commmuni__main > section.hero-modern-business,
+    main.commmuni__main > section.comm-radial-section {
+      max-width: none;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    main.commmuni__main .hero-modern-business__container,
+    main.commmuni__main .container,
+    main.commmuni__main .comm-process-wrap,
+    main.commmuni__main .comm-architecture__inner,
+    main.commmuni__main .comm-radial__inner,
+    main.commmuni__main .comm-workflow-card,
+    main.commmuni__main .final-cta-container {
+      width: 100%;
+      max-width: var(--page-max);
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+
+    main.commmuni__main .hero-modern-business__container {
+      padding-left: var(--page-gutter);
+      padding-right: var(--page-gutter);
+    }
+
+    main.commmuni__main > section.cms-faq,
+    main.commmuni__main > section.aeo-faq {
+      max-width: var(--page-max);
     }
 
     .pass-intro {
@@ -395,8 +441,8 @@
 
     @media (min-width: 1024px) {
       .effect-area {
-        padding: 70px 2rem;
-        max-width: 1440px;
+        padding: 70px var(--page-gutter, 40px);
+        max-width: 1280px;
         margin: 0 auto;
       }
 
@@ -487,12 +533,11 @@
     .about-section {
       background-color: white;
       padding: 3rem 1rem;
-      max-width: 1440px;
+      max-width: 1280px;
     }
 
     .container {
-      max-width: 80rem;
-      /* max-w-7xl */
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 1rem;
     }
@@ -630,8 +675,7 @@
       --spacing-20: 5rem;
       --spacing-24: 6rem;
       /* Container */
-      --container-max-width: 80rem;
-      /* max-w-7xl */
+      --container-max-width: 1280px;
     }
 
     /* Reset */
@@ -1652,11 +1696,11 @@
     }
 
     .comm-solutions {
-      max-width: 1440px;
+      max-width: 1280px;
       margin-left: auto;
       margin-right: auto;
-      padding: 72px 56px;
-      border-radius: 30px;
+      padding: 72px clamp(20px, 4vw, 48px);
+      border-radius: 24px;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       border: 1px solid rgba(148, 163, 184, 0.18);
       box-shadow: 0 30px 60px rgba(15, 23, 42, 0.28);
@@ -1837,7 +1881,7 @@
     .comm-process-wrap {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 4rem;
+      padding: 0;
     }
 
     .comm-process-title {
@@ -1968,7 +2012,7 @@
     }
 
     .comm-architecture__inner {
-      padding: 0 4rem;
+      padding: 0;
     }
 
     .comm-architecture__layout {
@@ -2160,7 +2204,10 @@
     }
 
     .comm-radial__inner {
-      padding: 0 1rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--page-gutter, 24px);
+      box-sizing: border-box;
     }
 
     .comm-radial__head {
@@ -2286,7 +2333,7 @@
 
     @media (min-width: 640px) {
       .comm-radial__inner {
-        padding: 0 4rem;
+        padding: 0 var(--page-gutter, 40px);
       }
     }
 
@@ -2296,7 +2343,7 @@
       }
 
       .comm-solutions {
-        padding: 72px 48px;
+        padding: 72px clamp(24px, 4vw, 40px);
       }
 
       .comm-workflow-card {
@@ -2323,7 +2370,7 @@
       }
 
       .comm-solutions {
-        padding: 80px 56px;
+        padding: 80px clamp(28px, 3.5vw, 40px);
       }
 
       .comm-process-line {
@@ -2344,6 +2391,18 @@
 
       .comm-radial__canvas {
         min-height: 900px;
+      }
+
+      main.commmuni__main > section.about-section,
+      main.commmuni__main > section.solution__section,
+      main.commmuni__main > section.effect-area,
+      main.commmuni__main > section.demo-section {
+        max-width: 1280px;
+      }
+
+      main.commmuni__main .container {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   </style>

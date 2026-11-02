@@ -263,18 +263,22 @@
             "@type": ["Organization", "ProfessionalService"],
             "@id": "https://basicit.co.kr/#organization",
             "name": "베이직인터내셔널",
+            "legalName": "주식회사 베이직인터내셔널",
             "alternateName": ["Basic International", "주식회사 베이직인터내셔널"],
             "url": "https://basicit.co.kr/",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://basicit.co.kr/assets/images/favicon.png"
+              "url": "https://basicit.co.kr/assets/images/favicon.png",
+              "width": 512,
+              "height": 512
             },
             "image": "https://basicit.co.kr/assets/images/favicon.png",
             "description": "베이직인터내셔널은 AI 기술과 클라우드 인프라를 기반으로 기업의 디지털 전환·시스템 구축·운영 자동화를 수행하는 IT 전문 기업입니다.",
             "foundingDate": "2019-11-01",
             "founder": {
               "@type": "Person",
-              "name": "김명아"
+              "name": "김명아",
+              "jobTitle": "대표이사"
             },
             "address": {
               "@type": "PostalAddress",
@@ -303,21 +307,160 @@
               "엔터프라이즈 SI",
               "AIOps",
               "SSL 인증서 관리",
-              "CMS"
+              "CMS",
+              "SyncAny",
+              "v2v"
+            ],
+            "brand": {
+              "@type": "Brand",
+              "name": "Sync"
+            },
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": { "@id": "https://basicit.co.kr/pages/sync/aiops.html#software" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@id": "https://basicit.co.kr/pages/sync/sync-any.html#software" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@id": "https://basicit.co.kr/pages/sync/v2v.html#software" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@id": "https://basicit.co.kr/pages/sync/sync-cms.html#software" }
+              }
             ],
             "sameAs": [
               "https://basicit.co.kr/pages/aboutus/ai-profile.html",
               "https://basicit.co.kr/llms.txt",
               "https://basicit.co.kr/llms-full.txt"
             ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+82-2-2025-1010",
-              "contactType": "customer service",
-              "email": "sisocore@gmail.com",
-              "availableLanguage": ["ko", "en"],
-              "areaServed": "KR"
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+82-2-2025-1010",
+                "contactType": "customer service",
+                "email": "sisocore@gmail.com",
+                "availableLanguage": ["ko", "en"],
+                "areaServed": "KR"
+              },
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "sisocore@gmail.com",
+                "telephone": "+82-2-2025-1010",
+                "availableLanguage": ["ko"],
+                "areaServed": "KR"
+              }
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://basicit.co.kr/pages/sync/aiops.html#software",
+            "name": "SyncOps AIOps",
+            "alternateName": ["AIOps", "SyncOps"],
+            "url": "https://basicit.co.kr/pages/sync/aiops.html",
+            "description": "AI가 분석·수정·검증·문서화를 수행하고 사람이 승인하는 Human-in-the-Loop 기반 개발·운영 자동화 플랫폼입니다.",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "AIOps",
+            "operatingSystem": "Web, On-Premise",
+            "inLanguage": "ko-KR",
+            "publisher": { "@id": "https://basicit.co.kr/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "KRW"
             }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://basicit.co.kr/pages/sync/sync-any.html#software",
+            "name": "SyncAny",
+            "url": "https://basicit.co.kr/pages/sync/sync-any.html",
+            "description": "파일·데이터 공유와 API·시스템 연계를 중심으로 엔터프라이즈 연동을 확장하는 Sync 플랫폼 제품입니다.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "ko-KR",
+            "featureList": [
+              "파일·데이터 공유",
+              "API 연계",
+              "엔터프라이즈 시스템 연동",
+              "Sync 플랫폼 조합 운영"
+            ],
+            "publisher": { "@id": "https://basicit.co.kr/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://basicit.co.kr/pages/sync/v2v.html#software",
+            "name": "v2v",
+            "url": "https://basicit.co.kr/pages/sync/v2v.html",
+            "description": "내부망 LLM·API·DB·Webhook을 캔버스 DAG로 연결하는 온프레미스 자동화 워크플로우 플랫폼입니다.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "On-Premise, Web",
+            "inLanguage": "ko-KR",
+            "publisher": { "@id": "https://basicit.co.kr/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://basicit.co.kr/pages/sync/sync-cms.html#software",
+            "name": "SyncCMS",
+            "url": "https://basicit.co.kr/pages/sync/sync-cms.html",
+            "description": "SEO·콘텐츠 운영에 최적화된 엔터프라이즈 CMS 플랫폼입니다.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "ko-KR",
+            "publisher": { "@id": "https://basicit.co.kr/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://basicit.co.kr/pages/sync/sync-sll.html#software",
+            "name": "Sync SSL",
+            "url": "https://basicit.co.kr/pages/sync/sync-sll.html",
+            "description": "SSL/TLS 인증서 감지·갱신·배포·승인 흐름을 자동화하는 인증서 운영 플랫폼입니다.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "ko-KR",
+            "publisher": { "@id": "https://basicit.co.kr/#organization" }
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://basicit.co.kr/#software-suite",
+            "name": "베이직인터내셔널 Sync 소프트웨어 제품군",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": { "@id": "https://basicit.co.kr/pages/sync/sync-any.html#software" }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": { "@id": "https://basicit.co.kr/pages/sync/sync-cms.html#software" }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": { "@id": "https://basicit.co.kr/pages/sync/v2v.html#software" }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": { "@id": "https://basicit.co.kr/pages/sync/aiops.html#software" }
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "item": { "@id": "https://basicit.co.kr/pages/sync/sync-sll.html#software" }
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -341,39 +484,62 @@
             "about": {
               "@id": "https://basicit.co.kr/#organization"
             },
+            "mainEntity": [
+              { "@id": "https://basicit.co.kr/#organization" },
+              { "@id": "https://basicit.co.kr/#faq" },
+              { "@id": "https://basicit.co.kr/#software-suite" }
+            ],
             "description": "베이직인터내셔널은 AI·클라우드 기반 디지털 혁신 파트너로 Sync 플랫폼, AI 서비스, 산업별 솔루션을 제공합니다.",
             "inLanguage": "ko-KR",
             "speakable": {
               "@type": "SpeakableSpecification",
-              "cssSelector": [".hero-modern-business__title", ".hero-modern-business__desc", ".aeo-entity__def"]
+              "cssSelector": [".hero-modern-business__title", ".hero-modern-business__desc", ".aeo-entity__def", ".faq-card__q", ".faq-card__body"]
             }
           },
           {
             "@type": "FAQPage",
             "@id": "https://basicit.co.kr/#faq",
+            "url": "https://basicit.co.kr/#faq",
+            "isPartOf": { "@id": "https://basicit.co.kr/#webpage" },
             "mainEntity": [
               {
                 "@type": "Question",
                 "name": "베이직인터내셔널은 어떤 회사인가요?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "베이직인터내셔널은 2019년 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다."
+                  "text": "베이직인터내셔널은 2019년 11월 1일 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다. 본사는 서울 금천구 가산SKV1에 있으며 대표이사는 김명아입니다."
                 }
               },
               {
                 "@type": "Question",
-                "name": "베이직인터내셔널의 주요 서비스는 무엇인가요?",
+                "name": "베이직인터내셔널의 주요 서비스와 소프트웨어 제품군은 무엇인가요?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "AI 동화책·음원·픽업·탭투페이 등 AI 서비스, SyncCMS·SyncBoot·Sync SSL·v2v·AIOps 등 Sync 플랫폼, 그리고 금융·교육·물류·커머스 등 산업별 디지털 전환 솔루션을 제공합니다."
+                  "text": "AI 동화책·음원·픽업·탭투페이 등 AI 서비스와 SyncAny, SyncCMS, SyncBoot, Sync SSL, Sync APIM, v2v, AIOps(SyncOps) 등 Sync 플랫폼, 그리고 금융·교육·물류·커머스 산업별 디지털 전환 솔루션을 제공합니다."
                 }
               },
               {
                 "@type": "Question",
-                "name": "베이직인터내셔널 본사는 어디에 있나요?",
+                "name": "베이직인터내셔널의 AIOps 자동화 프로세스는 어떻게 동작하나요?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호에 있으며, 문의는 02-2025-1010 또는 sisocore@gmail.com으로 가능합니다."
+                  "text": "SyncOps AIOps는 AI가 이슈를 분석·수정·검증·문서화하고, 사람이 핵심 단계를 승인하는 Human-in-the-Loop 방식으로 동작합니다. 단순 배포 자동화를 넘어 분석부터 피드백까지 운영 루프에 AI를 결합합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "SyncAny의 주요 연동 방식은 무엇인가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SyncAny는 파일·데이터 공유와 API·시스템 연계를 중심으로 연동합니다. 기업 내부 시스템과 다른 Sync 제품(SyncCMS, SyncBoot 등)을 조합해 안전한 공유·전달·연계 흐름을 구성할 수 있습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "베이직인터내셔널 본사와 연락처는 어떻게 되나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "본사는 (08511) 서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호입니다. 전화 02-2025-1010, 이메일 sisocore@gmail.com으로 문의할 수 있습니다."
                 }
               },
               {
@@ -1595,27 +1761,39 @@
           베이직인터내셔널에 대해 가장 많이 확인하시는 질문입니다.
         </p>
       </div>
-      <div class="cms-faq__list">
+      <div class="cms-faq__list" id="faq">
         <article class="faq-card">
           <h3 class="faq-card__q">베이직인터내셔널은 어떤 회사인가요?</h3>
           <p class="faq-card__body">
-            2019년 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다.
+            2019년 11월 1일 설립된 AI·클라우드 디지털 혁신 파트너로, SI/ANS, AI부설연구소, SW Sales, Big Data/DW를 중심으로 금융·유통·제조 등 산업의 시스템 구축과 운영을 지원합니다. 대표이사는 김명아입니다.
           </p>
         </article>
         <article class="faq-card">
-          <h3 class="faq-card__q">주요 서비스는 무엇인가요?</h3>
+          <h3 class="faq-card__q">베이직인터내셔널의 주요 서비스와 소프트웨어 제품군은 무엇인가요?</h3>
           <p class="faq-card__body">
-            AI 동화책·음원·픽업·탭투페이 등 AI 서비스, SyncCMS·SyncBoot·Sync SSL·v2v·AIOps 등 Sync 플랫폼, 금융·교육·물류·커머스 등 산업별 솔루션을 제공합니다.
+            AI 동화책·음원·픽업·탭투페이 등 AI 서비스와 SyncAny, SyncCMS, SyncBoot, Sync SSL, v2v, AIOps(SyncOps) 등 Sync 플랫폼, 금융·교육·물류·커머스 산업별 솔루션을 제공합니다.
           </p>
         </article>
         <article class="faq-card">
-          <h3 class="faq-card__q">본사는 어디에 있나요?</h3>
+          <h3 class="faq-card__q">베이직인터내셔널의 AIOps 자동화 프로세스는 어떻게 동작하나요?</h3>
           <p class="faq-card__body">
-            서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호에 있으며, 문의는 02-2025-1010 또는 sisocore@gmail.com으로 가능합니다.
+            SyncOps AIOps는 AI가 이슈를 분석·수정·검증·문서화하고, 사람이 핵심 단계를 승인하는 Human-in-the-Loop 방식으로 동작합니다. 단순 배포 자동화를 넘어 분석부터 피드백까지 운영 루프에 AI를 결합합니다.
           </p>
         </article>
         <article class="faq-card">
-          <h3 class="faq-card__q">산업별 맞춤 구축이 가능한가요?</h3>
+          <h3 class="faq-card__q">SyncAny의 주요 연동 방식은 무엇인가요?</h3>
+          <p class="faq-card__body">
+            SyncAny는 파일·데이터 공유와 API·시스템 연계를 중심으로 연동합니다. 기업 내부 시스템과 SyncCMS, SyncBoot 등 다른 Sync 제품을 조합해 안전한 공유·전달·연계 흐름을 구성할 수 있습니다.
+          </p>
+        </article>
+        <article class="faq-card">
+          <h3 class="faq-card__q">베이직인터내셔널 본사와 연락처는 어떻게 되나요?</h3>
+          <p class="faq-card__body">
+            본사는 (08511) 서울특별시 금천구 벚꽃로 368 가산SKV1 701~708호입니다. 전화 02-2025-1010, 이메일 sisocore@gmail.com으로 문의할 수 있습니다.
+          </p>
+        </article>
+        <article class="faq-card">
+          <h3 class="faq-card__q">산업별 맞춤형 시스템 구축이 가능한가요?</h3>
           <p class="faq-card__body">
             가능합니다. 금융, 통신, 교육, 물류, 커머스 등 산업 요구에 맞춰 컨설팅부터 구축·운영까지 통합 지원합니다.
           </p>

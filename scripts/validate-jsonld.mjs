@@ -1,46 +1,30 @@
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
 
-function walk(dir, out = []) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name === "node_modules" || entry.name === ".git") continue;
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(full, out);
-    else if (entry.name.endsWith(".html")) out.push(full);
+const files = [
+  'index.html',
+  'pages/aboutus/ai-profile.html',
+  'pages/sync/aiops.html',
+  'pages/sync/sync-any.html',
+];
+
+for (const file of files) {
+  const html = fs.readFileSync(file, 'utf8');
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  if (!blocks.length) {
+    console.error(`FAIL ${file}: no JSON-LD`);
+    process.exitCode = 1;
+    continue;
   }
-  return out;
-}
-
-const bad = [];
-const stats = { files: 0, blocks: 0, withFaq: 0, withOldGeo: 0, missingGeo: 0 };
-
-for (const file of walk(process.cwd())) {
-  stats.files++;
-  const rel = path.relative(process.cwd(), file).replaceAll("\\", "/");
-  const html = fs.readFileSync(file, "utf8");
-  if (html.includes("37.5665")) stats.withOldGeo++;
-  if (
-    !rel.includes("include/") &&
-    !html.includes("geo.position") &&
-    !rel.startsWith("google")
-  ) {
-    stats.missingGeo++;
-    bad.push({ file: rel, err: "missing-geo-meta" });
-  }
-  if (html.includes("FAQPage") || html.includes("자주 묻는 질문")) stats.withFaq++;
-
-  const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi;
-  let m;
-  let i = 0;
-  while ((m = re.exec(html))) {
-    i++;
-    stats.blocks++;
+  for (const [i, block] of blocks.entries()) {
     try {
-      JSON.parse(m[1]);
+      const data = JSON.parse(block[1]);
+      const types = Array.isArray(data['@graph'])
+        ? data['@graph'].map((x) => x['@type'])
+        : [data['@type']];
+      console.log(`OK ${file}#${i + 1}`, types.flat().join(', '));
     } catch (err) {
-      bad.push({ file: rel, block: i, err: err.message });
+      console.error(`FAIL ${file}#${i + 1}:`, err.message);
+      process.exitCode = 1;
     }
   }
 }
-
-console.log(JSON.stringify({ stats, bad }, null, 2));

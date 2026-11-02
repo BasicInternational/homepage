@@ -786,31 +786,61 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "AIOps 운영 프로세스는 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI가 분석·수정·검증·문서화를 자동화하고 사람이 승인하는 개발·운영 자동화 체계입니다."
+      "@type": "SoftwareApplication",
+      "@id": "https://basicit.co.kr/pages/sync/aiops.html#software",
+      "name": "SyncOps AIOps",
+      "alternateName": ["AIOps", "SyncOps"],
+      "url": "https://basicit.co.kr/pages/sync/aiops.html",
+      "description": "AI가 분석·수정·검증·문서화를 수행하고 사람이 승인하는 Human-in-the-Loop 기반 개발·운영 자동화 플랫폼입니다.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "AIOps",
+      "operatingSystem": "Web, On-Premise",
+      "inLanguage": "ko-KR",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://basicit.co.kr/#organization",
+        "name": "베이직인터내셔널",
+        "url": "https://basicit.co.kr"
       }
     },
     {
-      "@type": "Question",
-      "name": "사람 개입이 완전히 없나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "아닙니다. 핵심 승인·판단 단계는 사람이 개입하도록 설계되어 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "기존 DevOps와 어떻게 다른가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "단순 배포 자동화를 넘어 AI 기반 분석·수정·검증 루프를 운영 프로세스에 결합합니다."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "베이직인터내셔널의 AIOps 자동화 프로세스는 어떻게 동작하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SyncOps AIOps는 AI가 이슈를 분석·수정·검증·문서화하고, 사람이 핵심 단계를 승인하는 Human-in-the-Loop 방식으로 동작합니다. 단순 배포 자동화를 넘어 분석부터 피드백까지 운영 루프에 AI를 결합합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AIOps 운영 프로세스는 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI가 분석·수정·검증·문서화를 자동화하고 사람이 승인하는 개발·운영 자동화 체계입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "사람 개입이 완전히 없나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아닙니다. 핵심 승인·판단 단계는 사람이 개입하도록 설계되어 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "기존 DevOps와 어떻게 다른가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "단순 배포 자동화를 넘어 AI 기반 분석·수정·검증 루프를 운영 프로세스에 결합합니다."
+          }
+        }
+      ]
     }
   ]
 }
@@ -1163,6 +1193,12 @@
       <h2 class="section-title">자주 묻는 질문</h2>
       <p class="section-desc">AIOps 관련 자주 묻는 질문입니다.</p>
       <div class="cms-faq__list">
+        <article class="faq-card">
+          <div class="faq-card__header">
+            <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>베이직인터내셔널의 AIOps 자동화 프로세스는 어떻게 동작하나요?</h3>
+          </div>
+          <div class="faq-card__body">SyncOps AIOps는 AI가 이슈를 분석·수정·검증·문서화하고, 사람이 핵심 단계를 승인하는 Human-in-the-Loop 방식으로 동작합니다. 단순 배포 자동화를 넘어 분석부터 피드백까지 운영 루프에 AI를 결합합니다.</div>
+        </article>
         <article class="faq-card">
           <div class="faq-card__header">
             <h3 class="faq-card__q"><span class="faq-card__icon" aria-hidden="true">Q</span>AIOps 운영 프로세스는 무엇인가요?</h3>

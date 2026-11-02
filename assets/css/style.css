@@ -5169,14 +5169,30 @@ nav ul li a:hover {
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
-    isolation: isolate;
 }
 
 .hero-modern-business__image-wrapper::before {
     display: none;
 }
 
-.hero-modern-business__image-bg {
+.hero-modern-business__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    border: 0;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+    box-shadow: none;
+}
+
+/* 홈 히어로 패럴랙스 전용: 배경 레이어만 보이고 img는 자리 확보용 */
+.hero-modern-business__image-wrapper[data-hero-parallax] {
+    isolation: isolate;
+}
+
+.hero-modern-business__image-wrapper[data-hero-parallax] .hero-modern-business__image-bg {
     position: absolute;
     inset: -8%;
     z-index: 0;
@@ -5189,16 +5205,9 @@ nav ul li a:hover {
     pointer-events: none;
 }
 
-.hero-modern-business__image {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: auto;
+.hero-modern-business__image-wrapper[data-hero-parallax] .hero-modern-business__image {
     aspect-ratio: 16 / 9;
     opacity: 0;
-    border: 0;
-    border-radius: 16px;
-    display: block;
 }
 
 @keyframes heroOrbFloat {
@@ -5249,7 +5258,7 @@ nav ul li a:hover {
         animation: none;
     }
 
-    .hero-modern-business__image-bg {
+    .hero-modern-business__image-wrapper[data-hero-parallax] .hero-modern-business__image-bg {
         inset: 0;
         transform: none !important;
         background-position: 50% 45% !important;
@@ -8643,7 +8652,7 @@ section.cms-faq {
   flex-direction: column;
   align-items: stretch;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   padding: 70px 20px 100px;
   background: #fff;
   box-sizing: border-box;
@@ -8788,13 +8797,58 @@ section.cms-faq {
 }
 
 .cms-faq__list,
-.aeo-faq__list {
-  width: 100%;
-  max-width: 880px;
-  margin: 0 auto;
+.aeo-faq__list,
+.sync-eta-faq__list {
+  width: min(860px, 100%);
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center; /* flex stretch가 풀폭으로 늘리는 것 방지 */
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
+  box-sizing: border-box;
+}
+
+.cms-faq .section-desc,
+.aeo-faq .section-desc {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+}
+
+/* 홈 FAQ */
+body:not([data-type]) main#container > section.cms-faq .cms-faq__list,
+body:not([data-type]) main#container > section.aeo-faq .cms-faq__list {
+  max-width: 860px;
+}
+
+/*
+  세부 페이지: 섹션 껍데기는 1280 유지하되,
+  FAQ 리스트/카드는 읽기 폭 860으로 고정
+*/
+body[data-type='detail'] section.cms-faq,
+body[data-type='detail'] section.aeo-faq,
+body[data-type='detail'] .cms-faq.aeo-faq {
+  max-width: 1280px;
+  width: 100%;
+}
+
+body[data-type='detail'] .cms-faq__list,
+body[data-type='detail'] .aeo-faq__list,
+body[data-type='detail'] .sync-eta-faq__list,
+main .cms-faq__list,
+main .aeo-faq__list,
+main .sync-eta-faq__list {
+  max-width: 860px;
+  width: min(860px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  grid-template-columns: 1fr;
+  gap: 0;
+  box-sizing: border-box;
 }
 
 .faq-card {
