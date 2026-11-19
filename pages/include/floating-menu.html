@@ -1,8 +1,14 @@
 <div class="floating__menu">
-  <button type="button" id="downloadButton">
-    <img src="/assets/images/common/floating-download.svg" alt="다운로드 버튼" />
+  <a
+    id="downloadButton"
+    class="floating__menu-download"
+    href="/assets/file/%EB%B2%A0%EC%9D%B4%EC%A7%81%EC%9D%B8%ED%84%B0%EB%82%B4%EC%85%94%EB%84%90_%ED%9A%8C%EC%82%AC%EC%86%8C%EA%B0%9C%EC%84%9C_V5.7.pdf"
+    download="베이직인터내셔널_회사소개서_V5.7.pdf"
+    aria-label="회사소개서 다운로드"
+  >
+    <img src="/assets/images/common/floating-download.svg" alt="" />
     <span>다운로드</span>
-  </button>
+  </a>
   <button type="button" onclick="window.location.href = 'mailto:sisocore@gmail.com'">
     <img src="/assets/images/common/floating-qa.svg" alt="문의하기 버튼" />
     <span>문의하기</span>
@@ -12,11 +18,3 @@
     <span>TOP</span>
   </button>
 </div>
-<script>
-  document.getElementById('downloadButton').addEventListener('click', function () {
-    const link = document.createElement('a');
-    link.href = '/assets/file/베이직인터내셔널_회사소개서_V5.7.pdf';
-    link.download = '베이직인터내셔널_회사소개서.pdf';
-    link.click();
-  });
-</script>

@@ -993,7 +993,8 @@ footer.bi__footer .footer__inner .footer__copyright {
     z-index: 90;
 }
 
-.floating__menu button {
+.floating__menu button,
+.floating__menu a {
     color: #555;
     margin-top: 10px;
     width: 70px;
@@ -1005,6 +1006,10 @@ footer.bi__footer .footer__inner .footer__copyright {
     justify-content: center;
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .floating__menu button:nth-child(2n) {
@@ -1015,11 +1020,13 @@ footer.bi__footer .footer__inner .footer__copyright {
     color: #fff;
 }
 
-.floating__menu button>img {
+.floating__menu button>img,
+.floating__menu a>img {
     display: block;
 }
 
-.floating__menu button>span {
+.floating__menu button>span,
+.floating__menu a>span {
     padding-top: 4px;
     display: block;
     font-size: 0.8em;
@@ -1554,18 +1561,21 @@ footer.bi__footer .footer__inner .footer__copyright {
         bottom: 50px;
     }
 
-    .floating__menu button {
+    .floating__menu button,
+    .floating__menu a {
         width: 54px;
         height: 54px;
         opacity: 0.8;
     }
 
-    .floating__menu button>img {
+    .floating__menu button>img,
+    .floating__menu a>img {
         width: 18px;
         height: 18px;
     }
 
-    .floating__menu button>span {
+    .floating__menu button>span,
+    .floating__menu a>span {
         padding-top: 0;
         font-size: 0.8em;
     }
