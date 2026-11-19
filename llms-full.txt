@@ -15,7 +15,7 @@
 - Brand: 베이직인터내셔널 / Basic International / Sync
 - Founded: 2019-11-01
 - CEO: 김명아
-- HQ: (08511) 서울특별시 금천구 벚꽃로 368, 가산SKV1 701~708호, 대한민국
+- HQ: (08511) 서울시 금천구 벚꽃로36길 30, 가산KS타워 701~8호, 대한민국
 - Geo: 37.4815, 126.8838 (Seoul Geumcheon / Gasan Digital Complex)
 - Phone: +82-2-2025-1010
 - Email: sisocore@gmail.com
@@ -92,7 +92,7 @@
 ## FAQ (citation-ready)
 
 Q: 베이직인터내셔널은 어떤 회사인가?
-A: 기업용 AI 시스템 개발과 AIOps 자동화, 데이터 통합 솔루션을 제공하는 기술 기업입니다. 2019년 설립, 본사 서울 금천구 가산SKV1. 문의 02-2025-1010 / sisocore@gmail.com.
+A: 기업용 AI 시스템 개발과 AIOps 자동화, 데이터 통합 솔루션을 제공하는 기술 기업입니다. 2019년 설립, 본사 서울 금천구 가산KS타워. 문의 02-2025-1010 / sisocore@gmail.com.
 
 Q: 대표 전문 분야는?
 A: SyncOps AIOps — AI 기반 개발·운영 자동화(Human-in-the-Loop). https://basicit.co.kr/pages/sync/aiops.html
