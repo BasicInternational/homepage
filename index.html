@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 
 <head>
@@ -132,12 +132,25 @@
     }
 
     .tol-chart-wrap {
-      margin: 20px auto 0;
+      position: relative;
+      margin: 28px auto 0;
+      padding: 12px 8px 8px;
       overflow-x: auto;
+      overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, .25) transparent;
+      scrollbar-color: rgba(255, 255, 255, .28) transparent;
       cursor: grab;
+      border-radius: 20px;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(13, 148, 136, .08), transparent 70%),
+        rgba(255, 255, 255, .02);
+      border: 1px solid rgba(255, 255, 255, .06);
+      max-width: 100%;
+    }
+
+    .tol-chart-wrap:active {
+      cursor: grabbing;
     }
 
     .tol-chart-wrap::-webkit-scrollbar {
@@ -156,8 +169,8 @@
     .tol-chart-wrap svg {
       display: block;
       margin: 0 auto;
-      width: min(1320px, 100%);
-      min-width: 760px;
+      width: min(1360px, 100%);
+      min-width: 800px;
       height: auto;
     }
 
@@ -1687,7 +1700,7 @@
             <span>다시 보기</span>
           </button>
         </div>
-        <div id="tolChart" class="tol-chart-wrap"></div>
+        <div id="tolChart" class="tol-chart-wrap" data-animate aria-label="기술 생태계 트리 차트"></div>
         <div class="tol-legend" id="tolLegend"></div>
       </div>
     </section>
@@ -1880,48 +1893,51 @@
         branchset: [
           {
             name: '회사소개', length: 0.22, branchset: [
-              { name: '베이직은?', length: 0.18, url: 'pages/aboutus/aboutus_history.html', desc: '창립부터 현재까지 성장 연혁' },
-              { name: 'AI 연구소', length: 0.25, url: 'pages/aboutus/research-basic.html', desc: 'AI 에이전트·LLM 연구개발' }
+              { name: '베이직은?', length: 0.18, url: '/pages/aboutus/aboutus_history.html', desc: '창립부터 현재까지 성장 연혁' },
+              { name: '회사 프로필', length: 0.20, url: '/pages/aboutus/ai-profile.html', desc: '기업용 AI · AIOps 회사 프로필' },
+              { name: 'AI 연구소', length: 0.25, url: '/pages/aboutus/research-basic.html', desc: 'AI 에이전트·LLM 연구개발' }
             ]
           },
           {
             name: 'AI 서비스', length: 0.30, branchset: [
               {
                 name: 'AI 콘텐츠', length: 0.16, branchset: [
-                  { name: 'AI 동화책', length: 0.22, url: 'pages/aiservice/ai-book.html', desc: 'AI 생성 맞춤형 동화 콘텐츠' },
-                  { name: 'AI 음원', length: 0.26, url: 'pages/aiservice/aisound.html', desc: 'AI 기반 어린이 음원 제작' }
+                  { name: 'AI 동화책', length: 0.22, url: '/pages/aiservice/ai-book.html', desc: 'AI 생성 맞춤형 동화 콘텐츠' },
+                  { name: 'AI 음원', length: 0.26, url: '/pages/aiservice/aisound.html', desc: 'AI 기반 음원 생성 서비스' }
                 ]
               },
               {
                 name: 'AI 플랫폼', length: 0.16, branchset: [
-                  { name: '픽업 서비스', length: 0.20, url: 'pages/aiservice/pickup.html', desc: 'AI 동선 최적화 픽업 서비스' },
-                  { name: '탭투페이', length: 0.24, url: 'pages/aiservice/tabtopay.html', desc: '커머스 결제·픽업 통합 플랫폼' }
+                  { name: '픽업 서비스', length: 0.20, url: '/pages/aiservice/pickup.html', desc: 'AI 동선 최적화 픽업 서비스' },
+                  { name: '탭투페이', length: 0.24, url: '/pages/aiservice/tabtopay.html', desc: '스마트폰 간편결제 Tap to Pay' }
                 ]
               }
             ]
           },
           {
-            name: 'Sync 솔루션', length: 0.32, branchset: [
+            name: 'Sync 솔루션', length: 0.34, branchset: [
               {
                 name: '콘텐츠 관리', length: 0.11, branchset: [
-                  { name: 'SyncCMS', length: 0.18, url: 'pages/sync/sync-cms.html', desc: 'SEO 최적화 콘텐츠 관리' },
-                  { name: 'SyncAny', length: 0.22, url: 'pages/sync/sync-any.html', desc: '파일·데이터·API 엔터프라이즈 데이터 통합' }
+                  { name: 'SyncCMS', length: 0.18, url: '/pages/sync/sync-cms.html', desc: 'SEO 최적화 콘텐츠 관리' },
+                  { name: 'SyncAny', length: 0.22, url: '/pages/sync/sync-any.html', desc: '파일·데이터·API 엔터프라이즈 데이터 통합' },
+                  { name: 'SyncLMS', length: 0.20, url: '/pages/sync/sync-lms.html', desc: '통합 교육 운영 LMS' }
                 ]
               },
               {
                 name: 'API/통합', length: 0.19, branchset: [
-                  { name: 'SyncAPIM', length: 0.21, url: 'pages/sync/sync-apim.html', desc: 'API 생태계 보안·모니터링' },
-                  { name: 'SyncX-bus', length: 0.28, url: 'pages/sync/sync-bus.html', desc: '금융 ESB 메시지 송수신 인프라' }
+                  { name: 'SyncAPIM', length: 0.21, url: '/pages/sync/sync-apim.html', desc: 'API 생태계 보안·모니터링' },
+                  { name: 'SyncX-bus', length: 0.28, url: '/pages/sync/sync-bus.html', desc: '금융 ESB 메시지 송수신 인프라' }
                 ]
               },
               {
-                name: '개발/자동화', length: 0.14, branchset: [
-                  { name: 'SyncBoot', length: 0.25, url: 'pages/sync/sync-boot.html', desc: 'E2E 마이크로서비스·LowCode' },
-                  { name: 'SyncAdmin', length: 0.17, url: 'pages/sync/sync-admin.html', desc: 'Vue3 컴포넌트 백오피스 빌더' },
-                  { name: 'SyncCrawl', length: 0.23, url: 'pages/sync/sync-crawl.html', desc: '자연어 RAG 지식망 크롤러' },
-                  { name: 'SyncETA', length: 0.19, url: 'pages/sync/sync-eta.html', desc: 'AI 기반 테스트 자동화·품질 관리' },
-                  { name: 'Sync SSL', length: 0.20, url: 'pages/sync/sync-sll.html', desc: 'AI 행정 문서 처리 솔루션' },
-                  { name: 'v2v', length: 0.22, url: 'pages/sync/v2v.html', desc: '온프레미스 LLM 워크플로우' }
+                name: '개발/자동화', length: 0.16, branchset: [
+                  { name: 'SyncOps', length: 0.24, url: '/pages/sync/aiops.html', desc: 'AIOps 기반 개발·운영 자동화' },
+                  { name: 'SyncBoot', length: 0.25, url: '/pages/sync/sync-boot.html', desc: 'E2E 마이크로서비스·LowCode' },
+                  { name: 'SyncAdmin', length: 0.17, url: '/pages/sync/sync-admin.html', desc: 'Vue3 컴포넌트 백오피스 빌더' },
+                  { name: 'SyncCrawl', length: 0.23, url: '/pages/sync/sync-crawl.html', desc: '자연어 RAG 지식망 크롤러' },
+                  { name: 'SyncETA', length: 0.19, url: '/pages/sync/sync-eta.html', desc: 'AI 기반 테스트 자동화·품질 관리' },
+                  { name: 'Sync SSL', length: 0.20, url: '/pages/sync/sync-sll.html', desc: 'AI 행정 문서 처리 솔루션' },
+                  { name: 'v2v', length: 0.22, url: '/pages/sync/v2v.html', desc: '온프레미스 LLM 워크플로우' }
                 ]
               }
             ]
@@ -1930,31 +1946,31 @@
             name: '사업분야', length: 0.26, branchset: [
               {
                 name: 'AI/데이터', length: 0.14, branchset: [
-                  { name: 'AI 솔루션', length: 0.22, url: 'pages/business/aisolution.html', desc: 'AI 지식망·행정 자동화' },
-                  { name: 'BI 솔루션', length: 0.20, url: 'pages/business/bi-solution.html', desc: '대시보드·비즈니스 인사이트' },
-                  { name: 'AI 커머스', length: 0.22, url: 'pages/business/commerce.html', desc: 'AI 추천·초개인화 커머스' },
-                  { name: '클라우드', length: 0.24, url: 'pages/business/cloudsolution.html', desc: '클라우드 마이그레이션·보안' }
+                  { name: 'AI 솔루션', length: 0.22, url: '/pages/business/aisolution.html', desc: 'AI 지식망·행정 자동화' },
+                  { name: 'BI 솔루션', length: 0.20, url: '/pages/business/bi-solution.html', desc: '대시보드·비즈니스 인사이트' },
+                  { name: 'AI 커머스', length: 0.22, url: '/pages/business/commerce.html', desc: 'AI 추천·초개인화 커머스' },
+                  { name: '클라우드', length: 0.24, url: '/pages/business/cloudsolution.html', desc: '클라우드 마이그레이션·보안' }
                 ]
               },
               {
                 name: '산업 특화', length: 0.14, branchset: [
-                  { name: '금융IT', length: 0.24, url: 'pages/business/finance.html', desc: '코어뱅킹·디지털 결제 IT' },
-                  { name: 'AI 물류', length: 0.21, url: 'pages/business/logistics.html', desc: 'AI 예측 스마트 물류 최적화' },
-                  { name: 'AI 교육', length: 0.18, url: 'pages/business/education.html', desc: 'LMS·지능형 교육 플랫폼' },
-                  { name: '통신/인증', length: 0.20, url: 'pages/business/communication.html', desc: '챗봇·상담 자동화 솔루션' },
-                  { name: '공제회', length: 0.23, url: 'pages/business/benevolent.html', desc: '공제회 회원관리·복지 통합' }
+                  { name: '금융IT', length: 0.24, url: '/pages/business/finance.html', desc: '코어뱅킹·디지털 결제 IT' },
+                  { name: 'AI 물류', length: 0.21, url: '/pages/business/logistics.html', desc: 'AI 예측 스마트 물류 최적화' },
+                  { name: 'AI 교육', length: 0.18, url: '/pages/business/education.html', desc: 'LMS·지능형 교육 플랫폼' },
+                  { name: '통신/인증', length: 0.20, url: '/pages/business/communication.html', desc: 'PASS 인증·보안 통신' },
+                  { name: '공제회', length: 0.23, url: '/pages/business/benevolent.html', desc: '공제회 회원관리·복지 통합' }
                 ]
               }
             ]
           },
           {
             name: '에이전시', length: 0.22, branchset: [
-              { name: '포트폴리오', length: 0.26, url: 'pages/agency/agency-portfolio.html', desc: '구축 레퍼런스·프로젝트 사례' }
+              { name: '포트폴리오', length: 0.26, url: '/pages/agency/agency-portfolio.html', desc: '구축 레퍼런스·프로젝트 사례' }
             ]
           },
           {
             name: '구축사례', length: 0.20, branchset: [
-              { name: '성공 레퍼런스', length: 0.22, url: 'pages/experience/experience.html', desc: '디지털 혁신 성공 레퍼런스' }
+              { name: '성공 레퍼런스', length: 0.22, url: '/pages/experience/experience.html', desc: '디지털 혁신 성공 레퍼런스' }
             ]
           }
         ]
@@ -1967,9 +1983,9 @@
         if (!container || typeof d3 === 'undefined') return;
         container.innerHTML = '';
 
-        var W = 1320;
+        var W = 1360;
         var outerR = W / 2;
-        var innerR = outerR - 230;
+        var innerR = outerR - 238;
         var isMobile = (window.innerWidth <= 480);
 
         /* ── helpers ── */
